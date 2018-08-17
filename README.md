@@ -1,4 +1,12 @@
 # Code repository
 Code for Localization
 
-izmena jelica test
+<jelica/> izmena jelica test
+
+<Drazen>
+Moja izmjena.
+
+Drazen izmena...
+Drazen izmena 2...
+Drazen izmena 3...
+</Drazen>
