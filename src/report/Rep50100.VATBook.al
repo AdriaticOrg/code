@@ -1,8 +1,7 @@
 report 50100 "VAT Book"
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './VAT Book.rdlc';
-
+    RDLCLayout = './src/reportlayout/Rep50100.VATBook.rdlc';
     CaptionML = ENU = 'VAT Book',
                 SRM = 'PDV knjiga';
     EnableHyperlinks = true;

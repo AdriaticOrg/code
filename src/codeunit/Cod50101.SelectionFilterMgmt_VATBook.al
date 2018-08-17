@@ -1,4 +1,4 @@
-codeunit 50101 SelectionFilterMgmt_VATBook
+codeunit 50101 "SelectionFilterMgmt_VATBook"
 {
     procedure GetSelectionFilterForVatBookGroup(var VATGroup: Record "VAT Book Group"): Text;
     var

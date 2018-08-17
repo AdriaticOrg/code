@@ -1,7 +1,7 @@
 report 50101 "VAT Calc. Details"
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './VAT Calc. Details.rdlc';
+    RDLCLayout = './src/reportlayout/VAT Calc. Details.rdlc';
 
     CaptionML = ENU = 'VAT Calculation Details',
                 SRM = 'Obračun PDV-a';
