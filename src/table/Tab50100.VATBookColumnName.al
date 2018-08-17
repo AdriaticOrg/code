@@ -15,13 +15,11 @@ table 50100 "VAT Book Column Name"
             TableRelation = "VAT Book";
             DataClassification = CustomerContent;
         }
-        field(2; "Column No."; Option)
+        field(2; "Column No."; Integer)
         {
-            CaptionML = ENU = 'Column No.',
-                        SRM = 'Br. kolone';
-            OptionCaptionML = ENU = '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20',
-                              SRM = '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20';
-            OptionMembers = "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20";
+            Caption = 'Column No.';
+            MinValue = 6;
+            MaxValue = 20;
             DataClassification = CustomerContent;
         }
         field(3; Description; Text[50])
