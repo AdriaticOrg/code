@@ -1,4 +1,4 @@
-codeunit 50149 "VAT Date Tests"
+codeunit 50149 "VAT Date Tests-adl"
 {
   Subtype = Test;
 
