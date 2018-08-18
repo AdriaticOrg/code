@@ -6,9 +6,10 @@ tableextension 50100 "Sales Header-adl" extends "Sales Header" //36
         {
             DataClassification = ToBeClassified;
             Caption = 'VAT Date';
+            trigger OnValidate()
+            begin
+                "VAT Date-adl" := "Posting Date";
+            end;
         }
     }
-
-    var
-        myInt: Integer;
 }
