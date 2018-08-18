@@ -1,4 +1,4 @@
-pageextension 50100 "ExtSalesOrder-adl" extends "Sales Order"
+pageextension 50100 "ExtSalesOrder-adl" extends "Sales Order" //42
 {
     layout
     {
@@ -16,7 +16,4 @@ pageextension 50100 "ExtSalesOrder-adl" extends "Sales Order"
     {
         // Add changes to page actions here
     }
-
-    var
-        myInt: Integer;
 }
