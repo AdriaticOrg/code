@@ -49,32 +49,43 @@ No.|Type|Object ID|Name
 2.|Table Extension|New Object|Tab270-Extxxxxx.BankAccount-adl
 3.|Table Extension|New Object|Tab277-Extxxxxx.BankAccPostingGroup-adl
 4.|Table Extension|New Object|Tab92-Extxxxxx.CustPostingGroup-adl
-5.|Table Extension|New Object|Tab18-Extxxxxx.Customer-adl
-6.|Table Extension|New Object|Tab23-Extxxxxx.Vendor-adl
-7.|Table Extension|New Object|Tab5050-Extxxxxx.Contact-adl
-8.|Table Extension|New Object|Tab15-Extxxxxx.GLAccount-adl
-9.|Table Extension|New Object|Tab81-Extxxxxx.GenJnlLine-adl
-10.|Table Extension|New Object|Tab17-Extxxxxx.GLEntry-adl
-11.|Page Extension|New Object|Pag10-Extxxxxx.CountryRegions-adl
-12.|Page Extension|New Object|Pag370-Extxxxxx.BankAccount-adl
-13.|Page Extension|New Object|Pag373-Extxxxxx.BankAccPostingGroups-adl
-14.|Page Extension|New Object|Pag110-Extxxxxx.CustPostingGroups-adl
-15.|Page Extension|New Object|Pag111-Extxxxxx.VendPostingGroups-adl
-16.|Page Extension|New Object|Pag21-Extxxxxx.Customer-adl
-17.|Page Extension|New Object|Pag26-Extxxxxx.Vendor-adl
-18.|Page Extension|New Object|Pag5050-Extxxxxx.Contact-adl
-19.|Page Extension|New Object|Pag17-Extxxxxx.GLAccount-adl
-20.|Page Extension|New Object|Pag39-Extxxxxx.GenJnlLine-adl
-21.|Page Extension|New Object|Pag20-Extxxxxx.GLEntries-adl
+5.|Table Extension|New Object|Tab93-Extxxxxx.VendPostingGroup-adl
+6.|Table Extension|New Object|Tab18-Extxxxxx.Customer-adl
+7.|Table Extension|New Object|Tab23-Extxxxxx.Vendor-adl
+8.|Table Extension|New Object|Tab5050-Extxxxxx.Contact-adl
+9.|Table Extension|New Object|Tab15-Extxxxxx.GLAccount-adl
+10.|Table Extension|New Object|Tab81-Extxxxxx.GenJnlLine-adl
+11.|Table Extension|New Object|Tab17-Extxxxxx.GLEntry-adl
+12.|Page Extension|New Object|Pag10-Extxxxxx.CountryRegions-adl
+13.|Page Extension|New Object|Pag370-Extxxxxx.BankAccount-adl
+14.|Page Extension|New Object|Pag373-Extxxxxx.BankAccPostingGroups-adl
+15.|Page Extension|New Object|Pag110-Extxxxxx.CustPostingGroups-adl
+16.|Page Extension|New Object|Pag111-Extxxxxx.VendPostingGroups-adl
+17.|Page Extension|New Object|Pag21-Extxxxxx.Customer-adl
+18.|Page Extension|New Object|Pag26-Extxxxxx.Vendor-adl
+19.|Page Extension|New Object|Pag5050-Extxxxxx.Contact-adl
+20.|Page Extension|New Object|Pag17-Extxxxxx.GLAccount-adl
+21.|Page Extension|New Object|Pag39-Extxxxxx.GenJnlLine-adl
+22.|Page Extension|New Object|Pag20-Extxxxxx.GLEntries-adl
 
 1. Table Extension 9
     - 1 new field
       -FAS Sector Code
 
-
 2. Table Extension 270
     - 1 new field
       -FAS Sector Code
 
+3. Table Extension 277
+    - 1 new field
+      -FAS Instrument Code
+
+4. Table Extension 92
+    - 1 new field
+      -FAS Instrument Code
+
+5. Table Extension 93
+    - 1 new field
+      -FAS Instrument Code
 
 >Note: file still incomplete...
