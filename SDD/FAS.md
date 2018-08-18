@@ -88,4 +88,29 @@ No.|Type|Object ID|Name
     - 1 new field
       -FAS Instrument Code
 
+6. Table Extension 18
+    - 1 new field
+      -FAS Sector Code
+
+7. Table Extension 23
+    - 1 new field
+      -FAS Sector Code
+
+8. Table Extension 5050
+    - 1 new field
+      -FAS Sector Code
+
+9. Table Extension 15
+    - 5 new fields
+      -FAS Account
+      -FAS Sector Posting
+      -FAS Instrument Posting
+      -FAS Sector Code
+      -FAS Instrument Code
+
+10. Table Extension 81
+    - 2 new fields
+      -FAS Sector Code
+      -FAS Instrument Code      
+
 >Note: file still incomplete...
