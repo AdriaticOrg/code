@@ -1,4 +1,4 @@
-pageextension 50100 "ExtSalesOrder-adl" extends "Sales Order" //42
+pageextension 50101 "PostedSalesInvoice-adl" extends "Posted Sales Invoice" //132
 {
     layout
     {
