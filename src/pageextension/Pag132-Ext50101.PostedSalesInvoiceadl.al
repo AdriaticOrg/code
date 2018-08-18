@@ -1,4 +1,4 @@
-pageextension 50100 "ExtSalesOrder-adl" extends "Sales Order"
+pageextension 50101 "PostedSalesInvoice-adl" extends "Posted Sales Invoice" //132
 {
     layout
     {
@@ -11,12 +11,4 @@ pageextension 50100 "ExtSalesOrder-adl" extends "Sales Order"
             }
         }
     }
-
-    actions
-    {
-        // Add changes to page actions here
-    }
-
-    var
-        myInt: Integer;
 }
