@@ -20,7 +20,7 @@ Supported features:
 10.|VAT Books||NPS|Testing
 11.|VIES Feature|SI|BS|
 12.|Delivery Declaration|SI|BS|
-13.|FAS Report|SI|BS|
+13.|[FAS Report](sdd/FAS.md)|SI|BS|
 14.|KRD Report|SI|BS|
 15.|BST Report|SI|BS|
 16.|Export G/L and VAT|SI|Adacta|
