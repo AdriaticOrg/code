@@ -8,5 +8,11 @@ tableextension 50102 "VAT Entry-adl" extends "VAT Entry" // 254
             Caption = 'VAT Date';
             Editable = False;
         }
+        field(50101; "Postponed VAT-adl"; Option)
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Postponed VAT';
+            OptionMembers = "Realized VAT","Postponed VAT";
+        }
     }
 }
