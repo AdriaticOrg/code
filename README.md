@@ -8,26 +8,26 @@ Supported features:
 
 Ňo.|Feature Name|Country Specific|Responsible Partner|Status
 -:|-|-|-|-
-1.|[VAT Date](sdd/VATDate.md)||NPS|Coding
+1.|[VAT Date](SDD/VATDate.md)||NPS|Coding
 2.|Internal Correction||GoPro|
 3.|Red reversal Posting||GoPro|
 4.|Forced Debit / Credit Posting||GoPro|
 5.|Full VAT Posting||GoPro|
-6.|[Reverse Charge Posting](sdd\ReverseChargePosting.md)||NPS|Design
+6.|[Reverse Charge Posting](SDD/ReverseChargePosting.md)||NPS|Design
 7.|Postponed VAT||NPS|
 8.|Informative VAT|SI|BS|
 9.|Return Orders||Adacta|
 10.|VAT Books||NPS|Testing
 11.|VIES Feature|SI|BS|
 12.|Delivery Declaration|SI|BS|
-13.|[FAS Report](sdd/FAS.md)|SI|BS|
+13.|[FAS Report](SDD/FAS.md)|SI|BS|
 14.|KRD Report|SI|BS|
 15.|BST Report|SI|BS|
 16.|Export G/L and VAT|SI|Adacta|
-17.|[Detail Trial Balance Extended](sdd/DetailTrialBalanceExtended.md)|HR|Adacta|
-18.|[Unpaid Receivables](sdd/UnpaidReceivables.md)|HR|Adacta|
+17.|[Detail Trial Balance Extended](SDD/DetailTrialBalanceExtended.md)|HR|Adacta|
+18.|[Unpaid Receivables](SDD/UnpaidReceivables.md)|HR|Adacta|
 19.|Sales Documents||Adacta|
-20.|[Fiscalization](sdd/Fiscalization.md)|HR,SI|Adacta|
+20.|[Fiscalization](SDD/Fiscalization.md)|HR,SI|Adacta|
 
 ## Object Range
 

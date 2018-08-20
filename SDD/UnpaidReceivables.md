@@ -39,13 +39,13 @@ No.|Type|Object ID|Name
 
 ## Data Flow before changes
 
-<img src=".\Images\DataFlow_UnapidReceivables.png" width="500">
+<img src=".\img\DataFlow_UnapidReceivables.png" width="500">
 
 Standard posting of General Journal Line goes trought Codeunit 12 and creates several transaction records in different table among them are: 17,21,254.
 
 ## Data Flow after changes
 
-<img src=".\Images\DataFlow_UnapidReceivables_New.png" width="500">
+<img src=".\img\DataFlow_UnapidReceivables_New.png" width="500">
 
 For unpaid receivables user will enter additional data (Original Document Amount (LCY) and Original VAT Amount (LCY)) in General Journal Line. During posting process it will post additional entries into tables: 17,21,254.
 
