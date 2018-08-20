@@ -28,10 +28,12 @@ codeunit 50149 "VAT Date Tests-adl"
   var
     Customer : Record Customer;
     SalesInvoicePage : TestPage "Sales Invoice";
+    SalesHeader : Record "Sales Header";
     SalesLine : Record "Sales Line";
     ItemNo : Code[20];
     Currency : Record Currency;
     DocumentNo : Code[20];
+    PostedDocumentNo : Code[20];
   begin
     // Setup
     Initialize;
@@ -48,6 +50,10 @@ codeunit 50149 "VAT Date Tests-adl"
     SalesInvoicePage."Currency Code".VALUE(Currency.Code);
     DocumentNo := SalesInvoicePage."No.".VALUE;
     SalesInvoicePage.CLOSE;
+    
+    SalesHeader.SetCurrentKey("Document Type","No.");
+    SalesHeader .GET(SalesHeader."Document Type"::Invoice, DocumentNo);
+    PostedDocumentNo := LibrarySales.PostSalesDocument(SalesHeader,FALSE,TRUE);
 
     //VerifyCurrencyInSalesLine(SalesLine."Document Type"::Invoice,DocumentNo,Resource."No.",Currency.Code);
   end;
