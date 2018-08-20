@@ -7,5 +7,11 @@ tableextension 50103 "Sales Invoice Header-adl" extends "Sales Invoice Header" /
             DataClassification = ToBeClassified;
             Caption = 'VAT Date';
         }
+        field(50101; "Postponed VAT-adl"; Option)
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Postponed VAT';
+            OptionMembers = "Realized VAT","Postponed VAT";
+        }
     }
 }

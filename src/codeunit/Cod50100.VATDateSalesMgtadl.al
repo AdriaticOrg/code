@@ -19,4 +19,14 @@ codeunit 50100 "VAT Date-Sales Mgt-adl"
     begin
         VATEntry."VAT Date-adl" := GenJournalLine."VAT Date-adl";
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'Posting Date', false, false)]
+    local procedure OnAfterValidateEventPostingDate(var Rec: Record "Sales Header"; var xRec: Record "Sales Header"; CurrFieldNo: Integer)
+    begin
+        if Confirm(UpdateVatDate, false) then
+            Rec."VAT Date-adl" := Rec."Posting Date";
+    end;
+
+    var
+        UpdateVatDate: TextConst ENU = '<qualifier>Change</qualifier><payload>Do you want to change VAT Date <emphasize>Headline1</emphasize>.</payload>';
 }

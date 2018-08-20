@@ -1,4 +1,4 @@
-pageextension 50104 "VAT Entries-adl" extends "VAT Entries" //315
+pageextension 50102 "VAT Entries-adl" extends "VAT Entries" //315
 {
     layout
     {
