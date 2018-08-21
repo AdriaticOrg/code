@@ -5,5 +5,7 @@ node_modules
 *.app
 npm-debug.log
 .alpackages
-.vscode
-launch.json
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
