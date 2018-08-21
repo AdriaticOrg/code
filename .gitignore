@@ -6,4 +6,4 @@ node_modules
 npm-debug.log
 .alpackages
 .vscode/*
-!.vscode/launch.json
+!.vscode/launch.json.default
