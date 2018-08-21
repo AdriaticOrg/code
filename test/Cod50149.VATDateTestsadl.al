@@ -41,19 +41,19 @@ codeunit 50149 "VAT Date Tests-adl"
     LibrarySales.CreateCustomer(Customer);
     ItemNo := LibraryInventory.CreateItemNo();
 
-    SalesInvoicePage.OpenEdit();
-    SalesInvoicePage.New();
-    SalesInvoicePage."Sell-to Customer No.".Value(Customer."No.");
-    SalesInvoicePage.SalesLines.Type.VALUE(FORMAT(SalesLine.Type::Item));
-    SalesInvoicePage.SalesLines."No.".VALUE(ItemNo);
-    SalesInvoicePage.SalesLines.Quantity.VALUE(FORMAT(LibraryRandom.RandInt(5)));
-    SalesInvoicePage."Currency Code".VALUE(Currency.Code);
-    DocumentNo := SalesInvoicePage."No.".VALUE;
-    SalesInvoicePage.CLOSE;
+    // SalesInvoicePage.OpenEdit();
+    // SalesInvoicePage.New();
+    // SalesInvoicePage."Sell-to Customer No.".Value(Customer."No.");
+    // SalesInvoicePage.SalesLines.Type.VALUE(FORMAT(SalesLine.Type::Item));
+    // SalesInvoicePage.SalesLines."No.".VALUE(ItemNo);
+    // SalesInvoicePage.SalesLines.Quantity.VALUE(FORMAT(LibraryRandom.RandInt(5)));
+    // SalesInvoicePage."Currency Code".VALUE(Currency.Code);
+    // DocumentNo := SalesInvoicePage."No.".VALUE;
+    // SalesInvoicePage.CLOSE;
     
-    SalesHeader.SetCurrentKey("Document Type","No.");
-    SalesHeader .GET(SalesHeader."Document Type"::Invoice, DocumentNo);
-    PostedDocumentNo := LibrarySales.PostSalesDocument(SalesHeader,FALSE,TRUE);
+    // SalesHeader.SetCurrentKey("Document Type","No.");
+    // SalesHeader .GET(SalesHeader."Document Type"::Invoice, DocumentNo);
+    // PostedDocumentNo := LibrarySales.PostSalesDocument(SalesHeader,FALSE,TRUE);
 
     //VerifyCurrencyInSalesLine(SalesLine."Document Type"::Invoice,DocumentNo,Resource."No.",Currency.Code);
   end;
