@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
-  "id": "59cbc296-8a13-4249-a0a1-415f90ebbcfe",
-  "name": "VATDateProject",
-=======
   "id": "06044fb1-e4fe-4612-bbab-8deb02c9c1ac",
   "name": "VATDate",
->>>>>>> 45ddf7001e34a5b2d46ca0060252286904df8923
   "publisher": "Default publisher",
   "brief": "",
   "description": "",
@@ -18,15 +13,6 @@
   "capabilities": [],
   "dependencies": [],
   "screenshots": [],
-<<<<<<< HEAD
-  "platform": "11.0.0.0",
-  "application": "11.0.0.0",
-  "idRange": {
-    "from": 50100,
-    "to": 50249
-  },
-  "runtime": "Latest"
-=======
   "platform": "12.0.0.0",
   "application": "12.0.0.0",
   "test": "12.0.0.0",
@@ -34,5 +20,4 @@
     "from": 50100,
     "to": 50149
   }
->>>>>>> 45ddf7001e34a5b2d46ca0060252286904df8923
 }
