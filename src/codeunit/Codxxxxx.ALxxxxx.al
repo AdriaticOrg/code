@@ -1,4 +1,4 @@
-codeunit 50100 "Codxxxxx.ALxxxxx-adl-hr"
+codeunit 50100 "Cod50100OverAndUncollSubHR-adl"
 {   
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterPostVAT', '', false, false)]
     local procedure OnAfterPostVAT()
@@ -21,9 +21,7 @@ codeunit 50100 "Codxxxxx.ALxxxxx-adl-hr"
         //GenJournalLine."Original Document Amount (LCY)";
         //GenJournalLine."Original VAT Amount (LCY)";
 
-
-        /*
-        CustomerLdgEntry.RESET;
+        /*CustomerLdgEntry.RESET;
         CustomerLdgEntry.SETCURRENTKEY("Journal Template Name","Journal Batch Name","Line No.");
         CustomerLdgEntry.SETRANGE("Journal Template Name",GenJnlLine."Journal Template Name");
         CustomerLdgEntry.SETRANGE("Journal Batch Name",GenJnlLine."Journal Batch Name");

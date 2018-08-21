@@ -1,4 +1,4 @@
-tableextension 50100 "Gen. Journal Line-adl-hr" extends "Gen. Journal Line"
+tableextension 50100 "GenJournalLineHR-adl" extends "Gen. Journal Line"
 {
     fields
     {
