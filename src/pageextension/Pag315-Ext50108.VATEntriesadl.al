@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pageextension 50108 "VATEntries-adl" extends "VAT Entries"  //315
 {
     layout
@@ -14,4 +15,19 @@ pageextension 50108 "VATEntries-adl" extends "VAT Entries"  //315
         }
     }
     
+=======
+pageextension 50108 "VATEntries-adl" extends "VAT Entries" //315
+{
+    layout
+    {
+        addafter("Posting Date")
+        {
+            field("VAT Date-adl"; "VAT Date-adl")
+            {
+                ApplicationArea = All;
+                Importance = Additional;
+            }
+        }
+    }
+>>>>>>> 45ddf7001e34a5b2d46ca0060252286904df8923
 }
