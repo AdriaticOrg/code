@@ -1,17 +1,16 @@
-tableextension 50101 "Gen. Journal Line-adl" extends "Gen. Journal Line" // 81
+tableextension 50102 "Sales Cr.Memo Header-adl" extends "Sales Cr.Memo Header" //114
 {
     fields
     {
         field(50100; "VAT Date-adl"; Date)
         {
-            DataClassification = CustomerContent;
             Caption = 'VAT Date';
-            Editable = False;
+            DataClassification = ToBeClassified;
         }
         field(50101; "Postponed VAT-adl"; Option)
         {
-            DataClassification = ToBeClassified;
             Caption = 'Postponed VAT';
+            DataClassification = ToBeClassified;
             OptionMembers = "Realized VAT","Postponed VAT";
         }
     }

@@ -1,11 +1,12 @@
-tableextension 50103 "Sales Invoice Header-adl" extends "Sales Invoice Header" //112
+tableextension 50106 "GenJournalLine-adl" extends "Gen. Journal Line" // 81
 {
     fields
     {
         field(50100; "VAT Date-adl"; Date)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Caption = 'VAT Date';
+            Editable = False;
         }
         field(50101; "Postponed VAT-adl"; Option)
         {

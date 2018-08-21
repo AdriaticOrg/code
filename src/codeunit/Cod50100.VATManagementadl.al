@@ -1,4 +1,4 @@
-codeunit 50100 "VAT Date-Sales Mgt-adl"
+codeunit 50100 "VAT Management-adl"
 {
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterInitRecord', '', true, true)]
     local procedure SalesHeaderOnAfterInitRecord(var SalesHeader: Record "Sales Header")

@@ -1,4 +1,4 @@
-pageextension 50104 "VAT Posting Setup-adl" extends "VAT Posting Setup" //472
+pageextension 50109 "VATPostingSetup-adl" extends "VAT Posting Setup" //472
 {
     layout
     {

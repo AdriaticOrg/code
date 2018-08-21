@@ -1,16 +1,17 @@
-tableextension 50104 "Sales Cr.Memo Header-adl" extends "Sales Cr.Memo Header" //114
+tableextension 50107 "VATEntry-adl" extends "VAT Entry" // 254
 {
     fields
     {
         field(50100; "VAT Date-adl"; Date)
         {
+            DataClassification = CustomerContent;
             Caption = 'VAT Date';
-            DataClassification = ToBeClassified;
+            Editable = False;
         }
         field(50101; "Postponed VAT-adl"; Option)
         {
-            Caption = 'Postponed VAT';
             DataClassification = ToBeClassified;
+            Caption = 'Postponed VAT';
             OptionMembers = "Realized VAT","Postponed VAT";
         }
     }
