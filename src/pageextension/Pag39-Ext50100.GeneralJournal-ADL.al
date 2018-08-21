@@ -1,5 +1,5 @@
 
-pageextension 50100 "General Journal-adl-hr" extends "General Journal" 
+pageextension 50100 "GeneralJournalHR-adl" extends "General Journal" 
 {
     layout
     {
