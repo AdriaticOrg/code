@@ -3,25 +3,25 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="code">
     <body>
       <group id="body">
-        <trans-unit id="PageExtension 3914270744 - Control 638919759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 1548119283 - Control 638919759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original Document Amount (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-adl-hr - Control Original Document Amount (LCY) - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GeneralJournalHR-adl - Control Original Document Amount (LCY) - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 3914270744 - Control 687513795 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 1548119283 - Control 687513795 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original VAT Amount (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-adl-hr - Control Original VAT Amount (LCY) - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GeneralJournalHR-adl - Control Original VAT Amount (LCY) - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2471699322 - Field 638919759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1259445535 - Field 638919759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original Document Amount (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line-adl-hr - Field Original Document Amount (LCY) - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJournalLineHR-adl - Field Original Document Amount (LCY) - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2471699322 - Field 687513795 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1259445535 - Field 687513795 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original VAT Amount (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line-adl-hr - Field Original VAT Amount (LCY) - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJournalLineHR-adl - Field Original VAT Amount (LCY) - Property Caption</note>
         </trans-unit>
       </group>
     </body>
