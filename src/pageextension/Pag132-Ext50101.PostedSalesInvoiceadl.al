@@ -7,7 +7,12 @@ pageextension 50101 "PostedSalesInvoice-adl" extends "Posted Sales Invoice" //13
             field("VAT Date-adl"; "VAT Date-adl")
             {
                 ApplicationArea = All;
-                Importance = Additional;
+                Editable = false;
+            }
+            field("Postponed VAT-adl"; "Postponed VAT-adl")
+            {
+                ApplicationArea = All;
+                Editable = false;
             }
         }
     }

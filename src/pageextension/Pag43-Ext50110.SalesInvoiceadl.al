@@ -1,4 +1,4 @@
-pageextension 50100 "ExtSalesOrder-adl" extends "Sales Order" //42
+pageextension 50110 "SalesInvoice-adl" extends "Sales Invoice" //43
 {
     layout
     {
@@ -7,8 +7,12 @@ pageextension 50100 "ExtSalesOrder-adl" extends "Sales Order" //42
             field("VAT Date-adl"; "VAT Date-adl")
             {
                 ApplicationArea = All;
-                Importance = Additional;
+            }
+            field("Postponed VAT-adl"; "Postponed VAT-adl")
+            {
+                ApplicationArea = All;
             }
         }
     }
+
 }

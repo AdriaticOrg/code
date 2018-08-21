@@ -1,4 +1,4 @@
-pageextension 50102 "PostedSalesCreditMemo-adl" extends "Posted Sales Credit Memo" //134
+pageextension 50100 "SalesOrder-adl" extends "Sales Order" //42
 {
     layout
     {
@@ -7,12 +7,10 @@ pageextension 50102 "PostedSalesCreditMemo-adl" extends "Posted Sales Credit Mem
             field("VAT Date-adl"; "VAT Date-adl")
             {
                 ApplicationArea = All;
-                Editable = false;
             }
             field("Postponed VAT-adl"; "Postponed VAT-adl")
             {
                 ApplicationArea = All;
-                Editable = false;
             }
         }
     }
