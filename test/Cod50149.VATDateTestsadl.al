@@ -86,6 +86,7 @@ codeunit 50149 "VAT Date Tests-adl"
 
     //TODO: Unhandled UI: Confirm
     //Confirm.Test = T.SalesHeader.DocumentNotPostedClosePageQst ( not public )
+    
     SalesInvoicePage.CLOSE;
 
     //Error('VATDate.dbg.21');
