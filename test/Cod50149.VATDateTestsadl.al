@@ -5,8 +5,13 @@ codeunit 50149 "VAT Date Tests-adl"
   TestPermissions = Disabled;
 
   var
-    Initialized : Boolean;
+    isInitialized : Boolean;
     Assert : Codeunit Assert;
+    LibraryVariableStorage : Codeunit "Library - Variable Storage";
+    LibrarySetupStorage : Codeunit "Library - Setup Storage";
+    LibraryApplicationArea : Codeunit "Library - Application Area";
+    LibraryPatterns : Codeunit "Library - Patterns";
+    LibraryERMCountryData : Codeunit "Library - ERM Country Data";
     LibraryRandom : Codeunit "Library - Random";
     LibraryERM : Codeunit "Library - ERM";
     LibrarySales : Codeunit "Library - Sales";
@@ -16,18 +21,42 @@ codeunit 50149 "VAT Date Tests-adl"
   var
     //CompanyInfo : Record 79;
   begin
-    IF Initialized THEN
+    LibraryVariableStorage.Clear;
+    LibrarySetupStorage.Restore;
+    //??SalesHeader.DontNotifyCurrentUserAgain(SalesHeader.GetModifyBillToCustomerAddressNotificationId);
+    //??SalesHeader.DontNotifyCurrentUserAgain(SalesHeader.GetModifyCustomerAddressNotificationId);
+
+    IF isInitialized THEN
       EXIT;
 
-    Initialized := TRUE;
+    LibraryApplicationArea.EnableFoundationSetup;
+    
+    LibraryPatterns.SETNoSeries;
+    LibrarySales.SetPostedNoSeriesInSetup;
+
+    LibraryERMCountryData.CreateVATData;
+    LibraryERMCountryData.UpdateGeneralLedgerSetup;
+    LibraryERMCountryData.UpdateSalesReceivablesSetup;
+    LibraryERMCountryData.UpdateGeneralPostingSetup;
+    LibrarySetupStorage.Save(DATABASE::"Sales & Receivables Setup");
+    LibrarySetupStorage.Save(DATABASE::"General Ledger Setup");
+
+    isInitialized := TRUE;
   end;
 
+  [ConfirmHandler]
+  procedure ConfirmHandler(ConfirmMessage: Text[1024]; var Result: Boolean);
+  BEGIN
+    Result := TRUE;
+  END;
+
   [Test]
-  //[HandlerFunctions('AccountSetupPageModalPageHandler,ConfirmHandler,SelectPaymentServiceTypeHandler')]
+  [HandlerFunctions('ConfirmHandler')]
   procedure UpdateVATDateOnSalesInvoicePage();
   var
     Customer : Record Customer;
     SalesInvoicePage : TestPage "Sales Invoice";
+    UnitOfMeasure : Record "Unit of Measure";
     SalesHeader : Record "Sales Header";
     SalesLine : Record "Sales Line";
     ItemNo : Code[20];
@@ -39,17 +68,27 @@ codeunit 50149 "VAT Date Tests-adl"
     Initialize;
 
     LibrarySales.CreateCustomer(Customer);
+    LibraryInventory.FindUnitOfMeasure(UnitOfMeasure);
     ItemNo := LibraryInventory.CreateItemNo();
 
-    // SalesInvoicePage.OpenEdit();
-    // SalesInvoicePage.New();
-    // SalesInvoicePage."Sell-to Customer No.".Value(Customer."No.");
-    // SalesInvoicePage.SalesLines.Type.VALUE(FORMAT(SalesLine.Type::Item));
-    // SalesInvoicePage.SalesLines."No.".VALUE(ItemNo);
-    // SalesInvoicePage.SalesLines.Quantity.VALUE(FORMAT(LibraryRandom.RandInt(5)));
-    // SalesInvoicePage."Currency Code".VALUE(Currency.Code);
-    // DocumentNo := SalesInvoicePage."No.".VALUE;
-    // SalesInvoicePage.CLOSE;
+    SalesInvoicePage.OpenEdit();
+    SalesInvoicePage.New();
+    //Error('VATDate.dbg.1');
+    SalesInvoicePage."Sell-to Customer No.".Value(Customer."No.");
+    //TODO: The field with ID = 2 is not found on the page. ( ApplicationArea #Advanced )
+    //SalesInvoicePage.SalesLines.Type.VALUE(FORMAT(SalesLine.Type::Item));
+    SalesInvoicePage.SalesLines."No.".VALUE(ItemNo);
+    SalesInvoicePage.SalesLines.Quantity.VALUE(FORMAT(LibraryRandom.RandInt(5)));
+    SalesInvoicePage."Currency Code".VALUE(Currency.Code);
+
+    //TODO: The field with ID = 2 is not found on the page.
+    //DocumentNo := SalesInvoicePage."No.".VALUE;
+
+    //TODO: Unhandled UI: Confirm
+    //Confirm.Test = T.SalesHeader.DocumentNotPostedClosePageQst ( not public )
+    SalesInvoicePage.CLOSE;
+
+    //Error('VATDate.dbg.21');
     
     // SalesHeader.SetCurrentKey("Document Type","No.");
     // SalesHeader .GET(SalesHeader."Document Type"::Invoice, DocumentNo);
