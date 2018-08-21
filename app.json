@@ -1,0 +1,26 @@
+{
+  "id": "28de131c-7ae5-440f-8513-f7b51be1219a",
+  "name": "code",
+  "publisher": "Default publisher",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "12.0.0.0",
+  "application": "12.0.0.0",
+  "test": "12.0.0.0",
+  "target": "Extension",
+  "features": ["TranslationFile"],
+  "showMyCode": true,
+  "idRange": {
+    "from": 50100,
+    "to": 50149
+  }
+}
