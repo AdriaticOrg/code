@@ -1,12 +1,15 @@
 # Code repository
-Code for Localization
 
-Moja izmjena.
+**.gitignore**
 
-Drazen izmena...
-
-Drazen izmena 2...
-
-Drazen izmena 3...
-
-izmena jelica test
+```
+build
+out
+node_modules
+*.vsix
+*.app
+npm-debug.log
+.alpackages
+.vscode/*
+!.vscode/launch.json.default
+```
