@@ -74,6 +74,7 @@ codeunit 50100 "VAT Management-adl"
     local procedure GenJournalLineOnAfterValidateDocumentDate(SalesHeader: Record "Sales Header"; var GenJournalLine: Record "Gen. Journal Line")
     begin
         GenJournalLine."VAT Date-adl" := SalesHeader."VAT Date-adl";
+        GenJournalLine."Postponed VAT-adl" := SalesHeader."Postponed VAT-adl";
     end;
 
     //OnAfterCopyFromGenJnlLine
@@ -81,6 +82,7 @@ codeunit 50100 "VAT Management-adl"
     local procedure ValueEntrynAfterCopyFromGenJnlLine(VAR VATEntry: Record "VAT Entry"; GenJournalLine: Record "Gen. Journal Line")
     begin
         VATEntry."VAT Date-adl" := GenJournalLine."VAT Date-adl";
+        VATEntry."Postponed VAT-adl" := GenJournalLine."Postponed VAT-adl";
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'Posting Date', false, false)]
