@@ -73,7 +73,7 @@ codeunit 50149 "VAT Date Tests-adl"
 
     SalesInvoicePage.OpenEdit();
     SalesInvoicePage.New();
-    //Error('VATDate.dbg.1');
+    //Error('VATDate.dbg.123');
     SalesInvoicePage."Sell-to Customer No.".Value(Customer."No.");
     //TODO: The field with ID = 2 is not found on the page. ( ApplicationArea #Advanced )
     //SalesInvoicePage.SalesLines.Type.VALUE(FORMAT(SalesLine.Type::Item));
