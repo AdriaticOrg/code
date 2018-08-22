@@ -1,8 +1,8 @@
-pageextension 50104 "PurchaseInvoice-adl" extends "Purchase Invoice"  //51
+pageextension 50110 "SalesInvoice-adl" extends "Sales Invoice" //43
 {
     layout
     {
-        addlast(General)
+        addafter("Posting Date")
         {
             field("VAT Date-adl"; "VAT Date-adl")
             {
@@ -14,4 +14,5 @@ pageextension 50104 "PurchaseInvoice-adl" extends "Purchase Invoice"  //51
             }
         }
     }
+
 }

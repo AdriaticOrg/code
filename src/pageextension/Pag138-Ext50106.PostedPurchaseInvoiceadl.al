@@ -2,16 +2,16 @@ pageextension 50106 "PostedPurchaseInvoice-adl" extends "Posted Purchase Invoice
 {
     layout
     {
-        addlast(General){
-            field("VAT Date -adl"; "VAT Date -adl")
+        addlast(General)
+        {
+            field("VAT Date -adl"; "VAT Date-adl")
             {
                 ApplicationArea = All;
             }
-            field("Postponed VAT -adl"; "Postponed VAT -adl")
+            field("Postponed VAT -adl"; "Postponed VAT-adl")
             {
                 ApplicationArea = All;
             }
         }
     }
-    
 }

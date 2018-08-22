@@ -1,8 +1,8 @@
-pageextension 50104 "PurchaseInvoice-adl" extends "Purchase Invoice"  //51
+pageextension 50111 "SalesCreditMemo-adl" extends "Sales Credit Memo" //44
 {
     layout
     {
-        addlast(General)
+        addafter("Posting Date")
         {
             field("VAT Date-adl"; "VAT Date-adl")
             {

@@ -2,11 +2,11 @@ tableextension 50108 "VATPostingSetup-adl" extends "VAT Posting Setup"  //325
 {
     fields
     {
-        field(50000; "Purch VAT Postponed Account -adl"; Code[20])
+        field(50000; "Purch VAT Postponed Account-adl"; Code[20])
         {
             Caption = 'Purch VAT Postponed Account';
         }
-        field(50001; "Sales VAT Postponed Account -adl"; Code[20])
+        field(50001; "Sales VAT Postponed Account-adl"; Code[20])
         {
             Caption = 'Sales VAT Postponed Account';
         }

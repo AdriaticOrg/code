@@ -1,12 +1,11 @@
-tableextension 50107 "VATEntry-adl" extends "VAT Entry" //254
+tableextension 50101 "Sales Invoice Header-adl" extends "Sales Invoice Header" //112
 {
     fields
     {
         field(50100; "VAT Date-adl"; Date)
         {
-            DataClassification = CustomerContent;
+            DataClassification = ToBeClassified;
             Caption = 'VAT Date';
-            Editable = False;
         }
         field(50101; "Postponed VAT-adl"; Option)
         {

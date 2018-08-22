@@ -1,12 +1,15 @@
-tableextension 50107 "VATEntry-adl" extends "VAT Entry" //254
+tableextension 50100 "Sales Header-adl" extends "Sales Header" //36
 {
     fields
     {
         field(50100; "VAT Date-adl"; Date)
         {
-            DataClassification = CustomerContent;
+            DataClassification = ToBeClassified;
             Caption = 'VAT Date';
-            Editable = False;
+            trigger OnValidate()
+            begin
+                "VAT Date-adl" := "Posting Date";
+            end;
         }
         field(50101; "Postponed VAT-adl"; Option)
         {
@@ -15,4 +18,5 @@ tableextension 50107 "VATEntry-adl" extends "VAT Entry" //254
             OptionMembers = "Realized VAT","Postponed VAT";
         }
     }
+
 }
