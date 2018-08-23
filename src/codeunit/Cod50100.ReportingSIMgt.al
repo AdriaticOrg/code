@@ -38,4 +38,11 @@ codeunit 50100 "Reporting SI Mgt."
           end;
         end;      
     end;
+
+    [EventSubscriber(ObjectType::Table,81,'OnAfterAccountNoOnValidateGetCustomerAccount','',false,false)]
+    local procedure GETFASFromCust(VAR GenJournalLine : Record "Gen. Journal Line";VAR Customer : Record Customer)
+    
+    begin
+      GenJournalLine."FAS Sector Code" := Customer."FAS Sector Code";
+    end;
 }
