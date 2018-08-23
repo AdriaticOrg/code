@@ -45,4 +45,18 @@ codeunit 50100 "Reporting SI Mgt."
     begin
       GenJournalLine."FAS Sector Code" := Customer."FAS Sector Code";
     end;
+
+    [EventSubscriber(ObjectType::Table,81,'OnAfterAccountNoOnValidateGetVendorAccount','',false,false)]
+    local procedure GETFASFromVend(VAR GenJournalLine : Record "Gen. Journal Line";VAR Vendor : Record Vendor)
+    
+    begin
+      GenJournalLine."FAS Sector Code" := Vendor."FAS Sector Code";
+    end;
+
+    [EventSubscriber(ObjectType::Table,81,'OnAfterAccountNoOnValidateGetBankAccount','',false,false)]
+    local procedure GETFASFromBank(VAR GenJournalLine : Record "Gen. Journal Line";VAR BankAccount : Record "Bank Account")
+    
+    begin
+      GenJournalLine."FAS Sector Code" := BankAccount."FAS Sector Code";
+    end;    
 }

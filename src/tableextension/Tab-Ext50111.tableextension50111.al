@@ -1,6 +1,5 @@
 tableextension 50111 "tableextension50111" extends "Bank Account" 
 {
-    // version NAVW111.00.00.20783
 
     fields
     {

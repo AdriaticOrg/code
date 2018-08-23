@@ -1,6 +1,7 @@
 table 50101 "FAS Sector"
 {
     Caption = 'FAS Sector';
+    LookupPageId = 50101;
 
     fields
     {

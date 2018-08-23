@@ -1,7 +1,5 @@
 tableextension 50108 "tableextension50108" extends "G/L Entry" 
 {
-    // version NAVW111.00.00.23572
-
     fields
     {
         field(50100;"FAS Instrument Code";Code[10])

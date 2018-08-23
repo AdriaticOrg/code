@@ -1,6 +1,5 @@
 tableextension 50109 "tableextension50109" extends "G/L Account" 
 {
-    // version NAVW111.00
 
     fields
     {

@@ -1,6 +1,7 @@
 table 50100 "FAS Instrument"
 {
     Caption = 'FAS Instrument';
+    LookupPageId = 50100;
 
     fields
     {
