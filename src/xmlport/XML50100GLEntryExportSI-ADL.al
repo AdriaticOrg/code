@@ -13,17 +13,17 @@ xmlport 50100 "GL Entry Export - SI-adl"
     {
          textelement(root)
         {
+            
             tableelement("G/L Account";"G/L Account")
             {
-                RequestFilterFields = "No.";
+                RequestFilterFields = "Date Filter","No.";
                 XmlName = 'GLAccount';
-                SourceTableView = sorting("no.") 
-                                  where("Account Type" = filter(Posting))
-   
-
+                SourceTableView = SORTING("No.") WHERE("Account Type"=FILTER(Posting));
+                  
                 textelement(No)
                 {
                     Width = 10;
+
                 }
                 textelement(Name)
                 {
@@ -32,7 +32,6 @@ xmlport 50100 "GL Entry Export - SI-adl"
 
                 trigger OnAfterGetRecord();
                 begin
-
                 end;
             }
 
@@ -52,7 +51,6 @@ xmlport 50100 "GL Entry Export - SI-adl"
                 {
                     Width = 50;
                 }
-                textattribute()
 
                 trigger OnAfterGetRecord();
                 begin
