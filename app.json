@@ -1,7 +1,7 @@
 {
   "id": "430c1821-0a58-49b9-a448-6aea669ed887",
   "name": "AdriaticOrg",
-  "publisher": "Default publisher",
+  "publisher": "BusinessSolutionsdoo",
   "brief": "",
   "description": "",
   "version": "1.0.0.0",
@@ -9,13 +9,13 @@
   "privacyStatement": "",
   "EULA": "",
   "help": "",
-  "url": "",
+  "url": "www.b-s.si",
   "logo": "",
   "capabilities": [],
   "dependencies": [],
   "screenshots": [],
-  "platform": "11.0.0.0",
-  "application": "11.0.0.0",
+  "platform": "12.0.0.0",
+  "application": "12.0.0.0",
   "idRange": {
     "from": 50100,
     "to": 50149
