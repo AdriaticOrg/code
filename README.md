@@ -6,30 +6,40 @@ Localization features are transferred from Microsoft to Partners after version 4
 
 Supported features:
 
-Ňo.|Feature Name|Country Specific|Responsible Partner|Status
--:|-|-|-|-
-1.|[VAT Date](SDD/VATDate.md)||NPS|Coding
-2.|Internal Correction||GoPro|
-3.|Red reversal Posting||GoPro|
-4.|Forced Debit / Credit Posting||GoPro|
-5.|Full VAT Posting||GoPro|
-6.|[Reverse Charge Posting](SDD/ReverseChargePosting.md)||NPS|Design
-7.|Postponed VAT||NPS|
-8.|Informative VAT|SI|BS|
-9.|Return Orders||Adacta|
-10.|VAT Books||NPS|Testing
-11.|VIES Feature|SI|BS|
-12.|Delivery Declaration|SI|BS|
-13.|[FAS Report](SDD/FAS.md)|SI|BS|
-14.|KRD Report|SI|BS|
-15.|BST Report|SI|BS|
-16.|Export G/L and VAT|SI|Adacta|
-17.|[Detail Trial Balance Extended](SDD/DetailTrialBalanceExtended.md)|HR|Adacta|
-18.|[Unpaid Receivables](SDD/UnpaidReceivables.md)|HR|Adacta|
-19.|Sales Documents||Adacta|
-20.|[Fiscalization](SDD/Fiscalization.md)|HR,SI|Adacta|
+No.|Feature Name|Country Specific|Responsible Partner|Status|Sub-range
+-:|-|-|-|-|-
+1.|[VAT Date](SDD/VATDate.md)||NPS|Coding|13.062.525..13.062.550
+2.|Postponed VAT||NPS|Coding|13.062.525..13.062.550
+3.|Full VAT Posting||GoPro|Coding|13.062.525..13.062.550
+4.|[Reverse Charge Posting](SDD/ReverseChargePosting.md)||NPS|Coding|13.062.525..13.062.550
+5.|Informative VAT|SI|BS|Coding|13.062.551..13.062.560
+6.|Red reversal Posting||GoPro|Coding|13.062.561..13.062.570
+7.|Forced Debit / Credit Posting||GoPro|Coding|13.062.571..13.062.580
+8.|Internal Correction||GoPro|Coding|13.062.581..13.062.590
+9.|Return Orders||Adacta|Design|13.062.591..13.062.600
+10.|VAT Books||NPS|Testing|13.062.591..13.062.600
+11.|VIES Feature|SI|BS|Design
+12.|Delivery Declaration|SI|BS|Design
+13.|[FAS Report](SDD/FAS.md)|SI|BS|Coding
+14.|KRD Report|SI|BS|Design
+15.|BST Report|SI|BS|Design
+16.|Export G/L and VAT|SI|Adacta|Design
+17.|[Detail Trial Balance Extended](SDD/DetailTrialBalanceExtended.md)|HR|Adacta|Design
+18.|[Unpaid Receivables](SDD/UnpaidReceivables.md)|HR|Adacta|Coding
+19.|Sales Documents||Adacta|Design
+20.|[Fiscalization](SDD/Fiscalization.md)|HR,SI|Adacta|Design
 
-## Object Range
+Test Toolset:
+No.|Test name|Responsible Partner|Status|Sub-range
+-|-|-|-|-
+1|VAT|Adacta|Testing|13.063.401..13.063.490
+
+Upgrade:
+No.|Test name|Responsible Partner|Status|Sub-range
+-|-|-|-|-
+1|Reserved|None|Reserved|13.063.491..13.063.500
+
+## Registered Range
 
 Object ranges are used for registering licenses for partners and customers.
 
