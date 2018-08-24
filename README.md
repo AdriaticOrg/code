@@ -18,16 +18,16 @@ No.|Feature Name|Country Specific|Responsible Partner|Status|Sub-range
 8.|Internal Correction||GoPro|Coding|13.062.581..13.062.590
 9.|Return Orders||Adacta|Design|13.062.591..13.062.600
 10.|VAT Books||NPS|Testing|13.062.591..13.062.600
-11.|VIES Feature|SI|BS|Design
-12.|Delivery Declaration|SI|BS|Design
-13.|[FAS Report](SDD/FAS.md)|SI|BS|Coding
-14.|KRD Report|SI|BS|Design
-15.|BST Report|SI|BS|Design
-16.|Export G/L and VAT|SI|Adacta|Design
-17.|[Detail Trial Balance Extended](SDD/DetailTrialBalanceExtended.md)|HR|Adacta|Design
-18.|[Unpaid Receivables](SDD/UnpaidReceivables.md)|HR|Adacta|Coding
-19.|Sales Documents||Adacta|Design
-20.|[Fiscalization](SDD/Fiscalization.md)|HR,SI|Adacta|Design
+11.|VIES Feature|SI|BS|Design|13.062.601..13.062.620
+12.|Delivery Declaration|SI|BS|Design|13.062.621..13.062.640
+13.|[FAS Report](SDD/FAS.md)|SI|BS|Coding|13.062.641..13.062.660
+14.|KRD Report|SI|BS|Design|13.062.661..13.062.680
+15.|BST Report|SI|BS|Design|13.062.681..13.062.700
+16.|Export G/L and VAT|SI|Adacta|Design|13.062.701..13.062.730
+17.|[Detail Trial Balance Extended](SDD/DetailTrialBalanceExtended.md)|HR|Adacta|Design|13.062.731..13.062.740
+18.|[Unpaid Receivables](SDD/UnpaidReceivables.md)|HR|Adacta|Coding|13.062.741..13.062.750
+19.|Sales Documents||Adacta|Design|13.062.751..13.062.780
+20.|[Fiscalization](SDD/Fiscalization.md)|HR,SI|Adacta|Design|13.062.781..13.062.810
 
 Test Toolset:
 No.|Test name|Responsible Partner|Status|Sub-range
