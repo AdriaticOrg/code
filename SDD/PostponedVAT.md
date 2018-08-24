@@ -35,10 +35,11 @@ Posting Date|Amount|Base|Unrealized Amount|Unrealized Base|Remaining Amount|Rema
 
 ## Data Flow
 
-Investigate if event is appropriate to create additional VAT entry:
+Additional entry must be posted at the time of posting Gen. Journal Line. Investigate if event is appropriate to create additional VAT entry via TempGLEntryBuf:
 ``` PAS
 "Gen. Jnl.-Post Line".OnBeforeInsertGLEntryBuffer(TempGLEntryBuf,GenJnlLine);
 ```
+
 ## User Interface
 
 VAT Date should be editable on Posted Sales Cr. Memo as variable. After modifying VAT Date it should trigger posting via Journal. Journal already has VAT Date where user can address his posting.  

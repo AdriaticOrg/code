@@ -9,8 +9,8 @@ Supported features:
 No.|Feature Name|Country Specific|Responsible Partner|Status|Sub-range
 -:|-|-|-|-|-
 1.|[VAT Date](SDD/VATDate.md)||NPS|Coding|13.062.525..13.062.550
-2.|Postponed VAT||NPS|Coding|13.062.525..13.062.550
-3.|Full VAT Posting||GoPro|Coding|13.062.525..13.062.550
+2.|[Postponed VAT](SDD/PostponedVAT.md)||NPS|Coding|13.062.525..13.062.550
+3.|[Full VAT Posting](SDD/FullVATPorting.md)||GoPro|Coding|13.062.525..13.062.550
 4.|[Reverse Charge Posting](SDD/ReverseChargePosting.md)||NPS|Coding|13.062.525..13.062.550
 5.|Informative VAT|SI|BS|Coding|13.062.551..13.062.560
 6.|Red reversal Posting||GoPro|Coding|13.062.561..13.062.570
@@ -23,7 +23,7 @@ No.|Feature Name|Country Specific|Responsible Partner|Status|Sub-range
 13.|[FAS Report](SDD/FAS.md)|SI|BS|Coding|13.062.641..13.062.660
 14.|KRD Report|SI|BS|Design|13.062.661..13.062.680
 15.|BST Report|SI|BS|Design|13.062.681..13.062.700
-16.|Export G/L and VAT|SI|Adacta|Design|13.062.701..13.062.730
+16.|[Export G/L and VAT](SDD/ExportGLandVAT.md)|SI|Adacta|Design|13.062.701..13.062.730
 17.|[Detail Trial Balance Extended](SDD/DetailTrialBalanceExtended.md)|HR|Adacta|Design|13.062.731..13.062.740
 18.|[Unpaid Receivables](SDD/UnpaidReceivables.md)|HR|Adacta|Coding|13.062.741..13.062.750
 19.|Sales Documents||Adacta|Design|13.062.751..13.062.780
