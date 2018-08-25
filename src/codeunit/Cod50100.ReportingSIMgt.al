@@ -9,7 +9,8 @@ codeunit 50100 "Reporting SI Mgt."
     var
       GLAcc: Record "G/L Account";      
     begin
-        if GLAcc.GET(GenJournalLine."Account No.") then begin
+        //Error('you can not post now!');
+        if GLAcc.GET(GlobalGLEntry."G/L Account No.") then begin
           if GLAcc."FAS Account" then begin
             case GLAcc."FAS Instrument Posting" of
               GLAcc."FAS Instrument Posting"::" ":

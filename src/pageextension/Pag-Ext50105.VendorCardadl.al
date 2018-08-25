@@ -1,8 +1,12 @@
-pageextension 50105 "VendorCard-adl" extends "Vendor list"
+pageextension 50105 "VendorCard-adl" extends "Vendor Card"
 {
     layout
     {
-        // Add changes to page layout here
+        addlast(Invoicing) {
+            field("FAS Sector Code";"FAS Sector Code") {
+                ApplicationArea = All;
+            }
+        } 
     }
     
     actions

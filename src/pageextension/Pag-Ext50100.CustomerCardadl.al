@@ -2,10 +2,9 @@ pageextension 50100 "CustomerCard-adl" extends "Customer Card"
 {
     layout
     {
-        addlast(General) {
+        addlast(Invoicing) {
             field("FAS Sector Code";"FAS Sector Code") {
                 ApplicationArea = All;
-
             }
         }    
     }
@@ -13,18 +12,11 @@ pageextension 50100 "CustomerCard-adl" extends "Customer Card"
     actions
     {    
 
-        addfirst(Reporting) {
-            action (ShowSct) {
+        addlast(Documents) {  
+            action("Show Vendors") {
+                RunObject = page "Vendor List";
                 ApplicationArea = All;
-                RunObject = page "FAS Instruments";
-            }
-
-        }
-
-        addlast(Navigation) {
-            action("Show Sectors") {
-                RunObject = page "FAS Sectors";
-            }
+            }            
         }
     }
     
