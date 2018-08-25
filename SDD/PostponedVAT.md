@@ -18,7 +18,7 @@ For posting new entry logic must be placed in two codeunits:
 When posting VAT Entry in standard way (W1) it will produce one line from Document.
 
 ### Sales or Purchase Document
-Posting Date|Document Type|Output Date|VAT Date|VAT %|VAT Amount|
+Posting Date|Document Type|Output Date|VAT Date|VAT %|VAT Amount
 -|-|-|-|-|-|-|-|-
 20.08.18|Sales Cr. Memo||01.09.18|20|-1.000,00
 
