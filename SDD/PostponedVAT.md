@@ -18,16 +18,19 @@ For posting new entry logic must be placed in two codeunits:
 When posting VAT Entry in standard way (W1) it will produce one line from Document.
 
 ### Sales or Purchase Document
+
 Posting Date|Document Type|Output Date|VAT Date|VAT %|VAT Amount
--|-|-|-|-|-|-|-|-
+--|--|--|--|--|--
 20.08.18|Sales Cr. Memo||01.09.18|20|-1.000,00
 
 ### VAT Entry - standard way
+
 Posting Date|Amount|Base|Unrealized Amount|Unrealized Base|Remaining Amount|Remaining Base
 -:|-:|-:|-:|-:|-:|-:
 20.08.18|0,00|0,00|1.000,00|20.000,00|1.000,00|20.000,00
 
 ### VAT Entry - modified way
+
 Posting Date|Amount|Base|Unrealized Amount|Unrealized Base|Remaining Amount|Remaining Base
 -:|-:|-:|-:|-:|-:|-:
 20.08.18|-1.000,00|-20.000,00|-1.000,00|-20.000,00|0,00|0,00
