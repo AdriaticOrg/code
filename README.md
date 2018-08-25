@@ -8,10 +8,10 @@ Supported features:
 
 No.|Feature Name|Country Specific|Responsible Partner|Status|Sub-range
 -:|-|-|-|-|-
-1.|[VAT Date](./sdd/features/VATDate.md)||NPS|Coding|13.062.525..13.062.550
-2.|[Postponed VAT](./sdd/features/PostponedVAT.md)||NPS|Coding|13.062.525..13.062.550
-3.|[Full VAT Posting](./sdd/features/FullVATPorting.md)||GoPro|Coding|13.062.525..13.062.550
-4.|[Reverse Charge Posting](./sdd/features/ReverseChargePosting.md)||NPS|Coding|13.062.525..13.062.550
+1.|[VAT Date](https://github.com/AdriaticOrg/sdd/blob/master/features/VATDate.md)||NPS|Coding|13.062.525..13.062.550
+2.|[Postponed VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/PostponedVAT.md)||NPS|Coding|13.062.525..13.062.550
+3.|[Full VAT Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/FullVATPorting.md)||GoPro|Coding|13.062.525..13.062.550
+4.|[Reverse Charge Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ReverseChargePosting.md)||NPS|Coding|13.062.525..13.062.550
 5.|Informative VAT|SI|BS|Coding|13.062.551..13.062.560
 6.|Red reversal Posting||GoPro|Coding|13.062.561..13.062.570
 7.|Forced Debit / Credit Posting||GoPro|Coding|13.062.571..13.062.580
@@ -20,14 +20,14 @@ No.|Feature Name|Country Specific|Responsible Partner|Status|Sub-range
 10.|VAT Books||NPS|Testing|13.062.591..13.062.600
 11.|VIES Feature|SI|BS|Design|13.062.601..13.062.620
 12.|Delivery Declaration|SI|BS|Design|13.062.621..13.062.640
-13.|[FAS Report](./sdd/features/FAS.md)|SI|BS|Coding|13.062.641..13.062.660
+13.|[FAS Report](https://github.com/AdriaticOrg/sdd/blob/master/features/FAS.md)|SI|BS|Coding|13.062.641..13.062.660
 14.|KRD Report|SI|BS|Design|13.062.661..13.062.680
 15.|BST Report|SI|BS|Design|13.062.681..13.062.700
-16.|[Export G/L and VAT](./sdd/features/ExportGLandVAT.md)|SI|Adacta|Design|13.062.701..13.062.730
-17.|[Detail Trial Balance Extended](./sdd/features/DetailTrialBalanceExtended.md)|HR|Adacta|Design|13.062.731..13.062.740
-18.|[Unpaid Receivables](./sdd/features/UnpaidReceivables.md)|HR|Adacta|Coding|13.062.741..13.062.750
+16.|[Export G/L and VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/ExportGLandVAT.md)|SI|Adacta|Design|13.062.701..13.062.730
+17.|[Detail Trial Balance Extended](https://github.com/AdriaticOrg/sdd/blob/master/features/DetailTrialBalanceExtended.md)|HR|Adacta|Design|13.062.731..13.062.740
+18.|[Unpaid Receivables](https://github.com/AdriaticOrg/sdd/blob/master/features/UnpaidReceivables.md)|HR|Adacta|Coding|13.062.741..13.062.750
 19.|Sales Documents||Adacta|Design|13.062.751..13.062.780
-20.|[Fiscalization](./sdd/features/Fiscalization.md)|HR,SI|Adacta|Design|13.062.781..13.062.810
+20.|[Fiscalization](https://github.com/AdriaticOrg/sdd/blob/master/features/Fiscalization.md)|HR,SI|Adacta|Design|13.062.781..13.062.810
 
 Test Toolset:
 No.|Test name|Responsible Partner|Status|Sub-range
