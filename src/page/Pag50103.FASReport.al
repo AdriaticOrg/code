@@ -36,6 +36,19 @@ page 50103 "FAS Report"
                 field("User ID";"User ID") {
                     ApplicationArea = All;
                 }
+
+                field("Last Suggest on Date";"Last Suggest on Date") {
+                    ApplicationArea = All;
+                }
+                field("Last Suggest at Time";"Last Suggest at Time") {
+                    ApplicationArea = All;
+                }
+                field("Last Export on Date";"Last Export on Date") {
+                    ApplicationArea = All;
+                }
+                field("Last Export at Time";"Last Export at Time") {
+                    ApplicationArea = All;
+                }
                 field(Status;Status) {
                     ApplicationArea = All;
                 }

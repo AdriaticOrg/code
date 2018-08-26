@@ -1,4 +1,4 @@
-tableextension 50111 "tableextension50111" extends "Bank Account" 
+tableextension 50111 "BankAccount-adl" extends "Bank Account" 
 {
 
     fields

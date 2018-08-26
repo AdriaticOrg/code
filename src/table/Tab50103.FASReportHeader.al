@@ -37,7 +37,7 @@ table 50103 "FAS Report Header"
                 Year:Integer;
             begin
                 Year := Date2DMY("Period Start Date",3);
-                "Period Round" := Year;
+                "Period Year" := Year;
             end;
         }
         field(11; "Period End Date"; Date)
@@ -63,6 +63,32 @@ table 50103 "FAS Report Header"
             Editable = false;
             DataClassification = ToBeClassified;
         }
+
+        field(16; "Last Suggest on Date"; Date)
+        {
+            Caption = 'Last Suggest on Date';
+            Editable = false;
+            DataClassification = ToBeClassified;
+        }
+        field(17; "Last Suggest at Time"; Time)
+        {
+            Caption = 'Last Suggest at Time';
+            Editable = false;
+            DataClassification = ToBeClassified;
+        }
+        field(18; "Last Export on Date"; Date)
+        {
+            Caption = 'Last Export on Date';
+            Editable = false;
+            DataClassification = ToBeClassified;
+        }
+        field(19; "Last Export at Time"; Time)
+        {
+            Caption = 'Last Export at Time';
+            Editable = false;
+            DataClassification = ToBeClassified;
+        }              
+        
         field(20; "Status"; Option)
         {
             OptionMembers = "Open","Realesed";

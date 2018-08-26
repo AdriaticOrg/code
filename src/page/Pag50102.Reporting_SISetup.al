@@ -14,30 +14,12 @@ page 50102 "Reporting_SI Setup"
                 field("FAS Report No. Series";"FAS Report No. Series") {
                     ApplicationArea = All;
                 }
-                field("FAS Resp. Name";"FAS Resp. Name") {
+                field("FAS Resp. User ID";"FAS Resp. User ID") {
                     ApplicationArea = All;
                 }
-                field("FAS Resp. Email";"FAS Resp. Email") {
+                field("FAS Prep. By User ID";"FAS Prep. By User ID") {
                     ApplicationArea = All;
                 }
-                field("FAS Resp. Phone";"FAS Resp. Phone") {
-                    ApplicationArea = All;
-                }
-                field("FAS Resp. Position";"FAS Resp. Position") {
-                    ApplicationArea = All;
-                }
-                field("FAS Prep. By Name";"FAS Prep. By Name") {
-                    ApplicationArea = All;
-                }
-                field("FAS Prep. By Email";"FAS Prep. By Email") {
-                    ApplicationArea = All;
-                }
-                field("FAS Prep. By Phone";"FAS Prep. By Phone") {
-                    ApplicationArea = All;
-                }
-                field("FAS Prep. By Position";"FAS Prep. By Position") {
-                    ApplicationArea = All;
-                }  
             }
             group(KRD){
                 field("KRD Report No. Series";"KRD Report No. Series") {

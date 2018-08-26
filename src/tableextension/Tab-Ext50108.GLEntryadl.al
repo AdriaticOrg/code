@@ -1,6 +1,5 @@
-tableextension 50112 "tableextension50112" extends "Gen. Journal Line" 
+tableextension 50108 "GLEntry-adl" extends "G/L Entry" 
 {
-
     fields
     {
         field(50100;"FAS Instrument Code";Code[10])

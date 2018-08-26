@@ -6,6 +6,9 @@ pageextension 50105 "VendorCard-adl" extends "Vendor Card"
             field("FAS Sector Code";"FAS Sector Code") {
                 ApplicationArea = All;
             }
+            field("FAS Non-Residnet Sector Code";"FAS Non-Residnet Sector Code") {
+                ApplicationArea = All;
+            }
         } 
     }
     

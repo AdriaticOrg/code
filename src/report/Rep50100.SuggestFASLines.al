@@ -24,7 +24,13 @@ report 50100 "Suggest FAS Lines"
             end;
 
             trigger OnPostDataItem()
+            var
+                FASRepHead:Record "FAS Report Header";
             begin
+                FASRepHead.Get(FASRepDocNo);
+                FASRepHead."Last Suggest on Date" := Today;
+                FASRepHead."Last Suggest at Time" := time;
+                FASRepHead.Modify(true);
                 Message(Msg01);
             end;
             
