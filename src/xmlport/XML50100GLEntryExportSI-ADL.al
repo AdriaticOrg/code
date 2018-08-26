@@ -1,4 +1,4 @@
-xmlport 60000 "GLExportSI-adl"
+xmlport 50100 "GL Export SI-adl"
 {
     // version NAVW112.30
 
