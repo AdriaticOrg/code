@@ -55,6 +55,7 @@ page 50103 "FAS Report"
             action("Suggest Lines")
             {
                 Caption = 'Suggest Lines';
+                Promoted = true;
                 ApplicationArea = All;
                 //RunObject = report 50100;      
 
@@ -69,6 +70,40 @@ page 50103 "FAS Report"
                     RepSuggestLines.RunModal();
                 end;
                       
+            }
+            action("Export Report") {
+                Caption = 'Export Report';
+                Promoted = true;
+                ApplicationArea = All;
+                //RunObject = report "Export FAS";
+
+                trigger OnAction()
+                var
+                    FASRepHead:Record "FAS Report Header";
+                begin
+                    FASRepHead := Rec;
+                    FASRepHead.SetRecFilter();
+                    Report.RunModal(report::"Export FAS",true,false,FASRepHead);
+                end;
+            }
+
+            action("Export Report 2") {
+                Caption = 'Export Report 2';
+                Promoted = true;
+                ApplicationArea = All;
+
+                trigger OnAction()
+                var
+                    FASRepHead2:Record "FAS Report Header";
+                    FASXmlPort:XmlPort ExportFAS2;
+                begin
+                    FASRepHead2 := Rec;
+                    FASRepHead2.SetRecFilter();
+                    FASXmlPort.SetParams(FASRepHead2);
+                    FASXmlPort.Filename('fas.xml');
+                    //FASXmlPort.Export();
+                    FASXmlPort.Run();
+                end;
             }
             action("Release") {
                 Caption = 'Release';
