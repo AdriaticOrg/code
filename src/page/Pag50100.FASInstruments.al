@@ -4,6 +4,8 @@ page 50100 "FAS Instruments"
     PageType = List;
     DelayedInsert = true;
     SourceTable = "FAS Instrument";
+    UsageCategory = Administration;
+    ApplicationArea = All;
     
     layout
     {
@@ -29,7 +31,7 @@ page 50100 "FAS Instruments"
                 {
                     Editable = false;
                     ApplicationArea = All;
-                }
+                  }
                 field(Indentation;Indentation)
                 {
                     Editable = false;

@@ -9,7 +9,7 @@ table 50102 "Reporting_SI Setup"
             Caption = 'Primary Key';
             DataClassification = ToBeClassified;
         }
-        field(10;"FAS Report No. Series";Code[10]) {
+        field(10;"FAS Report No. Series";Code[20]) {
             Caption = 'FAS Report No. Series';
             DataClassification = ToBeClassified;
             TableRelation = "No. Series";
@@ -54,7 +54,7 @@ table 50102 "Reporting_SI Setup"
             DataClassification = ToBeClassified;
         }    
 
-        field(20;"KRD Report No. Series";Code[10]) {
+        field(20;"KRD Report No. Series";Code[20]) {
             Caption = 'KRD Report No. Series';
             DataClassification = ToBeClassified;
             TableRelation = "No. Series";
