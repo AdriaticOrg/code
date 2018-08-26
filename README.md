@@ -30,14 +30,16 @@ No.|Feature Name|Country Specific|Responsible Partner|Status|Sub-range
 20.|[Fiscalization](https://github.com/AdriaticOrg/sdd/blob/master/features/Fiscalization.md)|HR,SI|Adacta|Design|13.062.781..13.062.810
 
 Test Toolset:
+
 No.|Test name|Responsible Partner|Status|Sub-range
--|-|-|-|-
-1|VAT|Adacta|Testing|13.063.401..13.063.490
+--:|---------|-------------------|------|---------
+1.|VAT|Adacta|Testing|13.063.401..13.063.490
 
 Upgrade:
+
 No.|Test name|Responsible Partner|Status|Sub-range
--|-|-|-|-
-1|Reserved|None|Reserved|13.063.491..13.063.500
+--:|---------|-------------------|------|---------
+1.|Reserved|None|Reserved|13.063.491..13.063.500
 
 ## Registered Range
 
