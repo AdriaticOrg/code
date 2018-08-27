@@ -4,59 +4,59 @@
     <body>
       <group id="body">
         <trans-unit id="Codeunit 3311536690 - NamedType 924275788" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Export to %1</source>
+          <source>File %1 was succesfully prepared.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit TextWriter-adl - NamedType Msg001</note>
         </trans-unit>
-        <trans-unit id="Report 2470420395 - ReportLabel 1947827686" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 2470420395 - NamedType 1947827686" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - ReportLabel AccountNoLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType AccountNoLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2470420395 - ReportLabel 1981706351" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 2470420395 - NamedType 1981706351" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - ReportLabel NameLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType NameLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2470420395 - ReportLabel 1027969698" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posting Date</source>
+        <trans-unit id="Report 2470420395 - NamedType 1027969698" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post.Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - ReportLabel PostingDateLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType PostingDateLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2470420395 - ReportLabel 1155328579" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Document Date</source>
+        <trans-unit id="Report 2470420395 - NamedType 1155328579" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Doc.Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - ReportLabel DocumentDateLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType DocumentDateLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2470420395 - ReportLabel 3218659204" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 2470420395 - NamedType 1721277456" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - ReportLabel lDocumentNoLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType DocumentNoLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2470420395 - ReportLabel 961827798" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 2470420395 - NamedType 961827798" size-unit="char" translate="yes" xml:space="preserve">
           <source>Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - ReportLabel TypeLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType TypeLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2470420395 - ReportLabel 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 2470420395 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - ReportLabel DescriptionLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType DescriptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2470420395 - ReportLabel 775175188" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 2470420395 - NamedType 775175188" size-unit="char" translate="yes" xml:space="preserve">
           <source>Debit Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - ReportLabel DebitAmountLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType DebitAmountLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2470420395 - ReportLabel 499154677" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 2470420395 - NamedType 499154677" size-unit="char" translate="yes" xml:space="preserve">
           <source>Credit Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - ReportLabel CreditAmountLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType CreditAmountLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2470420395 - ReportLabel 2898143332" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 2470420395 - NamedType 4046088670" size-unit="char" translate="yes" xml:space="preserve">
           <source>Note</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - ReportLabel Note</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType NoteLbl</note>
         </trans-unit>
         <trans-unit id="XmlPort 2179491323 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>GLExportSI-adl</source>

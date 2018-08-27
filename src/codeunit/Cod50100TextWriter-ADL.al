@@ -12,16 +12,17 @@ codeunit 50100 "TextWriter-adl"
         ToFilter:= '*.txt|*.TXT';
         FileName:= 'IZPIS GLAVNE KNJIGE.TXT';
         PadCharacter:= ' ';
+        FieldDelimiter:= ';';
 
         Create(OutStr);        
-        FixedField(OutStr, 'Value1.1', 10, PadCharacter, 0);
-        FixedField(OutStr, 1000, 20, PadCharacter, 0);
-        FixedField(OutStr, 'Value1.3', 30, PadCharacter, 0);
+        FixedField(OutStr, 'Value1.1', 10, PadCharacter, 0, FieldDelimiter);
+        FixedField(OutStr, 1000, 20, PadCharacter, 0, FieldDelimiter);
+        FixedField(OutStr, 'Value1.3', 30, PadCharacter, 0, FieldDelimiter);
         NewLine(OutStr);
         
-        FixedField(OutStr, 'Value2.1', 10, PadCharacter, 0);
-        FixedField(OutStr, 1000, 20, PadCharacter, 0);
-        FixedField(OutStr, 'Value2.3', 30, PadCharacter, 0);
+        FixedField(OutStr, 'Value2.1', 10, PadCharacter, 0, FieldDelimiter);
+        FixedField(OutStr, 1000, 20, PadCharacter, 0, FieldDelimiter);
+        FixedField(OutStr, 'Value2.3', 30, PadCharacter, 0, FieldDelimiter);
         NewLine(OutStr);
 
         Download(DialogTitle, ToFilter, FileName);
@@ -33,22 +34,36 @@ codeunit 50100 "TextWriter-adl"
         TmpBlobTemp.Blob.CreateOutStream(outStr, TextEncoding::Windows);
     end;
 
-    procedure Field(var OutStr: OutStream; Value: variant);
-    begin     
-        OutStr.WriteText(FORMAT(Value)); 
+    procedure Field(var OutStr: OutStream; Value: variant; FieldDelimiter: Text[1]);
+    begin 
+        if (FieldDelimiter <> '') then   
+            OutStr.WriteText(FORMAT(Value) + FieldDelimiter)
+        else
+            OutStr.WriteText(FORMAT(Value));
+
     end;
 
-    procedure FixedField(var OutStr: OutStream; Value: variant; Length: integer; PadCharacter: Text[1]; Justification: Option Right, Left);
+    procedure FixedField(var OutStr: OutStream; Value: variant; Length: integer; PadCharacter: Text[1]; Justification: Option Right, Left; FIeldDelimiter: Text[1]);
     var 
         TextVal: Text[250];
     begin
-        TextVal:= FORMAT(Value); 
-        OutStr.WriteText(
+        if (Value.IsDate()) then
+            TextVal:= Format(Value,0, '<day,2><month,2><year,2>')
+        else if (Value.IsDecimal()) then 
+            TextVal:= Format(Value, 0, '<Precision,2><Standard Format,9>')
+        else
+            TextVal:= Format(Value);    
+
+        TextVal:= 
             StringConversionManagement.GetPaddedString(
                 TextVal,
                 Length,
                 PadCharacter,
-                Justification)); 
+                Justification); 
+
+        if (FieldDelimiter <> '') then
+            TextVal+= FIeldDelimiter;
+        OutStr.WriteText(TextVal);
     end;
 
     procedure NewLine(var OutStr: OutStream);
@@ -64,7 +79,6 @@ codeunit 50100 "TextWriter-adl"
     procedure Close();
     begin
         //TODO:: (if needed)
-
     end;
 
     procedure Download(DialogTitle: Text; ToFilter: Text; FileName: Text);
@@ -72,10 +86,10 @@ codeunit 50100 "TextWriter-adl"
         InStr: InStream;
         ExpOk: Boolean;
     begin
-        TmpBlobTemp.Blob.CreateInStream(InStr, TextEncoding::UTF8);
+        TmpBlobTemp.Blob.CreateInStream(InStr, TextEncoding::Windows);
         File.DownloadFromStream(InStr, DialogTitle, '', ToFilter, FileName);
-        ExpOk := File.DownloadFromStream(InStr, DialogTitle, '', ToFilter, FileName);
-        IF ExpOk then
+        IsDownloadedsucceed:= File.DownloadFromStream(InStr, DialogTitle, '', ToFilter, FileName);
+        IF IsDownloadedsucceed then
             Message(Msg001, FileName);
     end;
 
@@ -89,7 +103,8 @@ codeunit 50100 "TextWriter-adl"
         TmpBlobTemp: Record TempBlob temporary;
         FileMgt:Codeunit "File Management";
         StringConversionManagement: Codeunit StringConversionManagement;
-        ExpOk: Boolean;
-        Msg001:Label 'Export to %1';
+        IsDownloadedsucceed: Boolean;
+        Msg001:Label 'File %1 was succesfully prepared.';
+        FieldDelimiter: Text[1];
 
 }
