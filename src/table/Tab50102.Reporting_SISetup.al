@@ -25,6 +25,18 @@ table 50102 "Reporting_SI Setup"
             TableRelation = "User Setup";
             DataClassification = ToBeClassified;            
         }
+
+        field(16; "Budget User Code"; Code[10])
+        {
+            Caption = 'Budget User Code';
+            DataClassification = ToBeClassified;
+        }    
+        field(17; "Company Sector Code"; Code[10])
+        {
+            Caption = 'Company Sector Code';
+            TableRelation = "FAS Sector";
+            DataClassification = ToBeClassified;                        
+        }    
         
         field(20;"KRD Report No. Series";Code[20]) {
             Caption = 'KRD Report No. Series';
@@ -41,7 +53,12 @@ table 50102 "Reporting_SI Setup"
             Caption = 'KRD Prep. By User ID';
             TableRelation = "User Setup";
             DataClassification = ToBeClassified;            
-        }               
+        }   
+        field(50;"FAS Director User ID";Text[100]) {
+            Caption = 'FAS Director User ID';
+            TableRelation = "User Setup";
+            DataClassification = ToBeClassified;            
+        }            
             
     }
     

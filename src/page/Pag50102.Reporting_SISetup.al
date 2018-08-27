@@ -20,6 +20,15 @@ page 50102 "Reporting_SI Setup"
                 field("FAS Prep. By User ID";"FAS Prep. By User ID") {
                     ApplicationArea = All;
                 }
+                field("FAS Director User ID";"FAS Director User ID") {
+                    ApplicationArea = All;
+                }
+                field("Budget User Code";"Budget User Code") {
+                    ApplicationArea = All;
+                }
+                field("Company Sector Code";"Company Sector Code") {
+                    ApplicationArea = All;
+                }
             }
             group(KRD){
                 field("KRD Report No. Series";"KRD Report No. Series") {

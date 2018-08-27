@@ -11,7 +11,7 @@ report 50102 "Export FAS"
             RequestFilterFields = "No.";
             trigger OnPostDataItem()
             begin
-                ExportFAS();                
+                ExportFAS("FAS Report Header");                
             end;
         }
     }
@@ -28,10 +28,6 @@ report 50102 "Export FAS"
                     {
                         Caption = 'Export File';
                         ApplicationArea = All;                        
-                    }
-                    field(ExpFileName;ExpFileName) {
-                        Caption = 'Export File Name';
-                        ApplicationArea = All;
                     }
                 }
             }
@@ -52,34 +48,147 @@ report 50102 "Export FAS"
 
     var
         ExpFile:Boolean;
-        ExpFileName:Text[500];
+        RepSISetup:Record "Reporting_SI Setup";
+        CompanyInfo:Record "Company Information";
+        RespUserSetup:Record "User Setup";
+        MngUserSetup:Record "User Setup";
         Msg001:TextConst ENU='Export to %1 done OK.';
 
-    local procedure ExportFAS()
+    local procedure ExportFAS(FASRepHead:Record "FAS Report Header")
     var
-        FileMgt:Codeunit "File Management";
+        RepSIMgt:Codeunit "Reporting SI Mgt.";
         XmlDoc:XmlDocument;
         XmlDec: XmlDeclaration;
-        XmlElem: XmlElement;
-        XmlElem2: XmlElement;                            
+        XmlElem: array[10] of XmlElement;
+        XmlAttr:XmlAttribute;
         OutStr:OutStream;
         InStr:InStream;
         TmpBlob:Record TempBlob temporary;
         FileName: Text; 
-        ExpOk: Boolean;    
+        ExpOk: Boolean; 
+        i:Integer;   
+        StatId:text[10];
+
     begin
+        FASRepHead.TestField("Period Year");
+        FASRepHead.TestField("Period Round");        
+
+        RespUserSetup.get(FASRepHead."Resp. User ID");
+        RespUserSetup.TestField("Reporting_SI Name");
+        RespUserSetup.TestField("Reporting_SI Email");
+        RespUserSetup.TestField("Reporting_SI Phone");    
+
+        RepSISetup.get;
+        RepSISetup.TestField("Budget User Code");
+        RepSISetup.TestField("Company Sector Code");
+
+        MngUserSetup.get(RepSISetup."FAS Director User ID"); 
+        MngUserSetup.TestField("Reporting_SI Name");       
+
+        CompanyInfo.get;
+        CompanyInfo.TestField("Registration No.");
+        CompanyInfo.TestField("VAT Registration No.");
+        CompanyInfo.TestField(Name);
+        CompanyInfo.TestField(Address);
+        CompanyInfo.TestField(City);
+
         XmlDoc := xmlDocument.Create();
-        XmlDec := xmlDeclaration.Create('1.0', 'UTF-8', '');
+        //XmlDec := xmlDeclaration.Create('1.0', 'UTF-8', '');
+        XmlDec := XmlDeclaration.Create('1.0','WINDOWS-1250','');
         XmlDoc.SetDeclaration(XmlDec);
 
-        XmlElem := xmlElement.Create('root');
-        XmlElem.SetAttribute('release', '2.1');
+        XmlElem[1] := xmlElement.Create('AjpesDokument');
+        XmlDoc.Add(xmlElem[1]);
+        //XmlAttr := XmlAttribute.Create('xmlns','http://www.w3.org/2001/XMLSchema-instance');
+        //XmlElem[1].Add(XmlAttr);
+        //XmlElem[1].SetAttribute('xmlns','http://www.w3.org/2001/XMLSchema-instance');
+        
+        XmlElem[2] := XmlElement.Create('Ident');
+        XmlElem[1].Add(xmlElem[2]);
+        XmlAttr := XmlAttribute.Create('krog',format(FASRepHead."Period Round"));
+        XmlElem[2].Add(XmlAttr);
+        XmlAttr := XmlAttribute.Create('Vrsta','sfr_' + FORMAT(DATE2DMY(FASRepHead."Period End Date",3)));
+        XmlElem[2].Add(XmlAttr);        
 
-        XmlElem2 := XmlElement.Create('FirstNode');
-        XmlElem2.Add(xmlText.Create('Max'));
+        XmlElem[3] := XmlElement.Create('Datum');
+        XmlElem[2].Add(XmlElem[3]);
+        XmlElem[3].Add(xmlText.Create(FORMAT(WORKDATE,0,9)));
+        
+        XmlElem[3] := XmlElement.Create('Ura');
+        XmlElem[2].Add(XmlElem[3]);
+        XmlElem[3].add(XmlText.Create(FORMAT(TIME, 0, '<Hours24,2><Filler Character,0>:<Minutes,2>:<Seconds,2>')));
+                        
+        XmlElem[2] := XmlElement.Create('OsnoviPodatki');
+        XmlElem[1].Add(xmlElem[2]);
 
-        XmlElem.Add(xmlElem2);
-        XmlDoc.Add(xmlElem);
+        XmlElem[3] := XmlElement.Create('SifUpor');
+        XmlElem[2].Add(XmlElem[3]);  
+        XmlElem[3].add(XmlText.Create(RepSISetup."Budget User Code"));      
+
+        XmlElem[3] := XmlElement.Create('MaticnaStevilka10');
+        XmlElem[2].Add(XmlElem[3]); 
+        XmlElem[3].add(XmlText.Create(PADSTR(CompanyInfo."Registration No.", 10, '0')));
+
+        XmlElem[3] := XmlElement.Create('DavcnaStevilka');
+        XmlElem[2].Add(XmlElem[3]);   
+        XmlElem[3].add(XmlText.Create(RepSIMgt.GetNumsFromStr(CompanyInfo."VAT Registration No.")));
+
+        XmlElem[3] := XmlElement.Create('Sektor');
+        XmlElem[2].Add(XmlElem[3]);   
+        XmlElem[3].add(XmlText.Create(RepSIMgt.GetNumsFromStr(RepSISetup."Company Sector Code")));                
+
+        XmlElem[3] := XmlElement.Create('Ime');
+        XmlElem[2].Add(XmlElem[3]);   
+        XmlElem[3].add(XmlText.Create(CompanyInfo.Name)); 
+
+        XmlElem[3] := XmlElement.Create('Sedez');
+        XmlElem[2].Add(XmlElem[3]);   
+        XmlElem[3].add(XmlText.Create(STRSUBSTNO('%1 %2 %3', CompanyInfo.Address, CompanyInfo."Address 2", CompanyInfo.City)));
+
+        XmlElem[3] := XmlElement.Create('OdgovornaOseba');
+        XmlElem[2].Add(XmlElem[3]);   
+        XmlElem[3].add(XmlText.Create(RespUserSetup."Reporting_SI Name")); 
+
+        XmlElem[3] := XmlElement.Create('TelefonskaStevilka');
+        XmlElem[2].Add(XmlElem[3]);   
+        XmlElem[3].add(XmlText.Create( RespUserSetup."Reporting_SI Phone"));
+
+        XmlElem[3] := XmlElement.Create('Email');
+        XmlElem[2].Add(XmlElem[3]);   
+        XmlElem[3].add(XmlText.Create(RespUserSetup."Reporting_SI Email"));
+
+        XmlElem[3] := XmlElement.Create('VodjaPodjetja');
+        XmlElem[2].Add(XmlElem[3]);  
+        XmlElem[3].add(XmlText.Create(MngUserSetup."Reporting_SI Name"));
+
+        XmlElem[3] := XmlElement.Create('Datum');        
+        XmlElem[2].Add(XmlElem[3]);   
+        XmlElem[3].add(XmlText.Create(FORMAT(WORKDATE,0,9)));
+
+        XmlElem[3] := XmlElement.Create('Kraj');
+        XmlElem[2].Add(XmlElem[3]);   
+        XmlElem[3].add(XmlText.Create(CompanyInfo.City));
+
+        XmlElem[2] := XmlElement.Create('Obrazci');
+        XmlElem[1].Add(xmlElem[2]);    
+
+        for i := 1 to 6 do begin
+            XmlElem[3] := XmlElement.Create('Obrazec');
+            XmlElem[2].Add(XmlElem[3]);
+            XmlAttr := XmlAttribute.Create('krog',format(FASRepHead."Period Round"));
+            XmlElem[3].Add(XmlAttr); 
+
+            case i of
+                1: StatId := 'sfr';
+                2: StatId := 'sob';
+                3: StatId := 'trs';
+                4: StatId := 'tob';
+                5: StatId := 'vsfr';
+                6: StatId := 'vsob';
+            END;            
+            XmlAttr := XmlAttribute.Create('id',StatId);
+            XmlElem[3].Add(XmlAttr);                          
+        end;         
 
         // Create an out stream from the blob, notice the encoding.
         TmpBlob.Blob.CreateOutStream(outStr, TextEncoding::UTF8);
@@ -89,10 +198,10 @@ report 50102 "Export FAS"
         TmpBlob.Blob.CreateInStream(inStr, TextEncoding::UTF8);
     
         // Save the data of the InStream as a file.
-        //ExpOk :=File.DownloadFromStream(InStr, 'Export To File', '', '*.xml|*.XML', FileName);   
+        //ExpOk :=File.DownloadFromStream(InStr, 'Export To File', '', '*.xml|*.XML', FileName);  
+        FileName := 'fas_' + format(FASRepHead."Period Year") + '_' + format(FASRepHead."Period Round") + '.xml'; 
         ExpOk := File.DownloadFromStream(InStr,'Save To File','','All Files (*.*)|*.*',FileName);   
 
-        FileName := 'fajl.xml';
         Message(Msg001,FileName);
 
         /*TempFile.CREATETEMPFILE();  
@@ -101,7 +210,6 @@ report 50102 "Export FAS"
         ToFileName := 'SampleFile.txt';  
         DOWNLOADFROMSTREAM(NewStream,'Export','','All Files (*.*)|*.*',ToFileName) 
         */
-
     end;
 
 }

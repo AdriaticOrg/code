@@ -28,13 +28,11 @@ report 50103 "Suggest KRD Lines"
             end;
 
             trigger OnPostDataItem()
-            begin
-                /*KRDRepHead.Get(FASRepDocNo);
+            begin                
                 KRDRepHead."Last Suggest on Date" := Today;
-                FASRepHead."Last Suggest at Time" := time;
-                FASRepHead.Modify(true);
-                Message(Msg01);                */
-                
+                KRDRepHead."Last Suggest at Time" := time;
+                KRDRepHead.Modify(true);
+                Message(Msg01);                 
             end;
 
             trigger OnAfterGetRecord()
@@ -88,6 +86,7 @@ report 50103 "Suggest KRD Lines"
         KRDRepHead:Record "KRD Report Header";
         InitialRep:Boolean;
         NewLineNo:Integer;
+        Msg01:TextConst ENU='Processgin complete';
     procedure SetKRDRepDocNo(KRDDocNoLcl:Code[20]) 
     begin
         KRDRepDocNo := KRDDocNoLcl;        

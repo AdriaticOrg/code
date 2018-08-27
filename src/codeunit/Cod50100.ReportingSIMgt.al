@@ -103,4 +103,20 @@ codeunit 50100 "Reporting SI Mgt."
     begin
       GenJournalLine."FAS Sector Code" := BankAccount."FAS Sector Code";
     end;    
+
+  procedure GetNumsFromStr(Str:Text): text
+  var
+    i:Integer;
+    retstr:Text;
+    chr:Text[1];
+  begin
+
+    FOR i := 1 TO STRLEN(Str) DO BEGIN
+      chr := CopyStr(Str,i,1);
+      IF chr IN ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] THEN
+        retstr += chr;
+    END;
+
+    exit(retstr);
+  end;
 }
