@@ -37,6 +37,9 @@ page 50106 "KRD Report Subform"
                 field("Currency Code";"Currency Code") {
                     ApplicationArea = All;
                 }
+                field("Other Changes";"Other Changes") {
+                    ApplicationArea = All;
+                }
                 field("Currency No.";"Currency No.") {
                     ApplicationArea = All;
                 }

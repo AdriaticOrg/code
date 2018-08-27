@@ -21,7 +21,6 @@ table 50106 "KRD Report Line"
             Caption = 'Description';
             DataClassification = ToBeClassified;
         }
-
         field(10; "Affiliation Type"; Code[10])
         {
             Caption = 'Affiliation Type';
@@ -70,6 +69,11 @@ table 50106 "KRD Report Line"
             Caption = 'Currency No.';
             DataClassification = ToBeClassified;
         }
+        field(20; "Other Changes"; Boolean)
+        {
+            Caption = 'Other Changes';
+            DataClassification = ToBeClassified;
+        }         
         field(30; "Opening Balance"; Decimal)
         {
             Caption = 'Opening Balance';
@@ -79,11 +83,21 @@ table 50106 "KRD Report Line"
         {
             Caption = 'Increase Amount';
             DataClassification = ToBeClassified;
+
+            trigger OnValidate()
+            begin
+                ValidateClosingBal();                
+            end;
         }
         field(32; "Decrease Amount"; Decimal)
         {
             Caption = 'Decrease Amount';
             DataClassification = ToBeClassified;
+
+            trigger OnValidate()
+            begin
+                ValidateClosingBal();
+            end;
         }
         field(33; "Closing Balance"; Decimal)
         {
@@ -99,5 +113,10 @@ table 50106 "KRD Report Line"
             Clustered = true;
         }
     }
+
+    var local procedure ValidateClosingBal()
+    begin
+        "Closing Balance" := "Opening Balance" + "Increase Amount" - "Decrease Amount";
+    end;
     
 }

@@ -9,7 +9,6 @@ report 50102 "Export FAS"
         dataitem("FAS Report Header"; "FAS Report Header")
         {
             RequestFilterFields = "No.";
-
             trigger OnPostDataItem()
             begin
                 ExportFAS();                

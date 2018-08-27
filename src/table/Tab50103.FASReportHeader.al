@@ -117,7 +117,7 @@ table 50103 "FAS Report Header"
         }
     }
 
-    trigger OnInsert()
+    trigger OnInsert()    
     begin
         RepSISetup.GET ;
         IF "No." = '' THEN BEGIN

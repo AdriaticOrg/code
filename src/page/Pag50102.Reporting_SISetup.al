@@ -31,7 +31,6 @@ page 50102 "Reporting_SI Setup"
                 field("KRD Prep. By User ID";"KRD Prep. By User ID") {
                     ApplicationArea = All;
                 }
-
             }
         }
     }

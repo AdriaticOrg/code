@@ -76,14 +76,13 @@ page 50107 "KRD Report"
 
                 trigger OnAction()
                 var
-                    RepSuggestLines:Report "Suggest FAS Lines";
-                begin
-                    /*
+                    RepSuggestLines:Report "Suggest KRD Lines";
+                begin                    
                     TestField("No.");
                     TestField("Period Start Date");
                     TestField("Period End Date");
-                    RepSuggestLines.SetFASRepDocNo("No.");
-                    RepSuggestLines.RunModal();*/
+                    RepSuggestLines.SetKRDRepDocNo("No.");
+                    RepSuggestLines.RunModal();
                 end;
                       
             }
