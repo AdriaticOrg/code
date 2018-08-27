@@ -5,7 +5,7 @@ xmlport 50100 "GL Export SI-adl"
     Caption = 'GLExportSI-adl';
     Direction = Export;
     FieldDelimiter = '<>';
-    FileName = 'IZPIS GLAVNE KNJIGE.TXT ';
+    FileName = 'IZPIS GLAVNE KNJIGE.TXT';
     Format = VariableText;
     TableSeparator = '<NewLine>';
     TextEncoding = WINDOWS;
