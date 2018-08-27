@@ -25,6 +25,12 @@ page 50102 "Reporting_SI Setup"
                 field("KRD Report No. Series";"KRD Report No. Series") {
                     ApplicationArea = All;
                 }
+                field("KRD Resp. User ID";"KRD Resp. User ID") {
+                    ApplicationArea = All;
+                }
+                field("KRD Prep. By User ID";"KRD Prep. By User ID") {
+                    ApplicationArea = All;
+                }
 
             }
         }

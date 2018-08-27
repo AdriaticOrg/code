@@ -5,7 +5,7 @@ codeunit 50100 "Reporting SI Mgt."
     end;
   
     [EventSubscriber(ObjectType::Codeunit,12,'OnBeforeInsertGlobalGLEntry','',false,false)]
-    local procedure PostFAS(VAR GlobalGLEntry : Record "G/L Entry";GenJournalLine : Record "Gen. Journal Line")
+    local procedure GLEntryInsert(VAR GlobalGLEntry : Record "G/L Entry";GenJournalLine : Record "Gen. Journal Line")
     var
       GLAcc: Record "G/L Account";      
     begin
@@ -39,6 +39,49 @@ codeunit 50100 "Reporting SI Mgt."
           end;
         end;      
     end;
+
+    [EventSubscriber(ObjectType::Codeunit,12,'OnAfterInitCustLedgEntry','', false, false)]
+    local procedure CustLedgEntryInsert(VAR CustLedgerEntry : Record "Cust. Ledger Entry";GenJournalLine : Record "Gen. Journal Line")
+    var
+      Cust:Record Customer;
+      CustPstgGrp:Record "Customer Posting Group";
+
+    begin
+      if Cust.get(CustLedgerEntry."Customer No.") then begin
+        CustLedgerEntry."FAS Country/Region Code" := Cust."Country/Region Code";
+        CustLedgerEntry."FAS Sector Code" := Cust."FAS Sector Code";
+        CustLedgerEntry."FAS Non-Residnet Sector Code" := Cust."FAS Non-Residnet Sector Code";
+      end;
+
+      if CustPstgGrp.get(CustLedgerEntry."Customer Posting Group") then begin
+        CustLedgerEntry."FAS Instrument Type" := CustPstgGrp."FAS Instrument Type";
+        CustLedgerEntry."FAS Affiliation Type" := CustPstgGrp."FAS Affiliation Type";
+        CustLedgerEntry."FAS Claim/Liability" := CustPstgGrp."FAS Claim/Liability";
+        CustLedgerEntry."FAS Maturity" := CustPstgGrp."FAS Maturity";
+      end;
+      
+    end;
+     [EventSubscriber(ObjectType::Codeunit,12,'OnAfterInitVendLedgEntry','', false, false)]
+    local procedure VendLedgEntryInsert(VAR VendorLedgerEntry : Record "Vendor Ledger Entry";GenJournalLine : Record "Gen. Journal Line")
+    var
+      Vend:Record Vendor;
+      VendPstgGrp:Record "Vendor Posting Group";
+
+    begin
+      if Vend.get(VendorLedgerEntry."Vendor No.") then begin
+        VendorLedgerEntry."FAS Country/Region Code" := Vend."Country/Region Code";
+        VendorLedgerEntry."FAS Sector Code" := Vend."FAS Sector Code";
+        VendorLedgerEntry."FAS Non-Residnet Sector Code" := Vend."FAS Non-Residnet Sector Code";
+      end;
+
+      if VendPstgGrp.get(VendorLedgerEntry."Vendor Posting Group") then begin
+        VendorLedgerEntry."FAS Instrument Type" := VendPstgGrp."FAS Instrument Type";
+        VendorLedgerEntry."FAS Affiliation Type" := VendPstgGrp."FAS Affiliation Type";
+        VendorLedgerEntry."FAS Claim/Liability" := VendPstgGrp."FAS Claim/Liability";
+        VendorLedgerEntry."FAS Maturity" := VendPstgGrp."FAS Maturity";
+      end;
+      
+    end;    
 
     [EventSubscriber(ObjectType::Table,81,'OnAfterAccountNoOnValidateGetCustomerAccount','',false,false)]
     local procedure GETFASFromCust(VAR GenJournalLine : Record "Gen. Journal Line";VAR Customer : Record Customer)

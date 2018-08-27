@@ -1,10 +1,10 @@
-page 50103 "FAS Report"
+page 50107 "KRD Report"
 {
     PageType = Document;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = "FAS Report Header";
-    Caption = 'FAS Report';
+    SourceTable = "KRD Report Header";
+    Caption = 'KRD Report';
     
     layout
     {
@@ -27,16 +27,9 @@ page 50103 "FAS Report"
                 field("Period End Date";"Period End Date") {
                     ApplicationArea = All;
                 }
-                field("Period Year";"Period Year") {
-                    ApplicationArea = All;
-                }
-                field("Period Round";"Period Round") {
-                    ApplicationArea = All;
-                }
                 field("User ID";"User ID") {
                     ApplicationArea = All;
                 }
-
                 field("Last Suggest on Date";"Last Suggest on Date") {
                     ApplicationArea = All;
                 }
@@ -56,12 +49,15 @@ page 50103 "FAS Report"
                 field("Prep. By User ID";"Prep. By User ID") {
                     ApplicationArea = All;
                 }
+                field("Previous Report No.";"Previous Report No.") {
+                    ApplicationArea = All;
+                }
                 field(Status;Status) {
                     ApplicationArea = All;
                 }
                 
             }
-            part(Subpage;50104) {
+            part(Subpage;50106) {
                 SubPageLink = "Document No." = field("No.");
                 ApplicationArea = All;
             }
@@ -76,53 +72,33 @@ page 50103 "FAS Report"
             {
                 Caption = 'Suggest Lines';
                 Promoted = true;
-                ApplicationArea = All;
-                //RunObject = report 50100;      
+                ApplicationArea = All;    
 
                 trigger OnAction()
                 var
                     RepSuggestLines:Report "Suggest FAS Lines";
                 begin
+                    /*
                     TestField("No.");
                     TestField("Period Start Date");
                     TestField("Period End Date");
                     RepSuggestLines.SetFASRepDocNo("No.");
-                    RepSuggestLines.RunModal();
+                    RepSuggestLines.RunModal();*/
                 end;
                       
             }
             action("Export Report") {
                 Caption = 'Export Report';
                 Promoted = true;
-                ApplicationArea = All;
-                //RunObject = report "Export FAS";
+                ApplicationArea = All;                
 
                 trigger OnAction()
                 var
-                    FASRepHead:Record "FAS Report Header";
+                    KRDRepHead:Record "KRD Report Header";
                 begin
-                    FASRepHead := Rec;
-                    FASRepHead.SetRecFilter();
-                    Report.RunModal(report::"Export FAS",true,false,FASRepHead);
-                end;
-            }
-
-            action("Export Report 2") {
-                Caption = 'Export Report 2';
-                Promoted = true;
-                ApplicationArea = All;
-
-                trigger OnAction()
-                var
-                    FASRepHead2:Record "FAS Report Header";
-                    FASXmlPort:XmlPort ExportFAS2;
-                begin
-                    FASRepHead2 := Rec;
-                    FASRepHead2.SetRecFilter();
-                    FASXmlPort.SetParams(FASRepHead2);
-                    FASXmlPort.Filename('fas.xml');
-                    //FASXmlPort.Export();
-                    FASXmlPort.Run();
+                    KRDRepHead := Rec;
+                    KRDRepHead.SetRecFilter();
+                    //Report.RunModal(report::"Export FAS",true,false,KRDRepHead);
                 end;
             }
             action("Release") {

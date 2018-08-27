@@ -30,7 +30,18 @@ table 50102 "Reporting_SI Setup"
             Caption = 'KRD Report No. Series';
             DataClassification = ToBeClassified;
             TableRelation = "No. Series";
-        }            
+        }     
+        field(22;"KRD Resp. User ID";Text[100]) {
+            Caption = 'KRD Resp. User ID';
+            TableRelation = "User Setup";
+            DataClassification = ToBeClassified;            
+        }
+        
+        field(25;"KRD Prep. By User ID";Text[100]) {
+            Caption = 'KRD Prep. By User ID';
+            TableRelation = "User Setup";
+            DataClassification = ToBeClassified;            
+        }               
             
     }
     

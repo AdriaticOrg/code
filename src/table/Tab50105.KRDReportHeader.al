@@ -1,6 +1,6 @@
-table 50103 "FAS Report Header"
+table 50105 "KRD Report Header"
 {    
-    Caption = 'FAS Report Header';
+    Caption = 'KRD Report Header';
     DataClassification = ToBeClassified;
     
     fields
@@ -31,28 +31,10 @@ table 50103 "FAS Report Header"
         {
             Caption = 'Period Start Date';
             DataClassification = ToBeClassified;
-
-            trigger OnValidate()
-            var
-                Year:Integer;
-            begin
-                Year := Date2DMY("Period Start Date",3);
-                "Period Year" := Year;
-            end;
         }
         field(11; "Period End Date"; Date)
         {
             Caption = 'Period End Date';
-            DataClassification = ToBeClassified;
-        }
-        field(12; "Period Year"; Integer)
-        {
-            Caption = 'Period Year';
-            DataClassification = ToBeClassified;
-        }
-        field(13; "Period Round"; Integer)
-        {
-            Caption = 'Period Round';
             DataClassification = ToBeClassified;
         }
                 
@@ -96,6 +78,13 @@ table 50103 "FAS Report Header"
             Editable = false;
             DataClassification = ToBeClassified;
         }  
+
+        field(30; "Previous Report No."; Code[20])
+        {
+            Caption = 'Previous Report No.';
+            TableRelation = "KRD Report Header";
+            DataClassification = ToBeClassified;
+        }     
         field(40;"Resp. User ID";Text[100]) {
             Caption = 'Resp. User ID';
             TableRelation = "User Setup";
@@ -105,8 +94,7 @@ table 50103 "FAS Report Header"
             Caption = 'Prep. By User ID';
             TableRelation = "User Setup";
             DataClassification = ToBeClassified;            
-        }             
-
+        }                   
     }
     
     keys
@@ -125,12 +113,12 @@ table 50103 "FAS Report Header"
             NoSeriesMgt.InitSeries(GetNoSeriesCode,xRec."No. Series",0D,"No.","No. Series");
         END;
 
-        RepSISetup.TestField("FAS Prep. By User ID");
-        RepSISetup.TestField("FAS Resp. User ID");
+        RepSISetup.TestField("KRD Prep. By User ID");
+        RepSISetup.TestField("KRD Resp. User ID");
 
-        "Prep. By User ID" := RepSISetup."FAS Prep. By User ID";
-        "Resp. User ID" := RepSISetup."FAS Resp. User ID";
-        "User ID" := UserId();        
+        "Prep. By User ID" := RepSISetup."KRD Prep. By User ID";
+        "Resp. User ID" := RepSISetup."KRD Resp. User ID";
+        "User ID" := UserId();
     end;
 
     trigger OnModify()
@@ -140,28 +128,28 @@ table 50103 "FAS Report Header"
 
     local procedure TestNoSeries()
     begin
-        RepSISetup.TestField("FAS Report No. Series");
+        RepSISetup.TestField("KRD Report No. Series");
     end;
     local procedure TestNoSeriesManual()
     begin
-        NoSeriesMgt.TestManual(RepSISetup."FAS Report No. Series");
+        NoSeriesMgt.TestManual(RepSISetup."KRD Report No. Series");
     end;
 
     local procedure GetNoSeriesCode(): Code[20]
     begin
-        exit(RepSISetup."FAS Report No. Series")
+        exit(RepSISetup."KRD Report No. Series")
     end;
 
-    procedure AssistEdit(OldFASRepHead:record "FAS Report Header"): Boolean
+    procedure AssistEdit(OldKRDRepHead:record "KRD Report Header"): Boolean
     begin
-        with FASRepHead do begin
+        with KRDRepHead do begin
             copy(Rec);
             RepSISetup.Get();
             TestNoSeries();
-            IF NoSeriesMgt.SelectSeries(GetNoSeriesCode,OldFASRepHead."No. Series","No. Series") THEN BEGIN
+            IF NoSeriesMgt.SelectSeries(GetNoSeriesCode,OldKRDRepHead."No. Series","No. Series") THEN BEGIN
                 NoSeriesMgt.SetSeries("No.");
 
-                Rec := FASRepHead;
+                Rec := KRDRepHead;
                 EXIT(TRUE);                
             end;
         end;
@@ -169,5 +157,5 @@ table 50103 "FAS Report Header"
     var
         RepSISetup:Record "Reporting_SI Setup";
         NoSeriesMgt:Codeunit NoSeriesManagement;
-        FASRepHead:Record "FAS Report Header";
+        KRDRepHead:Record "KRD Report Header";
 }
