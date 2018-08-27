@@ -64,6 +64,7 @@ codeunit 50100 "TextWriter-adl"
     procedure Close();
     begin
         //TODO:: (if needed)
+
     end;
 
     procedure Download(DialogTitle: Text; ToFilter: Text; FileName: Text);
@@ -77,7 +78,6 @@ codeunit 50100 "TextWriter-adl"
         IF ExpOk then
             Message(Msg001, FileName);
     end;
-
 
     procedure GetTempBlob(var TmpBlobTemp2: Record TempBlob)
     begin
