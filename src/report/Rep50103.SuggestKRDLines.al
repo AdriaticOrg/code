@@ -114,13 +114,17 @@ report 50103 "Suggest KRD Lines"
                     KRDRepLine.SetRange("Claim/Liability",cle."FAS Claim/Liability");
                     KRDRepLine.SetRange("Non-Residnet Sector Code",cle."FAS Non-Residnet Sector Code");
                     KRDRepLine.SetRange("Country/Region Code",cle."FAS Country/Region Code");
-                    KRDRepLine.SetRange("Currency Code",cle."Currency Code");
-                    KRDRepLine.SetRange("Other Changes",cle."FAS Other Changes");
+                    KRDRepLine.SetRange("Currency Code",cle."Currency Code");                    
+                    //KRDRepLine.SetRange("Other Changes",cle."FAS Other Changes");
                     if KRDRepLine.FindSet() then begin
-                        KRDRepLine."Increase Amount" += IncrAmt;
-                        KRDRepLine."Decrease Amount" += DecrAmt;
-                        KRDRepLine.Validate("Increase Amount");
-                        KRDRepLine.Validate("Decrease Amount");
+                        if not cle."FAS Other Changes" then begin
+                            KRDRepLine."Increase Amount" += IncrAmt;
+                            KRDRepLine."Decrease Amount" += DecrAmt;
+                            KRDRepLine.Validate("Increase Amount");
+                            KRDRepLine.Validate("Decrease Amount");
+                        end else begin
+                            KRDRepLine."Other Changes" := KRDRepLine."Other Changes" + IncrAmt - DecrAmt;
+                        end;
                         KRDRepLine.Modify(true);
                     end else begin
                         NewLineNo += 10000;
@@ -136,14 +140,17 @@ report 50103 "Suggest KRD Lines"
                         KRDRepLine."Non-Residnet Sector Code" := cle."FAS Non-Residnet Sector Code";
                         KRDRepLine.validate("Country/Region Code",cle."FAS Country/Region Code");
                         KRDRepLine.validate("Currency Code",cle."Currency Code");
-                        KRDRepLine."Other Changes" := cle."FAS Other Changes";
 
                         KRDRepLine."Opening Balance" := GetOpeningBalance(cle."FAS Affiliation Type",cle."FAS Instrument Type",
                         cle."FAS Maturity",cle."FAS Claim/Liability",cle."FAS Non-Residnet Sector Code",cle."FAS Country/Region Code",
                          cle."Currency Code",cle."FAS Other Changes");
 
-                        KRDRepLine.validate("Increase Amount",IncrAmt);
-                        KRDRepLine.validate("Decrease Amount",DecrAmt);
+                        if not cle."FAS Other Changes" then begin
+                            KRDRepLine.validate("Increase Amount",IncrAmt);
+                            KRDRepLine.validate("Decrease Amount",DecrAmt);
+                        end else begin
+                            KRDRepLine."Other Changes" := IncrAmt - DecrAmt;
+                        end;
                         KRDRepLine.Insert(true);
                     end;
                 end; 
@@ -163,12 +170,16 @@ report 50103 "Suggest KRD Lines"
                     KRDRepLine.SetRange("Non-Residnet Sector Code",VLE."FAS Non-Residnet Sector Code");
                     KRDRepLine.SetRange("Country/Region Code",VLE."FAS Country/Region Code");
                     KRDRepLine.SetRange("Currency Code",VLE."Currency Code");
-                    KRDRepLine.SetRange("Other Changes",VLE."FAS Other Changes");
+                    //KRDRepLine.SetRange("Other Changes",VLE."FAS Other Changes");
                     if KRDRepLine.FindSet() then begin
-                        KRDRepLine."Increase Amount" += IncrAmt;
-                        KRDRepLine."Decrease Amount" += DecrAmt;
-                        KRDRepLine.Validate("Increase Amount");
-                        KRDRepLine.Validate("Decrease Amount");
+                        if not vle."FAS Other Changes" then begin
+                            KRDRepLine."Increase Amount" += IncrAmt;
+                            KRDRepLine."Decrease Amount" += DecrAmt;
+                            KRDRepLine.Validate("Increase Amount");
+                            KRDRepLine.Validate("Decrease Amount");
+                        end else begin
+                            KRDRepLine."Other Changes" := KRDRepLine."Other Changes" + IncrAmt - DecrAmt;
+                        end;
                         KRDRepLine.Modify(true);
                     end else begin
                         NewLineNo += 10000;
@@ -184,14 +195,17 @@ report 50103 "Suggest KRD Lines"
                         KRDRepLine."Non-Residnet Sector Code" := VLE."FAS Non-Residnet Sector Code";
                         KRDRepLine.validate("Country/Region Code",VLE."FAS Country/Region Code");
                         KRDRepLine.validate("Currency Code",VLE."Currency Code");
-                        KRDRepLine."Other Changes" := VLE."FAS Other Changes";
 
                         KRDRepLine."Opening Balance" := GetOpeningBalance(VLE."FAS Affiliation Type",VLE."FAS Instrument Type",
                         VLE."FAS Maturity",VLE."FAS Claim/Liability",VLE."FAS Non-Residnet Sector Code",VLE."FAS Country/Region Code",
                          VLE."Currency Code",VLE."FAS Other Changes");
 
-                        KRDRepLine.validate("Increase Amount",IncrAmt);
-                        KRDRepLine.validate("Decrease Amount",DecrAmt);
+                        if not vle."FAS Other Changes" then begin
+                            KRDRepLine.validate("Increase Amount",IncrAmt);
+                            KRDRepLine.validate("Decrease Amount",DecrAmt);
+                        end else begin
+                            KRDRepLine."Other Changes" := IncrAmt - DecrAmt;
+                        end;
                         KRDRepLine.Insert(true);
                     end;                    
                 end;                              
@@ -255,7 +269,7 @@ report 50103 "Suggest KRD Lines"
             OldKRDRepLine.SetRange("Non-Residnet Sector Code",NonResSecCode);
             OldKRDRepLine.SetRange("Country/Region Code",CountryCode);
             OldKRDRepLine.SetRange("Currency Code",CurrencyCode);
-            OldKRDRepLine.SetRange("Other Changes",OtherChanges);
+            //OldKRDRepLine.SetRange("Other Changes",OtherChanges);
             if OldKRDRepLine.FindSet() then begin
                 repeat
                     OpeningBal := OpeningBal + OldKRDRepLine."Increase Amount" - OldKRDRepLine."Decrease Amount";
