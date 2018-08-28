@@ -8,47 +8,51 @@ report 50100 "GL ExportSI-adl"
         {
             DataItemTableView = SORTING("No.") WHERE("Account Type"=FILTER(Posting));
             RequestFilterFields = "No.","Date Filter";
-            dataitem(GLAccountOpen;"G/L Account")
+            dataitem(GLAccountBal;"G/L Account")
             {
                 DataItemLink = "No."=FIELD("No.");
-                column(GLAccountNoOpen;"No.")
+                column(GLAccountNoBal;"No.")
                 {
                     
                 }
-                column(GLAccountNameOpen;Name)
+                column(GLAccountNameBal;Name)
                 {
                 }
-                column(PostingDateOpen;DummyText)
+                column(PostingDateBal;DummyText)
                 {
                 }
-                column(DocumentDateOpen;DummyText)
+                column(DocumentDateBal;DummyText)
                 {
                 }
-                column(DocumentNoOpen;DummyText)
+                column(DocumentNoBal;DummyText)
                 {
                 }
-                column(TypeOpen;Type)
+                column(TypeBal;Type)
                 {
                 }
-                column(DescriptionOpen;DummyText)
+                column(DescriptionBal;DummyText)
                 {
                 }
-                column(DebitAmtOpen;"Debit Amount")
+                column(DebitAmtBal;"Debit Amount")
                 {
                 }
-                column(CreditAmtOpen;"Credit Amount")
+                column(CreditAmtBal;"Credit Amount")
                 {
                 }
-                column(NoteOpen;DummyText)
+                column(NoteBal;DummyText)
                 {
                 }
 
                 trigger OnPreDataItem();
                 begin
-                    GLAccountOpen.SETFILTER("Date Filter", '%1', CLOSINGDATE("G/L Account".GETRANGEMAX("Date Filter")));
-                    GLAccountOpen.setfilter("Balance at Date", '<>%1', 0);
-
-                    CalcFields("Debit Amount", "Credit Amount");
+                    GLAccountBal.SETFILTER("Date Filter", '..%1', "G/L Account".GetrangeMIN("Date Filter"));
+                    GLAccountBal.setfilter("Balance at Date", '<>%1', 0);
+                    CalcFields("Balance at Date");
+                    BalanceAtDate:= GLAccountBal."Balance at Date";
+                    BalanceYear:= Date2DMY("G/L Account".GetrangeMIN("Date Filter"), 3);
+                    Type:= 'OTV';
+                    IF (BalanceAtDate = 0) then
+                        CurrReport.Break();
                 end;
 
                 trigger OnAfterGetRecord()
@@ -57,16 +61,17 @@ report 50100 "GL ExportSI-adl"
                     TextWriterAdl.FixedField(OutStr, Name, 50, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
-                    TextWriterAdl.FixedField(OutStr, DummyText, 30, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, BalanceDocumentNo, 30, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, Type, 3, PadCharacter, 1, FieldDelimiter);
-                    TextWriterAdl.FixedField(OutStr, DummyText, 50, PadCharacter, 1, FieldDelimiter);
-                    TextWriterAdl.FixedField(OutStr, "Debit Amount", 16, PadCharacter, 0, FieldDelimiter);
-                    TextWriterAdl.FixedField(OutStr, "Credit Amount", 16, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, StrSubstNo(BalanceDesc, BalanceYear), 50, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, BalanceAtDate, 16, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, DummyText, 16, PadCharacter, 0, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 160, PadCharacter, 1, FieldDelimiter);
                 end;
 
                 trigger OnPostDataItem()
                 begin
+                    Type:= '';
                     TextWriterAdl.NewLine(OutStr);
                 end;
             }
@@ -106,7 +111,7 @@ report 50100 "GL ExportSI-adl"
 
                 trigger OnPreDataItem();
                 begin
-                    GLAccountOpen.SETRANGE("Date Filter", "G/L Account"."Date Filter");
+                    GLAccountZak.SETRANGE("Date Filter", "G/L Account"."Date Filter");
                 end;
 
                 trigger OnAfterGetRecord()
@@ -128,43 +133,48 @@ report 50100 "GL ExportSI-adl"
                     TextWriterAdl.NewLine(OutStr);
                 end;
             }
-            dataitem(GLAccountBalance;"G/L Account")
+            dataitem(GLAccountZAK;"G/L Account")
             {
                 DataItemLink = "No."=FIELD("No.");                
-                column(GLAccountNoBalance;"No.")
+                column(GLAccountNoZAK;"No.")
                 {
                 }
-                column(GLAccountNameBalance;Name)
+                column(GLAccountNameZAK;Name)
                 {
                 }
-                column(PostingDateBalance;DummyText)
+                column(PostingDateZAK;DummyText)
                 {
                 }
-                column(DocumentDateBalance;DummyText)
+                column(DocumentDateZAK;DummyText)
                 {
                 }
-                column(DocumentNoBalance;DummyText)
+                column(DocumentNoZAK;DummyText)
                 {
                 }
-                column(TypeBalance;Type)
+                column(TypeZAK;Type)
                 {
                 }
-                column(DescriptionBalance;DummyText)
+                column(DescriptionZAK;DummyText)
                 {
                 }
-                column(DebitAmtBalance;"Debit Amount")
+                column(DebitAmtZAK;"Debit Amount")
                 {
                 }
-                column(CreditAmtBalance;"Credit Amount")
+                column(CreditAmtZAK;"Credit Amount")
                 {
                 }
-                column(NoteBalance;DummyText)
+                column(NoteZAK;DummyText)
                 {
                 }
 
                 trigger OnPreDataItem()
-                begin
+                begin  
+                    GLAccountZAK.SETFILTER("Date Filter", '%1', CLOSINGDATE("G/L Account".GetRangeMax("Date Filter")));                 
                     CalcFields("Debit Amount", "Credit Amount");
+                    ClosingYear:= Date2DMY(CLOSINGDATE("G/L Account".GetRangeMax("Date Filter")), 3);
+                    Type:= 'ZAK';
+                    IF ("Debit Amount" = 0) AND ("Credit Amount" = 0) then
+                        CurrReport.Break();
                 end;
 
                 trigger OnAfterGetRecord()
@@ -175,7 +185,7 @@ report 50100 "GL ExportSI-adl"
                     TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 30, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, Type, 3, PadCharacter, 1, FieldDelimiter);
-                    TextWriterAdl.FixedField(OutStr, DummyText, 50, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, StrSubstNo(ClosingDesc, ClosingYear), 50, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, "Debit Amount", 16, PadCharacter, 0, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, "Credit Amount", 16, PadCharacter, 0, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 160, PadCharacter, 1, FieldDelimiter);
@@ -184,6 +194,7 @@ report 50100 "GL ExportSI-adl"
                 trigger OnPostDataItem()
                 begin
                     TextWriterAdl.NewLine(OutStr);
+                    Type:= '';
                 end;
             }
 
@@ -247,8 +258,13 @@ report 50100 "GL ExportSI-adl"
         PadCharacter: Text[1];
         FieldDelimiter: Text[1];
         Type : Text[3];
+        BalanceAtDate: Decimal;
         DummyText : Text;
-        
+        BalanceYear: Integer;
+        ClosingYear: Integer;
+        BalanceDesc : Label 'Opening item for the year %1';
+        BalanceDocumentNo : Label 'Opening %1';
+        ClosingDesc : Label 'Closing GL account for the year %1';
         AccountNoLbl: Label 'Account';
         NameLbl: Label 'Account Name';
         PostingDateLbl: Label 'Post.Date';
