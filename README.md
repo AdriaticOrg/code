@@ -7,7 +7,7 @@ Localization features are transferred from Microsoft to Partners after version 4
 Supported features:
 
 No.|Feature Name|Country Specific|Responsible Partner|Sub-range
--:|-|-|-|-|-
+-:|-|-|-|-
 1.|[VAT Date](https://github.com/AdriaticOrg/sdd/blob/master/features/VATDate.md)||NPS|13.062.525..13.062.550
 2.|[Postponed VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/PostponedVAT.md)||NPS|13.062.525..13.062.550
 3.|[Full VAT Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/FullVATPorting.md)||GoPro|13.062.525..13.062.550
