@@ -9,15 +9,15 @@ Supported features:
 No.|Feature Name|Country Specific|Responsible Partner|Sub-range
 -:|-|-|-|-
 [#6](/../../issues/6)|[VAT Date](https://github.com/AdriaticOrg/sdd/blob/master/features/VATDate.md)||NPS|13.062.525..13.062.550
-[#5](#5)|[Postponed VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/PostponedVAT.md)||NPS|13.062.525..13.062.550
-3.|[Full VAT Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/FullVATPorting.md)||GoPro|13.062.525..13.062.550
-4.|[Reverse Charge Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ReverseChargePosting.md)||NPS|13.062.525..13.062.550
-5.|[Informative VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/InformativeVAT.md)|SI|BS|13.062.551..13.062.560
-6.|[Red reversal Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/RedReversalPosting.md)||GoPro|13.062.561..13.062.570
+[#5](/../../issues/5)|[Postponed VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/PostponedVAT.md)||NPS|13.062.525..13.062.550
+[#11](/../../issues/11)|[Full VAT Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/FullVATPorting.md)||GoPro|13.062.525..13.062.550
+[#12](/../../issues/12)|[Reverse Charge Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ReverseChargePosting.md)||NPS|13.062.525..13.062.550
+[#13](/../../issues/13)|[Informative VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/InformativeVAT.md)|SI|BS|13.062.551..13.062.560
+[#7](/../../issues/7)|[Red reversal Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/RedReversalPosting.md)||GoPro|13.062.561..13.062.570
 7.|[Forced Debit / Credit Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ForcedDebitCreditPosting.md)||GoPro|13.062.571..13.062.580
 8.|[Internal Correction](https://github.com/AdriaticOrg/sdd/blob/master/features/InternalCorrection.md)||GoPro|13.062.581..13.062.590
 9.|[Return Orders](https://github.com/AdriaticOrg/sdd/blob/master/features/ReturnOrders.md)||Adacta|13.062.591..13.062.600
-10.|[VAT Books](https://github.com/AdriaticOrg/sdd/blob/master/features/VATBooks.md)||NPS|13.062.591..13.062.600
+[#5](/../../issues/5)|[VAT Books](https://github.com/AdriaticOrg/sdd/blob/master/features/VATBooks.md)||NPS|13.062.591..13.062.600
 11.|[VIES Feature](https://github.com/AdriaticOrg/sdd/blob/master/features/VIESFeature.md)|SI|BS|13.062.601..13.062.620
 12.|[Delivery Declaration](https://github.com/AdriaticOrg/sdd/blob/master/features/DeliveryDeclaration.md)|SI|BS|13.062.621..13.062.640
 13.|[FAS Report](https://github.com/AdriaticOrg/sdd/blob/master/features/FAS.md)|SI|BS|13.062.641..13.062.660
