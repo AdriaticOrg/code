@@ -2,6 +2,7 @@ report 50102 "Export FAS"
 {
     UsageCategory = Administration;
     ApplicationArea = All;
+    ProcessingOnly = true;
     Caption = 'Export FAS';
     
     dataset
@@ -27,7 +28,8 @@ report 50102 "Export FAS"
                     field(ExpFile; ExpFile)
                     {
                         Caption = 'Export File';
-                        ApplicationArea = All;                        
+                        ApplicationArea = All;   
+                        Visible = false;                     
                     }
                 }
             }
@@ -39,8 +41,7 @@ report 50102 "Export FAS"
             {
                 action(ActionName)
                 {
-                    ApplicationArea = All;
-                    
+                    ApplicationArea = All;                    
                 }
             }
         }
@@ -53,10 +54,15 @@ report 50102 "Export FAS"
         RespUserSetup:Record "User Setup";
         MngUserSetup:Record "User Setup";
         Msg001:TextConst ENU='Export to %1 done OK.';
+        Msg002:TextConst ENU='Sheet 1 and 2 must have positive amounts. FAS Reporting Line sum for AOP %1 (%2) is %3. Filters:\\%4';
+        
 
     local procedure ExportFAS(FASRepHead:Record "FAS Report Header")
     var
         RepSIMgt:Codeunit "Reporting SI Mgt.";
+        FinSect:Record "FAS Sector";
+        FinInst:Record "FAS Instrument";
+        FASRepLine:Record "FAS Report Line";
         XmlDoc:XmlDocument;
         XmlDec: XmlDeclaration;
         XmlElem: array[10] of XmlElement;
@@ -67,7 +73,14 @@ report 50102 "Export FAS"
         FileName: Text; 
         ExpOk: Boolean; 
         i:Integer;   
+        j:Integer;
+        k:Integer;
+        aop:Integer;
+        curraop:Integer;
+        FormNum:Integer;
         StatId:text[10];
+        Values:array[700,23] of decimal;
+        WarningStr:Text;
 
     begin
         FASRepHead.TestField("Period Year");
@@ -92,6 +105,54 @@ report 50102 "Export FAS"
         CompanyInfo.TestField(Address);
         CompanyInfo.TestField(City);
 
+        FASRepLine.SetRange("Document No.",FASRepHead."No.");
+        for FormNum := 1 to 6 do begin
+            FinInst.Reset();
+            FinInst.SetFilter("AOP Code",'<>%1','');
+            if FinInst.FindSet() then begin
+                repeat
+                    EVALUATE(curraop,FinInst."AOP Code");
+                    IF (curraop < 100) OR (curraop > 127 ) THEN
+                        FinInst.FieldError("AOP Code");            
+                    curraop += (FormNum - 1) * 100;
+
+                    FinSect.Reset();
+                    FinSect.SetFilter("AOP Code",'<>%1','');
+                    if FinSect.FindSet() then begin
+                        repeat
+                            IF FinInst.Type = FinInst.Type::Posting THEN
+                            FASRepLine.SETRANGE("Instrument Code", FinInst.Code)
+                            ELSE
+                            FASRepLine.SETFILTER("Instrument Code", FinInst.Totaling);
+
+                            IF FinSect.Type = FinSect.Type::Posting THEN
+                            FASRepLine.SETRANGE("Sector Code", FinSect.Code)
+                            ELSE
+                            FASRepLine.SETFILTER("Sector Code", FinSect.Totaling);
+
+                            FASRepLine.CALCSUMS(Amount);
+                            IF FormNum IN [2, 4, 5, 6] THEN
+                            FASRepLine.Amount *= -1;
+
+                            EVALUATE(i, FinSect."AOP Code");
+                            IF (i > 23) OR (i < 1) THEN
+                            FinSect.FIELDERROR("AOP Code");
+
+                            Values[currAOP][i] += FASRepLine.Amount;
+
+                            IF (curraop >= 100) AND (curraop < 299) AND (FASRepLine.Amount < 0) THEN                                
+                                WarningStr += StrSubstNo(Msg002, currAOP, i, FASRepLine.Amount, FASRepLine.GETFILTERS);                                                        
+                            
+                        until FinSect.Next() = 0;
+                    end;
+
+                until FinInst.Next() = 0;
+            end;
+        end;
+
+        if WarningStr <> '' then
+            Message(WarningStr);
+
         XmlDoc := xmlDocument.Create();
         //XmlDec := xmlDeclaration.Create('1.0', 'UTF-8', '');
         XmlDec := XmlDeclaration.Create('1.0','WINDOWS-1250','');
@@ -99,6 +160,9 @@ report 50102 "Export FAS"
 
         XmlElem[1] := xmlElement.Create('AjpesDokument');
         XmlDoc.Add(xmlElem[1]);
+        
+        // find a way to add namespaced nodes, bellow code doesn't work!
+
         //XmlAttr := XmlAttribute.Create('xmlns','http://www.w3.org/2001/XMLSchema-instance');
         //XmlElem[1].Add(XmlAttr);
         //XmlElem[1].SetAttribute('xmlns','http://www.w3.org/2001/XMLSchema-instance');
@@ -187,7 +251,23 @@ report 50102 "Export FAS"
                 6: StatId := 'vsob';
             END;            
             XmlAttr := XmlAttribute.Create('id',StatId);
-            XmlElem[3].Add(XmlAttr);                          
+            XmlElem[3].Add(XmlAttr);  
+
+            for j := 0 to 27 do begin
+                aop := i * 100 + j;
+                XmlElem[4] := XmlElement.Create('Aop');
+                XmlElem[3].Add(XmlElem[4]);     
+                XmlAttr := XmlAttribute.Create('id',Format(aop));
+                XmlElem[4].Add(XmlAttr);
+
+                for k := 1 to 22 do begin
+                    XmlElem[5] := XmlElement.Create('P');
+                    XmlElem[5].Add((XmlText.Create(FORMAT(Values[aop][k], 0, '<Precision,2:2><Standard Format,9>'))));
+                    XmlElem[4].Add(XmlElem[5]);                    
+                    XmlAttr := XmlAttribute.Create('s',Format(k));
+                    XmlElem[5].Add(XmlAttr);
+                end;
+            end;                        
         end;         
 
         // Create an out stream from the blob, notice the encoding.
