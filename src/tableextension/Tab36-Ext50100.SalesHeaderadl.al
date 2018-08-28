@@ -8,7 +8,10 @@ tableextension 50100 "Sales Header-adl" extends "Sales Header" //36
             Caption = 'VAT Date';
             trigger OnValidate()
             begin
-                "VAT Date-adl" := "Posting Date";
+                if "VAT Date-adl" <> "Posting Date" then
+                    "Postponed VAT-adl" := "Postponed VAT-adl"::"Postponed VAT"
+                else
+                    "Postponed VAT-adl" := "Postponed VAT-adl"::"Realized VAT";
             end;
         }
         field(50101; "Postponed VAT-adl"; Option)
