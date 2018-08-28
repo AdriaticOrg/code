@@ -69,7 +69,7 @@ table 50106 "KRD Report Line"
             Caption = 'Currency No.';
             DataClassification = ToBeClassified;
         }
-        field(20; "Other Changes"; Boolean)
+        field(20; "Other Changes"; Decimal)
         {
             Caption = 'Other Changes';
             DataClassification = ToBeClassified;

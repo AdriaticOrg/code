@@ -2,17 +2,76 @@ report 50104 "Export KRD"
 {
     UsageCategory = Administration;
     ApplicationArea = All;
+    RDLCLayout = './src/reportlayout/Rep50104.ExportKRD.rdlc';
     Caption = 'Export KRD';
     
     dataset
     {
-        dataitem("KRD Report Header"; "KRD Report Header")
+        dataitem(KRDReportHeader;"KRD Report Header")
         {
             RequestFilterFields = "No.";
+
+            column(CompanyName;CompanyInfo.Name){}
+            column(DocumentNo;KRDReportHeader."No."){
+                IncludeCaption = true;
+            }
+            column(PeriodStart;KRDReportHeader."Period Start Date"){
+                IncludeCaption = true;
+            }
+            column(PeriodEnd;KRDReportHeader."Period End Date"){
+                IncludeCaption = true;
+            }   
+
+            dataitem(KRDReportLine;"KRD Report Line") {
+                DataItemLink = "Document No." = field("No.");
+
+                column(LineNo;KRDReportLine."Line No"){}
+                column(ClaimLiability;format(KRDReportLine."Claim/Liability",0,'<Number>')){}
+                column(InstrumentType;KRDReportLine."Instrument Type"){
+                    IncludeCaption = true;
+                }
+                column(AffiliationType;KRDReportLine."Affiliation Type"){
+                    IncludeCaption = true;
+                }
+                column(NonResidentSectorCode;KRDReportLine."Non-Residnet Sector Code"){
+                    IncludeCaption = true;
+                }
+                column(Maturity;KRDReportLine.Maturity){
+                    IncludeCaption = true;
+                }
+                column(CountryRegionCode;KRDReportLine."Country/Region Code"){
+                    IncludeCaption = true;
+                }
+                column(CountryRegionNo;KRDReportLine."Country/Region No."){
+                    IncludeCaption = true;
+                }
+                column(CurrencyCode;KRDReportLine."Currency Code"){
+                    IncludeCaption = true;}
+                column(CurrencyNo;KRDReportLine."Currency No."){
+                    IncludeCaption = true;
+                }
+                column(OpeningBalance;KRDReportLine."Opening Balance"){
+                    IncludeCaption = true;
+                }
+                column(IncreaseAmount;KRDReportLine."Increase Amount"){
+                    IncludeCaption = true;
+                }
+                column(DecreaseAmount;KRDReportLine."Decrease Amount"){
+                    IncludeCaption = true;
+                }
+                column(ClosingBalance;KRDReportLine."Closing Balance"){
+                    IncludeCaption = true;
+                }
+                column(OtherChanges;KRDReportLine."Other Changes"){
+                    IncludeCaption = true;
+                }
+            }
+
             trigger OnPostDataItem()
             begin
-                ExportKRD("KRD Report Header");                
-            end;
+                if ExpFile then
+                    ExportKRD(KRDReportHeader);                
+            end;            
         }
     }
     
@@ -45,8 +104,20 @@ report 50104 "Export KRD"
             }
         }
     }
+
+    labels {
+        LblReportTitle = 'KRD Report';
+        LblPage = 'Page';
+        LblFilters= 'Filters:';
+        LblClaims= 'Claims';
+        LblLiability='Liabilities';
+        LblSectorCode='Sector Code';
+        LblCountryCode='Country Code';
+
+    }
     var
         ExpFile:Boolean;
+        CompanyInfo:Record "Company Information";
         Msg001:TextConst ENU='Export to %1 done OK.';
 
     local procedure ExportKRD(KRDRepHead:Record "KRD Report Header")

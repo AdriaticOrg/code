@@ -713,6 +713,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export KRD - Control ExpFile - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 3134377883 - ReportLabel 2764161152" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD Report</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export KRD - ReportLabel LblReportTitle</note>
+        </trans-unit>
+        <trans-unit id="Report 3134377883 - ReportLabel 643245275" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export KRD - ReportLabel LblPage</note>
+        </trans-unit>
+        <trans-unit id="Report 3134377883 - ReportLabel 1772537875" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filters:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export KRD - ReportLabel LblFilters</note>
+        </trans-unit>
+        <trans-unit id="Report 3134377883 - ReportLabel 855806949" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Claims</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export KRD - ReportLabel LblClaims</note>
+        </trans-unit>
+        <trans-unit id="Report 3134377883 - ReportLabel 2546299423" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Liabilities</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export KRD - ReportLabel LblLiability</note>
+        </trans-unit>
+        <trans-unit id="Report 3134377883 - ReportLabel 2604271189" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sector Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export KRD - ReportLabel LblSectorCode</note>
+        </trans-unit>
+        <trans-unit id="Report 3134377883 - ReportLabel 1285577673" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export KRD - ReportLabel LblCountryCode</note>
+        </trans-unit>
         <trans-unit id="TableExtension 4021696606 - Field 3246291640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting_SI Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
