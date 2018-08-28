@@ -97,7 +97,7 @@ page 50107 "KRD Report"
                 begin
                     KRDRepHead := Rec;
                     KRDRepHead.SetRecFilter();
-                    //Report.RunModal(report::"Export FAS",true,false,KRDRepHead);
+                    Report.RunModal(report::"Export KRD",true,false,KRDRepHead);
                 end;
             }
             action("Release") {

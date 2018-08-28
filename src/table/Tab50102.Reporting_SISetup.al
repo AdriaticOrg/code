@@ -54,7 +54,26 @@ table 50102 "Reporting_SI Setup"
             TableRelation = "User Setup";
             DataClassification = ToBeClassified;            
         }   
-        field(50;"FAS Director User ID";Text[100]) {
+
+        field(30; "BST Report No. Series"; Code[20])
+        {
+            Caption = 'BST Report No. Series';
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(32;"BST Resp. User ID";Text[100]) {
+            Caption = 'BST Resp. User ID';
+            TableRelation = "User Setup";
+            DataClassification = ToBeClassified;            
+        }
+        
+        field(35;"BST Prep. By User ID";Text[100]) {
+            Caption = 'BST Prep. By User ID';
+            TableRelation = "User Setup";
+            DataClassification = ToBeClassified;            
+        }         
+        
+        field(19;"FAS Director User ID";Text[100]) {
             Caption = 'FAS Director User ID';
             TableRelation = "User Setup";
             DataClassification = ToBeClassified;            
