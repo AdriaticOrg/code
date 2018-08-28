@@ -51,7 +51,7 @@ codeunit 50100 "VAT Management-adl"
         end;
     end;
 
-    /*[EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertVATEntry', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertVATEntry', '', false, false)]
     local procedure OnAfterInsertVATEntry(GenJnlLine: Record "Gen. Journal Line";VATEntry: Record "VAT Entry";GLEntryNo: Integer;var NextEntryNo: Integer)
     var
         PurchaseInvHeader: Record "Purch. Inv. Header";
@@ -59,7 +59,7 @@ codeunit 50100 "VAT Management-adl"
         PostJnlLine: Codeunit "Gen. Jnl.-Post Line";
     begin
         
-    end;*/
+    end;
 
 
 
