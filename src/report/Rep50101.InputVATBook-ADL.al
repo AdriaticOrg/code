@@ -6,12 +6,12 @@ report 50101 "Input VAT Book-adl"
     {
         dataitem("Vat Entry";"VAT Entry")
         {
-            DataItemTableView = SORTING("Entry No.") WHERE("Type"=filter(Purchase|Sale),"Unrealized Amount"=Filter(0));   //,"VAT Identifier"=filter('<>*99*'));
-            RequestFilterFields = "Vat Date","Document No.";
-            dataitem(GLAccountBal;"G/L Account")
+            DataItemTableView = SORTING("Document No.","Vat Date-adl") WHERE("Type"=filter(Purchase|Sale),"Unrealized Amount"=Filter(0),"VAT Identifier-adl"=filter('<>*99*'));
+            RequestFilterFields = "VAT Date-adl","Document No.","VAT Bus. Posting Group","VAT Prod. Posting Group","Gen. Bus. Posting Group","Gen. Prod. Posting Group","VAT Identifier-adl","Posting Date","VAT Calculation Type","Country/Region Code","Entry No.","Bill-to/Pay-to No.","External Document No.";  //"Document Receipt Date";
+            dataitem(PurchaseInvHeader;"Purch. Inv. Header")
             {
-                //DataItemLink = "No."=FIELD("No.");
-                column(GLAccountNoBal;"No.")
+                DataItemLink = "No."=FIELD("Document No.");
+                column(PurchaseInvHeader;"No.")
                 {
                     
                 }
@@ -32,16 +32,16 @@ report 50101 "Input VAT Book-adl"
                     TextWriterAdl.NewLine(OutStr);
                 end;
             }
-            dataitem(GLEntryTrans;"G/L Entry")
+            dataitem(PurchCrMemo;"Purch. Cr. Memo Hdr.")
             {
-                DataItemLink = "G/L Account No."=FIELD("No.");
-                column(GLAccountNoTrans;"G/L Account No.")
+                DataItemLink = "No."=FIELD("Document No.");
+                column(PurchCrMemo;"No.")
                 {
                 }
 
                 trigger OnPreDataItem();
                 begin
-                    GLAccountZak.SETRANGE("Date Filter", "G/L Account"."Date Filter");
+                   
                 end;
 
                 trigger OnAfterGetRecord()
@@ -54,40 +54,13 @@ report 50101 "Input VAT Book-adl"
                     TextWriterAdl.NewLine(OutStr);
                 end;
             }
-            dataitem(GLAccountZAK;"G/L Account")
+            dataitem(Vendor;"Vendor")
             {
-                DataItemLink = "No."=FIELD("No.");                
+                DataItemLink = "No."=Field("Bill-to/Pay-to No.");                
                 column(GLAccountNoZAK;"No.")
                 {
                 }
-                column(GLAccountNameZAK;Name)
-                {
-                }
-                column(PostingDateZAK;DummyText)
-                {
-                }
-                column(DocumentDateZAK;DummyText)
-                {
-                }
-                column(DocumentNoZAK;DummyText)
-                {
-                }
-                column(TypeZAK;Type)
-                {
-                }
-                column(DescriptionZAK;DummyText)
-                {
-                }
-                column(DebitAmtZAK;"Debit Amount")
-                {
-                }
-                column(CreditAmtZAK;"Credit Amount")
-                {
-                }
-                column(NoteZAK;DummyText)
-                {
-                }
-
+           
                 trigger OnPreDataItem()
                 begin  
 

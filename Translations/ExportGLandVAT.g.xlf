@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="ExportGLandVAT">
+    <body>
+      <group id="body">
+        <trans-unit id="Codeunit 3311536690 - NamedType 924275788" size-unit="char" translate="yes" xml:space="preserve">
+          <source>File %1 was succesfully prepared.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit TextWriter-adl - NamedType Msg001</note>
+        </trans-unit>
+        <trans-unit id="Report 2470420395 - NamedType 3309997473" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Opening item for the year %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType BalanceDesc</note>
+        </trans-unit>
+        <trans-unit id="Report 2470420395 - NamedType 1877372380" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Opening %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType BalanceDocumentNo</note>
+        </trans-unit>
+        <trans-unit id="Report 2470420395 - NamedType 2965918942" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Closing GL account for the year %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType ClosingDesc</note>
+        </trans-unit>
+        <trans-unit id="Report 2470420395 - NamedType 1947827686" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType AccountNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2470420395 - NamedType 1981706351" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType NameLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2470420395 - NamedType 1027969698" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post.Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType PostingDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2470420395 - NamedType 1155328579" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Doc.Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType DocumentDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2470420395 - NamedType 1721277456" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType DocumentNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2470420395 - NamedType 961827798" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType TypeLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2470420395 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2470420395 - NamedType 775175188" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Debit Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType DebitAmountLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2470420395 - NamedType 499154677" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType CreditAmountLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2470420395 - NamedType 4046088670" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Note</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-adl - NamedType NoteLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 135671412 - NamedType 3309997473" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Opening item for the year %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-adl - NamedType BalanceDesc</note>
+        </trans-unit>
+        <trans-unit id="Report 135671412 - NamedType 1877372380" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Opening %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-adl - NamedType BalanceDocumentNo</note>
+        </trans-unit>
+        <trans-unit id="Report 135671412 - NamedType 2965918942" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Closing GL account for the year %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-adl - NamedType ClosingDesc</note>
+        </trans-unit>
+        <trans-unit id="Report 135671412 - NamedType 1947827686" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-adl - NamedType AccountNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 135671412 - NamedType 1981706351" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-adl - NamedType NameLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 135671412 - NamedType 1027969698" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post.Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-adl - NamedType PostingDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 135671412 - NamedType 1155328579" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Doc.Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-adl - NamedType DocumentDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 135671412 - NamedType 1721277456" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-adl - NamedType DocumentNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 135671412 - NamedType 961827798" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-adl - NamedType TypeLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 135671412 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-adl - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 135671412 - NamedType 775175188" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Debit Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-adl - NamedType DebitAmountLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 135671412 - NamedType 499154677" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-adl - NamedType CreditAmountLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 135671412 - NamedType 4046088670" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Note</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-adl - NamedType NoteLbl</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GLExportSI-adl</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - Control 837247550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>From Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - Control FromDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - Control 4137594593 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - Control ToDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - Control 340367020 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - Control AccountNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - NamedType 2779639592" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exporting line no. #1######</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - NamedType ProgressMsg</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - NamedType 964842413" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - NamedType Text_No</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - NamedType 3693155071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - NamedType Text_Name</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - NamedType 2902653530" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - NamedType Text_PostingDate</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - NamedType 151635475" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - NamedType Text_DocumentDate</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - NamedType 3279162696" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"Document No "</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - NamedType Text_DocumentNo</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - NamedType 3541749278" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - NamedType Text_Type</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - NamedType 122065240" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - NamedType Text_Description</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - NamedType 4158272328" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Debit Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - NamedType Text_DebitAmt</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - NamedType 3476880889" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - NamedType Text_CreditAmt</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2179491323 - NamedType 3940594726" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Note</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GL Export SI-adl - NamedType Text_Note</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4231577094 - Field 2094579653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Header-adl - Field VAT Date-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4231577094 - Field 168439681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Header-adl - Field Postponed VAT-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2720943842 - Field 2094579653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr.Memo Header-adl - Field VAT Date-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2720943842 - Field 168439681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr.Memo Header-adl - Field Postponed VAT-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1154975563 - Field 2094579653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchaseInvHeader-adl - Field VAT Date-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1154975563 - Field 168439681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchaseInvHeader-adl - Field Postponed VAT-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2678915671 - Field 2094579653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchCrMemoHdr-adl - Field VAT Date-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2678915671 - Field 168439681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchCrMemoHdr-adl - Field Postponed VAT-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4159709701 - Field 2094579653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VATEntry-adl - Field VAT Date-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4159709701 - Field 168439681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VATEntry-adl - Field Postponed VAT-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4159709701 - Field 123488688 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Identifier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VATEntry-adl - Field VAT Identifier-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1316577068 - Field 1270928470 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purch VAT Postponed Account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VATPostingSetup-adl - Field Purch VAT Postponed Account-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1316577068 - Field 2583369410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales VAT Postponed Account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VATPostingSetup-adl - Field Sales VAT Postponed Account-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2343440837 - Field 2094579653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Header-adl - Field VAT Date-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2343440837 - Field 168439681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Header-adl - Field Postponed VAT-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 196652100 - Field 2094579653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchaseHeader-adl - Field VAT Date-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 196652100 - Field 168439681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchaseHeader-adl - Field Postponed VAT-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 689599865 - Field 2094579653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJournalLine-adl - Field VAT Date-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 689599865 - Field 168439681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJournalLine-adl - Field Postponed VAT-adl - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
