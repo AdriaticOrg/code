@@ -8,7 +8,7 @@ Supported features:
 
 No.|Feature Name|Country Specific|Responsible Partner|Status|Sub-range
 -:|-|-|-|-|-
-1.|[VAT Date](https://github.com/AdriaticOrg/sdd/blob/master/features/VATDate.md)||NPS|Coding|13.062.525..13.062.550
+#6|[VAT Date](https://github.com/AdriaticOrg/sdd/blob/master/features/VATDate.md)||NPS|Coding|13.062.525..13.062.550
 2.|[Postponed VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/PostponedVAT.md)||NPS|Coding|13.062.525..13.062.550
 3.|[Full VAT Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/FullVATPorting.md)||GoPro|Coding|13.062.525..13.062.550
 4.|[Reverse Charge Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ReverseChargePosting.md)||NPS|Coding|13.062.525..13.062.550
