@@ -9,6 +9,9 @@ tableextension 13062533 "VATPostingSetup-Adl" extends "VAT Posting Setup"  //325
         field(13062526; "Sales VAT Postponed Account-Adl"; Code[20])
         {
             Caption = 'Sales VAT Postponed Account';
+
+
         }
+
     }
 }
