@@ -1,3 +1,2 @@
 1) report line, valide ISO numbers (country, currency)
-2) finish xml export
-3) append rdlc to export report
+2) add code in xml export for tags inside InterestAndIncome
