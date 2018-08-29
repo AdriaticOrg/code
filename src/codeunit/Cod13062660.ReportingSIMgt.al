@@ -48,16 +48,16 @@ codeunit 13062660 "Reporting SI Mgt."
 
     begin
       if Cust.get(CustLedgerEntry."Customer No.") then begin
-        CustLedgerEntry."FAS Country/Region Code" := Cust."Country/Region Code";
+        CustLedgerEntry."KRD Country/Region Code" := Cust."Country/Region Code";
         CustLedgerEntry."FAS Sector Code" := Cust."FAS Sector Code";
-        CustLedgerEntry."FAS Non-Residnet Sector Code" := Cust."FAS Non-Residnet Sector Code";
+        CustLedgerEntry."KRD Non-Residnet Sector Code" := Cust."KRD Non-Residnet Sector Code";
       end;
 
       if CustPstgGrp.get(CustLedgerEntry."Customer Posting Group") then begin
-        CustLedgerEntry."FAS Instrument Type" := CustPstgGrp."FAS Instrument Type";
-        CustLedgerEntry."FAS Affiliation Type" := CustPstgGrp."FAS Affiliation Type";
-        CustLedgerEntry."FAS Claim/Liability" := CustPstgGrp."FAS Claim/Liability";
-        CustLedgerEntry."FAS Maturity" := CustPstgGrp."FAS Maturity";
+        CustLedgerEntry."KRD Instrument Type" := CustPstgGrp."KRD Instrument Type";
+        CustLedgerEntry."KRD Affiliation Type" := CustPstgGrp."KRD Affiliation Type";
+        CustLedgerEntry."KRD Claim/Liability" := CustPstgGrp."KRD Claim/Liability";
+        CustLedgerEntry."KRD Maturity" := CustPstgGrp."KRD Maturity";
       end;
       
     end;
@@ -69,16 +69,16 @@ codeunit 13062660 "Reporting SI Mgt."
 
     begin
       if Vend.get(VendorLedgerEntry."Vendor No.") then begin
-        VendorLedgerEntry."FAS Country/Region Code" := Vend."Country/Region Code";
+        VendorLedgerEntry."KRD Country/Region Code" := Vend."Country/Region Code";
         VendorLedgerEntry."FAS Sector Code" := Vend."FAS Sector Code";
-        VendorLedgerEntry."FAS Non-Residnet Sector Code" := Vend."FAS Non-Residnet Sector Code";
+        VendorLedgerEntry."KRD Non-Residnet Sector Code" := Vend."FAS Non-Residnet Sector Code";
       end;
 
       if VendPstgGrp.get(VendorLedgerEntry."Vendor Posting Group") then begin
-        VendorLedgerEntry."FAS Instrument Type" := VendPstgGrp."FAS Instrument Type";
-        VendorLedgerEntry."FAS Affiliation Type" := VendPstgGrp."FAS Affiliation Type";
-        VendorLedgerEntry."FAS Claim/Liability" := VendPstgGrp."FAS Claim/Liability";
-        VendorLedgerEntry."FAS Maturity" := VendPstgGrp."FAS Maturity";
+        VendorLedgerEntry."KRD Instrument Type" := VendPstgGrp."KRD Instrument Type";
+        VendorLedgerEntry."KRD Affiliation Type" := VendPstgGrp."KRD Affiliation Type";
+        VendorLedgerEntry."KRD Claim/Liability" := VendPstgGrp."KRD Claim/Liability";
+        VendorLedgerEntry."KRD Maturity" := VendPstgGrp."KRD Maturity";
       end;
       
     end;    

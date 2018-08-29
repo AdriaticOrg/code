@@ -8,7 +8,7 @@ table 13062683 "BST Report Line"
         field(1;"Document No."; Code[20])
         {
             Caption = '"Document No."';
-            TableRelation = "FAS Report Header"."No.";
+            TableRelation = "BST Report Header"."No.";
             DataClassification = ToBeClassified;
         }
         field(2; "Line No"; Integer)
@@ -28,6 +28,7 @@ table 13062683 "BST Report Line"
             begin
                 if BSTCode.get("BST Code") then begin
                     "BST Serial No." := BSTCode."Serial Num.";
+                    Description := BSTCode.Description;
                 end;
             end;
         }

@@ -2,45 +2,45 @@ tableextension 13062527 "CustLedgEntry-adl" extends "Cust. Ledger Entry"
 {
     fields
     {
-        field(50100; "FAS Affiliation Type"; Code[10])
+        field(13062661; "KRD Affiliation Type"; Code[10])
         {
-            Caption = 'FAS Affiliation Type';
+            Caption = 'KRD Affiliation Type';
             DataClassification = ToBeClassified;
         }
-        field(50101; "FAS Instrument Type"; Code[10])
+        field(13062662; "KRD Instrument Type"; Code[10])
         {
-            Caption = 'FAS Instrument Type';
+            Caption = 'KRD Instrument Type';
             DataClassification = ToBeClassified;
         }
-        field(50102; "FAS Maturity"; Code[10])
+        field(13062663; "KRD Maturity"; Code[10])
         {
-            Caption = 'FAS Maturity';
+            Caption = 'KRD Maturity';
             DataClassification = ToBeClassified;
         }        
-        field(59103; "FAS Claim/Liability"; Option)
+        field(13062664; "KRD Claim/Liability"; Option)
         {
             OptionMembers = " ","Claim","Liability";
-            Caption = 'FAS Claim/Liability';
+            Caption = 'KRD Claim/Liability';
             DataClassification = ToBeClassified;
         } 
-        field(50104;"FAS Non-Residnet Sector Code";Code[10])
+        field(13062665;"KRD Non-Residnet Sector Code";Code[10])
         {
-            Caption = 'FAS Non-Resident Sector Code';
+            Caption = 'KRD Non-Resident Sector Code';
             DataClassification = ToBeClassified;
             TableRelation = "FAS Sector";
         } 
-        field(50105; "FAS Country/Region Code"; Code[10])
+        field(13062666; "KRD Country/Region Code"; Code[10])
         {
-            Caption = 'FAS Country/Region Code';
+            Caption = 'KRD Country/Region Code';
             DataClassification = ToBeClassified;
             TableRelation = "Country/Region";
         }
-        field(50106; "FAS Other Changes"; Boolean)
+        field(13062667; "KRD Other Changes"; Boolean)
         {
-            Caption = 'FAS Other Changes';
+            Caption = 'KRD Other Changes';
             DataClassification = ToBeClassified;
         }
-        field(50108;"FAS Sector Code";Code[10])
+        field(13062641;"FAS Sector Code";Code[10])
         {
             Caption = 'FAS Sector Code';
             DataClassification = ToBeClassified;

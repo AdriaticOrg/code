@@ -1,25 +1,25 @@
 tableextension 13062525 "CustPstGroup-adl" extends "Customer Posting Group"
 {
     fields {
-        field(50100; "FAS Affiliation Type"; Code[10])
+        field(13062661; "KRD Affiliation Type"; Code[10])
         {
-            Caption = 'FAS Affiliation Type';
+            Caption = 'KRD Affiliation Type';
             DataClassification = ToBeClassified;
         }
-        field(50101; "FAS Instrument Type"; Code[10])
+        field(13062662; "KRD Instrument Type"; Code[10])
         {
-            Caption = 'FAS Instrument Type';
+            Caption = 'KRD Instrument Type';
             DataClassification = ToBeClassified;
         }
-        field(50102; "FAS Maturity"; Code[10])
+        field(13062663; "KRD Maturity"; Code[10])
         {
-            Caption = 'FAS Maturity';
+            Caption = 'KRD Maturity';
             DataClassification = ToBeClassified;
         }        
-        field(59103; "FAS Claim/Liability"; Option)
+        field(13062664; "KRD Claim/Liability"; Option)
         {
             OptionMembers = " ","Claim","Liability";
-            Caption = 'FAS Claim/Liability';
+            Caption = 'KRD Claim/Liability';
             DataClassification = ToBeClassified;
         }        
     }

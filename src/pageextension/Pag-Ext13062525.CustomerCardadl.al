@@ -6,7 +6,7 @@ pageextension 13062525 "CustomerCard-adl" extends "Customer Card"
             field("FAS Sector Code";"FAS Sector Code") {
                 ApplicationArea = All;
             }
-            field("FAS Non-Residnet Sector Code";"FAS Non-Residnet Sector Code") {
+            field("FAS Non-Residnet Sector Code";"KRD Non-Residnet Sector Code") {
                 ApplicationArea = All;
             }
         }    

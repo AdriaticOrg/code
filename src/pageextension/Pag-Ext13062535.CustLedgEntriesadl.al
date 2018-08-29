@@ -6,25 +6,25 @@ pageextension 13062535 "CustLedgEntries-adl" extends "Customer Ledger Entries"
             field("FAS Sector Code";"FAS Sector Code") {
                 ApplicationArea = All;
             }
-            field("FAS Non-Residnet Sector Code";"FAS Non-Residnet Sector Code") {
+            field("FAS Non-Residnet Sector Code";"KRD Non-Residnet Sector Code") {
                 ApplicationArea = All;
             }    
-            field("FAS Affiliation Type";"FAS Affiliation Type") {
+            field("FAS Affiliation Type";"KRD Affiliation Type") {
                 ApplicationArea = All;
             }
-            field("FAS Claim/Liability";"FAS Claim/Liability") {
+            field("FAS Claim/Liability";"KRD Claim/Liability") {
                 ApplicationArea = All;
             }
-            field("FAS Instrument Type";"FAS Instrument Type") {
+            field("FAS Instrument Type";"KRD Instrument Type") {
                 ApplicationArea = All;
             }
-            field("FAS Maturity";"FAS Maturity") {
+            field("FAS Maturity";"KRD Maturity") {
                 ApplicationArea = All;
             }     
-            field("FAS Country/Region Code";"FAS Country/Region Code") {
+            field("FAS Country/Region Code";"KRD Country/Region Code") {
                 ApplicationArea = All;
             }               
-            field("FAS Other Changes";"FAS Other Changes") {
+            field("FAS Other Changes";"KRD Other Changes") {
                 ApplicationArea = all;
             }
         }

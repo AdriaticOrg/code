@@ -108,16 +108,16 @@ report 13062661 "Suggest KRD Lines"
 
                     KRDRepLine.Reset();
                     KRDRepLine.SetRange("Document No.",KRDRepHead."No.");
-                    KRDRepLine.SetRange("Affiliation Type",cle."FAS Affiliation Type");
-                    KRDRepLine.SetRange("Instrument Type",cle."FAS Instrument Type");
-                    KRDRepLine.SetRange(Maturity,CLE."FAS Maturity");
-                    KRDRepLine.SetRange("Claim/Liability",cle."FAS Claim/Liability");
-                    KRDRepLine.SetRange("Non-Residnet Sector Code",cle."FAS Non-Residnet Sector Code");
-                    KRDRepLine.SetRange("Country/Region Code",cle."FAS Country/Region Code");
+                    KRDRepLine.SetRange("Affiliation Type",cle."KRD Affiliation Type");
+                    KRDRepLine.SetRange("Instrument Type",cle."KRD Instrument Type");
+                    KRDRepLine.SetRange(Maturity,CLE."KRD Maturity");
+                    KRDRepLine.SetRange("Claim/Liability",cle."KRD Claim/Liability");
+                    KRDRepLine.SetRange("Non-Residnet Sector Code",cle."KRD Non-Residnet Sector Code");
+                    KRDRepLine.SetRange("Country/Region Code",cle."KRD Country/Region Code");
                     KRDRepLine.SetRange("Currency Code",cle."Currency Code");                    
                     //KRDRepLine.SetRange("Other Changes",cle."FAS Other Changes");
                     if KRDRepLine.FindSet() then begin
-                        if not cle."FAS Other Changes" then begin
+                        if not cle."KRD Other Changes" then begin
                             KRDRepLine."Increase Amount" += IncrAmt;
                             KRDRepLine."Decrease Amount" += DecrAmt;
                             KRDRepLine.Validate("Increase Amount");
@@ -133,19 +133,19 @@ report 13062661 "Suggest KRD Lines"
                         KRDRepLine."Document No." := KRDRepHead."No.";
                         KRDRepLine."Line No" := NewLineNo;
 
-                        KRDRepLine."Affiliation Type" := cle."FAS Affiliation Type";
-                        KRDRepLine."Instrument Type" := cle."FAS Instrument Type";
-                        KRDRepLine.Maturity := cle."FAS Maturity";
-                        KRDRepLine."Claim/Liability" := cle."FAS Claim/Liability";
-                        KRDRepLine."Non-Residnet Sector Code" := cle."FAS Non-Residnet Sector Code";
-                        KRDRepLine.validate("Country/Region Code",cle."FAS Country/Region Code");
+                        KRDRepLine."Affiliation Type" := cle."KRD Affiliation Type";
+                        KRDRepLine."Instrument Type" := cle."KRD Instrument Type";
+                        KRDRepLine.Maturity := cle."KRD Maturity";
+                        KRDRepLine."Claim/Liability" := cle."KRD Claim/Liability";
+                        KRDRepLine."Non-Residnet Sector Code" := cle."KRD Non-Residnet Sector Code";
+                        KRDRepLine.validate("Country/Region Code",cle."KRD Country/Region Code");
                         KRDRepLine.validate("Currency Code",cle."Currency Code");
 
-                        KRDRepLine."Opening Balance" := GetOpeningBalance(cle."FAS Affiliation Type",cle."FAS Instrument Type",
-                        cle."FAS Maturity",cle."FAS Claim/Liability",cle."FAS Non-Residnet Sector Code",cle."FAS Country/Region Code",
-                         cle."Currency Code",cle."FAS Other Changes");
+                        KRDRepLine."Opening Balance" := GetOpeningBalance(cle."KRD Affiliation Type",cle."KRD Instrument Type",
+                        cle."KRD Maturity",cle."KRD Claim/Liability",cle."KRD Non-Residnet Sector Code",cle."KRD Country/Region Code",
+                         cle."Currency Code",cle."KRD Other Changes");
 
-                        if not cle."FAS Other Changes" then begin
+                        if not cle."KRD Other Changes" then begin
                             KRDRepLine.validate("Increase Amount",IncrAmt);
                             KRDRepLine.validate("Decrease Amount",DecrAmt);
                         end else begin
@@ -163,16 +163,16 @@ report 13062661 "Suggest KRD Lines"
 
                     KRDRepLine.Reset();
                     KRDRepLine.SetRange("Document No.",KRDRepHead."No.");
-                    KRDRepLine.SetRange("Affiliation Type",VLE."FAS Affiliation Type");
-                    KRDRepLine.SetRange("Instrument Type",VLE."FAS Instrument Type");
-                    KRDRepLine.SetRange(Maturity,VLE."FAS Maturity");
-                    KRDRepLine.SetRange("Claim/Liability",VLE."FAS Claim/Liability");
-                    KRDRepLine.SetRange("Non-Residnet Sector Code",VLE."FAS Non-Residnet Sector Code");
-                    KRDRepLine.SetRange("Country/Region Code",VLE."FAS Country/Region Code");
+                    KRDRepLine.SetRange("Affiliation Type",VLE."KRD Affiliation Type");
+                    KRDRepLine.SetRange("Instrument Type",VLE."KRD Instrument Type");
+                    KRDRepLine.SetRange(Maturity,VLE."KRD Maturity");
+                    KRDRepLine.SetRange("Claim/Liability",VLE."KRD Claim/Liability");
+                    KRDRepLine.SetRange("Non-Residnet Sector Code",VLE."KRD Non-Residnet Sector Code");
+                    KRDRepLine.SetRange("Country/Region Code",VLE."KRD Country/Region Code");
                     KRDRepLine.SetRange("Currency Code",VLE."Currency Code");
                     //KRDRepLine.SetRange("Other Changes",VLE."FAS Other Changes");
                     if KRDRepLine.FindSet() then begin
-                        if not vle."FAS Other Changes" then begin
+                        if not vle."KRD Other Changes" then begin
                             KRDRepLine."Increase Amount" += IncrAmt;
                             KRDRepLine."Decrease Amount" += DecrAmt;
                             KRDRepLine.Validate("Increase Amount");
@@ -188,19 +188,19 @@ report 13062661 "Suggest KRD Lines"
                         KRDRepLine."Document No." := KRDRepHead."No.";
                         KRDRepLine."Line No" := NewLineNo;
 
-                        KRDRepLine."Affiliation Type" := VLE."FAS Affiliation Type";
-                        KRDRepLine."Instrument Type" := VLE."FAS Instrument Type";
-                        KRDRepLine.Maturity := VLE."FAS Maturity";
-                        KRDRepLine."Claim/Liability" := VLE."FAS Claim/Liability";
-                        KRDRepLine."Non-Residnet Sector Code" := VLE."FAS Non-Residnet Sector Code";
-                        KRDRepLine.validate("Country/Region Code",VLE."FAS Country/Region Code");
+                        KRDRepLine."Affiliation Type" := VLE."KRD Affiliation Type";
+                        KRDRepLine."Instrument Type" := VLE."KRD Instrument Type";
+                        KRDRepLine.Maturity := VLE."KRD Maturity";
+                        KRDRepLine."Claim/Liability" := VLE."KRD Claim/Liability";
+                        KRDRepLine."Non-Residnet Sector Code" := VLE."KRD Non-Residnet Sector Code";
+                        KRDRepLine.validate("Country/Region Code",VLE."KRD Country/Region Code");
                         KRDRepLine.validate("Currency Code",VLE."Currency Code");
 
-                        KRDRepLine."Opening Balance" := GetOpeningBalance(VLE."FAS Affiliation Type",VLE."FAS Instrument Type",
-                        VLE."FAS Maturity",VLE."FAS Claim/Liability",VLE."FAS Non-Residnet Sector Code",VLE."FAS Country/Region Code",
-                         VLE."Currency Code",VLE."FAS Other Changes");
+                        KRDRepLine."Opening Balance" := GetOpeningBalance(VLE."KRD Affiliation Type",VLE."KRD Instrument Type",
+                        VLE."KRD Maturity",VLE."KRD Claim/Liability",VLE."KRD Non-Residnet Sector Code",VLE."KRD Country/Region Code",
+                         VLE."Currency Code",VLE."KRD Other Changes");
 
-                        if not vle."FAS Other Changes" then begin
+                        if not vle."KRD Other Changes" then begin
                             KRDRepLine.validate("Increase Amount",IncrAmt);
                             KRDRepLine.validate("Decrease Amount",DecrAmt);
                         end else begin
@@ -225,14 +225,14 @@ report 13062661 "Suggest KRD Lines"
     begin
         if InitialRep then begin
             OldCLE.Reset();
-            OldCLE.SetRange("FAS Affiliation Type",AffiliationTypeCode);
-            OldCLE.SetRange("FAS Instrument Type",InstrumentTypeCode);
-            OldCLE.SetRange("FAS Maturity",MaturityCode);
-            OldCLE.SetRange("FAS Claim/Liability",ClaimLiabType);
-            OldCLE.SetRange("FAS Non-Residnet Sector Code",NonResSecCode);
-            OldCLE.SetRange("FAS Country/Region Code",CountryCode);
+            OldCLE.SetRange("KRD Affiliation Type",AffiliationTypeCode);
+            OldCLE.SetRange("KRD Instrument Type",InstrumentTypeCode);
+            OldCLE.SetRange("KRD Maturity",MaturityCode);
+            OldCLE.SetRange("KRD Claim/Liability",ClaimLiabType);
+            OldCLE.SetRange("KRD Non-Residnet Sector Code",NonResSecCode);
+            OldCLE.SetRange("KRD Country/Region Code",CountryCode);
             OldCLE.SetRange("Currency Code",CurrencyCode);
-            OldCLE.SetRange("FAS Other Changes",OtherChanges);
+            OldCLE.SetRange("KRD Other Changes",OtherChanges);
             OldCLE.SetFilter("Date Filter",'<%1',KRDRepHead."Period Start Date");
             
             if OldCLE.FindSet() then begin
@@ -243,14 +243,14 @@ report 13062661 "Suggest KRD Lines"
             end;
 
             OldVLE.Reset();
-            OldVLE.SetRange("FAS Affiliation Type",AffiliationTypeCode);
-            OldVLE.SetRange("FAS Instrument Type",InstrumentTypeCode);
-            OldVLE.SetRange("FAS Maturity",MaturityCode);
-            OldVLE.SetRange("FAS Claim/Liability",ClaimLiabType);
-            OldVLE.SetRange("FAS Non-Residnet Sector Code",NonResSecCode);
-            OldVLE.SetRange("FAS Country/Region Code",CountryCode);
+            OldVLE.SetRange("KRD Affiliation Type",AffiliationTypeCode);
+            OldVLE.SetRange("KRD Instrument Type",InstrumentTypeCode);
+            OldVLE.SetRange("KRD Maturity",MaturityCode);
+            OldVLE.SetRange("KRD Claim/Liability",ClaimLiabType);
+            OldVLE.SetRange("KRD Non-Residnet Sector Code",NonResSecCode);
+            OldVLE.SetRange("KRD Country/Region Code",CountryCode);
             OldVLE.SetRange("Currency Code",CurrencyCode);
-            OldVLE.SetRange("FAS Other Changes",OtherChanges);
+            OldVLE.SetRange("KRD Other Changes",OtherChanges);
             OldVLE.SetFilter("Date Filter",'<%1',KRDRepHead."Period Start Date");
             
             if OldVLE.FindSet() then begin
@@ -287,7 +287,7 @@ report 13062661 "Suggest KRD Lines"
         clear(IncrAmt);
         clear(DecrAmt);
 
-        if cle."FAS Claim/Liability" = cle."FAS Claim/Liability"::Claim then begin
+        if cle."KRD Claim/Liability" = cle."KRD Claim/Liability"::Claim then begin
             if cle.Positive then
                 IncrAmt := abs(cle."Remaining Amount")
             else
@@ -305,7 +305,7 @@ report 13062661 "Suggest KRD Lines"
         clear(IncrAmt);
         clear(DecrAmt);
 
-        if vle."FAS Claim/Liability" = vle."FAS Claim/Liability"::Claim then begin
+        if vle."KRD Claim/Liability" = vle."KRD Claim/Liability"::Claim then begin
             if vle.Positive then
                 IncrAmt := abs(vle."Remaining Amount")
             else

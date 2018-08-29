@@ -5,7 +5,7 @@ page 13062682 "BST Reports"
     UsageCategory = Administration;
     SourceTable = "BST Report Header";
     Editable = false;
-    //CardPageId = "BST Report";
+    CardPageId = "BST Report";
     Caption = 'BST Reports';
     
     layout

@@ -37,7 +37,11 @@ table 13062660 "Reporting_SI Setup"
             TableRelation = "FAS Sector";
             DataClassification = ToBeClassified;                        
         }    
-        
+        field(19;"FAS Director User ID";Text[100]) {
+            Caption = 'FAS Director User ID';
+            TableRelation = "User Setup";
+            DataClassification = ToBeClassified;            
+        }          
         field(20;"KRD Report No. Series";Code[20]) {
             Caption = 'KRD Report No. Series';
             DataClassification = ToBeClassified;
@@ -71,14 +75,7 @@ table 13062660 "Reporting_SI Setup"
             Caption = 'BST Prep. By User ID';
             TableRelation = "User Setup";
             DataClassification = ToBeClassified;            
-        }         
-        
-        field(19;"FAS Director User ID";Text[100]) {
-            Caption = 'FAS Director User ID';
-            TableRelation = "User Setup";
-            DataClassification = ToBeClassified;            
-        }            
-            
+        }               
     }
     
     keys
