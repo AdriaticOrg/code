@@ -15,7 +15,9 @@ pageextension 13062535 "VATEntries-Adl" extends "VAT Entries"  //315
             field("VAT Identifier"; "VAT Identifier-Adl")
             {
                 ApplicationArea = All;
-                Editable = false;
+                //Editable = false;
+                TableRelation = "VAT Identifier-Adl";
+
             }
         }
     }

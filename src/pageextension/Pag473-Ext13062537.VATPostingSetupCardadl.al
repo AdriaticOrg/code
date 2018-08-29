@@ -7,6 +7,7 @@ pageextension 13062537 "VATPostingSetupCard-Adl" extends "VAT Posting Setup Card
             field("Purch VAT Postponed Account-Adl"; "Purch VAT Postponed Account-Adl")
             {
                 ApplicationArea = All;
+                TableRelation = "G/L Account";
             }
         }
         addafter("Sales VAT Unreal. Account")
@@ -14,6 +15,7 @@ pageextension 13062537 "VATPostingSetupCard-Adl" extends "VAT Posting Setup Card
             field("Sales VAT Postponed Account-Adl"; "Sales VAT Postponed Account-Adl")
             {
                 ApplicationArea = All;
+                TableRelation = "G/L Account";
             }
         }
         modify("VAT Identifier")
