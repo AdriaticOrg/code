@@ -7,10 +7,12 @@ pageextension 13062533 "PostedPurchaseInvoice-Adl" extends "Posted Purchase Invo
             field("VAT Date -Adl"; "VAT Date-Adl")
             {
                 ApplicationArea = All;
+                Editable = false;
             }
             field("Postponed VAT -Adl"; "Postponed VAT-Adl")
             {
                 ApplicationArea = All;
+                Editable = false;
             }
         }
     }
