@@ -10,5 +10,13 @@ pageextension 13062535 "VATEntries-Adl" extends "VAT Entries"  //315
                 Editable = false;
             }
         }
+        addafter(Amount)
+        {
+            field("VAT Identifier"; "VAT Identifier-Adl")
+            {
+                ApplicationArea = All;
+                Editable = false;
+            }
+        }
     }
 }
