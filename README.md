@@ -24,7 +24,7 @@ No.|Feature Name|Country Specific|Responsible Partner|Sub-range
 
 No.|Feature Name|Country Specific|Responsible Partner|Sub-range
 -:|-|-|-|-
-[#18](/../../issues/16)|[Return Orders](https://github.com/AdriaticOrg/sdd/blob/master/features/ReturnOrders.md)||Adacta|13.062.581..13.062.590
+[#18](/../../issues/18)|[Return Orders](https://github.com/AdriaticOrg/sdd/blob/master/features/ReturnOrders.md)||Adacta|13.062.581..13.062.590
 [#19](/../../issues/19)|[Sales Documents](https://github.com/AdriaticOrg/sdd/blob/master/features/SalesDocuments.md)||Adacta|13.062.751..13.062.780
 [#20](/../../issues/20)|[Fiscalization](https://github.com/AdriaticOrg/sdd/blob/master/features/Fiscalization.md)|HR,SI|Adacta|13.062.781..13.062.810
 [#22](/../../issues/22)|[VIES Feature](https://github.com/AdriaticOrg/sdd/blob/master/features/VIESFeature.md)|SI|BS|13.062.601..13.062.620
