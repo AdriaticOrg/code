@@ -1,7 +1,7 @@
 {
-  "id": "720a3e27-3036-4045-bb10-339d0aa0d1e2",
-  "name": "code",
-  "publisher": "Default publisher",
+  "id": "06044fb1-e4fe-4612-bbab-8deb02c9c1ac",
+  "name": "Adriatic Localization for Business Central",
+  "publisher": "Adriatic.org",
   "brief": "",
   "description": "",
   "version": "1.0.0.0",
@@ -13,10 +13,11 @@
   "capabilities": [],
   "dependencies": [],
   "screenshots": [],
-  "platform": "12.0.0.0",
-  "application": "12.0.0.0",
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "showMyCode": true,
   "idRange": {
-    "from": 50100,
-    "to": 50149
+    "from": 13062525,
+    "to": 13063524
   }
 }
