@@ -8,7 +8,7 @@ No.|Feature Name|Country Specific|Responsible Partner|Sub-range
 -:|-|-|-|-
 [#6](/../../issues/6)|[VAT Date](https://github.com/AdriaticOrg/sdd/blob/master/features/VATDate.md)||NPS|13.062.525..13.062.550
 [#10](/../../issues/10)|[Postponed VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/PostponedVAT.md)||NPS|13.062.525..13.062.550
-[#11](/../../issues/11)|[Full VAT Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/FullVATPorting.md)||GoPro|13.062.525..13.062.550
+[#11](/../../issues/11)|[Full VAT Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/FullVATPosting.md)||GoPro|13.062.525..13.062.550
 [#12](/../../issues/12)|[Reverse Charge Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ReverseChargePosting.md)||NPS|13.062.525..13.062.550
 [#13](/../../issues/13)|[Informative VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/InformativeVAT.md)|SI|BS|13.062.551..13.062.560
 [#14](/../../issues/14)|[VAT Identifier](https://github.com/AdriaticOrg/sdd/blob/master/features/VATIdentifier.md)||GoPro|13.062.525..13.062.550
