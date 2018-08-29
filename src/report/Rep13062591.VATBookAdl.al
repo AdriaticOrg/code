@@ -1,7 +1,7 @@
 report 13062591 "VAT Book-Adl"
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './src/reportlayout/Rep50121.VATBookAdl.rdlc';
+    RDLCLayout = './src/reportlayout/Rep13062591.VATBookAdl.rdlc';
     Caption = 'VAT Book';
     EnableHyperlinks = true;
 
