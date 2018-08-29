@@ -1,6 +1,6 @@
 {
   "id": "06044fb1-e4fe-4612-bbab-8deb02c9c1ac",
-  "name": "VATDate",
+  "name": "Adriatic Localization for Business Central",
   "publisher": "Adriatic.org",
   "brief": "",
   "description": "",
@@ -13,11 +13,11 @@
   "capabilities": [],
   "dependencies": [],
   "screenshots": [],
-  "platform": "11.0.0.0",
-  "application": "11.0.0.0",
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
   "showMyCode": true,
   "idRange": {
     "from": 13062525,
-    "to": 13062550
+    "to": 13063524
   }
 }
