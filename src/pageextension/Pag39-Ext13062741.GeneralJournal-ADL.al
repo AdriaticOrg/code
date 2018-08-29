@@ -1,15 +1,15 @@
 
-pageextension 50100 "GeneralJournalHR-adl" extends "General Journal" 
+pageextension 13062741 "GeneralJournalHR-adl" extends "General Journal" 
 {
     layout
     {
         
         addlast(Control1)
         {
-            // <UnpaidReceivables>
+            // <#28>
             field("Original Document Amount (LCY)"; "Original Document Amount (LCY)")
             {
-                ApplicationArea = All;
+                ApplicationArea = Basic,Advanced;
                 Caption = 'Original Document Amount (LCY)';
 
                 trigger OnValidate();
@@ -18,14 +18,14 @@ pageextension 50100 "GeneralJournalHR-adl" extends "General Journal"
             }
             field("Original VAT Amount (LCY)"; "Original VAT Amount (LCY)")
             {
-                ApplicationArea = All;
+                ApplicationArea = Basic,Advanced;
                 Caption = 'Original VAT Amount (LCY)';
 
                 trigger OnValidate();
                 begin
                 end;
             }
-            // </UnpaidReceivables>
+            // </#28>
         }
         
     }

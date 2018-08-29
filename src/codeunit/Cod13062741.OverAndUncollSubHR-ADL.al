@@ -1,10 +1,35 @@
-codeunit 50100 "Cod50100OverAndUncollSubHR-adl"
+codeunit 13062741 "Cod13062741OverAndUncoll-adl"
 {   
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterPostVAT', '', false, false)]
-    local procedure OnAfterPostVAT()
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforePostGenJnlLine', '', false, false)]
+    local procedure OnBeforePostGenJnlLine(VAR GenJournalLine : Record "Gen. Journal Line";Balancing : Boolean)
+    var
+        GenJnlLine2 : Record "Gen. Journal Line";
+    begin
+        with GenJournalLine do
+            case "Account Type" OF
+                "Account Type"::Customer, "Account Type"::Vendor:
+                begin
+                    COPY(GenJnlLine2);
+                    //GenJournalLine.
+                end;
+            end;
+        end;      
+
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforePostVAT', '', false, false)]
+    local procedure OnBeforePostVAT(GenJnlLine : Record "Gen. Journal Line";VAR GLEntry : Record "G/L Entry";VATPostingSetup : Record "VAT Posting Setup")
     begin
         
     end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterPostVAT', '', false, false)]
+    local procedure OnAfterPostVAT(GenJnlLine : Record "Gen. Journal Line";VAR GLEntry : Record "G/L Entry";VATPostingSetup : Record "VAT Posting Setup")
+    begin
+        
+    end;
+
+
+
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterPostGLAcc', '', false, false)]
     local procedure OnAfterPostGLAcc()
@@ -20,7 +45,6 @@ codeunit 50100 "Cod50100OverAndUncollSubHR-adl"
 
         //GenJournalLine."Original Document Amount (LCY)";
         //GenJournalLine."Original VAT Amount (LCY)";
-
         /*CustomerLdgEntry.RESET;
         CustomerLdgEntry.SETCURRENTKEY("Journal Template Name","Journal Batch Name","Line No.");
         CustomerLdgEntry.SETRANGE("Journal Template Name",GenJnlLine."Journal Template Name");

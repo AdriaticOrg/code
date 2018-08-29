@@ -1,4 +1,4 @@
-report 50100 "OverdueAndUncollectedRecHR-adl"
+report 13062741 "OverdueAndUncollectedRecHR-adl"
 {
     UsageCategory = Administration;
     ApplicationArea = All;
