@@ -2,12 +2,7 @@ tableextension 13062532 "VATEntry-Adl" extends "VAT Entry" //254
 {
     fields
     {
-        field(13062525; "VAT Date-Adl"; Date)
-        {
-            DataClassification = CustomerContent;
-            Caption = 'VAT Date';
-            Editable = False;
-        }
+
         field(13062526; "Postponed VAT-Adl"; Option)
         {
             DataClassification = ToBeClassified;

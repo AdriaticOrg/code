@@ -36,7 +36,7 @@ codeunit 13062525 "VAT Management1-Adl"
     [EventSubscriber(ObjectType::Table, Database::"VAT Entry", 'OnAfterCopyFromGenJnlLine', '', true, true)]
     local procedure OnAfterCopyFromGenJnlLine(GenJournalLine: Record "Gen. Journal Line"; var VATEntry: Record "VAT Entry")
     begin
-        VATEntry."VAT Date-Adl" := GenJournalLine."VAT Date-Adl";
+        VATEntry."Posting Date" := GenJournalLine."VAT Date-Adl";
         VATEntry."Postponed VAT-Adl" := GenJournalLine."Postponed VAT-Adl";
     end;
 
@@ -99,7 +99,7 @@ codeunit 13062525 "VAT Management1-Adl"
     [EventSubscriber(ObjectType::Table, Database::"VAT Entry", 'OnAfterCopyFromGenJnlLine', '', true, true)]
     local procedure ValueEntrynAfterCopyFromGenJnlLine(VAR VATEntry: Record "VAT Entry"; GenJournalLine: Record "Gen. Journal Line")
     begin
-        VATEntry."VAT Date-Adl" := GenJournalLine."VAT Date-Adl";
+        VATEntry."Posting Date" := GenJournalLine."VAT Date-Adl";
         VATEntry."Postponed VAT-Adl" := GenJournalLine."Postponed VAT-Adl";
     end;
 

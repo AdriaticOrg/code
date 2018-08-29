@@ -58,7 +58,7 @@ report 13062591 "VAT Book-Adl"
                         {
                             IncludeCaption = true;
                         }
-                        column(VATDate_VATEntry; "VAT Date-Adl") { }
+                        column(VATDate_VATEntry; "Posting Date") { }
                         column(BilltoPaytoNo_VATEntry; "Bill-to/Pay-to No.") { }
 
                         trigger OnAfterGetRecord();
