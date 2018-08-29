@@ -11,6 +11,7 @@ No.|Feature Name|Country Specific|Responsible Partner|Sub-range
 [#11](/../../issues/11)|[Full VAT Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/FullVATPorting.md)||GoPro|13.062.525..13.062.550
 [#12](/../../issues/12)|[Reverse Charge Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ReverseChargePosting.md)||NPS|13.062.525..13.062.550
 [#13](/../../issues/13)|[Informative VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/InformativeVAT.md)|SI|BS|13.062.551..13.062.560
+[#14](/../../issues/14)|[VAT Identifier](https://github.com/AdriaticOrg/sdd/blob/master/features/VATIdentifier.md)||GoPro|13.062.525..13.062.550
 
 ## [General Ledger](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F2)
 
