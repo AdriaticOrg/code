@@ -13,5 +13,17 @@ pageextension 13062536 "VATPostingSetup-Adl" extends "VAT Posting Setup"  //472
                 ApplicationArea = All;
             }
         }
+        modify("VAT Identifier")
+        {
+            Visible = false;
+        }
+        addafter("VAT Identifier")
+        {
+            field("VAT Identifier-Adl"; "VAT Identifier")
+            {
+                ApplicationArea = All;
+                TableRelation = "VAT Identifier-Adl";
+            }
+        }
     }
 }
