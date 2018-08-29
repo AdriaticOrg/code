@@ -1,77 +1,78 @@
-report 13062662 "Export KRD"
+report 13062682 "Export BST"
 {
     UsageCategory = Administration;
     ApplicationArea = All;
-    RDLCLayout = './src/reportlayout/Rep13062662.ExportKRD.rdlc';
-    Caption = 'Export KRD';
+    RDLCLayout = './src/reportlayout/Rep13062682.ExportBST.rdlc';
+    Caption = 'Export BST';
     
     dataset
     {
-        dataitem(KRDReportHeader;"KRD Report Header")
+        dataitem("BST Report Header"; "BST Report Header")
         {
             RequestFilterFields = "No.";
 
-            column(CompanyName;CompanyInfo.Name){}
-            column(DocumentNo;KRDReportHeader."No."){
+            column(CompanyName;CompanyName) {}
+            column(DocumentNo;"No."){
                 IncludeCaption = true;
             }
-            column(PeriodStart;KRDReportHeader."Period Start Date"){
+            column(PeriodStart;"Period Start Date") {
                 IncludeCaption = true;
             }
-            column(PeriodEnd;KRDReportHeader."Period End Date"){
+            column(PeriodEnd;"Period End Date") {
                 IncludeCaption = true;
-            }   
+            }
+            column(PrepairedByName;PrepairedByUser."Reporting_SI Name") {}
+            column(ResponsibleName;ResponsibleUser."Reporting_SI Name") {}
 
-            dataitem(KRDReportLine;"KRD Report Line") {
-                DataItemLink = "Document No." = field("No.");
+            dataitem("BST Code";"BST Code") {
+                column(SerialNumber;"Serial Num.") {
+                    IncludeCaption = true;
+                }
+                column(Description;Description) {
+                    IncludeCaption = true;
+                }
+                column(BSTCode;Code) {
+                    IncludeCaption = true;
+                }
+                column(IsTotaling;IsTotaling) {}
+                column(IsBold;IsBold){}
+                column(IncomeAmount;BstReportLine."Income Amount"){}
+                column(ExpenseAmount;BstReportLine."Expense Amount"){}
 
-                column(LineNo;KRDReportLine."Line No"){}
-                column(ClaimLiability;format(KRDReportLine."Claim/Liability",0,'<Number>')){}
-                column(InstrumentType;KRDReportLine."Instrument Type"){
-                    IncludeCaption = true;
-                }
-                column(AffiliationType;KRDReportLine."Affiliation Type"){
-                    IncludeCaption = true;
-                }
-                column(NonResidentSectorCode;KRDReportLine."Non-Residnet Sector Code"){
-                    IncludeCaption = true;
-                }
-                column(Maturity;KRDReportLine.Maturity){
-                    IncludeCaption = true;
-                }
-                column(CountryRegionCode;KRDReportLine."Country/Region Code"){
-                    IncludeCaption = true;
-                }
-                column(CountryRegionNo;KRDReportLine."Country/Region No."){
-                    IncludeCaption = true;
-                }
-                column(CurrencyCode;KRDReportLine."Currency Code"){
-                    IncludeCaption = true;}
-                column(CurrencyNo;KRDReportLine."Currency No."){
-                    IncludeCaption = true;
-                }
-                column(OpeningBalance;KRDReportLine."Opening Balance"){
-                    IncludeCaption = true;
-                }
-                column(IncreaseAmount;KRDReportLine."Increase Amount"){
-                    IncludeCaption = true;
-                }
-                column(DecreaseAmount;KRDReportLine."Decrease Amount"){
-                    IncludeCaption = true;
-                }
-                column(ClosingBalance;KRDReportLine."Closing Balance"){
-                    IncludeCaption = true;
-                }
-                column(OtherChanges;KRDReportLine."Other Changes"){
-                    IncludeCaption = true;
-                }
+                trigger OnAfterGetRecord()
+                begin
+                    IsTotaling := "Type" = "Type"::Total;
+                    IsBold := StrLen("Code") = 1;
+
+                    IF "Code" = '' THEN CurrReport.SKIP;
+
+                    BstReportLine.RESET;
+                    BstReportLine.SETRANGE("Document No.","BST Report Header"."No.");
+                    IF Totaling <> '' THEN 
+                        BstReportLine.SETFILTER("BST Code",Totaling)
+                    ELSE
+                        BstReportLine.SETRANGE("BST Code",Code);
+
+                    BstReportLine.CALCSUMS("Income Amount","Expense Amount");
+
+                    IF HideZeros AND (BstReportLine."Income Amount" = 0) AND (BstReportLine."Expense Amount" = 0) THEN CurrReport.SKIP;                    
+                end;
+
             }
 
             trigger OnPostDataItem()
             begin
                 if ExpFile then
-                    ExportKRD(KRDReportHeader);                
-            end;            
+                ExportBST("BST Report Header");                
+            end;    
+
+            trigger OnAfterGetRecord()
+            begin
+                PrepairedByUser.get("Prep. By User ID");
+                PrepairedByUser.testfield("Reporting_SI Name");
+                ResponsibleUser.get("Resp. User ID");
+                ResponsibleUser.TestField("Reporting_SI Name");                
+            end;        
         }
     }
     
@@ -83,6 +84,11 @@ report 13062662 "Export KRD"
             {
                 group(General)
                 {
+                    field(HideZeros;HideZeros) {
+                        Caption = 'Hide zeros';
+                        ApplicationArea = All;
+                        Visible = true;
+                    }
                     field(ExpFile; ExpFile)
                     {
                         Caption = 'Export File';
@@ -99,32 +105,35 @@ report 13062662 "Export KRD"
             {
                 action(ActionName)
                 {
-                    ApplicationArea = All;                    
+                    ApplicationArea = All;
+                    
                 }
             }
         }
     }
-
     labels {
-        LblReportTitle = 'KRD Report';
+        LblReportTitle ='BST Report';
         LblPage = 'Page';
-        LblFilters= 'Filters:';
-        LblClaims= 'Claims';
-        LblLiability='Liabilities';
-        LblSectorCode='Sector Code';
-        LblCountryCode='Country Code';
-
+        LblResponsiblePerson = 'Responsible Person';
+        LblReportPrepairedBy = 'Report Prepaired By';
+        LblIncomeAmount = 'Income Amount';
+        LblExpenseAmount = 'Expense Amount';
     }
     var
         ExpFile:Boolean;
-        CompanyInfo:Record "Company Information";
+        IsTotaling:Boolean;
+        IsBold:Boolean;
+        HideZeros:Boolean;
+        PrepairedByUser:Record "User Setup";
+        ResponsibleUser:Record "User Setup";
+        BSTReportLine:Record "BST Report Line";
         Msg001:Label 'Export to %1 done OK.';
-
-    local procedure ExportKRD(KRDRepHead:Record "KRD Report Header")
+    local procedure ExportBST(BSTRepHead:Record "BST Report Header")
     var
         RepSIMgt:Codeunit "Reporting SI Mgt.";
-        KRDRepLine:Record "KRD Report Line";
+        BSTRepLine:Record "BST Report Line";
         CompanyInfo:Record "Company Information";
+        GLSetup:Record "General Ledger Setup";
         RespUser:Record "User Setup";
         MakerUser:Record "User Setup";
         XmlDoc:XmlDocument;
@@ -156,15 +165,18 @@ report 13062662 "Export KRD"
         CompanyInfo.TestField("Post Code");
         CompanyInfo.TestField(City);
 
-        KRDRepHead.TestField("Period Start Date");
+        GLSetup.get();
+        GLSetup.TestField("LCY Code");
 
-        RepSIMgt.GetUser(RespUser,KRDRepHead."Resp. User ID");
-        RepSIMgt.GetUser(MakerUser,KRDRepHead."Prep. By User ID");
+        BSTRepHead.TestField("Period Start Date");
+
+        RepSIMgt.GetUser(RespUser,BSTRepHead."Resp. User ID");
+        RepSIMgt.GetUser(MakerUser,BSTRepHead."Prep. By User ID");
 
         RepSIMgt.SplitAddress(CompanyInfo.Address + CompanyInfo."Address 2",Street,HouseNo);
 
-        StatMonth := DATE2DMY(KRDRepHead."Period Start Date",2);
-        StatYear := DATE2DMY(KRDRepHead."Period Start Date",3);        
+        StatMonth := DATE2DMY(BSTRepHead."Period Start Date",2);
+        StatYear := DATE2DMY(BSTRepHead."Period Start Date",3);        
 
         CurrDT := CREATEDATETIME(TODAY,TIME);
         MsgId := CompanyInfo."VAT Registration No." + FORMAT(CurrDT,0,'<Year4><Month,2><Day,2><Hours24,2><Filler Character,0><Minutes,2><Seconds,2><Second dec>');
@@ -258,12 +270,16 @@ report 13062662 "Export KRD"
 
         XmlElem[4] := XmlElement.Create('City',xbsrns);
         XmlElem[4].Add(XmlText.Create(CompanyInfo.City));
-        XmlElem[3].Add(XmlElem[4]);  
+        XmlElem[3].Add(XmlElem[4]); 
+
+        XmlElem[4] := XmlElement.Create('Telephone',xbsrns);
+        XmlElem[4].Add(XmlText.Create(PrepairedByUser."Reporting_SI Phone"));
+        XmlElem[3].Add(XmlElem[4]);           
         
         XmlElem[2] := XmlElement.Create('SMO',xbsrns);
         XmlElem[1].Add(xmlElem[2]);
 
-        XmlElem[3] := XmlElement.Create('KRD_Report',xbsrns);
+        XmlElem[3] := XmlElement.Create('BST_Report',xbsrns);
         XmlElem[2].Add(xmlElem[3]);
 
         XmlElem[4] := XmlElement.Create('ReportHeader',xbsrns);
@@ -317,12 +333,16 @@ report 13062662 "Export KRD"
         XmlElem[5].Add(xmlElem[6]);  
         XmlElem[6].Add(XmlText.Create(RespUser."Reporting_SI Phone")); 
 
+        XmlElem[6] := XmlElement.Create('Currency',xbsrns);
+        XmlElem[5].Add(xmlElem[6]);  
+        XmlElem[6].Add(XmlText.Create(GLSetup."LCY Code"));         
+
         XmlElem[4] := XmlElement.Create('ReportSpecifications',xbsrns);
         XmlElem[3].Add(xmlElem[4]);      
 
-        KRDReportLine.Reset();
-        KRDReportLine.SetRange("Document No.",KRDRepHead."No.");
-        if KRDReportLine.FindSet() then begin
+        BSTReportLine.Reset();
+        BSTReportLine.SetRange("Document No.",BSTRepHead."No.");
+        if BSTReportLine.FindSet() then begin
             repeat
                 LineCntr += 1;
 
@@ -331,103 +351,29 @@ report 13062662 "Export KRD"
 
                 XmlElem[6] := XmlElement.Create('SerialNo',xbsrns);
                 XmlElem[5].Add(xmlElem[6]);    
-                XmlElem[6].Add(XmlText.Create(Format(LineCntr)));       
+                XmlElem[6].Add(XmlText.Create(Format(LineCntr)));     
 
-                XmlElem[6] := XmlElement.Create('ClaimOrLiability',xbsrns);
+                XmlElem[6] := XmlElement.Create('Code',xbsrns);
                 XmlElem[5].Add(xmlElem[6]);    
-                case KRDReportLine."Claim/Liability" of
-                    KRDReportLine."Claim/Liability"::Claim: ClaimLiabStr := 'T';
-                    KRDReportLine."Claim/Liability"::Liability: ClaimLiabStr := 'O';
-                end;
-                XmlElem[6].Add(XmlText.Create(ClaimLiabStr));  
-
-                XmlElem[6] := XmlElement.Create('InstrumentType',xbsrns);
-                XmlElem[5].Add(xmlElem[6]);  
-                XmlElem[6].Add(XmlText.Create(KRDReportLine."Instrument Type"));   
-
-                XmlElem[6] := XmlElement.Create('AffiliationType',xbsrns);
-                XmlElem[5].Add(xmlElem[6]);  
-                XmlElem[6].Add(XmlText.Create(KRDReportLine."Affiliation Type"));    
-
-                XmlElem[6] := XmlElement.Create('Sector',xbsrns);
-                XmlElem[5].Add(xmlElem[6]);  
-                XmlElem[6].Add(XmlText.Create(KRDReportLine."Non-Residnet Sector Code"));  
-
-                XmlElem[6] := XmlElement.Create('Maturity',xbsrns);
-                XmlElem[5].Add(xmlElem[6]);  
-                XmlElem[6].Add(XmlText.Create(KRDReportLine.Maturity));       
+                XmlElem[6].Add(XmlText.Create(BSTReportLine."BST Code"));    
 
                 XmlElem[6] := XmlElement.Create('Country',xbsrns);
-                XmlElem[5].Add(xmlElem[6]);  
-                XmlElem[6].Add(XmlText.Create(format(KRDReportLine."Country/Region No."))); 
-
-                XmlElem[6] := XmlElement.Create('Currency',xbsrns);
-                XmlElem[5].Add(xmlElem[6]);  
-                XmlElem[6].Add(XmlText.Create(KRDReportLine."Currency Code"));  
-
-                XmlElem[6] := XmlElement.Create('Principal',xbsrns);
                 XmlElem[5].Add(xmlElem[6]);    
+                XmlElem[6].Add(XmlText.Create(format(BSTReportLine."Country/Region No.")));                                 
 
-                XmlElem[7] := XmlElement.Create('OpeningBalance',xbsrns);
-                XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(KRDReportLine."Opening Balance",0,TxtPrec))); 
-
-                XmlElem[7] := XmlElement.Create('Increase',xbsrns);
-                XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(KRDReportLine."Increase Amount",0,TxtPrec)));  
-
-                XmlElem[7] := XmlElement.Create('Decrease',xbsrns);
-                XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(KRDReportLine."Decrease Amount",0,TxtPrec))); 
-
-                XmlElem[7] := XmlElement.Create('OtherChanges',xbsrns);
-                XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(KRDReportLine."Other Changes",0,TxtPrec)));                 
-
-                XmlElem[7] := XmlElement.Create('ClosingBalance',xbsrns);
-                XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(KRDReportLine."Closing Balance",0,TxtPrec)));  
-
-                XmlElem[7] := XmlElement.Create('ShortTermResidualMaturity',xbsrns);
-                XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(0,0,TxtPrec)));  //to do 
-
-                XmlElem[7] := XmlElement.Create('Arrears',xbsrns);
-                XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(0,0,TxtPrec)));  //to do
-
-                XmlElem[6] := XmlElement.Create('InterestAndIncome',xbsrns);
+                XmlElem[6] := XmlElement.Create('Income',xbsrns);
                 XmlElem[5].Add(xmlElem[6]);    
+                XmlElem[6].Add(XmlText.Create(Format(BSTReportLine."Income Amount",0,TxtPrec))); 
 
-                XmlElem[7] := XmlElement.Create('OpeningBalance',xbsrns);
-                XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(0,0,TxtPrec)));  //to do         
+                XmlElem[6] := XmlElement.Create('Expenditure',xbsrns);
+                XmlElem[5].Add(xmlElem[6]);    
+                XmlElem[6].Add(XmlText.Create(Format(BSTReportLine."Expense Amount",0,TxtPrec))); 
 
-                XmlElem[7] := XmlElement.Create('AccruedInterest',xbsrns);
-                XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(0,0,TxtPrec)));  //to do        
+                XmlElem[6] := XmlElement.Create('SpecificationEntryType',xbsrns);
+                XmlElem[5].Add(xmlElem[6]);    
+                XmlElem[6].Add(XmlText.Create('L'));                                      
 
-                XmlElem[7] := XmlElement.Create('PaidInterest',xbsrns);
-                XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(0,0,TxtPrec)));  //to do
-
-                XmlElem[7] := XmlElement.Create('OtherChanges',xbsrns);
-                XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(0,0,TxtPrec)));  //to do 
-
-                XmlElem[7] := XmlElement.Create('ClosingBalance',xbsrns);
-                XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(0,0,TxtPrec)));  //to do
-
-                XmlElem[7] := XmlElement.Create('ShortTermResidualMaturity',xbsrns);
-                XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(0,0,TxtPrec)));  //to do 
-
-                XmlElem[7] := XmlElement.Create('Arrears',xbsrns);
-                XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(0,0,TxtPrec)));  //to do                                                                                                                                                                                                                                                                                                                                               
-
-            until KRDReportLine.Next() = 0;
+            until BSTReportLine.Next() = 0;
         end;         
 
         //export stream file part
@@ -435,11 +381,10 @@ report 13062662 "Export KRD"
         xmlDoc.WriteTo(outStr);
         TmpBlob.Blob.CreateInStream(inStr, TextEncoding::UTF8);
     
-        FileName := 'krd_' + format(KRDRepHead."No.") + '.xml'; 
+        FileName := 'bst_' + format(BSTRepHead."No.") + '.xml'; 
         ExpOk := File.DownloadFromStream(InStr,'Save To File','','All Files (*.*)|*.*',FileName);   
 
         Message(Msg001,FileName);    
 
-    end;
-  
+    end;    
 }

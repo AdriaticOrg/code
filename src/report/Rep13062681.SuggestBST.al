@@ -21,6 +21,7 @@ report 13062681 "Suggest BST"
             end;
             trigger OnAfterGetRecord()
             begin
+                // to do!
                 
                 
             end;

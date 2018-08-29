@@ -94,7 +94,7 @@ page 13062684 "BST Report"
                 begin
                     BSTRepHead := Rec;
                     BSTRepHead.SetRecFilter();
-                    //Report.RunModal(report::"Export BST",true,false,BSTRepHead);
+                    Report.RunModal(report::"Export BST",true,false,BSTRepHead);
                 end;
             }
             action("Release") {
