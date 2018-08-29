@@ -1,33 +1,44 @@
 # Adriatic Localization
 
-Localization features are transferred from Microsoft to Partners after version 4.0 SP1. In year 2018 four partner's has joined on Microsoft initiative. Partners are NPS, GoPro, Business Solutions (BS) and Adacta. There goal is to build common localization for Microsoft Dynamics - Business Central. Microsoft is helping partners with Ready to GO localization program. 
+Localization features are transferred from Microsoft to Partners after version 4.0 SP1. In year 2018 four partner's has joined on Microsoft initiative. Partners are NPS, GoPro, Business Solutions (BS) and Adacta. There goal is to build common localization for Microsoft Dynamics - Business Central. Microsoft is helping partners with Ready to GO localization program.
 
-## Feature List
+## [VAT Posting](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F1)
 
-Supported features:
-
-No.|Feature Name|Country Specific|Responsible Partner|Sub-range
+No.|Project|Feature Name|Country Specific|Responsible Partner|Sub-range
 -:|-|-|-|-
 [#6](/../../issues/6)|[VAT Date](https://github.com/AdriaticOrg/sdd/blob/master/features/VATDate.md)||NPS|13.062.525..13.062.550
-[#5](/../../issues/5)|[Postponed VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/PostponedVAT.md)||NPS|13.062.525..13.062.550
+[#10](/../../issues/10)|[Postponed VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/PostponedVAT.md)||NPS|13.062.525..13.062.550
 [#11](/../../issues/11)|[Full VAT Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/FullVATPorting.md)||GoPro|13.062.525..13.062.550
 [#12](/../../issues/12)|[Reverse Charge Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ReverseChargePosting.md)||NPS|13.062.525..13.062.550
 [#13](/../../issues/13)|[Informative VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/InformativeVAT.md)|SI|BS|13.062.551..13.062.560
+
+## [General Ledger](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F2)
+
+No.|Project|Feature Name|Country Specific|Responsible Partner|Sub-range
+-:|-|-|-|-
 [#7](/../../issues/7)|[Red reversal Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/RedReversalPosting.md)||GoPro|13.062.561..13.062.570
-7.|[Forced Debit / Credit Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ForcedDebitCreditPosting.md)||GoPro|13.062.571..13.062.580
-8.|[Internal Correction](https://github.com/AdriaticOrg/sdd/blob/master/features/InternalCorrection.md)||GoPro|13.062.581..13.062.590
-9.|[Return Orders](https://github.com/AdriaticOrg/sdd/blob/master/features/ReturnOrders.md)||Adacta|13.062.591..13.062.600
+[#16](/../../issues/16)|[Forced Debit / Credit Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ForcedDebitCreditPosting.md)||GoPro|13.062.571..13.062.580
+
+## [Sales & Purchase](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F3)
+
+No.|Project|Feature Name|Country Specific|Responsible Partner|Sub-range
+-:|-|-|-|-
+[#18](/../../issues/16)|[Return Orders](https://github.com/AdriaticOrg/sdd/blob/master/features/ReturnOrders.md)||Adacta|13.062.581..13.062.590
 [#5](/../../issues/5)|[VAT Books](https://github.com/AdriaticOrg/sdd/blob/master/features/VATBooks.md)||NPS|13.062.591..13.062.600
-11.|[VIES Feature](https://github.com/AdriaticOrg/sdd/blob/master/features/VIESFeature.md)|SI|BS|13.062.601..13.062.620
-12.|[Delivery Declaration](https://github.com/AdriaticOrg/sdd/blob/master/features/DeliveryDeclaration.md)|SI|BS|13.062.621..13.062.640
-13.|[FAS Report](https://github.com/AdriaticOrg/sdd/blob/master/features/FAS.md)|SI|BS|13.062.641..13.062.660
-14.|[KRD Report](https://github.com/AdriaticOrg/sdd/blob/master/features/KRD.md)|SI|BS|13.062.661..13.062.680
-15.|[BST Report](https://github.com/AdriaticOrg/sdd/blob/master/features/BST.md)|SI|BS|13.062.681..13.062.700
-16.|[Export G/L and VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/ExportGLandVAT.md)|SI|Adacta|13.062.701..13.062.730
-17.|[Detail Trial Balance Extended](https://github.com/AdriaticOrg/sdd/blob/master/features/DetailTrialBalanceExtended.md)|HR|Adacta|13.062.731..13.062.740
-18.|[Unpaid Receivables](https://github.com/AdriaticOrg/sdd/blob/master/features/UnpaidReceivables.md)|HR|Adacta|13.062.741..13.062.750
-19.|[Sales Documents](https://github.com/AdriaticOrg/sdd/blob/master/features/SalesDocuments.md)||Adacta|13.062.751..13.062.780
-20.|[Fiscalization](https://github.com/AdriaticOrg/sdd/blob/master/features/Fiscalization.md)|HR,SI|Adacta|13.062.781..13.062.810
+[#22](/../../issues/22)|[VIES Feature](https://github.com/AdriaticOrg/sdd/blob/master/features/VIESFeature.md)|SI|BS|13.062.601..13.062.620
+[#23](/../../issues/23)|[Delivery Declaration](https://github.com/AdriaticOrg/sdd/blob/master/features/DeliveryDeclaration.md)|SI|BS|13.062.621..13.062.640
+[#19](/../../issues/19)|[Sales Documents](https://github.com/AdriaticOrg/sdd/blob/master/features/SalesDocuments.md)||Adacta|13.062.751..13.062.780
+[#20](/../../issues/20)|[Fiscalization](https://github.com/AdriaticOrg/sdd/blob/master/features/Fiscalization.md)|HR,SI|Adacta|13.062.781..13.062.810
+
+## [Reports](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F4)
+No.|Project|Feature Name|Country Specific|Responsible Partner|Sub-range
+-:|-|-|-|-
+[#24](/../../issues/24)|[FAS Report](https://github.com/AdriaticOrg/sdd/blob/master/features/FAS.md)|SI|BS|13.062.641..13.062.660
+[#25](/../../issues/25)|[KRD Report](https://github.com/AdriaticOrg/sdd/blob/master/features/KRD.md)|SI|BS|13.062.661..13.062.680
+[#26](/../../issues/26)|[BST Report](https://github.com/AdriaticOrg/sdd/blob/master/features/BST.md)|SI|BS|13.062.681..13.062.700
+[#21](/../../issues/21)|[Export G/L and VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/ExportGLandVAT.md)|SI|Adacta|13.062.701..13.062.730
+[#27](/../../issues/27)|[Detail Trial Balance Extended](https://github.com/AdriaticOrg/sdd/blob/master/features/DetailTrialBalanceExtended.md)|HR|Adacta|13.062.731..13.062.740
+[#28](/../../issues/28)|[Unpaid Receivables](https://github.com/AdriaticOrg/sdd/blob/master/features/UnpaidReceivables.md)|HR|Adacta|13.062.741..13.062.750
 
 Test Toolset:
 
