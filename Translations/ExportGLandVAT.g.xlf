@@ -298,16 +298,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchaseHeader-adl - Field Postponed VAT-adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 689599865 - Field 2094579653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJournalLine-adl - Field VAT Date-adl - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 689599865 - Field 168439681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Postponed VAT</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJournalLine-adl - Field Postponed VAT-adl - Property Caption</note>
-        </trans-unit>
       </group>
     </body>
   </file>
