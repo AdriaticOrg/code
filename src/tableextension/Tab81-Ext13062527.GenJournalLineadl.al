@@ -1,14 +1,14 @@
-tableextension 50106 "GenJournalLine-adl" extends "Gen. Journal Line" // 81
+tableextension 13062527 "GenJournalLine-adl" extends "Gen. Journal Line" // 81
 {
     fields
     {
-        field(50100; "VAT Date-adl"; Date)
+        field(13062525; "VAT Date-adl"; Date)
         {
             DataClassification = CustomerContent;
             Caption = 'VAT Date';
             Editable = False;
         }
-        field(50101; "Postponed VAT-adl"; Option)
+        field(13062526; "Postponed VAT-adl"; Option)
         {
             DataClassification = ToBeClassified;
             Caption = 'Postponed VAT';

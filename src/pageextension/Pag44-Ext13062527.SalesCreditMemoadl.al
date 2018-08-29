@@ -1,4 +1,4 @@
-pageextension 50111 "SalesCreditMemo-adl" extends "Sales Credit Memo" //44
+pageextension 13062527 "SalesCreditMemo-adl" extends "Sales Credit Memo" //44
 {
     layout
     {

@@ -1,13 +1,13 @@
-tableextension 50102 "Sales Cr.Memo Header-adl" extends "Sales Cr.Memo Header" //114
+tableextension 13062529 "Sales Cr.Memo Header-adl" extends "Sales Cr.Memo Header" //114
 {
     fields
     {
-        field(50100; "VAT Date-adl"; Date)
+        field(13062525; "VAT Date-adl"; Date)
         {
             Caption = 'VAT Date';
             DataClassification = ToBeClassified;
         }
-        field(50101; "Postponed VAT-adl"; Option)
+        field(13062526; "Postponed VAT-adl"; Option)
         {
             Caption = 'Postponed VAT';
             DataClassification = ToBeClassified;

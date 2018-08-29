@@ -1,8 +1,8 @@
-tableextension 50100 "Sales Header-adl" extends "Sales Header" //36
+tableextension 13062525 "Sales Header-adl" extends "Sales Header" //36
 {
     fields
     {
-        field(50100; "VAT Date-adl"; Date)
+        field(13062525; "VAT Date-adl"; Date)
         {
             DataClassification = ToBeClassified;
             Caption = 'VAT Date';
@@ -14,7 +14,7 @@ tableextension 50100 "Sales Header-adl" extends "Sales Header" //36
                     "Postponed VAT-adl" := "Postponed VAT-adl"::"Realized VAT";
             end;
         }
-        field(50101; "Postponed VAT-adl"; Option)
+        field(13062526; "Postponed VAT-adl"; Option)
         {
             DataClassification = ToBeClassified;
             Caption = 'Postponed VAT';

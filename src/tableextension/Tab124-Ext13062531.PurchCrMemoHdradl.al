@@ -1,12 +1,12 @@
-tableextension 50104 "PurchaseInvHeader-adl" extends "Purch. Inv. Header"  //122
+tableextension 13062531 "PurchCrMemoHdr-adl" extends "Purch. Cr. Memo Hdr."  //124
 {
     fields
     {
-        field(50000; "VAT Date-adl"; Date)
+        field(13062525; "VAT Date-adl"; Date)
         {
             Caption = 'VAT Date';
         }
-        field(50001; "Postponed VAT-adl"; Option)
+        field(13062526; "Postponed VAT-adl"; Option)
         {
             Caption = 'Postponed VAT';
             OptionMembers = "Realized VAT","Postponed VAT";

@@ -1,8 +1,8 @@
-pageextension 50100 "SalesOrder-adl" extends "Sales Order" //42
+pageextension 13062528 "PurchaseOrder-adl" extends "Purchase Order" //50
 {
     layout
     {
-        addafter("Posting Date")
+        addlast(General)
         {
             field("VAT Date-adl"; "VAT Date-adl")
             {

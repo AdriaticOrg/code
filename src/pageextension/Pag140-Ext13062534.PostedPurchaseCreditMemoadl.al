@@ -1,4 +1,4 @@
-pageextension 50107 "PostedPurchaseCreditMemo-adl" extends "Posted Purchase Credit Memo"  //140
+pageextension 13062534 "PostedPurchaseCreditMemo-adl" extends "Posted Purchase Credit Memo"  //140
 {
     layout
     {

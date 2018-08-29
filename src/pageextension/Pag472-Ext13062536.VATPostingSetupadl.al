@@ -1,4 +1,4 @@
-pageextension 50112 "VATPostingSetupCard-adl" extends "VAT Posting Setup Card"  //473
+pageextension 13062536 "VATPostingSetup-adl" extends "VAT Posting Setup"  //472
 {
     layout
     {
@@ -8,9 +8,6 @@ pageextension 50112 "VATPostingSetupCard-adl" extends "VAT Posting Setup Card"  
             {
                 ApplicationArea = All;
             }
-        }
-         addafter("Sales VAT Unreal. Account")
-        {
             field("Sales VAT Postponed Account-adl"; "Sales VAT Postponed Account-adl")
             {
                 ApplicationArea = All;

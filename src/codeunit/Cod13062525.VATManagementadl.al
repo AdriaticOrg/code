@@ -1,4 +1,4 @@
-codeunit 50100 "VAT Management-adl"
+codeunit 13062525 "VAT Management-adl"
 {
     Permissions = tabledata 122=rm,
                 tabledata 124=rm,
