@@ -4,7 +4,7 @@ Localization features are transferred from Microsoft to Partners after version 4
 
 ## [VAT Posting](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F1)
 
-No.|Project|Feature Name|Country Specific|Responsible Partner|Sub-range
+No.|Feature Name|Country Specific|Responsible Partner|Sub-range
 -:|-|-|-|-
 [#6](/../../issues/6)|[VAT Date](https://github.com/AdriaticOrg/sdd/blob/master/features/VATDate.md)||NPS|13.062.525..13.062.550
 [#10](/../../issues/10)|[Postponed VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/PostponedVAT.md)||NPS|13.062.525..13.062.550
@@ -14,14 +14,14 @@ No.|Project|Feature Name|Country Specific|Responsible Partner|Sub-range
 
 ## [General Ledger](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F2)
 
-No.|Project|Feature Name|Country Specific|Responsible Partner|Sub-range
+No.|Feature Name|Country Specific|Responsible Partner|Sub-range
 -:|-|-|-|-
 [#7](/../../issues/7)|[Red reversal Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/RedReversalPosting.md)||GoPro|13.062.561..13.062.570
 [#16](/../../issues/16)|[Forced Debit / Credit Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ForcedDebitCreditPosting.md)||GoPro|13.062.571..13.062.580
 
 ## [Sales & Purchase](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F3)
 
-No.|Project|Feature Name|Country Specific|Responsible Partner|Sub-range
+No.|Feature Name|Country Specific|Responsible Partner|Sub-range
 -:|-|-|-|-
 [#18](/../../issues/16)|[Return Orders](https://github.com/AdriaticOrg/sdd/blob/master/features/ReturnOrders.md)||Adacta|13.062.581..13.062.590
 [#5](/../../issues/5)|[VAT Books](https://github.com/AdriaticOrg/sdd/blob/master/features/VATBooks.md)||NPS|13.062.591..13.062.600
@@ -31,7 +31,7 @@ No.|Project|Feature Name|Country Specific|Responsible Partner|Sub-range
 [#20](/../../issues/20)|[Fiscalization](https://github.com/AdriaticOrg/sdd/blob/master/features/Fiscalization.md)|HR,SI|Adacta|13.062.781..13.062.810
 
 ## [Reports](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F4)
-No.|Project|Feature Name|Country Specific|Responsible Partner|Sub-range
+No.|Feature Name|Country Specific|Responsible Partner|Sub-range
 -:|-|-|-|-
 [#24](/../../issues/24)|[FAS Report](https://github.com/AdriaticOrg/sdd/blob/master/features/FAS.md)|SI|BS|13.062.641..13.062.660
 [#25](/../../issues/25)|[KRD Report](https://github.com/AdriaticOrg/sdd/blob/master/features/KRD.md)|SI|BS|13.062.661..13.062.680
