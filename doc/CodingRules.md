@@ -12,10 +12,10 @@ Base Code|Formerly known as W1|1, 2, 3,...49.999
 Customer Code|Only for customers or demo|50.000, 50.001,...99.000
 App|Adriatic Localization range|13.062.525, 13.062.526,...13.063.524
 Feature|VAT Date feature sub range|13.062.525, 13.062.526..13.062.550
-Owned Element with ID|When element is part of file that is owned by same feature|1,2,3,...49.999
-Owned Element with no ID|When element is part of file that is owned by same feature|
-Foreign Element with ID|When element is not part of file owned by same feature|13.062.525, 13.062.526..13.062.550
-Foreign Element with no ID|When element is not part of file owned by same feature|See Code Mark Guidelines
+Owned Elements|When element is part of file that is owned by same feature and has ID (fields, actions, controls, ...)|1,2,3,...49.999
+Owned Elements|When element is part of file that is owned by same feature and has no ID (key, keygroup, code, ...)|
+Foreign Elements|When element is not part of file owned by same feature and has ID|13.062.525, 13.062.526..13.062.550
+Foreign Elements|When element is not part of file owned by same feature and has no ID|See Code Mark Guidelines
 
 ## Code Mark Guidelines
 
