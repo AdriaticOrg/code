@@ -1,7 +1,6 @@
 report 13062642 "Export FAS"
 {
     UsageCategory = Administration;
-    ApplicationArea = All;
     ProcessingOnly = true;
     Caption = 'Export FAS';
     

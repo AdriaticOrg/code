@@ -1,7 +1,6 @@
 page 13062643 "FAS Report"
 {
     PageType = Document;
-    ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "FAS Report Header";
     Caption = 'FAS Report';

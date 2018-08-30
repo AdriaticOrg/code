@@ -1,3 +1,1 @@
 1) check gl posting, account and bal. account seem to cancel each other in suggest lines
-2) do the right xml export
-3) do the RDL for xml export

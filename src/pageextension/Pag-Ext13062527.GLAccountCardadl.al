@@ -18,6 +18,12 @@ pageextension 13062527 "GLAccountCard-adl" extends "G/L Account Card"
             field ("FAS Instrument Code";"FAS Instrument Code") {
                 ApplicationArea = All;
             }
+            field("BST Value Posting";"BST Value Posting") {
+                ApplicationArea = All;
+            }
+            field("BST Code";"BST Code") {
+                ApplicationArea = All;
+            }
         }         
     }
     

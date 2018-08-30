@@ -1,7 +1,6 @@
 report 13062681 "Suggest BST"
 {
     UsageCategory = Administration;
-    ApplicationArea = All;
     ProcessingOnly = true;
     Caption = 'Suggest BST';
     
@@ -18,12 +17,26 @@ report 13062681 "Suggest BST"
                     BSTRepLine.SetRange("Document No.",BSTRepHead."No.");
                     BSTRepLine.DeleteAll(true);
                 end;
+
+                if BSTRepLine.FindLast() then
+                    NewLineNo += BSTRepLine."Line No";
             end;
-            trigger OnAfterGetRecord()
-            begin
-                // to do!
-                
-                
+
+            trigger OnAfterGetRecord()  
+            begin                
+                BSTRepLine.SetRange("BST Code","BST Code");
+                if BSTRepLine.FindSet(true,false) then begin
+                    AppendBSTValue(BSTRepLine,"G/L Account No.",Amount);
+                    BSTRepLine.Modify(true);  
+                end else begin
+                    BSTRepLine.Init();
+                    NewLineNo += 10000;
+                    BSTRepLine."Document No." := BSTRepHead."No.";
+                    BSTRepLine."Line No" := NewLineNo;
+                    BSTRepLine.Validate("BST Code","BST Code");
+                    AppendBSTValue(BSTRepLine,"G/L Account No.",Amount);
+                    BSTRepLine.Insert(true);
+                end;                
             end;
         }
     }
@@ -62,10 +75,35 @@ report 13062681 "Suggest BST"
         BSTRepLine:Record "BST Report Line";
         BSTRepHead:Record "BST Report Header";
         BSTRepDocNo:Code[20];
+        NewLineNo:Integer;
 
     procedure SetBSTRepDocNo(BSTDocNoLcl:Code[20]) 
     begin
         BSTRepDocNo := BSTDocNoLcl;        
         BSTRepHead.get(BSTRepDocNo);
     end;          
+
+    local procedure AppendBSTValue(var BSTRepLine:Record "BST Report Line";GLAccNo:Code[20];Amt:Decimal)
+    var
+        GLAcc:Record "G/L Account";
+    begin
+        GLAcc.get(GLAccNo);
+        case GLAcc."BST Value Posting" of
+            GLAcc."BST Value Posting"::Credit:
+                begin
+                    BSTRepLine."Income Amount" += abs(Amt);                                
+                end;
+            GLAcc."BST Value Posting"::Debit:
+                begin
+                    BSTRepLine."Expense Amount" += abs(Amt); 
+                end;
+            GLAcc."BST Value Posting"::Both:
+                begin
+                    if Amt > 0 then
+                        BSTRepLine."Income Amount" += Amt
+                    else
+                        BSTRepLine."Expense Amount" += abs(Amt);
+                end;
+        end;        
+    end;
 }

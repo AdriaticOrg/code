@@ -1,7 +1,6 @@
 report 13062662 "Export KRD"
 {
     UsageCategory = Administration;
-    ApplicationArea = All;
     RDLCLayout = './src/reportlayout/Rep13062662.ExportKRD.rdlc';
     Caption = 'Export KRD';
     

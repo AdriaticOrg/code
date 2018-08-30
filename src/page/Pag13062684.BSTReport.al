@@ -1,7 +1,6 @@
 page 13062684 "BST Report"
 {
     PageType = Document;
-    ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "BST Report Header";
     Caption = 'BST Report';

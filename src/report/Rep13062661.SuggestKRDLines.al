@@ -1,7 +1,6 @@
 report 13062661 "Suggest KRD Lines"
 {
     UsageCategory = Administration;
-    ApplicationArea = All;
     ProcessingOnly = true;
     Caption = 'Suggest KRD Lines';
     

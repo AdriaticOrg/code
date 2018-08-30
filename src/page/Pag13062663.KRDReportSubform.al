@@ -1,7 +1,6 @@
 page 13062663 "KRD Report Subform"
 {
     PageType = ListPart;
-    ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "KRD Report Line";
     AutoSplitKey = true;

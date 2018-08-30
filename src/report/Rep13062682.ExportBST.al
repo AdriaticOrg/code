@@ -1,7 +1,6 @@
 report 13062682 "Export BST"
 {
     UsageCategory = Administration;
-    ApplicationArea = All;
     RDLCLayout = './src/reportlayout/Rep13062682.ExportBST.rdlc';
     Caption = 'Export BST';
     

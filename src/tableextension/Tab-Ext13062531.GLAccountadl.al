@@ -29,11 +29,24 @@ tableextension 13062531 "GLAccount-adl" extends "G/L Account"
         }
         field(13062645;"FAS Instrument Posting";Option)
         {
-            Caption = 'FAS Sector Posting';
+            Caption = 'FAS Instrument Posting';
             DataClassification = ToBeClassified;
             OptionCaption = ' ,Code Mandatory,Same Code,No Code';
             OptionMembers = " ","Code Mandatory","Same Code","No Code";
         }
+        field(13062681; "BST Value Posting"; Option)
+        {
+            OptionMembers = " ","None","Credit","Debit","Both";
+            OptionCaption = ' ,None,Credit,Debit,Both';
+            Caption = 'BST Value Posting';
+            DataClassification = ToBeClassified;
+        }
+        field(13062682; "BST Code"; Code[10])
+        {
+            Caption = 'BST Code';
+            DataClassification = ToBeClassified;
+            TableRelation = "BST Code";
+        }                   
     }
 }
 

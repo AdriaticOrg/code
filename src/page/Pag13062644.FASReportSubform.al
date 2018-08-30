@@ -1,7 +1,6 @@
 page 13062644 "FAS Report Subform"
 {
     PageType = ListPart;
-    ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "FAS Report Line";
     AutoSplitKey = true;

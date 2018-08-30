@@ -14,6 +14,12 @@ tableextension 13062530 "GLEntry-adl" extends "G/L Entry"
             DataClassification = ToBeClassified;
             TableRelation = "FAS Sector";
         }
+        field(13062681; "BST Code"; Code[10])
+        {
+            Caption = 'BST Code';
+            DataClassification = ToBeClassified;
+            TableRelation = "BST Code";
+        }         
     }
 }
 

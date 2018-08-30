@@ -1,7 +1,6 @@
 report 13062641 "Suggest FAS Lines"
 {
     UsageCategory = Administration;
-    ApplicationArea = All;
     ProcessingOnly = true;
     Caption = 'Suggest FAS Lines'; 
   

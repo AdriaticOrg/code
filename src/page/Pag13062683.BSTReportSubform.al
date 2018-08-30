@@ -1,7 +1,6 @@
 page 13062683 "BST Report Subform"
 {
     PageType = ListPart;
-    ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "BST Report Line";
     AutoSplitKey = true;

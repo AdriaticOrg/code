@@ -1,7 +1,6 @@
 page 13062661 "KRD Report"
 {
     PageType = Document;
-    ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "KRD Report Header";
     Caption = 'KRD Report';
