@@ -36,7 +36,6 @@ codeunit 13062525 "VAT Management-Adl"
     [EventSubscriber(ObjectType::Table, Database::"VAT Entry", 'OnAfterCopyFromGenJnlLine', '', true, true)]
     local procedure OnAfterCopyFromGenJnlLine(GenJournalLine: Record "Gen. Journal Line"; var VATEntry: Record "VAT Entry")
     begin
-        VATEntry."Posting Date" := GenJournalLine."VAT Date-Adl";
         VATEntry."Postponed VAT-Adl" := GenJournalLine."Postponed VAT-Adl";
     end;
 
@@ -96,14 +95,6 @@ codeunit 13062525 "VAT Management-Adl"
     begin
         GenJournalLine."VAT Date-Adl" := SalesHeader."VAT Date-Adl";
         GenJournalLine."Postponed VAT-Adl" := SalesHeader."Postponed VAT-Adl";
-    end;
-
-    //OnAfterCopyFromGenJnlLine
-    [EventSubscriber(ObjectType::Table, Database::"VAT Entry", 'OnAfterCopyFromGenJnlLine', '', true, true)]
-    local procedure ValueEntrynAfterCopyFromGenJnlLine(VAR VATEntry: Record "VAT Entry"; GenJournalLine: Record "Gen. Journal Line")
-    begin
-        VATEntry."Posting Date" := GenJournalLine."VAT Date-Adl";
-        VATEntry."Postponed VAT-Adl" := GenJournalLine."Postponed VAT-Adl";
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'Posting Date', false, false)]
@@ -368,6 +359,19 @@ codeunit 13062525 "VAT Management-Adl"
         GenJnlLine2 := GenJnlLine;
 
 
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Entry - Edit", 'OnBeforeVATEntryModify', '', true, true)]
+    local procedure VATEntryEditOnBeforeVATEntryModify(var VATEntry : Record "VAT Entry";FromVATEntry : Record "VAT Entry")
+    begin
+        VATEntry."VAT Identifier-Adl" := FromVATEntry."VAT Identifier-Adl";
+    end;
+
+    local procedure VATEntryEdit()
+    var
+        myInt: Integer;
+    begin
+        
     end;
     
     var
