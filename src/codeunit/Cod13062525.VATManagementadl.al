@@ -34,9 +34,9 @@ codeunit 13062525 "VAT Management-Adl"
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"VAT Entry", 'OnAfterCopyFromGenJnlLine', '', true, true)]
-    local procedure OnAfterCopyFromGenJnlLine(GenJournalLine: Record "Gen. Journal Line"; var VATEntry: Record "VAT Entry")
+    local procedure ValueEntryAfterCopyFromGenJnlLine(VAR VATEntry: Record "VAT Entry"; GenJournalLine: Record "Gen. Journal Line")
     begin
-        VATEntry."Posting Date" := GenJournalLine."VAT Date-Adl";
+        //VATEntry."Posting Date" := GenJournalLine."VAT Date-Adl";
         VATEntry."Postponed VAT-Adl" := GenJournalLine."Postponed VAT-Adl";
     end;
 
@@ -90,20 +90,11 @@ codeunit 13062525 "VAT Management-Adl"
         SalesHeader."VAT Date-Adl" := SalesHeader."Posting Date";
     end;
 
-    //OnAfterCopyGenJnlLineFromSalesHeader
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterCopyGenJnlLineFromSalesHeader', '', true, true)]
     local procedure GenJournalLineOnAfterValidateDocumentDate(SalesHeader: Record "Sales Header"; var GenJournalLine: Record "Gen. Journal Line")
     begin
         GenJournalLine."VAT Date-Adl" := SalesHeader."VAT Date-Adl";
         GenJournalLine."Postponed VAT-Adl" := SalesHeader."Postponed VAT-Adl";
-    end;
-
-    //OnAfterCopyFromGenJnlLine
-    [EventSubscriber(ObjectType::Table, Database::"VAT Entry", 'OnAfterCopyFromGenJnlLine', '', true, true)]
-    local procedure ValueEntrynAfterCopyFromGenJnlLine(VAR VATEntry: Record "VAT Entry"; GenJournalLine: Record "Gen. Journal Line")
-    begin
-        VATEntry."Posting Date" := GenJournalLine."VAT Date-Adl";
-        VATEntry."Postponed VAT-Adl" := GenJournalLine."Postponed VAT-Adl";
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'Posting Date', false, false)]
@@ -369,7 +360,7 @@ codeunit 13062525 "VAT Management-Adl"
 
 
     end;
-    
+
     var
         UpdVatDate: Label '<qualifier>Change</qualifier><payload>Do you want to change VAT Date <emphasize>Headline1</emphasize>.</payload>';
         ManagePostponedVAT: Codeunit "Manage Postponed VAT-Adl";
