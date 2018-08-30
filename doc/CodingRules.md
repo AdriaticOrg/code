@@ -15,7 +15,7 @@ Feature|VAT Date feature sub range|13.062.525, 13.062.526..13.062.550
 Owned Elements|When element is part of file that is owned by same feature and has ID (fields, actions, controls, ...)|1,2,3,...49.999
 Owned Elements|When element is part of file that is owned by same feature and has no ID (key, keygroup, code, ...)|
 Foreign Elements|When element is not part of file owned by same feature and has ID|13.062.525, 13.062.526..13.062.550
-Foreign Elements|When element is not part of file owned by same feature and has no ID|See Code Mark Guidelines
+Foreign Elements|When element is not part of file owned by same feature and has no ID|See [Code Mark Guidelines](#code-mark-guidelines)
 
 ## Code Mark Guidelines
 
