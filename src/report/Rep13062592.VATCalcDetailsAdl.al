@@ -1,7 +1,7 @@
 report 13062592 "VAT Calc. Details-Adl"
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './src/reportlayout/Rep13062592.VATBookCalcDetailsAdl.rdlc';
+    RDLCLayout = './src/reportlayout/Rep13062592.VATCalcDetailsAdl.rdlc';
 
     Caption = 'VAT Calculation Details';
     EnableHyperlinks = true;
