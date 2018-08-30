@@ -169,7 +169,6 @@ codeunit 13062525 "VAT Management-Adl"
         case TableNo of
             DATABASE::"Sales Cr.Memo Header":
                 begin
-                    ;
                     SalesCrMemo.Get(No);
                     if CustLedgerEntry.Get(SalesCrMemo."Cust. Ledger Entry No.") then begin
                         LedgEntryFound := true;
@@ -185,7 +184,6 @@ codeunit 13062525 "VAT Management-Adl"
                 begin
                     SalesInvoice.Get(No);
                     if CustLedgerEntry.Get(SalesInvoice."Cust. Ledger Entry No.") then begin
-                        ;
                         LedgEntryFound := true;
                         if Post then
                             SalesInvoice."Postponed VAT-Adl" := SalesInvoice."Postponed VAT-Adl"::"Realized VAT"
@@ -197,7 +195,6 @@ codeunit 13062525 "VAT Management-Adl"
                 end;
             DATABASE::"Purch. Inv. Header":
                 begin
-                    ;
                     PurchInvoice.Get(No);
                     if VendLedgerEntry.Get(PurchInvoice."Vendor Ledger Entry No.") then begin
                         LedgEntryFound := true;
@@ -372,9 +369,7 @@ codeunit 13062525 "VAT Management-Adl"
 
 
     end;
-
-
-
+    
     var
         UpdVatDate: Label '<qualifier>Change</qualifier><payload>Do you want to change VAT Date <emphasize>Headline1</emphasize>.</payload>';
         ManagePostponedVAT: Codeunit "Manage Postponed VAT-Adl";
