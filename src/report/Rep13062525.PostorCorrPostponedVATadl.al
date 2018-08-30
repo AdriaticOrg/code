@@ -66,7 +66,7 @@ report 13062525 "Post or Corr Postponed VAT-Adl"
     end;
 
     var
-        VATManagement: Codeunit "VAT Management1-Adl";
+        VATManagement: Codeunit "VAT Management-Adl";
         NewPostingDate: Date;
         TableNo: Integer;
         No: Code[20];

@@ -66,9 +66,9 @@ report 13062591 "VAT Book-Adl"
                             ColumnAmt := 0;
                             GetCustVendInfo;
                             if "VAT Book View Line".Operator1 <> "VAT Book View Line".Operator1::" " then
-                                VATManagement.CalculateValue(true, ColumnAmt, "VAT Book View Line", "VAT Entry");
+                                VATBookCalc.CalculateValue(true, ColumnAmt, "VAT Book View Line", "VAT Entry");
                             if "VAT Book View Line".Operator2 <> "VAT Book View Line".Operator2::" " then
-                                VATManagement.CalculateValue(false, ColumnAmt, "VAT Book View Line", "VAT Entry");
+                                VATBookCalc.CalculateValue(false, ColumnAmt, "VAT Book View Line", "VAT Entry");
                         end;
 
                         trigger OnPreDataItem();
@@ -135,7 +135,7 @@ report 13062591 "VAT Book-Adl"
         CompInfo: Record "Company Information";
         Customer: Record Customer;
         Vendor: Record Vendor;
-        VATManagement: Codeunit "VAT Management-Adl";
+        VATBookCalc: Codeunit "VAT Book Calculation-Adl";
         ColumnAmt: Decimal;
         VATRegNo: Text[20];
         VendCustName: Text[100];
@@ -146,25 +146,24 @@ report 13062591 "VAT Book-Adl"
     begin
         VendCustName := '';
         VATRegNo := '';
-        with "VAT Entry" do
-        begin
+        with "VAT Entry" do begin
             case Type of
-                Type::Sale :
+                Type::Sale:
                     if Customer.Get("Bill-to/Pay-to No.") then begin
-                if Customer.City <> '' then
-                    VendCustName := Customer.Name + ', ' + Customer.City
-                else
-                    VendCustName := Customer.Name;
-                VATRegNo := Customer."VAT Registration No.";
-            end;
-            Type::Purchase :
+                        if Customer.City <> '' then
+                            VendCustName := Customer.Name + ', ' + Customer.City
+                        else
+                            VendCustName := Customer.Name;
+                        VATRegNo := Customer."VAT Registration No.";
+                    end;
+                Type::Purchase:
                     if Vendor.Get("Bill-to/Pay-to No.") then begin
-                if Vendor.City <> '' then
-                    VendCustName := Vendor.Name + ', ' + Vendor.City
-                else
-                    VendCustName := Vendor.Name;
-                VATRegNo := Vendor."VAT Registration No.";
-            end;
+                        if Vendor.City <> '' then
+                            VendCustName := Vendor.Name + ', ' + Vendor.City
+                        else
+                            VendCustName := Vendor.Name;
+                        VATRegNo := Vendor."VAT Registration No.";
+                    end;
             end;
         end;
     end;
