@@ -4,6 +4,7 @@ page 13062594 "VAT Book Groups-Adl"
     Caption = 'VAT Book Groups';
     PageType = List;
     SourceTable = "VAT Book Group-Adl";
+    PopulateAllFields = true;
 
     layout
     {

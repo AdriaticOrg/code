@@ -3,6 +3,7 @@ page 13062595 "VAT Book Group Identifiers-Adl"
     Caption = 'VAT Book Group Identifiers';
     PageType = List;
     SourceTable = "VAT Book Group Identifier-Adl";
+    PopulateAllFields = true;
 
     layout
     {
