@@ -4,6 +4,10 @@ Localization features are transferred from Microsoft to Partners after version 4
 
 > Note: All developers should follow the same [coding rules](doc/CodingRules.md).
 
+## Features
+
+Use ```<adl.6>``` code mark for VAT posting feature described with No. is #6.  
+
 No.|Feature Name|Country Specific|Sub-range
 -:|-|-|-
 ||**[VAT Posting](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F1)**|
