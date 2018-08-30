@@ -4,16 +4,20 @@ pageextension 13062533 "PostedPurchaseInvoice-Adl" extends "Posted Purchase Invo
     {
         addlast(General)
         {
+            // <adl.6>
             field("VAT Date -Adl"; "VAT Date-Adl")
             {
                 ApplicationArea = All;
                 Editable = false;
             }
+            // </adl.6>
+            // <adl.10>
             field("Postponed VAT -Adl"; "Postponed VAT-Adl")
             {
                 ApplicationArea = All;
                 Editable = false;
             }
+            // </adl.10>
         }
     }
     actions
@@ -22,6 +26,7 @@ pageextension 13062533 "PostedPurchaseInvoice-Adl" extends "Posted Purchase Invo
         {
             group(Functions)
             {
+                // <adl.10>
                 action(PostPostponed)
                 {
                     Caption = 'Post postponed VAT';
@@ -52,6 +57,7 @@ pageextension 13062533 "PostedPurchaseInvoice-Adl" extends "Posted Purchase Invo
                         PostCorr.RUNMODAL;
                     end;
                 }
+                // </adl.10>
             }
         }
     }
