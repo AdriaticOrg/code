@@ -12,6 +12,9 @@ tableextension 13062533 "VATPostingSetup-Adl" extends "VAT Posting Setup"  //325
 
 
         }
-
+        field(13062551; "VAT % (informative)-Adl"; Decimal)
+        {
+            Caption = 'VAT % (informative)';
+        }
     }
 }
