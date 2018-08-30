@@ -4,7 +4,7 @@ page 13062641 "FAS Instruments"
     PageType = List;
     DelayedInsert = true;
     SourceTable = "FAS Instrument";
-    UsageCategory = Administration;
+    UsageCategory = Lists;
     ApplicationArea = All;
     
     layout

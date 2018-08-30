@@ -105,8 +105,7 @@ page 13062661 "KRD Report"
 
                 trigger OnAction()
                 begin
-                    Status := Status::Realesed;
-                    Modify;
+                    ReleaseReopen(0);
                 end;
             }
             action("Reopen") {
@@ -115,8 +114,7 @@ page 13062661 "KRD Report"
 
                 trigger OnAction()
                 begin
-                    Status := Status::Open;
-                    Modify;
+                    ReleaseReopen(1);
                 end;
             }
         }

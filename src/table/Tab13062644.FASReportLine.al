@@ -54,8 +54,7 @@ table 13062644 "FAS Report Line"
         {
             Caption = 'Amount';
             DataClassification = ToBeClassified;
-        }
-                                
+        }                                
     }
     
     keys

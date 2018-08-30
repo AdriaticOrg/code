@@ -68,8 +68,10 @@ report 13062662 "Export KRD"
 
             trigger OnPostDataItem()
             begin
-                if ExpFile then
-                    ExportKRD(KRDReportHeader);                
+                if ExpFile then begin
+                    ExportKRD(KRDReportHeader); 
+                    KRDReportHeader.ReleaseReopen(0); 
+                end;              
             end;            
         }
     }
