@@ -105,25 +105,6 @@ page 13062643 "FAS Report"
                     Report.RunModal(report::"Export FAS",true,false,FASRepHead);
                 end;
             }
-
-            action("Export Report 2") {
-                Caption = 'Export Report 2';
-                Promoted = true;
-                ApplicationArea = All;
-
-                trigger OnAction()
-                var
-                    FASRepHead2:Record "FAS Report Header";
-                    FASXmlPort:XmlPort ExportFAS2;
-                begin
-                    FASRepHead2 := Rec;
-                    FASRepHead2.SetRecFilter();
-                    FASXmlPort.SetParams(FASRepHead2);
-                    FASXmlPort.Filename('fas.xml');
-                    //FASXmlPort.Export();
-                    FASXmlPort.Run();
-                end;
-            }
             action("Release") {
                 Caption = 'Release';
                 ApplicationArea = All;
