@@ -7,3 +7,5 @@ npm-debug.log
 .alpackages
 .vscode/*
 !.vscode/launch.json.default
+app.json
+
