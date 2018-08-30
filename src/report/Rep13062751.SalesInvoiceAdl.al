@@ -11,6 +11,7 @@ Report 13062751 "Sales - Invoice Adl"
     
     dataset
     {
+        
         dataitem("Sales Invoice Header";"Sales Invoice Header")
         {
             DataItemTableView = SORTING("No.");
