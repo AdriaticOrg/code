@@ -362,7 +362,7 @@ codeunit 13062525 "VAT Management-Adl"
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Entry - Edit", 'OnBeforeVATEntryModify', '', true, true)]
-    local procedure VATEntryEditOnBeforeVATEntryModify(var VATEntry : Record "VAT Entry";FromVATEntry : Record "VAT Entry")
+    local procedure VATEntryEditOnBeforeVATEntryModify(var VATEntry: Record "VAT Entry"; FromVATEntry: Record "VAT Entry")
     begin
         VATEntry."VAT Identifier-Adl" := FromVATEntry."VAT Identifier-Adl";
     end;
@@ -371,10 +371,10 @@ codeunit 13062525 "VAT Management-Adl"
     var
         myInt: Integer;
     begin
-        
+
     end;
-    
+
     var
-        UpdVatDate: Label '<qualifier>Change</qualifier><payload>Do you want to change VAT Date <emphasize>Headline1</emphasize>.</payload>';
+        UpdVatDate: Label 'Do you want to change VAT Date';
         ManagePostponedVAT: Codeunit "Manage Postponed VAT-Adl";
 }
