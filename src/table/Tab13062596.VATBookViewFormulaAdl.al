@@ -65,7 +65,7 @@ table 13062596 "VAT Book View Formula-Adl"
         field(9; Condition; Text[250])
         {
             Caption = 'Condition';
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
         }
 
         field(10; ConditionBlob; Blob)
