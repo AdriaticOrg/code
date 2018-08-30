@@ -2,10 +2,9 @@
 
 Localization features are transferred from Microsoft to Partners after version 4.0 SP1. In year 2018 four partner's has joined on Microsoft initiative. Partners are NPS, GoPro, Business Solutions (BS) and Adacta. There goal is to build common localization for Microsoft Dynamics - Business Central. Microsoft is helping partners with Ready to GO localization program.
 
-## [VAT Posting](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F1)
-
 No.|Feature Name|Country Specific|Responsible Partner|Sub-range
 -:|-|-|-|-
+||**[VAT Posting](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F1)**|||
 [#6](/../../issues/6)|[VAT Date](https://github.com/AdriaticOrg/sdd/blob/master/features/VATDate.md)||NPS|13.062.525..13.062.550
 [#10](/../../issues/10)|[Postponed VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/PostponedVAT.md)||NPS|13.062.525..13.062.550
 [#11](/../../issues/11)|[Full VAT Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/FullVATPosting.md)||GoPro|13.062.525..13.062.550
