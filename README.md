@@ -11,27 +11,19 @@ No.|Feature Name|Country Specific|Responsible Partner|Sub-range
 [#12](/../../issues/12)|[Reverse Charge Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ReverseChargePosting.md)||NPS|13.062.525..13.062.550
 [#13](/../../issues/13)|[Informative VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/InformativeVAT.md)|SI|BS|13.062.551..13.062.560
 [#14](/../../issues/14)|[VAT Identifier](https://github.com/AdriaticOrg/sdd/blob/master/features/VATIdentifier.md)||GoPro|13.062.525..13.062.550
-
-## [General Ledger](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F2)
-
-No.|Feature Name|Country Specific|Responsible Partner|Sub-range
--:|-|-|-|-
+||||
+||**[General Ledger](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F2)**|||
 [#7](/../../issues/7)|[Red reversal Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/RedReversalPosting.md)||GoPro|13.062.561..13.062.570
 [#16](/../../issues/16)|[Forced Debit / Credit Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ForcedDebitCreditPosting.md)||GoPro|13.062.571..13.062.580
-
-## [Sales & Purchase](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F3)
-
-No.|Feature Name|Country Specific|Responsible Partner|Sub-range
--:|-|-|-|-
+||||
+||**[Sales & Purchase](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F3)**|||
 [#18](/../../issues/18)|[Return Orders](https://github.com/AdriaticOrg/sdd/blob/master/features/ReturnOrders.md)||Adacta|13.062.581..13.062.590
 [#19](/../../issues/19)|[Sales Documents](https://github.com/AdriaticOrg/sdd/blob/master/features/SalesDocuments.md)||Adacta|13.062.751..13.062.780
 [#20](/../../issues/20)|[Fiscalization](https://github.com/AdriaticOrg/sdd/blob/master/features/Fiscalization.md)|HR,SI|Adacta|13.062.781..13.062.810
 [#22](/../../issues/22)|[VIES Feature](https://github.com/AdriaticOrg/sdd/blob/master/features/VIESFeature.md)|SI|BS|13.062.601..13.062.620
 [#23](/../../issues/23)|[Delivery Declaration](https://github.com/AdriaticOrg/sdd/blob/master/features/DeliveryDeclaration.md)|SI|BS|13.062.621..13.062.640
-
-## [Reports](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F4)
-No.|Feature Name|Country Specific|Responsible Partner|Sub-range
--:|-|-|-|-
+||||
+||**[Reports](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F4)**|||
 [#5](/../../issues/5)|[VAT Books](https://github.com/AdriaticOrg/sdd/blob/master/features/VATBooks.md)||NPS|13.062.591..13.062.600
 [#21](/../../issues/21)|[Export G/L and VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/ExportGLandVAT.md)|SI|Adacta|13.062.701..13.062.730
 [#24](/../../issues/24)|[FAS Report](https://github.com/AdriaticOrg/sdd/blob/master/features/FAS.md)|SI|BS|13.062.641..13.062.660
