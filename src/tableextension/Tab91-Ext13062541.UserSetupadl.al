@@ -1,7 +1,8 @@
 tableextension 13062541 "UserSetup-adl" extends "User Setup" //91
 {
-    fields {
-
+    fields
+    {
+        // <adl.24>
         field(13062641;"Reporting_SI Name";Text[100]) {
             Caption = 'Reporting_SI Name';
             DataClassification = ToBeClassified;            
@@ -20,8 +21,7 @@ tableextension 13062541 "UserSetup-adl" extends "User Setup" //91
         {
             Caption = 'Reporting_SI Phone';
             DataClassification = ToBeClassified;
-        }             
-
+        }
+        // </adl.24>
     }
-    
 }

@@ -3,19 +3,20 @@ pageextension 13062546 "CustPstGroups-adl" extends "Customer Posting Groups" //1
     layout
     {
         addlast(Control1) {
-            field("FAS Affiliation Type";"KRD Affiliation Type") {
+            // <adl.25>
+            field("KRD Affiliation Type";"KRD Affiliation Type") {
                 ApplicationArea = All;
             }
-            field("FAS Claim/Liability";"KRD Claim/Liability") {
+            field("KRD Claim/Liability";"KRD Claim/Liability") {
                 ApplicationArea = All;
             }
-            field("FAS Instrument Type";"KRD Instrument Type") {
+            field("KRD Instrument Type";"KRD Instrument Type") {
                 ApplicationArea = All;
             }
-            field("FAS Maturity";"KRD Maturity") {
+            field("KRD Maturity";"KRD Maturity") {
                 ApplicationArea = All;
             }
-
+            // </adl.25>
         }
         
     }

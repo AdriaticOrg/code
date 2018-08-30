@@ -2,18 +2,23 @@ tableextension 13062542 "GenJournalLine-Adl" extends "Gen. Journal Line" // 81
 {
     fields
     {
+        // <adl.6>
         field(13062525; "VAT Date-Adl"; Date)
         {
             DataClassification = CustomerContent;
             Caption = 'VAT Date';
             Editable = False;
         }
+        // </adl.6>
+        // <adl.10>
         field(13062526; "Postponed VAT-Adl"; Option)
         {
             DataClassification = ToBeClassified;
             Caption = 'Postponed VAT';
             OptionMembers = "Realized VAT","Postponed VAT";
         }
+        // </adl.10>
+        // <adl.24>
         field(13062641;"FAS Instrument Code";Code[10])
         {
             Caption = 'FAS Instrument Code';
@@ -26,5 +31,6 @@ tableextension 13062542 "GenJournalLine-Adl" extends "Gen. Journal Line" // 81
             DataClassification = ToBeClassified;
             TableRelation = "FAS Sector";
         }
+        // </adl.24>
     }
 }

@@ -4,16 +4,20 @@ pageextension 13062531 "PostedSalesInvoice-Adl" extends "Posted Sales Invoice" /
     {
         addafter("Posting Date")
         {
+            // <adl.6>
             field("VAT Date-Adl"; "VAT Date-Adl")
             {
                 ApplicationArea = All;
                 Editable = false;
             }
+            // </adl.6>
+            // <adl.10>
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
             {
                 ApplicationArea = All;
                 Editable = false;
             }
+            // </adl.10>
         }
     }
     actions
@@ -22,6 +26,7 @@ pageextension 13062531 "PostedSalesInvoice-Adl" extends "Posted Sales Invoice" /
         {
             group(Functions)
             {
+                // <adl.10>
                 action(PostPostponed)
                 {
                     Caption = 'Post postponed VAT';
@@ -52,6 +57,7 @@ pageextension 13062531 "PostedSalesInvoice-Adl" extends "Posted Sales Invoice" /
                         PostCorr.RUNMODAL;
                     end;
                 }
+                // </adl.10>
             }
         }
     }

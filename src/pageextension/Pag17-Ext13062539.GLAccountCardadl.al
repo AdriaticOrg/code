@@ -2,6 +2,7 @@ pageextension 13062539 "GLAccountCard-adl" extends "G/L Account Card" //17
 {
     layout
     {
+        // <adl.24>
         addlast(General) {
             field("FAS Account";"FAS Account") {
                 ApplicationArea = All;                
@@ -18,13 +19,16 @@ pageextension 13062539 "GLAccountCard-adl" extends "G/L Account Card" //17
             field ("FAS Instrument Code";"FAS Instrument Code") {
                 ApplicationArea = All;
             }
+            // <adl.26>
             field("BST Value Posting";"BST Value Posting") {
                 ApplicationArea = All;
             }
             field("BST Code";"BST Code") {
                 ApplicationArea = All;
             }
+            // </adl.26>
         }         
+        // </adl.24>
     }
     
     actions
