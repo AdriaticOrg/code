@@ -9336,7 +9336,6 @@ Public Function SetData(NewData as Object,Group as integer)
   Return True
 End Function
 
-
 Shared NoOfCopies as integer
 
 Public Function SetNoOfCopies(Value as integer)
