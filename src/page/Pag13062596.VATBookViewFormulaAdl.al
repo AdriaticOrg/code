@@ -29,6 +29,19 @@ page 13062596 "VAT Book View Formula-Adl"
                 {
                     ApplicationArea = All;
                 }
+                field(Condition; Condition)
+                {
+                    ApplicationArea = All;
+                    AssistEdit = true;
+
+                    trigger OnAssistEdit();
+                    begin
+                        if CurrPage.Editable() then begin
+                            SetFiltersForVATEntry;
+                            CurrPage.Update(true);
+                        end;
+                    end;
+                }
             }
 
         }

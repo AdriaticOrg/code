@@ -299,7 +299,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
 
     var
         MatrixRec: Record "VAT Book View Formula-Adl";
-        MATRIX_CellData: array[20] of Text[1024];
+        MATRIX_CellData: array[20] of Text;
         MatrixColumnCaptions: array[20] of Text[100];
         [InDataSet]
         Field1Visible: Boolean;
@@ -341,6 +341,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
         Field19Visible: Boolean;
         [InDataSet]
         Field20Visible: Boolean;
+
     local procedure InitCaption();
     var
         VATBookColumnName: Record "VAT Book Column Name-Adl";
@@ -359,14 +360,27 @@ page 13062597 "VAT Book Setup Matrix-Adl"
     local procedure MatrixOnAfterGetRecord();
     var
         I: Integer;
+        FilterLbl: Label 'FILTERS:';
     begin
-        For I := 1 TO ArrayLen(MATRIX_CellData) do
-        begin
+        For I := 1 TO ArrayLen(MATRIX_CellData) do begin
             MATRIX_CellData[I] := '';
             if MatrixRec.Get("VAT Book Code", "VAT Book Group Code", "VAT Identifier", I - 1) then
-                MATRIX_CellData[I] := Format(MatrixRec.Operator1) + Format(MatrixRec.Value1) + Format(MatrixRec.Operator2) + Format(MatrixRec.Value2);
+                if MatrixRec.Condition <> '' then
+                    MATRIX_CellData[I] := StrSubstNo('%1%2%3%4 %5%6',
+                                                        Format(MatrixRec.Operator1),
+                                                        Format(MatrixRec.Value1),
+                                                        Format(MatrixRec.Operator2),
+                                                        Format(MatrixRec.Value2),
+                                                        FilterLbl,
+                                                        MatrixRec.Condition)
+                else
+                    MATRIX_CellData[I] := StrSubstNo('%1%2%3%4',
+                                                        Format(MatrixRec.Operator1),
+                                                        Format(MatrixRec.Value1),
+                                                        Format(MatrixRec.Operator2),
+                                                        Format(MatrixRec.Value2));
+            SetVisible;
         end;
-        SetVisible;
     end;
 
     local procedure MatrixOnDrillDown(Column: Integer);

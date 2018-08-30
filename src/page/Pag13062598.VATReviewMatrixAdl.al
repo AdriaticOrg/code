@@ -343,9 +343,9 @@ page 13062598 "VAT Review Matrix-Adl"
                 var
                     VATBookViewFormula: Record "VAT Book View Formula-Adl";
                 begin
-                    Clear(VATCalcDetails);
-                    VATCalcDetails.SetParameters(DateFilter, "VAT Book Code");
-                    VATCalcDetails.Run;
+                    Clear(VATBookCalcDetails);
+                    VATBookCalcDetails.SetParameters(DateFilter, "VAT Book Code");
+                    VATBookCalcDetails.Run;
                 end;
             }
         }
@@ -381,9 +381,9 @@ page 13062598 "VAT Review Matrix-Adl"
     end;
 
     var
-        VATManagement: Codeunit "VAT Management-Adl";
+        VATBookCalc: Codeunit "VAT Book Calculation-Adl";
         TextManagement: Codeunit TextManagement;
-        VATCalcDetails: Report "VAT Calc. Details-Adl";
+        VATBookCalcDetails: Report "VAT Calc. Details-Adl";
         MatrixColumnCaptions: array[20] of Text[100];
         DateFilter: Text;
         MATRIX_CellData: array[20] of Decimal;
@@ -458,7 +458,7 @@ page 13062598 "VAT Review Matrix-Adl"
         i: Integer;
     begin
         for i := 1 to ArrayLen(MATRIX_CellData) do
-            MATRIX_CellData[i] := VATManagement.EvaluateExpression(Rec, i - 1, DateFilter);
+            MATRIX_CellData[i] := VATBookCalc.EvaluateExpression(Rec, i - 1, DateFilter);
     end;
 
     local procedure MatrixOnDrillDown(Column: Integer);
@@ -473,7 +473,7 @@ page 13062598 "VAT Review Matrix-Adl"
                     VATEntry.SetFilter(Type, '<>%1', VATEntry.Type::Settlement);
                     if DateFilter <> '' then
                         VATEntry.SetFilter("Posting Date", DateFilter);
-                    VATEntry.SetFilter("VAT Identifier-Adl", VATManagement.GetVATIdentifierFilter(Rec));
+                    VATEntry.SetFilter("VAT Identifier-Adl", VATBookCalc.GetVATIdentifierFilter(Rec));
                     PAGE.RunModal(0, VATEntry);
                 end;
             "Group Type"::Total:

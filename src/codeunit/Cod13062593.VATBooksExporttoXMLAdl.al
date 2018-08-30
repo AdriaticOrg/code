@@ -73,7 +73,7 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
         DownloadFromStream(InStream, 'Export', '', 'XML Files (*.xml)|*.xml', FileName);
     end;
 
-    local procedure XMLWrite(Text: Text[250]; Tag: Text[250]; Indent: Integer; PrintTag: Option Both, Front, Back, None; LongTag: Boolean);
+    local procedure XMLWrite(Text: Text[250]; Tag: Text[250]; Indent: Integer; PrintTag: Option Both,Front,Back,None; LongTag: Boolean);
     var
         i: Integer;
         Text102: Label 'Wrong XML indent writing text %1';
@@ -81,13 +81,13 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
     begin
         for i := 1 to Indent do
             XMLOutStream.WriteText('  ');
-            if Indent < 0 then
-                ERRor(Text102, Text);
-            if PrintTag in [PrintTag::Both, PrintTag::Front] then begin
-                if LongTag then
-                    XMLOutStream.WriteText('<' + Tag + ' />')
-                else
-                    XMLOutStream.WriteText('<' + Tag + '>')
+        if Indent < 0 then
+            ERRor(Text102, Text);
+        if PrintTag in [PrintTag::Both, PrintTag::Front] then begin
+            if LongTag then
+                XMLOutStream.WriteText('<' + Tag + ' />')
+            else
+                XMLOutStream.WriteText('<' + Tag + '>')
         end;
         XMLOutStream.WriteText(Text);
         if PrintTag in [PrintTag::Both, PrintTag::Back] then begin
@@ -105,7 +105,7 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
         VATBookColumnName: Record "VAT Book Column Name-Adl";
         CompanyInFormation: Record "Company InFormation";
         User: Record User;
-        VATManagement: Codeunit "VAT Management-Adl";
+        VATBookCalc: Codeunit "VAT Book Calculation-Adl";
         ColumnAmt: Decimal;
         ColumnAmt1: Decimal;
         i: Integer;
@@ -151,7 +151,7 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
                     VATBookColumnName.SetRange("VAT Book Code", VATBook.Code);
                     VATBookColumnName.SetFilter("Column No.", VATBookGroup."Include Columns");
                     if VATBookColumnName.FindFirst then begin
-                        ColumnAmt := VATManagement.EvaluateExpression(VATBookGroup, VATBookColumnName."Column No.", DateFilter);  //GRMtoAdd
+                        ColumnAmt := VATBookCalc.EvaluateExpression(VATBookGroup, VATBookColumnName."Column No.", DateFilter);  //GRMtoAdd
                         XMLWrite(DelChr(Format(Round(ColumnAmt, 1)), '<=>', '.'), VATBookGroup."Tag Name", 2, 0, false);
                     end;
                 until VATBookGroup.Next = 0;
@@ -190,23 +190,23 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
                             if VATBookColumnName.Count > 1 then
                                 i := 1;
                             repeat
-                                ColumnAmt := VATManagement.EvaluateExpression(VATBookGroup, VATBookColumnName."Column No.", DateFilter);
+                                ColumnAmt := VATBookCalc.EvaluateExpression(VATBookGroup, VATBookColumnName."Column No.", DateFilter);
                                 if i > 0 then begin
-                                    if((StrPos(VATBookGroup."Include Columns", Format(VATBookColumnName."Column No.")) <> 0) 
-                                        or (VATBookGroup."Include Columns" = '')) 
-                                        and (Round(ColumnAmt, 1) <> 0) 
+                                    if ((StrPos(VATBookGroup."Include Columns", Format(VATBookColumnName."Column No.")) <> 0)
+                                        or (VATBookGroup."Include Columns" = ''))
+                                        and (Round(ColumnAmt, 1) <> 0)
                                     then
-                                        if(VATBookGroup."Tag Name" = Tag63) 
-                                           or (VATBookGroup."Tag Name" = Tag64) 
+                                        if (VATBookGroup."Tag Name" = Tag63)
+                                           or (VATBookGroup."Tag Name" = Tag64)
                                         then
                                             XMLWrite(DelChr(Format(Round(ColumnAmt, 1)), '<=>', '.'), VATBookGroup."Tag Name", 2, 0, false)
                                         else
                                             XMLWrite(DelChr(Format(Round(ColumnAmt, 1)), '<=>', '.'), VATBookGroup."Tag Name" + Format(i), 2, 0, false);
                                     i += 1;
-                                end else 
-                                    if((StrPos(VATBookGroup."Include Columns", Format(VATBookColumnName."Column No.")) <> 0) 
-                                       or(VATBookGroup."Include Columns" = '')) 
-                                       and(Round(ColumnAmt, 1) <> 0) 
+                                end else
+                                    if ((StrPos(VATBookGroup."Include Columns", Format(VATBookColumnName."Column No.")) <> 0)
+                                       or (VATBookGroup."Include Columns" = ''))
+                                       and (Round(ColumnAmt, 1) <> 0)
                                     then
                                         XMLWrite(DelChr(Format(Round(ColumnAmt, 1)), '<=>', '.'), VATBookGroup."Tag Name", 2, 0, false);
                             until VATBookColumnName.Next = 0;
