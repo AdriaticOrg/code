@@ -852,7 +852,6 @@ Report 13062751 "Sales - Invoice Adl"
                       CopyText := FormatDocument.GetCOPYText;
                       OutputNo += 1;
                     end;
-                    CurrReport.PAGENO := 1;
 
                     TotalSubTotal := 0;
                     TotalInvDiscAmount := 0;
