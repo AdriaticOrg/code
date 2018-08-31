@@ -10,6 +10,12 @@ pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
             field("FAS Sector Code";"FAS Sector Code") {
                 ApplicationArea = All;
             }
+            field("Bal. FAS Instrument Code";"Bal. FAS Instrument Code") {
+                ApplicationArea = All;
+            }
+            field("Bal. FAS Sector Code";"Bal. FAS Sector Code") {
+                ApplicationArea = All;
+            }
         }
         // </adl.24>
     }

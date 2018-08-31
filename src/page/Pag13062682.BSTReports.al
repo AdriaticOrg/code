@@ -2,7 +2,7 @@ page 13062682 "BST Reports"
 {
     PageType = List;
     ApplicationArea = All;
-    UsageCategory = Administration;
+    UsageCategory = Lists;
     SourceTable = "BST Report Header";
     Editable = false;
     CardPageId = "BST Report";

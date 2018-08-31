@@ -1,2 +1,0 @@
-1) report line, valide ISO numbers (country, currency)
-2) add code in xml export for tags inside InterestAndIncome

@@ -1,4 +1,5 @@
 build
+todo
 out
 node_modules
 *.vsix
@@ -9,4 +10,5 @@ todo
 .vscode/*
 !.vscode/launch.json.default
 app.json
+todo/*
 

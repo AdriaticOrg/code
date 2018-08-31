@@ -4,7 +4,12 @@ codeunit 13062661 "Reporting SI Evnt."
     local procedure GLEntryInsert(VAR GlobalGLEntry: Record "G/L Entry"; GenJournalLine: Record "Gen. Journal Line")
     var
         GLAcc: Record "G/L Account";
-    begin
+        AccNo:Code[20];
+    begin 
+        if GlobalGLEntry."G/L Account No." = GenJournalLine."Bal. Account No." then begin
+            GenJournalLine."FAS Sector Code" := GenJournalLine."Bal. FAS Sector Code";
+            GenJournalLine."FAS Instrument Code" := GenJournalLine."Bal. FAS Instrument Code";
+        end;
         if GLAcc.GET(GlobalGLEntry."G/L Account No.") then begin
             if GLAcc."FAS Account" then begin
                 case GLAcc."FAS Instrument Posting" of
@@ -100,7 +105,30 @@ codeunit 13062661 "Reporting SI Evnt."
 
     begin
         GenJournalLine."FAS Sector Code" := BankAccount."FAS Sector Code";
+        GenJournalLine."FAS Instrument Code" :=BankAccount."FAS Instrument Code";
     end;
+    
+    [EventSubscriber(ObjectType::Table, 81, 'OnAfterAccountNoOnValidateGetCustomerBalAccount', '', false, false)]
+    local procedure BalGETFASFromVend(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Customer: Record Customer)
+
+    begin
+        GenJournalLine."Bal. FAS Sector Code" := Customer."FAS Sector Code";
+    end;
+
+    [EventSubscriber(ObjectType::Table, 81, 'OnAfterAccountNoOnValidateGetVendorBalAccount', '', false, false)]
+    local procedure BalGETFASFromCust(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Vendor: Record "Vendor")
+
+    begin
+        GenJournalLine."Bal. FAS Sector Code" := Vendor."FAS Sector Code";
+    end;  
+
+    [EventSubscriber(ObjectType::Table, 81, 'OnAfterAccountNoOnValidateGetBankBalAccount', '', false, false)]
+    local procedure BalGETFASFromBank(VAR GenJournalLine: Record "Gen. Journal Line"; VAR BankAccount: Record "Bank Account")
+
+    begin
+        GenJournalLine."Bal. FAS Sector Code" := BankAccount."FAS Sector Code";
+        GenJournalLine."Bal. FAS Instrument Code" := BankAccount."FAS Instrument Code";
+    end;    
 
 
 }
