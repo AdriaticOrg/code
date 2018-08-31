@@ -93,14 +93,14 @@ codeunit 13062591 "VAT Book Calculation-Adl"
         VATBookViewFormula.SetRange("VAT Book Group Code", VATBookGroup.Code);
         VATBookViewFormula.SetFilter("VAT Identifier", GetVATIdentifierFilter(VATBookGroup));
         VATBookViewFormula.SetRange("Column No.", ColumnNo);
-        VATEntry.SetCurrentKey(Type, "Posting Date", "VAT Identifier-Adl");
-        VATEntry.SetFilter(Type, '<>%1', VATEntry.Type::Settlement);
-        if DateFilter <> '' then
-            VATEntry.SetFilter("Posting Date", DateFilter);
         if VATBookViewFormula.FindSet then
             repeat
-                VATEntry.SetFilter("VAT Identifier-Adl", VATBookViewFormula."VAT Identifier");
+                VATEntry.SetCurrentKey(Type, "Posting Date", "VAT Identifier-Adl");
+                VATEntry.SetFilter(Type, '<>%1', VATEntry.Type::Settlement);
                 VATBookViewFormula.SetVATEntryFilters(VATEntry);
+                if DateFilter <> '' then
+                    VATEntry.SetFilter("Posting Date", DateFilter);
+                VATEntry.SetFilter("VAT Identifier-Adl", VATBookViewFormula."VAT Identifier");
                 if VATEntry.FindSet then
                     repeat
                         if VATBookViewFormula.Operator1 <> VATBookViewFormula.Operator1::" " then
