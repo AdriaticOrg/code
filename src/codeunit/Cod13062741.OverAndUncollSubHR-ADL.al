@@ -1,88 +1,51 @@
 codeunit 13062741 "Cod13062741OverAndUncoll-adl"
 {   
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforePostGenJnlLine', '', false, false)]
-    local procedure OnBeforePostGenJnlLine(VAR GenJournalLine : Record "Gen. Journal Line";Balancing : Boolean)
-    var
-        GenJnlLine2 : Record "Gen. Journal Line";
+ 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Batch", 'OnBeforeCode', '', false, false)]
+    local procedure OnBeforeCode(VAR GenJournalLine : Record "Gen. Journal Line";PreviewMode : Boolean;CommitIsSuppressed : Boolean)
+     var 
+        GenPostLine: Codeunit "Gen. Jnl.-Post Line"; 
+        GenJnlLine2: Record "Gen. Journal Line";
+        GenJnlLine3: Record "Gen. Journal Line";
     begin
-        with GenJournalLine do
+        GenJnlLine3.Copy(GenJournalLine);
+        GenJnlLine3.FindFirst();
+
+        with GenJnlLine3 do begin
             case "Account Type" OF
-                "Account Type"::Customer, "Account Type"::Vendor:
-                begin
-                    COPY(GenJnlLine2);
-                    //GenJournalLine.
-                end;
+                "Account Type"::Customer: //, "Account Type"::Vendor:
+                    begin   
+                        //GenJnlLine2.Copy(GenJnlLine);
+                        GenJnlLine2."Journal Template Name":= GenJnlLine3."Journal Template Name";
+                        GenJnlLine2."Journal Batch Name":= GenJnlLine3."Journal Batch Name";
+                        GenJnlLine2.SETRANGE("Journal Template Name",GenJnlLine3."Journal Template Name");
+                        GenJnlLine2.SETRANGE("Journal Batch Name",GenJnlLine3."Journal Batch Name");   
+
+                        GenJnlLine2.iNIT;   
+                        GenJnlLine2."Line No.":= 10000;
+                        GenJnlLine2."Posting Date":= GenJnlLine3."Posting Date";
+                        GenJnlLine2."Document Date":= GenJnlLine3."Document Date";
+                        GenJnlLine2."Document no.":= GenJnlLine3."Document No.";
+                        GenJnlLine2."Document Type":= GenJnlLine3."Document Type"::Payment;                       
+                        GenJnlLine2."Account Type":= GenJnlLine3."Account Type"::"G/L Account";
+                        GenJnlLine2."Account No.":= '500100';
+               
+                        GenJnlLine2."Bal. Account Type":= GenJnlLine3."Bal. Account Type"::"G/L Account"; 
+                        GenJnlLine2."Bal. Account No.":= '500050';
+
+                        GenJnlLine2.Amount:= GenJnlLine3.Amount - GenJnlLine3."Original Document Amount (LCY)";
+                        GenPostLine.RunWithCheck(GenJnlLine2);
+                    end;
             end;
-        end;      
-
-
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforePostVAT', '', false, false)]
-    local procedure OnBeforePostVAT(GenJnlLine : Record "Gen. Journal Line";VAR GLEntry : Record "G/L Entry";VATPostingSetup : Record "VAT Posting Setup")
-    begin
-        
-    end;
-
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterPostVAT', '', false, false)]
-    local procedure OnAfterPostVAT(GenJnlLine : Record "Gen. Journal Line";VAR GLEntry : Record "G/L Entry";VATPostingSetup : Record "VAT Posting Setup")
-    begin
-        
+end;  
     end;
 
 
-
-
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterPostGLAcc', '', false, false)]
-    local procedure OnAfterPostGLAcc()
-    begin
-        
-    end;
-
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterPostCust', '', false, false)]
-    local procedure OnAfterPostCust(var GenJournalLine : Record "Gen. Journal Line";Balancing : Boolean)
-    var 
-        CustomerLdgEntry : Record "Cust. Ledger Entry";
-    begin
-
-        //GenJournalLine."Original Document Amount (LCY)";
-        //GenJournalLine."Original VAT Amount (LCY)";
-        /*CustomerLdgEntry.RESET;
-        CustomerLdgEntry.SETCURRENTKEY("Journal Template Name","Journal Batch Name","Line No.");
-        CustomerLdgEntry.SETRANGE("Journal Template Name",GenJnlLine."Journal Template Name");
-        CustomerLdgEntry.SETRANGE("Journal Batch Name",GenJnlLine."Journal Batch Name");
-        CustomerLdgEntry.SETRANGE("Line No.",GenJnlLine."Line No.");
-        CustomerLdgEntry.SETRANGE("Is Journal Line",TRUE);
-        IF CustomerLdgEntry.FINDFIRST THEN BEGIN
-            CustomerLdgEntry2.INIT;
-            CustomerLdgEntry2."Entry No.":=CustLedgEntry."Entry No.";
-            CustomerLdgEntry2."Is Journal Line":=FALSE;
-            CustomerLdgEntry2."Original Document Amount (LCY)":=CustomerLdgEntry."Original Document Amount (LCY)";
-            CustomerLdgEntry2."Original VAT Amount (LCY)":=CustomerLdgEntry."Original VAT Amount (LCY)";
-            CustomerLdgEntry2."Open Amount (LCY) w/o Unreal.":=CustomerLdgEntry."Open Amount (LCY) w/o Unreal.";
-            CustomerLdgEntry2.INSERT;
-            CustomerLdgEntry.DELETE;
-        */
-    end;
-
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitCustLedgEntry', '', false, false)]
-    local procedure OnAfterInitCustLedgEntry(var CustLedgerEntry : Record "Cust. Ledger Entry";GenJournalLine : Record "Gen. Journal Line")
-    var
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterRunWithCheck', '', false, false)]
+    local procedure OnAfterRunWithCheck(VAR GenJnlLine : Record "Gen. Journal Line")
     begin
 
     end;
-
-   [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitGLEntry', '', false, false)]
-   local procedure OnAfterInitGLEntry(var GLEntry : Record "G/L Entry";GenJournalLine : Record "Gen. Journal Line")
-   var
-   begin
-
-   end;
-
-
-   [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertVAT', '', false, false)]
-   local procedure OnAfterInsertVAT(var GenJournalLine : Record "Gen. Journal Line";VAR VATEntry : Record "VAT Entry";VAR UnrealizedVAT : Boolean;VAR AddCurrencyCode : Code[10])
-   var 
-   begin
-       
-   end;
+ 
 
 }
