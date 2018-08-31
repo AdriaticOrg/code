@@ -1,12 +1,13 @@
 tableextension 13062548 "CountryRegion-adl" extends "Country/Region" //9
 {
-    fields {
-    	// <adl.24>
-        field(13062661; "Numberic Code"; Code[10])
+    fields
+    {
+        // <adl.24>
+        field(13062661; "Numeric Code"; Code[10])
         {
-            Caption = 'Numberic Code';
+            Caption = 'Numeric Code';
             DataClassification = ToBeClassified;
         }
-	// </adl.24>
-    }    
+        // </adl.24>
+    }
 }
