@@ -1,0 +1,1 @@
+1) check gl posting, account and bal. account seem to cancel each other in suggest lines

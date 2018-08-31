@@ -8,7 +8,7 @@ pageextension 13062538 "CompanyInfo-adl" extends "Company Information" //1
                 ApplicationArea = All;
             }
         }
-        // <adl.24>        
+        // </adl.24>        
     }
     
     actions

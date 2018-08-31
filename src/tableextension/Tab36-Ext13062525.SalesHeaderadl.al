@@ -31,7 +31,7 @@ tableextension 13062525 "Sales Header-Adl" extends "Sales Header" //36
             Caption = 'Goods Return Type';
             TableRelation = "Goods Return Type-Adl";
         }
-	// <adl.18>
+	// </adl.18>
     }
 
 }

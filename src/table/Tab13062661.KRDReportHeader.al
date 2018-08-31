@@ -154,6 +154,15 @@ table 13062661 "KRD Report Header"
             end;
         end;
     end;
+
+    procedure ReleaseReopen(Direction:Option "Release","Reopen")
+    begin
+        if Direction = Direction::Release then
+            Status := Status::Realesed
+        else
+            Status := Status::Open;        
+        Modify();
+    end;    
     var
         RepSISetup:Record "Reporting_SI Setup";
         NoSeriesMgt:Codeunit NoSeriesManagement;

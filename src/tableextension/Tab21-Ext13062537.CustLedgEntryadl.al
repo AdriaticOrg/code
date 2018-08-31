@@ -41,7 +41,7 @@ tableextension 13062537 "CustLedgEntry-adl" extends "Cust. Ledger Entry" //21
             Caption = 'KRD Other Changes';
             DataClassification = ToBeClassified;
         }
-        // <adl.25>
+        // </adl.25>
         // <adl.24>
         field(13062641;"FAS Sector Code";Code[10])
         {
