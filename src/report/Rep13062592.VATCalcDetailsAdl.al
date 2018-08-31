@@ -28,7 +28,7 @@ report 13062592 "VAT Calc. Details-Adl"
                 DataItemTableView = sorting ("VAT Book Code", Code) orDER(Ascending);
                 column(VATBookGroupCode; Code) { }
                 column(GroupDescription; Description) { }
-                column(Amount; VATManagement.EvaluateExpression("VAT Book Group", "VAT Book Column Name"."Column No.", SetedDateFilter)) { }
+                column(Amount; VATBookCalc.EvaluateExpression("VAT Book Group", "VAT Book Column Name"."Column No.", SetedDateFilter)) { }
 
                 trigger OnPreDataItem();
                 begin
@@ -69,9 +69,9 @@ report 13062592 "VAT Calc. Details-Adl"
 
                         trigger OnValidate();
                         var
-                            TextManagement: Codeunit TextManagement; 
+                            TextManagement: Codeunit TextManagement;
                         begin
-                            TextManagement.MakeDateFilter(SetedDateFilter); 
+                            TextManagement.MakeDateFilter(SetedDateFilter);
                         end;
                     }
                     field(SetedBookFilter; SetedBookFilter)
@@ -93,10 +93,10 @@ report 13062592 "VAT Calc. Details-Adl"
                                 VATBook.MarkedOnly(true);
                                 if VATBook.FindSet then begin
                                     repeat
-                                    if SetedBookFilter = '' then
-                                        SetedBookFilter := VATBook.Code
-                                    else
-                                        SetedBookFilter += '|' + VATBook.Code;
+                                        if SetedBookFilter = '' then
+                                            SetedBookFilter := VATBook.Code
+                                        else
+                                            SetedBookFilter += '|' + VATBook.Code;
                                     until VATBook.Next = 0;
                                 end;
                             end;
@@ -122,7 +122,7 @@ report 13062592 "VAT Calc. Details-Adl"
     var
         VATBook: Record "VAT Book-Adl";
         CompInfo: Record "Company Information";
-        VATManagement: Codeunit "VAT Management-Adl";
+        VATBookCalc: Codeunit "VAT Book Calculation-Adl";
         ColumnNo: Integer;
         SetedDateFilter: Text;
         SetedBookFilter: Text;

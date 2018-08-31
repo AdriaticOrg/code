@@ -18,8 +18,7 @@ table 13062593 "VAT Book Column Name-Adl"
         {
             Caption = 'Column No.';
             NotBlank = true;
-            MinValue = 1;
-            MaxValue = 20;
+            MaxValue = 30;
             DataClassification = CustomerContent;
         }
         field(3; Description; Text[50])

@@ -2,6 +2,7 @@ pageextension 13062542 "CustLedgEntries-adl" extends "Customer Ledger Entries" /
 {
     layout
     {
+        // <adl.24>
         addlast(Control1) {
             field("FAS Sector Code";"FAS Sector Code") {
                 ApplicationArea = All;
@@ -28,7 +29,7 @@ pageextension 13062542 "CustLedgEntries-adl" extends "Customer Ledger Entries" /
                 ApplicationArea = all;
             }
         }
-        
+        // </adl.24>        
     }
     
     actions

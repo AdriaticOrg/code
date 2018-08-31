@@ -2,13 +2,16 @@ pageextension 13062544 "VendLedgEntries-adl" extends "Vendor Ledger Entries" //2
 {
     layout
     {
+        // <adl.24>
         addlast(Control1) {
             field("FAS Sector Code";"FAS Sector Code") {
                 ApplicationArea = All;
             }
-            field("FAS Non-Residnet Sector Code";"KRD Non-Residnet Sector Code") {
+            // <adl.25>
+            field("KRD Non-Residnet Sector Code";"KRD Non-Residnet Sector Code") {
                 ApplicationArea = All;
             }    
+            // </adl.25>
             field("FAS Affiliation Type";"KRD Affiliation Type") {
                 ApplicationArea = All;
             }
@@ -28,7 +31,7 @@ pageextension 13062544 "VendLedgEntries-adl" extends "Vendor Ledger Entries" //2
                 ApplicationArea = all;
             }
         }
-        
+        // </adl.24>
     }
     
     actions

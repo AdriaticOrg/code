@@ -283,6 +283,121 @@ page 13062598 "VAT Review Matrix-Adl"
                         MatrixOnDrillDown(20);
                     end;
                 }
+
+
+
+
+
+                field(Field21; MATRIX_CellData[11])
+                {
+                    CaptionClass = '3,' + MatrixColumnCaptions[21];
+                    Visible = Field21Visible;
+                    ApplicationArea = All;
+
+                    trigger OnDrillDown();
+                    begin
+                        MatrixOnDrillDown(21);
+                    end;
+                }
+                field(Field22; MATRIX_CellData[22])
+                {
+                    CaptionClass = '3,' + MatrixColumnCaptions[22];
+                    Visible = Field22Visible;
+                    ApplicationArea = All;
+
+                    trigger OnDrillDown();
+                    begin
+                        MatrixOnDrillDown(22);
+                    end;
+                }
+                field(Field23; MATRIX_CellData[23])
+                {
+                    CaptionClass = '3,' + MatrixColumnCaptions[23];
+                    Visible = Field23Visible;
+                    ApplicationArea = All;
+
+                    trigger OnDrillDown();
+                    begin
+                        MatrixOnDrillDown(23);
+                    end;
+                }
+                field(Field24; MATRIX_CellData[24])
+                {
+                    CaptionClass = '3,' + MatrixColumnCaptions[24];
+                    Visible = Field24Visible;
+                    ApplicationArea = All;
+
+                    trigger OnDrillDown();
+                    begin
+                        MatrixOnDrillDown(24);
+                    end;
+                }
+                field(Field25; MATRIX_CellData[25])
+                {
+                    CaptionClass = '3,' + MatrixColumnCaptions[25];
+                    Visible = Field15Visible;
+                    ApplicationArea = All;
+
+                    trigger OnDrillDown();
+                    begin
+                        MatrixOnDrillDown(25);
+                    end;
+                }
+                field(Field26; MATRIX_CellData[26])
+                {
+                    CaptionClass = '3,' + MatrixColumnCaptions[26];
+                    Visible = Field26Visible;
+                    ApplicationArea = All;
+
+                    trigger OnDrillDown();
+                    begin
+                        MatrixOnDrillDown(26);
+                    end;
+                }
+                field(Field27; MATRIX_CellData[27])
+                {
+                    CaptionClass = '3,' + MatrixColumnCaptions[27];
+                    Visible = Field27Visible;
+                    ApplicationArea = All;
+
+                    trigger OnDrillDown();
+                    begin
+                        MatrixOnDrillDown(27);
+                    end;
+                }
+                field(Field28; MATRIX_CellData[28])
+                {
+                    CaptionClass = '3,' + MatrixColumnCaptions[28];
+                    Visible = Field28Visible;
+                    ApplicationArea = All;
+
+                    trigger OnDrillDown();
+                    begin
+                        MatrixOnDrillDown(28);
+                    end;
+                }
+                field(Field29; MATRIX_CellData[29])
+                {
+                    CaptionClass = '3,' + MatrixColumnCaptions[29];
+                    Visible = Field29Visible;
+                    ApplicationArea = All;
+
+                    trigger OnDrillDown();
+                    begin
+                        MatrixOnDrillDown(29);
+                    end;
+                }
+                field(Field30; MATRIX_CellData[30])
+                {
+                    CaptionClass = '3,' + MatrixColumnCaptions[30];
+                    Visible = Field30Visible;
+                    ApplicationArea = All;
+
+                    trigger OnDrillDown();
+                    begin
+                        MatrixOnDrillDown(30);
+                    end;
+                }
             }
         }
     }
@@ -343,9 +458,9 @@ page 13062598 "VAT Review Matrix-Adl"
                 var
                     VATBookViewFormula: Record "VAT Book View Formula-Adl";
                 begin
-                    Clear(VATCalcDetails);
-                    VATCalcDetails.SetParameters(DateFilter, "VAT Book Code");
-                    VATCalcDetails.Run;
+                    Clear(VATBookCalcDetails);
+                    VATBookCalcDetails.SetParameters(DateFilter, "VAT Book Code");
+                    VATBookCalcDetails.Run;
                 end;
             }
         }
@@ -358,6 +473,16 @@ page 13062598 "VAT Review Matrix-Adl"
 
     trigger OnInit();
     begin
+        Field30Visible := true;
+        Field29Visible := true;
+        Field28Visible := true;
+        Field27Visible := true;
+        Field26Visible := true;
+        Field25Visible := true;
+        Field24Visible := true;
+        Field23Visible := true;
+        Field22Visible := true;
+        Field21Visible := true;
         Field20Visible := true;
         Field19Visible := true;
         Field18Visible := true;
@@ -381,12 +506,12 @@ page 13062598 "VAT Review Matrix-Adl"
     end;
 
     var
-        VATManagement: Codeunit "VAT Management-Adl";
+        VATBookCalc: Codeunit "VAT Book Calculation-Adl";
         TextManagement: Codeunit TextManagement;
-        VATCalcDetails: Report "VAT Calc. Details-Adl";
-        MatrixColumnCaptions: array[20] of Text[100];
+        VATBookCalcDetails: Report "VAT Calc. Details-Adl";
+        MatrixColumnCaptions: array[30] of Text[100];
         DateFilter: Text;
-        MATRIX_CellData: array[20] of Decimal;
+        MATRIX_CellData: array[30] of Decimal;
         [InDataSet]
         Field1Visible: Boolean;
         [InDataSet]
@@ -427,6 +552,26 @@ page 13062598 "VAT Review Matrix-Adl"
         Field19Visible: Boolean;
         [InDataSet]
         Field20Visible: Boolean;
+        [InDataSet]
+        Field21Visible: Boolean;
+        [InDataSet]
+        Field22Visible: Boolean;
+        [InDataSet]
+        Field23Visible: Boolean;
+        [InDataSet]
+        Field24Visible: Boolean;
+        [InDataSet]
+        Field25Visible: Boolean;
+        [InDataSet]
+        Field26Visible: Boolean;
+        [InDataSet]
+        Field27Visible: Boolean;
+        [InDataSet]
+        Field28Visible: Boolean;
+        [InDataSet]
+        Field29Visible: Boolean;
+        [InDataSet]
+        Field30Visible: Boolean;
         PeriodType: Option Day,Week,Month,Quarter,Year,"Accounting Period";
 
     procedure Load(VatBookCode: Code[20]; VatBookGroupFilter: Text[250]; DateFilterPar: Text; PeriodTypePar: Integer);
@@ -458,14 +603,16 @@ page 13062598 "VAT Review Matrix-Adl"
         i: Integer;
     begin
         for i := 1 to ArrayLen(MATRIX_CellData) do
-            MATRIX_CellData[i] := VATManagement.EvaluateExpression(Rec, i - 1, DateFilter);
+            MATRIX_CellData[i] := VATBookCalc.EvaluateExpression(Rec, i - 1, DateFilter);
     end;
 
     local procedure MatrixOnDrillDown(Column: Integer);
     var
         VATEntry: Record "VAT Entry";
+        VATBookViewFormula: Record "VAT Book View Formula-Adl";
         VATReviewMatrix: Page "VAT Review Matrix-Adl";
     begin
+        exit; //GRM-toDo
         case "Group Type" of
             "Group Type"::"VAT Entries":
                 begin
@@ -473,8 +620,8 @@ page 13062598 "VAT Review Matrix-Adl"
                     VATEntry.SetFilter(Type, '<>%1', VATEntry.Type::Settlement);
                     if DateFilter <> '' then
                         VATEntry.SetFilter("Posting Date", DateFilter);
-                    VATEntry.SetFilter("VAT Identifier-Adl", VATManagement.GetVATIdentifierFilter(Rec));
-                    PAGE.RunModal(0, VATEntry);
+                    VATEntry.SetFilter("VAT Identifier-Adl", VATBookCalc.GetVATIdentifierFilter(Rec));
+                    Page.RunModal(0, VATEntry);
                 end;
             "Group Type"::Total:
                 if (StrPos(Totaling, '..') + StrPos(Totaling, '|') > 0) then begin
@@ -506,6 +653,16 @@ page 13062598 "VAT Review Matrix-Adl"
         Field18Visible := MatrixColumnCaptions[18] <> '';
         Field19Visible := MatrixColumnCaptions[19] <> '';
         Field20Visible := MatrixColumnCaptions[20] <> '';
+        Field21Visible := MatrixColumnCaptions[21] <> '';
+        Field22Visible := MatrixColumnCaptions[22] <> '';
+        Field23Visible := MatrixColumnCaptions[23] <> '';
+        Field24Visible := MatrixColumnCaptions[24] <> '';
+        Field25Visible := MatrixColumnCaptions[25] <> '';
+        Field26Visible := MatrixColumnCaptions[26] <> '';
+        Field27Visible := MatrixColumnCaptions[27] <> '';
+        Field28Visible := MatrixColumnCaptions[28] <> '';
+        Field29Visible := MatrixColumnCaptions[29] <> '';
+        Field30Visible := MatrixColumnCaptions[30] <> '';
     end;
 
     local procedure FindPeriod(SearchText: Code[10]);

@@ -1,4 +1,4 @@
-tableextension 13062549 "Sales Invoice Line-Adl" extends "Sales Invoice Line"  //113
+tableextension 13062555 "Sales Line-Adl" extends "Sales Line"  //37
 {
     fields
     {

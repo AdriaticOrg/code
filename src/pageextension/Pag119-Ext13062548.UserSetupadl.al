@@ -2,6 +2,7 @@ pageextension 13062548 "UserSetup-adl" extends "User Setup" //119
 {
     layout
     {
+        // <adl.24>
         addlast(Control1) {
             field("Reporting_SI Name";"Reporting_SI Name") {
                 ApplicationArea = All;
@@ -16,7 +17,7 @@ pageextension 13062548 "UserSetup-adl" extends "User Setup" //119
                 ApplicationArea = All;
             }
         }
-        
+        // </adl.24>
     }
     
     actions

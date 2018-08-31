@@ -2,6 +2,7 @@ tableextension 13062539 "VendLedgEntry-adl" extends "Vendor Ledger Entry" //25
 {
     fields
     {
+        // <adl.25>
         field(13062661; "KRD Affiliation Type"; Code[10])
         {
             Caption = 'KRD Affiliation Type';
@@ -40,13 +41,14 @@ tableextension 13062539 "VendLedgEntry-adl" extends "Vendor Ledger Entry" //25
             Caption = 'KRD Other Changes';
             DataClassification = ToBeClassified;
         }      
+        // </adl.25>
+        // <adl.24>
         field(13062641;"FAS Sector Code";Code[10])
         {
             Caption = 'FAS Sector Code';
             DataClassification = ToBeClassified;
             TableRelation = "FAS Sector";
-        }                              
-        
+        }
+        // </adl.24>
     }
-    
 }

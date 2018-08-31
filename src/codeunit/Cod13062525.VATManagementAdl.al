@@ -1,4 +1,4 @@
-codeunit 13062525 "VAT Management1-Adl"
+codeunit 13062525 "VAT Management-Adl"
 {
     Permissions = tabledata 122 = rm,
                 tabledata 124 = rm,
@@ -36,7 +36,6 @@ codeunit 13062525 "VAT Management1-Adl"
     [EventSubscriber(ObjectType::Table, Database::"VAT Entry", 'OnAfterCopyFromGenJnlLine', '', true, true)]
     local procedure OnAfterCopyFromGenJnlLine(GenJournalLine: Record "Gen. Journal Line"; var VATEntry: Record "VAT Entry")
     begin
-        VATEntry."Posting Date" := GenJournalLine."VAT Date-Adl";
         VATEntry."Postponed VAT-Adl" := GenJournalLine."Postponed VAT-Adl";
     end;
 
@@ -98,19 +97,45 @@ codeunit 13062525 "VAT Management1-Adl"
         GenJournalLine."Postponed VAT-Adl" := SalesHeader."Postponed VAT-Adl";
     end;
 
-    //OnAfterCopyFromGenJnlLine
-    [EventSubscriber(ObjectType::Table, Database::"VAT Entry", 'OnAfterCopyFromGenJnlLine', '', true, true)]
-    local procedure ValueEntrynAfterCopyFromGenJnlLine(VAR VATEntry: Record "VAT Entry"; GenJournalLine: Record "Gen. Journal Line")
-    begin
-        VATEntry."Posting Date" := GenJournalLine."VAT Date-Adl";
-        VATEntry."Postponed VAT-Adl" := GenJournalLine."Postponed VAT-Adl";
-    end;
-
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'Posting Date', false, false)]
     local procedure OnAfterValidateEventPostingDate(var Rec: Record "Sales Header"; var xRec: Record "Sales Header"; CurrFieldNo: Integer)
     begin
         if Confirm(UpdVatDate, false) then
             Rec.Validate("VAT Date-Adl", Rec."Posting Date");
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterFinalizePosting', '', false, false)]
+    local procedure OnAfterFinalizePostingSales(VAR SalesHeader: Record "Sales Header"; VAR SalesShipmentHeader: Record "Sales Shipment Header"; VAR SalesInvoiceHeader: Record "Sales Invoice Header"; var SalesCrMemoHeader: Record "Sales Cr.Memo Header"; var ReturnReceiptHeader: Record "Return Receipt Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
+    var
+        CustomerVendor: Option Customer,Vendor;
+    begin
+        with SalesHeader do begin
+            if ("Postponed VAT-adl" = "Postponed VAT-adl"::"Postponed VAT") and ("VAT Date-adl" <> 0D) then begin
+                case "Document Type" of
+                    "Document Type"::Invoice, "Document Type"::Order:
+                        HandlePostponedVAT(DATABASE::"Sales Invoice Header", SalesInvoiceHeader."No.", SalesInvoiceHeader."VAT Date-adl", TRUE, CustomerVendor::Customer, SalesInvoiceHeader."Postponed VAT-adl");
+                    "Document Type"::"Credit Memo":
+                        HandlePostponedVAT(DATABASE::"Sales Cr.Memo Header", SalesCrMemoHeader."No.", SalesCrMemoHeader."VAT Date-adl", TRUE, CustomerVendor::Customer, SalesCrMemoHeader."Postponed VAT-adl");
+                end;
+            end;
+        end;
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterFinalizePosting', '', false, false)]
+    local procedure OnAfterFinalizePostingPurchase(VAR PurchHeader: Record "Purchase Header"; VAR PurchRcptHeader: Record "Purch. Rcpt. Header"; VAR PurchInvHeader: Record "Purch. Inv. Header"; VAR PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr."; var ReturnShptHeader: Record "Return Shipment Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
+    var
+        CustomerVendor: Option Customer,Vendor;
+    begin
+        with PurchHeader do begin
+            if ("Postponed VAT-adl" = "Postponed VAT-adl"::"Postponed VAT") and ("VAT Date-adl" <> 0D) then begin
+                case "Document Type" of
+                    "Document Type"::Invoice, "Document Type"::Order:
+                        HandlePostponedVAT(DATABASE::"Purch. Inv. Header", PurchInvHeader."No.", PurchInvHeader."VAT Date-adl", TRUE, CustomerVendor::Vendor, PurchInvHeader."Postponed VAT-adl");
+                    "Document Type"::"Credit Memo":
+                        HandlePostponedVAT(DATABASE::"Purch. Cr. Memo Hdr.", PurchCrMemoHdr."No.", PurchCrMemoHdr."VAT Date-adl", TRUE, CustomerVendor::Vendor, PurchCrMemoHdr."Postponed VAT-adl");
+                end;
+            end;
+        end;
     end;
 
     procedure HandlePostponedVAT(TableNo: Integer; No: Code[20]; PostDate: Date; Post: Boolean; SalesPurchase: Option Customer,Vendor; PostponedVAT: Option "Realized VAT","Postponed VAT")
@@ -135,7 +160,6 @@ codeunit 13062525 "VAT Management1-Adl"
         case TableNo of
             DATABASE::"Sales Cr.Memo Header":
                 begin
-                    ;
                     SalesCrMemo.Get(No);
                     if CustLedgerEntry.Get(SalesCrMemo."Cust. Ledger Entry No.") then begin
                         LedgEntryFound := true;
@@ -151,7 +175,6 @@ codeunit 13062525 "VAT Management1-Adl"
                 begin
                     SalesInvoice.Get(No);
                     if CustLedgerEntry.Get(SalesInvoice."Cust. Ledger Entry No.") then begin
-                        ;
                         LedgEntryFound := true;
                         if Post then
                             SalesInvoice."Postponed VAT-Adl" := SalesInvoice."Postponed VAT-Adl"::"Realized VAT"
@@ -163,7 +186,6 @@ codeunit 13062525 "VAT Management1-Adl"
                 end;
             DATABASE::"Purch. Inv. Header":
                 begin
-                    ;
                     PurchInvoice.Get(No);
                     if VendLedgerEntry.Get(PurchInvoice."Vendor Ledger Entry No.") then begin
                         LedgEntryFound := true;
@@ -339,9 +361,20 @@ codeunit 13062525 "VAT Management1-Adl"
 
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Entry - Edit", 'OnBeforeVATEntryModify', '', true, true)]
+    local procedure VATEntryEditOnBeforeVATEntryModify(var VATEntry: Record "VAT Entry"; FromVATEntry: Record "VAT Entry")
+    begin
+        VATEntry."VAT Identifier-Adl" := FromVATEntry."VAT Identifier-Adl";
+    end;
 
+    local procedure VATEntryEdit()
+    var
+        myInt: Integer;
+    begin
+
+    end;
 
     var
-        UpdVatDate: Label '<qualifier>Change</qualifier><payload>Do you want to change VAT Date <emphasize>Headline1</emphasize>.</payload>';
+        UpdVatDate: Label 'Do you want to change VAT Date';
         ManagePostponedVAT: Codeunit "Manage Postponed VAT-Adl";
 }

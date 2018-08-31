@@ -2,6 +2,7 @@ pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
 {
     layout
     {
+        // <adl.24>
         addlast(Control1) {
             field("FAS Instrument Code";"FAS Instrument Code") {
                 ApplicationArea = All;
@@ -10,7 +11,7 @@ pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
                 ApplicationArea = All;
             }
         }
-        
+        // </adl.24>
     }
     
     actions

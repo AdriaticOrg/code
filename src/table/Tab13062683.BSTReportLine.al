@@ -2,10 +2,10 @@ table 13062683 "BST Report Line"
 {
     Caption = 'BST Report Line';
     DataClassification = ToBeClassified;
-    
+
     fields
     {
-        field(1;"Document No."; Code[20])
+        field(1; "Document No."; Code[20])
         {
             Caption = '"Document No."';
             TableRelation = "BST Report Header"."No.";
@@ -24,7 +24,7 @@ table 13062683 "BST Report Line"
 
             trigger OnValidate()
             var
-                BSTCode:Record "BST Code";
+                BSTCode: Record "BST Code";
             begin
                 if BSTCode.get("BST Code") then begin
                     "BST Serial No." := BSTCode."Serial Num.";
@@ -32,7 +32,7 @@ table 13062683 "BST Report Line"
                 end;
             end;
         }
-        
+
         field(5; "Description"; Text[120])
         {
             Caption = 'Description';
@@ -49,13 +49,23 @@ table 13062683 "BST Report Line"
             Caption = 'Country/Region Code';
             DataClassification = ToBeClassified;
             TableRelation = "Country/Region";
+
+            trigger OnValidate()
+            var
+                Country: Record "Country/Region";
+            begin
+                if Country.get("Country/Region Code") then
+                    "Country/Region No." := Country."Numeric Code"
+                else
+                    clear("Country/Region No.");
+            end;
         }
-        field(12; "Country/Region No."; Integer)
+        field(12; "Country/Region No."; Code[10])
         {
             Caption = 'Country/Region No.';
             DataClassification = ToBeClassified;
-        }                
-        
+        }
+
         field(20; "Income Amount"; Decimal)
         {
             Caption = 'Income Amount';
@@ -65,15 +75,15 @@ table 13062683 "BST Report Line"
         {
             Caption = 'Expense Amount';
             DataClassification = ToBeClassified;
-        }                                        
+        }
     }
-    
+
     keys
     {
-        key(PK; "Document No.","Line No")
+        key(PK; "Document No.", "Line No")
         {
             Clustered = true;
         }
     }
-    
+
 }

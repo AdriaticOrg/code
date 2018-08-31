@@ -1,4 +1,4 @@
-codeunit 13062591 "VAT Management-Adl"
+codeunit 13062591 "VAT Book Calculation-Adl"
 {
     var
         CallLevel: Integer;
@@ -8,27 +8,26 @@ codeunit 13062591 "VAT Management-Adl"
     var
         TempValue: Decimal;
     begin
-        with VATBookViewFormula do
-        begin
+        with VATBookViewFormula do begin
             if IsFirstValue then begin
                 case Value1 of
-                    Value1::"Base Amount" :
+                    Value1::"Base Amount":
                         TempValue := VatEntry.Base;
-                    Value1::"VAT Amount" :
+                    Value1::"VAT Amount":
                         TempValue := VatEntry.Amount;
-                    Value1::"Amount Inc. VAT" :
+                    Value1::"Amount Inc. VAT":
                         TempValue := VatEntry.Base + VatEntry.Amount;
-                    Value1::"Base Amount(retro.)" :
+                    Value1::"Base Amount(retro.)":
                         TempValue := VatEntry."VAT Base (retro.)-Adl";
-                    Value1::"Unrealizied Base" :
+                    Value1::"Unrealizied Base":
                         TempValue := VatEntry."Unrealized Base";
-                    Value1::"Unrealized Amount" :
+                    Value1::"Unrealized Amount":
                         TempValue := VatEntry."Unrealized Amount";
-                    Value1::"Unrealized Amount Inc. VAT" :
+                    Value1::"Unrealized Amount Inc. VAT":
                         TempValue := VatEntry."Unrealized Base" + VatEntry."Unrealized Amount";
-                    Value1::"VAT Retro" :
+                    Value1::"VAT Retro":
                         TempValue := VatEntry."VAT Amount (retro.)-Adl";
-                    Value1::"Amount Inc. VAT(retro)" :
+                    Value1::"Amount Inc. VAT(retro)":
                         TempValue := VatEntry."VAT Base (retro.)-Adl" + VatEntry."VAT Amount (retro.)-Adl";
                 end;
                 if Operator1 = Operator1::"-" then
@@ -37,23 +36,23 @@ codeunit 13062591 "VAT Management-Adl"
                     TempAmount := TempAmount + TempValue;
             end else begin
                 case Value2 of
-                    Value2::"Base Amount" :
+                    Value2::"Base Amount":
                         TempValue := VatEntry.Base;
-                    Value2::"VAT Amount" :
+                    Value2::"VAT Amount":
                         TempValue := VatEntry.Amount;
-                    Value2::"Amount Inc. VAT" :
+                    Value2::"Amount Inc. VAT":
                         TempValue := VatEntry.Base + VatEntry.Amount;
-                    Value2::"Base Amount(retro.)" :
+                    Value2::"Base Amount(retro.)":
                         TempValue := VatEntry."VAT Base (retro.)-Adl";
-                    Value2::"Unrealizied Base" :
+                    Value2::"Unrealizied Base":
                         TempValue := VatEntry."Unrealized Base";
-                    Value2::"Unrealized Amount" :
+                    Value2::"Unrealized Amount":
                         TempValue := VatEntry."Unrealized Amount";
-                    Value2::"Unrealized Amount Inc. VAT" :
+                    Value2::"Unrealized Amount Inc. VAT":
                         TempValue := VatEntry."Unrealized Base" + VatEntry."Unrealized Amount";
-                    Value2::"VAT Retro" :
+                    Value2::"VAT Retro":
                         TempValue := VatEntry."VAT Amount (retro.)-Adl";
-                    Value2::"Amount Inc. VAT(retro)" :
+                    Value2::"Amount Inc. VAT(retro)":
                         TempValue := VatEntry."VAT Base (retro.)-Adl" + VatEntry."VAT Amount (retro.)-Adl";
                 end;
                 if Operator2 = Operator2::"-" then
@@ -68,8 +67,7 @@ codeunit 13062591 "VAT Management-Adl"
     var
         VATBookGroupIdentifier: Record "VAT Book Group Identifier-Adl";
     begin
-        with VATBookGroup do
-        begin
+        with VATBookGroup do begin
             VATIdentifierFilter := '';
             VATBookGroupIdentifier.Reset;
             VATBookGroupIdentifier.SetCurrentKey("VAT Book Code", "VAT Book Group Code", "VAT Identifier");
@@ -95,12 +93,13 @@ codeunit 13062591 "VAT Management-Adl"
         VATBookViewFormula.SetRange("VAT Book Group Code", VATBookGroup.Code);
         VATBookViewFormula.SetFilter("VAT Identifier", GetVATIdentifierFilter(VATBookGroup));
         VATBookViewFormula.SetRange("Column No.", ColumnNo);
-        VATEntry.SetCurrentKey(Type, "Posting Date", "VAT Identifier-Adl");
-        VATEntry.SetFilter(Type, '<>%1', VATEntry.Type::Settlement);
-        if DateFilter <> '' then
-            VATEntry.SetFilter("Posting Date", DateFilter);
         if VATBookViewFormula.FindSet then
             repeat
+                VATEntry.SetCurrentKey(Type, "Posting Date", "VAT Identifier-Adl");
+                VATEntry.SetFilter(Type, '<>%1', VATEntry.Type::Settlement);
+                VATBookViewFormula.SetVATEntryFilters(VATEntry);
+                if DateFilter <> '' then
+                    VATEntry.SetFilter("Posting Date", DateFilter);
                 VATEntry.SetFilter("VAT Identifier-Adl", VATBookViewFormula."VAT Identifier");
                 if VATEntry.FindSet then
                     repeat
@@ -149,21 +148,22 @@ codeunit 13062591 "VAT Management-Adl"
             OperatorNo := 1;
             repeat
                 i := StrLen(Expression);
-                
+
                 repeat
                     if Expression[i] = '(' then
                         Parantheses := Parantheses + 1
-                    else if Expression[i] = ')' then
-                        Parantheses := Parantheses - 1;
-                    if(Parantheses = 0) and (Expression[i] = Operators[OperatorNo]) then
+                    else
+                        if Expression[i] = ')' then
+                            Parantheses := Parantheses - 1;
+                    if (Parantheses = 0) and (Expression[i] = Operators[OperatorNo]) then
                         IsExpression := true
                     else
                         i := i - 1;
-                until IsExpression or(i <= 0);
+                until IsExpression or (i <= 0);
 
                 if not IsExpression then
                     OperatorNo := OperatorNo + 1;
-            until(OperatorNo > StrLen(Operators)) or IsExpression;
+            until (OperatorNo > StrLen(Operators)) or IsExpression;
 
             if IsExpression then begin
                 if i > 1 then
@@ -182,19 +182,20 @@ codeunit 13062591 "VAT Management-Adl"
                 VBGroup.FindFirst;
                 RightResult := EvaluateExpression(VBGroup, ColumnNo, DateFilter);
                 case Operator of
-                    '*' :
+                    '*':
                         Result := LeftResult * RightResult;
-                    '/' :
+                    '/':
                         if RightResult = 0 then begin
                             Result := 0;
                         end else
                             Result := LeftResult / RightResult;
-                    '+' :
+                    '+':
                         Result := LeftResult + RightResult;
-                    '-' :
+                    '-':
                         Result := LeftResult - RightResult;
                 end;
-            end else if(Expression[1] = '(') and (Expression[StrLen(Expression)] = ')') then begin
+            end else
+                if (Expression[1] = '(') and (Expression[StrLen(Expression)] = ')') then begin
                     VBGroup := VATBookGroup;
                     VBGroup.Totaling := CopyStr(Expression, 2, StrLen(Expression) - 2);
                     Result += EvaluateExpression(VBGroup, ColumnNo, DateFilter);
