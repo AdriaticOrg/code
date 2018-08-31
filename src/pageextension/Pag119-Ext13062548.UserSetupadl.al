@@ -16,6 +16,14 @@ pageextension 13062548 "UserSetup-adl" extends "User Setup" //119
             field("Reporting_SI Position";"Reporting_SI Position") {
                 ApplicationArea = All;
             }
+            // <adl.27>
+            field("Posting Approver";"Posting Approver") {
+                ApplicationArea = All;
+            }
+            field("Posting Responsible Person";"Posting Responsible Person") {
+                ApplicationArea = All;
+            }
+            // </adl.27>
         }
         // </adl.24>
     }
