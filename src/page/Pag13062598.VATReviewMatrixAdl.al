@@ -609,8 +609,10 @@ page 13062598 "VAT Review Matrix-Adl"
     local procedure MatrixOnDrillDown(Column: Integer);
     var
         VATEntry: Record "VAT Entry";
+        VATBookViewFormula: Record "VAT Book View Formula-Adl";
         VATReviewMatrix: Page "VAT Review Matrix-Adl";
     begin
+        exit; //GRM-toDo
         case "Group Type" of
             "Group Type"::"VAT Entries":
                 begin
@@ -619,7 +621,7 @@ page 13062598 "VAT Review Matrix-Adl"
                     if DateFilter <> '' then
                         VATEntry.SetFilter("Posting Date", DateFilter);
                     VATEntry.SetFilter("VAT Identifier-Adl", VATBookCalc.GetVATIdentifierFilter(Rec));
-                    PAGE.RunModal(0, VATEntry);
+                    Page.RunModal(0, VATEntry);
                 end;
             "Group Type"::Total:
                 if (StrPos(Totaling, '..') + StrPos(Totaling, '|') > 0) then begin

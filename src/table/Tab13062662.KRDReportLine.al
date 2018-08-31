@@ -2,10 +2,10 @@ table 13062662 "KRD Report Line"
 {
     Caption = 'KRD Report Line';
     DataClassification = ToBeClassified;
-    
+
     fields
     {
-        field(1;"Document No."; Code[20])
+        field(1; "Document No."; Code[20])
         {
             Caption = '"Document No."';
             TableRelation = "KRD Report Header"."No.";
@@ -44,13 +44,13 @@ table 13062662 "KRD Report Line"
             OptionMembers = " ","Claim","Liability";
             Caption = 'Claim/Liability';
             DataClassification = ToBeClassified;
-        } 
-        field(14;"Non-Residnet Sector Code";Code[10])
+        }
+        field(14; "Non-Residnet Sector Code"; Code[10])
         {
             Caption = 'Non-Resident Sector Code';
             DataClassification = ToBeClassified;
             TableRelation = "FAS Sector";
-        } 
+        }
         field(15; "Country/Region Code"; Code[10])
         {
             Caption = 'Country/Region Code';
@@ -59,10 +59,10 @@ table 13062662 "KRD Report Line"
 
             trigger OnValidate()
             var
-                Country:Record "Country/Region";
+                Country: Record "Country/Region";
             begin
                 if Country.get("Country/Region Code") then
-                    "Country/Region No." := Country."Numberic Code"
+                    "Country/Region No." := Country."Numeric Code"
                 else
                     clear("Country/Region No.");
             end;
@@ -80,10 +80,10 @@ table 13062662 "KRD Report Line"
 
             trigger OnValidate()
             var
-                Currency:Record Currency;
+                Currency: Record Currency;
             begin
                 if Currency.get("Currency Code") then
-                    "Currency No." := Currency."Numberic Code"
+                    "Currency No." := Currency."Numeric Code"
                 else
                     Clear("Currency No.");
             end;
@@ -97,7 +97,7 @@ table 13062662 "KRD Report Line"
         {
             Caption = 'Other Changes';
             DataClassification = ToBeClassified;
-        }         
+        }
         field(30; "Opening Balance"; Decimal)
         {
             Caption = 'Opening Balance';
@@ -110,7 +110,7 @@ table 13062662 "KRD Report Line"
 
             trigger OnValidate()
             begin
-                ValidateClosingBal();                
+                ValidateClosingBal();
             end;
         }
         field(32; "Decrease Amount"; Decimal)
@@ -127,20 +127,21 @@ table 13062662 "KRD Report Line"
         {
             Caption = 'Closing Balance';
             DataClassification = ToBeClassified;
-        }                                                
+        }
     }
-    
+
     keys
     {
-        key(PK; "Document No.","Line No")
+        key(PK; "Document No.", "Line No")
         {
             Clustered = true;
         }
     }
 
-    var local procedure ValidateClosingBal()
+    var
+    local procedure ValidateClosingBal()
     begin
         "Closing Balance" := "Opening Balance" + "Increase Amount" - "Decrease Amount";
     end;
-    
+
 }
