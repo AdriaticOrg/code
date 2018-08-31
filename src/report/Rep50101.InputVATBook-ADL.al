@@ -1,4 +1,4 @@
-report 50101 "Input VAT Book-adl"
+report 13062592 "Input VAT Book-adl"
 {
     ProcessingOnly = true;
 
@@ -7,7 +7,7 @@ report 50101 "Input VAT Book-adl"
         dataitem("Vat Entry";"VAT Entry")
         {
             DataItemTableView = SORTING("Document No.") WHERE("Type"=filter(Purchase|Sale),"Unrealized Amount"=Filter(0)); //,"VAT Identifier-adl"=filter('<>*99*'));
-            RequestFilterFields = "VAT Date-adl","Document No.","VAT Bus. Posting Group","VAT Prod. Posting Group","Gen. Bus. Posting Group","Gen. Prod. Posting Group","VAT Identifier-adl","Posting Date","VAT Calculation Type","Country/Region Code","Entry No.","Bill-to/Pay-to No.","External Document No.";  //"Document Receipt Date";
+            RequestFilterFields = "Document No.","VAT Bus. Posting Group","VAT Prod. Posting Group","Gen. Bus. Posting Group","Gen. Prod. Posting Group","Posting Date","VAT Calculation Type","Country/Region Code","Entry No.","Bill-to/Pay-to No.","External Document No.";  //"Document Receipt Date";
             dataitem(PurchaseInvHeader;"Purch. Inv. Header")
             {
                 DataItemLink = "No."=FIELD("Document No.");
