@@ -2,7 +2,7 @@ page 13062645 "FAS Reports"
 {
     PageType = List;
     ApplicationArea = All;
-    UsageCategory = Administration;
+    UsageCategory = Lists;
     SourceTable = "FAS Report Header";
     Editable = false;
     CardPageId = "FAS Report";
