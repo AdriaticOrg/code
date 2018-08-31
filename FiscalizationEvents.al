@@ -15,4 +15,14 @@ local procedure MyProcedure2(VAR VATEntry : Record "VAT Entry";GenJournalLine : 
 begin
      VATEntry."Full Fisc. Doc. No." := GenJournalLine."Full Fisc. Doc. No.";
 end;
+[EventSubscriber(ObjectType::Table, 81, 'OnAfterCopyGenJnlLineFromSalesHeader', '', true, true)]
+local procedure MyProcedure3(SalesHeader : Record "Sales Header";VAR GenJournalLine : Record "Gen. Journal Line")
+begin
+     GenJournalLine."Full Fisc. Doc. No." := SalesHeader."Full Fisc. Doc. No.";
+end;
+[EventSubscriber(ObjectType::Table, 21, 'OnAfterCopyCustLedgerEntryFromGenJnlLine', '', true, true)]
+local procedure MyProcedure4(VAR CustLedgerEntry : Record "Cust. Ledger Entry";GenJournalLine : Record "Gen. Journal Line")
+begin
+     CustLedgerEntry."Full Fisc. Doc. No." := GenJournalLine."Full Fisc. Doc. No.";
+end;
 }
