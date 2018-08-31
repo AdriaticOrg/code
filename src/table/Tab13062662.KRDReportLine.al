@@ -25,16 +25,19 @@ table 13062662 "KRD Report Line"
         {
             Caption = 'Affiliation Type';
             DataClassification = ToBeClassified;
+            TableRelation = "KRD Code".Code where ("Type" = const("Affiliation Type"));
         }
         field(11; "Instrument Type"; Code[10])
         {
             Caption = 'Instrument Type';
             DataClassification = ToBeClassified;
+            TableRelation = "KRD Code".Code where ("Type" = const("Instrument Type"));
         }
         field(12; "Maturity"; Code[10])
         {
             Caption = 'Maturity';
             DataClassification = ToBeClassified;
+            TableRelation = "KRD Code".Code where ("Type" = const(Maturity));
         }        
         field(13; "Claim/Liability"; Option)
         {
