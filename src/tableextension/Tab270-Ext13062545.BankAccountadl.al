@@ -3,6 +3,7 @@ tableextension 13062545 "BankAccount-adl" extends "Bank Account" //270
 
     fields
     {
+        // <adl.24> 
         field(13062641;"FAS Instrument Code";Code[10])
         {
             Caption = 'FAS Instrument Code';
@@ -15,6 +16,7 @@ tableextension 13062545 "BankAccount-adl" extends "Bank Account" //270
             DataClassification = ToBeClassified;
             TableRelation = "FAS Sector";
         }
+        // </adl.24> 
     }
 }
 

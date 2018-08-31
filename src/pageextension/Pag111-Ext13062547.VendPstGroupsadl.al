@@ -4,9 +4,6 @@ pageextension 13062547 "VendPstGroups-adl" extends "Vendor Posting Groups" //111
     {
         // <adl.25>
         addlast(Control1) {
-            field("KRD Affiliation Type";"KRD Affiliation Type") {
-                ApplicationArea = All;
-            }
             field("KRD Claim/Liability";"KRD Claim/Liability") {
                 ApplicationArea = All;
             }

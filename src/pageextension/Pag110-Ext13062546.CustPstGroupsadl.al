@@ -4,9 +4,6 @@ pageextension 13062546 "CustPstGroups-adl" extends "Customer Posting Groups" //1
     {
         addlast(Control1) {
             // <adl.25>
-            field("KRD Affiliation Type";"KRD Affiliation Type") {
-                ApplicationArea = All;
-            }
             field("KRD Claim/Liability";"KRD Claim/Liability") {
                 ApplicationArea = All;
             }

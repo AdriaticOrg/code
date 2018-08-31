@@ -53,11 +53,11 @@ codeunit 13062661 "Reporting SI Evnt."
             CustLedgerEntry."KRD Country/Region Code" := Cust."Country/Region Code";
             CustLedgerEntry."FAS Sector Code" := Cust."FAS Sector Code";
             CustLedgerEntry."KRD Non-Residnet Sector Code" := Cust."KRD Non-Residnet Sector Code";
+            CustLedgerEntry."KRD Affiliation Type" := Cust."KRD Affiliation Type";
         end;
 
         if CustPstgGrp.get(CustLedgerEntry."Customer Posting Group") then begin
             CustLedgerEntry."KRD Instrument Type" := CustPstgGrp."KRD Instrument Type";
-            CustLedgerEntry."KRD Affiliation Type" := CustPstgGrp."KRD Affiliation Type";
             CustLedgerEntry."KRD Claim/Liability" := CustPstgGrp."KRD Claim/Liability";
             CustLedgerEntry."KRD Maturity" := CustPstgGrp."KRD Maturity";
         end;
@@ -75,11 +75,11 @@ codeunit 13062661 "Reporting SI Evnt."
             VendorLedgerEntry."KRD Country/Region Code" := Vend."Country/Region Code";
             VendorLedgerEntry."FAS Sector Code" := Vend."FAS Sector Code";
             VendorLedgerEntry."KRD Non-Residnet Sector Code" := Vend."KRD Non-Residnet Sector Code";
+            VendorLedgerEntry."KRD Affiliation Type" := Vend."KRD Affiliation Type";
         end;
 
         if VendPstgGrp.get(VendorLedgerEntry."Vendor Posting Group") then begin
             VendorLedgerEntry."KRD Instrument Type" := VendPstgGrp."KRD Instrument Type";
-            VendorLedgerEntry."KRD Affiliation Type" := VendPstgGrp."KRD Affiliation Type";
             VendorLedgerEntry."KRD Claim/Liability" := VendPstgGrp."KRD Claim/Liability";
             VendorLedgerEntry."KRD Maturity" := VendPstgGrp."KRD Maturity";
         end;
