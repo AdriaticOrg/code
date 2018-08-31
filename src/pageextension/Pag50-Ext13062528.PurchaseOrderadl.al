@@ -14,6 +14,7 @@ pageextension 13062528 "PurchaseOrder-Adl" extends "Purchase Order" //50
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
             {
                 ApplicationArea = All;
+                Editable = false;
             }
             // </adl.10>
         }

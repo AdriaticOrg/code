@@ -14,6 +14,7 @@ pageextension 13062526 "SalesInvoice-Adl" extends "Sales Invoice" //43
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
             {
                 ApplicationArea = All;
+                Editable = false;
             }
             // </adl.10>
         }
