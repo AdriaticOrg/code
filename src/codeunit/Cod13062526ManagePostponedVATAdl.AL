@@ -628,7 +628,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
         IF CostAccSetup.GET THEN
             IF CostAccSetup."Auto Transfer from G/L" THEN
-                //TransferGlEntriesToCA.GetGLEntries;  //version issue
+                TransferGlEntriesToCA.GetGLEntries;
 
         FirstEntryNo := 0;
     end;
