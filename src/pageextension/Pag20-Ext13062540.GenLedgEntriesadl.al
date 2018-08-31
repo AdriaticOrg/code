@@ -10,6 +10,11 @@ pageextension 13062540 "GenLedgEntries-adl" extends "General Ledger Entries"  //
             field("FAS Sector Code";"FAS Sector Code") {
                 ApplicationArea = All;
             }
+            // <adl.26>
+            field("BST Code";"BST Code") {
+                ApplicationArea = All;
+            }
+            // <adl.26>
         }
         // </adl.24>
     }

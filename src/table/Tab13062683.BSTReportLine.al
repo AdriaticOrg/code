@@ -49,8 +49,18 @@ table 13062683 "BST Report Line"
             Caption = 'Country/Region Code';
             DataClassification = ToBeClassified;
             TableRelation = "Country/Region";
+
+            trigger OnValidate()
+            var
+                Country:Record "Country/Region";
+            begin
+                if Country.get("Country/Region Code") then
+                    "Country/Region No." := Country."Numberic Code"
+                else
+                    clear("Country/Region No.");
+            end;            
         }
-        field(12; "Country/Region No."; Integer)
+        field(12; "Country/Region No."; Code[10])
         {
             Caption = 'Country/Region No.';
             DataClassification = ToBeClassified;

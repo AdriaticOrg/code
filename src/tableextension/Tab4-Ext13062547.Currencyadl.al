@@ -1,4 +1,4 @@
-tableextension 13062547 "Currency-adl" extends Currency //4
+tableextension 13062549 "Currency-adl" extends Currency //4
 {
     fields
     {

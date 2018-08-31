@@ -53,8 +53,18 @@ table 13062662 "KRD Report Line"
             Caption = 'Country/Region Code';
             DataClassification = ToBeClassified;
             TableRelation = "Country/Region";
+
+            trigger OnValidate()
+            var
+                Country:Record "Country/Region";
+            begin
+                if Country.get("Country/Region Code") then
+                    "Country/Region No." := Country."Numberic Code"
+                else
+                    clear("Country/Region No.");
+            end;
         }
-        field(16; "Country/Region No."; Integer)
+        field(16; "Country/Region No."; code[10])
         {
             Caption = 'Country/Region No.';
             DataClassification = ToBeClassified;
@@ -62,9 +72,20 @@ table 13062662 "KRD Report Line"
         field(17; "Currency Code"; Code[10])
         {
             Caption = 'Currency Code';
+            TableRelation = Currency;
             DataClassification = ToBeClassified;
+
+            trigger OnValidate()
+            var
+                Currency:Record Currency;
+            begin
+                if Currency.get("Currency Code") then
+                    "Currency No." := Currency."Numberic Code"
+                else
+                    Clear("Currency No.");
+            end;
         }
-        field(18; "Currency No."; Integer)
+        field(18; "Currency No."; Code[10])
         {
             Caption = 'Currency No.';
             DataClassification = ToBeClassified;

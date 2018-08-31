@@ -1,4 +1,4 @@
-tableextension 13062546 "CountryRegion-adl" extends "Country/Region" //9
+tableextension 13062548 "CountryRegion-adl" extends "Country/Region" //9
 {
     fields {
     	// <adl.24>

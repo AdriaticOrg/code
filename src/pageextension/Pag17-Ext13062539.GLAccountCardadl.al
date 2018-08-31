@@ -3,7 +3,7 @@ pageextension 13062539 "GLAccountCard-adl" extends "G/L Account Card" //17
     layout
     {
         // <adl.24>
-        addlast(General) {
+        addlast(Reporting) {
             field("FAS Account";"FAS Account") {
                 ApplicationArea = All;                
             }
