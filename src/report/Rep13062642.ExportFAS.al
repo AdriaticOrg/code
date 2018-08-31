@@ -11,7 +11,8 @@ report 13062642 "Export FAS"
             RequestFilterFields = "No.";
             trigger OnPostDataItem()
             begin
-                ExportFAS("FAS Report Header");                
+                ExportFAS("FAS Report Header");   
+                "FAS Report Header".ReleaseReopen(0);             
             end;
         }
     }

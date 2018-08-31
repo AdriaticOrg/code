@@ -61,8 +61,10 @@ report 13062682 "Export BST"
 
             trigger OnPostDataItem()
             begin
-                if ExpFile then
-                ExportBST("BST Report Header");                
+                if ExpFile then begin
+                    ExportBST("BST Report Header"); 
+                    "BST Report Header".ReleaseReopen(0);
+                end;               
             end;    
 
             trigger OnAfterGetRecord()
