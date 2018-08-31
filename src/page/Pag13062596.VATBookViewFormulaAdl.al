@@ -33,6 +33,7 @@ page 13062596 "VAT Book View Formula-Adl"
                 {
                     ApplicationArea = All;
                     AssistEdit = true;
+                    Editable = false;
 
                     trigger OnAssistEdit();
                     begin
