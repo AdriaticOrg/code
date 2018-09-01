@@ -1,0 +1,2 @@
+"C:\Users\BojanL\.vscode\extensions\ms-dynamics-smb.al-0.16.19969\bin\alc.exe" /project:"C:\Development\NAV2018\INIT\GitHub\AdriaticOrg\code\" /packagecachepath:"C:\Development\NAV2018\INIT\GitHub\AdriaticOrg\code\.alpackages\"
+"C:\Users\BojanL\.vscode\extensions\ms-dynamics-smb.al-0.16.19969\bin\webdeploy.exe" publish -s http://NAV2018BC123 -p 7049 -i NAV -a UserPassword -f "Adriatic.org_Adriatic Localization for Business Central_1.0.0.0.app" -d C:\Development\NAV2018\INIT\GitHub\AdriaticOrg\code\
