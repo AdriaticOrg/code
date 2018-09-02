@@ -1,4 +1,4 @@
-pageextension 13062742 "SalesJournalHR-adl" extends "Sales Journal" 
+pageextension 13062742 "SalesJournalHR-adl" extends "Sales Journal" //253 
 {
     layout
     {
