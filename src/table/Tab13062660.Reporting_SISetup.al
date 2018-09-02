@@ -46,7 +46,13 @@ table 13062660 "Reporting_SI Setup"
             Caption = 'KRD Report No. Series';
             DataClassification = ToBeClassified;
             TableRelation = "No. Series";
-        }     
+        }    
+        field(21; "Default KRD Affiliation Type"; Code[10])
+        {
+            Caption = 'Default KRD Affiliation Type';
+            DataClassification = ToBeClassified;
+            TableRelation = "KRD Code".Code where ("Type" = const("Affiliation Type"));
+        }          
         field(22;"KRD Resp. User ID";Text[100]) {
             Caption = 'KRD Resp. User ID';
             TableRelation = "User Setup";

@@ -47,7 +47,7 @@ tableextension 13062534 "GLAccount-adl" extends "G/L Account"  //15
         {
             Caption = 'BST Code';
             DataClassification = ToBeClassified;
-            TableRelation = "BST Code";
+            TableRelation = "BST Code" where (Type=const(Posting));
         }
         // </adl.26>
     }

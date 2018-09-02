@@ -39,7 +39,10 @@ page 13062660 "Reporting_SI Setup"
                 }
                 field("KRD Prep. By User ID";"KRD Prep. By User ID") {
                     ApplicationArea = All;
-                }                
+                }      
+                field("Default KRD Affiliation Type";"Default KRD Affiliation Type") {
+                    ApplicationArea = All;
+                }          
             }
             group(BST) {
                 field("BST Report No. Series";"BST Report No. Series") {
