@@ -78,7 +78,6 @@ codeunit 13062594 "TextWriter-adl"
 
     procedure Close();
     begin
-        //TODO:: (if needed)
     end;
 
     procedure Download(DialogTitle: Text; ToFilter: Text; FileName: Text);
@@ -89,8 +88,8 @@ codeunit 13062594 "TextWriter-adl"
         TmpBlobTemp.Blob.CreateInStream(InStr, TextEncoding::Windows);
         File.DownloadFromStream(InStr, DialogTitle, '', ToFilter, FileName);
         IsDownloadedsucceed:= File.DownloadFromStream(InStr, DialogTitle, '', ToFilter, FileName);
-        IF IsDownloadedsucceed then
-            Message(Msg001, FileName);
+        //IF IsDownloadedsucceed then
+         //   Message(Msg001, FileName);
     end;
 
     procedure GetTempBlob(var TmpBlobTemp2: Record TempBlob)

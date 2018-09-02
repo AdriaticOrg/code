@@ -35,6 +35,7 @@ table 13062592 "VAT Book-Adl"
             Caption = 'Tag Name';
             DataClassification = CustomerContent;
         }
+
     }
 
     keys
