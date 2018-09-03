@@ -76,6 +76,7 @@ page 13062643 "FAS Report"
                 Caption = 'Suggest Lines';
                 Promoted = true;
                 ApplicationArea = All;
+                Image = CalculateLines;
                 //RunObject = report 50100;      
 
                 trigger OnAction()
@@ -93,6 +94,7 @@ page 13062643 "FAS Report"
             action("Export Report") {
                 Caption = 'Export Report';
                 Promoted = true;
+                Image = Export;
                 ApplicationArea = All;
                 //RunObject = report "Export FAS";
 
@@ -107,6 +109,7 @@ page 13062643 "FAS Report"
             }
             action("Release") {
                 Caption = 'Release';
+                Image = ReleaseDoc;
                 ApplicationArea = All;
 
                 trigger OnAction()
@@ -117,6 +120,7 @@ page 13062643 "FAS Report"
             }
             action("Reopen") {
                 Caption = 'Reopen';
+                Image = ReOpen;
                 ApplicationArea = All;
 
                 trigger OnAction()

@@ -34,7 +34,7 @@ table 13062660 "Reporting_SI Setup"
         field(17; "Company Sector Code"; Code[10])
         {
             Caption = 'Company Sector Code';
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
             DataClassification = ToBeClassified;                        
         }    
         field(19;"FAS Director User ID";Text[100]) {

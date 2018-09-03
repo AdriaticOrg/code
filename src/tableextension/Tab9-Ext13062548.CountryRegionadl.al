@@ -7,6 +7,6 @@ tableextension 13062548 "CountryRegion-adl" extends "Country/Region" //9
             Caption = 'Numeric Code';
             DataClassification = ToBeClassified;
         }
-	// </adl.24>
+	    // </adl.24>
     }    
 }

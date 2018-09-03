@@ -49,7 +49,7 @@ table 13062662 "KRD Report Line"
         {
             Caption = 'Non-Resident Sector Code';
             DataClassification = ToBeClassified;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
         }
         field(15; "Country/Region Code"; Code[10])
         {

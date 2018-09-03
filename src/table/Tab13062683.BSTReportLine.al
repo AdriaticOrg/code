@@ -20,7 +20,7 @@ table 13062683 "BST Report Line"
         {
             Caption = 'BST Code';
             DataClassification = ToBeClassified;
-            TableRelation = "BST Code";
+            TableRelation = "BST Code" where ("Type"=const(Posting));
 
             trigger OnValidate()
             var
@@ -42,7 +42,6 @@ table 13062683 "BST Report Line"
         {
             Caption = 'BST Serial No.';
             DataClassification = ToBeClassified;
-            TableRelation = "G/L Account";
         }
         field(11; "Country/Region Code"; Code[10])
         {

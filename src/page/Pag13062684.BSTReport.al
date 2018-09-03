@@ -68,23 +68,25 @@ page 13062684 "BST Report"
             {
                 Caption = 'Suggest Lines';
                 Promoted = true;
+                Image = CalculateLines;
                 ApplicationArea = All;    
 
                 trigger OnAction()
                 var
-                    //RepSuggestLines:Report "Suggest BST Lines";
+                    RepSuggestLines:Report "Suggest BST";
                 begin                    
                     TestField("No.");
                     TestField("Period Start Date");
                     TestField("Period End Date");
-                    //RepSuggestLines.SetBSTRepDocNo("No.");
-                    //RepSuggestLines.RunModal();
+                    RepSuggestLines.SetBSTRepDocNo("No.");
+                    RepSuggestLines.RunModal();
                 end;
                       
             }
             action("Export Report") {
                 Caption = 'Export Report';
                 Promoted = true;
+                Image = Export;
                 ApplicationArea = All;                
 
                 trigger OnAction()
@@ -98,6 +100,7 @@ page 13062684 "BST Report"
             }
             action("Release") {
                 Caption = 'Release';
+                Image = ReleaseDoc;
                 ApplicationArea = All;
 
                 trigger OnAction()
@@ -108,6 +111,7 @@ page 13062684 "BST Report"
             }
             action("Reopen") {
                 Caption = 'Reopen';
+                Image = ReOpen;
                 ApplicationArea = All;
 
                 trigger OnAction()

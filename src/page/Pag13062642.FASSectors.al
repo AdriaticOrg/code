@@ -4,7 +4,7 @@ page 13062642 "FAS Sectors"
     PageType = List; 
     SourceTable = "FAS Sector";
     Editable = true;
-    UsageCategory = Lists;
+    UsageCategory = Administration;
     ApplicationArea = All;
     
     layout

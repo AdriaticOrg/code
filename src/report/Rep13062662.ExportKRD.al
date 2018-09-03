@@ -391,7 +391,7 @@ report 13062662 "Export KRD"
 
                 XmlElem[7] := XmlElement.Create('ShortTermResidualMaturity',xbsrns);
                 XmlElem[6].Add(xmlElem[7]);  
-                XmlElem[7].Add(XmlText.Create(Format(0,0,TxtPrec)));  //to do 
+                XmlElem[7].Add(XmlText.Create(Format(KRDReportLine."Closing Balance",0,TxtPrec))); 
 
                 XmlElem[7] := XmlElement.Create('Arrears',xbsrns);
                 XmlElem[6].Add(xmlElem[7]);  

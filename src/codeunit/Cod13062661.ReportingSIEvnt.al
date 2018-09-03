@@ -121,10 +121,10 @@ codeunit 13062661 "Reporting SI Evnt."
                         begin
                             GenJournalLine.TestField("FAS Sector Code", '');                        
                         end;
-                end;                
-
-                GlobalGLEntry."BST Code" := GLAcc."BST Code";
+                end;                                
             end;
+
+            GlobalGLEntry."BST Code" := GLAcc."BST Code";
         end;
     end;
 
