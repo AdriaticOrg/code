@@ -84,5 +84,4 @@ table 13062683 "BST Report Line"
             Clustered = true;
         }
     }
-
 }
