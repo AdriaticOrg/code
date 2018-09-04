@@ -1,4 +1,4 @@
-report 13062601 "Detail Trial Balance-Adl"
+report 13062602 "Detail Trial Balance-Adl"
 {
     DefaultLayout = RDLC;
     RDLCLayout = './src/reportlayout/Rep13062601.DetailTrialBalanceAdl.rdlc';
