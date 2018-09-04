@@ -1,6 +1,19 @@
 codeunit 13062661 "Reporting SI Evnt."
 {
-    [EventSubscriber(ObjectType::Codeunit, 80, 'OnBeforePostCustomerEntry', '', false,false)]
+    Permissions = tabledata 17 = rm,
+                  tabledata 21 = rm,
+                  tabledata 25 = rm,
+                  tabledata 254 = rm;
+
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertVAT', '', false,false)]
+    local procedure InsertVATentry(VAR GenJournalLine : Record "Gen. Journal Line";VAR VATEntry : Record "VAT Entry";VAR UnrealizedVAT : Boolean;VAR AddCurrencyCode : Code[10])
+    begin
+        VATEntry."VAT Correction Date" := GenJournalLine."VAT Correction Date";
+        VATEntry."EU Customs Procedure" := GenJournalLine."EU Customs Procedure";
+        VATEntry.Modify()        ;
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Post", 'OnBeforePostCustomerEntry', '', false,false)]
     local procedure PostCustEntry(VAR GenJnlLine : Record "Gen. Journal Line";SalesHeader : Record "Sales Header";VAR TotalSalesLine : Record "Sales Line";VAR TotalSalesLineLCY : Record "Sales Line";CommitIsSuppressed : Boolean;PreviewMode:Boolean)
     var
         Cust:Record Customer;
@@ -10,7 +23,8 @@ codeunit 13062661 "Reporting SI Evnt."
                 "FAS Sector Code" := Cust."FAS Sector Code";
         end;
     end;
-    [EventSubscriber(ObjectType::Codeunit, 90, 'OnBeforePostVendorEntry', '', false,false)]
+
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Purch.-Post", 'OnBeforePostVendorEntry', '', false,false)]
     local procedure PostVendEntry(VAR GenJnlLine : Record "Gen. Journal Line";PurchHeader : Record "Sales Header";VAR TotalPurchLine : Record "Purchase Line";VAR TotalPurchLineLCY : Record "Purchase Line";PreviewMode:Boolean;CommitIsSupressed:Boolean)
     var
         Vend:Record Vendor;
@@ -21,7 +35,7 @@ codeunit 13062661 "Reporting SI Evnt."
         end;
     end;    
 
-    [EventSubscriber(ObjectType::Codeunit, 12, 'OnBeforePostGenJnlLine', '', false,false)]
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnBeforePostGenJnlLine', '', false,false)]
     local procedure PostGenJnlLine(VAR GenJournalLine : Record "Gen. Journal Line";Balancing : Boolean)
     var
         Cust:Record Customer;
@@ -71,7 +85,8 @@ codeunit 13062661 "Reporting SI Evnt."
         end;
         
     end;
-    [EventSubscriber(ObjectType::Codeunit, 12, 'OnBeforeInsertGlobalGLEntry', '', false, false)]
+
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertGlobalGLEntry', '', false, false)]
     local procedure GLEntryInsert(VAR GlobalGLEntry: Record "G/L Entry"; GenJournalLine: Record "Gen. Journal Line")
     var
         GLAcc: Record "G/L Account";
@@ -128,7 +143,7 @@ codeunit 13062661 "Reporting SI Evnt."
         end;
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, 12, 'OnAfterInitCustLedgEntry', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitCustLedgEntry', '', false, false)]
     local procedure CustLedgEntryInsert(VAR CustLedgerEntry: Record "Cust. Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
     var
         Cust: Record Customer;
@@ -157,7 +172,7 @@ codeunit 13062661 "Reporting SI Evnt."
 
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, 12, 'OnAfterInitVendLedgEntry', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitVendLedgEntry', '', false, false)]
     local procedure VendLedgEntryInsert(VAR VendorLedgerEntry: Record "Vendor Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
     var
         Vend: Record Vendor;
@@ -186,14 +201,21 @@ codeunit 13062661 "Reporting SI Evnt."
 
     end;
 
-    [EventSubscriber(ObjectType::Table, 81, 'OnAfterAccountNoOnValidateGetCustomerAccount', '', false, false)]
+    [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterCopyGenJnlLineFromSalesHeader', '', false, false)]
+    local procedure CopyLineFromSalesHeader(SalesHeader : Record "Sales Header";VAR GenJournalLine : Record "Gen. Journal Line")
+    begin
+        GenJournalLine."VAT Correction Date" := SalesHeader."VAT Correction Date"; 
+        GenJournalLine."EU Customs Procedure" := SalesHeader."EU Customs Procedure";       
+    end;
+
+    [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetCustomerAccount', '', false, false)]
     local procedure GETFASFromCust(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Customer: Record Customer)
 
     begin
         GenJournalLine."FAS Sector Code" := Customer."FAS Sector Code";
     end;
 
-    [EventSubscriber(ObjectType::Table, 81, 'OnAfterAccountNoOnValidateGetVendorAccount', '', false, false)]
+    [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetVendorAccount', '', false, false)]
     local procedure GETFASFromVend(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Vendor: Record Vendor)
 
     begin
@@ -208,21 +230,21 @@ codeunit 13062661 "Reporting SI Evnt."
         GenJournalLine."FAS Instrument Code" :=BankAccount."FAS Instrument Code";
     end;
     
-    [EventSubscriber(ObjectType::Table, 81, 'OnAfterAccountNoOnValidateGetCustomerBalAccount', '', false, false)]
+    [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetCustomerBalAccount', '', false, false)]
     local procedure BalGETFASFromVend(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Customer: Record Customer)
 
     begin
         GenJournalLine."Bal. FAS Sector Code" := Customer."FAS Sector Code";
     end;
 
-    [EventSubscriber(ObjectType::Table, 81, 'OnAfterAccountNoOnValidateGetVendorBalAccount', '', false, false)]
+    [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetVendorBalAccount', '', false, false)]
     local procedure BalGETFASFromCust(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Vendor: Record "Vendor")
 
     begin
         GenJournalLine."Bal. FAS Sector Code" := Vendor."FAS Sector Code";
     end;  
 
-    [EventSubscriber(ObjectType::Table, 81, 'OnAfterAccountNoOnValidateGetBankBalAccount', '', false, false)]
+    [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetBankBalAccount', '', false, false)]
     local procedure BalGETFASFromBank(VAR GenJournalLine: Record "Gen. Journal Line"; VAR BankAccount: Record "Bank Account")
 
     begin

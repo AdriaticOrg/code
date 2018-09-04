@@ -32,5 +32,17 @@ tableextension 13062532 "VATEntry-Adl" extends "VAT Entry" //254
             BlankZero = true;
         }
         // </adl.11>
+        // <adl.22>
+        field(13062601; "VAT Correction Date"; Date)
+        {
+            Caption = 'VAT Correction Date';
+            DataClassification = ToBeClassified;
+        } 
+        field(13062602; "EU Customs Procedure"; Boolean)
+        {
+            Caption = 'EU Customs Procedure';
+            DataClassification = ToBeClassified;
+        }     
+        // </adl.22>         
     }
 }

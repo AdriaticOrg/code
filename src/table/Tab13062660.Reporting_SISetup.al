@@ -82,6 +82,40 @@ table 13062660 "Reporting_SI Setup"
             TableRelation = "User Setup";
             DataClassification = ToBeClassified;            
         }               
+        field(40; "VIES Report No. Series"; Code[20])
+        {
+            Caption = 'VIES Report No. Series';
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(42;"VIES Resp. User ID";Text[100]) {
+            Caption = 'VIES Resp. User ID';
+            TableRelation = "User Setup";
+            DataClassification = ToBeClassified;            
+        }
+        
+        field(45;"VIES Prep. By User ID";Text[100]) {
+            Caption = 'VIES Prep. By User ID';
+            TableRelation = "User Setup";
+            DataClassification = ToBeClassified;            
+        }     
+        field(50; "PDO Report No. Series"; Code[20])
+        {
+            Caption = 'PDO Report No. Series';
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(52;"PDO Resp. User ID";Text[100]) {
+            Caption = 'PDO Resp. User ID';
+            TableRelation = "User Setup";
+            DataClassification = ToBeClassified;            
+        }
+        
+        field(55;"PDO Prep. By User ID";Text[100]) {
+            Caption = 'PDO Prep. By User ID';
+            TableRelation = "User Setup";
+            DataClassification = ToBeClassified;            
+        }             
     }
     
     keys

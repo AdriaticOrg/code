@@ -1,9 +1,9 @@
-page 13062684 "BST Report"
+page 13062602 "VIES Report"
 {
     PageType = Document;
     UsageCategory = Administration;
-    SourceTable = "BST Report Header";
-    Caption = 'BST Report';
+    SourceTable = "VIES Report Header";
+    Caption = 'VIES Report';
     
     layout
     {
@@ -26,9 +26,16 @@ page 13062684 "BST Report"
                 field("Period End Date";"Period End Date") {
                     ApplicationArea = All;
                 }
+                field("Period Year";"Period Year") {
+                    ApplicationArea = All;
+                }
+                field("Period Round";"Period Round") {
+                    ApplicationArea = All;
+                }
                 field("User ID";"User ID") {
                     ApplicationArea = All;
                 }
+
                 field("Last Suggest on Date";"Last Suggest on Date") {
                     ApplicationArea = All;
                 }
@@ -50,10 +57,9 @@ page 13062684 "BST Report"
                 }
                 field(Status;Status) {
                     ApplicationArea = All;
-                }
-                
+                }                
             }
-            part(Subpage;13062683) {
+            part(Subpage;13062601) {
                 SubPageLink = "Document No." = field("No.");
                 ApplicationArea = All;
             }
@@ -68,17 +74,17 @@ page 13062684 "BST Report"
             {
                 Caption = 'Suggest Lines';
                 Promoted = true;
-                Image = CalculateLines;
-                ApplicationArea = All;    
+                ApplicationArea = All;
+                Image = CalculateLines;     
 
                 trigger OnAction()
                 var
-                    RepSuggestLines:Report "Suggest BST Lines";
-                begin                    
+                    RepSuggestLines:Report "Suggest VIES Lines";
+                begin
                     TestField("No.");
                     TestField("Period Start Date");
                     TestField("Period End Date");
-                    RepSuggestLines.SetBSTRepDocNo("No.");
+                    RepSuggestLines.SetVIESRepDocNo("No.");
                     RepSuggestLines.RunModal();
                 end;
                       
@@ -87,15 +93,15 @@ page 13062684 "BST Report"
                 Caption = 'Export Report';
                 Promoted = true;
                 Image = Export;
-                ApplicationArea = All;                
+                ApplicationArea = All;
 
                 trigger OnAction()
                 var
-                    BSTRepHead:Record "BST Report Header";
+                    VIESRepHead:Record "VIES Report Header";
                 begin
-                    BSTRepHead := Rec;
-                    BSTRepHead.SetRecFilter();
-                    Report.RunModal(report::"Export BST",true,false,BSTRepHead);
+                    VIESRepHead := Rec;
+                    VIESRepHead.SetRecFilter();
+                    //Report.RunModal(report::"Export VIES",true,false,VIESRepHead);
                 end;
             }
             action("Release") {

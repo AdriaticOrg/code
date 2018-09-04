@@ -17,5 +17,12 @@ tableextension 13062528 "Sales Invoice Header-Adl" extends "Sales Invoice Header
             OptionMembers = "Realized VAT","Postponed VAT";
         }
         // </adl.10>
+        // <adl.22>
+        field(13062602; "EU Customs Procedure"; Boolean)
+        {
+            Caption = 'EU Customs Procedure';
+            DataClassification = ToBeClassified;
+        }                 
+        // </adl.22>          
     }
 }
