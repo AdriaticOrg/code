@@ -55,6 +55,28 @@ page 13062660 "Reporting_SI Setup"
                     ApplicationArea = All;
                 }
             }
+            group(VIES) {
+                field("VIES Report No. Series";"VIES Report No. Series") {
+                    ApplicationArea = All;
+                }
+                field("VIES Prep. By User ID";"VIES Prep. By User ID") {
+                    ApplicationArea =All;
+                }
+                field("VIES Resp. User ID";"VIES Resp. User ID") {
+                    ApplicationArea =All;
+                }
+            }
+            group(PDO) {
+                field("PDO Report No. Series";"PDO Report No. Series") {
+                    ApplicationArea = All;
+                }
+                field("PDO Prep. By User ID";"PDO Prep. By User ID") {
+                    ApplicationArea =All;
+                }
+                field("PDO Resp. User ID";"PDO Resp. User ID") {
+                    ApplicationArea =All;
+                }
+            }            
         }
     }
     
