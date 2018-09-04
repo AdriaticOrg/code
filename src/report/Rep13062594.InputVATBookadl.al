@@ -141,9 +141,10 @@ report 13062594 "Input VAT Book-adl"
                 VATBookGroup.SetRange("VAT Book Code", VATBook.Code);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[8]));
                 if VATBookGroup.FindFirst() then begin
-                    //repeat
-                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                    //until VATBookGroup.next= 0;
+                    repeat
+                        //columnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, Datefilter); 
+                    until VATBookGroup.next= 0;
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[8], PadCharacter, 1, FieldDelimiter);
                 end;
                 
@@ -152,7 +153,8 @@ report 13062594 "Input VAT Book-adl"
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[9]));
                 if VATBookGroup.FindFirst() then begin
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[9], PadCharacter, 1, FieldDelimiter);                        
                 end;
             
@@ -160,7 +162,8 @@ report 13062594 "Input VAT Book-adl"
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[10]));
                 if VATBookGroup.FindFirst() then begin
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry);
+                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[10], PadCharacter, 1, FieldDelimiter);                        
                 end;
 
@@ -168,7 +171,8 @@ report 13062594 "Input VAT Book-adl"
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[11]));
                 if VATBookGroup.FindFirst() then begin
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[11], PadCharacter, 1, FieldDelimiter);                        
                 end;
 
@@ -177,7 +181,8 @@ report 13062594 "Input VAT Book-adl"
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[12]));
                 if VATBookGroup.FindFirst() then begin
                     repeat
-                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                        //ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
                     until VATBookGroup.next= 0;
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[12], PadCharacter, 1, FieldDelimiter);
                 end;
@@ -187,7 +192,8 @@ report 13062594 "Input VAT Book-adl"
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[13]));
                 if VATBookGroup.FindFirst() then begin
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[13], PadCharacter, 1, FieldDelimiter);
                 end;
 
@@ -196,7 +202,8 @@ report 13062594 "Input VAT Book-adl"
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[14]));
                 if VATBookGroup.FindFirst() then begin
                     repeat    
-                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                        //ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
                     until VATBookGroup.next= 0;
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[14], PadCharacter, 1, FieldDelimiter);
                 end;
@@ -206,7 +213,8 @@ report 13062594 "Input VAT Book-adl"
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[15]));
                 if VATBookGroup.FindFirst() then begin
                     repeat    
-                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                        //ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, Datefilter); 
                     until VATBookGroup.next= 0;
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[15], PadCharacter, 1, FieldDelimiter);
                 end;
@@ -215,7 +223,8 @@ report 13062594 "Input VAT Book-adl"
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[16]));
                 if VATBookGroup.FindFirst() then begin
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[17], PadCharacter, 1, FieldDelimiter);
                 end;
 
@@ -224,7 +233,8 @@ report 13062594 "Input VAT Book-adl"
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[17]));
                 if VATBookGroup.FindFirst() then begin
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[17], PadCharacter, 1, FieldDelimiter);
                 end;
 
@@ -234,7 +244,8 @@ report 13062594 "Input VAT Book-adl"
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[18]));
                 if VATBookGroup.FindFirst() then begin
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0,DateFilter); 
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[18], PadCharacter, 1, FieldDelimiter);
                 end;
 
@@ -245,7 +256,8 @@ report 13062594 "Input VAT Book-adl"
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[19]));
                 if VATBookGroup.FindFirst() then begin
                     repeat    
-                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                        //ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
                     until VATBookGroup.next= 0;
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[19], PadCharacter, 1, FieldDelimiter);
                 end;
@@ -256,7 +268,8 @@ report 13062594 "Input VAT Book-adl"
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[20]));
                 if VATBookGroup.FindFirst() then begin
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[20], PadCharacter, 0, FieldDelimiter);
                 end;
 
@@ -266,7 +279,8 @@ report 13062594 "Input VAT Book-adl"
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[21]));
                 if VATBookGroup.FindFirst() then begin
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[21], PadCharacter, 0, FieldDelimiter);
                 end;
 
@@ -274,7 +288,8 @@ report 13062594 "Input VAT Book-adl"
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[22]));
                 if VATBookGroup.FindFirst() then begin
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
+                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[22], PadCharacter, 1, FieldDelimiter);
                 end;
 
@@ -344,6 +359,7 @@ report 13062594 "Input VAT Book-adl"
         DummyText : Text;
         BalanceYear: Integer;
         ClosingYear: Integer;
+        DateFilter: Text;
         BalanceDesc : Label 'Opening item for the year %1';
         BalanceDocumentNo : Label 'Opening %1';
         ClosingDesc : Label 'Closing GL account for the year %1';
