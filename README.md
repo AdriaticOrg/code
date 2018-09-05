@@ -4,6 +4,18 @@ Localization features are transferred from Microsoft to Partners after version 4
 
 > Note: All developers should follow the same [coding rules](doc/CodingRules.md).
 
+## Responsibilities
+
+General responsibilities are as follows:
+
+Country|Company
+-------|-------
+Slovenia|Business Solutions
+Croatia|Adacta
+Serbia|NPS
+Adriatic Company and first deploy|GoPro
+
+
 ## Features
 
 Use ```<adl.6>``` code mark for VAT posting feature described with No. is #6.  
