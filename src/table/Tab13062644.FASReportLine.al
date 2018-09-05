@@ -65,5 +65,26 @@ table 13062644 "FAS Report Line"
             Clustered = true;
         }
     }
-    
+
+    trigger OnInsert()
+    begin
+        TestHeadStatusOpen();
+    end;
+
+    trigger OnModify()
+    begin
+        TestHeadStatusOpen();
+    end;    
+
+    trigger OnDelete()
+    begin
+        TestHeadStatusOpen();
+    end;
+
+    local procedure TestHeadStatusOpen()  
+    var
+        FASRepHead:Record "FAS Report Header";      
+    begin
+        FASRepHead.TestStatusOpen("Document No.");
+    end;
 }

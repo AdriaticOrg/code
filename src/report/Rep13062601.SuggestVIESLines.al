@@ -13,6 +13,8 @@ report 13062601 "Suggest VIES Lines"
 
             trigger OnPreDataItem()
             begin
+                VIESRepHeader.Get(VIESRepDocNo);
+
                 if DeleteExisting then begin
                     VIESRepLine.Reset();
                     VIESRepLine.SetRange("Document No.",VIESRepDocNo);
@@ -23,14 +25,11 @@ report 13062601 "Suggest VIES Lines"
                     NewLineNo := VIESRepLine."Line No";
             end;
 
-            trigger OnPostDataItem()
-            var
-                VIESRepHead:Record "VIES Report Header";
-            begin
-                VIESRepHead.Get(VIESRepDocNo);
-                VIESRepHead."Last Suggest on Date" := Today;
-                VIESRepHead."Last Suggest at Time" := time;
-                VIESRepHead.Modify(true);
+            trigger OnPostDataItem()                            
+            begin                
+                VIESRepHeader."Last Suggest on Date" := Today;
+                VIESRepHeader."Last Suggest at Time" := time;
+                VIESRepHeader.Modify(true);
                 Message(Msg01);
             end;
             
@@ -110,6 +109,7 @@ report 13062601 "Suggest VIES Lines"
     NewLineNo:Integer;
     VIESRepLine:record "VIES Report Line";
     OldViesRepHead:Record "VIES Report Header";
+    VIESRepHeader:Record "VIES Report Header";
     OldVATEntry:Record "VAT Entry";
 
 
@@ -175,6 +175,9 @@ report 13062601 "Suggest VIES Lines"
                             VIESRepLine."Applies-to Report No." := OldRepHead."No.";
                             VIESRepLine."Period Year" := OldRepHead."Period Year";
                             VIESRepLine."Period Round" := OldRepHead."Period Round";
+                        end else begin
+                            VIESRepLine."Period Year" := VIESRepHeader."Period Year";
+                            VIESRepLine."Period Round" := VIESRepHeader."Period Round";
                         end;                            
 
                         VIESRepLine.Amount := -(Base);

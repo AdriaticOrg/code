@@ -123,7 +123,7 @@ table 13062661 "KRD Report Header"
 
     trigger OnModify()
     begin
-        TestField(Status,Status::Open);
+        TestStatusOpen("No.");
     end;
 
     local procedure TestNoSeries()
@@ -163,6 +163,15 @@ table 13062661 "KRD Report Header"
             Status := Status::Open;        
         Modify();
     end;    
+
+    procedure TestStatusOpen(DocNo:Code[20])
+    var
+        KRDRepHead:Record "KRD Report Header";
+    begin
+        KRDRepHead.get(DocNo);
+        KRDRepHead.TestField(Status,KRDRepHead.Status::Open);
+    end;    
+
     var
         RepSISetup:Record "Reporting_SI Setup";
         NoSeriesMgt:Codeunit NoSeriesManagement;

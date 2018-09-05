@@ -59,7 +59,7 @@ page 13062622 "PDO Report"
                     ApplicationArea = All;
                 }                
             }
-            part(Subpage;13062601) {
+            part(Subpage;13062621) {
                 SubPageLink = "Document No." = field("No.");
                 ApplicationArea = All;
             }
@@ -101,7 +101,7 @@ page 13062622 "PDO Report"
                 begin
                     PDORepHead := Rec;
                     PDORepHead.SetRecFilter();
-                    //Report.RunModal(report::"Export PDO",true,false,PDORepHead);
+                    Report.RunModal(report::"Export PDO",true,false,PDORepHead);
                 end;
             }
             action("Release") {

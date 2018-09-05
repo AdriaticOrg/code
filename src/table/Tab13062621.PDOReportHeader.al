@@ -138,7 +138,7 @@ table 13062621 "PDO Report Header"
 
     trigger OnModify()
     begin
-        TestField(Status,Status::Open);
+        TestStatusOpen("No.");
     end;
 
     local procedure TestNoSeries()
@@ -178,6 +178,14 @@ table 13062621 "PDO Report Header"
             Status := Status::Open;        
         Modify();
     end;
+
+    procedure TestStatusOpen(DocNo:Code[20])
+    var
+        PDORepHead:Record "PDO Report Header";
+    begin
+        PDORepHead.get(DocNo);
+        PDORepHead.TestField(Status,PDORepHead.Status::Open);
+    end;    
     
     var
         RepSISetup:Record "Reporting_SI Setup";

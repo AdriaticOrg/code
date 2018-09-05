@@ -138,7 +138,7 @@ table 13062601 "VIES Report Header"
 
     trigger OnModify()
     begin
-        TestField(Status,Status::Open);
+        TestStatusOpen("No.");
     end;
 
     local procedure TestNoSeries()
@@ -178,6 +178,14 @@ table 13062601 "VIES Report Header"
             Status := Status::Open;        
         Modify();
     end;
+
+    procedure TestStatusOpen(DocNo:Code[20])
+    var
+        VIESRepHead:Record "VIES Report Header";
+    begin
+        VIESRepHead.get(DocNo);
+        VIESRepHead.TestField(Status,VIESRepHead.Status::Open);
+    end;    
     
     var
         RepSISetup:Record "Reporting_SI Setup";

@@ -84,5 +84,27 @@ table 13062622 "PDO Report Line"
             Clustered = true;
         }
     }
+
+    trigger OnInsert()
+    begin
+        TestHeadStatusOpen();
+    end;
+
+    trigger OnModify()
+    begin
+        TestHeadStatusOpen();
+    end;    
+
+    trigger OnDelete()
+    begin
+        TestHeadStatusOpen();
+    end;
+
+    local procedure TestHeadStatusOpen()  
+    var
+        PDORepHead:Record "PDO Report Header";      
+    begin
+        PDORepHead.TestStatusOpen("Document No.");
+    end;
     
 }

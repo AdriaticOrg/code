@@ -101,7 +101,7 @@ page 13062602 "VIES Report"
                 begin
                     VIESRepHead := Rec;
                     VIESRepHead.SetRecFilter();
-                    //Report.RunModal(report::"Export VIES",true,false,VIESRepHead);
+                    Report.RunModal(report::"Export VIES",true,false,VIESRepHead);
                 end;
             }
             action("Release") {

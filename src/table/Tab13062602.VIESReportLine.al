@@ -103,5 +103,27 @@ table 13062602 "VIES Report Line"
             Clustered = true;
         }
     }
+
+    trigger OnInsert()
+    begin
+        TestHeadStatusOpen();
+    end;
+
+    trigger OnModify()
+    begin
+        TestHeadStatusOpen();
+    end;    
+
+    trigger OnDelete()
+    begin
+        TestHeadStatusOpen();
+    end;
+
+    local procedure TestHeadStatusOpen()  
+    var
+        VIESRepHead:Record "VIES Report Header";      
+    begin
+        VIESRepHead.TestStatusOpen("Document No.");
+    end;    
     
 }

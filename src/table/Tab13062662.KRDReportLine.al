@@ -138,6 +138,28 @@ table 13062662 "KRD Report Line"
         }
     }
 
+    trigger OnInsert()
+    begin
+        TestHeadStatusOpen();
+    end;
+
+    trigger OnModify()
+    begin
+        TestHeadStatusOpen();
+    end;    
+
+    trigger OnDelete()
+    begin
+        TestHeadStatusOpen();
+    end;
+
+    local procedure TestHeadStatusOpen()  
+    var
+        KRDRepHead:Record "KRD Report Header";      
+    begin
+        KRDRepHead.TestStatusOpen("Document No.");
+    end;    
+
     var
     local procedure ValidateClosingBal()
     begin

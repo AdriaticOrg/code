@@ -84,4 +84,26 @@ table 13062683 "BST Report Line"
             Clustered = true;
         }
     }
+
+    trigger OnInsert()
+    begin
+        TestHeadStatusOpen();
+    end;
+
+    trigger OnModify()
+    begin
+        TestHeadStatusOpen();
+    end;    
+
+    trigger OnDelete()
+    begin
+        TestHeadStatusOpen();
+    end;
+
+    local procedure TestHeadStatusOpen()  
+    var
+        BSTRepHead:Record "BST Report Header";      
+    begin
+        BSTRepHead.TestStatusOpen("Document No.");
+    end;    
 }
