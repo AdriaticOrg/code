@@ -26,6 +26,12 @@ table 13062593 "VAT Book Column Name-Adl"
             Caption = 'Description';
             DataClassification = CustomerContent;
         }
+
+        field(13062701; "Fixed text length"; Integer)
+        {
+            Caption = 'Fixed text length';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

@@ -55,6 +55,19 @@ tableextension 13062542 "GenJournalLine-Adl" extends "Gen. Journal Line" // 81
             Caption = 'EU Customs Procedure';
             DataClassification = ToBeClassified;
         }                  
-        // </adl.22>         
+        // </adl.22>     	
+	    // <adl.28>
+        field(13062741;"Original Document Amount (LCY)";Decimal)
+        {
+    	    Caption = 'Original Document Amount (LCY)';
+            DataClassification = ToBeClassified;
+
+        }
+        field(13062742;"Original VAT Amount (LCY)";Decimal)
+        {
+            Caption = '"Original VAT Amount (LCY)"';
+            DataClassification = ToBeClassified;   
+        }
+        //</adl.28>    
     }
 }

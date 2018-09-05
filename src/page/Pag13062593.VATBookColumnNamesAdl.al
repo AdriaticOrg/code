@@ -20,6 +20,12 @@ page 13062593 "VAT Book Column Names-Adl"
                     ApplicationArea = All;
                     ToolTip = 'Specifies a description of the VAT book columns.';
                 }
+
+                field("Fixed text length";"Fixed text length")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies fixed text length of the VAT book columns.';
+                }
             }
         }
     }
