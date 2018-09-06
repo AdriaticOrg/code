@@ -83,10 +83,10 @@ codeunit 13062591 "VAT Book Calculation-Adl"
         end;
     end;
 
-    local procedure CalcCellValue(VATBookGroup: Record "VAT Book Group-Adl"; ColumnNo: Integer; var Result: Decimal; DateFilter: Text);
+    local procedure CalcCellValue(VATBookGroup: Record "VAT Book Group-Adl"; ColumnNo: Integer; var Result: Decimal; DateFilter: Text; var VATEntry: Record "VAT Entry");
     var
         VATBookViewFormula: Record "VAT Book View Formula-Adl";
-        VATEntry: Record "VAT Entry";
+        //VATEntry: Record "VAT Entry";
     begin
         VATBookViewFormula.Reset;
         VATBookViewFormula.SetRange("VAT Book Code", VATBookGroup."VAT Book Code");
@@ -126,6 +126,7 @@ codeunit 13062591 "VAT Book Calculation-Adl"
         Operators: Text[8];
         OperatorNo: Integer;
         Expression: Text;
+        VATEntry: Record "VAT Entry";
     begin
         Result := 0;
         if VATBookGroup."Group Type" = VATBookGroup."Group Type"::Total then
@@ -198,9 +199,10 @@ codeunit 13062591 "VAT Book Calculation-Adl"
                     Result += EvaluateExpression(VBGroup, ColumnNo, DateFilter);
                 end else begin
                     IsFilter := (StrPos(Expression, '..') + StrPos(Expression, '|') > 0);
-                    if not IsFilter then
-                        CalcCellValue(VATBookGroup, ColumnNo, Result, DateFilter)
-                    else begin
+                    if not IsFilter then begin
+                        VATEntry.Reset;
+                        CalcCellValue(VATBookGroup, ColumnNo, Result, DateFilter, VATEntry);
+                    end else begin
                         VBGroup.SetCurrentKey("Book Link Code");
                         VBGroup.SetFilter("Book Link Code", Expression);
                         if VBGroup.FindSet then
