@@ -37,6 +37,33 @@ pageextension 13062539 "GLAccountCard-adl" extends "G/L Account Card" //17
         }         
         // </adl.24>
     }
+    actions
+    {   
+        addafter("A&ccount") 
+        {
+            // <adl.21>
+            action("GLExport")
+            {
+                Caption = 'GL Export';
+                Promoted = true;
+                PromotedCategory = Report;
+                Image = Report;
+                ApplicationArea = All;
+
+                trigger OnAction()
+                var
+                    GLExportSIadl : Report "GL ExportSI-adl";
+                    GLAccount: Record "G/L Account";
+                begin
+                    GLAccount:= Rec;
+                    GLAccount.SetRecFilter();
+                    GLExportSIadl.SetTableView(GLAccount);
+                    GLExportSIadl.RunModal();
+                end;
+            }
+            // </adl.21>  
+        }       
+    }
     // <adl.24>
     trigger OnOpenPage()
     begin
