@@ -86,7 +86,6 @@ codeunit 13062591 "VAT Book Calculation-Adl"
     local procedure CalcCellValue(VATBookGroup: Record "VAT Book Group-Adl"; ColumnNo: Integer; var Result: Decimal; DateFilter: Text; var VATEntry: Record "VAT Entry");
     var
         VATBookViewFormula: Record "VAT Book View Formula-Adl";
-        //VATEntry: Record "VAT Entry";
     begin
         VATBookViewFormula.Reset;
         VATBookViewFormula.SetRange("VAT Book Code", VATBookGroup."VAT Book Code");
