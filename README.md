@@ -11,7 +11,7 @@ No.|Feature Name|Country Specific|Responsible Partner|Status|Sub-range
 1.|[VAT Date](https://github.com/AdriaticOrg/sdd/blob/master/features/VATDate.md)||NPS|Coding|13.062.525..13.062.550
 2.|[Postponed VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/PostponedVAT.md)||NPS|Coding|13.062.525..13.062.550
 3.|[Full VAT Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/FullVATPorting.md)||NPS|Coding|13.062.525..13.062.550
-4.|[Reverse Charge Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ReverseChargePosting.md)||NPS and GoPro|Coding|13.062.525..13.062.550
+4.|[Reverse Charge Posting](https://github.com/AdriaticOrg/sdd/blob/master/features/ReverseChargePosting.md)||NPS/GoPro|Coding|13.062.525..13.062.550
 5.|Informative VAT|SI|BS|Coding|13.062.551..13.062.560
 6.|Red reversal Posting||GoPro|Coding|13.062.561..13.062.570
 7.|Forced Debit / Credit Posting||GoPro|Coding|13.062.571..13.062.580
