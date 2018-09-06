@@ -10,6 +10,9 @@ Use ```<adl.6>``` code mark for VAT posting feature described with No. is #6.
 
 No.|Feature Name|Country Specific|Sub-range
 -:|-|-|-
+||**[Core]**||
+[#0](/../../issues/0)|[ADL Core](https://github.com/AdriaticOrg/sdd/blob/master/features/ADLCore.md)||13.062.811..13.062.830
+|||
 ||**[VAT Posting](https://github.com/AdriaticOrg/code/issues?q=is%3Aopen+is%3Aissue+project%3AAdriaticOrg%2Fcode%2F1)**|
 [#6](/../../issues/6)|[VAT Date](https://github.com/AdriaticOrg/sdd/blob/master/features/VATDate.md)||13.062.525..13.062.550
 [#10](/../../issues/10)|[Postponed VAT](https://github.com/AdriaticOrg/sdd/blob/master/features/PostponedVAT.md)||13.062.525..13.062.550
