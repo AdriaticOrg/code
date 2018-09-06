@@ -295,7 +295,18 @@ codeunit 13062661 "Reporting SI Evnt."
             GenJournalLine."Bal. FAS Sector Code" := BankAccount."FAS Sector Code";
             GenJournalLine."Bal. FAS Instrument Code" := BankAccount."FAS Instrument Code";
         end;
-    end;    
+    end; 
+
+    [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetGLBalAccount', '', false, false)]
+    local procedure BalGETFASFromGLAcc(VAR GenJournalLine: Record "Gen. Journal Line"; VAR GLAccount: Record "G/L Account")
+    var
+        ReportSISetup:Record "Reporting_SI Setup";
+    begin
+        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
+            GenJournalLine."Bal. FAS Sector Code" := GLAccount."FAS Sector Code";
+            GenJournalLine."Bal. FAS Instrument Code" := GLAccount."FAS Instrument Code";
+        end;
+    end;     
 
 
 }
