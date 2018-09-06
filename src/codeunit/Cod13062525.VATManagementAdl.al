@@ -34,8 +34,11 @@ codeunit 13062525 "VAT Management-Adl"
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"VAT Entry", 'OnAfterCopyFromGenJnlLine', '', true, true)]
-    local procedure OnAfterCopyFromGenJnlLine(GenJournalLine: Record "Gen. Journal Line"; var VATEntry: Record "VAT Entry")
+    local procedure OnAfterCopyFromGenJnlLine(VAR VATEntry: Record "VAT Entry"; GenJournalLine: Record "Gen. Journal Line")
+    var
+        VATPostingSetup: Record "VAT Posting Setup";
     begin
+        VATPostingSetup.Get(GenJournalLine."VAT Bus. Posting Group", GenJournalLine."VAT Prod. Posting Group");
         VATEntry."Postponed VAT-Adl" := GenJournalLine."Postponed VAT-Adl";
     end;
 
@@ -58,6 +61,10 @@ codeunit 13062525 "VAT Management-Adl"
             VATEntry."Remaining Unrealized Amount" := VATEntry."Unrealized Amount";
             VATEntry."Remaining Unrealized Base" := VATEntry."Unrealized Base";
         end;
+        //<adl.11>
+        VATEntry."VAT % (retrograde)-Adl" := VATPostingSetup."VAT % (retrograde)-Adl";
+        VATEntry."VAT Base (retro.)-Adl" := (VATEntry.Base + VATEntry.Amount) * 100 / VATPostingSetup."VAT % (retrograde)-Adl";
+        //</adl.11>
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertGLEntryBuffer', '', false, false)]
@@ -69,15 +76,22 @@ codeunit 13062525 "VAT Management-Adl"
             if (TempGLEntryBuf."Source Type" = TempGLEntryBuf."Source Type"::Vendor) and (GenJournalLine."VAT Bus. Posting Group" <> '') and (GenJournalLine."VAT Prod. Posting Group" <> '')
                 and (TempGLEntryBuf."VAT Amount" = 0) then begin
                 if VATPostingSetup.Get(GenJournalLine."VAT Bus. Posting Group", GenJournalLine."VAT Prod. Posting Group") then begin
-                    VATPostingSetup.TestField("Purch VAT Postponed Account-Adl");
-                    TempGLEntryBuf.Validate("G/L Account No.", VATPostingSetup."Purch VAT Postponed Account-Adl");
+                    //VATPostingSetup.TestField("Purch VAT Postponed Account-Adl");
+                    //TempGLEntryBuf.Validate("G/L Account No.", VATPostingSetup."Purch VAT Postponed Account-Adl");
+                    if VATPostingSetup."VAT Calculation Type" = VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT" then begin
+                        VATPostingSetup.TestField("Reverse Chrg. VAT Unreal. Acc.");
+                        TempGLEntryBuf.Validate("G/L Account No.", VATPostingSetup."Reverse Chrg. VAT Unreal. Acc.");
+                    end else begin
+                        VATPostingSetup.TestField("Purch. VAT Unreal. Account");
+                        TempGLEntryBuf.Validate("G/L Account No.", VATPostingSetup."Purch. VAT Unreal. Account");
+                    end;
                 end;
             end;
             if (TempGLEntryBuf."Source Type" = TempGLEntryBuf."Source Type"::Customer) and (GenJournalLine."VAT Bus. Posting Group" <> '') and (GenJournalLine."VAT Prod. Posting Group" <> '')
                 and (TempGLEntryBuf."VAT Amount" = 0) then begin
                 if VATPostingSetup.Get(GenJournalLine."VAT Bus. Posting Group", GenJournalLine."VAT Prod. Posting Group") then begin
-                    VATPostingSetup.TestField("Sales VAT Postponed Account-Adl");
-                    TempGLEntryBuf.Validate("G/L Account No.", VATPostingSetup."Sales VAT Postponed Account-Adl");
+                    VATPostingSetup.TestField("Sales VAT Unreal. Account");
+                    TempGLEntryBuf.Validate("G/L Account No.", VATPostingSetup."Sales VAT Unreal. Account");
                 end;
             end;
         end;
@@ -338,18 +352,20 @@ codeunit 13062525 "VAT Management-Adl"
                         CASE SalesPurchase OF
                             SalesPurchase::Customer:
                                 BEGIN
-                                    VATPostingSetup.TestField("Sales VAT Postponed Account-Adl");
-                                    ManagePostponedVAT.CreateGLEntry(GenJnlLine, VATPostingSetup.GetSalesAccount(FALSE),
+                                    //VATPostingSetup.TestField("Sales VAT Postponed Account-Adl");
+                                    ManagePostponedVAT.CreateGLEntry(GenJnlLine, VATPostingSetup.GetSalesAccount(false),
                                         -VATEntry.Amount, ManagePostponedVAT.CalcAddCurrForUnapplication(VATEntry."Posting Date", -VATEntry.Amount), TRUE);
-                                    ManagePostponedVAT.CreateGLEntry(GenJnlLine, VATPostingSetup."Sales VAT Postponed Account-Adl",
-                                        VATEntry.Amount, ManagePostponedVAT.CalcAddCurrForUnapplication(VATEntry."Posting Date", VATEntry.Amount), TRUE);
+                                    //ManagePostponedVAT.CreateGLEntry(GenJnlLine, VATPostingSetup."Sales VAT Postponed Account-Adl",
+                                    //VATEntry.Amount, ManagePostponedVAT.CalcAddCurrForUnapplication(VATEntry."Posting Date", VATEntry.Amount), TRUE);
+                                    ManagePostponedVAT.CreateGLEntry(GenJnlLine, VATPostingSetup.GetSalesAccount(true),
+                                    VATEntry.Amount, ManagePostponedVAT.CalcAddCurrForUnapplication(VATEntry."Posting Date", VATEntry.Amount), TRUE);
                                 END;
                             SalesPurchase::Vendor:
                                 BEGIN
-                                    VATPostingSetup.TestField("Purch VAT Postponed Account-Adl");
-                                    ManagePostponedVAT.CreateGLEntry(GenJnlLine, VATPostingSetup.GetPurchAccount(FALSE),
+                                    //VATPostingSetup.TestField("Purch VAT Postponed Account-Adl");
+                                    ManagePostponedVAT.CreateGLEntry(GenJnlLine, VATPostingSetup.GetPurchAccount(false),
                                         -VATEntry.Amount, ManagePostponedVAT.CalcAddCurrForUnapplication(VATEntry."Posting Date", -VATEntry.Amount), TRUE);
-                                    ManagePostponedVAT.CreateGLEntry(GenJnlLine, VATPostingSetup."Purch VAT Postponed Account-Adl",
+                                    ManagePostponedVAT.CreateGLEntry(GenJnlLine, VATPostingSetup.GetPurchAccount(true),
                                         VATEntry.Amount, ManagePostponedVAT.CalcAddCurrForUnapplication(VATEntry."Posting Date", VATEntry.Amount), TRUE);
                                 END;
                         END;
