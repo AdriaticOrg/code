@@ -46,5 +46,20 @@ begin
     UserSetup.TestField("Reporting_SI Email");
     UserSetup.TestField("Reporting_SI Phone");
     UserSetup.TestField("Reporting_SI Position");
-end;    
+end;
+
+procedure GetReporSIEnabled(var FASEnabled:Boolean; var KRDEnabled:Boolean;var BSTEnabled:Boolean)
+var
+    RepSISetup:record "Reporting_SI Setup";
+begin
+    clear(FASEnabled);
+    clear(KRDEnabled);
+    clear(BSTEnabled);
+
+    if RepSISetup.get() then begin
+        FASEnabled :=  RepSISetup."FAS Enabled";
+        KRDEnabled := RepSISetup."KRD Enabled";
+        BSTEnabled := RepSISetup."BST Enabled";
+    end;
+end;
 }

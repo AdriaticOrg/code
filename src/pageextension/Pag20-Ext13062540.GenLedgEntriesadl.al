@@ -8,15 +8,18 @@ pageextension 13062540 "GenLedgEntries-adl" extends "General Ledger Entries"  //
             field("FAS Instrument Code"; "FAS Instrument Code")
             {
                 ApplicationArea = All;
+                Visible = FASEnabled;
             }
             field("FAS Sector Code"; "FAS Sector Code")
             {
                 ApplicationArea = All;
+                Visible = FASEnabled;
             }
             // <adl.26>
             field("BST Code"; "BST Code")
             {
                 ApplicationArea = All;
+                Visible = BSTEnabled;
             }
             // </adl.26>
         }
@@ -31,6 +34,7 @@ pageextension 13062540 "GenLedgEntries-adl" extends "General Ledger Entries"  //
             group(ChangeData) { 
                 Caption='Change Data';
                 Image=ChangeStatus;
+                Visible = FASenabled;
                 action(ChangeFinInstr) {
                     Caption = 'Finance Instrument';
                     Image = ListPage;
@@ -115,5 +119,14 @@ pageextension 13062540 "GenLedgEntries-adl" extends "General Ledger Entries"  //
             }
         }
     }
+    trigger OnOpenPage()
+    begin
+        RepSIMgt.GetReporSIEnabled(FASEnabled,KRDEnabled,BSTEnabled);
+    end;
+    var
+        RepSIMgt:Codeunit "Reporting SI Mgt.";
+        FASEnabled:Boolean;
+        KRDEnabled:Boolean;
+        BSTEnabled:Boolean;    
     // </adl.24>
 }

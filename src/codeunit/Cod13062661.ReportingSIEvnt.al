@@ -10,7 +10,7 @@ codeunit 13062661 "Reporting SI Evnt."
     begin
         VATEntry."VAT Correction Date" := GenJournalLine."VAT Correction Date";
         VATEntry."EU Customs Procedure" := GenJournalLine."EU Customs Procedure";
-        VATEntry.Modify()        ;
+        VATEntry.Modify();
     end;
 
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Post", 'OnBeforePostCustomerEntry', '', false,false)]
