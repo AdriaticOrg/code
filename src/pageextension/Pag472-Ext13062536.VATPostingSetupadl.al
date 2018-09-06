@@ -22,12 +22,24 @@ pageextension 13062536 "VATPostingSetup-Adl" extends "VAT Posting Setup"  //472
             // </adl.11>
         }
         // </adl.14>
-        // <adl.22>
-        addlast(Control1) {
-            field("VIES Goods Sales";"VIES Goods Sales") {
+        // <adl.13>
+        addafter("VAT %")
+        {
+            field("VAT % (Informative)-Adl"; "VAT % (Informative)-Adl")
+            {
                 ApplicationArea = All;
             }
-            field("VIES Service Sales";"VIES Service Sales") {
+        }
+        // </adl.13>
+        // <adl.22>
+        addlast(Control1)
+        {
+            field("VIES Goods Sales"; "VIES Goods Sales")
+            {
+                ApplicationArea = All;
+            }
+            field("VIES Service Sales"; "VIES Service Sales")
+            {
                 ApplicationArea = All;
             }
         }

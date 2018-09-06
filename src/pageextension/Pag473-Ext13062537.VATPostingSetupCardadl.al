@@ -16,6 +16,15 @@ pageextension 13062537 "VATPostingSetupCard-Adl" extends "VAT Posting Setup Card
             }
         }
         // </adl.14>
+        // <adl.13>
+        addafter("VAT %")
+        {
+            field("VAT % (Informative)-Adl"; "VAT % (Informative)-Adl")
+            {
+                ApplicationArea = All;
+            }
+        }
+        // </adl.13>        
         addafter("Tax Category")
         {
             // <adl.11>
