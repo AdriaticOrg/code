@@ -29,23 +29,6 @@ table 13062601 "Fiscalization Setup-ADL"
             DataClassification = ToBeClassified;
             
         }
-        field(4;"Web Service URL"; Text[250])
-        {
-            DataClassification = ToBeClassified;
-            
-        }
-        field(5;"Certificate Thumbprint"; code[100])
-        {
-            //trigger OnValidate()
-            //var FiscMgtSI :Codeunit "Fiscalization Management SI";
-            //begin
-            //IF "Certificate Thumbprint" = '' THEN EXIT;
-              //FiscMgtSI.CertificateExists("Certificate Thumbprint");
-            //end;      
-
-            DataClassification = ToBeClassified;
-            
-        }
         field(6;"Start Date"; Date)
         {
             DataClassification = ToBeClassified;
@@ -74,7 +57,7 @@ table 13062601 "Fiscalization Setup-ADL"
         }
         field(11;"Source of No. Series"; Option)
         {
-            OptionMembers = " ",Fiscalization, Location,"Fiscalization Terminal";
+            OptionMembers = " ","Fiscalization Location","Fiscalization Terminal";
             DataClassification = ToBeClassified;
             
         }

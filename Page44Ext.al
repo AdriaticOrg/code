@@ -2,7 +2,7 @@ pageextension 13062628 Page44Ext extends "Sales Credit Memo"
 {
     layout
     {
-        addafter(Control1900316107)
+        addafter(Billing)
         {
             group(Fiscalization)
             {
