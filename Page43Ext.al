@@ -1,11 +1,9 @@
-pageextension 13062627 Page43Ext extends "Sales Invoice"
+pageextension 13062627 Page43Ext extends 43
 {
     layout
     {
-        addafter(Control174)
+        addlast(General)
         {
-            group(Fiscalization)
-            {
                 field("Fisc. Subject";"Fisc. Subject")
                 {
 
@@ -30,7 +28,7 @@ pageextension 13062627 Page43Ext extends "Sales Invoice"
                 {
 
                 }
-            }
+            
         }
     }
 }
