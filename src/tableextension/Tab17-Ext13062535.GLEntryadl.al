@@ -7,13 +7,13 @@ tableextension 13062535 "GLEntry-adl" extends "G/L Entry" //17
         {
             Caption = 'FAS Instrument Code';
             DataClassification = ToBeClassified;
-            TableRelation = "FAS Instrument";
+            TableRelation = "FAS Instrument" where ("Type"=const(Posting));
         }
         field(13062642;"FAS Sector Code";Code[10])
         {
             Caption = 'FAS Sector Code';
             DataClassification = ToBeClassified;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
         }        
         // </adl.24>
         // <adl.26>
@@ -21,7 +21,7 @@ tableextension 13062535 "GLEntry-adl" extends "G/L Entry" //17
         {
             Caption = 'BST Code';
             DataClassification = ToBeClassified;
-            TableRelation = "BST Code";
+            TableRelation = "BST Code" where ("Type"=const(Posting));
         }         
         // </adl.26>
     }

@@ -31,7 +31,7 @@ tableextension 13062539 "VendLedgEntry-adl" extends "Vendor Ledger Entry" //25
         {
             Caption = 'KRD Non-Resident Sector Code';
             DataClassification = ToBeClassified;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
         }
         field(13062666; "KRD Country/Region Code"; Code[10])
         {
@@ -50,7 +50,7 @@ tableextension 13062539 "VendLedgEntry-adl" extends "Vendor Ledger Entry" //25
         {
             Caption = 'FAS Sector Code';
             DataClassification = ToBeClassified;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
         }
         // </adl.24>
     }

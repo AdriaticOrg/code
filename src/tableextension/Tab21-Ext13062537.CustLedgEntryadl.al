@@ -31,7 +31,7 @@ tableextension 13062537 "CustLedgEntry-adl" extends "Cust. Ledger Entry" //21
         {
             Caption = 'KRD Non-Resident Sector Code';
             DataClassification = ToBeClassified;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
         } 
         field(13062666; "KRD Country/Region Code"; Code[10])
         {
@@ -50,7 +50,7 @@ tableextension 13062537 "CustLedgEntry-adl" extends "Cust. Ledger Entry" //21
         {
             Caption = 'FAS Sector Code';
             DataClassification = ToBeClassified;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
         }
         // </adl.24>
     }
