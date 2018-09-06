@@ -14,6 +14,12 @@ table 13062660 "Reporting_SI Setup"
             DataClassification = ToBeClassified;
             TableRelation = "No. Series";
         }
+        field(13; "FAS Enabled"; Boolean)
+        {
+            Caption = 'FAS Enabled';
+            DataClassification = ToBeClassified;
+        }
+        
         field(12;"FAS Resp. User ID";Text[100]) {
             Caption = 'FAS Resp. User ID';
             TableRelation = "User Setup";
@@ -58,7 +64,12 @@ table 13062660 "Reporting_SI Setup"
             TableRelation = "User Setup";
             DataClassification = ToBeClassified;            
         }
-        
+        field(23; "KRD Enabled"; Boolean)
+        {
+            Caption = 'KRD Enabled';
+            DataClassification = ToBeClassified;
+        }
+                
         field(25;"KRD Prep. By User ID";Text[100]) {
             Caption = 'KRD Prep. By User ID';
             TableRelation = "User Setup";
@@ -76,6 +87,11 @@ table 13062660 "Reporting_SI Setup"
             TableRelation = "User Setup";
             DataClassification = ToBeClassified;            
         }
+        field(33; "BST Enabled"; Boolean)
+        {
+            Caption = 'BST Enabled';
+            DataClassification = ToBeClassified;
+        }        
         
         field(35;"BST Prep. By User ID";Text[100]) {
             Caption = 'BST Prep. By User ID';
@@ -93,7 +109,11 @@ table 13062660 "Reporting_SI Setup"
             TableRelation = "User Setup";
             DataClassification = ToBeClassified;            
         }
-        
+        field(43; "VIES Enabled"; Boolean)
+        {
+            Caption = 'VIES Enabled';
+            DataClassification = ToBeClassified;
+        }                
         field(45;"VIES Prep. By User ID";Text[100]) {
             Caption = 'VIES Prep. By User ID';
             TableRelation = "User Setup";
