@@ -113,8 +113,6 @@ codeunit 13062591 "VAT Book Calculation-Adl"
 
     procedure EvaluateExpression(VATBookGroup: Record "VAT Book Group-Adl"; ColumnNo: Integer; DateFilter: Text) Result: Decimal;
     var
-        VATBookGroupIdent: Record "VAT Book Group Identifier-Adl";
-        VATBookViewFormula2: Record "VAT Book View Formula-Adl";
         VBGroup: Record "VAT Book Group-Adl";
         Parantheses: Integer;
         Operator: Char;
@@ -127,7 +125,6 @@ codeunit 13062591 "VAT Book Calculation-Adl"
         IsFilter: Boolean;
         Operators: Text[8];
         OperatorNo: Integer;
-        VatIdentFilter: Text;
         Expression: Text;
     begin
         Result := 0;
