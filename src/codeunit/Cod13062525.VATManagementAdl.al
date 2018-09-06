@@ -63,7 +63,8 @@ codeunit 13062525 "VAT Management-Adl"
         end;
         //<adl.11>
         VATEntry."VAT % (retrograde)-Adl" := VATPostingSetup."VAT % (retrograde)-Adl";
-        VATEntry."VAT Base (retro.)-Adl" := (VATEntry.Base + VATEntry.Amount) * 100 / VATPostingSetup."VAT % (retrograde)-Adl";
+        if VATPostingSetup."VAT % (retrograde)-Adl" <> 0 then
+            VATEntry."VAT Base (retro.)-Adl" := (VATEntry.Base + VATEntry.Amount) * 100 / VATPostingSetup."VAT % (retrograde)-Adl";
         //</adl.11>
     end;
 

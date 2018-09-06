@@ -299,7 +299,8 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         VATEntry."Sales Tax Connection No." := NextConnectionNo;
         VATEntry."Unrealized VAT Entry No." := VATEntry2."Entry No.";
         VATEntry."Postponed VAT-Adl" := GenJnlLine."Postponed VAT-Adl"::"Realized VAT";
-        VATEntry."VAT Base (retro.)-Adl" := (VATBase + VATAmount) * 100 / VATPostingSetup."VAT % (retrograde)-Adl"; //<adl.11>
+        if VATPostingSetup."VAT % (retrograde)-Adl" <> 0 then
+            VATEntry."VAT Base (retro.)-Adl" := (VATBase + VATAmount) * 100 / VATPostingSetup."VAT % (retrograde)-Adl"; //<adl.11>
         VATEntry.INSERT(TRUE);
         NextVATEntryNo := NextVATEntryNo + 1;
 
