@@ -34,7 +34,7 @@ table 13062660 "Reporting_SI Setup"
         field(17; "Company Sector Code"; Code[10])
         {
             Caption = 'Company Sector Code';
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
             DataClassification = ToBeClassified;                        
         }    
         field(19;"FAS Director User ID";Text[100]) {
@@ -46,7 +46,13 @@ table 13062660 "Reporting_SI Setup"
             Caption = 'KRD Report No. Series';
             DataClassification = ToBeClassified;
             TableRelation = "No. Series";
-        }     
+        }    
+        field(21; "Default KRD Affiliation Type"; Code[10])
+        {
+            Caption = 'Default KRD Affiliation Type';
+            DataClassification = ToBeClassified;
+            TableRelation = "KRD Code".Code where ("Type" = const("Affiliation Type"));
+        }          
         field(22;"KRD Resp. User ID";Text[100]) {
             Caption = 'KRD Resp. User ID';
             TableRelation = "User Setup";
@@ -76,6 +82,40 @@ table 13062660 "Reporting_SI Setup"
             TableRelation = "User Setup";
             DataClassification = ToBeClassified;            
         }               
+        field(40; "VIES Report No. Series"; Code[20])
+        {
+            Caption = 'VIES Report No. Series';
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(42;"VIES Resp. User ID";Text[100]) {
+            Caption = 'VIES Resp. User ID';
+            TableRelation = "User Setup";
+            DataClassification = ToBeClassified;            
+        }
+        
+        field(45;"VIES Prep. By User ID";Text[100]) {
+            Caption = 'VIES Prep. By User ID';
+            TableRelation = "User Setup";
+            DataClassification = ToBeClassified;            
+        }     
+        field(50; "PDO Report No. Series"; Code[20])
+        {
+            Caption = 'PDO Report No. Series';
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
+        }
+        field(52;"PDO Resp. User ID";Text[100]) {
+            Caption = 'PDO Resp. User ID';
+            TableRelation = "User Setup";
+            DataClassification = ToBeClassified;            
+        }
+        
+        field(55;"PDO Prep. By User ID";Text[100]) {
+            Caption = 'PDO Prep. By User ID';
+            TableRelation = "User Setup";
+            DataClassification = ToBeClassified;            
+        }             
     }
     
     keys

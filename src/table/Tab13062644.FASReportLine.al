@@ -29,12 +29,12 @@ table 13062644 "FAS Report Line"
         field(11; "Sector Code"; Code[10])
         {
             Caption = 'Sector Code';
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
             DataClassification = ToBeClassified;                        
         }
         field(12; "Instrument Code"; Code[10])
         {
-            TableRelation = "FAS Instrument";
+            TableRelation = "FAS Instrument" where ("Type"=const(Posting));
             Caption = 'Instrument Code';
             DataClassification = ToBeClassified;
 
@@ -65,5 +65,26 @@ table 13062644 "FAS Report Line"
             Clustered = true;
         }
     }
-    
+
+    trigger OnInsert()
+    begin
+        TestHeadStatusOpen();
+    end;
+
+    trigger OnModify()
+    begin
+        TestHeadStatusOpen();
+    end;    
+
+    trigger OnDelete()
+    begin
+        TestHeadStatusOpen();
+    end;
+
+    local procedure TestHeadStatusOpen()  
+    var
+        FASRepHead:Record "FAS Report Header";      
+    begin
+        FASRepHead.TestStatusOpen("Document No.");
+    end;
 }

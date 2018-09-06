@@ -25,10 +25,10 @@ report 13062592 "VAT Calc. Details-Adl"
             dataitem("VAT Book Group"; "VAT Book Group-Adl")
             {
                 DataItemLink = "VAT Book Code" = field ("VAT Book Code");
-                DataItemTableView = sorting ("VAT Book Code", Code) orDER(Ascending);
+                DataItemTableView = sorting ("VAT Book Code", Code) order(Ascending);
                 column(VATBookGroupCode; Code) { }
                 column(GroupDescription; Description) { }
-                column(Amount; VATBookCalc.EvaluateExpression("VAT Book Group", "VAT Book Column Name"."Column No.", SetedDateFilter)) { }
+                column(Amount; VATBookCalc.EvaluateExpression("VAT Book Group", "VAT Book Column Name"."Column No." - 1, SetedDateFilter)) { }
 
                 trigger OnPreDataItem();
                 begin

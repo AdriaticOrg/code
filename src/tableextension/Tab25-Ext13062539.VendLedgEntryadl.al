@@ -7,16 +7,19 @@ tableextension 13062539 "VendLedgEntry-adl" extends "Vendor Ledger Entry" //25
         {
             Caption = 'KRD Affiliation Type';
             DataClassification = ToBeClassified;
+            TableRelation = "KRD Code".Code where ("Type" = const("Affiliation Type"));
         }
         field(13062662; "KRD Instrument Type"; Code[10])
         {
             Caption = 'KRD Instrument Type';
             DataClassification = ToBeClassified;
+            TableRelation = "KRD Code".Code where ("Type" = const("Instrument Type"));
         }
         field(13062663; "KRD Maturity"; Code[10])
         {
             Caption = 'KRD Maturity';
             DataClassification = ToBeClassified;
+            TableRelation = "KRD Code".Code where ("Type" = const(Maturity));
         }        
         field(13062664; "KRD Claim/Liability"; Option)
         {

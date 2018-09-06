@@ -119,6 +119,8 @@ table 13062596 "VAT Book View Formula-Adl"
     begin
         RecRef.Open(Database::"VAT Entry");
         CalcFields(ConditionBlob);
+        if ConditionBlob.Length = 0 then
+            exit;
 
         TempBlob.Init;
         TempBlob.Blob := ConditionBlob;

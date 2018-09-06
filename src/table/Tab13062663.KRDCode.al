@@ -18,7 +18,7 @@ table 13062663 "KRD Code"
             Caption = 'Code';
             DataClassification = ToBeClassified;
         }
-        field(3; "Description"; Text[50])
+        field(3; "Description"; Text[250])
         {
             Caption = 'Description';
             DataClassification = ToBeClassified;

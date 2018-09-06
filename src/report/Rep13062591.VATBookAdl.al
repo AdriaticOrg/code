@@ -65,6 +65,7 @@ report 13062591 "VAT Book-Adl"
                         begin
                             ColumnAmt := 0;
                             GetCustVendInfo;
+
                             if "VAT Book View Line".Operator1 <> "VAT Book View Line".Operator1::" " then
                                 VATBookCalc.CalculateValue(true, ColumnAmt, "VAT Book View Line", "VAT Entry");
                             if "VAT Book View Line".Operator2 <> "VAT Book View Line".Operator2::" " then
@@ -73,6 +74,14 @@ report 13062591 "VAT Book-Adl"
 
                         trigger OnPreDataItem();
                         begin
+                            "VAT Book View Line".SetVATEntryFilters("VAT Entry");
+                            if VATEntry.GetFilter("Posting Date") <> '' then
+                                "VAT Entry".Setfilter("Posting Date", VATEntry.GetFilter("Posting Date"));
+                            if VATEntry.GetFilter("Document No.") <> '' then
+                                "VAT Entry".Setfilter("Document No.", VATEntry.GetFilter("Document No."));
+
+                            if VATEntry.GetFilter("VAT Bus. Posting Group") <> '' then
+                                "VAT Entry".Setfilter("VAT Bus. Posting Group", VATEntry.GetFilter("VAT Bus. Posting Group"));
                             if not FindSet then
                                 NotFoundDetails := true;
                         end;
@@ -80,18 +89,11 @@ report 13062591 "VAT Book-Adl"
 
                     trigger OnPreDataItem();
                     begin
-                        SetRange("Column No.", "VAT Book Column Name"."Column No.");
+                        SetRange("Column No.", "VAT Book Column Name"."Column No." - 1);
                         if not FindSet then
                             NotFoundDetails := true;
                     end;
                 }
-
-                trigger OnAfterGetRecord();
-                var
-                    VATBookGroupIdentifier: Record "VAT Book Group Identifier-Adl";
-                    VATIdentifierFilter: Text;
-                begin
-                end;
 
                 trigger OnPreDataItem();
                 begin
@@ -131,6 +133,7 @@ report 13062591 "VAT Book-Adl"
     }
 
     var
+        VATEntry: Record "VAT Entry";
         VATBook: Record "VAT Book-Adl";
         CompInfo: Record "Company Information";
         Customer: Record Customer;
@@ -141,6 +144,11 @@ report 13062591 "VAT Book-Adl"
         VendCustName: Text[100];
         ColumnNo: Integer;
         NotFoundDetails: Boolean;
+
+    trigger OnPreReport();
+    begin
+        VATEntry.CopyFilters("VAT Entry");
+    end;
 
     local procedure GetCustVendInfo();
     begin

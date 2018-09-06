@@ -2,7 +2,7 @@ page 13062662 "KRD Reports"
 {
     PageType = List;
     ApplicationArea = All;
-    UsageCategory = Administration;
+    UsageCategory = Lists;
     SourceTable = "KRD Report Header";
     Editable = false;
     CardPageId = "KRD Report";

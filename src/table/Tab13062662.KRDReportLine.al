@@ -25,17 +25,20 @@ table 13062662 "KRD Report Line"
         {
             Caption = 'Affiliation Type';
             DataClassification = ToBeClassified;
+            TableRelation = "KRD Code".Code where ("Type" = const("Affiliation Type"));
         }
         field(11; "Instrument Type"; Code[10])
         {
             Caption = 'Instrument Type';
             DataClassification = ToBeClassified;
+            TableRelation = "KRD Code".Code where ("Type" = const("Instrument Type"));
         }
         field(12; "Maturity"; Code[10])
         {
             Caption = 'Maturity';
             DataClassification = ToBeClassified;
-        }
+            TableRelation = "KRD Code".Code where ("Type" = const(Maturity));
+        }        
         field(13; "Claim/Liability"; Option)
         {
             OptionMembers = " ","Claim","Liability";
@@ -46,7 +49,7 @@ table 13062662 "KRD Report Line"
         {
             Caption = 'Non-Resident Sector Code';
             DataClassification = ToBeClassified;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
         }
         field(15; "Country/Region Code"; Code[10])
         {
@@ -134,6 +137,28 @@ table 13062662 "KRD Report Line"
             Clustered = true;
         }
     }
+
+    trigger OnInsert()
+    begin
+        TestHeadStatusOpen();
+    end;
+
+    trigger OnModify()
+    begin
+        TestHeadStatusOpen();
+    end;    
+
+    trigger OnDelete()
+    begin
+        TestHeadStatusOpen();
+    end;
+
+    local procedure TestHeadStatusOpen()  
+    var
+        KRDRepHead:Record "KRD Report Header";      
+    begin
+        KRDRepHead.TestStatusOpen("Document No.");
+    end;    
 
     var
     local procedure ValidateClosingBal()

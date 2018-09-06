@@ -17,6 +17,12 @@ tableextension 13062538 "Vendor-adl" extends Vendor //23
             DataClassification = ToBeClassified;
             TableRelation = "FAS Sector";
         }
+        field(13062662; "KRD Affiliation Type"; Code[10])
+        {
+            Caption = 'KRD Affiliation Type';
+            DataClassification = ToBeClassified;
+            TableRelation = "KRD Code".Code where ("Type" = const("Affiliation Type"));
+        }        
         // </adl.25>
     }
 }

@@ -7,9 +7,7 @@ tableextension 13062549 "Currency-adl" extends Currency //4
         {
             Caption = 'Numeric Code';
             DataClassification = ToBeClassified;
-        }
+        }    
         // </adl.24>    
-
     }
-
 }

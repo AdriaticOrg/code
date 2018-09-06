@@ -16,7 +16,14 @@ pageextension 13062532 "PostedSalesCreditMemo-Adl" extends "Posted Sales Credit 
                 ApplicationArea = All;
                 Editable = false;
             }
+            // </adl.10>
             // <adl.10>
+            // <adl.22>
+            field("VAT Correction Date"; "VAT Correction Date")
+            {
+                ApplicationArea = All;
+            }
+            // </adl.22>
         }
         // </adl.6>
         // <adl.18>
@@ -26,6 +33,12 @@ pageextension 13062532 "PostedSalesCreditMemo-Adl" extends "Posted Sales Credit 
             {
                 ApplicationArea = All;
             }
+            // <adl.22>
+            field("EU Customs Procedure"; "EU Customs Procedure")
+            {
+                ApplicationArea = All;
+            }
+            // </adl.22>
         }
         // </adl.18>
     }
