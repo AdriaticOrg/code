@@ -13,10 +13,14 @@ tableextension 13062533 "VATPostingSetup-Adl" extends "VAT Posting Setup"  //325
             Caption = 'Sales VAT Postponed Account';
             DataClassification = ToBeClassified;
         }
+        // <adl.13>
         field(13062551; "VAT % (informative)-Adl"; Decimal)
         {
             Caption = 'VAT % (informative)';
+            DataClassification = ToBeClassified;
+            DecimalPlaces = 0 : 2;
         }
+        // </adl.13>
         // </adl.10>
         //<adl.11>
         field(13062527; "VAT % (retrograde)-Adl"; Decimal)
@@ -38,7 +42,7 @@ tableextension 13062533 "VATPostingSetup-Adl" extends "VAT Posting Setup"  //325
         {
             Caption = 'VIES Service Sales';
             DataClassification = ToBeClassified;
-        }                
+        }
         // </adl.22>          
     }
 }

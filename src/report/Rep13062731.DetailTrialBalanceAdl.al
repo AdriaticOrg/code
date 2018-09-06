@@ -1,11 +1,10 @@
-report 13062602 "Detail Trial Balance-Adl"
+report 13062731 "Detail Trial Balance-Adl"
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './src/reportlayout/Rep13062601.DetailTrialBalanceAdl.rdlc';
+    RDLCLayout = './src/reportlayout/Rep13062731.DetailTrialBalanceAdl.rdlc';
     Caption = 'Detail Trial Balance';
     PreviewMode = PrintLayout;
-
-    dataset
+     dataset
     {
         dataitem("G/L Account";"G/L Account")
         {
@@ -135,8 +134,7 @@ report 13062602 "Detail Trial Balance-Adl"
                     column(PostingResponsibleAndApproverUserID;PostingResponsiblePersonUserID + ', ' + PostingApproverUserID)
                     {
                     }
-
-                    trigger OnAfterGetRecord();
+                     trigger OnAfterGetRecord();
                     var
                         ApproverUserSetup : Record "User Setup";
                         UserSetup : Record "User Setup";
@@ -146,21 +144,18 @@ report 13062602 "Detail Trial Balance-Adl"
                             CurrReport.SKIP;
                         if not PrintReversedEntries and Reversed then
                           CurrReport.SKIP;
-
-                        GLBalance := GLBalance + Amount;
+                         GLBalance := GLBalance + Amount;
                         if ("Posting Date" = CLOSINGDATE("Posting Date")) and
                            not PrintClosingEntries
                         then begin
                           "Debit Amount" := 0;
                           "Credit Amount" := 0;
                         end;
-
-                        if "Posting Date" = CLOSINGDATE("Posting Date") then
+                         if "Posting Date" = CLOSINGDATE("Posting Date") then
                           ClosingEntry := true
                         else
                           ClosingEntry := false;
-
-                        // <adl.27>
+                         // <adl.27>
                         PostingResponsiblePersonUserID := GeneralLedgerSetup."Global Posting Resp. Person";
                         PostingApproverUserID := GeneralLedgerSetup."Global Posting Approver";
                         if UserSetup.GET("G/L Entry"."User ID") then begin
@@ -172,20 +167,16 @@ report 13062602 "Detail Trial Balance-Adl"
                         end;                        
                         // </adl.27>
                     end;
-
-                    trigger OnPreDataItem();
+                     trigger OnPreDataItem();
                     begin
                         GLBalance := StartBalance;
                     end;
                 }
-
-                trigger OnAfterGetRecord();
+                 trigger OnAfterGetRecord();
                 begin
-
-                end;
+                 end;
             }
-
-            trigger OnAfterGetRecord();
+             trigger OnAfterGetRecord();
             var
                 GLEntry : Record "G/L Entry";
                 Date : Record Date;
@@ -201,28 +192,23 @@ report 13062602 "Detail Trial Balance-Adl"
                     SETFILTER("Date Filter",GLDateFilter);
                   end;
                 end;
-
-                if PrintOnlyOnePerPage then begin
+                 if PrintOnlyOnePerPage then begin
                   GLEntry.RESET;
                   GLEntry.SETRANGE("G/L Account No.","No.");
                   if GLEntry.FINDFIRST then
                     PageGroupNo := PageGroupNo + 1;
                 end;
             end;
-
-            trigger OnPreDataItem();
+             trigger OnPreDataItem();
             begin
                 PageGroupNo := 1;
-
-            end;
+             end;
         }
     }
-
-    requestpage
+     requestpage
     {
         SaveValues = true;
-
-        layout
+         layout
         {
             area(content)
             {
@@ -264,27 +250,22 @@ report 13062602 "Detail Trial Balance-Adl"
                 }
             }
         }
-
-        actions
+         actions
         {
         }
     }
-
-    labels
+     labels
     {
         PostingDateCaption = 'Posting Date';DocNoCaption = 'Document No.';DescCaption = 'Description';VATAmtCaption = 'VAT Amount';EntryNoCaption = 'Entry No.';}
-
-    trigger OnPreReport();
+     trigger OnPreReport();
     begin
         GLFilter := "G/L Account".GETFILTERS;
         GLDateFilter := "G/L Account".GETFILTER("Date Filter");
-
-        // <adl.27>
+         // <adl.27>
         GeneralLedgerSetup.GET;
         // </adl.27>
     end;
-
-    var
+     var
         Text000 : Label 'Period: %1';
         GLDateFilter : Text;
         GLFilter : Text;
@@ -311,8 +292,7 @@ report 13062602 "Detail Trial Balance-Adl"
         PostingApproverUserID : Code[50];
         PostingUserLbl : Label 'Posting User';
         PostingRespPersonLbl : Label 'Posting Responsible Person';
-
-    procedure InitializeRequest(NewPrintOnlyOnePerPage : Boolean;NewExcludeBalanceOnly : Boolean;NewPrintClosingEntries : Boolean;NewPrintReversedEntries : Boolean;NewPrintOnlyCorrections : Boolean);
+     procedure InitializeRequest(NewPrintOnlyOnePerPage : Boolean;NewExcludeBalanceOnly : Boolean;NewPrintClosingEntries : Boolean;NewPrintReversedEntries : Boolean;NewPrintOnlyCorrections : Boolean);
     begin
         PrintOnlyOnePerPage := NewPrintOnlyOnePerPage;
         ExcludeBalanceOnly := NewExcludeBalanceOnly;
@@ -321,4 +301,3 @@ report 13062602 "Detail Trial Balance-Adl"
         PrintOnlyCorrections := NewPrintOnlyCorrections;
     end;
 }
-
