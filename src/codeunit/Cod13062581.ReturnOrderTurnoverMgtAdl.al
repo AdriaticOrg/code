@@ -62,7 +62,7 @@ codeunit 13062581 "Return Order Turnover Mgt.-Adl"
                     EXIT(GoodsReturnType."VAT Prod. Posting Group");
                 end;
             end;
-            EXIT(VATProdPostGr);
         end;
+        EXIT(VATProdPostGr);
     end;
 }
