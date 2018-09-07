@@ -8,6 +8,10 @@ pageextension 13062539 "GLAccountCard-adl" extends "G/L Account Card" //17
                 ApplicationArea = All;
                 Visible = FASEnabled;                
             }
+            field("FAS Type";"FAS Type") {
+                ApplicationArea = All;
+                Visible = FASEnabled;
+            }
             field("FAS Sector Posting";"FAS Sector Posting") {
                 ApplicationArea = All;
                 Visible = FASEnabled;

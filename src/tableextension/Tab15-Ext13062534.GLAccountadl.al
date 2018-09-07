@@ -34,6 +34,14 @@ tableextension 13062534 "GLAccount-adl" extends "G/L Account"  //15
             OptionCaption = ' ,Code Mandatory,Same Code,No Code';
             OptionMembers = " ","Code Mandatory","Same Code","No Code";
         }
+        field(13062646; "FAS Type"; Option)
+        {
+            Caption = 'FAS Type';
+            OptionMembers = " ",Assets,Liabilities;
+            OptionCaption = ' ,Assets,Liabilities';
+            DataClassification = ToBeClassified;
+        }
+        
         // </adl.24>
         // <adl.26>
         field(13062681; "BST Value Posting"; Option)

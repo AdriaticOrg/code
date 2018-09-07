@@ -1,4 +1,4 @@
-report 13062594 "Input VAT Book-adl"
+report 13062594 "Input VAT Book-adl 2"
 {
     Caption = 'Input VAT Book';
     ProcessingOnly = true;

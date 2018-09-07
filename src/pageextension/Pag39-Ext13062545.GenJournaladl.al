@@ -4,6 +4,10 @@ pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
     {
         addlast(Control1) {
         // <adl.24>
+            field("FAS Type";"FAS Type") {
+                ApplicationArea = All;
+                Visible = FASEnabled;
+            }
             field("FAS Instrument Code";"FAS Instrument Code") {
                 ApplicationArea = All;
                 Visible = FASEnabled;
@@ -12,6 +16,10 @@ pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
                 ApplicationArea = All;
                 Visible = FASEnabled;
             }
+            field("Bal. FAS Type";"Bal. FAS Type") {
+                ApplicationArea = All;
+                Visible = FASEnabled;
+            }            
             field("Bal. FAS Instrument Code";"Bal. FAS Instrument Code") {
                 ApplicationArea = All;
                 Visible = FASEnabled;
