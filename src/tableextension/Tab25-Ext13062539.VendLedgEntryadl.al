@@ -54,4 +54,30 @@ tableextension 13062539 "VendLedgEntry-adl" extends "Vendor Ledger Entry" //25
         }
         // </adl.24>
     }
+    // <adl.24>
+    procedure CopyFASFields(Vendor: Record Vendor)
+    begin
+        "FAS Sector Code" := Vendor."FAS Sector Code";
+    end;
+    // </adl.24>
+    // <adl.25>
+    procedure CopyKRDFields(Vendor: Record Vendor)
+    var
+        ReportSISetup: Record "Reporting_SI Setup";
+    begin
+        "KRD Country/Region Code" := Vendor."Country/Region Code";
+        "KRD Non-Residnet Sector Code" := Vendor."KRD Non-Residnet Sector Code";
+        "KRD Affiliation Type" := Vendor."KRD Affiliation Type";
+
+        if ("KRD Affiliation Type" = '') and ReportSISetup.Get() then
+            "KRD Affiliation Type" := ReportSISetup."Default KRD Affiliation Type";
+    end;
+
+    procedure CopyKRDFields(VendPstgGrp: Record "Vendor Posting Group")
+    begin
+        "KRD Instrument Type" := VendPstgGrp."KRD Instrument Type";
+        "KRD Claim/Liability" := VendPstgGrp."KRD Claim/Liability";
+        "KRD Maturity" := VendPstgGrp."KRD Maturity";
+    end;
+    // </adl.25>
 }
