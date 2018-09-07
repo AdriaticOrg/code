@@ -5,308 +5,253 @@ codeunit 13062661 "Reporting SI Evnt."
                   tabledata 25 = rm,
                   tabledata 254 = rm;
 
-    [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertVAT', '', false,false)]
-    local procedure InsertVATentry(VAR GenJournalLine : Record "Gen. Journal Line";VAR VATEntry : Record "VAT Entry";VAR UnrealizedVAT : Boolean;VAR AddCurrencyCode : Code[10])
+    var
+        ADLCore: Codeunit "Adl Core";
+
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertVATEntry', '', true, false)]
+    local procedure OnAfterInsertVATEntry(GenJnlLine: Record "Gen. Journal Line"; VATEntry: Record "VAT Entry"; GLEntryNo: Integer; var NextEntryNo: Integer)
     begin
-        VATEntry."VAT Correction Date" := GenJournalLine."VAT Correction Date";
-        VATEntry."EU Customs Procedure" := GenJournalLine."EU Customs Procedure";
-        VATEntry.Modify();
+        //TODO: what feature toggle should be checked here?
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
+
+        //TODO: @janez changed from event OnAfterInsertVAT to OnAfterInsertVATEntry event
+        VATEntry."VAT Correction Date" := GenJnlLine."VAT Correction Date";
+        VATEntry."EU Customs Procedure" := GenJnlLine."EU Customs Procedure";
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Post", 'OnBeforePostCustomerEntry', '', false,false)]
-    local procedure PostCustEntry(VAR GenJnlLine : Record "Gen. Journal Line";SalesHeader : Record "Sales Header";VAR TotalSalesLine : Record "Sales Line";VAR TotalSalesLineLCY : Record "Sales Line";CommitIsSuppressed : Boolean;PreviewMode:Boolean)
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Post", 'OnBeforePostCustomerEntry', '', false, false)]
+    local procedure PostCustEntry(VAR GenJnlLine: Record "Gen. Journal Line"; SalesHeader: Record "Sales Header"; VAR TotalSalesLine: Record "Sales Line"; VAR TotalSalesLineLCY: Record "Sales Line"; CommitIsSuppressed: Boolean; PreviewMode: Boolean)
     var
-        Cust:Record Customer;
-        ReportSISetup:Record "Reporting_SI Setup";
+        Cust: Record Customer;
     begin
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            with GenJnlLine do begin
-                if Cust.get("Account No.") then
-                    "FAS Sector Code" := Cust."FAS Sector Code";
-            end;
-        end
+        if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
+
+        if Cust.get(GenJnlLine."Account No.") then
+            GenJnlLine.CopyFASFields(Cust);
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, codeunit::"Purch.-Post", 'OnBeforePostVendorEntry', '', false,false)]
-    local procedure PostVendEntry(VAR GenJnlLine : Record "Gen. Journal Line";PurchHeader : Record "Sales Header";VAR TotalPurchLine : Record "Purchase Line";VAR TotalPurchLineLCY : Record "Purchase Line";PreviewMode:Boolean;CommitIsSupressed:Boolean)
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Purch.-Post", 'OnBeforePostVendorEntry', '', false, false)]
+    local procedure PostVendEntry(VAR GenJnlLine: Record "Gen. Journal Line"; PurchHeader: Record "Sales Header"; VAR TotalPurchLine: Record "Purchase Line"; VAR TotalPurchLineLCY: Record "Purchase Line"; PreviewMode: Boolean; CommitIsSupressed: Boolean)
     var
-        Vend:Record Vendor;
-        ReportSISetup:Record "Reporting_SI Setup";
+        Vend: Record Vendor;
     begin
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            with GenJnlLine do begin
-                if Vend.get("Account No.") then
-                    "FAS Sector Code" := Vend."FAS Sector Code";
-            end;
+        if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
+
+        with GenJnlLine do begin
+            if Vend.get("Account No.") then
+                GenJnlLine.CopyFASFields(Vend);
         end;
-    end;    
-
-    [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnBeforePostGenJnlLine', '', false,false)]
-    local procedure PostGenJnlLine(VAR GenJournalLine : Record "Gen. Journal Line";Balancing : Boolean)
-    var
-        Cust:Record Customer;
-        Vend:Record Vendor;
-        BankAcc:Record "Bank Account";
-        ReportSISetup:Record "Reporting_SI Setup";
-    begin
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin         
-            with GenJournalLine do begin
-                case "Source Type" of
-                    "Source Type"::Customer:
-                        begin
-                            if Cust.get("Source No.") then
-                                "FAS Sector Code" := Cust."FAS Sector Code";
-                        end;
-                    "Source Type"::Vendor:
-                        begin
-                            if Vend.get("Source No.") then
-                                "FAS Sector Code" := Vend."FAS Sector Code";
-                        end;
-                    "Source Type"::"Bank Account":
-                        begin
-                            if BankAcc.get("Source No.") then begin
-                                "FAS Instrument Code" := BankAcc."FAS Instrument Code";
-                                "FAS Sector Code" := BankAcc."FAS Sector Code";
-                            end;
-
-                        end;
-                end;
-                case "Account Type" of
-                    "Account Type"::Customer:
-                        begin
-                            if Cust.get("Account No.") then
-                                "FAS Sector Code" := Cust."FAS Sector Code";
-                        end;
-                    "Account Type"::Vendor:
-                        begin
-                            if Vend.get("Account No.") then
-                                "FAS Sector Code" := vend."FAS Sector Code";
-                        end;
-                    "Account Type"::"Bank Account":
-                        begin
-                            if BankAcc.get("Account No.") then begin
-                                "FAS Sector Code" := BankAcc."FAS Sector Code";
-                                "FAS Instrument Code" := BankAcc."FAS Instrument Code";
-                            end;
-                        end;            
-                end
-            end;
-        end;        
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertGlobalGLEntry', '', false, false)]
-    local procedure GLEntryInsert(VAR GlobalGLEntry: Record "G/L Entry"; GenJournalLine: Record "Gen. Journal Line")
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnBeforePostGenJnlLine', '', false, false)]
+    local procedure PostGenJnlLine(VAR GenJournalLine: Record "Gen. Journal Line"; Balancing: Boolean)
+    var
+        Cust: Record Customer;
+        Vend: Record Vendor;
+        BankAcc: Record "Bank Account";
+    begin
+        if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
+
+        with GenJournalLine do begin
+            case "Source Type" of
+                "Source Type"::Customer:
+                    begin
+                        if Cust.get("Source No.") then
+                            GenJournalLine.CopyFASFields(Cust);
+                    end;
+                "Source Type"::Vendor:
+                    begin
+                        if Vend.get("Source No.") then
+                            GenJournalLine.CopyFASFields(Vend);
+                    end;
+                "Source Type"::"Bank Account":
+                    begin
+                        if BankAcc.get("Source No.") then begin
+                            GenJournalLine.CopyFASFields(BankAcc);
+                        end;
+
+                    end;
+            end;
+            case "Account Type" of
+                "Account Type"::Customer:
+                    begin
+                        if Cust.get("Account No.") then
+                            GenJournalLine.CopyFASFields(Cust);
+                    end;
+                "Account Type"::Vendor:
+                    begin
+                        if Vend.get("Account No.") then
+                            GenJournalLine.CopyFASFields(Vend);
+                    end;
+                "Account Type"::"Bank Account":
+                    begin
+                        if BankAcc.get("Account No.") then begin
+                            GenJournalLine.CopyFASFields(BankAcc);
+                        end;
+                    end;
+            end
+        end;
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"G/L Entry", 'OnAfterCopyGLEntryFromGenJnlLine', '', true, false)]
+    local procedure OnAfterCopyGLEntryFromGenJnlLineFAS(var GLEntry: Record "G/L Entry"; var GenJournalLine: Record "Gen. Journal Line")
     var
         GLAcc: Record "G/L Account";
-        AccNo:Code[20];
-        ReportSISetup:Record "Reporting_SI Setup";
-    begin 
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            if GlobalGLEntry."G/L Account No." = GenJournalLine."Bal. Account No." then begin
-                GenJournalLine."FAS Sector Code" := GenJournalLine."Bal. FAS Sector Code";
-                GenJournalLine."FAS Instrument Code" := GenJournalLine."Bal. FAS Instrument Code";
-            end;
-            if GLAcc.GET(GlobalGLEntry."G/L Account No.") then begin
-                if GLAcc."FAS Account" then begin
-                    case GLAcc."FAS Instrument Posting" of
-                        GLAcc."FAS Instrument Posting"::" ":
-                            begin
-                                GlobalGLEntry."FAS Instrument Code" := GenJournalLine."FAS Instrument Code";                            
-                            end;
-                        GLAcc."FAS Instrument Posting"::"Code Mandatory":
-                            begin
-                                GenJournalLine.TestField("FAS Instrument Code");                            
-                                GlobalGLEntry."FAS Instrument Code" := GenJournalLine."FAS Instrument Code";                            
-                            end;
-                        GLAcc."FAS Instrument Posting"::"Same Code":
-                            begin
-                                GlobalGLEntry."FAS Instrument Code" := GLAcc."FAS Instrument Code";
-                            end;
-                        GLAcc."FAS Instrument Posting"::"No Code":
-                            begin
-                                GenJournalLine.TestField("FAS Instrument Code", '');
-                            end;
-                    end;
+    begin
+        if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
 
-                    case GLAcc."FAS Sector Posting" of
-                        GLAcc."FAS Sector Posting"::" ":
-                            begin                            
-                                GlobalGLEntry."FAS Sector Code" := GenJournalLine."FAS Sector Code";
-                            end;
-                        GLAcc."FAS Sector Posting"::"Code Mandatory":
-                            begin
-                                GenJournalLine.TestField("FAS Sector Code");                            
-                                GlobalGLEntry."FAS Sector Code" := GenJournalLine."FAS Sector Code";                            
-                            end;
-                        GLAcc."FAS Sector Posting"::"Same Code":
-                            begin
-                                GlobalGLEntry."FAS Sector Code" := GLAcc."FAS Sector Code";                            
-                            end;
-                        GLAcc."FAS Sector Posting"::"No Code":
-                            begin
-                                GenJournalLine.TestField("FAS Sector Code", '');                        
-                            end;
-                    end;                                
-                end;
-            end;
-
-            
+        if GLEntry."G/L Account No." = GenJournalLine."Bal. Account No." then begin
+            GLEntry."FAS Sector Code" := GenJournalLine."Bal. FAS Sector Code";
+            GLEntry."FAS Instrument Code" := GenJournalLine."Bal. FAS Instrument Code";
         end;
 
-        if ReportSISetup.get() and ReportSISetup."BST Enabled" then begin
-            GlobalGLEntry."BST Code" := GLAcc."BST Code";            
+        //TODO: removed if because I think AccNo is mandatory ( OLD-VERSION:  if GLAcc.GET(GLEntry."G/L Account No.") then begin )
+        GLAcc.GET(GLEntry."G/L Account No.");
+        if not GLAcc."FAS Account" then exit;
+
+        GLEntry."FAS Instrument Code" := GenJournalLine."FAS Instrument Code";
+        GLEntry."FAS Sector Code" := GenJournalLine."FAS Sector Code";
+
+        case GLAcc."FAS Instrument Posting" of
+            GLAcc."FAS Instrument Posting"::"Code Mandatory":
+                GenJournalLine.TestField("FAS Instrument Code");
+            GLAcc."FAS Instrument Posting"::"Same Code":
+                GenJournalLine.TestField("FAS Instrument Code", GLAcc."FAS Instrument Code");
+            GLAcc."FAS Instrument Posting"::"No Code":
+                GenJournalLine.TestField("FAS Instrument Code", '');
         end;
+
+        case GLAcc."FAS Sector Posting" of
+            GLAcc."FAS Sector Posting"::"Code Mandatory":
+                GenJournalLine.TestField("FAS Sector Code");
+            GLAcc."FAS Sector Posting"::"Same Code":
+                GenJournalLine.TestField("FAS Sector Code", GLAcc."FAS Sector Code");
+            GLAcc."FAS Sector Posting"::"No Code":
+                GenJournalLine.TestField("FAS Sector Code", '');
+        end;
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"G/L Entry", 'OnAfterCopyGLEntryFromGenJnlLine', '', true, false)]
+    local procedure OnAfterCopyGLEntryFromGenJnlLineBST(var GLEntry: Record "G/L Entry"; var GenJournalLine: Record "Gen. Journal Line")
+    var
+        GLAcc: Record "G/L Account";
+    begin
+        if not ADLCore.FeatureEnabled("ADL Features"::BST) then exit;
+
+        GLEntry."BST Code" := GLAcc."BST Code";
     end;
 
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitCustLedgEntry', '', false, false)]
-    local procedure CustLedgEntryInsert(VAR CustLedgerEntry: Record "Cust. Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
+    local procedure CustLedgEntryInsertFAS(VAR CustLedgerEntry: Record "Cust. Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
+    var
+        Cust: Record Customer;
+    begin
+        if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
+
+        Cust.get(CustLedgerEntry."Customer No.");
+        CustLedgerEntry.CopyFASFields(Cust);
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitCustLedgEntry', '', false, false)]
+    local procedure CustLedgEntryInsertKRD(VAR CustLedgerEntry: Record "Cust. Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
     var
         Cust: Record Customer;
         CustPstgGrp: Record "Customer Posting Group";
-        ReportSISetup:Record "Reporting_SI Setup";
-
     begin
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            if Cust.get(CustLedgerEntry."Customer No.") then begin            
-                CustLedgerEntry."FAS Sector Code" := Cust."FAS Sector Code";
-            end;            
-        end;
+        if not ADLCore.FeatureEnabled("ADL Features"::KRD) then exit;
 
-        if ReportSISetup.get() and ReportSISetup."KRD Enabled" then begin
-            ReportSISetup.TestField("Default KRD Affiliation Type");
-            if Cust.get(CustLedgerEntry."Customer No.") then begin
-                CustLedgerEntry."KRD Country/Region Code" := Cust."Country/Region Code";                
-                CustLedgerEntry."KRD Non-Residnet Sector Code" := Cust."KRD Non-Residnet Sector Code";
-                CustLedgerEntry."KRD Affiliation Type" := Cust."KRD Affiliation Type";
+        //TODO: default value should not be mandatory! ( check result instead ) ( suggest: removal )
+        //ReportSISetup.TestField("Default KRD Affiliation Type");
 
-                if CustLedgerEntry."KRD Affiliation Type" = '' then
-                    CustLedgerEntry."KRD Affiliation Type" := ReportSISetup."Default KRD Affiliation Type";                    
-            end;            
+        Cust.get(CustLedgerEntry."Customer No.");
+        CustLedgerEntry.CopyKRDFields(Cust);
+        CustLedgerEntry.TestField("KRD Affiliation Type");
 
-            if CustPstgGrp.get(CustLedgerEntry."Customer Posting Group") then begin
-                CustLedgerEntry."KRD Instrument Type" := CustPstgGrp."KRD Instrument Type";
-                CustLedgerEntry."KRD Claim/Liability" := CustPstgGrp."KRD Claim/Liability";
-                CustLedgerEntry."KRD Maturity" := CustPstgGrp."KRD Maturity";
-            end;            
-        end;        
+        if CustPstgGrp.get(CustLedgerEntry."Customer Posting Group") then
+            CustLedgerEntry.CopyKRDFields(CustPstgGrp);
     end;
 
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitVendLedgEntry', '', false, false)]
-    local procedure VendLedgEntryInsert(VAR VendorLedgerEntry: Record "Vendor Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
+    local procedure VendLedgEntryInsertFAS(VAR VendorLedgerEntry: Record "Vendor Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
+    var
+        Vend: Record Vendor;
+    begin
+        if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
+
+        Vend.get(VendorLedgerEntry."Vendor No.");
+        VendorLedgerEntry.CopyFASFields(Vend);
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitVendLedgEntry', '', false, false)]
+    local procedure VendLedgEntryInsertKRD(VAR VendorLedgerEntry: Record "Vendor Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
     var
         Vend: Record Vendor;
         VendPstgGrp: Record "Vendor Posting Group";
-        ReportSISetup:Record "Reporting_SI Setup";
-
     begin
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            if Vend.get(VendorLedgerEntry."Vendor No.") then begin            
-                VendorLedgerEntry."FAS Sector Code" := Vend."FAS Sector Code";
-            end;            
-        end;
+        if not ADLCore.FeatureEnabled("ADL Features"::KRD) then exit;
 
-        if ReportSISetup.get() and ReportSISetup."KRD Enabled" then begin
-            ReportSISetup.TestField("Default KRD Affiliation Type");
-            if Vend.get(VendorLedgerEntry."Vendor No.") then begin
-                VendorLedgerEntry."KRD Country/Region Code" := Vend."Country/Region Code";                
-                VendorLedgerEntry."KRD Non-Residnet Sector Code" := Vend."KRD Non-Residnet Sector Code";
-                VendorLedgerEntry."KRD Affiliation Type" := Vend."KRD Affiliation Type";
+        //TODO: default value should not be mandatory! ( check result instead ) ( suggest: removal )
+        //ReportSISetup.TestField("Default KRD Affiliation Type");
+        Vend.get(VendorLedgerEntry."Vendor No.");
+        VendorLedgerEntry.CopyKRDFields(Vend);
 
-                if VendorLedgerEntry."KRD Affiliation Type" = '' then
-                    VendorLedgerEntry."KRD Affiliation Type" := ReportSISetup."Default KRD Affiliation Type";                    
-            end;            
-
-            if VendPstgGrp.get(VendorLedgerEntry."Vendor Posting Group") then begin
-                VendorLedgerEntry."KRD Instrument Type" := VendPstgGrp."KRD Instrument Type";
-                VendorLedgerEntry."KRD Claim/Liability" := VendPstgGrp."KRD Claim/Liability";
-                VendorLedgerEntry."KRD Maturity" := VendPstgGrp."KRD Maturity";
-            end;            
-        end;         
+        if VendPstgGrp.get(VendorLedgerEntry."Vendor Posting Group") then
+            VendorLedgerEntry.CopyKRDFields(VendPstgGrp);
     end;
 
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterCopyGenJnlLineFromSalesHeader', '', false, false)]
-    local procedure CopyLineFromSalesHeader(SalesHeader : Record "Sales Header";VAR GenJournalLine : Record "Gen. Journal Line")
-    var
-        ReportSISetup:Record "Reporting_SI Setup";
+    local procedure CopyLineFromSalesHeader(SalesHeader: Record "Sales Header"; VAR GenJournalLine: Record "Gen. Journal Line")
     begin
-        if ReportSISetup.get() and ReportSISetup."VIES Enabled" then begin
-            GenJournalLine."VAT Correction Date" := SalesHeader."VAT Correction Date"; 
-            GenJournalLine."EU Customs Procedure" := SalesHeader."EU Customs Procedure";       
-        end;
+        if not ADLCore.FeatureEnabled("ADL Features"::VIES) then exit;
+        GenJournalLine.CopyVIESFields(SalesHeader);
     end;
 
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetCustomerAccount', '', false, false)]
     local procedure GETFASFromCust(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Customer: Record Customer)
-    var
-        ReportSISetup:Record "Reporting_SI Setup";
     begin
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            GenJournalLine."FAS Sector Code" := Customer."FAS Sector Code";
-        end;
+        if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
+        GenJournalLine.CopyFASFields(Customer);
     end;
 
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetVendorAccount', '', false, false)]
     local procedure GETFASFromVend(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Vendor: Record Vendor)
-    var
-        ReportSISetup:Record "Reporting_SI Setup";
     begin
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            GenJournalLine."FAS Sector Code" := Vendor."FAS Sector Code";
-        end;
+        if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
+        GenJournalLine.CopyFASFields(Vendor);
     end;
 
-    [EventSubscriber(ObjectType::Table, 81, 'OnAfterAccountNoOnValidateGetBankAccount', '', false, false)]
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetBankAccount', '', false, false)]
     local procedure GETFASFromBank(VAR GenJournalLine: Record "Gen. Journal Line"; VAR BankAccount: Record "Bank Account")
-    var
-        ReportSISetup:Record "Reporting_SI Setup";
     begin
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            GenJournalLine."FAS Sector Code" := BankAccount."FAS Sector Code";
-            GenJournalLine."FAS Instrument Code" :=BankAccount."FAS Instrument Code";
-        end;
+        if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
+        GenJournalLine.CopyFASFields(BankAccount);
     end;
-    
+
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetCustomerBalAccount', '', false, false)]
     local procedure BalGETFASFromVend(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Customer: Record Customer)
-    var
-        ReportSISetup:Record "Reporting_SI Setup";
     begin
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            GenJournalLine."Bal. FAS Sector Code" := Customer."FAS Sector Code";
-        end;
+        if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
+        GenJournalLine.CopyFASFields(Customer);
     end;
 
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetVendorBalAccount', '', false, false)]
     local procedure BalGETFASFromCust(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Vendor: Record "Vendor")
-    var
-        ReportSISetup:Record "Reporting_SI Setup";
     begin
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            GenJournalLine."Bal. FAS Sector Code" := Vendor."FAS Sector Code";
-        end;
-    end;  
+        if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
+        GenJournalLine.CopyFASFields(Vendor);
+    end;
 
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetBankBalAccount', '', false, false)]
     local procedure BalGETFASFromBank(VAR GenJournalLine: Record "Gen. Journal Line"; VAR BankAccount: Record "Bank Account")
-    var
-        ReportSISetup:Record "Reporting_SI Setup";
     begin
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            GenJournalLine."Bal. FAS Sector Code" := BankAccount."FAS Sector Code";
-            GenJournalLine."Bal. FAS Instrument Code" := BankAccount."FAS Instrument Code";
-        end;
-    end; 
+        if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
+        GenJournalLine.CopyFASFields(BankAccount);
+    end;
 
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetGLBalAccount', '', false, false)]
     local procedure BalGETFASFromGLAcc(VAR GenJournalLine: Record "Gen. Journal Line"; VAR GLAccount: Record "G/L Account")
-    var
-        ReportSISetup:Record "Reporting_SI Setup";
     begin
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            GenJournalLine."Bal. FAS Sector Code" := GLAccount."FAS Sector Code";
-            GenJournalLine."Bal. FAS Instrument Code" := GLAccount."FAS Instrument Code";
-        end;
-    end;     
-
-
+        if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
+        GenJournalLine.CopyFASFields(GLAccount);
+    end;
 }
