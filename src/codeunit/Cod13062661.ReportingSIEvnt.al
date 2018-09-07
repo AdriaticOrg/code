@@ -98,62 +98,24 @@ codeunit 13062661 "Reporting SI Evnt."
     local procedure OnAfterCopyGLEntryFromGenJnlLineFAS(var GLEntry: Record "G/L Entry"; var GenJournalLine: Record "Gen. Journal Line")
     var
         GLAcc: Record "G/L Account";
-<<<<<<< HEAD
         AccNo:Code[20];
         ReportSISetup:Record "Reporting_SI Setup";
     begin 
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            if GlobalGLEntry."G/L Account No." = GenJournalLine."Bal. Account No." then begin
-                GenJournalLine."FAS Type" := GenJournalLine."Bal. FAS Type";
-                GenJournalLine."FAS Sector Code" := GenJournalLine."Bal. FAS Sector Code";
-                GenJournalLine."FAS Instrument Code" := GenJournalLine."Bal. FAS Instrument Code";
-            end;
-            if GLAcc.GET(GlobalGLEntry."G/L Account No.") then begin
-                if GLAcc."FAS Account" then begin
-                    case GLAcc."FAS Instrument Posting" of
-                        GLAcc."FAS Instrument Posting"::" ":
-                            begin
-                                GlobalGLEntry."FAS Type" := GenJournalLine."FAS Type";
-                                GlobalGLEntry."FAS Instrument Code" := GenJournalLine."FAS Instrument Code";                            
-                            end;
-                        GLAcc."FAS Instrument Posting"::"Code Mandatory":
-                            begin
-                                GenJournalLine.testfield("FAS Type");
-                                GlobalGLEntry."FAS Type" := GenJournalLine."FAS Type";
-                                GenJournalLine.TestField("FAS Instrument Code");                                 
-                                GlobalGLEntry."FAS Instrument Code" := GenJournalLine."FAS Instrument Code";                            
-                            end;
-                        GLAcc."FAS Instrument Posting"::"Same Code":
-                            begin
-                                GlobalGLEntry."FAS Instrument Code" := GLAcc."FAS Instrument Code";
-                                GlobalGLEntry."FAS Type" := GLAcc."FAS Type";
-                            end;
-                        GLAcc."FAS Instrument Posting"::"No Code":
-                            begin
-                                GenJournalLine.TestField("FAS Type",GenJournalLine."FAS Type"::" ");
-                                GenJournalLine.TestField("FAS Instrument Code", '');
-                            end;
-                    end;
-=======
-    begin
         if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
->>>>>>> 4f5fecc7b17ccfbb2937bb43558bba0ab219917a
 
-        if GLEntry."G/L Account No." = GenJournalLine."Bal. Account No." then begin
-            GLEntry."FAS Sector Code" := GenJournalLine."Bal. FAS Sector Code";
-            GLEntry."FAS Instrument Code" := GenJournalLine."Bal. FAS Instrument Code";
-        end;
-
-        //TODO: removed if because I think AccNo is mandatory ( OLD-VERSION:  if GLAcc.GET(GLEntry."G/L Account No.") then begin )
         GLAcc.GET(GLEntry."G/L Account No.");
         if not GLAcc."FAS Account" then exit;
 
         GLEntry."FAS Instrument Code" := GenJournalLine."FAS Instrument Code";
         GLEntry."FAS Sector Code" := GenJournalLine."FAS Sector Code";
+        GLEntry."FAS Type" := GenJournalLine."FAS Type";
 
         case GLAcc."FAS Instrument Posting" of
             GLAcc."FAS Instrument Posting"::"Code Mandatory":
-                GenJournalLine.TestField("FAS Instrument Code");
+                begin
+                    GenJournalLine.TestField("FAS Type");
+                    GenJournalLine.TestField("FAS Instrument Code");
+                end;
             GLAcc."FAS Instrument Posting"::"Same Code":
                 GenJournalLine.TestField("FAS Instrument Code", GLAcc."FAS Instrument Code");
             GLAcc."FAS Instrument Posting"::"No Code":
@@ -198,9 +160,6 @@ codeunit 13062661 "Reporting SI Evnt."
         CustPstgGrp: Record "Customer Posting Group";
     begin
         if not ADLCore.FeatureEnabled("ADL Features"::KRD) then exit;
-
-        //TODO: default value should not be mandatory! ( check result instead ) ( suggest: removal )
-        //ReportSISetup.TestField("Default KRD Affiliation Type");
 
         Cust.get(CustLedgerEntry."Customer No.");
         CustLedgerEntry.CopyKRDFields(Cust);
@@ -266,21 +225,15 @@ codeunit 13062661 "Reporting SI Evnt."
         GenJournalLine.CopyFASFields(BankAccount);
     end;
 
-<<<<<<< HEAD
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetGLAccount', '', false, false)]
     local procedure GETFASFromGLAcc(VAR GenJournalLine: Record "Gen. Journal Line"; VAR GLAccount: Record "G/L Account")
     var
         ReportSISetup:Record "Reporting_SI Setup";
     begin
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            GenJournalLine."FAS Type" := GLAccount."FAS Type";
-            GenJournalLine."Bal. FAS Sector Code" := GLAccount."FAS Sector Code";
-            GenJournalLine."Bal. FAS Instrument Code" := GLAccount."FAS Instrument Code";
-        end;
+        if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
+        GenJournalLine.CopyFASFields(GLAccount);
     end;         
     
-=======
->>>>>>> 4f5fecc7b17ccfbb2937bb43558bba0ab219917a
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetCustomerBalAccount', '', false, false)]
     local procedure BalGETFASFromVend(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Customer: Record Customer)
     begin
@@ -305,18 +258,8 @@ codeunit 13062661 "Reporting SI Evnt."
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetGLBalAccount', '', false, false)]
     local procedure BalGETFASFromGLAcc(VAR GenJournalLine: Record "Gen. Journal Line"; VAR GLAccount: Record "G/L Account")
     begin
-<<<<<<< HEAD
-        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
-            GenJournalLine."FAS Type" := GLAccount."FAS Type";
-            GenJournalLine."Bal. FAS Sector Code" := GLAccount."FAS Sector Code";
-            GenJournalLine."Bal. FAS Instrument Code" := GLAccount."FAS Instrument Code";
-        end;
-    end;     
-
-
-=======
         if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
         GenJournalLine.CopyFASFields(GLAccount);
-    end;
->>>>>>> 4f5fecc7b17ccfbb2937bb43558bba0ab219917a
+    end;     
+
 }
