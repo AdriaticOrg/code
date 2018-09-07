@@ -426,13 +426,6 @@ codeunit 13062525 "VAT Management-Adl"
         VATEntry."VAT Identifier-Adl" := FromVATEntry."VAT Identifier-Adl";
     end;
 
-    local procedure VATEntryEdit()
-    var
-        myInt: Integer;
-    begin
-
-    end;
-
     var
         UpdVatDate: Label 'Do you want to change VAT Date';
         ManagePostponedVAT: Codeunit "Manage Postponed VAT-Adl";
