@@ -3,7 +3,7 @@ Report 13062751 "Sales - Invoice Adl"
     // version NAVW113.00
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/reportlayout/Rep13062751.SalesInvoiceAdl.rdlc';
+    RDLCLayout = './src/reportlayout/Rep13062751.SalesInvoiceAdl.rdl';
     Caption = 'Sales - Invoice';
     EnableHyperlinks = true;
     Permissions = TableData "Sales Shipment Buffer" = rimd;
