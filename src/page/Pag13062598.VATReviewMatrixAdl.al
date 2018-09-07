@@ -603,7 +603,7 @@ page 13062598 "VAT Review Matrix-Adl"
         i: Integer;
     begin
         for i := 1 to ArrayLen(MATRIX_CellData) do
-            MATRIX_CellData[i] := VATBookCalc.EvaluateExpression(Rec, i - 1, DateFilter);
+            MATRIX_CellData[i] := VATBookCalc.EvaluateExpression(Rec, i, DateFilter);
     end;
 
     local procedure MatrixOnDrillDown(Column: Integer);

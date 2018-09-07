@@ -533,7 +533,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
         VATBookViewFormula.SetRange("VAT Book Code", "VAT Book Code");
         VATBookViewFormula.SetRange("VAT Book Group Code", "VAT Book Group Code");
         VATBookViewFormula.SetRange("VAT Identifier", "VAT Identifier");
-        VATBookViewFormula.SetRange("Column No.", Column - 1);
+        VATBookViewFormula.SetRange("Column No.", Column);
         Page.RunModal(0, VATBookViewFormula);
         CurrPage.Update(false);
     end;
