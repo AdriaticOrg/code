@@ -42,11 +42,7 @@ codeunit 13062525 "VAT Management-Adl"
 
     [EventSubscriber(ObjectType::Table, Database::"VAT Entry", 'OnAfterCopyFromGenJnlLine', '', true, true)]
     local procedure OnAfterCopyFromGenJnlLine(VAR VATEntry: Record "VAT Entry"; GenJournalLine: Record "Gen. Journal Line")
-    var
-        VATPostingSetup: Record "VAT Posting Setup";
     begin
-        //TODO: @drazen ovo nama verovatno ne treba? ( pucalo je jer su bile prazne vrednosti )
-        //VATPostingSetup.Get(GenJournalLine."VAT Bus. Posting Group", GenJournalLine."VAT Prod. Posting Group");
         VATEntry."Postponed VAT-Adl" := GenJournalLine."Postponed VAT-Adl";
     end;
 
