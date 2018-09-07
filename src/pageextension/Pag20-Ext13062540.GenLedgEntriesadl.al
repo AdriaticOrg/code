@@ -5,6 +5,10 @@ pageextension 13062540 "GenLedgEntries-adl" extends "General Ledger Entries"  //
         // <adl.24>
         addlast(Control1)
         {
+            field("FAS Type";"FAS Type") {
+                ApplicationArea = All;
+                Visible = FASEnabled;
+            }
             field("FAS Instrument Code"; "FAS Instrument Code")
             {
                 ApplicationArea = All;
@@ -93,29 +97,7 @@ pageextension 13062540 "GenLedgEntries-adl" extends "General Ledger Entries"  //
                         end;
                     end;                                         
                 }   
-                // </adl.26>  
-
-                // <adl.21>
-                action("GLExport")
-            	{
-                    Caption = 'GL Export';
-	                Promoted = true;
-	                PromotedCategory = Report;
-	                Image = Report;
-	                ApplicationArea = All;
-
-	                trigger OnAction()
-	                var
-	                    GLExportSIadl : Report "GL ExportSI-adl";
-	                    GLAccount: Record "G/L Account";
-	                begin
-	                    GLAccount.Get("G/L Account No.");
-	                    GLAccount.SetFilter("No.", Rec."G/L Account No.");
-	                    GLExportSIadl.SetTableView(GLAccount);
-	                    GLExportSIadl.RunModal();
-	                end;
-            	}
-		        // </adl.21>                        
+                // </adl.26>                       
             }
         }
     }

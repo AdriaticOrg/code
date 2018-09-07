@@ -21,6 +21,13 @@ table 13062644 "FAS Report Line"
             Caption = 'Description';
             DataClassification = ToBeClassified;
         }
+        field(6; "FAS Type"; Option)
+        {
+            Caption = 'FAS Type';
+            OptionMembers = " ",Assets,Liabilities;
+            OptionCaption = ' ,Assets,Liabilities';
+            DataClassification = ToBeClassified;
+        }        
         field(10; "AOP Code"; Code[10])
         {
             Caption = 'AOP Code';
@@ -50,11 +57,30 @@ table 13062644 "FAS Report Line"
             end;
         }
         
+        //obsolete, delete field Amount
         field(15; "Amount"; Decimal)
         {
             Caption = 'Amount';
             DataClassification = ToBeClassified;
         }
+        field(16; "Period Closing Balance"; Decimal)
+        {
+            Caption = 'Period Closing Balance';
+            DataClassification = ToBeClassified;
+        }
+        field(17; "Transactions Amt. in Period"; Decimal)
+        {
+            Caption = 'Transactions Amt. in Period';
+            DataClassification = ToBeClassified;
+        }
+        field(18; "Changes Amt. in Period"; Decimal)
+        {
+            Caption = 'Changes Amt. in Period';
+            DataClassification = ToBeClassified;
+        }
+        
+        
+        
                                 
     }
     
