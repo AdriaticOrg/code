@@ -628,8 +628,8 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         GlobalGLEntry.CONSISTENT(IsTransactionConsistent);
 
         IF CostAccSetup.GET THEN
-            IF CostAccSetup."Auto Transfer from G/L" THEN
-                TransferGlEntriesToCA.GetGLEntries;
+            IF CostAccSetup."Auto Transfer from G/L" THEN                
+                TransferGlEntriesToCA.GetGLEntries;                
 
         FirstEntryNo := 0;
     end;
