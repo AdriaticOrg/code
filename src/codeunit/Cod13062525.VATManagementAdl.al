@@ -13,9 +13,7 @@ codeunit 13062525 "VAT Management-Adl"
     [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnAfterInitRecord', '', false, false)]
     local procedure OnAfterInitRecord(var PurchHeader: Record "Purchase Header")
     begin
-        with PurchHeader do begin
-            "VAT Date-Adl" := "Posting Date";
-        end;
+        PurchHeader."VAT Date-Adl" := PurchHeader."Posting Date";
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnAfterValidateEvent', 'Posting Date', false, false)]
