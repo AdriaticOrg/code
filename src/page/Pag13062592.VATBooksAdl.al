@@ -20,7 +20,7 @@ page 13062592 "VAT Books-Adl"
                     ApplicationArea = All;
                     ToolTip = 'Specifies a code to VAT book which is uses for regional VAT reporting legislation.';
                 }
-                
+
                 field(Description; Description)
                 {
                     ApplicationArea = All;
@@ -162,6 +162,25 @@ page 13062592 "VAT Books-Adl"
                     Report.RunModal(Report::"Export VAT Books To XML-Adl", true, false);
                 end;
             }
+
+            // <adl.21>
+            action(ExportToTxt)
+            {
+                Caption = 'Export to TXT';
+                ToolTip = 'Export to TXT VAT books for certain period.';
+                Image = CreateXMLFile;
+                Promoted = true;
+                PromotedCategory = "Report";
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                ApplicationArea = All;
+
+                trigger OnAction();
+                begin
+                    Report.RunModal(Report::"Export VAT Book-adl", true, false);
+                end;
+            }
+            // </adl.21>
         }
     }
 
