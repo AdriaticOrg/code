@@ -53,16 +53,33 @@ codeunit 13062525 "VAT Management-Adl"
     begin
         VATPostingSetup.Get(GenJournalLine."VAT Bus. Posting Group", GenJournalLine."VAT Prod. Posting Group");
         VATEntry."VAT Identifier-Adl" := VATPostingSetup."VAT Identifier";
-        if GenJournalLine."Posting Date" <> GenJournalLine."VAT Date-Adl" then begin
-            vatAmount := VATEntry.Amount;
-            vatBase := VATEntry.Base;
-            VATEntry.Amount := 0;
-            VATEntry.Base := 0;
-            VATEntry."Unrealized Amount" := vatAmount;
-            VATEntry."Unrealized Base" := vatBase;
-            VATEntry."Remaining Unrealized Amount" := VATEntry."Unrealized Amount";
-            VATEntry."Remaining Unrealized Base" := VATEntry."Unrealized Base";
-        end;
+
+        //TEST
+        // if GenJournalLine."Posting Date" <> GenJournalLine."VAT Date-Adl" then begin
+        //     vatAmount := VATEntry.Amount;
+        //     vatBase := VATEntry.Base;
+        //     VATEntry.Amount := 0;
+        //     VATEntry.Base := 0;
+        //     VATEntry."Unrealized Amount" := vatAmount;
+        //     VATEntry."Unrealized Base" := vatBase;
+        //     VATEntry."Remaining Unrealized Amount" := VATEntry."Unrealized Amount";
+        //     VATEntry."Remaining Unrealized Base" := VATEntry."Unrealized Base";
+        // end;
+
+        CASE GenJournalLine."Postponed VAT-Adl" OF
+            GenJournalLine."Postponed VAT-Adl"::"Postponed VAT":
+                BEGIN
+                    VATEntry."Remaining Unrealized Amount" := 0;
+                    VATEntry."Remaining Unrealized Base" := 0;
+                END;
+            GenJournalLine."Postponed VAT-Adl"::"Realized VAT":
+                BEGIN
+                    VATEntry."Unrealized Amount" := -VATEntry.Amount;
+                    VATEntry."Unrealized Base" := -VATEntry.Base;
+                END;
+        END;
+        //TEST
+
         //<adl.11>
         VATEntry."VAT % (retrograde)-Adl" := VATPostingSetup."VAT % (retrograde)-Adl";
         if VATPostingSetup."VAT % (retrograde)-Adl" <> 0 then
@@ -70,35 +87,35 @@ codeunit 13062525 "VAT Management-Adl"
         //</adl.11>
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertGLEntryBuffer', '', false, false)]
-    local procedure OnBeforeInsertGLEntryBuffer(VAR TempGLEntryBuf: Record "G/L Entry"; VAR GenJournalLine: Record "Gen. Journal Line")
-    var
-        VATPostingSetup: Record "VAT Posting Setup";
-    begin
-        if GenJournalLine."Postponed VAT-Adl" = GenJournalLine."Postponed VAT-Adl"::"Postponed VAT" then begin
-            if (TempGLEntryBuf."Source Type" = TempGLEntryBuf."Source Type"::Vendor) and (GenJournalLine."VAT Bus. Posting Group" <> '') and (GenJournalLine."VAT Prod. Posting Group" <> '')
-                and (TempGLEntryBuf."VAT Amount" = 0) then begin
-                if VATPostingSetup.Get(GenJournalLine."VAT Bus. Posting Group", GenJournalLine."VAT Prod. Posting Group") then begin
-                    //VATPostingSetup.TestField("Purch VAT Postponed Account-Adl");
-                    //TempGLEntryBuf.Validate("G/L Account No.", VATPostingSetup."Purch VAT Postponed Account-Adl");
-                    if VATPostingSetup."VAT Calculation Type" = VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT" then begin
-                        VATPostingSetup.TestField("Reverse Chrg. VAT Unreal. Acc.");
-                        TempGLEntryBuf.Validate("G/L Account No.", VATPostingSetup."Reverse Chrg. VAT Unreal. Acc.");
-                    end else begin
-                        VATPostingSetup.TestField("Purch. VAT Unreal. Account");
-                        TempGLEntryBuf.Validate("G/L Account No.", VATPostingSetup."Purch. VAT Unreal. Account");
-                    end;
-                end;
-            end;
-            if (TempGLEntryBuf."Source Type" = TempGLEntryBuf."Source Type"::Customer) and (GenJournalLine."VAT Bus. Posting Group" <> '') and (GenJournalLine."VAT Prod. Posting Group" <> '')
-                and (TempGLEntryBuf."VAT Amount" = 0) then begin
-                if VATPostingSetup.Get(GenJournalLine."VAT Bus. Posting Group", GenJournalLine."VAT Prod. Posting Group") then begin
-                    VATPostingSetup.TestField("Sales VAT Unreal. Account");
-                    TempGLEntryBuf.Validate("G/L Account No.", VATPostingSetup."Sales VAT Unreal. Account");
-                end;
-            end;
-        end;
-    end;
+    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertGLEntryBuffer', '', false, false)]
+    // local procedure OnBeforeInsertGLEntryBuffer(VAR TempGLEntryBuf: Record "G/L Entry"; VAR GenJournalLine: Record "Gen. Journal Line")
+    // var
+    //     VATPostingSetup: Record "VAT Posting Setup";
+    // begin
+    //     if GenJournalLine."Postponed VAT-Adl" = GenJournalLine."Postponed VAT-Adl"::"Postponed VAT" then begin
+    //         if (TempGLEntryBuf."Source Type" = TempGLEntryBuf."Source Type"::Vendor) and (GenJournalLine."VAT Bus. Posting Group" <> '') and (GenJournalLine."VAT Prod. Posting Group" <> '')
+    //             and (TempGLEntryBuf."VAT Amount" = 0) then begin
+    //             if VATPostingSetup.Get(GenJournalLine."VAT Bus. Posting Group", GenJournalLine."VAT Prod. Posting Group") then begin
+    //                 //VATPostingSetup.TestField("Purch VAT Postponed Account-Adl");
+    //                 //TempGLEntryBuf.Validate("G/L Account No.", VATPostingSetup."Purch VAT Postponed Account-Adl");
+    //                 if VATPostingSetup."VAT Calculation Type" = VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT" then begin
+    //                     VATPostingSetup.TestField("Reverse Chrg. VAT Unreal. Acc.");
+    //                     TempGLEntryBuf.Validate("G/L Account No.", VATPostingSetup."Reverse Chrg. VAT Unreal. Acc.");
+    //                 end else begin
+    //                     VATPostingSetup.TestField("Purch. VAT Unreal. Account");
+    //                     TempGLEntryBuf.Validate("G/L Account No.", VATPostingSetup."Purch. VAT Unreal. Account");
+    //                 end;
+    //             end;
+    //         end;
+    //         if (TempGLEntryBuf."Source Type" = TempGLEntryBuf."Source Type"::Customer) and (GenJournalLine."VAT Bus. Posting Group" <> '') and (GenJournalLine."VAT Prod. Posting Group" <> '')
+    //             and (TempGLEntryBuf."VAT Amount" = 0) then begin
+    //             if VATPostingSetup.Get(GenJournalLine."VAT Bus. Posting Group", GenJournalLine."VAT Prod. Posting Group") then begin
+    //                 VATPostingSetup.TestField("Sales VAT Unreal. Account");
+    //                 TempGLEntryBuf.Validate("G/L Account No.", VATPostingSetup."Sales VAT Unreal. Account");
+    //             end;
+    //         end;
+    //     end;
+    // end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterInitRecord', '', true, true)]
     local procedure SalesHeaderOnAfterInitRecord(var SalesHeader: Record "Sales Header")
@@ -106,7 +123,6 @@ codeunit 13062525 "VAT Management-Adl"
         SalesHeader."VAT Date-Adl" := SalesHeader."Posting Date";
     end;
 
-    //OnAfterCopyGenJnlLineFromSalesHeader
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterCopyGenJnlLineFromSalesHeader', '', true, true)]
     local procedure GenJournalLineOnAfterValidateDocumentDate(SalesHeader: Record "Sales Header"; var GenJournalLine: Record "Gen. Journal Line")
     begin
@@ -121,40 +137,64 @@ codeunit 13062525 "VAT Management-Adl"
             Rec.Validate("VAT Date-Adl", Rec."Posting Date");
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterFinalizePosting', '', false, false)]
-    local procedure OnAfterFinalizePostingSales(VAR SalesHeader: Record "Sales Header"; VAR SalesShipmentHeader: Record "Sales Shipment Header"; VAR SalesInvoiceHeader: Record "Sales Invoice Header"; var SalesCrMemoHeader: Record "Sales Cr.Memo Header"; var ReturnReceiptHeader: Record "Return Receipt Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
-    var
-        CustomerVendor: Option Customer,Vendor;
+    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterFinalizePosting', '', false, false)]
+    // local procedure OnAfterFinalizePostingSales(VAR SalesHeader: Record "Sales Header"; VAR SalesShipmentHeader: Record "Sales Shipment Header"; VAR SalesInvoiceHeader: Record "Sales Invoice Header"; var SalesCrMemoHeader: Record "Sales Cr.Memo Header"; var ReturnReceiptHeader: Record "Return Receipt Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
+    // var
+    //     CustomerVendor: Option Customer,Vendor;
+    // begin
+    //     with SalesHeader do begin
+    //         if ("Postponed VAT-adl" = "Postponed VAT-adl"::"Postponed VAT") and ("VAT Date-adl" <> 0D) then begin
+    //             case "Document Type" of
+    //                 "Document Type"::Invoice, "Document Type"::Order:
+    //                     HandlePostponedVAT(DATABASE::"Sales Invoice Header", SalesInvoiceHeader."No.", SalesInvoiceHeader."VAT Date-adl", TRUE, CustomerVendor::Customer, SalesInvoiceHeader."Postponed VAT-adl");
+    //                 "Document Type"::"Credit Memo":
+    //                     HandlePostponedVAT(DATABASE::"Sales Cr.Memo Header", SalesCrMemoHeader."No.", SalesCrMemoHeader."VAT Date-adl", TRUE, CustomerVendor::Customer, SalesCrMemoHeader."Postponed VAT-adl");
+    //             end;
+    //         end;
+    //     end;
+    // end;
+
+    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterFinalizePosting', '', false, false)]
+    // local procedure OnAfterFinalizePostingPurchase(VAR PurchHeader: Record "Purchase Header"; VAR PurchRcptHeader: Record "Purch. Rcpt. Header"; VAR PurchInvHeader: Record "Purch. Inv. Header"; VAR PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr."; var ReturnShptHeader: Record "Return Shipment Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
+    // var
+    //     CustomerVendor: Option Customer,Vendor;
+    // begin
+    //     with PurchHeader do begin
+    //         if ("Postponed VAT-adl" = "Postponed VAT-adl"::"Postponed VAT") and ("VAT Date-adl" <> 0D) then begin
+    //             case "Document Type" of
+    //                 "Document Type"::Invoice, "Document Type"::Order:
+    //                     HandlePostponedVAT(DATABASE::"Purch. Inv. Header", PurchInvHeader."No.", PurchInvHeader."VAT Date-adl", TRUE, CustomerVendor::Vendor, PurchInvHeader."Postponed VAT-adl");
+    //                 "Document Type"::"Credit Memo":
+    //                     HandlePostponedVAT(DATABASE::"Purch. Cr. Memo Hdr.", PurchCrMemoHdr."No.", PurchCrMemoHdr."VAT Date-adl", TRUE, CustomerVendor::Vendor, PurchCrMemoHdr."Postponed VAT-adl");
+    //             end;
+    //         end;
+    //     end;
+    // end;
+    //<adl.10>
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforePostInvPostBuffer', '', false, false)]
+    local procedure OnBeforePostInvPostBufferCu80(var GenJnlLine: Record "Gen. Journal Line"; var InvoicePostBuffer: Record "Invoice Post. Buffer"; SalesHeader: Record "Sales Header"; CommitIsSuppressed: Boolean; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; PreviewMode: Boolean)
     begin
-        with SalesHeader do begin
-            if ("Postponed VAT-adl" = "Postponed VAT-adl"::"Postponed VAT") and ("VAT Date-adl" <> 0D) then begin
-                case "Document Type" of
-                    "Document Type"::Invoice, "Document Type"::Order:
-                        HandlePostponedVAT(DATABASE::"Sales Invoice Header", SalesInvoiceHeader."No.", SalesInvoiceHeader."VAT Date-adl", TRUE, CustomerVendor::Customer, SalesInvoiceHeader."Postponed VAT-adl");
-                    "Document Type"::"Credit Memo":
-                        HandlePostponedVAT(DATABASE::"Sales Cr.Memo Header", SalesCrMemoHeader."No.", SalesCrMemoHeader."VAT Date-adl", TRUE, CustomerVendor::Customer, SalesCrMemoHeader."Postponed VAT-adl");
-                end;
-            end;
-        end;
+        ManagePostponedVAT.SetPostponedVAT(GenJnlLine, SalesHeader, true, GenJnlPostLine);
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterFinalizePosting', '', false, false)]
-    local procedure OnAfterFinalizePostingPurchase(VAR PurchHeader: Record "Purchase Header"; VAR PurchRcptHeader: Record "Purch. Rcpt. Header"; VAR PurchInvHeader: Record "Purch. Inv. Header"; VAR PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr."; var ReturnShptHeader: Record "Return Shipment Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
-    var
-        CustomerVendor: Option Customer,Vendor;
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterPostInvPostBuffer', '', false, false)]
+    local procedure OnAfterPostInvPostBufferCu80(VAR GenJnlLine: Record "Gen. Journal Line"; VAR InvoicePostBuffer: Record "Invoice Post. Buffer"; VAR SalesHeader: Record "Sales Header"; GLEntryNo: Integer; CommitIsSuppressed: Boolean; VAR GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
     begin
-        with PurchHeader do begin
-            if ("Postponed VAT-adl" = "Postponed VAT-adl"::"Postponed VAT") and ("VAT Date-adl" <> 0D) then begin
-                case "Document Type" of
-                    "Document Type"::Invoice, "Document Type"::Order:
-                        HandlePostponedVAT(DATABASE::"Purch. Inv. Header", PurchInvHeader."No.", PurchInvHeader."VAT Date-adl", TRUE, CustomerVendor::Vendor, PurchInvHeader."Postponed VAT-adl");
-                    "Document Type"::"Credit Memo":
-                        HandlePostponedVAT(DATABASE::"Purch. Cr. Memo Hdr.", PurchCrMemoHdr."No.", PurchCrMemoHdr."VAT Date-adl", TRUE, CustomerVendor::Vendor, PurchCrMemoHdr."Postponed VAT-adl");
-                end;
-            end;
-        end;
+        ManagePostponedVAT.SetPostponedVAT(GenJnlLine, SalesHeader, false, GenJnlPostLine);
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnBeforePostInvPostBuffer', '', false, false)]
+    local procedure OnBeforePostInvPostBufferCu90(VAR GenJnlLine: Record "Gen. Journal Line"; var InvoicePostBuffer: Record "Invoice Post. Buffer"; var PurchHeader: Record "Purchase Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; PreviewMode: Boolean; CommitIsSupressed: Boolean)
+    begin
+
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterPostInvPostBuffer', '', false, false)]
+    local procedure OnAfterPostInvPostBufferCu90(VAR GenJnlLine: Record "Gen. Journal Line"; VAR InvoicePostBuffer: Record "Invoice Post. Buffer"; PurchHeader: Record "Purchase Header"; GLEntryNo: Integer; CommitIsSupressed: Boolean; VAR GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
+    begin
+
+    end;
+    //</adl.10>
     procedure HandlePostponedVAT(TableNo: Integer; No: Code[20]; PostDate: Date; Post: Boolean; SalesPurchase: Option Customer,Vendor; PostponedVAT: Option "Realized VAT","Postponed VAT")
     var
         CustLedgerEntry: Record "Cust. Ledger Entry";
