@@ -77,11 +77,7 @@ table 13062644 "FAS Report Line"
         {
             Caption = 'Changes Amt. in Period';
             DataClassification = ToBeClassified;
-        }
-        
-        
-        
-                                
+        }                                                        
     }
     
     keys

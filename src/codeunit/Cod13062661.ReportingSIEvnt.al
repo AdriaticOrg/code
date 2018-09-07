@@ -8,7 +8,7 @@ codeunit 13062661 "Reporting SI Evnt."
     var
         ADLCore: Codeunit "Adl Core";
         "ADL Features": Option VAT,FAS,KRD,BST,VIES;
-
+ 
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertVATEntry', '', true, false)]
     local procedure OnAfterInsertVATEntry(GenJnlLine: Record "Gen. Journal Line"; VATEntry: Record "VAT Entry"; GLEntryNo: Integer; var NextEntryNo: Integer)
     begin

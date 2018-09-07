@@ -4,6 +4,7 @@ page 13062660 "Reporting_SI Setup"
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "Reporting_SI Setup";
+    Caption = 'Reporting_SI Setup';
     
     layout
     {

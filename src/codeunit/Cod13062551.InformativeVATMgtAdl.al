@@ -1,9 +1,5 @@
 codeunit 13062551 "Informative VAT Mgt.-Adl"
 {
-    trigger OnRun()
-    begin
-
-    end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'VAT Prod. Posting Group', true, false)]
     local procedure OnBeforeValidateVatProsPostGroupInSalesLine(var Rec: Record "Sales Line")

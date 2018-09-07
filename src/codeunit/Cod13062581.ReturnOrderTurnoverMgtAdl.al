@@ -1,10 +1,6 @@
 codeunit 13062581 "Return Order Turnover Mgt.-Adl"
 {
-    trigger OnRun()
-    begin
-
-    end;
-
+ 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'VAT Prod. Posting Group', true, false)]
     local procedure OnBeforeValidateVatProsPostGroupInSalesLine(var Rec: Record "Sales Line")
     begin
@@ -53,16 +49,16 @@ codeunit 13062581 "Return Order Turnover Mgt.-Adl"
                 GoodsReturnType.SetRange("Code", GoodsReturnTypeCode);
                 GoodsReturnType.SetRange("VAT Prod. Posting Group", VATProdPostGr);
                 GoodsReturnType.FindFirst;
-                EXIT(GoodsReturnType."New VAT Prod. Posting Group");
+                exit(GoodsReturnType."New VAT Prod. Posting Group");
             end else begin
                 GoodsReturnType.SetRange("Code");
                 GoodsReturnType.SetRange("New VAT Prod. Posting Group", VATProdPostGr);
                 IF GoodsReturnType.FindFirst THEN begin
                     GoodsReturnType.TestField("VAT Prod. Posting Group");
-                    EXIT(GoodsReturnType."VAT Prod. Posting Group");
+                    exit(GoodsReturnType."VAT Prod. Posting Group");
                 end;
             end;
         end;
-        EXIT(VATProdPostGr);
+        exit(VATProdPostGr);
     end;
 }
