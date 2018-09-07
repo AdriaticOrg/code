@@ -55,6 +55,9 @@ page 13062643 "FAS Report"
                 field("Prep. By User ID";"Prep. By User ID") {
                     ApplicationArea = All;
                 }
+                field("Previous Report No.";"Previous Report No.") {
+                    ApplicationArea = All;
+                }
                 field(Status;Status) {
                     ApplicationArea = All;
                 }

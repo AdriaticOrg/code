@@ -5,6 +5,10 @@ pageextension 13062540 "GenLedgEntries-adl" extends "General Ledger Entries"  //
         // <adl.24>
         addlast(Control1)
         {
+            field("FAS Type";"FAS Type") {
+                ApplicationArea = All;
+                Visible = FASEnabled;
+            }
             field("FAS Instrument Code"; "FAS Instrument Code")
             {
                 ApplicationArea = All;

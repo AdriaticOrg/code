@@ -49,6 +49,20 @@ tableextension 13062542 "GenJournalLine-Adl" extends "Gen. Journal Line" // 81
             Caption = 'Bal. FAS Sector Code';
             DataClassification = ToBeClassified;
             TableRelation = "FAS Sector";
+        }     
+        field(13062645; "FAS Type"; Option)
+        {
+            Caption = 'FAS Type';
+            OptionMembers = " ",Assets,Liabilities;
+            OptionCaption = ' ,Assets,Liabilities';
+            DataClassification = ToBeClassified;
+        }           
+        field(13062646; "Bal. FAS Type"; Option)
+        {
+            Caption = 'Bal. FAS Type';
+            OptionMembers = " ",Assets,Liabilities;
+            OptionCaption = ' ,Assets,Liabilities';
+            DataClassification = ToBeClassified;
         }        
         // </adl.24>
         // <adl.22>

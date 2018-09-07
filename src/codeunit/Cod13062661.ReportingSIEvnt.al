@@ -103,6 +103,7 @@ codeunit 13062661 "Reporting SI Evnt."
     begin 
         if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
             if GlobalGLEntry."G/L Account No." = GenJournalLine."Bal. Account No." then begin
+                GenJournalLine."FAS Type" := GenJournalLine."Bal. FAS Type";
                 GenJournalLine."FAS Sector Code" := GenJournalLine."Bal. FAS Sector Code";
                 GenJournalLine."FAS Instrument Code" := GenJournalLine."Bal. FAS Instrument Code";
             end;
@@ -111,19 +112,24 @@ codeunit 13062661 "Reporting SI Evnt."
                     case GLAcc."FAS Instrument Posting" of
                         GLAcc."FAS Instrument Posting"::" ":
                             begin
+                                GlobalGLEntry."FAS Type" := GenJournalLine."FAS Type";
                                 GlobalGLEntry."FAS Instrument Code" := GenJournalLine."FAS Instrument Code";                            
                             end;
                         GLAcc."FAS Instrument Posting"::"Code Mandatory":
                             begin
-                                GenJournalLine.TestField("FAS Instrument Code");                            
+                                GenJournalLine.testfield("FAS Type");
+                                GlobalGLEntry."FAS Type" := GenJournalLine."FAS Type";
+                                GenJournalLine.TestField("FAS Instrument Code");                                 
                                 GlobalGLEntry."FAS Instrument Code" := GenJournalLine."FAS Instrument Code";                            
                             end;
                         GLAcc."FAS Instrument Posting"::"Same Code":
                             begin
                                 GlobalGLEntry."FAS Instrument Code" := GLAcc."FAS Instrument Code";
+                                GlobalGLEntry."FAS Type" := GLAcc."FAS Type";
                             end;
                         GLAcc."FAS Instrument Posting"::"No Code":
                             begin
+                                GenJournalLine.TestField("FAS Type",GenJournalLine."FAS Type"::" ");
                                 GenJournalLine.TestField("FAS Instrument Code", '');
                             end;
                     end;
@@ -265,6 +271,18 @@ codeunit 13062661 "Reporting SI Evnt."
             GenJournalLine."FAS Instrument Code" :=BankAccount."FAS Instrument Code";
         end;
     end;
+
+    [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetGLAccount', '', false, false)]
+    local procedure GETFASFromGLAcc(VAR GenJournalLine: Record "Gen. Journal Line"; VAR GLAccount: Record "G/L Account")
+    var
+        ReportSISetup:Record "Reporting_SI Setup";
+    begin
+        if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
+            GenJournalLine."FAS Type" := GLAccount."FAS Type";
+            GenJournalLine."Bal. FAS Sector Code" := GLAccount."FAS Sector Code";
+            GenJournalLine."Bal. FAS Instrument Code" := GLAccount."FAS Instrument Code";
+        end;
+    end;         
     
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetCustomerBalAccount', '', false, false)]
     local procedure BalGETFASFromVend(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Customer: Record Customer)
@@ -303,6 +321,7 @@ codeunit 13062661 "Reporting SI Evnt."
         ReportSISetup:Record "Reporting_SI Setup";
     begin
         if ReportSISetup.get() and ReportSISetup."FAS Enabled" then begin
+            GenJournalLine."FAS Type" := GLAccount."FAS Type";
             GenJournalLine."Bal. FAS Sector Code" := GLAccount."FAS Sector Code";
             GenJournalLine."Bal. FAS Instrument Code" := GLAccount."FAS Instrument Code";
         end;

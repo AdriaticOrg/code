@@ -25,8 +25,7 @@ report 13062661 "Suggest KRD Lines"
                 if KRDRepLine.FindLast() then
                     NewLineNo := KRDRepLine."Line No";
 
-                if KRDRepHead."Previous Report No." = '' then
-                    InitialRep := true;
+                InitialRep := KRDRepHead."Previous Report No." = '';                    
                    
             end;
 
