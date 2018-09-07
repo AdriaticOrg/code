@@ -139,7 +139,7 @@ page 13062608 "Fisc. Location Card-ADL"
     
     var
         FiscalizationSetup : Record "Fiscalization Setup-ADL";
-        FiscManagementSI : Codeunit "Fisc. Management SI-ADL";
+        FiscManagementSI : Codeunit "Fisc. Management-ADL";
         FiscLocation : Record "Fiscalization Location-ADL";
         VisibleSI : Boolean;
         visibleHR : Boolean;

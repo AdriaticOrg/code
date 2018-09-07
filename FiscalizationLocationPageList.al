@@ -139,7 +139,7 @@ page 13062607 "Fisc. Location List-ADL"
     var
         VisibleSI : boolean;
         VisibleHR : boolean;
-        FiscManagementSI : Codeunit "Fisc. Management SI-ADL";
+        FiscManagementSI : Codeunit "Fisc. Management-ADL";
         FiscLocation : Record "Fiscalization Location-ADL";
         trigger OnInit()
             var

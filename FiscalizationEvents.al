@@ -32,7 +32,7 @@ end;
 [EventSubscriber(ObjectType::Table, 36,'OnAfterValidateEvent','Payment Method Code',true,true)]
 local procedure OnAfterValidatePaymentMethodCodeOnSalesHeader(VAR Rec : Record "Sales Header";VAR xRec : Record "Sales Header";CurrFieldNo : Integer)
 var PaymentMethod : Record "Payment Method";
-    FiscalizationMgt : Codeunit "Fisc. Management SI-ADL";
+    FiscalizationMgt : Codeunit "Fisc. Management-ADL";
     FiscalizationPaymentMethod : Record "Fisc. Payment Method-ADL";
     FiscSetup : Record "Fiscalization Setup-ADL";
 begin
@@ -73,7 +73,7 @@ end;
 [EventSubscriber(ObjectType::Table, 36,'OnAfterValidateEvent','Location Code',true,true)]
 local procedure OnAfterValidateLocationCodeOnSalesHeader(VAR Rec : Record "Sales Header";VAR xRec : Record "Sales Header";CurrFieldNo : Integer)
 var PaymentMethod : Record "Payment Method";
-    FiscalizationManagement : Codeunit "Fisc. Management SI-ADL";
+    FiscalizationManagement : Codeunit "Fisc. Management-ADL";
     FiscalizationPaymentMethod : Record "Fisc. Payment Method-ADL";
     FiscalizationSetup : Record "Fiscalization Setup-ADL";
     FiscalizationLocationMapping : Record "Fiscalization Loc. Mapping-ADL";
@@ -127,45 +127,16 @@ END;
 end;
 
 [EventSubscriber(ObjectType::Codeunit, 80, 'OnAfterPostSalesDoc', '', true, true)]
-local procedure OnAfterFinalizeSalesPost(VAR SalesHeader : Record "Sales Header";VAR GenJnlPostLine : Codeunit "Gen. Jnl.-Post Line";SalesShptHdrNo : Code[20];RetRcpHdrNo : Code[20];SalesInvHdrNo : Code[20];SalesCrMemoHdrNo : Code[20])
+local procedure OnAfterFinalizeSalesPostOnAfterPostSalesDoc(VAR SalesHeader : Record "Sales Header";VAR GenJnlPostLine : Codeunit "Gen. Jnl.-Post Line"
+ ;SalesShptHdrNo : Code[20];RetRcpHdrNo : Code[20];SalesInvHdrNo : Code[20];SalesCrMemoHdrNo : Code[20])
+
+var SalesInvoiceHeader : Record "Sales Invoice Header";
+  FiscalizationManagement : Codeunit "Fisc. Management-ADL";
 
 begin
-       // <VAT.1132>
-  IF TempPostedCrMemos.FINDSET AND NOT IsNestedRun THEN BEGIN
-    COMMIT;
-    IF SalesInvoiceHeader."No." <> '' THEN
-      IF NOT FiscPostedSalesDocAdd.GET(SalesInvoiceHeader."Fisc. Entry No.") THEN
-        CLEAR(FiscPostedSalesDocAdd);
-    IF SalesCrMemoHeader."No." <> '' THEN
-      IF NOT FiscPostedSalesDocAdd.GET(SalesCrMemoHeader."Fisc. Entry No.") THEN
-        CLEAR(FiscPostedSalesDocAdd);
-      {
-    IF NOT FiscSalesDocAdd.GET(SalesHeader."Fisc. Entry No.") THEN
-      CLEAR(FiscSalesDocAdd);
-      }
-    FiscalizationManagement.FinalizeFiscalization(SalesHeader."Document Type",SalesHeader."Posting Date",
-      FiscPostedSalesDocAdd."Fisc. Subject",SalesInvoiceHeader,SalesCrMemoHeader,PostingPreview,IsNestedRun);
-    REPEAT
-      FiscSalesCrMemoHeader.GET(TempPostedCrMemos."Document No.");
-      IF NOT FiscPostedSalesDocAdd.GET(FiscSalesCrMemoHeader."Fisc. Entry No.") THEN
-        CLEAR(FiscPostedSalesDocAdd);
-      COMMIT;
-      FiscalizationManagement.FinalizeFiscalization(3,FiscSalesCrMemoHeader."Posting Date",FiscPostedSalesDocAdd."Fisc. Subject",SalesInvoiceHeader,FiscSalesCrMemoHeader,PostingPreview,IsNestedRun);
-    UNTIL TempPostedCrMemos.NEXT = 0;
-  END ELSE BEGIN
-    IF SalesHeader.Invoice THEN BEGIN
-      IF SalesInvoiceHeader."No." <> '' THEN
-        IF NOT FiscPostedSalesDocAdd.GET(SalesInvoiceHeader."Fisc. Entry No.") THEN
-          CLEAR(FiscPostedSalesDocAdd);
-      IF SalesCrMemoHeader."No." <> '' THEN
-        IF NOT FiscPostedSalesDocAdd.GET(SalesCrMemoHeader."Fisc. Entry No.") THEN
-          CLEAR(FiscPostedSalesDocAdd);
-      FiscalizationManagement.FinalizeFiscalization(SalesHeader."Document Type",SalesHeader."Posting Date",
-        FiscPostedSalesDocAdd."Fisc. Subject",SalesInvoiceHeader,SalesCrMemoHeader,PostingPreview,IsNestedRun);
-    END;
-  END;
-  // </VAT.1132>
-END;
-
+    //IF SalesHeader.Invoice THEN BEGIN
+      //FiscalizationManagement.FinalizeFiscalization(SalesHeader."Document Type",SalesHeader."Posting Date",
+       //SalesInvoiceHeader."Fisc. Subject",SalesInvoiceHeader,SalesCrMemoHeader,PostingPreview,IsNestedRun);
+    //END;
 end;
 }

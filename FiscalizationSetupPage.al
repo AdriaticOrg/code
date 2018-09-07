@@ -1,8 +1,9 @@
 page 13062605 "Fiscalization Setup-ADL"
 {
+    Caption ='Fiscalization Setup-ADL';
     PageType = Card;
     SourceTable = "Fiscalization Setup-ADL";
-    InsertAllowed = false;
+    InsertAllowed = true;
     DeleteAllowed = false;
     layout
     {
@@ -12,23 +13,23 @@ page 13062605 "Fiscalization Setup-ADL"
             {
                 field(Active; Active)
                 {
-                    
+                    ApplicationArea = All;
                 }
                 field("Start Date"; Active)
                 {
-                    
+                    ApplicationArea = All;
                 }
                 field("End Date"; Active)
                 {
-                    
+                    ApplicationArea = All;
                 }
                 field("Default Fiscalization Location"; Active)
                 {
-                    
+                    ApplicationArea = All;
                 }
                 field("Default Fiscalization Terminal"; Active)
                 {
-                    
+                    ApplicationArea = All;
                 }
                 
             }
