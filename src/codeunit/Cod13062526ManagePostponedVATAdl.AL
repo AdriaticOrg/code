@@ -839,7 +839,39 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
             Date, AddCurrencyCode, Amt, CurrExchRate.ExchangeRate(Date, AddCurrencyCode)),
             AddCurrency."Amount Rounding Precision"));
     end;
-
+    //<adl.10>
+    procedure SetPostponedVAT(var GenJnlLine: Record "Gen. Journal Line"; SalesHeader: Record "Sales Header"; PostPonedVAT: Boolean; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
+    var
+        VATPostingSetup: Record "VAT Posting Setup";
+    begin
+        IF SalesHeader."VAT Date-Adl" <> SalesHeader."Posting Date" THEN
+            IF GenJnlLine."Gen. Posting Type" = GenJnlLine."Gen. Posting Type"::Sale THEN BEGIN
+                VATPostingSetup.GET(GenJnlLine."VAT Bus. Posting Group", GenJnlLine."VAT Prod. Posting Group");
+                CASE PostPonedVAT OF
+                    TRUE:
+                        BEGIN
+                            GenJnlLine."Postponed VAT-Adl" := GenJnlLine."Postponed VAT-Adl"::"Postponed VAT";
+                            VATPostingSetup.TESTFIELD("Unrealized VAT Type", 0);
+                            VATPostingSetup."Unrealized VAT Type" := VATPostingSetup."Unrealized VAT Type"::Percentage;
+                        END;
+                    FALSE:
+                        BEGIN
+                            GenJnlLine."Postponed VAT-Adl" := 0;
+                            VATPostingSetup."Unrealized VAT Type" := 0;
+                        END;
+                END;
+                VATPostingSetup.MODIFY;
+                IF NOT PostPonedVAT AND (SalesHeader."VAT Date-Adl" <> 0D) THEN BEGIN
+                    GenJnlLine."Postponed VAT-Adl" := GenJnlLine."Postponed VAT-Adl"::"Realized VAT";
+                    GenJnlLine.Amount := -GenJnlLine."VAT Amount";
+                    GenJnlLine."Amount (LCY)" := -GenJnlLine."VAT Amount (LCY)";
+                    GenJnlLine."Posting Date" := SalesHeader."VAT Date-Adl";
+                    GenJnlLine."Account No." := VATPostingSetup.GetSalesAccount(TRUE);
+                    GenJnlPostLine.RunWithCheck(GenJnlLine);
+                END;
+            END;
+    end;
+    //</adl.10>
     var
         AddCurrency: Record Currency;
         GLSetup: Record "General Ledger Setup";
