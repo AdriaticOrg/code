@@ -23,5 +23,19 @@ tableextension 13062541 "UserSetup-adl" extends "User Setup" //91
             DataClassification = ToBeClassified;
         }
         // </adl.24>
+        // <adl.27>
+        field(13062731; "Posting Responsible Person"; Code[50])
+        {
+            Caption = 'Posting Responsible Person';
+            TableRelation = "User Setup"."User ID";
+            DataClassification = ToBeClassified;
+        }
+        field(13062732; "Posting Approver"; Code[50])
+        {
+            Caption = 'Posting Approver';            
+            TableRelation = "User Setup"."User ID";
+            DataClassification = ToBeClassified;
+        }
+        // </adl.27>
     }
 }

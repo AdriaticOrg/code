@@ -7,13 +7,13 @@ tableextension 13062534 "GLAccount-adl" extends "G/L Account"  //15
         {
             Caption = 'FAS Instrument Code';
             DataClassification = ToBeClassified;
-            TableRelation = "FAS Instrument";
+            TableRelation = "FAS Instrument" where ("Type"=const(Posting));
         }
         field(13062642;"FAS Sector Code";Code[10])
         {
             Caption = 'FAS Sector Code';
             DataClassification = ToBeClassified;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
         }
         field(13062643;"FAS Account";Boolean)
         {
@@ -34,6 +34,14 @@ tableextension 13062534 "GLAccount-adl" extends "G/L Account"  //15
             OptionCaption = ' ,Code Mandatory,Same Code,No Code';
             OptionMembers = " ","Code Mandatory","Same Code","No Code";
         }
+        field(13062646; "FAS Type"; Option)
+        {
+            Caption = 'FAS Type';
+            OptionMembers = " ",Assets,Liabilities;
+            OptionCaption = ' ,Assets,Liabilities';
+            DataClassification = ToBeClassified;
+        }
+        
         // </adl.24>
         // <adl.26>
         field(13062681; "BST Value Posting"; Option)

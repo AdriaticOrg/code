@@ -2,26 +2,6 @@ pageextension 13062537 "VATPostingSetupCard-Adl" extends "VAT Posting Setup Card
 {
     layout
     {
-        addafter("Purch. VAT Unreal. Account")
-        {
-            // <adl.10>
-            field("Purch VAT Postponed Account-Adl"; "Purch VAT Postponed Account-Adl")
-            {
-                ApplicationArea = All;
-                TableRelation = "G/L Account";
-            }
-            // </adl.10>
-        }
-        addafter("Sales VAT Unreal. Account")
-        {
-            // <adl.10>
-            field("Sales VAT Postponed Account-Adl"; "Sales VAT Postponed Account-Adl")
-            {
-                ApplicationArea = All;
-                TableRelation = "G/L Account";
-            }
-            // </adl.10>
-        }
         // <adl.14>
         modify("VAT Identifier")
         {
@@ -36,5 +16,23 @@ pageextension 13062537 "VATPostingSetupCard-Adl" extends "VAT Posting Setup Card
             }
         }
         // </adl.14>
+        // <adl.13>
+        addafter("VAT %")
+        {
+            field("VAT % (Informative)-Adl"; "VAT % (Informative)-Adl")
+            {
+                ApplicationArea = All;
+            }
+        }
+        // </adl.13>        
+        addafter("Tax Category")
+        {
+            // <adl.11>
+            field("VAT % (retrograde)-Adl"; "VAT % (retrograde)-Adl")
+            {
+                ApplicationArea = All;
+            }
+            // </adl.11>
+        }
     }
 }

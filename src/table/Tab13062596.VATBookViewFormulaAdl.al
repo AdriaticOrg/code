@@ -126,7 +126,9 @@ table 13062596 "VAT Book View Formula-Adl"
         TempBlob.Blob := ConditionBlob;
 
         RequestPageParametersHelper.ConvertParametersToFilters(RecRef, TempBlob);
+        VATEntry.FilterGroup(10);
         VATEntry.SetView(RecRef.GetView);
+        VATEntry.FilterGroup(0);
     end;
 }
 

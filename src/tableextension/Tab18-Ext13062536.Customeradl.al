@@ -7,7 +7,7 @@ tableextension 13062536 "Customer-adl" extends Customer //18
         {
             Caption = 'FAS Sector Code';
             DataClassification = ToBeClassified;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
         }
         // </adl.24>
         // <adl.25>
@@ -15,7 +15,7 @@ tableextension 13062536 "Customer-adl" extends Customer //18
         {
             Caption = 'KRD Non-Resident Sector Code';
             DataClassification = ToBeClassified;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
         }
         field(13062662; "KRD Affiliation Type"; Code[10])
         {

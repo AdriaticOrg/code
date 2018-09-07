@@ -1,8 +1,8 @@
-report 13062681 "Suggest BST"
+report 13062681 "Suggest BST Lines"
 {
     UsageCategory = Administration;
     ProcessingOnly = true;
-    Caption = 'Suggest BST';
+    Caption = 'Suggest BST Lines';
     
     dataset
     {

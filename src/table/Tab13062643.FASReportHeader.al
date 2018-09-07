@@ -96,6 +96,12 @@ table 13062643 "FAS Report Header"
             Editable = false;
             DataClassification = ToBeClassified;
         }  
+        field(30; "Previous Report No."; Code[20])
+        {
+            Caption = 'Previous Report No.';
+            TableRelation = "FAS Report Header";
+            DataClassification = ToBeClassified;
+        }          
         field(40;"Resp. User ID";Text[100]) {
             Caption = 'Resp. User ID';
             TableRelation = "User Setup";
@@ -135,7 +141,7 @@ table 13062643 "FAS Report Header"
 
     trigger OnModify()
     begin
-        TestField(Status,Status::Open);
+        TestStatusOpen("No.");
     end;
 
     local procedure TestNoSeries()
@@ -174,6 +180,14 @@ table 13062643 "FAS Report Header"
         else
             Status := Status::Open;        
         Modify();
+    end;
+
+    procedure TestStatusOpen(DocNo:Code[20])
+    var
+        FASRepHead:Record "FAS Report Header";
+    begin
+        FASRepHead.get(DocNo);
+        FASRepHead.TestField(Status,FASRepHead.Status::Open);
     end;
     
     var

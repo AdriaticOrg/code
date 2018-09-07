@@ -12,6 +12,9 @@ page 13062644 "FAS Report Subform"
         {
             repeater(Group)
             {
+                field("FAS Type";"FAS Type") {
+                    ApplicationArea = All;
+                }
                 field(Description; Description)
                 {
                     ApplicationArea = All;
@@ -28,10 +31,15 @@ page 13062644 "FAS Report Subform"
                 {
                     ApplicationArea = All;
                 }
-                field("Amount"; "Amount")
-                {
+                field("Transactions Amt. in Period";"Transactions Amt. in Period") {
                     ApplicationArea = All;
                 }
+                field("Changes Amt. in Period";"Changes Amt. in Period") {
+                    ApplicationArea = All;
+                }
+                field("Period Closing Balance";"Period Closing Balance") {
+                    ApplicationArea = All;
+                }                
                 
             }
         }

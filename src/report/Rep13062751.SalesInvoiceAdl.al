@@ -1028,7 +1028,7 @@ Report 13062751 "Sales - Invoice Adl"
     end;
 
     var
-        Text004: TextConst Comment = '%1 = Document No.', ENU = 'Sales - Invoice %1';
+        Text004: Label 'Sales - Invoice %1';
         PageCaptionCap: Label 'Page %1 of %2';
         GLSetup: Record "General Ledger Setup";
         ShipmentMethod: Record "Shipment Method";
@@ -1148,7 +1148,7 @@ Report 13062751 "Sales - Invoice Adl"
     var
         MailManagement: Codeunit "Mail Management";
     begin
-        //exit(CurrReport.PREVIEW or MailManagement.IsHandlingGetEmailBody);
+        exit(CurrReport.PREVIEW or MailManagement.IsHandlingGetEmailBody);
     end;
 
     local procedure InitializeShipmentBuffer();

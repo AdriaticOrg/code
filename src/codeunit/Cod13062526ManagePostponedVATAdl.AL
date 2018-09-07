@@ -65,13 +65,8 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                         VATEntry2."VAT Calculation Type"::"Reverse Charge VAT",
                         VATEntry2."VAT Calculation Type"::"Full VAT":
                             BEGIN
-                                SalesVATAccount := VATPostingSetup.GetSalesAccount(FALSE);
-                                IF GenJnlLine."Postponed VAT-Adl" = GenJnlLine."Postponed VAT-Adl"::"Postponed VAT" THEN begin
-                                    VATPostingSetup.TestField("Sales VAT Postponed Account-Adl");
-                                    SalesVATUnrealAccount := VATPostingSetup."Sales VAT Postponed Account-Adl";
-                                end
-                                ELSE
-                                    SalesVATUnrealAccount := VATPostingSetup.GetSalesAccount(TRUE);
+                                SalesVATAccount := VATPostingSetup.GetSalesAccount(false);
+                                SalesVATUnrealAccount := VATPostingSetup.GetSalesAccount(true);
                             END;
                         VATEntry2."VAT Calculation Type"::"Sales Tax":
                             BEGIN
@@ -174,13 +169,16 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                         VATEntry2."VAT Calculation Type"::"Normal VAT",
                         VATEntry2."VAT Calculation Type"::"Full VAT":
                             BEGIN
+                                //IF GenJnlLine."Postponed VAT-Adl" = GenJnlLine."Postponed VAT-Adl"::"Postponed VAT" THEN begin
+                                // VATPostingSetup.TestField("Purch VAT Postponed Account-Adl");
+                                // PurchVATUnrealAccount := VATPostingSetup."Purch VAT Postponed Account-Adl";
+                                //VATPostingSetup.TestField("Purch. VAT Unreal. Account");
+                                //PurchVATUnrealAccount := VATPostingSetup."Purch. VAT Unreal. Account";
+                                //end
+                                //ELSE
+                                //PurchVATUnrealAccount := VATPostingSetup.GetPurchAccount(TRUE);
                                 PurchVATAccount := VATPostingSetup.GetPurchAccount(FALSE);
-                                IF GenJnlLine."Postponed VAT-Adl" = GenJnlLine."Postponed VAT-Adl"::"Postponed VAT" THEN begin
-                                    VATPostingSetup.TestField("Purch VAT Postponed Account-Adl");
-                                    PurchVATUnrealAccount := VATPostingSetup."Purch VAT Postponed Account-Adl";
-                                end
-                                ELSE
-                                    PurchVATUnrealAccount := VATPostingSetup.GetPurchAccount(TRUE);
+                                PurchVATUnrealAccount := VATPostingSetup.GetPurchAccount(TRUE);
                             END;
                         VATEntry2."VAT Calculation Type"::"Reverse Charge VAT":
                             BEGIN
@@ -225,7 +223,6 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                             VATEntry2."Add.-Curr. Rem. Unreal. Base" * VATPart,
                             AddCurrency."Amount Rounding Precision");
                     END;
-
                     InitGLEntryVAT(
                         GenJnlLine, PurchVATUnrealAccount, PurchVATAccount, -VATAmount, -VATAmountAddCurr, FALSE);
                     InitGLEntryVATCopy(
@@ -277,7 +274,10 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     end;
 
     procedure PostUnrealVATEntry(GenJnlLine: Record "Gen. Journal Line"; VAR VATEntry2: Record "VAT Entry"; VATAmount: Decimal; VATBase: Decimal; VATAmountAddCurr: Decimal; VATBaseAddCurr: Decimal)
+    var
+        VATPostingSetup: Record "VAT Posting Setup";
     begin
+        VATPostingSetup.GET(VATEntry2."VAT Bus. Posting Group", VATEntry2."VAT Prod. Posting Group");
         VATEntry.LOCKTABLE;
         VATEntry := VATEntry2;
         VATEntry."Entry No." := NextVATEntryNo;
@@ -299,11 +299,12 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         VATEntry."Sales Tax Connection No." := NextConnectionNo;
         VATEntry."Unrealized VAT Entry No." := VATEntry2."Entry No.";
         VATEntry."Postponed VAT-Adl" := GenJnlLine."Postponed VAT-Adl"::"Realized VAT";
+        if VATPostingSetup."VAT % (retrograde)-Adl" <> 0 then
+            VATEntry."VAT Base (retro.)-Adl" := (VATBase + VATAmount) * 100 / VATPostingSetup."VAT % (retrograde)-Adl"; //<adl.11>
         VATEntry.INSERT(TRUE);
         NextVATEntryNo := NextVATEntryNo + 1;
 
-        VATEntry2."Remaining Unrealized Amount" :=
-        VATEntry2."Remaining Unrealized Amount" - VATEntry.Amount;
+        VATEntry2."Remaining Unrealized Amount" := VATEntry2."Remaining Unrealized Amount" - VATEntry.Amount;
         VATEntry2."Remaining Unrealized Base" := VATEntry2."Remaining Unrealized Base" - VATBase;
         VATEntry2."Add.-Curr. Rem. Unreal. Amount" :=
         VATEntry2."Add.-Curr. Rem. Unreal. Amount" - VATEntry."Additional-Currency Amount";
@@ -628,7 +629,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
         IF CostAccSetup.GET THEN
             IF CostAccSetup."Auto Transfer from G/L" THEN
-                //TransferGlEntriesToCA.GetGLEntries;
+                TransferGlEntriesToCA.GetGLEntries;
 
         FirstEntryNo := 0;
     end;
@@ -838,7 +839,39 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
             Date, AddCurrencyCode, Amt, CurrExchRate.ExchangeRate(Date, AddCurrencyCode)),
             AddCurrency."Amount Rounding Precision"));
     end;
-
+    //<adl.10>
+    procedure SetPostponedVAT(var GenJnlLine: Record "Gen. Journal Line"; SalesHeader: Record "Sales Header"; PostPonedVAT: Boolean; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
+    var
+        VATPostingSetup: Record "VAT Posting Setup";
+    begin
+        IF SalesHeader."VAT Date-Adl" <> SalesHeader."Posting Date" THEN
+            IF GenJnlLine."Gen. Posting Type" = GenJnlLine."Gen. Posting Type"::Sale THEN BEGIN
+                VATPostingSetup.GET(GenJnlLine."VAT Bus. Posting Group", GenJnlLine."VAT Prod. Posting Group");
+                CASE PostPonedVAT OF
+                    TRUE:
+                        BEGIN
+                            GenJnlLine."Postponed VAT-Adl" := GenJnlLine."Postponed VAT-Adl"::"Postponed VAT";
+                            VATPostingSetup.TESTFIELD("Unrealized VAT Type", 0);
+                            VATPostingSetup."Unrealized VAT Type" := VATPostingSetup."Unrealized VAT Type"::Percentage;
+                        END;
+                    FALSE:
+                        BEGIN
+                            GenJnlLine."Postponed VAT-Adl" := 0;
+                            VATPostingSetup."Unrealized VAT Type" := 0;
+                        END;
+                END;
+                VATPostingSetup.MODIFY;
+                IF NOT PostPonedVAT AND (SalesHeader."VAT Date-Adl" <> 0D) THEN BEGIN
+                    GenJnlLine."Postponed VAT-Adl" := GenJnlLine."Postponed VAT-Adl"::"Realized VAT";
+                    GenJnlLine.Amount := -GenJnlLine."VAT Amount";
+                    GenJnlLine."Amount (LCY)" := -GenJnlLine."VAT Amount (LCY)";
+                    GenJnlLine."Posting Date" := SalesHeader."VAT Date-Adl";
+                    GenJnlLine."Account No." := VATPostingSetup.GetSalesAccount(TRUE);
+                    GenJnlPostLine.RunWithCheck(GenJnlLine);
+                END;
+            END;
+    end;
+    //</adl.10>
     var
         AddCurrency: Record Currency;
         GLSetup: Record "General Ledger Setup";
@@ -882,7 +915,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         BalanceCheckAddCurrAmount: Decimal;
         BalanceCheckAddCurrAmount2: Decimal;
         DimensionUsedErr: Label 'A dimension used in %1 %2, %3, %4 has caused an error. %5.';
-        NeedsRoundingErr: Label  '%1 needs to be rounded';
+        NeedsRoundingErr: Label '%1 needs to be rounded';
         ResidualRoundingErr: Label 'Residual caused by rounding of %1';
 
         Text015: Label 'You cannot reverse the transaction, because it has already been reversed.';

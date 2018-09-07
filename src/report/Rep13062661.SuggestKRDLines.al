@@ -14,6 +14,9 @@ report 13062661 "Suggest KRD Lines"
             var
                 KRDRepLine:Record "KRD Report Line";
             begin
+                GenLedgSetup.get();
+                GenLedgSetup.TestField("LCY Code"); 
+
                 KRDRepLine.Reset();
                 KRDRepLine.SetRange("Document No.",KRDRepHead."No.");
                 if DeleteExisting then
@@ -22,8 +25,8 @@ report 13062661 "Suggest KRD Lines"
                 if KRDRepLine.FindLast() then
                     NewLineNo := KRDRepLine."Line No";
 
-                if KRDRepHead."Previous Report No." = '' then
-                    InitialRep := true;
+                InitialRep := KRDRepHead."Previous Report No." = '';                    
+                   
             end;
 
             trigger OnPostDataItem()
@@ -83,9 +86,10 @@ report 13062661 "Suggest KRD Lines"
         DeleteExisting:Boolean;
         KRDRepDocNo:Code[20];
         KRDRepHead:Record "KRD Report Header";
+        GenLedgSetup:Record "General Ledger Setup";
         InitialRep:Boolean;
         NewLineNo:Integer;
-        Msg01:Label 'Processgin complete';
+        Msg01:Label 'Processing complete';
     procedure SetKRDRepDocNo(KRDDocNoLcl:Code[20]) 
     begin
         KRDRepDocNo := KRDDocNoLcl;        
@@ -97,6 +101,11 @@ report 13062661 "Suggest KRD Lines"
         IncrAmt:Decimal;
         DecrAmt:Decimal;        
     begin
+        if CLE."Currency Code" = '' then
+            CLE."Currency Code" := GenLedgSetup."LCY Code";
+        if VLE."Currency Code" = '' then
+            VLE."Currency Code" := GenLedgSetup."LCY Code";
+
         case EntryType of
             EntryType::Customer:
                 begin
@@ -271,7 +280,7 @@ report 13062661 "Suggest KRD Lines"
             //OldKRDRepLine.SetRange("Other Changes",OtherChanges);
             if OldKRDRepLine.FindSet() then begin
                 repeat
-                    OpeningBal := OpeningBal + OldKRDRepLine."Increase Amount" - OldKRDRepLine."Decrease Amount";
+                    OpeningBal := OpeningBal + OldKRDRepLine."Closing Balance";
                 until OldKRDRepLine.Next() = 0;
             end;
             

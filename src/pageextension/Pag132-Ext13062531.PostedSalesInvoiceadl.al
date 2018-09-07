@@ -17,8 +17,15 @@ pageextension 13062531 "PostedSalesInvoice-Adl" extends "Posted Sales Invoice" /
                 ApplicationArea = All;
                 Editable = false;
             }
-            // </adl.10>
+            // </adl.10>            
         }
+        // <adl.22>
+        addafter("EU 3-Party Trade") {
+            field("EU Customs Procedure";"EU Customs Procedure") {
+                ApplicationArea =All;
+            }
+        }
+        // </adl.22>        
     }
     actions
     {

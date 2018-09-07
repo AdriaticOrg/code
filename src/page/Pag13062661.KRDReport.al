@@ -71,6 +71,7 @@ page 13062661 "KRD Report"
             {
                 Caption = 'Suggest Lines';
                 Promoted = true;
+                Image = CalculateLines;
                 ApplicationArea = All;    
 
                 trigger OnAction()
@@ -88,6 +89,7 @@ page 13062661 "KRD Report"
             action("Export Report") {
                 Caption = 'Export Report';
                 Promoted = true;
+                Image = Export;
                 ApplicationArea = All;                
 
                 trigger OnAction()
@@ -101,6 +103,7 @@ page 13062661 "KRD Report"
             }
             action("Release") {
                 Caption = 'Release';
+                Image = ReleaseDoc;
                 ApplicationArea = All;
 
                 trigger OnAction()
@@ -111,6 +114,7 @@ page 13062661 "KRD Report"
             }
             action("Reopen") {
                 Caption = 'Reopen';
+                Image = ReOpen;
                 ApplicationArea = All;
 
                 trigger OnAction()

@@ -31,7 +31,7 @@ tableextension 13062537 "CustLedgEntry-adl" extends "Cust. Ledger Entry" //21
         {
             Caption = 'KRD Non-Resident Sector Code';
             DataClassification = ToBeClassified;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
         } 
         field(13062666; "KRD Country/Region Code"; Code[10])
         {
@@ -50,8 +50,34 @@ tableextension 13062537 "CustLedgEntry-adl" extends "Cust. Ledger Entry" //21
         {
             Caption = 'FAS Sector Code';
             DataClassification = ToBeClassified;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector" where ("Type"=const(Posting));
         }
         // </adl.24>
     }
+    // <adl.24>
+    procedure CopyFASFields(Customer: Record Customer)
+    begin
+        "FAS Sector Code" := Customer."FAS Sector Code";
+    end;
+    // </adl.24>
+    // <adl.25>
+    procedure CopyKRDFields(Customer: Record Customer)
+    var
+        ReportSISetup: Record "Reporting_SI Setup";
+    begin
+        "KRD Country/Region Code" := Customer."Country/Region Code";
+        "KRD Non-Residnet Sector Code" := Customer."KRD Non-Residnet Sector Code";
+        "KRD Affiliation Type" := Customer."KRD Affiliation Type";
+
+        if ("KRD Affiliation Type" = '') and ReportSISetup.Get() then
+            "KRD Affiliation Type" := ReportSISetup."Default KRD Affiliation Type";
+    end;
+
+    procedure CopyKRDFields(CustPstgGrp: Record "Customer Posting Group")
+    begin
+        "KRD Instrument Type" := CustPstgGrp."KRD Instrument Type";
+        "KRD Claim/Liability" := CustPstgGrp."KRD Claim/Liability";
+        "KRD Maturity" := CustPstgGrp."KRD Maturity";
+    end;
+    // </adl.25>
 }

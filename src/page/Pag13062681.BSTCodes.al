@@ -2,7 +2,7 @@ page 13062681 "BST Codes"
 {
     PageType = List;
     ApplicationArea = All;
-    UsageCategory = Lists;
+    UsageCategory = Administration;
     Editable = true;
     SourceTable = "BST Code";
     

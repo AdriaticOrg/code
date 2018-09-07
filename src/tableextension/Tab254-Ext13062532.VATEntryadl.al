@@ -5,9 +5,9 @@ tableextension 13062532 "VATEntry-Adl" extends "VAT Entry" //254
         // <adl.10>
         field(13062526; "Postponed VAT-Adl"; Option)
         {
-            DataClassification = ToBeClassified;
             Caption = 'Postponed VAT';
             OptionMembers = "Realized VAT","Postponed VAT";
+            DataClassification = ToBeClassified;
         }
         // </adl.10>
         // <adl.14>
@@ -29,8 +29,25 @@ tableextension 13062532 "VATEntry-Adl" extends "VAT Entry" //254
         {
             Caption = 'VAT Base (retro.)';
             DataClassification = CustomerContent;
-            BlankZero = true;
+            //BlankZero = true;
+        }
+        field(13062527; "VAT % (retrograde)-Adl"; Decimal)
+        {
+            Caption = 'VAT % (retrograde)';
+            DataClassification = ToBeClassified;
         }
         // </adl.11>
+        // <adl.22>
+        field(13062601; "VAT Correction Date"; Date)
+        {
+            Caption = 'VAT Correction Date';
+            DataClassification = ToBeClassified;
+        } 
+        field(13062602; "EU Customs Procedure"; Boolean)
+        {
+            Caption = 'EU Customs Procedure';
+            DataClassification = ToBeClassified;
+        }     
+        // </adl.22>         
     }
 }

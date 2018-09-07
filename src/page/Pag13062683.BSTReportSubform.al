@@ -24,7 +24,7 @@ page 13062683 "BST Report Subform"
                 field("Country/Region Code";"Country/Region Code") {
                     ApplicationArea = All;
                 }
-                field("Country/Region No.";"Country/Region Code") {
+                field("Country/Region No.";"Country/Region No.") {
                     ApplicationArea = All;
                 }
                 field("Income Amount";"Income Amount") {

@@ -11,6 +11,9 @@ page 13062660 "Reporting_SI Setup"
         {
             group(FAS)
             {
+                field("FAS Enabled";"FAS Enabled") {
+                    ApplicationArea = All;
+                }
                 field("FAS Report No. Series";"FAS Report No. Series") {
                     ApplicationArea = All;
                 }
@@ -31,6 +34,9 @@ page 13062660 "Reporting_SI Setup"
                 }
             }
             group(KRD){
+                field("KRD Enabled";"KRD Enabled") {
+                    ApplicationArea = All;
+                }
                 field("KRD Report No. Series";"KRD Report No. Series") {
                     ApplicationArea = All;
                 }
@@ -45,6 +51,9 @@ page 13062660 "Reporting_SI Setup"
                 }          
             }
             group(BST) {
+                field("BST Enabled";"BST Enabled") {
+                    ApplicationArea = All;
+                }
                 field("BST Report No. Series";"BST Report No. Series") {
                     ApplicationArea = All;
                 }
@@ -55,6 +64,31 @@ page 13062660 "Reporting_SI Setup"
                     ApplicationArea = All;
                 }
             }
+            group(VIES) {
+                field("VIES Enabled";"VIES Enabled") {
+                    ApplicationArea = All;
+                }
+                field("VIES Report No. Series";"VIES Report No. Series") {
+                    ApplicationArea = All;
+                }
+                field("VIES Prep. By User ID";"VIES Prep. By User ID") {
+                    ApplicationArea =All;
+                }
+                field("VIES Resp. User ID";"VIES Resp. User ID") {
+                    ApplicationArea =All;
+                }
+            }
+            group(PDO) {
+                field("PDO Report No. Series";"PDO Report No. Series") {
+                    ApplicationArea = All;
+                }
+                field("PDO Prep. By User ID";"PDO Prep. By User ID") {
+                    ApplicationArea =All;
+                }
+                field("PDO Resp. User ID";"PDO Resp. User ID") {
+                    ApplicationArea =All;
+                }
+            }            
         }
     }
     

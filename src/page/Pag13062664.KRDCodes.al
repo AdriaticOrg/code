@@ -2,7 +2,7 @@ page 13062664 "KRD Codes"
 {
     PageType = List;
     ApplicationArea = All;
-    UsageCategory = Lists;
+    UsageCategory = Administration;
     SourceTable = "KRD Code";
     Caption = 'KRD Codes';
     
