@@ -34,7 +34,7 @@ table 13062601 "Fiscalization Setup-ADL"
             DataClassification = ToBeClassified;
             
         }
-        field(7;"End Date"; Boolean)
+        field(7;"End Date"; Date)
         {
             DataClassification = ToBeClassified;
             

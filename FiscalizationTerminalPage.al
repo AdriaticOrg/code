@@ -1,6 +1,8 @@
 page 13062606 "Fisc. Terminal List-ADL"
 {
     PageType = List;
+    UsageCategory = Documents;
+    ApplicationArea = All;
     SourceTable = "Fiscalization Terminal-ADL";
     SourceTableView = SORTING("Fisc. Terminal Code","Fisc. Location Code","User ID");
     
@@ -12,27 +14,28 @@ page 13062606 "Fisc. Terminal List-ADL"
             {
                 field("Fisc. Terminal Code"; "Fisc. Terminal Code")
                 {
-                    
+                    ApplicationArea = All;
                 }
                  field(Name; Name)
                 {
-                    
+                    ApplicationArea = All;
                 }
                 field("Fisc. No. Series"; "Fisc. No. Series")
                 {
-                    
+                    ApplicationArea = All;
                 }
                 field("User ID"; "User ID")
                 {
                   Visible = VisibleHR;   
+                  ApplicationArea = All;
                 }
                 field("Creation Date"; "Creation Date")
                 {
-                    
+                    ApplicationArea = All;
                 }
                 field("Creation Time"; "Creation Time")
                 {
-                    
+                    ApplicationArea = All;
                 }
                
             }
