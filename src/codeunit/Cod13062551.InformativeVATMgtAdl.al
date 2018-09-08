@@ -1,11 +1,15 @@
 codeunit 13062551 "Informative VAT Mgt.-Adl"
 {
+    var
+        ADLCore: Codeunit "Adl Core";
+        "ADL Features": Option VAT,FAS,KRD,BST,VIES;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'VAT Prod. Posting Group', true, false)]
     local procedure OnBeforeValidateVatProsPostGroupInSalesLine(var Rec: Record "Sales Line")
     var
         VATPostingSetup: Record "VAT Posting Setup";
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         // <adl.13>
         with Rec do begin
             if VATPostingSetup.get("VAT Bus. Posting Group", "VAT Prod. Posting Group") then

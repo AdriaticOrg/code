@@ -25,6 +25,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         TaxJurisdiction: Record "Tax Jurisdiction";
         GLSetup: Record "General Ledger Setup";
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         PaidAmount := CustLedgEntry2.Amount - CustLedgEntry2."Remaining Amount";
         VATEntry2.RESET;
         VATEntry2.SETCURRENTKEY("Transaction No.");
@@ -129,6 +130,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         PurchReverseUnrealAccount: Code[20];
         LastConnectionNo: Integer;
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         VATEntry2.RESET;
         VATEntry2.SETCURRENTKEY("Transaction No.");
         VATEntry2.SETRANGE("Transaction No.", VendLedgEntry2."Transaction No.");
@@ -252,6 +254,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     var
         GLEntry: Record "G/L Entry";
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         IF UseAmtAddCurr THEN
             InitGLEntry(GenJnlLine, GLEntry, AccNo, Amount, AmountAddCurr, TRUE, TRUE)
         ELSE BEGIN
@@ -266,6 +269,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     var
         GLEntry: Record "G/L Entry";
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         InitGLEntry(GenJnlLine, GLEntry, AccNo, Amount, 0, FALSE, TRUE);
         GLEntry."Additional-Currency Amount" := AmountAddCurr;
         GLEntry."Bal. Account No." := BalAccNo;
@@ -277,6 +281,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     var
         VATPostingSetup: Record "VAT Posting Setup";
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         VATPostingSetup.GET(VATEntry2."VAT Bus. Posting Group", VATEntry2."VAT Prod. Posting Group");
         VATEntry.LOCKTABLE;
         VATEntry := VATEntry2;
@@ -315,6 +320,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
     procedure InsertSummarizedVAT(GenJnlLine: Record "Gen. Journal Line")
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         IF TempGLEntryVAT.FINDSET THEN BEGIN
             REPEAT
                 InsertGLEntry(GenJnlLine, TempGLEntryVAT, TRUE);
@@ -329,6 +335,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     var
         GLAcc: Record "G/L Account";
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         IF GLAccNo <> '' THEN BEGIN
             GLAcc.GET(GLAccNo);
             GLAcc.TESTFIELD(Blocked, FALSE);
@@ -360,6 +367,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     var
         InsertedTempVAT: Boolean;
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         InsertedTempVAT := FALSE;
         IF SummarizeGLEntries THEN
             IF TempGLEntryVAT.FINDSET THEN
@@ -389,6 +397,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         TableID: array[10] of Integer;
         AccNo: array[10] of Code[20];
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         IF (GenJnlLine.Amount = 0) AND (GenJnlLine."Amount (LCY)" = 0) THEN
             EXIT;
 
@@ -409,6 +418,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
     procedure GLCalcAddCurrency(Amount: Decimal; AddCurrAmount: Decimal; OldAddCurrAmount: Decimal; UseAddCurrAmount: Boolean; GenJnlLine: Record "Gen. Journal Line"): Decimal
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit(0.0);
         IF (AddCurrencyCode <> '') AND
         (GenJnlLine."Additional-Currency Posting" = GenJnlLine."Additional-Currency Posting"::None)
         THEN BEGIN
@@ -422,6 +432,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
     procedure ExchangeAmtLCYToFCY2(Amount: Decimal): Decimal
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit(0.0);
         IF UseCurrFactorOnly THEN
             EXIT(
                 ROUND(
@@ -436,6 +447,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
     procedure ContinuePosting(GenJnlLine: Record "Gen. Journal Line")
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         WITH GenJnlLine DO BEGIN
             IF (LastDocType <> "Document Type") OR (LastDocNo <> "Document No.") OR
                 (LastDate <> "Posting Date") OR ((CurrentBalance = 0) AND (TotalAddCurrAmount = 0)) AND NOT "System-Created Entry"
@@ -455,12 +467,14 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
     procedure CheckPostUnrealizedVAT(GenJnlLine: Record "Gen. Journal Line"; CheckCurrentBalance: Boolean)
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         IF CheckCurrentBalance AND (CurrentBalance = 0) OR NOT CheckCurrentBalance THEN
             PostUnrealizedVAT(GenJnlLine);
     end;
 
     procedure PostUnrealizedVAT(GenJnlLine: Record "Gen. Journal Line")
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         IF CheckUnrealizedCust THEN BEGIN
             CustUnrealizedVAT(GenJnlLine, UnrealizedCustLedgEntry, UnrealizedRemainingAmountCust);
             CheckUnrealizedCust := FALSE;
@@ -475,6 +489,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     var
         NewCurrencyDate: Date;
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         IF AddCurrencyCode = '' THEN
             EXIT;
 
@@ -505,6 +520,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
     procedure InitLastDocDate(GenJnlLine: Record "Gen. Journal Line")
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         WITH GenJnlLine DO BEGIN
             LastDocType := "Document Type";
             LastDocNo := "Document No.";
@@ -514,6 +530,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
     procedure CalculateCurrentBalance(AccountNo: Code[20]; BalAccountNo: Code[20]; InclVATAmount: Boolean; AmountLCY: Decimal; VATAmount: Decimal)
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         IF (AccountNo <> '') AND (BalAccountNo <> '') THEN
             EXIT;
 
@@ -534,6 +551,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         GenJnlTemplate: Record "Gen. Journal Template";
         AccountingPeriod: Record "Accounting Period";
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         WITH GenJnlLine DO BEGIN
             GlobalGLEntry.LOCKTABLE;
             IF GlobalGLEntry.FINDLAST THEN BEGIN
@@ -599,6 +617,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         TransferGlEntriesToCA: Codeunit "Transfer GL Entries to CA";
         IsTransactionConsistent: Boolean;
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         IsTransactionConsistent :=
         (BalanceCheckAmount = 0) AND (BalanceCheckAmount2 = 0) AND
         (BalanceCheckAddCurrAmount = 0) AND (BalanceCheckAddCurrAmount2 = 0);
@@ -628,14 +647,15 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         GlobalGLEntry.CONSISTENT(IsTransactionConsistent);
 
         IF CostAccSetup.GET THEN
-            IF CostAccSetup."Auto Transfer from G/L" THEN                
-                TransferGlEntriesToCA.GetGLEntries;                
+            IF CostAccSetup."Auto Transfer from G/L" THEN
+                TransferGlEntriesToCA.GetGLEntries;
 
         FirstEntryNo := 0;
     end;
 
     procedure InsertGLEntry(GenJnlLine: Record "Gen. Journal Line"; GLEntry: Record "G/L Entry"; CalcAddCurrResiduals: Boolean)
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         WITH GLEntry DO BEGIN
             TESTFIELD("G/L Account No.");
 
@@ -665,6 +685,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
     procedure UpdateCheckAmounts(PostingDate: Date; Amount: Decimal; AddCurrAmount: Decimal; VAR BalanceCheckAmount: Decimal; VAR BalanceCheckAmount2: Decimal; VAR BalanceCheckAddCurrAmount: Decimal; VAR BalanceCheckAddCurrAmount2: Decimal)
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         IF PostingDate = NORMALDATE(PostingDate) THEN BEGIN
             BalanceCheckAmount :=
                 BalanceCheckAmount + Amount * ((PostingDate - 00000101D) MOD 99 + 1);
@@ -702,6 +723,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         GLAcc: Record "G/L Account";
         GLEntry: Record "G/L Entry";
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         IF AddCurrencyCode = '' THEN
             EXIT;
 
@@ -759,6 +781,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         GenJnlLine: Record "Gen. Journal Line";
         ReversedGLEntryTemp: Record "G/L Entry" temporary;
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         IF VATEntry.FINDSET THEN
             REPEAT
                 IF VATEntry."Reversed by Entry No." <> 0 THEN
@@ -816,6 +839,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     var
         GLEntry: Record "G/L Entry";
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         IF UseAmountAddCurr THEN
             InitGLEntry(GenJnlLine, GLEntry, AccNo, Amount, AmountAddCurr, TRUE, TRUE)
         ELSE BEGIN
@@ -827,8 +851,9 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
     procedure CalcAddCurrForUnapplication(Date: Date; Amt: Decimal): Decimal
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit(0.0);
         IF AddCurrencyCode = '' THEN
-            EXIT;
+            EXIT(0.0);
 
         AddCurrency.GET(AddCurrencyCode);
         AddCurrency.TESTFIELD("Amount Rounding Precision");
@@ -844,6 +869,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     var
         VATPostingSetup: Record "VAT Posting Setup";
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         IF SalesHeader."VAT Date-Adl" <> SalesHeader."Posting Date" THEN
             IF GenJnlLine."Gen. Posting Type" = GenJnlLine."Gen. Posting Type"::Sale THEN BEGIN
                 VATPostingSetup.GET(GenJnlLine."VAT Bus. Posting Group", GenJnlLine."VAT Prod. Posting Group");
@@ -873,6 +899,8 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     end;
     //</adl.10>
     var
+        ADLCore: Codeunit "Adl Core";
+        "ADL Features": Option VAT,FAS,KRD,BST,VIES;
         AddCurrency: Record Currency;
         GLSetup: Record "General Ledger Setup";
         VATEntry: Record "VAT Entry";

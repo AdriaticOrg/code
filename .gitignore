@@ -9,6 +9,5 @@ todo
 .alpackages
 .vscode/*
 !.vscode/launch.json.default
-app.json
 todo/*
 

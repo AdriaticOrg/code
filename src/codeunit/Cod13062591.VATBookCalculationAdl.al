@@ -1,6 +1,8 @@
 codeunit 13062591 "VAT Book Calculation-Adl"
 {
     var
+        ADLCore: Codeunit "Adl Core";
+        "ADL Features": Option VAT,FAS,KRD,BST,VIES;
         CallLevel: Integer;
         CircularRefErr: Label 'Because of circular references, the program cannot calculate a formula.';
 
@@ -8,6 +10,7 @@ codeunit 13062591 "VAT Book Calculation-Adl"
     var
         TempValue: Decimal;
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         with VATBookViewFormula do begin
             if IsFirstValue then begin
                 case Value1 of
@@ -67,6 +70,7 @@ codeunit 13062591 "VAT Book Calculation-Adl"
     var
         VATBookGroupIdentifier: Record "VAT Book Group Identifier-Adl";
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit('');
         with VATBookGroup do begin
             VATIdentifierFilter := '';
             VATBookGroupIdentifier.Reset;
@@ -87,6 +91,7 @@ codeunit 13062591 "VAT Book Calculation-Adl"
     var
         VATBookViewFormula: Record "VAT Book View Formula-Adl";
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         VATBookViewFormula.Reset;
         VATBookViewFormula.SetRange("VAT Book Code", VATBookGroup."VAT Book Code");
         VATBookViewFormula.SetRange("VAT Book Group Code", VATBookGroup.Code);
@@ -127,6 +132,7 @@ codeunit 13062591 "VAT Book Calculation-Adl"
         Expression: Text;
         VATEntry: Record "VAT Entry";
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit(0.0);
         Result := 0;
         if VATBookGroup."Group Type" = VATBookGroup."Group Type"::Total then
             Expression := VATBookGroup.Totaling

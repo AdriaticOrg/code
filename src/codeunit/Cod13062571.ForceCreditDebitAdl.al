@@ -1,10 +1,15 @@
 codeunit 13062571 "ForceCreditDebit-Adl"
 {
+    var
+        ADLCore: Codeunit "Adl Core";
+        "ADL Features": Option VAT,FAS,KRD,BST,VIES;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertGLEntryBuffer', '', false, false)]
     local procedure CheckDebitCredit(var TempGLEntryBuf: Record "G/L Entry"; var GenJournalLine: Record "Gen. Journal Line");
     var
         GLAccount: Record "G/L Account";
     begin
+        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
         with GLAccount do begin
             Get(TempGLEntryBuf."G/L Account No.");
             if "Debit/Credit" = "Debit/Credit"::Both then
