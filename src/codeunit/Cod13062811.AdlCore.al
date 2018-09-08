@@ -14,8 +14,8 @@ codeunit 13062811 "Adl Core"
 
             if (Feature = Feature::VAT) and "VAT Enabled" then exit(true);
 
-            if (Feature = Feature::RepSI) and "Rep SI Enabled" then exit(true);
-            if (Feature = Feature::RepSI) and "Rep SI Enabled" then exit(true);
+            if (Feature = Feature::RepHR) and "Rep HR Enabled" then exit(true);
+            if (Feature = Feature::RepRS) and "Rep RS Enabled" then exit(true);
             if (Feature = Feature::RepSI) and "Rep SI Enabled" then exit(true);
 
             if (Feature = Feature::FAS) and "FAS Enabled" then exit(true);
