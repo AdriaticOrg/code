@@ -8,6 +8,7 @@ pageextension 13062533 "PostedPurchaseInvoice-Adl" extends "Posted Purchase Invo
             field("VAT Date -Adl"; "VAT Date-Adl")
             {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
                 Editable = false;
             }
             // </adl.6>
@@ -15,6 +16,7 @@ pageextension 13062533 "PostedPurchaseInvoice-Adl" extends "Posted Purchase Invo
             field("Postponed VAT -Adl"; "Postponed VAT-Adl")
             {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
                 Editable = false;
             }
             // </adl.10>
@@ -31,6 +33,8 @@ pageextension 13062533 "PostedPurchaseInvoice-Adl" extends "Posted Purchase Invo
                 {
                     Caption = 'Post postponed VAT';
                     ApplicationArea = All;
+                    Visible = VATFeatureEnabled;
+
                     trigger OnAction()
                     var
                         PostCorr: Report "Post or Corr Postponed VAT-Adl";
@@ -46,6 +50,8 @@ pageextension 13062533 "PostedPurchaseInvoice-Adl" extends "Posted Purchase Invo
                 {
                     Caption = 'Correct postponed VAT';
                     ApplicationArea = All;
+                    Visible = VATFeatureEnabled;
+
                     trigger OnAction()
                     var
                         PostCorr: Report "Post or Corr Postponed VAT-Adl";
@@ -61,4 +67,18 @@ pageextension 13062533 "PostedPurchaseInvoice-Adl" extends "Posted Purchase Invo
             }
         }
     }
+
+    var
+        // <adl.0>
+        ADLCore: Codeunit "Adl Core";
+        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        VATFeatureEnabled: Boolean;
+        // </adl.0>
+
+    trigger OnOpenPage();
+    begin
+        // <adl.0>
+        VATFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::VAT);
+        // </adl.0>
+    end;
 }

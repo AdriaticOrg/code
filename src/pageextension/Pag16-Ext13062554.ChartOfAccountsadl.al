@@ -1,6 +1,7 @@
 pageextension 13062554 "Chart Of Accounts-adl" extends "Chart of Accounts" //16
 {
-    actions{
+    actions
+    {
 
         addlast(Reporting)
         {
@@ -12,13 +13,14 @@ pageextension 13062554 "Chart Of Accounts-adl" extends "Chart of Accounts" //16
                 PromotedCategory = Report;
                 Image = Report;
                 ApplicationArea = All;
+                Visible = RepSIFeatureEnabled;
 
                 trigger OnAction()
                 var
-                    GLExportSIadl : Report "GL ExportSI-adl";
+                    GLExportSIadl: Report "GL ExportSI-adl";
                     GLAccount: Record "G/L Account";
                 begin
-                    GLAccount:= Rec;
+                    GLAccount := Rec;
                     GLAccount.SetRecFilter();
                     GLExportSIadl.SetTableView(GLAccount);
                     GLExportSIadl.RunModal();
@@ -26,6 +28,19 @@ pageextension 13062554 "Chart Of Accounts-adl" extends "Chart of Accounts" //16
             }
             // </adl.21> 
         }
-    }    
+    }
 
+    var
+        // <adl.0>
+        ADLCore: Codeunit "Adl Core";
+        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        RepSIFeatureEnabled: Boolean;
+        // </adl.0>
+
+    trigger OnOpenPage();
+    begin
+        // <adl.0>
+        RepSIFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::RepSI);
+        // </adl.0>
+    end;
 }

@@ -7,8 +7,8 @@ codeunit 13062661 "Reporting SI Evnt."
 
     var
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option VAT,FAS,KRD,BST,VIES;
- 
+        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertVATEntry', '', true, false)]
     local procedure OnAfterInsertVATEntry(GenJnlLine: Record "Gen. Journal Line"; VATEntry: Record "VAT Entry"; GLEntryNo: Integer; var NextEntryNo: Integer)
     begin
@@ -98,9 +98,9 @@ codeunit 13062661 "Reporting SI Evnt."
     local procedure OnAfterCopyGLEntryFromGenJnlLineFAS(var GLEntry: Record "G/L Entry"; var GenJournalLine: Record "Gen. Journal Line")
     var
         GLAcc: Record "G/L Account";
-        AccNo:Code[20];
-        ReportSISetup:Record "Reporting_SI Setup";
-    begin 
+        AccNo: Code[20];
+        ReportSISetup: Record "Reporting_SI Setup";
+    begin
         if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
 
         GLAcc.GET(GLEntry."G/L Account No.");
@@ -228,12 +228,12 @@ codeunit 13062661 "Reporting SI Evnt."
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetGLAccount', '', false, false)]
     local procedure GETFASFromGLAcc(VAR GenJournalLine: Record "Gen. Journal Line"; VAR GLAccount: Record "G/L Account")
     var
-        ReportSISetup:Record "Reporting_SI Setup";
+        ReportSISetup: Record "Reporting_SI Setup";
     begin
         if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
         GenJournalLine.CopyFASFields(GLAccount);
-    end;         
-    
+    end;
+
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetCustomerBalAccount', '', false, false)]
     local procedure BalGETFASFromVend(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Customer: Record Customer)
     begin
@@ -260,6 +260,6 @@ codeunit 13062661 "Reporting SI Evnt."
     begin
         if not ADLCore.FeatureEnabled("ADL Features"::FAS) then exit;
         GenJournalLine.CopyFASFields(GLAccount);
-    end;     
+    end;
 
 }

@@ -1,30 +1,30 @@
-pageextension 13062552 "Currency-adl" extends "Currency Card" //495
+pageextension 13062551 "Countries-adl" extends "Countries/Regions" //10
 {
     layout
     {
         // <adl.24>
-        addafter(Code)
+        addlast(Control1)
         {
             field("Numeric Code"; "Numeric Code")
             {
                 ApplicationArea = All;
-                Visible = ADLCoreEnabled;
+                Visible = FASFeatureEnabled;
             }
         }
-        // </adl.24>        
+        // </adl.24>
     }
 
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core";
         "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
-        ADLCoreEnabled: Boolean;
+        FASFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
-        ADLCoreEnabled := ADLCore.FeatureEnabled("ADL Features"::Core);
+        FASFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::FAS);
         // </adl.0>
     end;
 }

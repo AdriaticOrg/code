@@ -2,18 +2,29 @@ codeunit 13062811 "Adl Core"
 {
     Permissions = tabledata 13062811 = rm,
                   tabledata 13062660 = rm;
-    procedure FeatureEnabled(Feature: Option VAT,FAS,KRD,BST,VIES): Boolean
+    procedure FeatureEnabled(Feature: Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms): Boolean
     var
         //ReportSISetup: Record "Reporting_SI Setup";
         CoreSetup: Record "CoreSetup-Adl";
     begin
-        if not CoreSetup.Get() or not CoreSetup."ADL Enabled" then exit(false);
+        with CoreSetup do begin
+            if not Get() or not "ADL Enabled" then exit(false);
 
-        if (Feature = Feature::VAT) and CoreSetup."VAT Enabled" then exit(true);
-        if (Feature = Feature::FAS) and CoreSetup."FAS Enabled" then exit(true);
-        if (Feature = Feature::KRD) and CoreSetup."KRD Enabled" then exit(true);
-        if (Feature = Feature::BST) and CoreSetup."BST Enabled" then exit(true);
-        if (Feature = Feature::VIES) and CoreSetup."VIES Enabled" then exit(true);
+            if (Feature = Feature::Core) and "ADL Enabled" then exit(true);
+
+            if (Feature = Feature::VAT) and "VAT Enabled" then exit(true);
+
+            if (Feature = Feature::RepSI) and "Rep SI Enabled" then exit(true);
+            if (Feature = Feature::RepSI) and "Rep SI Enabled" then exit(true);
+            if (Feature = Feature::RepSI) and "Rep SI Enabled" then exit(true);
+
+            if (Feature = Feature::FAS) and "FAS Enabled" then exit(true);
+            if (Feature = Feature::KRD) and "KRD Enabled" then exit(true);
+            if (Feature = Feature::BST) and "BST Enabled" then exit(true);
+            if (Feature = Feature::VIES) and "VIES Enabled" then exit(true);
+
+            if (Feature = Feature::EUCustoms) and "EU Customs" then exit(true);
+        end;
 
         exit(false);
     end;

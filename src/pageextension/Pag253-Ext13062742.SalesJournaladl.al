@@ -2,7 +2,7 @@ pageextension 13062742 "SalesJournal-adl" extends "Sales Journal" //253
 {
     layout
     {
-        
+
         addlast(Control1)
         {
             // <adl.28>
@@ -10,23 +10,30 @@ pageextension 13062742 "SalesJournal-adl" extends "Sales Journal" //253
             {
                 ApplicationArea = All;
                 Caption = 'Original Document Amount (LCY)';
-
+                Visible = RepHRFeatureEnabled;
             }
             field("Original VAT Amount (LCY)"; "Original VAT Amount (LCY)")
             {
                 ApplicationArea = All;
                 Caption = 'Original VAT Amount (LCY)';
+                Visible = RepHRFeatureEnabled;
             }
             // </adl.28>
         }
-        
+
     }
-    
-    actions
-    {
-        // Add changes to page actions here
-    }
-    
+
     var
-        myInt: Integer;
+        // <adl.0>
+        ADLCore: Codeunit "Adl Core";
+        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        RepHRFeatureEnabled: Boolean;
+        // </adl.0>
+
+    trigger OnOpenPage();
+    begin
+        // <adl.0>
+        RepHRFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::RepHR);
+        // </adl.0>
+    end;
 }

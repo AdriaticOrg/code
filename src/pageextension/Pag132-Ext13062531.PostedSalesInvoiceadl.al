@@ -8,6 +8,7 @@ pageextension 13062531 "PostedSalesInvoice-Adl" extends "Posted Sales Invoice" /
             field("VAT Date-Adl"; "VAT Date-Adl")
             {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
                 Editable = false;
             }
             // </adl.6>
@@ -15,14 +16,18 @@ pageextension 13062531 "PostedSalesInvoice-Adl" extends "Posted Sales Invoice" /
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
             {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
                 Editable = false;
             }
             // </adl.10>            
         }
         // <adl.22>
-        addafter("EU 3-Party Trade") {
-            field("EU Customs Procedure";"EU Customs Procedure") {
-                ApplicationArea =All;
+        addafter("EU 3-Party Trade")
+        {
+            field("EU Customs Procedure"; "EU Customs Procedure")
+            {
+                ApplicationArea = All;
+                Visible = EUCustomsFeatureEnabled;
             }
         }
         // </adl.22>        
@@ -38,6 +43,8 @@ pageextension 13062531 "PostedSalesInvoice-Adl" extends "Posted Sales Invoice" /
                 {
                     Caption = 'Post postponed VAT';
                     ApplicationArea = All;
+                    Visible = VATFeatureEnabled;
+
                     trigger OnAction()
                     var
                         PostCorr: Report "Post or Corr Postponed VAT-Adl";
@@ -53,6 +60,8 @@ pageextension 13062531 "PostedSalesInvoice-Adl" extends "Posted Sales Invoice" /
                 {
                     Caption = 'Correct postponed VAT';
                     ApplicationArea = All;
+                    Visible = VATFeatureEnabled;
+
                     trigger OnAction()
                     var
                         PostCorr: Report "Post or Corr Postponed VAT-Adl";
@@ -68,4 +77,20 @@ pageextension 13062531 "PostedSalesInvoice-Adl" extends "Posted Sales Invoice" /
             }
         }
     }
+
+    var
+        // <adl.0>
+        ADLCore: Codeunit "Adl Core";
+        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        VATFeatureEnabled: Boolean;
+        EUCustomsFeatureEnabled: Boolean;
+        // </adl.0>
+
+    trigger OnOpenPage();
+    begin
+        // <adl.0>
+        VATFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::VAT);
+        EUCustomsFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::EUCustoms);
+        // </adl.0>
+    end;
 }

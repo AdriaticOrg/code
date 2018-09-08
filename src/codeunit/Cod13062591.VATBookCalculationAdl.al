@@ -2,7 +2,7 @@ codeunit 13062591 "VAT Book Calculation-Adl"
 {
     var
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option VAT,FAS,KRD,BST,VIES;
+        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
         CallLevel: Integer;
         CircularRefErr: Label 'Because of circular references, the program cannot calculate a formula.';
 

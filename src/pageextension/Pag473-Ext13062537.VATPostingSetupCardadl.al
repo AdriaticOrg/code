@@ -5,13 +5,14 @@ pageextension 13062537 "VATPostingSetupCard-Adl" extends "VAT Posting Setup Card
         // <adl.14>
         modify("VAT Identifier")
         {
-            Visible = false;
+            Visible = not VATFeatureEnabled;
         }
         addafter("VAT Identifier")
         {
             field("VAT Identifier-Adl"; "VAT Identifier")
             {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
                 TableRelation = "VAT Identifier-Adl";
             }
         }
@@ -22,6 +23,7 @@ pageextension 13062537 "VATPostingSetupCard-Adl" extends "VAT Posting Setup Card
             field("VAT % (Informative)-Adl"; "VAT % (Informative)-Adl")
             {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
             }
         }
         // </adl.13>        
@@ -31,8 +33,25 @@ pageextension 13062537 "VATPostingSetupCard-Adl" extends "VAT Posting Setup Card
             field("VAT % (retrograde)-Adl"; "VAT % (retrograde)-Adl")
             {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
             }
             // </adl.11>
         }
     }
+
+    var
+        // <adl.0>
+        ADLCore: Codeunit "Adl Core";
+        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        ADLCoreEnabled: Boolean;
+        VATFeatureEnabled: Boolean;
+        // </adl.0>
+
+    trigger OnOpenPage();
+    begin
+        // <adl.0>
+        ADLCoreEnabled := ADLCore.FeatureEnabled("ADL Features"::Core);
+        VATFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::VAT);
+        // </adl.0>
+    end;
 }

@@ -900,7 +900,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     //</adl.10>
     var
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option VAT,FAS,KRD,BST,VIES;
+        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
         AddCurrency: Record Currency;
         GLSetup: Record "General Ledger Setup";
         VATEntry: Record "VAT Entry";

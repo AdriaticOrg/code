@@ -22,6 +22,21 @@ table 13062811 "CoreSetup-Adl"
             Caption = 'VAT Enabled';
             DataClassification = SystemMetadata;
         }
+        field(4; "Rep HR Enabled"; Boolean)
+        {
+            Caption = 'Rep HR Enabled';
+            DataClassification = SystemMetadata;
+        }
+        field(5; "Rep RS Enabled"; Boolean)
+        {
+            Caption = 'Rep RS Enabled';
+            DataClassification = SystemMetadata;
+        }
+        field(6; "Rep SI Enabled"; Boolean)
+        {
+            Caption = 'Rep SI Enabled';
+            DataClassification = SystemMetadata;
+        }
         field(13; "FAS Enabled"; Boolean)
         {
             Caption = 'FAS Enabled';
@@ -40,6 +55,11 @@ table 13062811 "CoreSetup-Adl"
         field(43; "VIES Enabled"; Boolean)
         {
             Caption = 'VIES Enabled';
+            DataClassification = SystemMetadata;
+        }
+        field(100; "EU Customs"; Boolean)
+        {
+            Caption = 'EU Customs';
             DataClassification = SystemMetadata;
         }
     }

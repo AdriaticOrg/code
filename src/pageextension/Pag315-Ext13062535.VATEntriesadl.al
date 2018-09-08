@@ -8,6 +8,7 @@ pageextension 13062535 "VATEntries-Adl" extends "VAT Entries"  //315
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
             {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
                 Editable = false;
             }
         }
@@ -18,6 +19,7 @@ pageextension 13062535 "VATEntries-Adl" extends "VAT Entries"  //315
             field("VAT Identifier"; "VAT Identifier-Adl")
             {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
                 //Editable = false;
                 TableRelation = "VAT Identifier-Adl";
             }
@@ -29,12 +31,14 @@ pageextension 13062535 "VATEntries-Adl" extends "VAT Entries"  //315
             field("EU Customs Procedure"; "EU Customs Procedure")
             {
                 ApplicationArea = All;
+                Visible = EUCustomsFeatureEnabled;
             }
             // </adl.14>
             // <adl.10>
             field("VAT % (retrograde)-Adl"; "VAT % (retrograde)-Adl")
             {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
                 Editable = false;
             }
             // </adl.10>
@@ -42,10 +46,27 @@ pageextension 13062535 "VATEntries-Adl" extends "VAT Entries"  //315
             field("VAT Base (retro.)-Adl"; "VAT Base (retro.)-Adl")
             {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
                 //Editable = false;
             }
             // </adl.10>
         }
         // </adl.22> 
     }
+
+    var
+        // <adl.0>
+        ADLCore: Codeunit "Adl Core";
+        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        VATFeatureEnabled: Boolean;
+        EUCustomsFeatureEnabled: Boolean;
+        // </adl.0>
+
+    trigger OnOpenPage();
+    begin
+        // <adl.0>
+        VATFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::VAT);
+        EUCustomsFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::EUCustoms);
+        // </adl.0>
+    end;
 }

@@ -2,41 +2,61 @@ pageextension 13062527 "SalesCreditMemo-Adl" extends "Sales Credit Memo" //44
 {
     layout
     {
-        // <adl.6>
         addafter("Posting Date")
         {
+            // <adl.6>
             field("VAT Date-Adl"; "VAT Date-Adl")
             {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
             }
+            // </adl.6>
             // <adl.10>
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
             {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
                 Editable = false;
             }
             // </adl.10>
-	    // </adl.10>
-        // <adl.22>
-        field("VAT Correction Date";"VAT Correction Date") {
-            ApplicationArea = All;
+            // <adl.22>
+            field("VAT Correction Date"; "VAT Correction Date")
+            {
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+            }
+            // </adl.22>
         }
-        // </adl.22>
-        }
-        // </adl.6>
         // <adl.18>  
         addafter("EU 3-Party Trade")
         {
             // <adl.22>
-            field("EU Customs Procedure";"EU Customs Procedure") {
+            field("EU Customs Procedure"; "EU Customs Procedure")
+            {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
             }
             // </adl.22>
             field("Goods Return Type-Adl"; "Goods Return Type-Adl")
             {
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
             }
         }
         // </adl.18>
     }
+
+    var
+        // <adl.0>
+        ADLCore: Codeunit "Adl Core";
+        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        VATFeatureEnabled: Boolean;
+        // </adl.0>
+
+    trigger OnOpenPage();
+    begin
+        // <adl.0>
+        VATFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::VAT);
+        // </adl.0>
+    end;
 }

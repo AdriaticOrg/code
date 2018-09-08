@@ -448,7 +448,7 @@ codeunit 13062525 "VAT Management-Adl"
 
     var
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option VAT,FAS,KRD,BST,VIES;
+        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
         UpdVatDate: Label 'Do you want to change VAT Date';
         ManagePostponedVAT: Codeunit "Manage Postponed VAT-Adl";
 }

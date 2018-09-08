@@ -3,47 +3,56 @@ pageextension 13062539 "GLAccountCard-adl" extends "G/L Account Card" //17
     layout
     {
         // <adl.24>
-        addlast(Reporting) {
-            field("FAS Account";"FAS Account") {
+        addlast(Reporting)
+        {
+            field("FAS Account"; "FAS Account")
+            {
                 ApplicationArea = All;
-                Visible = FASEnabled;                
+                Visible = FASFeatureEnabled;
             }
-            field("FAS Type";"FAS Type") {
+            field("FAS Type"; "FAS Type")
+            {
                 ApplicationArea = All;
-                Visible = FASEnabled;
+                Visible = FASFeatureEnabled;
             }
-            field("FAS Sector Posting";"FAS Sector Posting") {
+            field("FAS Sector Posting"; "FAS Sector Posting")
+            {
                 ApplicationArea = All;
-                Visible = FASEnabled;
+                Visible = FASFeatureEnabled;
             }
-            field ("FAS Instrument Posting";"FAS Instrument Posting") {
+            field("FAS Instrument Posting"; "FAS Instrument Posting")
+            {
                 ApplicationArea = All;
-                Visible = FASEnabled;
+                Visible = FASFeatureEnabled;
             }
-            field("FAS Sector Code";"FAS Sector Code") {
+            field("FAS Sector Code"; "FAS Sector Code")
+            {
                 ApplicationArea = All;
-                Visible = FASEnabled;
+                Visible = FASFeatureEnabled;
             }
-            field ("FAS Instrument Code";"FAS Instrument Code") {
+            field("FAS Instrument Code"; "FAS Instrument Code")
+            {
                 ApplicationArea = All;
-                Visible = FASEnabled;
+                Visible = FASFeatureEnabled;
             }
             // <adl.26>
-            field("BST Value Posting";"BST Value Posting") {
+            field("BST Value Posting"; "BST Value Posting")
+            {
                 ApplicationArea = All;
-                Visible = BSTEnabled;
+                Visible = BSTFeatureEnabled;
             }
-            field("BST Code";"BST Code") {
+            field("BST Code"; "BST Code")
+            {
                 ApplicationArea = All;
-                Visible = BSTEnabled;
+                Visible = BSTFeatureEnabled;
             }
             // </adl.26>
-        }         
+        }
         // </adl.24>
     }
     actions
-    {   
-        addafter("A&ccount") 
+    {
+        addafter("A&ccount")
         {
             // <adl.21>
             action("GLExport")
@@ -53,30 +62,43 @@ pageextension 13062539 "GLAccountCard-adl" extends "G/L Account Card" //17
                 PromotedCategory = Report;
                 Image = Report;
                 ApplicationArea = All;
+                Visible = VATFeatureEnabled;
 
                 trigger OnAction()
                 var
-                    GLExportSIadl : Report "GL ExportSI-adl";
+                    GLExportSIadl: Report "GL ExportSI-adl";
                     GLAccount: Record "G/L Account";
                 begin
-                    GLAccount:= Rec;
+                    GLAccount := Rec;
                     GLAccount.SetRecFilter();
                     GLExportSIadl.SetTableView(GLAccount);
                     GLExportSIadl.RunModal();
                 end;
             }
             // </adl.21>  
-        }       
+        }
     }
-    // <adl.24>
-    trigger OnOpenPage()
-    begin
-        RepSIMgt.GetReporSIEnabled(FASEnabled,KRDEnabled,BSTEnabled);
-    end;
+    // </adl.24>
+
     var
-        RepSIMgt:Codeunit "Reporting SI Mgt.";
-        FASEnabled:Boolean;
-        KRDEnabled:Boolean;
-        BSTEnabled:Boolean;
-    // </adl.24> 
+        // <adl.0>
+        ADLCore: Codeunit "Adl Core";
+        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        ADLCoreEnabled: Boolean;
+        VATFeatureEnabled: Boolean;
+        FASFeatureEnabled: Boolean;
+        KRDFeatureEnabled: Boolean;
+        BSTFeatureEnabled: Boolean;
+        // </adl.0>
+
+    trigger OnOpenPage();
+    begin
+        // <adl.0>
+        ADLCoreEnabled := ADLCore.FeatureEnabled("ADL Features"::Core);
+        VATFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::VAT);
+        FASFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::FAS);
+        KRDFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::KRD);
+        BSTFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::BST);
+        // </adl.0>
+    end;
 }
