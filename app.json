@@ -13,8 +13,11 @@
   "capabilities": [],
   "dependencies": [],
   "screenshots": [],
-  "platform": "12.0.0.0",
-  "application": "12.0.0.0",
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "features": [
+    "TranslationFile"
+  ],
   "showMyCode": true,
   "idRange": {
     "from": 13062525,
