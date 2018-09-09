@@ -2,8 +2,7 @@ codeunit 13062811 "Adl Core"
 {
     Permissions = tabledata 13062811 = rm,
                   tabledata 13062660 = rm;
-    procedure FeatureEnabled(Feature: Option VAT,FAS,KRD,BST,VIES,"Unpaid Receivables"): Boolean
-    procedure FeatureEnabled(Feature: Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms): Boolean
+    procedure FeatureEnabled(Feature: Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms,"Unpaid Receivables"): Boolean
     var
         //ReportSISetup: Record "Reporting_SI Setup";
         CoreSetup: Record "CoreSetup-Adl";

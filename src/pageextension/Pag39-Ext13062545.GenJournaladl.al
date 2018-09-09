@@ -168,6 +168,13 @@ pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
         UnpaidRecEnabled: Boolean;
         // </adl.0>
 
+        // <adl.28>
+        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-adl";
+        OriginalDocumentAmountLCY: Decimal;
+        OriginalVATAmountLCY: Decimal;
+        OpenAmounLCYtWithoutUnrealizedERF: Decimal;
+        // <adl.28>
+
     trigger OnOpenPage();
     begin
         // <adl.0>
