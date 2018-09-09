@@ -38,58 +38,45 @@ tableextension 13062542 "GenJournalLine-Adl" extends "Gen. Journal Line" // 81
             DataClassification = ToBeClassified;
             TableRelation = "FAS Sector";
         }
-        field(13062643;"Bal. FAS Instrument Code";Code[10])
+        field(13062643; "Bal. FAS Instrument Code"; Code[10])
         {
             Caption = 'Bal. FAS Instrument Code';
             DataClassification = ToBeClassified;
             TableRelation = "FAS Instrument";
         }
-        field(13062644;"Bal. FAS Sector Code";Code[10])
+        field(13062644; "Bal. FAS Sector Code"; Code[10])
         {
             Caption = 'Bal. FAS Sector Code';
             DataClassification = ToBeClassified;
             TableRelation = "FAS Sector";
-        }     
+        }
         field(13062645; "FAS Type"; Option)
         {
             Caption = 'FAS Type';
             OptionMembers = " ",Assets,Liabilities;
             OptionCaption = ' ,Assets,Liabilities';
             DataClassification = ToBeClassified;
-        }           
+        }
         field(13062646; "Bal. FAS Type"; Option)
         {
             Caption = 'Bal. FAS Type';
             OptionMembers = " ",Assets,Liabilities;
             OptionCaption = ' ,Assets,Liabilities';
             DataClassification = ToBeClassified;
-        }        
+        }
         // </adl.24>
         // <adl.22>
         field(13062601; "VAT Correction Date"; Date)
         {
             Caption = 'VAT Correction Date';
             DataClassification = ToBeClassified;
-        } 
+        }
         field(13062602; "EU Customs Procedure"; Boolean)
         {
             Caption = 'EU Customs Procedure';
             DataClassification = ToBeClassified;
-        }                  
-        // </adl.22>     	
-	    // <adl.28>
-        field(13062741;"Original Document Amount (LCY)";Decimal)
-        {
-    	    Caption = 'Original Document Amount (LCY)';
-            DataClassification = ToBeClassified;
-
         }
-        field(13062742;"Original VAT Amount (LCY)";Decimal)
-        {
-            Caption = '"Original VAT Amount (LCY)"';
-            DataClassification = ToBeClassified;   
-        }
-        //</adl.28>    
+        // </adl.22>     	 
     }
     // <adl.24>
     procedure CopyFASFields(Customer: Record Customer)

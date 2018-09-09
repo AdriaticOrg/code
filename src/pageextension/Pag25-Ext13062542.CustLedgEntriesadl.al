@@ -48,6 +48,25 @@ pageextension 13062542 "CustLedgEntries-adl" extends "Customer Ledger Entries" /
             // </adl.24>
         }
     }
+
+    actions
+    {
+        // <adl.28>
+        addafter(IncomingDocument)
+        {
+            action(UnpaidReceivables)
+            {
+                Caption = 'Edit Extended Data';
+                ApplicationArea = All;
+                RunObject = Page "Cust. Ledger Entries Ext.-adl";
+                Promoted = true;
+                PromotedCategory = Process;
+                Image = Edit;
+            }
+        }
+        // </adl.28> 
+    }
+    
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core";
