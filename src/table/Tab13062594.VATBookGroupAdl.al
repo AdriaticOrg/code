@@ -33,7 +33,7 @@ table 13062594 "VAT Book Group-Adl"
         {
             Caption = 'Group Type';
             OptionCaption = 'VAT Entries,Total';
-            OptionMembers = "VAT Entries", Total;
+            OptionMembers = "VAT Entries",Total;
             DataClassification = CustomerContent;
 
             trigger OnValidate();
@@ -45,7 +45,7 @@ table 13062594 "VAT Book Group-Adl"
                     VATBookGroupIdentifier.SetRange("VAT Book Code", "VAT Book Code");
                     VATBookGroupIdentifier.SetRange("VAT Book Group Code", Code);
                     VATBookGroupIdentifier.DeleteAll(true);
-                end;  
+                end;
             end;
         }
         field(5; Totaling; Text[250])
@@ -55,8 +55,8 @@ table 13062594 "VAT Book Group-Adl"
 
             trigger OnLookup();
             var
-                VATBookGroupsPage: Page "VAT Book Groups-Adl";
                 VATBookGroup: Record "VAT Book Group-Adl";
+                VATBookGroupsPage: Page "VAT Book Groups-Adl";
             begin
                 if "Group Type" = "Group Type"::"VAT Entries" then
                     exit;
@@ -64,9 +64,9 @@ table 13062594 "VAT Book Group-Adl"
                 VATBookGroup.SetCurrentKey("Book Link Code");
                 VATBookGroupsPage.SETTABLEVIEW(VATBookGroup);
                 VATBookGroupsPage.LookupMode(true);
-                if(VATBookGroupsPage.RunModal = ACTION::LookupOK) then
-                    Totaling := VATBookGroupsPage.GetSelectionFilter;
-                Modify;
+                if (VATBookGroupsPage.RunModal() = ACTION::LookupOK) then
+                    Totaling := VATBookGroupsPage.GetSelectionFilter();
+                Modify();
             end;
 
         }
@@ -83,8 +83,8 @@ table 13062594 "VAT Book Group-Adl"
         }
         field(8; "Include Columns"; Text[250])
         {
-
             Caption = 'Include Columns';
+            DataClassification = SystemMetadata;
 
             trigger OnLookup();
             var
@@ -93,20 +93,20 @@ table 13062594 "VAT Book Group-Adl"
                 VATBookColumnNameFilter: Text;
             begin
                 VATBookColumnName.SETRANGE("VAT Book Code", "VAT Book Code");
-                if VATBookColumnName.FINDSET then begin
+                if VATBookColumnName.FINDSET() then begin
                     VATBookColumnNames.SetTableView(VATBookColumnName);
                     VATBookColumnNames.LookupMode(TRUE);
-                    if VATBookColumnNames.RunModal = "Action"::LookupOK then begin
+                    if VATBookColumnNames.RunModal() = "Action"::LookupOK then begin
                         VATBookColumnNames.SetSelection(VATBookColumnName);
                         VATBookColumnNameFilter := '';
                         VATBookColumnName.MARKEDONLY(TRUE);
-                        if VATBookColumnName.FINDSET then begin
+                        if VATBookColumnName.FINDSET() then begin
                             repeat
                                 if VATBookColumnNameFilter = '' then
-                                VATBookColumnNameFilter := FORMAT(VATBookColumnName."Column No.")
-                            else
-                                VATBookColumnNameFilter += '|' + FORMAT(VATBookColumnName."Column No.");
-                            until VATBookColumnName.NEXT = 0;
+                                    VATBookColumnNameFilter := FORMAT(VATBookColumnName."Column No.")
+                                else
+                                    VATBookColumnNameFilter += '|' + FORMAT(VATBookColumnName."Column No.");
+                            until VATBookColumnName.NEXT() = 0;
                             "Include Columns" := VATBookColumnNameFilter;
                         end;
                     end;

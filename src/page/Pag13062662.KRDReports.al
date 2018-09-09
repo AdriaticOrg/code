@@ -7,41 +7,30 @@ page 13062662 "KRD Reports"
     Editable = false;
     CardPageId = "KRD Report";
     Caption = 'KRD Reports';
-    
+
     layout
     {
         area(Content)
         {
-            repeater(Group) {
-                field("No.";"No.") {
+            repeater(Group)
+            {
+                field("No."; "No.")
+                {
                     ApplicationArea = All;
                 }
-                field("Period Start Date";"Period Start Date") {
+                field("Period Start Date"; "Period Start Date")
+                {
                     ApplicationArea = All;
                 }
-                field("Period End Date";"Period End Date") {
+                field("Period End Date"; "Period End Date")
+                {
                     ApplicationArea = All;
                 }
-                field("User ID";"User ID") {
+                field("User ID"; "User ID")
+                {
                     ApplicationArea = All;
                 }
 
-            }
-        }
-    }
-    
-    actions
-    {
-        area(Processing)
-        {
-            action(ActionName)
-            {
-                ApplicationArea = All;
-                
-                trigger OnAction()
-                begin
-                    
-                end;
             }
         }
     }

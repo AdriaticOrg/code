@@ -120,7 +120,7 @@ page 13062592 "VAT Books-Adl"
                         VATReviewMatrix: Page "VAT Review Matrix-Adl";
                     begin
                         VATReviewMatrix.Load(Code, '', '', 2);
-                        VATReviewMatrix.RunModal;
+                        VATReviewMatrix.RunModal();
                     end;
                 }
             }

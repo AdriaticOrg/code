@@ -50,7 +50,7 @@ table 13062595 "VAT Book Group Identifier-Adl"
         VATBookViewFormula.SetRange("VAT Book Code", "VAT Book Code");
         VATBookViewFormula.SetRange("VAT Book Group Code", "VAT Book Group Code");
         VATBookViewFormula.SetRange("VAT Identifier", "VAT Identifier");
-        VATBookViewFormula.DELETEALL;
+        VATBookViewFormula.DELETEALL();
     end;
 
     var

@@ -5,6 +5,7 @@ tableextension 13062556 "Sales Invoice Line-Adl" extends "Sales Invoice Line"  /
         // <adl.13>
         field(13062551; "VAT % (informative)-Adl"; Decimal)
         {
+            DataClassification = SystemMetadata;
             Caption = 'VAT % (informative)';
         }
         // </adl.13>

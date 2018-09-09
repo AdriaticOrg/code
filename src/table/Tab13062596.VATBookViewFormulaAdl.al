@@ -71,7 +71,7 @@ table 13062596 "VAT Book View Formula-Adl"
         field(10; ConditionBlob; Blob)
         {
             Caption = 'ConditonBlob';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
     }
 
@@ -82,12 +82,12 @@ table 13062596 "VAT Book View Formula-Adl"
 
     procedure SetFiltersForVATEntry()
     var
-        Filters: Text;
-        RecRef: RecordRef;
         TempBlob: Record TempBlob temporary;
-        TOutStream: OutStream;
         RequestPageParametersHelper: Codeunit "Request Page Parameters Helper";
         FilterPageBuilder1: FilterPageBuilder;
+        RecRef: RecordRef;
+        Filters: Text;
+        TOutStream: OutStream;
         TitleLbl: Label 'Please choose VAT Entry filter';
     begin
         RecRef.Open(Database::"VAT Entry");
@@ -96,38 +96,37 @@ table 13062596 "VAT Book View Formula-Adl"
             exit;
 
         FilterPageBuilder1.PageCaption := TitleLbl;
-        if not FilterPageBuilder1.RUNMODAL then
+        if not FilterPageBuilder1.RUNMODAL() then
             exit;
 
         Filters := RequestPageParametersHelper.GetViewFromDynamicRequestPage(FilterPageBuilder1, '', Database::"VAT Entry");
 
-        TempBlob.Init;
+        TempBlob.Init();
         TempBlob.Blob.CreateOutStream(TOutStream);
         TOutStream.WriteText(Filters);
 
         RequestPageParametersHelper.ConvertParametersToFilters(RecRef, TempBlob);
-        Condition := CopyStr(RecRef.GetFilters, 1, MAXSTRLEN(Condition));
+        Condition := CopyStr(RecRef.GetFilters(), 1, MAXSTRLEN(Condition));
         ConditionBlob := TempBlob.Blob;
     end;
 
     procedure SetVATEntryFilters(var VATEntry: Record "VAT Entry");
     var
-        Filters: Text;
-        RecRef: RecordRef;
         TempBlob: Record TempBlob temporary;
         RequestPageParametersHelper: Codeunit "Request Page Parameters Helper";
+        RecRef: RecordRef;
     begin
         RecRef.Open(Database::"VAT Entry");
         CalcFields(ConditionBlob);
-        if ConditionBlob.Length = 0 then
+        if ConditionBlob.Length() = 0 then
             exit;
 
-        TempBlob.Init;
+        TempBlob.Init();
         TempBlob.Blob := ConditionBlob;
 
         RequestPageParametersHelper.ConvertParametersToFilters(RecRef, TempBlob);
         VATEntry.FilterGroup(10);
-        VATEntry.SetView(RecRef.GetView);
+        VATEntry.SetView(RecRef.GetView());
         VATEntry.FilterGroup(0);
     end;
 }

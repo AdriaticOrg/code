@@ -11,6 +11,8 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     var
         VATEntry2: Record "VAT Entry";
         VATPostingSetup: Record "VAT Posting Setup";
+        TaxJurisdiction: Record "Tax Jurisdiction";
+        GLSetup: Record "General Ledger Setup";
         PaidAmount: Decimal;
         TotalUnrealVATAmountLast: Decimal;
         TotalUnrealVATAmountFirst: Decimal;
@@ -22,16 +24,14 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         VATBase: Decimal;
         VATAmountAddCurr: Decimal;
         VATBaseAddCurr: Decimal;
-        TaxJurisdiction: Record "Tax Jurisdiction";
-        GLSetup: Record "General Ledger Setup";
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         PaidAmount := CustLedgEntry2.Amount - CustLedgEntry2."Remaining Amount";
-        VATEntry2.RESET;
+        VATEntry2.RESET();
         VATEntry2.SETCURRENTKEY("Transaction No.");
         VATEntry2.SETRANGE("Transaction No.", CustLedgEntry2."Transaction No.");
         VATEntry2.SETRANGE("Postponed VAT-Adl", GenJnlLine."Postponed VAT-Adl");
-        IF VATEntry2.FINDSET THEN
+        IF VATEntry2.FINDSET() THEN
             REPEAT
                 VATPostingSetup.GET(VATEntry2."VAT Bus. Posting Group", VATEntry2."VAT Prod. Posting Group");
                 IF VATPostingSetup."Unrealized VAT Type" IN
@@ -42,8 +42,8 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                     [VATPostingSetup."Unrealized VAT Type"::First, VATPostingSetup."Unrealized VAT Type"::"First (Fully Paid)"]
                 THEN
                     TotalUnrealVATAmountFirst := TotalUnrealVATAmountFirst - VATEntry2."Remaining Unrealized Amount";
-            UNTIL VATEntry2.NEXT = 0;
-        IF VATEntry2.FINDSET THEN BEGIN
+            UNTIL VATEntry2.NEXT() = 0;
+        IF VATEntry2.FINDSET() THEN BEGIN
             LastConnectionNo := 0;
             REPEAT
                 VATPostingSetup.GET(VATEntry2."VAT Bus. Posting Group", VATEntry2."VAT Prod. Posting Group");
@@ -105,7 +105,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                         GenJnlLine, SalesVATAccount, SalesVATUnrealAccount, VATAmount, VATAmountAddCurr, VATEntry2);
                     PostUnrealVATEntry(GenJnlLine, VATEntry2, VATAmount, VATBase, VATAmountAddCurr, VATBaseAddCurr);
                 END;
-            UNTIL VATEntry2.NEXT = 0;
+            UNTIL VATEntry2.NEXT() = 0;
 
             InsertSummarizedVAT(GenJnlLine);
         END;
@@ -131,12 +131,12 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         LastConnectionNo: Integer;
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
-        VATEntry2.RESET;
+        VATEntry2.RESET();
         VATEntry2.SETCURRENTKEY("Transaction No.");
         VATEntry2.SETRANGE("Transaction No.", VendLedgEntry2."Transaction No.");
         VATEntry2.SETRANGE("Postponed VAT-Adl", GenJnlLine."Postponed VAT-Adl");
         PaidAmount := -VendLedgEntry2."Amount (LCY)" + VendLedgEntry2."Remaining Amt. (LCY)";
-        IF VATEntry2.FINDSET THEN
+        IF VATEntry2.FINDSET() THEN
             REPEAT
                 VATPostingSetup.GET(VATEntry2."VAT Bus. Posting Group", VATEntry2."VAT Prod. Posting Group");
                 IF VATPostingSetup."Unrealized VAT Type" IN
@@ -147,8 +147,8 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                     [VATPostingSetup."Unrealized VAT Type"::First, VATPostingSetup."Unrealized VAT Type"::"First (Fully Paid)"]
                 THEN
                     TotalUnrealVATAmountFirst := TotalUnrealVATAmountFirst - VATEntry2."Remaining Unrealized Amount";
-            UNTIL VATEntry2.NEXT = 0;
-        IF VATEntry2.FINDSET THEN BEGIN
+            UNTIL VATEntry2.NEXT() = 0;
+        IF VATEntry2.FINDSET() THEN BEGIN
             LastConnectionNo := 0;
             REPEAT
                 VATPostingSetup.GET(VATEntry2."VAT Bus. Posting Group", VATEntry2."VAT Prod. Posting Group");
@@ -159,7 +159,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
                 VATPart :=
                         VATEntry2.GetUnrealizedVATPart(
-                            ROUND(SettledAmount / VendLedgEntry2.GetOriginalCurrencyFactor),
+                            ROUND(SettledAmount / VendLedgEntry2.GetOriginalCurrencyFactor()),
                             PaidAmount,
                             VendLedgEntry2."Original Amt. (LCY)",
                             TotalUnrealVATAmountFirst,
@@ -244,7 +244,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
                     PostUnrealVATEntry(GenJnlLine, VATEntry2, VATAmount, VATBase, VATAmountAddCurr, VATBaseAddCurr);
                 END;
-            UNTIL VATEntry2.NEXT = 0;
+            UNTIL VATEntry2.NEXT() = 0;
 
             InsertSummarizedVAT(GenJnlLine);
         END;
@@ -283,7 +283,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         VATPostingSetup.GET(VATEntry2."VAT Bus. Posting Group", VATEntry2."VAT Prod. Posting Group");
-        VATEntry.LOCKTABLE;
+        VATEntry.LOCKTABLE();
         VATEntry := VATEntry2;
         VATEntry."Entry No." := NextVATEntryNo;
         VATEntry."Posting Date" := GenJnlLine."Posting Date";
@@ -294,8 +294,8 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         VATEntry.Base := VATBase;
         VATEntry."Additional-Currency Amount" := VATAmountAddCurr;
         VATEntry."Additional-Currency Base" := VATBaseAddCurr;
-        VATEntry.SetUnrealAmountsToZero;
-        VATEntry."User ID" := USERID;
+        VATEntry.SetUnrealAmountsToZero();
+        VATEntry."User ID" := USERID();
         VATEntry."Source Code" := GenJnlLine."Source Code";
         VATEntry."Reason Code" := GenJnlLine."Reason Code";
         VATEntry."Closed by Entry No." := 0;
@@ -315,17 +315,17 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         VATEntry2."Add.-Curr. Rem. Unreal. Amount" - VATEntry."Additional-Currency Amount";
         VATEntry2."Add.-Curr. Rem. Unreal. Base" :=
         VATEntry2."Add.-Curr. Rem. Unreal. Base" - VATEntry."Additional-Currency Base";
-        VATEntry2.MODIFY;
+        VATEntry2.MODIFY();
     end;
 
     procedure InsertSummarizedVAT(GenJnlLine: Record "Gen. Journal Line")
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
-        IF TempGLEntryVAT.FINDSET THEN BEGIN
+        IF TempGLEntryVAT.FINDSET() THEN BEGIN
             REPEAT
                 InsertGLEntry(GenJnlLine, TempGLEntryVAT, TRUE);
-            UNTIL TempGLEntryVAT.NEXT = 0;
-            TempGLEntryVAT.DELETEALL;
+            UNTIL TempGLEntryVAT.NEXT() = 0;
+            TempGLEntryVAT.DELETEALL();
             InsertedTempGLEntryVAT := 0;
         END;
         NextConnectionNo := NextConnectionNo + 1;
@@ -352,7 +352,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                 CheckGLAccDimError(GenJnlLine, GLAccNo);
         END;
 
-        GLEntry.INIT;
+        GLEntry.INIT();
         GLEntry.CopyFromGenJnlLine(GenJnlLine);
         GLEntry."Entry No." := NextEntryNo;
         GLEntry."Transaction No." := NextTransactionNo;
@@ -370,7 +370,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         InsertedTempVAT := FALSE;
         IF SummarizeGLEntries THEN
-            IF TempGLEntryVAT.FINDSET THEN
+            IF TempGLEntryVAT.FINDSET() THEN
                 REPEAT
                     IF (TempGLEntryVAT."G/L Account No." = GLEntry."G/L Account No.") AND
                         (TempGLEntryVAT."Bal. Account No." = GLEntry."Bal. Account No.")
@@ -378,15 +378,15 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                         TempGLEntryVAT.Amount := TempGLEntryVAT.Amount + GLEntry.Amount;
                         TempGLEntryVAT."Additional-Currency Amount" :=
                         TempGLEntryVAT."Additional-Currency Amount" + GLEntry."Additional-Currency Amount";
-                        TempGLEntryVAT.MODIFY;
+                        TempGLEntryVAT.MODIFY();
                         InsertedTempVAT := TRUE;
                     END;
-                UNTIL (TempGLEntryVAT.NEXT = 0) OR InsertedTempVAT;
+                UNTIL (TempGLEntryVAT.NEXT() = 0) OR InsertedTempVAT;
         IF NOT InsertedTempVAT OR NOT SummarizeGLEntries THEN BEGIN
             TempGLEntryVAT := GLEntry;
             TempGLEntryVAT."Entry No." :=
                 TempGLEntryVAT."Entry No." + InsertedTempGLEntryVAT;
-            TempGLEntryVAT.INSERT;
+            TempGLEntryVAT.INSERT();
             InsertedTempGLEntryVAT := InsertedTempGLEntryVAT + 1;
         END;
     end;
@@ -409,11 +409,11 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         IF GenJnlLine."Line No." <> 0 THEN
             ERROR(
                 DimensionUsedErr,
-                GenJnlLine.TABLECAPTION, GenJnlLine."Journal Template Name",
+                GenJnlLine.TABLECAPTION(), GenJnlLine."Journal Template Name",
                 GenJnlLine."Journal Batch Name", GenJnlLine."Line No.",
-                DimMgt.GetDimValuePostingErr);
+                DimMgt.GetDimValuePostingErr());
 
-        ERROR(DimMgt.GetDimValuePostingErr);
+        ERROR(DimMgt.GetDimValuePostingErr());
     end;
 
     procedure GLCalcAddCurrency(Amount: Decimal; AddCurrAmount: Decimal; OldAddCurrAmount: Decimal; UseAddCurrAmount: Boolean; GenJnlLine: Record "Gen. Journal Line"): Decimal
@@ -459,9 +459,9 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
             END;
 
             GetCurrencyExchRate(GenJnlLine);
-            TempGLEntryBuf.DELETEALL;
+            TempGLEntryBuf.DELETEALL();
             CalculateCurrentBalance(
-                "Account No.", "Bal. Account No.", IncludeVATAmount, "Amount (LCY)", "VAT Amount");
+                "Account No.", "Bal. Account No.", IncludeVATAmount(), "Amount (LCY)", "VAT Amount");
         END;
     end;
 
@@ -553,8 +553,8 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         WITH GenJnlLine DO BEGIN
-            GlobalGLEntry.LOCKTABLE;
-            IF GlobalGLEntry.FINDLAST THEN BEGIN
+            GlobalGLEntry.LOCKTABLE();
+            IF GlobalGLEntry.FINDLAST() THEN BEGIN
                 NextEntryNo := GlobalGLEntry."Entry No." + 1;
                 NextTransactionNo := GlobalGLEntry."Transaction No." + 1;
             END ELSE BEGIN
@@ -565,44 +565,44 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
             InitLastDocDate(GenJnlLine);
             CurrentBalance := 0;
 
-            AccountingPeriod.RESET;
+            AccountingPeriod.RESET();
             AccountingPeriod.SETCURRENTKEY(Closed);
             AccountingPeriod.SETRANGE(Closed, FALSE);
-            AccountingPeriod.FINDFIRST;
+            AccountingPeriod.FINDFIRST();
             FiscalYearStartDate := AccountingPeriod."Starting Date";
 
-            GLSetup.Get;
+            GLSetup.Get();
 
             IF NOT GenJnlTemplate.GET("Journal Template Name") THEN
-                GenJnlTemplate.INIT;
+                GenJnlTemplate.INIT();
 
-            VATEntry.LOCKTABLE;
-            IF VATEntry.FINDLAST THEN
+            VATEntry.LOCKTABLE();
+            IF VATEntry.FINDLAST() THEN
                 NextVATEntryNo := VATEntry."Entry No." + 1
             ELSE
                 NextVATEntryNo := 1;
             NextConnectionNo := 1;
             FirstNewVATEntryNo := NextVATEntryNo;
 
-            GLReg.LOCKTABLE;
-            IF GLReg.FINDLAST THEN
+            GLReg.LOCKTABLE();
+            IF GLReg.FINDLAST() THEN
                 GLReg."No." := GLReg."No." + 1
             ELSE
                 GLReg."No." := 1;
-            GLReg.INIT;
+            GLReg.INIT();
             GLReg."From Entry No." := NextEntryNo;
             GLReg."From VAT Entry No." := NextVATEntryNo;
-            GLReg."Creation Date" := TODAY;
+            GLReg."Creation Date" := TODAY();
             GLReg."Source Code" := "Source Code";
             GLReg."Journal Batch Name" := "Journal Batch Name";
-            GLReg."User ID" := USERID;
+            GLReg."User ID" := USERID();
             IsGLRegInserted := FALSE;
 
 
             GetCurrencyExchRate(GenJnlLine);
-            TempGLEntryBuf.DELETEALL;
+            TempGLEntryBuf.DELETEALL();
             CalculateCurrentBalance(
-                "Account No.", "Bal. Account No.", IncludeVATAmount, "Amount (LCY)", "VAT Amount");
+                "Account No.", "Bal. Account No.", IncludeVATAmount(), "Amount (LCY)", "VAT Amount");
         END;
     end;
 
@@ -622,7 +622,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         (BalanceCheckAmount = 0) AND (BalanceCheckAmount2 = 0) AND
         (BalanceCheckAddCurrAmount = 0) AND (BalanceCheckAddCurrAmount2 = 0);
 
-        IF TempGLEntryBuf.FINDSET THEN BEGIN
+        IF TempGLEntryBuf.FINDSET() THEN BEGIN
             REPEAT
                 GlobalGLEntry := TempGLEntryBuf;
                 IF AddCurrencyCode = '' THEN BEGIN
@@ -632,23 +632,23 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                 END;
                 GlobalGLEntry."Prior-Year Entry" := GlobalGLEntry."Posting Date" < FiscalYearStartDate;
                 GlobalGLEntry.INSERT(TRUE);
-            UNTIL TempGLEntryBuf.NEXT = 0;
+            UNTIL TempGLEntryBuf.NEXT() = 0;
 
             GLReg."To VAT Entry No." := NextVATEntryNo - 1;
             GLReg."To Entry No." := GlobalGLEntry."Entry No.";
             IF IsTransactionConsistent THEN
                 IF IsGLRegInserted THEN
-                    GLReg.MODIFY
+                    GLReg.MODIFY()
                 ELSE BEGIN
-                    GLReg.INSERT;
+                    GLReg.INSERT();
                     IsGLRegInserted := TRUE;
                 END;
         END;
         GlobalGLEntry.CONSISTENT(IsTransactionConsistent);
 
-        IF CostAccSetup.GET THEN
+        IF CostAccSetup.GET() THEN
             IF CostAccSetup."Auto Transfer from G/L" THEN
-                TransferGlEntriesToCA.GetGLEntries;
+                TransferGlEntriesToCA.GetGLEntries();
 
         FirstEntryNo := 0;
     end;
@@ -673,7 +673,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
         TempGLEntryBuf := GLEntry;
 
-        TempGLEntryBuf.INSERT;
+        TempGLEntryBuf.INSERT();
 
         IF FirstEntryNo = 0 THEN
             FirstEntryNo := TempGLEntryBuf."Entry No.";
@@ -734,7 +734,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         (TotalAmount = 0) AND (TotalAddCurrAmount <> 0) AND
         CheckNonAddCurrCodeOccurred(GenJnlLine."Source Currency Code")
         THEN BEGIN
-            GLEntry.INIT;
+            GLEntry.INIT();
             GLEntry.CopyFromGenJnlLine(GenJnlLine);
             GLEntry."External Document No." := '';
             GLEntry.Description :=
@@ -782,10 +782,10 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         ReversedGLEntryTemp: Record "G/L Entry" temporary;
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
-        IF VATEntry.FINDSET THEN
+        IF VATEntry.FINDSET() THEN
             REPEAT
                 IF VATEntry."Reversed by Entry No." <> 0 THEN
-                    ERROR(Text015);
+                    ERROR(ReverseTransactionErr);
                 WITH NewVATEntry DO BEGIN
                     NewVATEntry := VATEntry;
                     Base := -Base;
@@ -806,7 +806,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
                     "Transaction No." := NextTransactionNo;
                     "Source Code" := GenJnlLine."Source Code";
-                    "User ID" := USERID;
+                    "User ID" := USERID();
                     "Entry No." := NextVATEntryNo;
                     "Reversed Entry No." := VATEntry."Entry No.";
                     Reversed := TRUE;
@@ -815,24 +815,24 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                         ReversedVATEntry.GET(VATEntry."Reversed Entry No.");
                         ReversedVATEntry."Reversed by Entry No." := 0;
                         ReversedVATEntry.Reversed := FALSE;
-                        ReversedVATEntry.MODIFY;
+                        ReversedVATEntry.MODIFY();
                         VATEntry."Reversed Entry No." := "Entry No.";
                         "Reversed by Entry No." := VATEntry."Entry No.";
                     END;
                     VATEntry."Reversed by Entry No." := "Entry No.";
                     VATEntry.Reversed := TRUE;
-                    VATEntry.MODIFY;
-                    INSERT;
+                    VATEntry.MODIFY();
+                    INSERT();
                     GLEntryVATEntryLink.SETRANGE("VAT Entry No.", VATEntry."Entry No.");
-                    IF GLEntryVATEntryLink.FINDSET THEN
+                    IF GLEntryVATEntryLink.FINDSET() THEN
                         REPEAT
                             ReversedGLEntryTemp.SETRANGE("Reversed Entry No.", GLEntryVATEntryLink."G/L Entry No.");
-                            IF ReversedGLEntryTemp.FINDFIRST THEN
+                            IF ReversedGLEntryTemp.FINDFIRST() THEN
                                 GLEntryVATEntryLink.InsertLink(ReversedGLEntryTemp."Entry No.", NewVATEntry."Entry No.");
-                        UNTIL GLEntryVATEntryLink.NEXT = 0;
+                        UNTIL GLEntryVATEntryLink.NEXT() = 0;
                     NextVATEntryNo := NextVATEntryNo + 1;
                 END;
-            UNTIL VATEntry.NEXT = 0;
+            UNTIL VATEntry.NEXT() = 0;
     end;
 
     procedure CreateGLEntry(GenJnlLine: Record "Gen. Journal Line"; AccNo: Code[20]; Amount: Decimal; AmountAddCurr: Decimal; UseAmountAddCurr: Boolean)
@@ -886,7 +886,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                             VATPostingSetup."Unrealized VAT Type" := 0;
                         END;
                 END;
-                VATPostingSetup.MODIFY;
+                VATPostingSetup.MODIFY();
                 IF NOT PostPonedVAT AND (SalesHeader."VAT Date-Adl" <> 0D) THEN BEGIN
                     GenJnlLine."Postponed VAT-Adl" := GenJnlLine."Postponed VAT-Adl"::"Realized VAT";
                     GenJnlLine.Amount := -GenJnlLine."VAT Amount";
@@ -899,7 +899,6 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     end;
     //</adl.10>
     var
-        ADLCore: Codeunit "Adl Core";
         CoreSetup: Record "CoreSetup-Adl";
         AddCurrency: Record Currency;
         GLSetup: Record "General Ledger Setup";
@@ -912,6 +911,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         GlobalGLEntry: Record "G/L Entry";
         GLReg: Record "G/L Register";
         GLEntryVATEntryLink: Record "G/L Entry - VAT Entry Link";
+        ADLCore: Codeunit "Adl Core";
         GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line";
         AddCurrencyCode: Code[10];
         CurrencyFactor: Decimal;
@@ -946,5 +946,5 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         NeedsRoundingErr: Label '%1 needs to be rounded';
         ResidualRoundingErr: Label 'Residual caused by rounding of %1';
 
-        Text015: Label 'You cannot reverse the transaction, because it has already been reversed.';
+        ReverseTransactionErr: Label 'You cannot reverse the transaction, because it has already been reversed.';
 }

@@ -6,7 +6,7 @@ tableextension 13062526 "PurchaseHeader-Adl" extends "Purchase Header"  //38
         field(13062525; "VAT Date-Adl"; Date)
         {
             Caption = 'VAT Date';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             trigger OnValidate();
             begin
                 if "VAT Date-Adl" <> "Posting Date" then
@@ -21,13 +21,13 @@ tableextension 13062526 "PurchaseHeader-Adl" extends "Purchase Header"  //38
         {
             Caption = 'Postponed VAT';
             OptionMembers = "Realized VAT","Postponed VAT";
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         // </adl.10>
         // <adl.18>
         field(13062581; "Goods Return Type-Adl"; Code[10])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             Caption = 'Goods Return Type';
             TableRelation = "Goods Return Type-Adl";
         }

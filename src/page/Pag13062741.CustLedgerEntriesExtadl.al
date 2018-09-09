@@ -85,7 +85,7 @@ page 13062741 "Cust. Ledger Entries Ext.-adl"
                     trigger OnValidate();
                     begin
                         if not CustLedgerEntryExtData.GET("Entry No.", false) then begin
-                            CustLedgerEntryExtData.INIT;
+                            CustLedgerEntryExtData.INIT();
                             CustLedgerEntryExtData."Entry No." := "Entry No.";
                             CustLedgerEntryExtData.init();
                             CustLedgerEntryExtData."Is Journal Line" := false;
@@ -104,7 +104,7 @@ page 13062741 "Cust. Ledger Entries Ext.-adl"
                     trigger OnValidate();
                     begin
                         if not CustLedgerEntryExtData.GET("Entry No.", false) then begin
-                            CustLedgerEntryExtData.INIT;
+                            CustLedgerEntryExtData.INIT();
                             CustLedgerEntryExtData."Entry No." := "Entry No.";
                             CustLedgerEntryExtData.init();
                             CustLedgerEntryExtData."Is Journal Line" := false;
@@ -123,7 +123,7 @@ page 13062741 "Cust. Ledger Entries Ext.-adl"
                     trigger OnValidate();
                     begin
                         if not CustLedgerEntryExtData.GET("Entry No.", false) then begin
-                            CustLedgerEntryExtData.INIT;
+                            CustLedgerEntryExtData.INIT();
                             CustLedgerEntryExtData."Entry No." := "Entry No.";
                             CustLedgerEntryExtData."Is Journal Line" := false;
                             CustLedgerEntryExtData."Entry No." := "Entry No.";
@@ -155,10 +155,12 @@ page 13062741 "Cust. Ledger Entries Ext.-adl"
     end;
 
     trigger OnOpenPage();
+    var
+        SalesReceivablesSetup: Record "Sales & Receivables Setup";
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables) then exit;
 
-        SalesReceivablesSetup.GET;
+        SalesReceivablesSetup.GET();
         SalesReceivablesSetup.testfield("Exteded Data Start Bal. Date");
         if SalesReceivablesSetup."Exteded Data Start Bal. Date" <> 0D then
             SetRange("Posting Date", 0D, SalesReceivablesSetup."Exteded Data Start Bal. Date")
@@ -167,12 +169,11 @@ page 13062741 "Cust. Ledger Entries Ext.-adl"
     end;
 
     var
-        ADLCore: Codeunit "Adl Core";
         CoreSetup: Record "CoreSetup-Adl";
         CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-adl";
+        ADLCore: Codeunit "Adl Core";
         OriginalDocumentAmount: Decimal;
         OriginalVATAmount: Decimal;
-        SalesReceivablesSetup: Record "Sales & Receivables Setup";
         OpenAmountLCYWithoutUnreal: Decimal;
 }
 

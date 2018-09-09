@@ -6,7 +6,7 @@ tableextension 13062531 "PurchCrMemoHdr-Adl" extends "Purch. Cr. Memo Hdr."  //1
         field(13062525; "VAT Date-Adl"; Date)
         {
             Caption = 'VAT Date';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         // </adl.6>
         // <adl.10>
@@ -14,7 +14,7 @@ tableextension 13062531 "PurchCrMemoHdr-Adl" extends "Purch. Cr. Memo Hdr."  //1
         {
             Caption = 'Postponed VAT';
             OptionMembers = "Realized VAT","Postponed VAT";
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         // </adl.10>
         // <adl.18>
@@ -22,7 +22,7 @@ tableextension 13062531 "PurchCrMemoHdr-Adl" extends "Purch. Cr. Memo Hdr."  //1
         {
             Caption = 'Goods Return Type';
             TableRelation = "Goods Return Type-Adl";
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         // </adl.18>
     }

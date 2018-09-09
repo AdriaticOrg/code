@@ -455,12 +455,10 @@ page 13062598 "VAT Review Matrix-Adl"
                 ApplicationArea = All;
 
                 trigger OnAction();
-                var
-                    VATBookViewFormula: Record "VAT Book View Formula-Adl";
                 begin
                     Clear(VATBookCalcDetails);
                     VATBookCalcDetails.SetParameters(DateFilter, "VAT Book Code");
-                    VATBookCalcDetails.Run;
+                    VATBookCalcDetails.Run();
                 end;
             }
         }
@@ -468,7 +466,7 @@ page 13062598 "VAT Review Matrix-Adl"
 
     trigger OnAfterGetRecord();
     begin
-        MatrixOnAfterGetRecord;
+        MatrixOnAfterGetRecord();
     end;
 
     trigger OnInit();
@@ -506,9 +504,9 @@ page 13062598 "VAT Review Matrix-Adl"
     end;
 
     var
+        VATBookCalcDetails: Report "VAT Calc. Details-Adl";
         VATBookCalc: Codeunit "VAT Book Calculation-Adl";
         TextManagement: Codeunit TextManagement;
-        VATBookCalcDetails: Report "VAT Calc. Details-Adl";
         MatrixColumnCaptions: array[30] of Text[100];
         DateFilter: Text;
         MATRIX_CellData: array[30] of Decimal;
@@ -577,7 +575,6 @@ page 13062598 "VAT Review Matrix-Adl"
     procedure Load(VatBookCode: Code[20]; VatBookGroupFilter: Text[250]; DateFilterPar: Text; PeriodTypePar: Integer);
     var
         VATBookColumnName: Record "VAT Book Column Name-Adl";
-        i: Integer;
     begin
         if VatBookGroupFilter <> '' then begin
             SetCurrentKey("Book Link Code");
@@ -585,21 +582,20 @@ page 13062598 "VAT Review Matrix-Adl"
         end else
             SetRange("VAT Book Code", VatBookCode);
         if DateFilterPar = '' then
-            DateFilter := Format(CalcDate('<-CM>', Today)) + '..' + Format(CalcDate('<CM>', TODAY))
+            DateFilter := Format(CalcDate('<-CM>', Today())) + '..' + Format(CalcDate('<CM>', Today()))
         else
             DateFilter := DateFilterPar;
         PeriodType := PeriodTypePar;
         VATBookColumnName.SetFilter("VAT Book Code", VatBookCode);
-        if VATBookColumnName.FindSet then
+        if VATBookColumnName.FindSet() then
             repeat
                 MatrixColumnCaptions[VATBookColumnName."Column No."] := VATBookColumnName.Description;
-            until VATBookColumnName.Next = 0;
-        SetVisible;
+            until VATBookColumnName.Next() = 0;
+        SetVisible();
     end;
 
     local procedure MatrixOnAfterGetRecord();
     var
-        VATBookColumnName: Record "VAT Book Column Name-Adl";
         i: Integer;
     begin
         for i := 1 to ArrayLen(MATRIX_CellData) do

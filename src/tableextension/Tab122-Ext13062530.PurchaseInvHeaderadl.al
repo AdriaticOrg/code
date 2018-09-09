@@ -6,7 +6,7 @@ tableextension 13062530 "PurchaseInvHeader-Adl" extends "Purch. Inv. Header"  //
         field(13062525; "VAT Date-Adl"; Date)
         {
             Caption = 'VAT Date';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         // </adl.6>
         // <adl.10>
@@ -14,7 +14,7 @@ tableextension 13062530 "PurchaseInvHeader-Adl" extends "Purch. Inv. Header"  //
         {
             Caption = 'Postponed VAT';
             OptionMembers = "Realized VAT","Postponed VAT";
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         // </adl.10>
     }

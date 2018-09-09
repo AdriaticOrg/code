@@ -376,7 +376,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
 
     trigger OnAfterGetRecord();
     begin
-        MatrixOnAfterGetRecord;
+        MatrixOnAfterGetRecord();
     end;
 
     trigger OnInit();
@@ -415,7 +415,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
 
     trigger OnOpenPage();
     begin
-        InitCaption;
+        InitCaption();
     end;
 
     var
@@ -486,16 +486,15 @@ page 13062597 "VAT Book Setup Matrix-Adl"
     local procedure InitCaption();
     var
         VATBookColumnName: Record "VAT Book Column Name-Adl";
-        i: Integer;
     begin
         CLEAR(MatrixColumnCaptions);
 
         VATBookColumnName.SetFilter("VAT Book Code", GetFILTER("VAT Book Code"));
-        if VATBookColumnName.FindSet then
+        if VATBookColumnName.FindSet() then
             repeat
                 MatrixColumnCaptions[VATBookColumnName."Column No."] := VATBookColumnName.Description;
-            until VATBookColumnName.Next = 0;
-        SetVisible;
+            until VATBookColumnName.Next() = 0;
+        SetVisible();
     end;
 
     local procedure MatrixOnAfterGetRecord();
@@ -520,16 +519,15 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                                                         Format(MatrixRec.Value1),
                                                         Format(MatrixRec.Operator2),
                                                         Format(MatrixRec.Value2));
-            SetVisible;
+            SetVisible();
         end;
     end;
 
     local procedure MatrixOnDrillDown(Column: Integer);
     var
         VATBookViewFormula: Record "VAT Book View Formula-Adl";
-        VATBookViewPage: Page "VAT Book View Formula-Adl";
     begin
-        VATBookViewFormula.Reset;
+        VATBookViewFormula.Reset();
         VATBookViewFormula.SetRange("VAT Book Code", "VAT Book Code");
         VATBookViewFormula.SetRange("VAT Book Group Code", "VAT Book Group Code");
         VATBookViewFormula.SetRange("VAT Identifier", "VAT Identifier");

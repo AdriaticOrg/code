@@ -19,41 +19,41 @@ codeunit 13062592 "SelectFilterMgmt_VATBook-Adl"
         TempRecRefCount: Integer;
         More: Boolean;
     begin
-        if TempRecRef.IsTemporary then begin
-            RecRef := TempRecRef.Duplicate;
-            RecRef.Reset;
+        if TempRecRef.IsTemporary() then begin
+            RecRef := TempRecRef.Duplicate();
+            RecRef.Reset();
         end else
-            RecRef.Open(TempRecRef.Number);
+            RecRef.Open(TempRecRef.Number());
 
-        TempRecRefCount := TempRecRef.Count;
+        TempRecRefCount := TempRecRef.Count();
         if TempRecRefCount > 0 then begin
             TempRecRef.Ascending(true);
             TempRecRef.FIND('-');
             while TempRecRefCount > 0 do begin
                 TempRecRefCount := TempRecRefCount - 1;
-                RecRef.SetPosition(TempRecRef.GetPosition);
-                RecRef.Find;
+                RecRef.SetPosition(TempRecRef.GetPosition());
+                RecRef.Find();
                 FieldRef := RecRef.Field(SelectionFieldID);
-                FirstRecRef := Format(FieldRef.Value);
+                FirstRecRef := Format(FieldRef.Value());
                 LastRecRef := FirstRecRef;
                 More := TempRecRefCount > 0;
                 while More do
-                    if RecRef.Next = 0 then
-                            More := false
-                        else begin
-                            SavePos := TempRecRef.GetPosition;
-                            TempRecRef.SetPosition(RecRef.GetPosition);
-                            if not TempRecRef.Find then begin
+                    if RecRef.Next() = 0 then
+                        More := false
+                    else begin
+                        SavePos := TempRecRef.GetPosition();
+                        TempRecRef.SetPosition(RecRef.GetPosition());
+                        if not TempRecRef.Find() then begin
+                            More := false;
+                            TempRecRef.SetPosition(SavePos);
+                        end else begin
+                            FieldRef := RecRef.Field(SelectionFieldID);
+                            LastRecRef := Format(FieldRef.Value());
+                            TempRecRefCount := TempRecRefCount - 1;
+                            if TempRecRefCount = 0 then
                                 More := false;
-                                TempRecRef.SetPosition(SavePos);
-                            end else begin
-                                FieldRef := RecRef.Field(SelectionFieldID);
-                                LastRecRef := Format(FieldRef.Value);
-                                TempRecRefCount := TempRecRefCount - 1;
-                                if TempRecRefCount = 0 then
-                                    More := false;
-                            end;
                         end;
+                    end;
                 if SelectionFilter <> '' then
                     SelectionFilter := SelectionFilter + '|';
                 if FirstRecRef = LastRecRef then
@@ -61,7 +61,7 @@ codeunit 13062592 "SelectFilterMgmt_VATBook-Adl"
                 else
                     SelectionFilter := SelectionFilter + AddQuotes(FirstRecRef) + '..' + AddQuotes(LastRecRef);
                 if TempRecRefCount > 0 then
-                    TempRecRef.Next;
+                    TempRecRef.Next();
             end;
             exit(SelectionFilter);
         end;

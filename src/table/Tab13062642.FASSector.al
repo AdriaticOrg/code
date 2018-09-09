@@ -5,59 +5,59 @@ table 13062642 "FAS Sector"
 
     fields
     {
-        field(1;"Code";Code[10])
+        field(1; "Code"; Code[10])
         {
             Caption = 'Code';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             NotBlank = false;
         }
-        field(2;Description;Text[200])
+        field(2; Description; Text[200])
         {
             Caption = 'Description';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
-        field(3;Type;Option)
+        field(3; Type; Option)
         {
             Caption = 'Type';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             OptionCaption = 'Posting,Total';
             OptionMembers = Posting,Total;
         }
-        field(4;Totaling;Text[80])
+        field(4; Totaling; Text[80])
         {
             Caption = 'Totaling';
-            DataClassification = ToBeClassified;
-            TableRelation = IF (Type=CONST(Total)) "FAS Sector".Code;
+            DataClassification = SystemMetadata;
+            TableRelation = IF (Type = CONST (Total)) "FAS Sector".Code;
             //This property is currently not supported
             //TestTableRelation = false;
             ValidateTableRelation = false;
 
             trigger OnValidate()
             begin
-                if Type<>Type::Total then FIELDERROR(Type);
+                if Type <> Type::Total then FIELDERROR(Type);
             end;
         }
-        field(8;Indentation;Integer)
+        field(8; Indentation; Integer)
         {
             BlankZero = true;
             Caption = 'Indentation';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
-        field(9;"Show Credit/Debit";Boolean)
+        field(9; "Show Credit/Debit"; Boolean)
         {
             Caption = 'Show Credit/Debit';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
-        field(20;"AOP Code";Code[10])
+        field(20; "AOP Code"; Code[10])
         {
             Caption = 'AOP Code';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
     }
 
     keys
     {
-        key(Key1;"Code")
+        key(Key1; "Code")
         {
         }
     }

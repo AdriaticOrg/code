@@ -19,7 +19,7 @@ report 13062593 "Export VAT Books To XML-Adl"
                     var
                         TextManagement: Codeunit TextManagement;
                     begin
-                        TextManagement.MakeDateFilter(DateFilter); 
+                        TextManagement.MakeDateFilter(DateFilter);
                     end;
                 }
                 field("PPPDV Date"; PPPDVDate)
@@ -41,7 +41,7 @@ report 13062593 "Export VAT Books To XML-Adl"
     trigger OnPreReport();
     begin
         IF DateFilter = '' THEN
-            error(Text001);
+            error(DateFilterRequiredErr);
         VATBooksExporttoXML.ExportToXML(DateFilter, PPPDVDate, ResponsiblePerson);
     end;
 
@@ -49,6 +49,6 @@ report 13062593 "Export VAT Books To XML-Adl"
         VATBooksExporttoXML: Codeunit "VAT Books Export to XML-Adl";
         PPPDVDate: Date;
         DateFilter: Text;
-        Text001: Label 'You must enter Date Filter';
+        DateFilterRequiredErr: Label 'You must enter Date Filter';
         ResponsiblePerson: Text[250];
 }

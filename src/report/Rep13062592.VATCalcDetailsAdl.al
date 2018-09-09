@@ -16,7 +16,7 @@ report 13062592 "VAT Calc. Details-Adl"
             column(Company_Address; CompInfo.Address + ' ' + CompInfo."Address 2") { }
             column(Company_Name; CompInfo.Name + ' ' + CompInfo."Name 2") { }
             column(VATBookCode; "VAT Book Code") { }
-            column(VatPrewFilters; GetFILTERS) { }
+            column(VatPrewFilters; GetFILTERS()) { }
             column(FromToDate; SetedDateFilter) { }
             column(ColumnNo; ColumnNo) { }
             column(ColumnDescription; Description) { }
@@ -46,7 +46,7 @@ report 13062592 "VAT Calc. Details-Adl"
             begin
                 if SetedBookFilter <> '' then
                     SetFilter("VAT Book Code", SetedBookFilter);
-                CompInfo.Get;
+                CompInfo.Get();
             end;
         }
     }
@@ -84,21 +84,20 @@ report 13062592 "VAT Calc. Details-Adl"
                             VATBook: Record "VAT Book-Adl";
                             VATBooks: Page "VAT Books-Adl";
                         begin
-                            VATBook.Reset;
+                            VATBook.Reset();
                             Clear(VATBooks);
                             VATBooks.LookupMode(true);
-                            if VATBooks.RunModal = ACTION::LookupOK then begin
+                            if VATBooks.RunModal() = ACTION::LookupOK then begin
                                 VATBooks.SetSelection(VATBook);
                                 SetedBookFilter := '';
                                 VATBook.MarkedOnly(true);
-                                if VATBook.FindSet then begin
+                                if VATBook.FindSet() then
                                     repeat
                                         if SetedBookFilter = '' then
                                             SetedBookFilter := VATBook.Code
                                         else
                                             SetedBookFilter += '|' + VATBook.Code;
-                                    until VATBook.Next = 0;
-                                end;
+                                    until VATBook.Next() = 0;
                             end;
                         end;
                     }

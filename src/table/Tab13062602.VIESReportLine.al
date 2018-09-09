@@ -1,53 +1,53 @@
 table 13062602 "VIES Report Line"
 {
     Caption = 'VIES Report Line';
-    DataClassification = ToBeClassified;
-    
+    DataClassification = SystemMetadata;
+
     fields
     {
-        field(1;"Document No."; Code[20])
+        field(1; "Document No."; Code[20])
         {
             Caption = '"Document No."';
             TableRelation = "VIES Report Header"."No.";
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(2; "Line No"; Integer)
         {
             Caption = 'Line No';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(5; "Description"; Text[120])
         {
             Caption = 'Description';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(10; "Type"; Option)
         {
             Caption = 'Type';
             OptionMembers = New,Correction;
             OptionCaption = 'New,Correction';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(14; "Applies-to Report No."; Code[20])
         {
             Caption = 'Applies-to Report No.';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(20; "Period Year"; Integer)
         {
             Caption = 'Period Year';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(21; "Period Round"; Integer)
         {
             Caption = 'Period Round';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
-        
+
         field(24; "Country/Region Code"; Code[10])
         {
             Caption = 'Country/Region Code';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             TableRelation = "Country/Region";
 
             trigger OnValidate()
@@ -63,42 +63,42 @@ table 13062602 "VIES Report Line"
         field(25; "Country/Region No."; code[10])
         {
             Caption = 'Country/Region No.';
-            DataClassification = ToBeClassified;
-        }      
+            DataClassification = SystemMetadata;
+        }
         field(30; "VAT Registration No."; Text[20])
         {
             Caption = 'VAT Registration No.';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(34; "EU 3-Party Trade"; Boolean)
         {
             Caption = 'EU 3-Party Trade';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(35; "EU Customs Procedure"; Boolean)
         {
             Caption = 'EU Customs Procedure';
-            DataClassification = ToBeClassified;
-        }        
+            DataClassification = SystemMetadata;
+        }
         field(38; "EU Sales Type"; Option)
         {
             Caption = 'EU Sales Type';
             OptionMembers = Goods,Services;
             OptionCaption = 'Goods,Services';
-            DataClassification = ToBeClassified;
-        }    
-        
+            DataClassification = SystemMetadata;
+        }
+
         field(45; "Amount"; Decimal)
         {
             Caption = 'Amount';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
-                                
+
     }
-    
+
     keys
     {
-        key(PK; "Document No.","Line No")
+        key(PK; "Document No.", "Line No")
         {
             Clustered = true;
         }
@@ -112,18 +112,18 @@ table 13062602 "VIES Report Line"
     trigger OnModify()
     begin
         TestHeadStatusOpen();
-    end;    
+    end;
 
     trigger OnDelete()
     begin
         TestHeadStatusOpen();
     end;
 
-    local procedure TestHeadStatusOpen()  
+    local procedure TestHeadStatusOpen()
     var
-        VIESRepHead:Record "VIES Report Header";      
+        VIESRepHead: Record "VIES Report Header";
     begin
         VIESRepHead.TestStatusOpen("Document No.");
-    end;    
-    
+    end;
+
 }

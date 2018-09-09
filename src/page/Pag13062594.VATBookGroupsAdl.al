@@ -41,7 +41,7 @@ page 13062594 "VAT Book Groups-Adl"
 
                     trigger OnValidate();
                     begin
-                        CurrPage.Update;
+                        CurrPage.Update();
                     end;
                 }
                 field(Totaling; Totaling)

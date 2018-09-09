@@ -38,7 +38,7 @@ page 13062596 "VAT Book View Formula-Adl"
                     trigger OnAssistEdit();
                     begin
                         if CurrPage.Editable() then begin
-                            SetFiltersForVATEntry;
+                            SetFiltersForVATEntry();
                             CurrPage.Update(true);
                         end;
                     end;

@@ -5,7 +5,7 @@ tableextension 13062546 "Return Shipment Header -Adl" extends "Return Shipment H
         // <adl.18>
         field(13062581; "Goods Return Type-Adl"; Code[10])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             Caption = 'Goods Return Type';
             TableRelation = "Goods Return Type-Adl";
         }

@@ -33,10 +33,10 @@ report 13062525 "Post or Corr Postponed VAT-Adl"
 
     trigger OnPreReport()
     var
-        SuccessMsgPost: Label 'The Postponed VAT was successfully posted.';
-        SuccessMsgCorrect: Label 'The Postponed VAT was successfully corrected.';
-        CnfrmPost: Label 'Do you really want to post Postponed VAT with VAT Date %1?';
-        CnfrmRev: Label 'Do you really want to reverse Postponed VAT with VAT Date %1?';
+        SuccessMsgPostMsg: Label 'The Postponed VAT was successfully posted.';
+        SuccessMsgCorrectMsg: Label 'The Postponed VAT was successfully corrected.';
+        CnfrmPostQst: Label 'Do you really want to post Postponed VAT with VAT Date %1?';
+        CnfrmRevQst: Label 'Do you really want to reverse Postponed VAT with VAT Date %1?';
         NewPostDateErr: Label 'You must enter new posting date.';
         PostVATErr: Label 'You must post Postponed VAT before correcting.';
         AlreadyPostedErr: Label 'You cannot post Postponed VAT because it has already been posted.';
@@ -48,21 +48,21 @@ report 13062525 "Post or Corr Postponed VAT-Adl"
         if (Postponed = Postponed::"Realized VAT") and PostVAT then
             Error(AlreadyPostedErr);
 
-        if CurrReport.USEREQUESTPAGE then begin
+        if CurrReport.USEREQUESTPAGE() then begin
             ;
             if not PostVAT then
-                ConfirmMsg := CnfrmRev
+                ConfirmMsg := CnfrmRevQst
             else
-                ConfirmMsg := CnfrmPost;
+                ConfirmMsg := CnfrmPostQst;
             if not Confirm(ConfirmMsg, TRUE, NewPostingDate) then
-                CurrReport.SKIP;
+                CurrReport.SKIP();
         end;
 
         VATManagement.HandlePostponedVAT(TableNo, No, NewPostingDate, PostVAT, CustomerVendor, Postponed);
         IF PostVAT THEN
-            MESSAGE(SuccessMsgPost)
+            MESSAGE(SuccessMsgPostMsg)
         ELSE
-            MESSAGE(SuccessMsgCorrect);
+            MESSAGE(SuccessMsgCorrectMsg);
     end;
 
     var

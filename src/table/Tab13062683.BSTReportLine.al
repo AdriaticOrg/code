@@ -1,7 +1,7 @@
 table 13062683 "BST Report Line"
 {
     Caption = 'BST Report Line';
-    DataClassification = ToBeClassified;
+    DataClassification = SystemMetadata;
 
     fields
     {
@@ -9,18 +9,18 @@ table 13062683 "BST Report Line"
         {
             Caption = '"Document No."';
             TableRelation = "BST Report Header"."No.";
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(2; "Line No"; Integer)
         {
             Caption = 'Line No';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(4; "BST Code"; Code[10])
         {
             Caption = 'BST Code';
-            DataClassification = ToBeClassified;
-            TableRelation = "BST Code" where ("Type"=const(Posting));
+            DataClassification = SystemMetadata;
+            TableRelation = "BST Code" where ("Type" = const (Posting));
 
             trigger OnValidate()
             var
@@ -36,17 +36,17 @@ table 13062683 "BST Report Line"
         field(5; "Description"; Text[120])
         {
             Caption = 'Description';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(10; "BST Serial No."; Code[20])
         {
             Caption = 'BST Serial No.';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(11; "Country/Region Code"; Code[10])
         {
             Caption = 'Country/Region Code';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             TableRelation = "Country/Region";
 
             trigger OnValidate()
@@ -62,18 +62,18 @@ table 13062683 "BST Report Line"
         field(12; "Country/Region No."; Code[10])
         {
             Caption = 'Country/Region No.';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
 
         field(20; "Income Amount"; Decimal)
         {
             Caption = 'Income Amount';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(21; "Expense Amount"; Decimal)
         {
             Caption = 'Expense Amount';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
     }
 
@@ -93,17 +93,17 @@ table 13062683 "BST Report Line"
     trigger OnModify()
     begin
         TestHeadStatusOpen();
-    end;    
+    end;
 
     trigger OnDelete()
     begin
         TestHeadStatusOpen();
     end;
 
-    local procedure TestHeadStatusOpen()  
+    local procedure TestHeadStatusOpen()
     var
-        BSTRepHead:Record "BST Report Header";      
+        BSTRepHead: Record "BST Report Header";
     begin
         BSTRepHead.TestStatusOpen("Document No.");
-    end;    
+    end;
 }

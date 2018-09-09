@@ -1,12 +1,12 @@
 page 13062641 "FAS Instruments"
 {
-    Caption= 'Finance Instruments';
+    Caption = 'Finance Instruments';
     PageType = List;
     DelayedInsert = true;
     SourceTable = "FAS Instrument";
     UsageCategory = Administration;
     ApplicationArea = All;
-    
+
     layout
     {
         area(content)
@@ -15,50 +15,33 @@ page 13062641 "FAS Instruments"
             {
                 IndentationControls = Description;
                 ShowCaption = false;
-                field("Code";Code)
+                field("Code"; Code)
                 {
                     ApplicationArea = All;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     ApplicationArea = All;
                 }
-                field(Type;Type)
+                field(Type; Type)
                 {
                     ApplicationArea = All;
                 }
-                field(Totaling;Totaling)
-                {
-                    Editable = false;
-                    ApplicationArea = All;
-                  }
-                field(Indentation;Indentation)
+                field(Totaling; Totaling)
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field("AOP Code";"AOP Code")
+                field(Indentation; Indentation)
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("AOP Code"; "AOP Code")
                 {
                     ApplicationArea = All;
                 }
             }
         }
     }
-    
-    actions
-    {
-        area(processing)
-        {
-            action(ActionName)
-            {
-                trigger OnAction()
-                begin
-                    
-                end;
-            }
-        }
-    }
-    
-    var
-        myInt: Integer;
 }

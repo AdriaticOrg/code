@@ -1,12 +1,6 @@
 codeunit 13062594 "TextWriter-adl"
 {
     trigger OnRun()
-    var
-        OutStr: OutStream;
-        FileName: Text;
-        ToFilter: Text;
-        DialogTitle: Text;
-        PadCharacter: Text[1];
     begin
     end;
 
@@ -67,7 +61,6 @@ codeunit 13062594 "TextWriter-adl"
     procedure Download(DialogTitle: Text; ToFilter: Text; FileName: Text);
     var
         InStr: InStream;
-        ExpOk: Boolean;
     begin
         TmpBlobTemp.Blob.CreateInStream(InStr, TextEncoding::Windows);
         File.DownloadFromStream(InStr, DialogTitle, '', ToFilter, FileName);

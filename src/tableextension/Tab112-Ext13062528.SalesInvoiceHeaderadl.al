@@ -6,7 +6,7 @@ tableextension 13062528 "Sales Invoice Header-Adl" extends "Sales Invoice Header
         field(13062525; "VAT Date-Adl"; Date)
         {
             Caption = 'VAT Date';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         // </adl.6>
         // <adl.10>
@@ -14,15 +14,15 @@ tableextension 13062528 "Sales Invoice Header-Adl" extends "Sales Invoice Header
         {
             Caption = 'Postponed VAT';
             OptionMembers = "Realized VAT","Postponed VAT";
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         // </adl.10>
         // <adl.22>
         field(13062602; "EU Customs Procedure"; Boolean)
         {
             Caption = 'EU Customs Procedure';
-            DataClassification = ToBeClassified;
-        }                 
+            DataClassification = SystemMetadata;
+        }
         // </adl.22>          
     }
 }

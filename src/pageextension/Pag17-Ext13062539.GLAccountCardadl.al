@@ -66,8 +66,8 @@ pageextension 13062539 "GLAccountCard-adl" extends "G/L Account Card" //17
 
                 trigger OnAction()
                 var
-                    GLExportSIadl: Report "GL ExportSI-adl";
                     GLAccount: Record "G/L Account";
+                    GLExportSIadl: Report "GL ExportSI-adl";
                 begin
                     GLAccount := Rec;
                     GLAccount.SetRecFilter();

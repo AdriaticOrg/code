@@ -5,7 +5,7 @@ page 13062681 "BST Codes"
     UsageCategory = Administration;
     Editable = true;
     SourceTable = "BST Code";
-    
+
     layout
     {
         area(Content)
@@ -15,40 +15,30 @@ page 13062681 "BST Codes"
                 IndentationControls = Description;
                 ShowCaption = false;
 
-                field(Code;Code) {
+                field(Code; Code)
+                {
                     ApplicationArea = All;
                 }
-                field("Serial Num.";"Serial Num.") {
+                field("Serial Num."; "Serial Num.")
+                {
                     ApplicationArea = All;
                 }
-                field(Description;Description) {
+                field(Description; Description)
+                {
                     ApplicationArea = All;
                 }
-                field(Totaling;Totaling) {
+                field(Totaling; Totaling)
+                {
                     ApplicationArea = All;
                 }
-                field(Type;Type) {
+                field(Type; Type)
+                {
                     ApplicationArea = All;
                 }
-                field(Indentaion;Indentation) {
+                field(Indentaion; Indentation)
+                {
                     ApplicationArea = All;
                 }
-            }
-        }
-    }
-    
-    actions
-    {
-        area(Processing)
-        {
-            action(ActionName)
-            {
-                ApplicationArea = All;
-                
-                trigger OnAction()
-                begin
-                    
-                end;
             }
         }
     }

@@ -68,7 +68,7 @@ pageextension 13062532 "PostedSalesCreditMemo-Adl" extends "Posted Sales Credit 
                         CLEAR(PostCorr);
                         TESTFIELD("Postponed VAT-Adl", "Postponed VAT-Adl"::"Postponed VAT");
                         PostCorr.SetParameters(DATABASE::"Sales Cr.Memo Header", "No.", CustomerVendor::Customer, "Postponed VAT-Adl", true);
-                        PostCorr.RUNMODAL;
+                        PostCorr.RUNMODAL();
                     end;
                 }
                 action(CorrectPostponed)
@@ -85,7 +85,7 @@ pageextension 13062532 "PostedSalesCreditMemo-Adl" extends "Posted Sales Credit 
                         CLEAR(PostCorr);
                         TESTFIELD("Postponed VAT-Adl", "Postponed VAT-Adl"::"Realized VAT");
                         PostCorr.SetParameters(DATABASE::"Sales Cr.Memo Header", "No.", CustomerVendor::Customer, "Postponed VAT-Adl", false);
-                        PostCorr.RUNMODAL;
+                        PostCorr.RUNMODAL();
                     end;
                 }
                 // </adl.10>

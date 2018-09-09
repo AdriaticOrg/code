@@ -43,7 +43,7 @@ pageextension 13062533 "PostedPurchaseInvoice-Adl" extends "Posted Purchase Invo
                         CLEAR(PostCorr);
                         TESTFIELD("Postponed VAT-Adl", "Postponed VAT-Adl"::"Postponed VAT");
                         PostCorr.SetParameters(DATABASE::"Purch. Inv. Header", "No.", CustomerVendor::Vendor, "Postponed VAT-Adl", TRUE);
-                        PostCorr.RUNMODAL;
+                        PostCorr.RUNMODAL();
                     end;
                 }
                 action(CorrectPostponed)
@@ -60,7 +60,7 @@ pageextension 13062533 "PostedPurchaseInvoice-Adl" extends "Posted Purchase Invo
                         CLEAR(PostCorr);
                         TESTFIELD("Postponed VAT-Adl", "Postponed VAT-Adl"::"Realized VAT");
                         PostCorr.SetParameters(DATABASE::"Purch. Inv. Header", "No.", CustomerVendor::Vendor, "Postponed VAT-Adl", false);
-                        PostCorr.RUNMODAL;
+                        PostCorr.RUNMODAL();
                     end;
                 }
                 // </adl.10>

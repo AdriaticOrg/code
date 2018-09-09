@@ -1,7 +1,7 @@
 table 13062662 "KRD Report Line"
 {
     Caption = 'KRD Report Line';
-    DataClassification = ToBeClassified;
+    DataClassification = SystemMetadata;
 
     fields
     {
@@ -9,52 +9,52 @@ table 13062662 "KRD Report Line"
         {
             Caption = '"Document No."';
             TableRelation = "KRD Report Header"."No.";
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(2; "Line No"; Integer)
         {
             Caption = 'Line No';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(5; "Description"; Text[120])
         {
             Caption = 'Description';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(10; "Affiliation Type"; Code[10])
         {
             Caption = 'Affiliation Type';
-            DataClassification = ToBeClassified;
-            TableRelation = "KRD Code".Code where ("Type" = const("Affiliation Type"));
+            DataClassification = SystemMetadata;
+            TableRelation = "KRD Code".Code where ("Type" = const ("Affiliation Type"));
         }
         field(11; "Instrument Type"; Code[10])
         {
             Caption = 'Instrument Type';
-            DataClassification = ToBeClassified;
-            TableRelation = "KRD Code".Code where ("Type" = const("Instrument Type"));
+            DataClassification = SystemMetadata;
+            TableRelation = "KRD Code".Code where ("Type" = const ("Instrument Type"));
         }
         field(12; "Maturity"; Code[10])
         {
             Caption = 'Maturity';
-            DataClassification = ToBeClassified;
-            TableRelation = "KRD Code".Code where ("Type" = const(Maturity));
-        }        
+            DataClassification = SystemMetadata;
+            TableRelation = "KRD Code".Code where ("Type" = const (Maturity));
+        }
         field(13; "Claim/Liability"; Option)
         {
             OptionMembers = " ","Claim","Liability";
             Caption = 'Claim/Liability';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(14; "Non-Residnet Sector Code"; Code[10])
         {
             Caption = 'Non-Resident Sector Code';
-            DataClassification = ToBeClassified;
-            TableRelation = "FAS Sector" where ("Type"=const(Posting));
+            DataClassification = SystemMetadata;
+            TableRelation = "FAS Sector" where ("Type" = const (Posting));
         }
         field(15; "Country/Region Code"; Code[10])
         {
             Caption = 'Country/Region Code';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             TableRelation = "Country/Region";
 
             trigger OnValidate()
@@ -70,13 +70,13 @@ table 13062662 "KRD Report Line"
         field(16; "Country/Region No."; code[10])
         {
             Caption = 'Country/Region No.';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(17; "Currency Code"; Code[10])
         {
             Caption = 'Currency Code';
             TableRelation = Currency;
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
 
             trigger OnValidate()
             var
@@ -91,22 +91,22 @@ table 13062662 "KRD Report Line"
         field(18; "Currency No."; Code[10])
         {
             Caption = 'Currency No.';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(20; "Other Changes"; Decimal)
         {
             Caption = 'Other Changes';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(30; "Opening Balance"; Decimal)
         {
             Caption = 'Opening Balance';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(31; "Increase Amount"; Decimal)
         {
             Caption = 'Increase Amount';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
 
             trigger OnValidate()
             begin
@@ -116,7 +116,7 @@ table 13062662 "KRD Report Line"
         field(32; "Decrease Amount"; Decimal)
         {
             Caption = 'Decrease Amount';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
 
             trigger OnValidate()
             begin
@@ -126,7 +126,7 @@ table 13062662 "KRD Report Line"
         field(33; "Closing Balance"; Decimal)
         {
             Caption = 'Closing Balance';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
     }
 
@@ -146,19 +146,19 @@ table 13062662 "KRD Report Line"
     trigger OnModify()
     begin
         TestHeadStatusOpen();
-    end;    
+    end;
 
     trigger OnDelete()
     begin
         TestHeadStatusOpen();
     end;
 
-    local procedure TestHeadStatusOpen()  
+    local procedure TestHeadStatusOpen()
     var
-        KRDRepHead:Record "KRD Report Header";      
+        KRDRepHead: Record "KRD Report Header";
     begin
         KRDRepHead.TestStatusOpen("Document No.");
-    end;    
+    end;
 
     var
     local procedure ValidateClosingBal()

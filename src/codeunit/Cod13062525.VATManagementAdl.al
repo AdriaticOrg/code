@@ -23,7 +23,7 @@ codeunit 13062525 "VAT Management-Adl"
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
 
-        if Confirm(UpdVatDate, true) then
+        if Confirm(UpdVatDateQst, true) then
             Rec.Validate("VAT Date-Adl", Rec."Posting Date");
     end;
 
@@ -55,8 +55,6 @@ codeunit 13062525 "VAT Management-Adl"
     local procedure OnBeforeInsertVATEntry(var VATEntry: Record "VAT Entry"; GenJournalLine: Record "Gen. Journal Line")
     var
         VATPostingSetup: Record "VAT Posting Setup";
-        vatAmount: Decimal;
-        vatBase: Decimal;
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         VATPostingSetup.Get(GenJournalLine."VAT Bus. Posting Group", GenJournalLine."VAT Prod. Posting Group");
@@ -146,7 +144,7 @@ codeunit 13062525 "VAT Management-Adl"
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
 
-        if Confirm(UpdVatDate, false) then
+        if Confirm(UpdVatDateQst, false) then
             Rec.Validate("VAT Date-Adl", Rec."Posting Date");
     end;
 
@@ -218,18 +216,11 @@ codeunit 13062525 "VAT Management-Adl"
         VendLedgerEntry: Record "Vendor Ledger Entry";
         PurchInvoice: Record "Purch. Inv. Header";
         PurchCrMemo: Record "Purch. Cr. Memo Hdr.";
-        ServiceInvoice: Record "Service Invoice Header";
-        ServiceCrMemo: Record "Service Cr.Memo Header";
         SalesInvoice: Record "Sales Invoice Header";
         SalesCrMemo: Record "Sales Cr.Memo Header";
-        VATPostingSetup: Record "VAT Posting Setup";
-        VATEntry: Record "VAT Entry";
-        VarRecRef: Variant;
         GenJnlLineLoc: Record "Gen. Journal Line";
         LedgEntryFound: Boolean;
         DimSetID: Integer;
-        AccNo: Code[20];
-        PostponedAccNo: Code[20];
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
 
@@ -295,7 +286,7 @@ codeunit 13062525 "VAT Management-Adl"
                 Description := Description;
                 "Dimension Set ID" := DimSetID;
             end;
-            if Post then begin
+            if Post then
                 CASE SalesPurchase OF
                     SalesPurchase::Customer:
                         begin
@@ -309,20 +300,14 @@ codeunit 13062525 "VAT Management-Adl"
                             GenJnlLineLoc.Amount := VendLedgerEntry."Remaining Amt. (LCY)";
                             PostPostponedVAT(CustLedgerEntry, VendLedgerEntry, GenJnlLineLoc, SalesPurchase::Vendor);
                         end;
-                end;
-            end
-            else begin
+                end
+            else
                 CASE SalesPurchase OF
                     SalesPurchase::Customer:
-                        begin
-                            ReversePostponedVAT(GenJnlLineLoc, CustLedgerEntry."Transaction No.", SalesPurchase::Customer);
-                        end;
+                        ReversePostponedVAT(GenJnlLineLoc, CustLedgerEntry."Transaction No.", SalesPurchase::Customer);
                     SalesPurchase::Vendor:
-                        begin
-                            ReversePostponedVAT(GenJnlLineLoc, VendLedgerEntry."Transaction No.", SalesPurchase::Vendor);
-                        end;
+                        ReversePostponedVAT(GenJnlLineLoc, VendLedgerEntry."Transaction No.", SalesPurchase::Vendor);
                 end;
-            end;
         end;
     end;
 
@@ -331,12 +316,11 @@ codeunit 13062525 "VAT Management-Adl"
         SourceCodeSetupLoc: Record "Source Code Setup";
         GenJnlLine: Record "Gen. Journal Line";
         GLSetup: Record "General Ledger Setup";
-        GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line";
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         GenJnlLine := GenJnlLine2;
-        GLSetup.Get;
-        SourceCodeSetupLoc.Get;
+        GLSetup.Get();
+        SourceCodeSetupLoc.Get();
         case SalesPurchase of
             SalesPurchase::Customer:
                 begin
@@ -350,7 +334,7 @@ codeunit 13062525 "VAT Management-Adl"
                 end;
         end;
         GenJnlLine."Postponed VAT-Adl" := GenJnlLine."Postponed VAT-Adl"::"Postponed VAT";
-        IF ManagePostponedVAT.GetNextEntryNo = 0 THEN
+        IF ManagePostponedVAT.GetNextEntryNo() = 0 THEN
             ManagePostponedVAT.StartPosting(GenJnlLine)
         ELSE
             ManagePostponedVAT.ContinuePosting(GenJnlLine);
@@ -382,14 +366,14 @@ codeunit 13062525 "VAT Management-Adl"
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         GenJnlLine := GenJnlLine2;
-        SourceCodeSetup.GET;
+        SourceCodeSetup.GET();
         GenJnlLine."Source Code" := SourceCodeSetup.Reversal;
-        IF ManagePostponedVAT.GetNextEntryNo = 0 THEN
+        IF ManagePostponedVAT.GetNextEntryNo() = 0 THEN
             ManagePostponedVAT.StartPosting(GenJnlLine)
         ELSE
             ManagePostponedVAT.ContinuePosting(GenJnlLine);
         //GLReg.Reversed := TRUE;
-        VATEntry.LOCKTABLE;
+        VATEntry.LOCKTABLE();
         UnrealVATEntry.SETCURRENTKEY("Transaction No.");
         UnrealVATEntry.SETRANGE("Transaction No.", TransactionNo);
         UnrealVATEntry.SETRANGE("Postponed VAT-Adl", UnrealVATEntry."Postponed VAT-Adl"::"Postponed VAT");
@@ -398,7 +382,7 @@ codeunit 13062525 "VAT Management-Adl"
                 VATEntry.SETCURRENTKEY("Unrealized VAT Entry No.");
                 VATEntry.SETRANGE("Unrealized VAT Entry No.", UnrealVATEntry."Entry No.");
                 VATEntry.SETRANGE(Reversed, FALSE);
-                IF VATEntry.FINDSET THEN
+                IF VATEntry.FINDSET() THEN
                     REPEAT
                         VATPostingSetup.GET(VATEntry."VAT Bus. Posting Group", VATEntry."VAT Prod. Posting Group");
                         GenJnlLine."Posting Date" := VATEntry."Posting Date";
@@ -412,7 +396,7 @@ codeunit 13062525 "VAT Management-Adl"
                         UnrealVATEntry."Add.-Curr. Rem. Unreal. Amount" + VATEntry."Additional-Currency Amount";
                         UnrealVATEntry."Add.-Curr. Rem. Unreal. Base" :=
                         UnrealVATEntry."Add.-Curr. Rem. Unreal. Base" + VATEntry."Additional-Currency Base";
-                        UnrealVATEntry.MODIFY;
+                        UnrealVATEntry.MODIFY();
                         CASE SalesPurchase OF
                             SalesPurchase::Customer:
                                 BEGIN
@@ -433,9 +417,9 @@ codeunit 13062525 "VAT Management-Adl"
                                         VATEntry.Amount, ManagePostponedVAT.CalcAddCurrForUnapplication(VATEntry."Posting Date", VATEntry.Amount), TRUE);
                                 END;
                         END;
-                    UNTIL VATEntry.NEXT = 0;
-            UNTIL UnrealVATEntry.NEXT = 0;
-        ManagePostponedVAT.FinishPosting;
+                    UNTIL VATEntry.NEXT() = 0;
+            UNTIL UnrealVATEntry.NEXT() = 0;
+        ManagePostponedVAT.FinishPosting();
         GenJnlLine2 := GenJnlLine;
     end;
 
@@ -447,8 +431,8 @@ codeunit 13062525 "VAT Management-Adl"
     end;
 
     var
-        ADLCore: Codeunit "Adl Core";
         CoreSetup: Record "CoreSetup-Adl";
-        UpdVatDate: Label 'Do you want to change VAT Date';
+        ADLCore: Codeunit "Adl Core";
         ManagePostponedVAT: Codeunit "Manage Postponed VAT-Adl";
+        UpdVatDateQst: Label 'Do you want to change VAT Date';
 }

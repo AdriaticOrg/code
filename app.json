@@ -15,6 +15,12 @@
   "screenshots": [],
   "platform": "13.0.0.0",
   "application": "13.0.0.0",
+  "features": [
+    "TranslationFile"
+  ],
+  "supportedLocales": [
+    "en-US","hr-HR","sr-Latn-RS","sl-SI"
+  ],
   "showMyCode": true,
   "idRange": {
     "from": 13062525,

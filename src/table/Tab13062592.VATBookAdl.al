@@ -51,7 +51,7 @@ table 13062592 "VAT Book-Adl"
     trigger OnDelete();
     begin
         VATReportColumnName.SetRange("VAT Book Code", Code);
-        VATReportColumnName.DeleteAll;
+        VATReportColumnName.DeleteAll();
 
         VATBookGroup.SetRange("VAT Book Code", Code);
         VATBookGroup.DeleteAll(true);

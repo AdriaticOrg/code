@@ -1,8 +1,8 @@
 codeunit 13062581 "Return Order Turnover Mgt.-Adl"
 {
     var
-        ADLCore: Codeunit "Adl Core";
         CoreSetup: Record "CoreSetup-Adl";
+        ADLCore: Codeunit "Adl Core";
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'VAT Prod. Posting Group', true, false)]
     local procedure OnBeforeValidateVatProsPostGroupInSalesLine(var Rec: Record "Sales Line")
@@ -23,13 +23,12 @@ codeunit 13062581 "Return Order Turnover Mgt.-Adl"
         SalesHeader: Record "Sales Header";
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
-        with SalesLine do begin
+        with SalesLine do
             if "Document Type" IN ["Document Type"::"Credit Memo", "Document Type"::"Return Order"] then begin
                 SalesHeader.GET(SalesLine."Document Type", SalesLine."Document No.");
                 "VAT Prod. Posting Group" := GetVATProdPostingGroup(
                     SalesHeader."Goods Return Type-Adl", "VAT Bus. Posting Group", "VAT Prod. Posting Group")
             end;
-        end;
     end;
 
     procedure HandlePurchVATProdPostingSetup(var PurchLine: Record "Purchase Line")
@@ -37,13 +36,12 @@ codeunit 13062581 "Return Order Turnover Mgt.-Adl"
         PurchHeader: Record "Purchase Header";
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
-        with PurchLine do begin
+        with PurchLine do
             if "Document Type" IN ["Document Type"::"Credit Memo", "Document Type"::"Return Order"] then begin
                 PurchHeader.GET(PurchLine."Document Type", PurchLine."Document No.");
                 "VAT Prod. Posting Group" := GetVATProdPostingGroup(
                     PurchHeader."Goods Return Type-Adl", "VAT Bus. Posting Group", "VAT Prod. Posting Group")
             end;
-        end;
     end;
 
     procedure GetVATProdPostingGroup(GoodsReturnTypeCode: Code[10]; VATBusPostGr: Code[10]; VATProdPostGr: Code[10]): Code[10]
@@ -56,12 +54,12 @@ codeunit 13062581 "Return Order Turnover Mgt.-Adl"
             if GoodsReturnTypeCode <> '' then begin
                 GoodsReturnType.SetRange("Code", GoodsReturnTypeCode);
                 GoodsReturnType.SetRange("VAT Prod. Posting Group", VATProdPostGr);
-                GoodsReturnType.FindFirst;
+                GoodsReturnType.FindFirst();
                 exit(GoodsReturnType."New VAT Prod. Posting Group");
             end else begin
                 GoodsReturnType.SetRange("Code");
                 GoodsReturnType.SetRange("New VAT Prod. Posting Group", VATProdPostGr);
-                IF GoodsReturnType.FindFirst THEN begin
+                IF GoodsReturnType.FindFirst() THEN begin
                     GoodsReturnType.TestField("VAT Prod. Posting Group");
                     exit(GoodsReturnType."VAT Prod. Posting Group");
                 end;

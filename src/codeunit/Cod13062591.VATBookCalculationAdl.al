@@ -1,8 +1,8 @@
 codeunit 13062591 "VAT Book Calculation-Adl"
 {
     var
-        ADLCore: Codeunit "Adl Core";
         CoreSetup: Record "CoreSetup-Adl";
+        ADLCore: Codeunit "Adl Core";
         CallLevel: Integer;
         CircularRefErr: Label 'Because of circular references, the program cannot calculate a formula.';
 
@@ -11,7 +11,7 @@ codeunit 13062591 "VAT Book Calculation-Adl"
         TempValue: Decimal;
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
-        with VATBookViewFormula do begin
+        with VATBookViewFormula do
             if IsFirstValue then begin
                 case Value1 of
                     Value1::"Base Amount":
@@ -63,7 +63,6 @@ codeunit 13062591 "VAT Book Calculation-Adl"
                 else
                     TempAmount := TempAmount + TempValue;
             end;
-        end;
     end;
 
     procedure GetVATIdentifierFilter(VATBookGroup: Record "VAT Book Group-Adl") VATIdentifierFilter: Text;
@@ -73,17 +72,17 @@ codeunit 13062591 "VAT Book Calculation-Adl"
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit('');
         with VATBookGroup do begin
             VATIdentifierFilter := '';
-            VATBookGroupIdentifier.Reset;
+            VATBookGroupIdentifier.Reset();
             VATBookGroupIdentifier.SetCurrentKey("VAT Book Code", "VAT Book Group Code", "VAT Identifier");
             VATBookGroupIdentifier.SetRange("VAT Book Code", "VAT Book Code");
             VATBookGroupIdentifier.SetRange("VAT Book Group Code", Code);
-            if VATBookGroupIdentifier.FindSet then
+            if VATBookGroupIdentifier.FindSet() then
                 repeat
                     if VATIdentifierFilter = '' then
                         VATIdentifierFilter := VATBookGroupIdentifier."VAT Identifier"
                     else
                         VATIdentifierFilter += '|' + VATBookGroupIdentifier."VAT Identifier";
-                until VATBookGroupIdentifier.Next = 0;
+                until VATBookGroupIdentifier.Next() = 0;
         end;
     end;
 
@@ -92,12 +91,12 @@ codeunit 13062591 "VAT Book Calculation-Adl"
         VATBookViewFormula: Record "VAT Book View Formula-Adl";
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
-        VATBookViewFormula.Reset;
+        VATBookViewFormula.Reset();
         VATBookViewFormula.SetRange("VAT Book Code", VATBookGroup."VAT Book Code");
         VATBookViewFormula.SetRange("VAT Book Group Code", VATBookGroup.Code);
         VATBookViewFormula.SetFilter("VAT Identifier", GetVATIdentifierFilter(VATBookGroup));
         VATBookViewFormula.SetRange("Column No.", ColumnNo);
-        if VATBookViewFormula.FindSet then
+        if VATBookViewFormula.FindSet() then
             repeat
                 VATEntry.SetCurrentKey(Type, "Posting Date", "VAT Identifier-Adl");
                 VATEntry.SetFilter(Type, '<>%1', VATEntry.Type::Settlement);
@@ -105,19 +104,20 @@ codeunit 13062591 "VAT Book Calculation-Adl"
                 if DateFilter <> '' then
                     VATEntry.SetFilter("Posting Date", DateFilter);
                 VATEntry.SetFilter("VAT Identifier-Adl", VATBookViewFormula."VAT Identifier");
-                if VATEntry.FindSet then
+                if VATEntry.FindSet() then
                     repeat
                         if VATBookViewFormula.Operator1 <> VATBookViewFormula.Operator1::" " then
                             CalculateValue(true, Result, VATBookViewFormula, VATEntry);
                         if VATBookViewFormula.Operator2 <> VATBookViewFormula.Operator2::" " then
                             CalculateValue(false, Result, VATBookViewFormula, VATEntry);
-                    until VATEntry.Next = 0;
-            until VATBookViewFormula.Next = 0;
+                    until VATEntry.Next() = 0;
+            until VATBookViewFormula.Next() = 0;
     end;
 
     procedure EvaluateExpression(VATBookGroup: Record "VAT Book Group-Adl"; ColumnNo: Integer; DateFilter: Text) Result: Decimal;
     var
         VBGroup: Record "VAT Book Group-Adl";
+        VATEntry: Record "VAT Entry";
         Parantheses: Integer;
         Operator: Char;
         LeftOperand: Text;
@@ -130,7 +130,6 @@ codeunit 13062591 "VAT Book Calculation-Adl"
         Operators: Text[8];
         OperatorNo: Integer;
         Expression: Text;
-        VATEntry: Record "VAT Entry";
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit(0.0);
         Result := 0;
@@ -179,18 +178,18 @@ codeunit 13062591 "VAT Book Calculation-Adl"
                     RightOperand := '';
                 Operator := Expression[i];
                 VBGroup.SetRange("Book Link Code", LeftOperand);
-                VBGroup.FindFirst;
+                VBGroup.FindFirst();
                 LeftResult := EvaluateExpression(VBGroup, ColumnNo, DateFilter);
                 VBGroup.SetRange("Book Link Code", RightOperand);
-                VBGroup.FindFirst;
+                VBGroup.FindFirst();
                 RightResult := EvaluateExpression(VBGroup, ColumnNo, DateFilter);
                 case Operator of
                     '*':
                         Result := LeftResult * RightResult;
                     '/':
-                        if RightResult = 0 then begin
-                            Result := 0;
-                        end else
+                        if RightResult = 0 then
+                            Result := 0
+                        else
                             Result := LeftResult / RightResult;
                     '+':
                         Result := LeftResult + RightResult;
@@ -205,15 +204,15 @@ codeunit 13062591 "VAT Book Calculation-Adl"
                 end else begin
                     IsFilter := (StrPos(Expression, '..') + StrPos(Expression, '|') > 0);
                     if not IsFilter then begin
-                        VATEntry.Reset;
+                        VATEntry.Reset();
                         CalcCellValue(VATBookGroup, ColumnNo, Result, DateFilter, VATEntry);
                     end else begin
                         VBGroup.SetCurrentKey("Book Link Code");
                         VBGroup.SetFilter("Book Link Code", Expression);
-                        if VBGroup.FindSet then
+                        if VBGroup.FindSet() then
                             repeat
                                 Result += EvaluateExpression(VBGroup, ColumnNo, DateFilter);
-                            until VBGroup.Next = 0;
+                            until VBGroup.Next() = 0;
                     end;
                 end;
         end;

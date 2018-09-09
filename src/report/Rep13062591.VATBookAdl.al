@@ -26,8 +26,8 @@ report 13062591 "VAT Book-Adl"
                 DataItemLink = "VAT Book Code" = field ("VAT Book Code");
                 DataItemTableView = sorting ("VAT Book Code", Code) orDER(Ascending);
                 RequestFilterFields = "VAT Book Code", "Code";
-                column(VatPrewFilters; GetFilters) { }
-                column(EntryFilter; "VAT Entry".GetFilters) { }
+                column(VatPrewFilters; GetFilters()) { }
+                column(EntryFilter; "VAT Entry".GetFilters()) { }
                 column(VATBookGroupCode; Code) { }
                 dataitem("VAT Book View Line"; "VAT Book View Formula-Adl")
                 {

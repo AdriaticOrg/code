@@ -7,61 +7,59 @@ report 13062594 "Input VAT Book-adl 2"
 
     dataset
     {
-        dataitem("Vat Entry";"VAT Entry")
+        dataitem("Vat Entry"; "VAT Entry")
         {
-            DataItemTableView = SORTING("Document No.");
-            RequestFilterFields = "Posting Date","Document No.","VAT Bus. Posting Group","VAT Prod. Posting Group","Gen. Bus. Posting Group","Gen. Prod. Posting Group","VAT Identifier-adl","VAT Calculation Type","Country/Region Code","Entry No.","Bill-to/Pay-to No.","External Document No.";
+            DataItemTableView = SORTING ("Document No.");
+            RequestFilterFields = "Posting Date", "Document No.", "VAT Bus. Posting Group", "VAT Prod. Posting Group", "Gen. Bus. Posting Group", "Gen. Prod. Posting Group", "VAT Identifier-adl", "VAT Calculation Type", "Country/Region Code", "Entry No.", "Bill-to/Pay-to No.", "External Document No.";
 
             trigger OnPreDataItem()
-            var 
+            var
                 Counter: Integer;
             begin
                 //SetFilter(type, '%1|%2', Type::Purchase, Type::Sale);
                 //SetRange("Unrealized Amount",0);
                 //SetFilter("VAT Identifier-Adl", '<>%1', '*99*');
                 VATEntry.CopyFilters("Vat Entry");
-                
+
 
                 //prepare header names from setup
                 VATBook.SetRange("Tag Name", 'DDV_ODB');  //TODO: if Setup  
-                if VATBook.FindFirst then
+                if VATBook.FindFirst() then
                     VATBookColumnName.SetRange("VAT Book Code", VATBook.Code);
-                Counter:= 1;
-                if VATBookColumnName.FindSet then
+                Counter := 1;
+                if VATBookColumnName.FindSet() then
                     repeat
-                        VATBookColumnNo[Counter]:= VATBookColumnName."Column No.";
-                        VATBookColumnLengt[Counter]:= VATBookColumnName."Fixed text length";
+                        VATBookColumnNo[Counter] := VATBookColumnName."Column No.";
+                        VATBookColumnLengt[Counter] := VATBookColumnName."Fixed text length";
                         TextWriterAdl.FixedField(OutStr, CopyStr(VATBookColumnName.Description, 1, VATBookColumnName."Fixed text length"), VATBookColumnName."Fixed text length", PadCharacter, 1, FieldDelimiter);
-                        Counter+= 1;
-                    until VATBookColumnName.Next = 0; 
+                        Counter += 1;
+                    until VATBookColumnName.Next() = 0;
 
-                TextWriterAdl.NewLine(OutStr);            
+                TextWriterAdl.NewLine(OutStr);
             end;
 
             trigger OnAfterGetRecord()
-            var 
-                ColumnVal: Decimal;
-                TypeFilter: Text;
+            var
                 PurchInvHeader: Record "Purch. Inv. Header";
                 PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr.";
                 Vendor: Record Vendor;
-                DocNo: Code[20];
+                ColumnVal: Decimal;
                 VendorData: Text;
-            begin          
+            begin
                 setRange("Document No.", "Document No.");
                 FindLast();
 
                 //<Davčno obdobje>, Posting Date 
-                TextWriterAdl.FixedField(OutStr, FORMAT("Posting Date",0,'<Month,2><Month,2>'), VATBookColumnLengt[1], PadCharacter, 1, FieldDelimiter); 
-                
+                TextWriterAdl.FixedField(OutStr, FORMAT("Posting Date", 0, '<Month,2><Month,2>'), VATBookColumnLengt[1], PadCharacter, 1, FieldDelimiter);
+
 
                 //<Datum knjiženja>, Creation Date
-                TextWriterAdl.FixedField(OutStr, "Posting Date", VATBookColumnLengt[2], PadCharacter, 1, FieldDelimiter); 
-                
+                TextWriterAdl.FixedField(OutStr, "Posting Date", VATBookColumnLengt[2], PadCharacter, 1, FieldDelimiter);
+
 
                 //<Datum prejema listine> Document Receipt Date
-                TextWriterAdl.FixedField(OutStr, "Posting Date", VATBookColumnLengt[3], PadCharacter, 1, FieldDelimiter); 
-                
+                TextWriterAdl.FixedField(OutStr, "Posting Date", VATBookColumnLengt[3], PadCharacter, 1, FieldDelimiter);
+
 
                 //<Številka listine> Document No.,SAD No.
                 //TypeFilter:= GetFilter(Type);
@@ -89,46 +87,46 @@ report 13062594 "Input VAT Book-adl 2"
                 IF ("Document Type" = "Document Type"::Invoice) then begin
                     with PurchInvHeader do begin
                         if get("Document No.") then begin
-                            if ("Pay-to Name" <>'') then 
-                                VendorData+= "Pay-to Name";
-                            if ("Pay-to Address" <>'') then 
-                                VendorData+= "Pay-to Address";
-                            if ("Pay-to City" <>'') then 
-                                VendorData+= "Pay-to City";
-                            if ("Pay-to Country/Region Code" <>'') then
-                                VendorData+= "Pay-to Country/Region Code";
+                            if ("Pay-to Name" <> '') then
+                                VendorData += "Pay-to Name";
+                            if ("Pay-to Address" <> '') then
+                                VendorData += "Pay-to Address";
+                            if ("Pay-to City" <> '') then
+                                VendorData += "Pay-to City";
+                            if ("Pay-to Country/Region Code" <> '') then
+                                VendorData += "Pay-to Country/Region Code";
                         end;
                     end;
-                end else 
-                IF ("Document Type" = "Document Type"::"Credit Memo") then begin
-                    PurchCrMemoHdr.get("Document No.");
-                    with PurchCrMemoHdr do begin
-                        if get("Document No.") then begin
-                            if ("Pay-to Name" <>'') then 
-                                VendorData+= "Pay-to Name";
-                            if ("Pay-to Address" <>'') then 
-                                VendorData+= "Pay-to Address";
-                            if ("Pay-to City" <>'') then 
-                                VendorData+= "Pay-to City";
-                            if ("Pay-to Country/Region Code" <>'') then
-                                VendorData+= "Pay-to Country/Region Code";
+                end else
+                    IF ("Document Type" = "Document Type"::"Credit Memo") then begin
+                        PurchCrMemoHdr.get("Document No.");
+                        with PurchCrMemoHdr do begin
+                            if get("Document No.") then begin
+                                if ("Pay-to Name" <> '') then
+                                    VendorData += "Pay-to Name";
+                                if ("Pay-to Address" <> '') then
+                                    VendorData += "Pay-to Address";
+                                if ("Pay-to City" <> '') then
+                                    VendorData += "Pay-to City";
+                                if ("Pay-to Country/Region Code" <> '') then
+                                    VendorData += "Pay-to Country/Region Code";
+                            end;
                         end;
                     end;
-                end;
 
                 If Vendor.get("Bill-to/Pay-to No.") then begin
                     with Vendor do begin
-                        if (Name <>'') then
-                            VendorData+= Name;
-                        if (Address <>'') then
-                            VendorData+= Address;
-                        if (City <>'') then
-                            VendorData+= City;
-                        if ("Country/Region Code" <>'') then
-                            VendorData+= "Country/Region Code"; 
+                        if (Name <> '') then
+                            VendorData += Name;
+                        if (Address <> '') then
+                            VendorData += Address;
+                        if (City <> '') then
+                            VendorData += City;
+                        if ("Country/Region Code" <> '') then
+                            VendorData += "Country/Region Code";
                     end;
-                end;                                    
-                TextWriterAdl.FixedField(OutStr, VendorData, VATBookColumnLengt[6], PadCharacter, 1, FieldDelimiter);  
+                end;
+                TextWriterAdl.FixedField(OutStr, VendorData, VATBookColumnLengt[6], PadCharacter, 1, FieldDelimiter);
 
 
                 //VAT Registration No., <ID za DDV>
@@ -137,34 +135,34 @@ report 13062594 "Input VAT Book-adl 2"
                 //Calc. fields
                 //Base, <Vrednost brez DDV> <8> + SUM <ReverseSign>
                 Clear(ColumnVal);
-                VATBookGroup.Reset;
+                VATBookGroup.Reset();
                 VATBookGroup.SetRange("VAT Book Code", VATBook.Code);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[8]));
                 if VATBookGroup.FindFirst() then begin
                     repeat
                         //columnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, Datefilter); 
-                    until VATBookGroup.next= 0;
+                        ColumnVal += VATBookCalc.EvaluateExpression(VATBookGroup, 0, Datefilter);
+                    until VATBookGroup.next = 0;
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[8], PadCharacter, 1, FieldDelimiter);
                 end;
-                
-                
+
+
                 //Base, <Blago in st.-brez samoob> <8.a>
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[9]));
                 if VATBookGroup.FindFirst() then begin
                     //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
-                    TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[9], PadCharacter, 1, FieldDelimiter);                        
+                    ColumnVal := VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
+                    TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[9], PadCharacter, 1, FieldDelimiter);
                 end;
-            
+
                 //Base, <Blago in st.-samoob.> <8.b> <ReverseSign> Single
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[10]));
                 if VATBookGroup.FindFirst() then begin
                     //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry);
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
-                    TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[10], PadCharacter, 1, FieldDelimiter);                        
+                    ColumnVal := VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
+                    TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[10], PadCharacter, 1, FieldDelimiter);
                 end;
 
                 //Base, <Vred. nabav v SLO od samoobd> <9> <ReverseSign> Single
@@ -172,8 +170,8 @@ report 13062594 "Input VAT Book-adl 2"
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[11]));
                 if VATBookGroup.FindFirst() then begin
                     //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
-                    TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[11], PadCharacter, 1, FieldDelimiter);                        
+                    ColumnVal := VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
+                    TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[11], PadCharacter, 1, FieldDelimiter);
                 end;
 
                 //Base, <Vred. obd.prid. bl. brez DDV> <10> + SUM <ReverseSign>
@@ -182,8 +180,8 @@ report 13062594 "Input VAT Book-adl 2"
                 if VATBookGroup.FindFirst() then begin
                     repeat
                         //ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
-                    until VATBookGroup.next= 0;
+                        ColumnVal += VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
+                    until VATBookGroup.next() = 0;
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[12], PadCharacter, 1, FieldDelimiter);
                 end;
 
@@ -193,7 +191,7 @@ report 13062594 "Input VAT Book-adl 2"
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[13]));
                 if VATBookGroup.FindFirst() then begin
                     //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
+                    ColumnVal := VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[13], PadCharacter, 1, FieldDelimiter);
                 end;
 
@@ -201,10 +199,10 @@ report 13062594 "Input VAT Book-adl 2"
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[14]));
                 if VATBookGroup.FindFirst() then begin
-                    repeat    
+                    repeat
                         //ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
-                    until VATBookGroup.next= 0;
+                        ColumnVal += VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
+                    until VATBookGroup.next() = 0;
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[14], PadCharacter, 1, FieldDelimiter);
                 end;
 
@@ -212,10 +210,10 @@ report 13062594 "Input VAT Book-adl 2"
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[15]));
                 if VATBookGroup.FindFirst() then begin
-                    repeat    
+                    repeat
                         //ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, Datefilter); 
-                    until VATBookGroup.next= 0;
+                        ColumnVal += VATBookCalc.EvaluateExpression(VATBookGroup, 0, Datefilter);
+                    until VATBookGroup.next() = 0;
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[15], PadCharacter, 1, FieldDelimiter);
                 end;
 
@@ -224,7 +222,7 @@ report 13062594 "Input VAT Book-adl 2"
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[16]));
                 if VATBookGroup.FindFirst() then begin
                     //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
+                    ColumnVal := VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[17], PadCharacter, 1, FieldDelimiter);
                 end;
 
@@ -234,7 +232,7 @@ report 13062594 "Input VAT Book-adl 2"
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[17]));
                 if VATBookGroup.FindFirst() then begin
                     //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
+                    ColumnVal := VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[17], PadCharacter, 1, FieldDelimiter);
                 end;
 
@@ -245,7 +243,7 @@ report 13062594 "Input VAT Book-adl 2"
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[18]));
                 if VATBookGroup.FindFirst() then begin
                     //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0,DateFilter); 
+                    ColumnVal := VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[18], PadCharacter, 1, FieldDelimiter);
                 end;
 
@@ -255,10 +253,10 @@ report 13062594 "Input VAT Book-adl 2"
                 Clear(ColumnVal);
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[19]));
                 if VATBookGroup.FindFirst() then begin
-                    repeat    
+                    repeat
                         //ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                        ColumnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
-                    until VATBookGroup.next= 0;
+                        ColumnVal += VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
+                    until VATBookGroup.next() = 0;
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[19], PadCharacter, 1, FieldDelimiter);
                 end;
 
@@ -269,7 +267,7 @@ report 13062594 "Input VAT Book-adl 2"
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[20]));
                 if VATBookGroup.FindFirst() then begin
                     //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
+                    ColumnVal := VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[20], PadCharacter, 0, FieldDelimiter);
                 end;
 
@@ -280,7 +278,7 @@ report 13062594 "Input VAT Book-adl 2"
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[21]));
                 if VATBookGroup.FindFirst() then begin
                     //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
+                    ColumnVal := VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[21], PadCharacter, 0, FieldDelimiter);
                 end;
 
@@ -289,7 +287,7 @@ report 13062594 "Input VAT Book-adl 2"
                 VATBookGroup.SetRange("Include Columns", format(VATBookColumnNo[22]));
                 if VATBookGroup.FindFirst() then begin
                     //ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
-                    ColumnVal:= VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter); 
+                    ColumnVal := VATBookCalc.EvaluateExpression(VATBookGroup, 0, DateFilter);
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[22], PadCharacter, 1, FieldDelimiter);
                 end;
 
@@ -299,9 +297,9 @@ report 13062594 "Input VAT Book-adl 2"
                 SetRange("Document No.");
                 TextWriterAdl.NewLine(OutStr);
             end;
-                                  
+
             trigger OnPostDataItem()
-            begin 
+            begin
                 TextWriterAdl.NewLine(OutStr);
             end;
         }
@@ -326,12 +324,12 @@ report 13062594 "Input VAT Book-adl 2"
     trigger OnInitReport();
     begin
         TextWriterAdl.Create(OutStr);
-        ToFilter:= '*.txt|*.TXT';
-        FileName:= 'IZPIS ODBITKA DDV.TXT';
-        DialogTitle:= 'Save to';
-        PadCharacter:= ' ';
-        FieldDelimiter:= ';';
-        DummyText:= ' ';
+        ToFilter := '*.txt|*.TXT';
+        FileName := 'IZPIS ODBITKA DDV.TXT';
+        DialogTitle := 'Save to';
+        PadCharacter := ' ';
+        FieldDelimiter := ';';
+        DummyText := ' ';
     end;
 
     trigger OnPostReport()
@@ -354,20 +352,20 @@ report 13062594 "Input VAT Book-adl 2"
         DialogTitle: Text;
         PadCharacter: Text[1];
         FieldDelimiter: Text[1];
-        Type : Text[3];
+        Type: Text[3];
         BalanceAtDate: Decimal;
-        DummyText : Text;
+        DummyText: Text;
         BalanceYear: Integer;
         ClosingYear: Integer;
         DateFilter: Text;
-        BalanceDesc : Label 'Opening item for the year %1';
-        BalanceDocumentNo : Label 'Opening %1';
-        ClosingDesc : Label 'Closing GL account for the year %1';
+        BalanceDesc: Label 'Opening item for the year %1';
+        BalanceDocumentNo: Label 'Opening %1';
+        ClosingDesc: Label 'Closing GL account for the year %1';
         AccountNoLbl: Label 'Account';
         NameLbl: Label 'Account Name';
         PostingDateLbl: Label 'Post.Date';
         DocumentDateLbl: Label 'Doc.Date';
-        DocumentNoLbl: Label 'Document No.';                                                                                                                                          
+        DocumentNoLbl: Label 'Document No.';
         TypeLbl: Label 'Type';
         DescriptionLbl: Label 'Description';
         DebitAmountLbl: Label 'Debit Amount';

@@ -5,37 +5,25 @@ page 13062664 "KRD Codes"
     UsageCategory = Administration;
     SourceTable = "KRD Code";
     Caption = 'KRD Codes';
-    
+
     layout
     {
         area(Content)
         {
-            repeater(Group) {
-                field(Type;Type) {
-                    ApplicationArea = All;
-                }
-                field(Code;Code) {
-                    ApplicationArea = All;
-                }
-                field(Description;Description) {
-                    ApplicationArea = All;
-                }
-            }
-        }
-    }
-    
-    actions
-    {
-        area(Processing)
-        {
-            action(ActionName)
+            repeater(Group)
             {
-                ApplicationArea = All;
-                
-                trigger OnAction()
-                begin
-                    
-                end;
+                field(Type; Type)
+                {
+                    ApplicationArea = All;
+                }
+                field(Code; Code)
+                {
+                    ApplicationArea = All;
+                }
+                field(Description; Description)
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }

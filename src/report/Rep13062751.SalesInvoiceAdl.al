@@ -93,7 +93,7 @@ Report 13062751 "Sales - Invoice Adl"
                     column(CompanyInfo3Picture; CompanyInfo3.Picture)
                     {
                     }
-                    column(DocumentCaptionCopyText; STRSUBSTNO(DocumentCaption, CopyText))
+                    column(DocumentCaptionCopyText; STRSUBSTNO(DocumentCaption(), CopyText))
                     {
                     }
                     column(CustAddr1; CustAddr[1])
@@ -254,11 +254,11 @@ Report 13062751 "Sales - Invoice Adl"
                         trigger OnAfterGetRecord();
                         begin
                             if Number = 1 then begin
-                                if not DimSetEntry1.FINDSET then
-                                    CurrReport.BREAK;
+                                if not DimSetEntry1.FINDSET() then
+                                    CurrReport.BREAK();
                             end else
                                 if not Continue then
-                                    CurrReport.BREAK;
+                                    CurrReport.BREAK();
 
                             CLEAR(DimText);
                             Continue := false;
@@ -276,13 +276,13 @@ Report 13062751 "Sales - Invoice Adl"
                                     Continue := true;
                                     exit;
                                 end;
-                            until DimSetEntry1.NEXT = 0;
+                            until DimSetEntry1.NEXT() = 0;
                         end;
 
                         trigger OnPreDataItem();
                         begin
                             if not ShowInternalInfo then
-                                CurrReport.BREAK;
+                                CurrReport.BREAK();
                         end;
                     }
                     dataitem("Sales Invoice Line"; "Sales Invoice Line")
@@ -362,7 +362,7 @@ Report 13062751 "Sales - Invoice Adl"
                             AutoFormatExpression = GetCurrencyCode;
                             AutoFormatType = 1;
                         }
-                        column(VATAmtLineVATAmtText; VATAmountLine.VATAmountText)
+                        column(VATAmtLineVATAmtText; VATAmountLine.VATAmountText())
                         {
                         }
                         column(TotalExclVATText; TotalExclVATText)
@@ -397,7 +397,7 @@ Report 13062751 "Sales - Invoice Adl"
                         column(TotalInclVATText_SalesInvLine; TotalInclVATText)
                         {
                         }
-                        column(VATAmtText_SalesInvLine; VATAmountLine.VATAmountText)
+                        column(VATAmtText_SalesInvLine; VATAmountLine.VATAmountText())
                         {
                         }
                         column(DocNo_SalesInvLine; "Document No.")
@@ -461,7 +461,7 @@ Report 13062751 "Sales - Invoice Adl"
                                 if Number = 1 then
                                     SalesShipmentBuffer.FIND('-')
                                 else
-                                    SalesShipmentBuffer.NEXT;
+                                    SalesShipmentBuffer.NEXT();
                             end;
 
                             trigger OnPreDataItem();
@@ -469,7 +469,7 @@ Report 13062751 "Sales - Invoice Adl"
                                 SalesShipmentBuffer.SETRANGE("Document No.", "Sales Invoice Line"."Document No.");
                                 SalesShipmentBuffer.SETRANGE("Line No.", "Sales Invoice Line"."Line No.");
 
-                                SETRANGE(Number, 1, SalesShipmentBuffer.COUNT);
+                                SETRANGE(Number, 1, SalesShipmentBuffer.COUNT());
                             end;
                         }
                         dataitem(DimensionLoop2; "Integer")
@@ -486,10 +486,10 @@ Report 13062751 "Sales - Invoice Adl"
                             begin
                                 if Number = 1 then begin
                                     if not DimSetEntry2.FINDSET then
-                                        CurrReport.BREAK;
+                                        CurrReport.BREAK();
                                 end else
                                     if not Continue then
-                                        CurrReport.BREAK;
+                                        CurrReport.BREAK();
 
                                 CLEAR(DimText);
                                 Continue := false;
@@ -507,13 +507,13 @@ Report 13062751 "Sales - Invoice Adl"
                                         Continue := true;
                                         exit;
                                     end;
-                                until DimSetEntry2.NEXT = 0;
+                                until DimSetEntry2.NEXT() = 0;
                             end;
 
                             trigger OnPreDataItem();
                             begin
                                 if not ShowInternalInfo then
-                                    CurrReport.BREAK;
+                                    CurrReport.BREAK();
 
                                 DimSetEntry2.SETRANGE("Dimension Set ID", "Sales Invoice Line"."Dimension Set ID");
                             end;
@@ -521,17 +521,17 @@ Report 13062751 "Sales - Invoice Adl"
                         dataitem(AsmLoop; "Integer")
                         {
                             DataItemTableView = SORTING (Number);
-                            column(TempPostedAsmLineNo; BlanksForIndent + TempPostedAsmLine."No.")
+                            column(TempPostedAsmLineNo; BlanksForIndent() + TempPostedAsmLine."No.")
                             {
                             }
                             column(TempPostedAsmLineQuantity; TempPostedAsmLine.Quantity)
                             {
                                 DecimalPlaces = 0 : 5;
                             }
-                            column(TempPostedAsmLineDesc; BlanksForIndent + TempPostedAsmLine.Description)
+                            column(TempPostedAsmLineDesc; BlanksForIndent() + TempPostedAsmLine.Description)
                             {
                             }
-                            column(TempPostAsmLineVartCode; BlanksForIndent + TempPostedAsmLine."Variant Code")
+                            column(TempPostAsmLineVartCode; BlanksForIndent() + TempPostedAsmLine."Variant Code")
                             {
                             }
                             column(TempPostedAsmLineUOM; GetUOMText(TempPostedAsmLine."Unit of Measure Code"))
@@ -543,9 +543,9 @@ Report 13062751 "Sales - Invoice Adl"
                                 ItemTranslation: Record "Item Translation";
                             begin
                                 if Number = 1 then
-                                    TempPostedAsmLine.FINDSET
+                                    TempPostedAsmLine.FINDSET()
                                 else
-                                    TempPostedAsmLine.NEXT;
+                                    TempPostedAsmLine.NEXT();
 
                                 if ItemTranslation.GET(TempPostedAsmLine."No.",
                                      TempPostedAsmLine."Variant Code",
@@ -558,20 +558,20 @@ Report 13062751 "Sales - Invoice Adl"
                             begin
                                 CLEAR(TempPostedAsmLine);
                                 if not DisplayAssemblyInformation then
-                                    CurrReport.BREAK;
-                                CollectAsmInformation;
+                                    CurrReport.BREAK();
+                                CollectAsmInformation();
                                 CLEAR(TempPostedAsmLine);
-                                SETRANGE(Number, 1, TempPostedAsmLine.COUNT);
+                                SETRANGE(Number, 1, TempPostedAsmLine.COUNT());
                             end;
                         }
 
                         trigger OnAfterGetRecord();
                         begin
-                            InitializeShipmentBuffer;
+                            InitializeShipmentBuffer();
                             if (Type = Type::"G/L Account") and (not ShowInternalInfo) then
                                 "No." := '';
 
-                            VATAmountLine.INIT;
+                            VATAmountLine.INIT();
                             VATAmountLine."VAT Identifier" := "VAT Identifier";
                             VATAmountLine."VAT Calculation Type" := "VAT Calculation Type";
                             VATAmountLine."Tax Group Code" := "Tax Group Code";
@@ -589,7 +589,7 @@ Report 13062751 "Sales - Invoice Adl"
                                 ShowVATInformative := TRUE;
                             end;
                             // <adl.13>
-                            VATAmountLine.InsertLine;
+                            VATAmountLine.InsertLine();
                             CalcVATAmountLineLCY(
                               "Sales Invoice Header", VATAmountLine, TempVATAmountLineLCY,
                               VATBaseRemainderAfterRoundingLCY, AmtInclVATRemainderAfterRoundingLCY);
@@ -604,18 +604,18 @@ Report 13062751 "Sales - Invoice Adl"
 
                         trigger OnPreDataItem();
                         begin
-                            VATAmountLine.DELETEALL;
-                            TempVATAmountLineLCY.DELETEALL;
+                            VATAmountLine.DELETEALL();
+                            TempVATAmountLineLCY.DELETEALL();
                             VATBaseRemainderAfterRoundingLCY := 0;
                             AmtInclVATRemainderAfterRoundingLCY := 0;
-                            SalesShipmentBuffer.RESET;
-                            SalesShipmentBuffer.DELETEALL;
+                            SalesShipmentBuffer.RESET();
+                            SalesShipmentBuffer.DELETEALL();
                             FirstValueEntryNo := 0;
                             MoreLines := FIND('+');
                             while MoreLines and (Description = '') and ("No." = '') and (Quantity = 0) and (Amount = 0) do
                                 MoreLines := NEXT(-1) <> 0;
                             if not MoreLines then
-                                CurrReport.BREAK;
+                                CurrReport.BREAK();
                             LineNoWithTotal := "Line No.";
                             SETRANGE("Line No.", 0, "Line No.");
                         end;
@@ -685,7 +685,7 @@ Report 13062751 "Sales - Invoice Adl"
 
                         trigger OnPreDataItem();
                         begin
-                            SETRANGE(Number, 1, VATAmountLine.COUNT);
+                            SETRANGE(Number, 1, VATAmountLine.COUNT());
                         end;
                     }
                     dataitem(VATClauseEntryCounter; "Integer")
@@ -722,14 +722,14 @@ Report 13062751 "Sales - Invoice Adl"
                         begin
                             VATAmountLine.GetLine(Number);
                             if not VATClause.GET(VATAmountLine."VAT Clause Code") then
-                                CurrReport.SKIP;
+                                CurrReport.SKIP();
                             VATClause.TranslateDescription("Sales Invoice Header"."Language Code");
                         end;
 
                         trigger OnPreDataItem();
                         begin
                             CLEAR(VATClause);
-                            SETRANGE(Number, 1, VATAmountLine.COUNT);
+                            SETRANGE(Number, 1, VATAmountLine.COUNT());
                         end;
                     }
                     dataitem(VatCounterLCY; "Integer")
@@ -769,9 +769,9 @@ Report 13062751 "Sales - Invoice Adl"
                             if (not GLSetup."Print VAT specification in LCY") or
                                ("Sales Invoice Header"."Currency Code" = '')
                             then
-                                CurrReport.BREAK;
+                                CurrReport.BREAK();
 
-                            SETRANGE(Number, 1, VATAmountLine.COUNT);
+                            SETRANGE(Number, 1, VATAmountLine.COUNT());
 
                             if GLSetup."LCY Code" = '' then
                                 VALSpecLCYHeader := Text007 + Text008
@@ -793,7 +793,7 @@ Report 13062751 "Sales - Invoice Adl"
                         column(PaymentServiceURLText; "URL Caption")
                         {
                         }
-                        column(PaymentServiceURL; GetTargetURL)
+                        column(PaymentServiceURL; GetTargetURL())
                         {
                         }
 
@@ -802,8 +802,8 @@ Report 13062751 "Sales - Invoice Adl"
                             PaymentServiceSetup: Record "Payment Service Setup";
                         begin
                             PaymentServiceSetup.CreateReportingArgs(PaymentReportingArgument, "Sales Invoice Header");
-                            if ISEMPTY then
-                                CurrReport.BREAK;
+                            if ISEMPTY() then
+                                CurrReport.BREAK();
                         end;
                     }
                     dataitem(Total; "Integer")
@@ -846,7 +846,7 @@ Report 13062751 "Sales - Invoice Adl"
                         trigger OnPreDataItem();
                         begin
                             if not ShowShippingAddr then
-                                CurrReport.BREAK;
+                                CurrReport.BREAK();
                         end;
                     }
                     dataitem(LineFee; "Integer")
@@ -859,14 +859,14 @@ Report 13062751 "Sales - Invoice Adl"
                         trigger OnAfterGetRecord();
                         begin
                             if not DisplayAdditionalFeeNote then
-                                CurrReport.BREAK;
+                                CurrReport.BREAK();
 
                             if Number = 1 then begin
-                                if not TempLineFeeNoteOnReportHist.FINDSET then
-                                    CurrReport.BREAK
+                                if not TempLineFeeNoteOnReportHist.FINDSET() then
+                                    CurrReport.BREAK()
                             end else
-                                if TempLineFeeNoteOnReportHist.NEXT = 0 then
-                                    CurrReport.BREAK;
+                                if TempLineFeeNoteOnReportHist.NEXT() = 0 then
+                                    CurrReport.BREAK();
                         end;
                     }
                 }
@@ -874,7 +874,7 @@ Report 13062751 "Sales - Invoice Adl"
                 trigger OnAfterGetRecord();
                 begin
                     if Number > 1 then begin
-                        CopyText := FormatDocument.GetCOPYText;
+                        CopyText := FormatDocument.GetCOPYText();
                         OutputNo += 1;
                     end;
 
@@ -888,7 +888,7 @@ Report 13062751 "Sales - Invoice Adl"
 
                 trigger OnPostDataItem();
                 begin
-                    if not IsReportInPreviewMode then
+                    if not IsReportInPreviewMode() then
                         CODEUNIT.RUN(CODEUNIT::"Sales Inv.-Printed", "Sales Invoice Header");
                 end;
 
@@ -984,7 +984,7 @@ Report 13062751 "Sales - Invoice Adl"
 
         trigger OnOpenPage();
         begin
-            InitLogInteraction;
+            InitLogInteraction();
             LogInteractionEnable := LogInteraction;
         end;
 
@@ -996,40 +996,38 @@ Report 13062751 "Sales - Invoice Adl"
 
     trigger OnInitReport();
     begin
-        GLSetup.GET;
-        SalesSetup.GET;
-        CompanyInfo.GET;
-        CompanyInfo.VerifyAndSetPaymentInfo;
+        GLSetup.GET();
+        SalesSetup.GET();
+        CompanyInfo.GET();
+        CompanyInfo.VerifyAndSetPaymentInfo();
         FormatDocument.SetLogoPosition(SalesSetup."Logo Position on Documents", CompanyInfo1, CompanyInfo2, CompanyInfo3);
     end;
 
     trigger OnPostReport();
     begin
-        if LogInteraction and not IsReportInPreviewMode then
-            if "Sales Invoice Header".FINDSET then
+        if LogInteraction and not IsReportInPreviewMode() then
+            if "Sales Invoice Header".FINDSET() then
                 repeat
                     if "Sales Invoice Header"."Bill-to Contact No." <> '' then
                         SegManagement.LogDocument(
-                          SegManagement.SalesInvoiceInterDocType, "Sales Invoice Header"."No.", 0, 0, DATABASE::Contact,
+                          SegManagement.SalesInvoiceInterDocType(), "Sales Invoice Header"."No.", 0, 0, DATABASE::Contact,
                           "Sales Invoice Header"."Bill-to Contact No.", "Sales Invoice Header"."Salesperson Code",
                           "Sales Invoice Header"."Campaign No.", "Sales Invoice Header"."Posting Description", '')
                     else
                         SegManagement.LogDocument(
-                          SegManagement.SalesInvoiceInterDocType, "Sales Invoice Header"."No.", 0, 0, DATABASE::Customer,
+                          SegManagement.SalesInvoiceInterDocType(), "Sales Invoice Header"."No.", 0, 0, DATABASE::Customer,
                           "Sales Invoice Header"."Bill-to Customer No.", "Sales Invoice Header"."Salesperson Code",
                           "Sales Invoice Header"."Campaign No.", "Sales Invoice Header"."Posting Description", '');
-                until "Sales Invoice Header".NEXT = 0;
+                until "Sales Invoice Header".NEXT() = 0;
     end;
 
     trigger OnPreReport();
     begin
-        if not CurrReport.USEREQUESTPAGE then
-            InitLogInteraction;
+        if not CurrReport.USEREQUESTPAGE() then
+            InitLogInteraction();
     end;
 
     var
-        Text004: Label 'Sales - Invoice %1';
-        PageCaptionCap: Label 'Page %1 of %2';
         GLSetup: Record "General Ledger Setup";
         ShipmentMethod: Record "Shipment Method";
         PaymentTerms: Record "Payment Terms";
@@ -1054,6 +1052,8 @@ Report 13062751 "Sales - Invoice Adl"
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
         SegManagement: Codeunit SegManagement;
+        Text004: Label 'Sales - Invoice %1';
+        PageCaptionCap: Label 'Page %1 of %2';
         CustAddr: array[8] of Text[50];
         ShipToAddr: array[8] of Text[50];
         CompanyAddr: array[8] of Text[50];
@@ -1148,7 +1148,7 @@ Report 13062751 "Sales - Invoice Adl"
     var
         MailManagement: Codeunit "Mail Management";
     begin
-        exit(CurrReport.PREVIEW or MailManagement.IsHandlingGetEmailBody);
+        exit(CurrReport.PREVIEW() or MailManagement.IsHandlingGetEmailBody());
     end;
 
     local procedure InitializeShipmentBuffer();
@@ -1172,20 +1172,20 @@ Report 13062751 "Sales - Invoice Adl"
                 GenerateBufferFromShipment("Sales Invoice Line");
         end;
 
-        SalesShipmentBuffer.RESET;
+        SalesShipmentBuffer.RESET();
         SalesShipmentBuffer.SETRANGE("Document No.", "Sales Invoice Line"."Document No.");
         SalesShipmentBuffer.SETRANGE("Line No.", "Sales Invoice Line"."Line No.");
         if SalesShipmentBuffer.FIND('-') then begin
             TempSalesShipmentBuffer := SalesShipmentBuffer;
-            if SalesShipmentBuffer.NEXT = 0 then begin
+            if SalesShipmentBuffer.NEXT() = 0 then begin
                 SalesShipmentBuffer.GET(
                   TempSalesShipmentBuffer."Document No.", TempSalesShipmentBuffer."Line No.", TempSalesShipmentBuffer."Entry No.");
-                SalesShipmentBuffer.DELETE;
+                SalesShipmentBuffer.DELETE();
                 exit;
             end;
             SalesShipmentBuffer.CALCSUMS(Quantity);
             if SalesShipmentBuffer.Quantity <> "Sales Invoice Line".Quantity then begin
-                SalesShipmentBuffer.DELETEALL;
+                SalesShipmentBuffer.DELETEALL();
                 exit;
             end;
         end;
@@ -1218,7 +1218,7 @@ Report 13062751 "Sales - Invoice Adl"
                     TotalQuantity := TotalQuantity + ValueEntry."Invoiced Quantity";
                 end;
                 FirstValueEntryNo := ValueEntry."Entry No." + 1;
-            until (ValueEntry.NEXT = 0) or (TotalQuantity = 0);
+            until (ValueEntry.NEXT() = 0) or (TotalQuantity = 0);
     end;
 
     local procedure GenerateBufferFromShipment(SalesInvoiceLine: Record "Sales Invoice Line");
@@ -1244,8 +1244,8 @@ Report 13062751 "Sales - Invoice Adl"
                 if SalesInvoiceLine2.FIND('-') then
                     repeat
                         TotalQuantity := TotalQuantity + SalesInvoiceLine2.Quantity;
-                    until SalesInvoiceLine2.NEXT = 0;
-            until SalesInvoiceHeader.NEXT = 0;
+                    until SalesInvoiceLine2.NEXT() = 0;
+            until SalesInvoiceHeader.NEXT() = 0;
 
         SalesShipmentLine.SETCURRENTKEY("Order No.", "Order Line No.");
         SalesShipmentLine.SETRANGE("Order No.", "Sales Invoice Header"."Order No.");
@@ -1277,7 +1277,7 @@ Report 13062751 "Sales - Invoice Adl"
                           Quantity,
                           SalesShipmentHeader."Posting Date");
                 end;
-            until (SalesShipmentLine.NEXT = 0) or (TotalQuantity = 0);
+            until (SalesShipmentLine.NEXT() = 0) or (TotalQuantity = 0);
     end;
 
     local procedure CorrectShipment(var SalesShipmentLine: Record "Sales Shipment Line");
@@ -1290,7 +1290,7 @@ Report 13062751 "Sales - Invoice Adl"
         if SalesInvoiceLine.FIND('-') then
             repeat
                 SalesShipmentLine.Quantity := SalesShipmentLine.Quantity - SalesInvoiceLine.Quantity;
-            until SalesInvoiceLine.NEXT = 0;
+            until SalesInvoiceLine.NEXT() = 0;
     end;
 
     local procedure AddBufferEntry(SalesInvoiceLine: Record "Sales Invoice Line"; QtyOnShipment: Decimal; PostingDate: Date);
@@ -1300,7 +1300,7 @@ Report 13062751 "Sales - Invoice Adl"
         SalesShipmentBuffer.SETRANGE("Posting Date", PostingDate);
         if SalesShipmentBuffer.FIND('-') then begin
             SalesShipmentBuffer.Quantity := SalesShipmentBuffer.Quantity + QtyOnShipment;
-            SalesShipmentBuffer.MODIFY;
+            SalesShipmentBuffer.MODIFY();
             exit;
         end;
 
@@ -1312,7 +1312,7 @@ Report 13062751 "Sales - Invoice Adl"
             "No." := SalesInvoiceLine."No.";
             Quantity := QtyOnShipment;
             "Posting Date" := PostingDate;
-            INSERT;
+            INSERT();
             NextEntryNo := NextEntryNo + 1
         end;
     end;
@@ -1366,7 +1366,7 @@ Report 13062751 "Sales - Invoice Adl"
         PostedAsmLine: Record "Posted Assembly Line";
         SalesShipmentLine: Record "Sales Shipment Line";
     begin
-        TempPostedAsmLine.DELETEALL;
+        TempPostedAsmLine.DELETEALL();
         if "Sales Invoice Line".Type <> "Sales Invoice Line".Type::Item then
             exit;
         with ValueEntry do begin
@@ -1375,7 +1375,7 @@ Report 13062751 "Sales - Invoice Adl"
             SETRANGE("Document Type", "Document Type"::"Sales Invoice");
             SETRANGE("Document Line No.", "Sales Invoice Line"."Line No.");
             SETRANGE(Adjustment, false);
-            if not FINDSET then
+            if not FINDSET() then
                 exit;
         end;
         repeat
@@ -1384,13 +1384,13 @@ Report 13062751 "Sales - Invoice Adl"
                     SalesShipmentLine.GET(ItemLedgerEntry."Document No.", ItemLedgerEntry."Document Line No.");
                     if SalesShipmentLine.AsmToShipmentExists(PostedAsmHeader) then begin
                         PostedAsmLine.SETRANGE("Document No.", PostedAsmHeader."No.");
-                        if PostedAsmLine.FINDSET then
+                        if PostedAsmLine.FINDSET() then
                             repeat
                                 TreatAsmLineBuffer(PostedAsmLine);
-                            until PostedAsmLine.NEXT = 0;
+                            until PostedAsmLine.NEXT() = 0;
                     end;
                 end;
-        until ValueEntry.NEXT = 0;
+        until ValueEntry.NEXT() = 0;
     end;
 
     local procedure TreatAsmLineBuffer(PostedAsmLine: Record "Posted Assembly Line");
@@ -1401,13 +1401,13 @@ Report 13062751 "Sales - Invoice Adl"
         TempPostedAsmLine.SETRANGE("Variant Code", PostedAsmLine."Variant Code");
         TempPostedAsmLine.SETRANGE(Description, PostedAsmLine.Description);
         TempPostedAsmLine.SETRANGE("Unit of Measure Code", PostedAsmLine."Unit of Measure Code");
-        if TempPostedAsmLine.FINDFIRST then begin
+        if TempPostedAsmLine.FINDFIRST() then begin
             TempPostedAsmLine.Quantity += PostedAsmLine.Quantity;
-            TempPostedAsmLine.MODIFY;
+            TempPostedAsmLine.MODIFY();
         end else begin
             CLEAR(TempPostedAsmLine);
             TempPostedAsmLine := PostedAsmLine;
-            TempPostedAsmLine.INSERT;
+            TempPostedAsmLine.INSERT();
         end;
     end;
 
@@ -1431,10 +1431,10 @@ Report 13062751 "Sales - Invoice Adl"
         CustLedgerEntry: Record "Cust. Ledger Entry";
         Customer: Record Customer;
     begin
-        TempLineFeeNoteOnReportHist.DELETEALL;
+        TempLineFeeNoteOnReportHist.DELETEALL();
         CustLedgerEntry.SETRANGE("Document Type", CustLedgerEntry."Document Type"::Invoice);
         CustLedgerEntry.SETRANGE("Document No.", SalesInvoiceHeaderNo);
-        if not CustLedgerEntry.FINDFIRST then
+        if not CustLedgerEntry.FINDFIRST() then
             exit;
 
         if not Customer.GET(CustLedgerEntry."Customer No.") then
@@ -1442,16 +1442,16 @@ Report 13062751 "Sales - Invoice Adl"
 
         LineFeeNoteOnReportHist.SETRANGE("Cust. Ledger Entry No", CustLedgerEntry."Entry No.");
         LineFeeNoteOnReportHist.SETRANGE("Language Code", Customer."Language Code");
-        if LineFeeNoteOnReportHist.FINDSET then begin
+        if LineFeeNoteOnReportHist.FINDSET() then begin
             repeat
                 InsertTempLineFeeNoteOnReportHist(LineFeeNoteOnReportHist, TempLineFeeNoteOnReportHist);
-            until LineFeeNoteOnReportHist.NEXT = 0;
+            until LineFeeNoteOnReportHist.NEXT() = 0;
         end else begin
             LineFeeNoteOnReportHist.SETRANGE("Language Code", Language.GetUserLanguage);
-            if LineFeeNoteOnReportHist.FINDSET then
+            if LineFeeNoteOnReportHist.FINDSET() then
                 repeat
                     InsertTempLineFeeNoteOnReportHist(LineFeeNoteOnReportHist, TempLineFeeNoteOnReportHist);
-                until LineFeeNoteOnReportHist.NEXT = 0;
+                until LineFeeNoteOnReportHist.NEXT() = 0;
         end;
     end;
 
@@ -1466,7 +1466,7 @@ Report 13062751 "Sales - Invoice Adl"
         then
             exit;
 
-        TempVATAmountLineLCY2.INIT;
+        TempVATAmountLineLCY2.INIT();
         TempVATAmountLineLCY2 := TempVATAmountLine2;
         with SalesInvoiceHeader do begin
             VATBaseLCY :=
@@ -1480,7 +1480,7 @@ Report 13062751 "Sales - Invoice Adl"
         end;
         TempVATAmountLineLCY2."VAT Base" := ROUND(VATBaseLCY);
         TempVATAmountLineLCY2."Amount Including VAT" := ROUND(AmtInclVATLCY);
-        TempVATAmountLineLCY2.InsertLine;
+        TempVATAmountLineLCY2.InsertLine();
 
         VATBaseRemainderAfterRoundingLCY2 := VATBaseLCY - TempVATAmountLineLCY2."VAT Base";
         AmtInclVATRemainderAfterRoundingLCY2 := AmtInclVATLCY - TempVATAmountLineLCY2."Amount Including VAT";
@@ -1490,10 +1490,10 @@ Report 13062751 "Sales - Invoice Adl"
     local procedure InsertTempLineFeeNoteOnReportHist(var LineFeeNoteOnReportHist: Record "Line Fee Note on Report Hist."; var TempLineFeeNoteOnReportHist: Record "Line Fee Note on Report Hist." temporary);
     begin
         repeat
-            TempLineFeeNoteOnReportHist.INIT;
+            TempLineFeeNoteOnReportHist.INIT();
             TempLineFeeNoteOnReportHist.COPY(LineFeeNoteOnReportHist);
-            TempLineFeeNoteOnReportHist.INSERT;
-        until TempLineFeeNoteOnReportHist.NEXT = 0;
+            TempLineFeeNoteOnReportHist.INSERT();
+        until TempLineFeeNoteOnReportHist.NEXT() = 0;
     end;
 
     [IntegrationEvent(false, TRUE)]

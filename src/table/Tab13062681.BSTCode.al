@@ -1,45 +1,45 @@
 table 13062681 "BST Code"
 {
-    DataClassification = ToBeClassified;
+    DataClassification = SystemMetadata;
     LookupPageId = 13062681;
     Caption = 'BST Code';
-    
+
     fields
     {
-        field(1;Code;Code[10])
+        field(1; Code; Code[10])
         {
             Caption = 'Code';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(2; "Serial Num."; Code[20])
         {
             Caption = 'Serial Num.';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(3; "Description"; Text[100])
         {
             Caption = 'Description';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(4; Totaling; Text[80])
         {
             Caption = 'Totaling';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(5; "Type"; Option)
         {
             Caption = 'Type';
             OptionMembers = "Posting","Total";
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(6; "Indentation"; Integer)
         {
             Caption = 'Indentation';
-            DataClassification = ToBeClassified;
-        }                        
-        
+            DataClassification = SystemMetadata;
+        }
+
     }
-    
+
     keys
     {
         key(PK; Code)
@@ -47,5 +47,5 @@ table 13062681 "BST Code"
             Clustered = true;
         }
     }
-    
+
 }
