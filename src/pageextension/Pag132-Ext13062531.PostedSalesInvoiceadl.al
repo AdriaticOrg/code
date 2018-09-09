@@ -81,7 +81,7 @@ pageextension 13062531 "PostedSalesInvoice-Adl" extends "Posted Sales Invoice" /
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
         EUCustomsFeatureEnabled: Boolean;
         // </adl.0>
@@ -89,8 +89,8 @@ pageextension 13062531 "PostedSalesInvoice-Adl" extends "Posted Sales Invoice" /
     trigger OnOpenPage();
     begin
         // <adl.0>
-        VATFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::VAT);
-        EUCustomsFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::EUCustoms);
+        VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
+        EUCustomsFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::EUCustoms);
         // </adl.0>
     end;
 }

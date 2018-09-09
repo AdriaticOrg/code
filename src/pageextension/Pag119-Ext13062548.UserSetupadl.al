@@ -44,7 +44,7 @@ pageextension 13062548 "UserSetup-adl" extends "User Setup" //119
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        CoreSetup: Record "CoreSetup-Adl";
         RepHRFeatureEnabled: Boolean;
         RepSIFeatureEnabled: Boolean;
         // </adl.0>
@@ -52,8 +52,8 @@ pageextension 13062548 "UserSetup-adl" extends "User Setup" //119
     trigger OnOpenPage();
     begin
         // <adl.0>
-        RepHRFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::RepHR);
-        RepSIFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::RepSI);
+        RepHRFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::RepHR);
+        RepSIFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::RepSI);
         // </adl.0>
     end;
 }

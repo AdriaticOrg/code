@@ -156,7 +156,7 @@ page 13062741 "Cust. Ledger Entries Ext.-adl"
 
     trigger OnOpenPage();
     begin
-        if not ADLCore.FeatureEnabled("ADL Features"::"Unpaid Receivables") then exit;
+        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables) then exit;
 
         SalesReceivablesSetup.GET;
         SalesReceivablesSetup.testfield("Exteded Data Start Bal. Date");
@@ -168,7 +168,7 @@ page 13062741 "Cust. Ledger Entries Ext.-adl"
 
     var
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option VAT,FAS,KRD,BST,VIES,"Unpaid Receivables";
+        CoreSetup: Record "CoreSetup-Adl";
         CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-adl";
         OriginalDocumentAmount: Decimal;
         OriginalVATAmount: Decimal;

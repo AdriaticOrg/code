@@ -2,19 +2,19 @@ codeunit 13062581 "Return Order Turnover Mgt.-Adl"
 {
     var
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        CoreSetup: Record "CoreSetup-Adl";
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'VAT Prod. Posting Group', true, false)]
     local procedure OnBeforeValidateVatProsPostGroupInSalesLine(var Rec: Record "Sales Line")
     begin
-        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         HandleSalesVATProdPostingSetup(Rec);
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Purchase Line", 'OnBeforeValidateEvent', 'VAT Prod. Posting Group', true, false)]
     local procedure OnBeforeValidateVatProsPostGroupInPurchLine(var Rec: Record "Purchase Line")
     begin
-        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         HandlePurchVATProdPostingSetup(Rec);
     end;
 
@@ -22,7 +22,7 @@ codeunit 13062581 "Return Order Turnover Mgt.-Adl"
     var
         SalesHeader: Record "Sales Header";
     begin
-        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         with SalesLine do begin
             if "Document Type" IN ["Document Type"::"Credit Memo", "Document Type"::"Return Order"] then begin
                 SalesHeader.GET(SalesLine."Document Type", SalesLine."Document No.");
@@ -36,7 +36,7 @@ codeunit 13062581 "Return Order Turnover Mgt.-Adl"
     var
         PurchHeader: Record "Purchase Header";
     begin
-        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         with PurchLine do begin
             if "Document Type" IN ["Document Type"::"Credit Memo", "Document Type"::"Return Order"] then begin
                 PurchHeader.GET(PurchLine."Document Type", PurchLine."Document No.");
@@ -50,7 +50,7 @@ codeunit 13062581 "Return Order Turnover Mgt.-Adl"
     var
         GoodsReturnType: Record "Goods Return Type-Adl";
     begin
-        if not ADLCore.FeatureEnabled("ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         IF NOT GoodsReturnType.IsEmpty() then begin
             GoodsReturnType.SetRange("VAT Bus. Posting Group", VATBusPostGr);
             if GoodsReturnTypeCode <> '' then begin

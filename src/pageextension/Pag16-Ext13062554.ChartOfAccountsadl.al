@@ -33,14 +33,14 @@ pageextension 13062554 "Chart Of Accounts-adl" extends "Chart of Accounts" //16
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        CoreSetup: Record "CoreSetup-Adl";
         RepSIFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
-        RepSIFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::RepSI);
+        RepSIFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::RepSI);
         // </adl.0>
     end;
 }

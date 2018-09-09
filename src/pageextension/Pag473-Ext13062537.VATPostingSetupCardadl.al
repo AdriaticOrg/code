@@ -42,7 +42,7 @@ pageextension 13062537 "VATPostingSetupCard-Adl" extends "VAT Posting Setup Card
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;
         // </adl.0>
@@ -50,8 +50,8 @@ pageextension 13062537 "VATPostingSetupCard-Adl" extends "VAT Posting Setup Card
     trigger OnOpenPage();
     begin
         // <adl.0>
-        ADLCoreEnabled := ADLCore.FeatureEnabled("ADL Features"::Core);
-        VATFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::VAT);
+        ADLCoreEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::Core);
+        VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
         // </adl.0>
     end;
 }

@@ -8,7 +8,7 @@ codeunit 13062741 "Overdue And Uncoll.Rec-Adl"
 
     var
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option VAT,FAS,KRD,BST,VIES,"Unpaid Receivables";
+        CoreSetup: Record "CoreSetup-Adl";
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterPostCust', '', false, false)]
     local procedure OverdueandUncollRec(var GenJournalLine: Record "Gen. Journal Line"; Balancing: Boolean)
@@ -17,7 +17,7 @@ codeunit 13062741 "Overdue And Uncoll.Rec-Adl"
         CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-adl";
         CustLedgEntry: Record "Cust. Ledger Entry";
     begin
-        if not ADLCore.FeatureEnabled("ADL Features"::"Unpaid Receivables") then exit;
+        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables) then exit;
         CustLedgEntry.FindLast();
 
         CustLedgerEntryExtData.Reset();
@@ -43,7 +43,7 @@ codeunit 13062741 "Overdue And Uncoll.Rec-Adl"
     var
         CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-adl";
     begin
-        if not ADLCore.FeatureEnabled("ADL Features"::"Unpaid Receivables") then exit;
+        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables) then exit;
 
         CustLedgerEntryExtData.Reset();
         CustLedgerEntryExtData.SetCurrentKey("Journal Template Name", "Journal Batch Name", "Line No.");

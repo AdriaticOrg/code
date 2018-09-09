@@ -7,6 +7,13 @@ table 13062811 "CoreSetup-Adl"
     {
         //NOTE: fields here should be set during assisted setup
         // maintained automatically ( when handling specific feature setup )
+        field(999999; "ADL Features"; Option)
+        {
+            Caption = 'ADL Features';
+            OptionMembers = Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms,UnpaidReceivables;
+            DataClassification = SystemMetadata;
+            Description = 'We really need to transition to an emum!';
+        }
         field(1; "Code"; Code[10])
         {
             Caption = 'Code';

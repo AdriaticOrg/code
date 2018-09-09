@@ -17,14 +17,14 @@ pageextension 13062551 "Countries-adl" extends "Countries/Regions" //10
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        CoreSetup: Record "CoreSetup-Adl";
         FASFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
-        FASFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::FAS);
+        FASFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS);
         // </adl.0>
     end;
 }

@@ -22,14 +22,14 @@ pageextension 13062553 "General Ledger Setup-adl" extends "General Ledger Setup"
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
-        ADLCoreEnabled := ADLCore.FeatureEnabled("ADL Features"::Core);
+        ADLCoreEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::Core);
         // </adl.0>
     end;
 }

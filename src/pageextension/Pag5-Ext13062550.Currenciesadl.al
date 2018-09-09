@@ -17,14 +17,14 @@ pageextension 13062550 "Currencies-adl" extends Currencies //5
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
-        ADLCoreEnabled := ADLCore.FeatureEnabled("ADL Features"::Core);
+        ADLCoreEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::Core);
         // </adl.0>
     end;
 }

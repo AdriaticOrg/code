@@ -54,7 +54,7 @@ pageextension 13062536 "VATPostingSetup-Adl" extends "VAT Posting Setup"  //472
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;
         VIESFeatureEnabled: Boolean;
@@ -63,9 +63,9 @@ pageextension 13062536 "VATPostingSetup-Adl" extends "VAT Posting Setup"  //472
     trigger OnOpenPage();
     begin
         // <adl.0>
-        ADLCoreEnabled := ADLCore.FeatureEnabled("ADL Features"::Core);
-        VATFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::VAT);
-        VIESFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::VIES);
+        ADLCoreEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::Core);
+        VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
+        VIESFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VIES);
         // </adl.0>
     end;
 }

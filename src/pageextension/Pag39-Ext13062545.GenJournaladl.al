@@ -159,7 +159,7 @@ pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms,"Unpaid Receivables";
+        CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;
         FASFeatureEnabled: Boolean;
@@ -178,12 +178,12 @@ pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
     trigger OnOpenPage();
     begin
         // <adl.0>
-        ADLCoreEnabled := ADLCore.FeatureEnabled("ADL Features"::Core);
-        VATFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::VAT);
-        FASFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::FAS);
-        KRDFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::KRD);
-        BSTFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::BST);
-        UnpaidRecEnabled := AdlCore.FeatureEnabled("ADL Features"::"Unpaid Receivables");
+        ADLCoreEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::Core);
+        VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
+        FASFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS);
+        KRDFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::KRD);
+        BSTFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::BST);
+        UnpaidRecEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables);
         // </adl.0>
     end;
 }

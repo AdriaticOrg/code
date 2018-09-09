@@ -81,14 +81,14 @@ pageextension 13062534 "PostedPurchaseCreditMemo-Adl" extends "Posted Purchase C
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core";
-        "ADL Features": Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms;
+        CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
-        VATFeatureEnabled := ADLCore.FeatureEnabled("ADL Features"::VAT);
+        VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
         // </adl.0>
     end;
 }
