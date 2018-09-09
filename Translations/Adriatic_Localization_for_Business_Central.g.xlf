@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="en-US" original="Adriatic Localization for Business Central">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="Adriatic_Localization_for_Business_Central">
     <body>
       <group id="body">
         <trans-unit id="Table 1439163258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1313,6 +1313,131 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BST Report Line - Field Expense Amount - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1365775845 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cust. Ledger Entry Extended Data</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust.Ledger Entry ExtData-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1365775845 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust.Ledger Entry ExtData-adl - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1365775845 - Field 638919759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Document Amount (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust.Ledger Entry ExtData-adl - Field Original Document Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1365775845 - Field 687513795 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original VAT Amount (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust.Ledger Entry ExtData-adl - Field Original VAT Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1365775845 - Field 1937620697 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open Amount (LCY) w/o Unrealized Exchange Rate Adjustments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust.Ledger Entry ExtData-adl - Field Open Amount (LCY) w/o Unreal. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1365775845 - Field 3116236351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is Journal Line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust.Ledger Entry ExtData-adl - Field Is Journal Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1365775845 - Field 3684440170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal Template Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust.Ledger Entry ExtData-adl - Field Journal Template Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1365775845 - Field 2704330142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal Batch Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust.Ledger Entry ExtData-adl - Field Journal Batch Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1365775845 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust.Ledger Entry ExtData-adl - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Overdue and Uncollected Recievables Buffer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 544368334 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Registration Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field VAT Registration Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 617267791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Registration No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field VAT Registration No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 158172202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field Line Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 1171137197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field Customer Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 3167827748 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field Invoice Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 166038250 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field Invoice No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 580412389 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field Document Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 4085727052 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field Due Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 2858896445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. of Overdue Days</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field No. of Overdue Days - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 326365590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Amount without VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field Invoice Amount without VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 1108276017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field VAT Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 678730876 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field Invoice Amount Incl. VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 231998036 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Paid Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field Paid Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 688441660 - Field 1719677029 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unpaid Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-adl - Field Unpaid Amount - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 909224780 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ADL CoreSetup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1352,6 +1477,11 @@
           <source>VIES Enabled</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CoreSetup-Adl - Field VIES Enabled - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 909224780 - Field 1149933623 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unpaid Receivables Enabled</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CoreSetup-Adl - Field Unpaid Receivables Enabled - Property Caption</note>
         </trans-unit>
         <trans-unit id="Codeunit 1890036800 - NamedType 1729860386" size-unit="char" translate="yes" xml:space="preserve">
           <source>Do you want to change VAT Date</source>
@@ -2062,6 +2192,26 @@
           <source>Reopen</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Report - Action Reopen - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1415626421 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cust. Ledger Entries Extended</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1415626421 - Control 85276878 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Document Amount (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-adl - Control OriginalDocumentAmount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1415626421 - Control 192409082 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original VAT Amount (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-adl - Control OriginalVATAmount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1415626421 - Control 3459327861 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open Amount (LCY) Without Unrealized Exchange Rate Adjustment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-adl - Control OpenAmountLCYWithoutUnreal - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2476976794 - Method 1544076788 - NamedType 2074807254" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Postponed VAT was successfully posted.</source>
@@ -2878,6 +3028,341 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Detail Trial Balance-Adl - NamedType PostingRespPersonLbl</note>
         </trans-unit>
+        <trans-unit id="Report 787011548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Overdue and Uncollected Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - RequestPage 2516438534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Overdue and Uncollected Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - RequestPage RequestOptionsPage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - Control 700962840 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - Control Control3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - Control 240771281 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Until Due Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - Control EndDueDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - Control 1954028305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company InformaationB</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - Control CompanyOfficialNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Registration No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Other</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>STATISTICAL REPORT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OF DUE, NOT PAID INVOICES ON DATE %1 WHICH WERE NOT PAID UNTIL %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 3073937421" size-unit="char" translate="yes" xml:space="preserve">
+          <source>I. INFORMATION OF TAX PAYER/APPLICANT OF REPORT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 2507091926" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NAME/FIRST AND LAST NAME:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI1</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 594002075" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT REGISTRATION NO.:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI2</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 1231698692" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ADDRESS:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI3</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 3313697566" size-unit="char" translate="yes" xml:space="preserve">
+          <source>II. INFORMATION OF DUE, NONPAID INVOICES ISSUED IN ACCORDANCE WITH VAT LAW</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderII</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 2929281271" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LINE NO.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine1</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 547403826" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT REGISTRATION NO. TYPE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine2</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 4204674505" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT REGISTRATION NO.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine3</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 1822797060" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NAME/FIRST AND LAST NAME</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine4</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 1185100443" size-unit="char" translate="yes" xml:space="preserve">
+          <source>INVOICE LINE NO.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine5</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 3098190294" size-unit="char" translate="yes" xml:space="preserve">
+          <source>INVOICE NO.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine6</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 2460493677" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DATE OF INVOICE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine7</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 2760372248" size-unit="char" translate="yes" xml:space="preserve">
+          <source>INVOICE DUE DATE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine8</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 2122675631" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NO. OF OVERDUE DAYS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine9</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 3944622599" size-unit="char" translate="yes" xml:space="preserve">
+          <source>INVOICE AMOUNT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine10</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 287351920" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT AMOUNT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine11</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 925048537" size-unit="char" translate="yes" xml:space="preserve">
+          <source>INVOICE AMOUNT INCL. VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine12</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 1562745154" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PAID AMOUNT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine13</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 2200441771" size-unit="char" translate="yes" xml:space="preserve">
+          <source>UNPAID AMOUNT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine14</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 4087776577" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextTotal</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 2490333051" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TOTAL</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextTotalUpperCase</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 1023367749" size-unit="char" translate="yes" xml:space="preserve">
+          <source>III. INFORMATION OF DUE, NONPAID INVOICES ISSUED IN ACCORDANCE WITH OPZ REGULATIONS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderIII</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 1269638167" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"IV. Date: "</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderIV</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 1760604712" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"V. Created by (first name and last name): "</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderV</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 1685776735" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VI. Signature:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderVI</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 1700519688" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error creating file on server.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextError001</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No entries were found to create file.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text006</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export to XML File</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text007</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
+          <source>XML Files (*.xml)|*.xml|All Files (*.*)|*.*</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text008</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
+          <source>File is saved on:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text009</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text010</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 1026443335" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Invoice Amount (LCY) for Customer Ledger Entry No. %1 cannot be 0 or less.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text011</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 2939533186" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Uncollected_Ovedrue_Entries_%1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text012</note>
+        </trans-unit>
+        <trans-unit id="Report 787011548 - NamedType 2301836569" size-unit="char" translate="yes" xml:space="preserve">
+          <source>File %1 was created.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text013</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Repost Customer Ledger Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - RequestPage 2516438534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Repost Customer Ledger Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - RequestPage RequestOptionsPage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - Control PostingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - Control 324877144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - Control NewCustNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - Control 88467557 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - Control NewPostingGroup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - Control 3083748138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post As Correction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - Control Correction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - Control 2462654737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reposting Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - Control RepostType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - Control 2462654737 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Auto Post,Fill G/L Journal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - Control RepostType - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - Control 1543084196 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Apply Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - Control ApplyAmount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - Control 2558506169 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Template Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - Control TemplateName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - Control 1042671269 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Batch Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - Control BatchName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - Control 1846544554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Value Change</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - Control DimChange - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - Control 3046421369 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Set ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - Control DimSetID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select New Customer No. or New Customer Posting Group or define New Dimension Values.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Define dimension values when Dimension Value Change is selected.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are no differences in Customer No., Customer Posting Group or Dimension Values on Ledger Entry No. %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The journal lines were successfully filled.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The journal lines were successfully posted.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 is not allowed Document Type for reposting.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text006</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You can not repost customer ledger entry with Document No. %1 due to existing Posted %2.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text007</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You can not repost customer ledger entry with Document No. %1 due to existing Service %2.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text008</note>
+        </trans-unit>
+        <trans-unit id="Report 1960300502 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only one Customer Ledger Entry must be selected when Apply Amount is defined.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text009</note>
+        </trans-unit>
         <trans-unit id="Report 1918786967 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales - Invoice</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3253,25 +3738,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GenLedgEntries-adl - Action ChangeBST - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1484141991 - Control 638919759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 3681804047 - Action 2856707180 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Edit Extended Data</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgEntries-adl - Action UnpaidReceivables - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3368287715 - Control 1402601032 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original Document Amount (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SalesJournal-adl - Control Original Document Amount (LCY) - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GenJournal-adl - Control OriginalDocumentAmountLCY - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1484141991 - Control 687513795 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 3368287715 - Control 3775182588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original VAT Amount (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SalesJournal-adl - Control Original VAT Amount (LCY) - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GenJournal-adl - Control OriginalVATAmountLCY - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 3368287715 - Control 638919759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Original Document Amount (LCY)</source>
+        <trans-unit id="PageExtension 3368287715 - Control 3925844188 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open Amount (LCY) Without Unrealized Exchange Rate Adjustment</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GenJournal-adl - Control Original Document Amount (LCY) - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GenJournal-adl - Control OpenAmounLCYtWithoutUnrealizedERF - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 3368287715 - Control 687513795 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Original VAT Amount (LCY)</source>
+        <trans-unit id="PageExtension 4015553598 - Control 259348792 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extended Data Start Balance Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GenJournal-adl - Control Original VAT Amount (LCY) - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SalesAndReceivablesSetupadl - Control Exteded Data Start Bal. Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 569145612 - Field 1265827638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purch VAT Postponed Account</source>
@@ -3628,6 +4118,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Amount Line-Adl - Field VAT % (informative)-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 239672947 - Field 259348792 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extended Data Start Balance Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SalesAndReceivableSetupadl - Field Exteded Data Start Bal. Date - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2348541669 - Field 2099680485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3762,16 +4257,6 @@
           <source>EU Customs Procedure</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJournalLine-Adl - Field EU Customs Procedure - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 684499033 - Field 638919759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Original Document Amount (LCY)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJournalLine-Adl - Field Original Document Amount (LCY) - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 684499033 - Field 687513795 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>"Original VAT Amount (LCY)"</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJournalLine-Adl - Field Original VAT Amount (LCY) - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 800366056 - Field 2326980714 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Numeric Code</source>

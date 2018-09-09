@@ -2,7 +2,7 @@ codeunit 13062811 "Adl Core"
 {
     Permissions = tabledata 13062811 = rm,
                   tabledata 13062660 = rm;
-    procedure FeatureEnabled(Feature: Option VAT,FAS,KRD,BST,VIES): Boolean
+    procedure FeatureEnabled(Feature: Option VAT,FAS,KRD,BST,VIES,"Unpaid Receivables"): Boolean
     var
         //ReportSISetup: Record "Reporting_SI Setup";
         CoreSetup: Record "CoreSetup-Adl";
@@ -14,7 +14,7 @@ codeunit 13062811 "Adl Core"
         if (Feature = Feature::KRD) and CoreSetup."KRD Enabled" then exit(true);
         if (Feature = Feature::BST) and CoreSetup."BST Enabled" then exit(true);
         if (Feature = Feature::VIES) and CoreSetup."VIES Enabled" then exit(true);
-
+        if (Feature = Feature::"Unpaid Receivables") and CoreSetup."Unpaid Receivables Enabled" then exit(true);
         exit(false);
     end;
 }

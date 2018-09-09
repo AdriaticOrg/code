@@ -42,6 +42,12 @@ table 13062811 "CoreSetup-Adl"
             Caption = 'VIES Enabled';
             DataClassification = SystemMetadata;
         }
+
+        field(53; "Unpaid Receivables Enabled"; Boolean)
+        {
+            Caption = 'Unpaid Receivables Enabled';
+            DataClassification = SystemMetadata;
+        }
     }
 
     keys
