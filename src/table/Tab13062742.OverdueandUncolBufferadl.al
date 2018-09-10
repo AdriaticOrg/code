@@ -1,6 +1,7 @@
 table 13062742 "Overdue and Uncol. Buffer-adl"
 {
     Caption = 'Overdue and Uncollected Recievables Buffer';
+    Permissions = tabledata 13062742 = rm;
 
     fields
     {
