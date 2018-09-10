@@ -18,6 +18,7 @@
   "features": [
     "TranslationFile"
   ],
+  "helpBaseUrl": "https://adriaticorg.github.io/help/{0}/",
   "supportedLocales": [
     "en-US","hr-HR","sr-Latn-RS","sl-SI"
   ],
