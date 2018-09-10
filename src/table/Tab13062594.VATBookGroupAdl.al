@@ -90,7 +90,7 @@ table 13062594 "VAT Book Group-Adl"
             var
                 VATBookColumnName: Record "VAT Book Column Name-Adl";
                 VATBookColumnNames: Page "VAT Book Column Names-Adl";
-                VATBookColumnNameFilter: Text;
+                VATBookColumnNameFilter: Text[250];
             begin
                 VATBookColumnName.SETRANGE("VAT Book Code", "VAT Book Code");
                 if VATBookColumnName.FINDSET() then begin
@@ -103,9 +103,9 @@ table 13062594 "VAT Book Group-Adl"
                         if VATBookColumnName.FINDSET() then begin
                             repeat
                                 if VATBookColumnNameFilter = '' then
-                                    VATBookColumnNameFilter := FORMAT(VATBookColumnName."Column No.")
+                                    VATBookColumnNameFilter := CopyStr(FORMAT(VATBookColumnName."Column No."), 1, MaxStrLen(VATBookColumnNameFilter))
                                 else
-                                    VATBookColumnNameFilter += '|' + FORMAT(VATBookColumnName."Column No.");
+                                    VATBookColumnNameFilter += '|' + CopyStr(FORMAT(VATBookColumnName."Column No."), 1, MaxStrLen(VATBookColumnNameFilter));
                             until VATBookColumnName.NEXT() = 0;
                             "Include Columns" := VATBookColumnNameFilter;
                         end;
