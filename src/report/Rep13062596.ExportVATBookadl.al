@@ -65,16 +65,14 @@ report 13062596 "Export VAT Book-adl"
                 VATBookColumnName: Record "VAT Book Column Name-Adl";
                 CellResult: Decimal;
                 Found: Boolean;
-                DecVal: Decimal;
                 i: Integer;
             begin
                 SetRange("Document No.", "Document No.");
                 FindLast();
 
-                for i := 1 to VATBookColumnName.Count() do begin
+                for i := 1 to VATBookColumnName.Count() do
                     IF (CellVal[i] <> 0) then
                         Found := true;
-                end;
 
                 If (Found) then begin
                     CreateBookLine("VAT Entry");
@@ -135,12 +133,13 @@ report 13062596 "Export VAT Book-adl"
     }
     var
         VATEntry: Record "VAT Entry";
-        VATBookCode: Code[20];
         Customer: Record Customer;
         Vendor: Record Vendor;
+        VATBookCalc: Codeunit "VAT Book Calculation-Adl";
+        TextWriterAdl: Codeunit "TextWriter-adl";
+        VATBookCode: Code[20];
         Result: Decimal;
         ResultTxt: Text;
-        VATBookCalc: Codeunit "VAT Book Calculation-Adl";
         VATRegNo: Text[20];
         VendCustName: Text;
         ColumnNo: Integer;
@@ -148,14 +147,11 @@ report 13062596 "Export VAT Book-adl"
         VATBookColumnNo: array[100] of Integer;
         VATBookColumnLengt: array[100] of integer;
         CellVal: array[100] of Decimal;
-        //CellList: List of [Decimal];
-        TextWriterAdl: Codeunit "TextWriter-adl";
         OutStr: OutStream;
         OutStrColumn: OutStream;
         PadCharacter: Text[1];
         FieldDelimiter: Text[1];
         DummyText: Text;
-        FixedColumnCreated: Boolean;
         FileName: Label 'IZPIS ODBITKA DDV.TXT';
         ToFilter: Label '*.txt|*.TXT';
         DialogTitle: Label 'Save to';
@@ -176,7 +172,7 @@ report 13062596 "Export VAT Book-adl"
         FieldDelimiter := ';';
         DummyText := ' ';
 
-        CreateHeaderBook; //Create header line txt 
+        CreateHeaderBook(); //Create header line txt 
     end;
 
     trigger OnPostReport()
@@ -186,9 +182,8 @@ report 13062596 "Export VAT Book-adl"
 
     local procedure CreateHeaderBook()
     var
-        Counter: Integer;
-        ColumnDesc: Text;
         VATBookColumnName: Record "VAT Book Column Name-Adl";
+        Counter: Integer;
     begin
         //<Davčno obdobje>, Posting Date 
         TextWriterAdl.FixedField(OutStr, VATPeriodLbl, 4, PadCharacter, 1, FieldDelimiter);
@@ -213,7 +208,7 @@ report 13062596 "Export VAT Book-adl"
 
         VATBookColumnName.Reset();
         VATBookColumnName.SetRange("VAT Book Code", VATBookCode);
-        if VATBookColumnName.FindSet then
+        if VATBookColumnName.FindSet() then
             repeat
                 Counter += 1;
                 VATBookColumnNo[Counter] := VATBookColumnName."Column No.";
@@ -221,7 +216,7 @@ report 13062596 "Export VAT Book-adl"
 
                 TextWriterAdl.FixedField(OutStr, VATBookColumnName.Description, VATBookColumnName."Fixed text length", PadCharacter, 1, FieldDelimiter);
 
-            until VATBookColumnName.Next = 0;
+            until VATBookColumnName.Next() = 0;
         TextWriterAdl.NewLine(OutStr);
     end;
 
@@ -297,7 +292,7 @@ report 13062596 "Export VAT Book-adl"
                 "Document Type"::Invoice:
                     begin
                         IF (type = Type::Purchase) then
-                            with PurchInvHeader do begin
+                            with PurchInvHeader do
                                 if get("Document No.") then begin
                                     if ("Pay-to Name" <> '') then
                                         VendCustName += "Pay-to Name" + ' ';
@@ -308,9 +303,9 @@ report 13062596 "Export VAT Book-adl"
                                     if ("Pay-to Country/Region Code" <> '') then
                                         VendCustName += "Pay-to Country/Region Code" + ' ';
                                 end;
-                            end;
+
                         if (Type = Type::Sale) then
-                            with SalesInvHeader do begin
+                            with SalesInvHeader do
                                 if get("Document No.") then begin
                                     if ("Sell-to Customer Name" <> '') then
                                         VendCustName += "Sell-to Customer Name" + ' ';
@@ -321,12 +316,12 @@ report 13062596 "Export VAT Book-adl"
                                     if ("Sell-to Country/Region Code" <> '') then
                                         VendCustName += "Sell-to Country/Region Code" + ' ';
                                 end;
-                            end;
+
                     end;
                 "Document Type"::"Credit Memo":
                     begin
                         IF (type = Type::Purchase) then
-                            with PurchCrMemoHdr do begin
+                            with PurchCrMemoHdr do
                                 if get("Document No.") then begin
                                     if ("Pay-to Name" <> '') then
                                         VendCustName += "Pay-to Name" + ' ';
@@ -337,7 +332,7 @@ report 13062596 "Export VAT Book-adl"
                                     if ("Pay-to Country/Region Code" <> '') then
                                         VendCustName += "Pay-to Country/Region Code" + ' ';
                                 end;
-                            end;
+
                         if (Type = Type::Sale) then
                             with SalesCrMemoHdr do begin
                                 if get("Document No.") then begin
@@ -355,7 +350,7 @@ report 13062596 "Export VAT Book-adl"
             end;
 
             IF (type = Type::Purchase) then
-                if Vendor.Get("Bill-to/Pay-to No.") then begin
+                if Vendor.Get("Bill-to/Pay-to No.") then
                     with Vendor do begin
                         if (Name <> '') then
                             VendCustName += Name + '';
@@ -366,9 +361,9 @@ report 13062596 "Export VAT Book-adl"
                         if ("Country/Region Code" <> '') then
                             VendCustName += "Country/Region Code";
                     end;
-                end;
+
             IF (type = Type::Sale) then
-                if Customer.Get("Bill-to/Pay-to No.") then begin
+                if Customer.Get("Bill-to/Pay-to No.") then
                     with Vendor do begin
                         if (Name <> '') then
                             VendCustName += Name + '';
@@ -379,7 +374,6 @@ report 13062596 "Export VAT Book-adl"
                         if ("Country/Region Code" <> '') then
                             VendCustName += "Country/Region Code";
                     end;
-                end;
 
         end;
     end;

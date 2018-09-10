@@ -75,14 +75,13 @@ report 13062661 "Suggest KRD Lines"
     }
 
     var
-        DeleteExisting: Boolean;
-        KRDRepDocNo: Code[20];
         KRDRepHead: Record "KRD Report Header";
         RepSISetup: Record "Reporting_SI Setup";
+        GenLedgSetup: Record "General Ledger Setup";
+        DeleteExisting: Boolean;
+        KRDRepDocNo: Code[20];
         InitialRep: Boolean;
         NewLineNo: Integer;
-        Msg01: Label 'Processing complete';
-        GenLedgSetup: Record "General Ledger Setup";
         ProcessingCompleteMsg: Label 'Processing complete';
 
     procedure SetKRDRepDocNo(KRDDocNoLcl: Code[20])
@@ -144,9 +143,9 @@ report 13062661 "Suggest KRD Lines"
                         KRDRepLine."Non-Residnet Sector Code" := cle."KRD Non-Residnet Sector Code";
                         KRDRepLine.validate("Country/Region Code", cle."KRD Country/Region Code");
 
-                        if cle."Currency Code" <> RepSISetup."KRD Blank LCY Code" then begin
-                            KRDRepLine.validate("Currency Code", cle."Currency Code");
-                        end else begin
+                        if cle."Currency Code" <> RepSISetup."KRD Blank LCY Code" then
+                            KRDRepLine.validate("Currency Code", cle."Currency Code")
+                        else begin
                             KRDRepLine."Currency Code" := RepSISetup."KRD Blank LCY Code";
                             KRDRepLine."Currency No." := RepSISetup."KRD Blank LCY Num.";
                         end;

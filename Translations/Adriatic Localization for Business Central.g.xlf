@@ -1718,10 +1718,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - Method XMLFileOpen - NamedType XMLVarsionLoc</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - Method 3329076000 - NamedType 650019274" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1622207341 - Method 3329076000 - NamedType 2251364989" size-unit="char" translate="yes" xml:space="preserve">
           <source>Wrong XML indent writing text %1</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - Method XMLWrite - NamedType Text102</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - Method XMLWrite - NamedType WrongXMLIndentErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3311536690 - NamedType 3004040435" size-unit="char" translate="yes" xml:space="preserve">
           <source>File %1 was succesfully prepared.</source>
@@ -2852,11 +2852,6 @@
           <source>Delete existing lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Suggest KRD Lines - Control DeleteExisting - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2342850016 - NamedType 782590172" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Processing complete</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Suggest KRD Lines - NamedType Msg01</note>
         </trans-unit>
         <trans-unit id="Report 2342850016 - NamedType 4079670525" size-unit="char" translate="yes" xml:space="preserve">
           <source>Processing complete</source>
