@@ -72,6 +72,18 @@ page 13062811 "Core Setup"
                 }
                 // </adl.26>                
             }
+
+            group(UnpaidReceivables)
+            {
+                // <adl.28>
+                Caption = 'Unpaid Receivables';
+                field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled")
+                {
+                    ApplicationArea = All;
+                }
+                // <adl.28>
+            }
+
         }
     }
 
