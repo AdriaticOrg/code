@@ -100,7 +100,7 @@ page 13062594 "VAT Book Groups-Adl"
         SelectionFilterManagement: Codeunit "SelectFilterMgmt_VATBook-Adl";
     begin
         CurrPage.SetSelectionFilter(VatBookGroup);
-        exit(CopyStr(SelectionFilterManagement.GetSelectionFilterForVatBookGroup(VatBookGroup), 1, MaxStrLen(GetSelectionFilter()));
+        exit(CopyStr(SelectionFilterManagement.GetSelectionFilterForVatBookGroup(VatBookGroup), 1, MaxStrLen(GetSelectionFilter())));
     end;
 }
 
