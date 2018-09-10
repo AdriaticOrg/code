@@ -29,4 +29,9 @@ codeunit 13062811 "Adl Core"
 
         exit(false);
     end;
+
+    procedure TrimmedUserID50(): Text[50]
+    begin
+        EXIT(CopyStr(UserId(), 1, 50));
+    end;
 }

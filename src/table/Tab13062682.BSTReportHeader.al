@@ -120,6 +120,8 @@ table 13062682 "BST Report Header"
     }
 
     trigger OnInsert()
+    var
+        ADLCore: Codeunit "Adl Core";
     begin
         RepSISetup.GET();
         IF "No." = '' THEN BEGIN
@@ -132,7 +134,7 @@ table 13062682 "BST Report Header"
 
         "Prep. By User ID" := RepSISetup."BST Prep. By User ID";
         "Resp. User ID" := RepSISetup."BST Resp. User ID";
-        "User ID" := UserId();
+        "User ID" := ADLCore.TrimmedUserID50();
     end;
 
     trigger OnModify()

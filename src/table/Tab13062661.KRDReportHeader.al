@@ -108,6 +108,8 @@ table 13062661 "KRD Report Header"
     }
 
     trigger OnInsert()
+    var
+        ADLCore: Codeunit "Adl Core";
     begin
         RepSISetup.GET();
         IF "No." = '' THEN BEGIN
@@ -120,7 +122,7 @@ table 13062661 "KRD Report Header"
 
         "Prep. By User ID" := RepSISetup."KRD Prep. By User ID";
         "Resp. User ID" := RepSISetup."KRD Resp. User ID";
-        "User ID" := UserId();
+        "User ID" := ADLCore.TrimmedUserID50();
     end;
 
     trigger OnModify()
