@@ -1,6 +1,6 @@
 report 13062642 "Export FAS"
 {
-    UsageCategory = Administration;    
+    UsageCategory = Administration;
     Caption = 'Export FAS';
     RDLCLayout = './src/reportlayout/Rep13062642.ExportFAS.rdlc';
 
@@ -10,7 +10,7 @@ report 13062642 "Export FAS"
         {
             RequestFilterFields = "No.";
 
-            column(CompanyName; CompanyName) { }
+            column(CompanyName; CompanyName()) { }
             column(DocumentNo; "No.")
             {
                 IncludeCaption = true;
@@ -22,69 +22,72 @@ report 13062642 "Export FAS"
             column(PeriodEnd; "Period End Date")
             {
                 IncludeCaption = true;
-            }  
+            }
             column(PrepairedByName; PrepairedByUser."Reporting_SI Name") { }
             column(ResponsibleName; ResponsibleUser."Reporting_SI Name") { }
-            column(ShadowBackgroundOnPosting;ShadowBackgroundOnPosting) {}
+            column(ShadowBackgroundOnPosting; ShadowBackgroundOnPosting) { }
 
-            dataitem(Integer;Integer) {
-                DataItemTableView = SORTING(Number);                
+            dataitem(Integer; Integer)
+            {
+                DataItemTableView = SORTING (Number);
 
-                dataitem("FAS Instrument";"FAS Instrument") {
-                    DataItemTableView = SORTING(Code);
+                dataitem("FAS Instrument"; "FAS Instrument")
+                {
+                    DataItemTableView = SORTING (Code);
 
-                    dataitem("FAS Sector";"FAS Sector") {
-                        DataItemTableView = SORTING(Code); 
+                    dataitem("FAS Sector"; "FAS Sector")
+                    {
+                        DataItemTableView = SORTING (Code);
 
-                        column(FasType;FasType) {}                        
-                        column(InstrumentCode;"FAS Instrument".Code) {}
-                        column(InstrumentIsTotal;"FAS Instrument".Type = "FAS Instrument".Type::Total) {}
-                        column(SectorCode;"FAS Sector".Code) {}
-                        column(SectorIsTotal;"FAS Sector".Type = "FAS Sector".Type::Total) {}                      
-                        column(TransactionsInPeriod;FASReportLine."Transactions Amt. in Period") {}
-                        column(ChangesInPeriod;FASReportLine."Changes Amt. in Period") {}
-                        column(ClosingBalance;FASReportLine."Period Closing Balance") {}
+                        column(FasType; FasType) { }
+                        column(InstrumentCode; "FAS Instrument".Code) { }
+                        column(InstrumentIsTotal; "FAS Instrument".Type = "FAS Instrument".Type::Total) { }
+                        column(SectorCode; "FAS Sector".Code) { }
+                        column(SectorIsTotal; "FAS Sector".Type = "FAS Sector".Type::Total) { }
+                        column(TransactionsInPeriod; FASReportLine."Transactions Amt. in Period") { }
+                        column(ChangesInPeriod; FASReportLine."Changes Amt. in Period") { }
+                        column(ClosingBalance; FASReportLine."Period Closing Balance") { }
 
                         trigger OnAfterGetRecord()
                         begin
-                            IF Code = '' THEN CurrReport.SKIP;
+                            IF Code = '' THEN CurrReport.SKIP();
 
                             IF Type = Type::Total THEN
-                            FasReportLine.SETFILTER("Sector Code",Totaling)
+                                FasReportLine.SETFILTER("Sector Code", Totaling)
                             ELSE
-                            FasReportLine.SETRANGE("Sector Code",Code); 
+                                FasReportLine.SETRANGE("Sector Code", Code);
 
-                            FasReportLine.CALCSUMS("Period Closing Balance","Transactions Amt. in Period","Changes Amt. in Period");
+                            FasReportLine.CALCSUMS("Period Closing Balance", "Transactions Amt. in Period", "Changes Amt. in Period");
 
                             if (FasReportLine."Period Closing Balance" = 0) and (FasReportLine."Transactions Amt. in Period" = 0) and
                              (FasReportLine."Changes Amt. in Period" = 0)
                             then
                                 CurrReport.Skip();
-                        end;   
+                        end;
                     }
-                    trigger OnAfterGetRecord()                    
+                    trigger OnAfterGetRecord()
                     begin
-                        IF Code = '' THEN CurrReport.SKIP;
+                        IF Code = '' THEN CurrReport.SKIP();
 
                         IF Type = Type::Total THEN
-                        FasReportLine.SETFILTER("Instrument Code",Totaling)
+                            FasReportLine.SETFILTER("Instrument Code", Totaling)
                         ELSE
-                        FasReportLine.SETRANGE("Instrument Code",Code);                         
+                            FasReportLine.SETRANGE("Instrument Code", Code);
                     end;
                 }
                 trigger OnPreDataItem()
                 begin
-                    SETRANGE(Number,1,2);                                        
+                    SETRANGE(Number, 1, 2);
                 end;
 
                 trigger OnAfterGetRecord()
                 begin
-                    FasType := SELECTSTR(Number+1,Text001);
+                    FasType := SELECTSTR(Number + 1, FasTypeTok);
 
-                    FasReportLine.RESET;
-                    FasReportLine.SETCURRENTKEY("Document No.","FAS Type","Sector Code","Instrument Code");
-                    FasReportLine.SETRANGE("Document No.","FAS Report Header"."No.");
-                    FasReportLine.SETRANGE("FAS Type",Number);                    
+                    FasReportLine.RESET();
+                    FasReportLine.SETCURRENTKEY("Document No.", "FAS Type", "Sector Code", "Instrument Code");
+                    FasReportLine.SETRANGE("Document No.", "FAS Report Header"."No.");
+                    FasReportLine.SETRANGE("FAS Type", Number);
                 end;
             }
 
@@ -102,7 +105,7 @@ report 13062642 "Export FAS"
                 PrepairedByUser.testfield("Reporting_SI Name");
                 ResponsibleUser.get("Resp. User ID");
                 ResponsibleUser.TestField("Reporting_SI Name");
-            end;            
+            end;
         }
     }
 
@@ -114,7 +117,8 @@ report 13062642 "Export FAS"
             {
                 group(General)
                 {
-                    field(ShadowBackgroundOnPosting;ShadowBackgroundOnPosting) {
+                    field(ShadowBackgroundOnPosting; ShadowBackgroundOnPosting)
+                    {
                         Caption = 'Shadow Background On Posting';
                         ApplicationArea = All;
                         Visible = true;
@@ -128,20 +132,10 @@ report 13062642 "Export FAS"
                 }
             }
         }
-
-        actions
-        {
-            area(processing)
-            {
-                action(ActionName)
-                {
-                    ApplicationArea = All;
-                }
-            }
-        }
     }
 
-    labels {
+    labels
+    {
         LblReportTitle = 'FAS Report';
         LblPage = 'Page';
         LblResponsiblePerson = 'Responsible Person';
@@ -153,33 +147,33 @@ report 13062642 "Export FAS"
 
 
     var
-        ExpFile: Boolean;
         RepSISetup: Record "Reporting_SI Setup";
         CompanyInfo: Record "Company Information";
         PrepairedByUser: Record "User Setup";
-        ResponsibleUser: Record "User Setup";        
+        ResponsibleUser: Record "User Setup";
         MngUserSetup: Record "User Setup";
-        FasReportLine:Record "FAS Report Line";
-        ShadowBackgroundOnPosting:Boolean;
-        FasType:Text;
-        Text001:Label 'Undefined,Assets,Liabilities';
-        Msg001: Label 'Export to %1 done OK.';
-        Msg002: Label 'Sheet 1 and 2 must have positive amounts. FAS Reporting Line sum for AOP %1 (%2) is %3. Filters:\\%4';
+        FasReportLine: Record "FAS Report Line";
+        ExpFile: Boolean;
+        ShadowBackgroundOnPosting: Boolean;
+        FasType: Text;
+        FasTypeTok: Label 'Undefined,Assets,Liabilities';
+        ExportDoneMsg: Label 'Export to %1 done OK.';
+        AmountMiustBePositiveMsg: Label 'Sheet 1 and 2 must have positive amounts. FAS Reporting Line sum for AOP %1 (%2) is %3. Filters:\\%4';
 
 
     local procedure ExportFAS(FASRepHead: Record "FAS Report Header")
     var
-        RepSIMgt: Codeunit "Reporting SI Mgt.";
         FinSect: Record "FAS Sector";
         FinInst: Record "FAS Instrument";
         FASRepLine: Record "FAS Report Line";
+        TmpBlob: Record TempBlob temporary;
+        RepSIMgt: Codeunit "Reporting SI Mgt.";
         XmlDoc: XmlDocument;
         XmlDec: XmlDeclaration;
         XmlElem: array[10] of XmlElement;
         XmlAttr: XmlAttribute;
         OutStr: OutStream;
         InStr: InStream;
-        TmpBlob: Record TempBlob temporary;
         FileName: Text;
         ExpOk: Boolean;
         i: Integer;
@@ -196,19 +190,19 @@ report 13062642 "Export FAS"
         FASRepHead.TestField("Period Year");
         FASRepHead.TestField("Period Round");
 
-        ResponsibleUser.get(FASRepHead."Resp. User ID");
+        ResponsibleUser.Get(FASRepHead."Resp. User ID");
         ResponsibleUser.TestField("Reporting_SI Name");
         ResponsibleUser.TestField("Reporting_SI Email");
         ResponsibleUser.TestField("Reporting_SI Phone");
 
-        RepSISetup.get;
+        RepSISetup.Get();
         RepSISetup.TestField("Budget User Code");
         RepSISetup.TestField("Company Sector Code");
 
         MngUserSetup.get(RepSISetup."FAS Director User ID");
         MngUserSetup.TestField("Reporting_SI Name");
 
-        CompanyInfo.get;
+        CompanyInfo.Get();
         CompanyInfo.TestField("Registration No.");
         CompanyInfo.TestField("VAT Registration No.");
         CompanyInfo.TestField(Name);
@@ -219,7 +213,7 @@ report 13062642 "Export FAS"
         for FormNum := 1 to 6 do begin
             FinInst.Reset();
             FinInst.SetFilter("AOP Code", '<>%1', '');
-            if FinInst.FindSet() then begin
+            if FinInst.FindSet() then
                 repeat
                     EVALUATE(curraop, FinInst."AOP Code");
                     IF (curraop < 100) OR (curraop > 127) THEN
@@ -228,7 +222,7 @@ report 13062642 "Export FAS"
 
                     FinSect.Reset();
                     FinSect.SetFilter("Index Code", '<>%1', '');
-                    if FinSect.FindSet() then begin
+                    if FinSect.FindSet() then
                         repeat
                             IF FinInst.Type = FinInst.Type::Posting THEN
                                 FASRepLine.SETRANGE("Instrument Code", FinInst.Code)
@@ -251,13 +245,11 @@ report 13062642 "Export FAS"
                             Values[currAOP] [i] += FASRepLine.Amount;
 
                             IF (curraop >= 100) AND (curraop < 299) AND (FASRepLine.Amount < 0) THEN
-                                WarningStr += StrSubstNo(Msg002, currAOP, i, FASRepLine.Amount, FASRepLine.GETFILTERS);
+                                WarningStr += StrSubstNo(AmountMiustBePositiveMsg, currAOP, i, FASRepLine.Amount, FASRepLine.GETFILTERS());
 
                         until FinSect.Next() = 0;
-                    end;
 
                 until FinInst.Next() = 0;
-            end;
         end;
 
         if WarningStr <> '' then
@@ -286,11 +278,11 @@ report 13062642 "Export FAS"
 
         XmlElem[3] := XmlElement.Create('Datum');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].Add(xmlText.Create(FORMAT(WORKDATE, 0, 9)));
+        XmlElem[3].Add(xmlText.Create(FORMAT(WORKDATE(), 0, 9)));
 
         XmlElem[3] := XmlElement.Create('Ura');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(FORMAT(TIME, 0, '<Hours24,2><Filler Character,0>:<Minutes,2>:<Seconds,2>')));
+        XmlElem[3].add(XmlText.Create(FORMAT(TIME(), 0, '<Hours24,2><Filler Character,0>:<Minutes,2>:<Seconds,2>')));
 
         XmlElem[2] := XmlElement.Create('OsnoviPodatki');
         XmlElem[1].Add(xmlElem[2]);
@@ -337,7 +329,7 @@ report 13062642 "Export FAS"
 
         XmlElem[3] := XmlElement.Create('Datum');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(FORMAT(WORKDATE, 0, 9)));
+        XmlElem[3].add(XmlText.Create(FORMAT(WORKDATE(), 0, 9)));
 
         XmlElem[3] := XmlElement.Create('Kraj');
         XmlElem[2].Add(XmlElem[3]);
@@ -387,18 +379,18 @@ report 13062642 "Export FAS"
         end;
 
         // Create an out stream from the blob, notice the encoding.
-        TmpBlob.Blob.CreateOutStream(outStr, TextEncoding::UTF8);
+        TmpBlob.Blob.CreateOutStream(OutStr, TextEncoding::UTF8);
         // Write the contents of the doc to the stream
         xmlDoc.WriteTo(outStr);
         // From the same blob, that now contains the xml document, create an instr
-        TmpBlob.Blob.CreateInStream(inStr, TextEncoding::UTF8);
+        TmpBlob.Blob.CreateInStream(InStr, TextEncoding::UTF8);
 
         // Save the data of the InStream as a file.
         //ExpOk :=File.DownloadFromStream(InStr, 'Export To File', '', '*.xml|*.XML', FileName);  
         FileName := 'fas_' + format(FASRepHead."Period Year") + '_' + format(FASRepHead."Period Round") + '.xml';
         ExpOk := File.DownloadFromStream(InStr, 'Save To File', '', 'All Files (*.*)|*.*', FileName);
 
-        Message(Msg001, FileName);
+        Message(ExportDoneMsg, FileName);
 
         /*TempFile.CREATETEMPFILE();  
         TempFile.WRITE('abc');  

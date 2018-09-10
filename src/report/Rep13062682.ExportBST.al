@@ -10,7 +10,7 @@ report 13062682 "Export BST"
         {
             RequestFilterFields = "No.";
 
-            column(CompanyName; CompanyName) { }
+            column(CompanyName; CompanyName()) { }
             column(DocumentNo; "No.")
             {
                 IncludeCaption = true;
@@ -50,9 +50,9 @@ report 13062682 "Export BST"
                     IsTotaling := "Type" = "Type"::Total;
                     IsBold := StrLen("Code") = 1;
 
-                    IF "Code" = '' THEN CurrReport.SKIP;
+                    IF "Code" = '' THEN CurrReport.SKIP();
 
-                    BstReportLine.RESET;
+                    BstReportLine.RESET();
                     BstReportLine.SETRANGE("Document No.", "BST Report Header"."No.");
                     IF Totaling <> '' THEN
                         BstReportLine.SETFILTER("BST Code", Totaling)
@@ -61,7 +61,7 @@ report 13062682 "Export BST"
 
                     BstReportLine.CALCSUMS("Income Amount", "Expense Amount");
 
-                    IF HideZeros AND (BstReportLine."Income Amount" = 0) AND (BstReportLine."Expense Amount" = 0) THEN CurrReport.SKIP;
+                    IF HideZeros AND (BstReportLine."Income Amount" = 0) AND (BstReportLine."Expense Amount" = 0) THEN CurrReport.SKIP();
                 end;
 
             }
@@ -107,18 +107,6 @@ report 13062682 "Export BST"
                 }
             }
         }
-
-        actions
-        {
-            area(processing)
-            {
-                action(ActionName)
-                {
-                    ApplicationArea = All;
-
-                }
-            }
-        }
     }
     labels
     {
@@ -130,30 +118,28 @@ report 13062682 "Export BST"
         LblExpenseAmount = 'Expense Amount';
     }
     var
+        PrepairedByUser: Record "User Setup";
+        ResponsibleUser: Record "User Setup";
+        BSTReportLine: Record "BST Report Line";
         ExpFile: Boolean;
         IsTotaling: Boolean;
         IsBold: Boolean;
         HideZeros: Boolean;
-        PrepairedByUser: Record "User Setup";
-        ResponsibleUser: Record "User Setup";
-        BSTReportLine: Record "BST Report Line";
-        Msg001: Label 'Export to %1 done OK.';
+        ExportDoneMsg: Label 'Export to %1 done OK.';
 
     local procedure ExportBST(BSTRepHead: Record "BST Report Header")
     var
-        RepSIMgt: Codeunit "Reporting SI Mgt.";
-        BSTRepLine: Record "BST Report Line";
         CompanyInfo: Record "Company Information";
         GLSetup: Record "General Ledger Setup";
         RespUser: Record "User Setup";
         MakerUser: Record "User Setup";
+        TmpBlob: Record TempBlob temporary;
+        RepSIMgt: Codeunit "Reporting SI Mgt.";
         XmlDoc: XmlDocument;
         XmlDec: XmlDeclaration;
         XmlElem: array[10] of XmlElement;
-        XmlAttr: XmlAttribute;
         OutStr: OutStream;
         InStr: InStream;
-        TmpBlob: Record TempBlob temporary;
         FileName: Text;
         ExpOk: Boolean;
         xbsrns: Text;
@@ -165,8 +151,7 @@ report 13062682 "Export BST"
         StatMonth: Integer;
         StatYear: Integer;
         LineCntr: Integer;
-        ClaimLiabStr: Text[10];
-        TxtPrec: Label '<Precision,2:2><Standard Format,9>';
+        PrecisionFormatTxt: Label '<Precision,2:2><Standard Format,9>';
     begin
         CompanyInfo.get();
         CompanyInfo.TestField("Registration No.");
@@ -189,7 +174,7 @@ report 13062682 "Export BST"
         StatMonth := DATE2DMY(BSTRepHead."Period Start Date", 2);
         StatYear := DATE2DMY(BSTRepHead."Period Start Date", 3);
 
-        CurrDT := CREATEDATETIME(TODAY, TIME);
+        CurrDT := CREATEDATETIME(TODAY(), TIME());
         MsgId := CompanyInfo."VAT Registration No." + FORMAT(CurrDT, 0, '<Year4><Month,2><Day,2><Hours24,2><Filler Character,0><Minutes,2><Seconds,2><Second dec>');
 
         xbsrns := 'http://www.bsi.si/2014/07/BSReport';
@@ -353,7 +338,7 @@ report 13062682 "Export BST"
 
         BSTReportLine.Reset();
         BSTReportLine.SetRange("Document No.", BSTRepHead."No.");
-        if BSTReportLine.FindSet() then begin
+        if BSTReportLine.FindSet() then
             repeat
                 LineCntr += 1;
 
@@ -374,28 +359,27 @@ report 13062682 "Export BST"
 
                 XmlElem[6] := XmlElement.Create('Income', xbsrns);
                 XmlElem[5].Add(xmlElem[6]);
-                XmlElem[6].Add(XmlText.Create(Format(BSTReportLine."Income Amount", 0, TxtPrec)));
+                XmlElem[6].Add(XmlText.Create(Format(BSTReportLine."Income Amount", 0, PrecisionFormatTxt)));
 
                 XmlElem[6] := XmlElement.Create('Expenditure', xbsrns);
                 XmlElem[5].Add(xmlElem[6]);
-                XmlElem[6].Add(XmlText.Create(Format(BSTReportLine."Expense Amount", 0, TxtPrec)));
+                XmlElem[6].Add(XmlText.Create(Format(BSTReportLine."Expense Amount", 0, PrecisionFormatTxt)));
 
                 XmlElem[6] := XmlElement.Create('SpecificationEntryType', xbsrns);
                 XmlElem[5].Add(xmlElem[6]);
                 XmlElem[6].Add(XmlText.Create('L'));
 
             until BSTReportLine.Next() = 0;
-        end;
 
         //export stream file part
-        TmpBlob.Blob.CreateOutStream(outStr, TextEncoding::UTF8);
-        xmlDoc.WriteTo(outStr);
-        TmpBlob.Blob.CreateInStream(inStr, TextEncoding::UTF8);
+        TmpBlob.Blob.CreateOutStream(OutStr, TextEncoding::UTF8);
+        xmlDoc.WriteTo(OutStr);
+        TmpBlob.Blob.CreateInStream(InStr, TextEncoding::UTF8);
 
         FileName := 'bst_' + format(BSTRepHead."No.") + '.xml';
         ExpOk := File.DownloadFromStream(InStr, 'Save To File', '', 'All Files (*.*)|*.*', FileName);
 
-        Message(Msg001, FileName);
+        Message(ExportDoneMsg, FileName);
 
     end;
 }
