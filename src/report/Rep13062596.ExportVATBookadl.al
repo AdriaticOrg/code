@@ -30,24 +30,28 @@ report 13062596 "Export VAT Book-adl"
                         result := 0;
                         VATEntry.SetRange("Document No.", "VAT Entry"."Document No.");
                         VATBookCalc.CalcCellValue("VAT Book Group", "VAT Book Column Name"."Column No.", Result, '', VATEntry);
+                        CellVal["VAT Book Column Name"."Column No."] := Result;
+                        //CellVal.Insert("VAT Book Column Name"."Column No.", Result);
 
-                        if (Result <> 0) then
-                            TextWriterAdl.FixedField(OutStr, result, "VAT Book Column Name"."Fixed text length", PadCharacter, 1, FieldDelimiter)
-
-                        else
-                            TextWriterAdl.FixedField(OutStr, DummyText, "VAT Book Column Name"."Fixed text length", PadCharacter, 1, FieldDelimiter)
                     end;
                 }
 
+                trigger OnPreDataItem()
+                begin
+                end;
+
+                trigger OnAfterGetRecord()
+                begin
+                end;
+
                 trigger OnPostDataItem()
                 begin
-                    TextWriterAdl.NewLine(OutStr);
+
                 end;
             }
 
             trigger OnPreDataItem();
             begin
-
                 if "VAT Entry".GetFilter("Posting Date") <> '' then
                     VATEntry.Setfilter("Posting Date", "VAT Entry".GetFilter("Posting Date"));
                 FilterGroup(10);
@@ -57,14 +61,47 @@ report 13062596 "Export VAT Book-adl"
             end;
 
             trigger OnAfterGetRecord()
+            var
+                VATBookColumnName: Record "VAT Book Column Name-Adl";
+                CellResult: Decimal;
+                Found: Boolean;
+                DecVal: Decimal;
+                i: Integer;
+            begin
+                SetRange("Document No.", "Document No.");
+                FindLast();
+
+                for i := 1 to VATBookColumnName.Count() do begin
+                    IF (CellVal[i] <> 0) then
+                        Found := true;
+                end;
+
+                If (Found) then begin
+                    CreateBookLine("VAT Entry");
+                    VATBookColumnName.Reset();
+                    VATBookColumnName.Setrange("VAT Book Code", "VAT Book Column Name"."VAT Book Code");
+                    if VATBookColumnName.FindFirst() then
+                        repeat
+                            //CellResult := CellVal["VAT Book Column Name"."Column No."];
+                            CellResult := CellVal[VATBookColumnName."Column No."];
+                            if (CellResult <> 0) then
+                                TextWriterAdl.FixedField(OutStr, CellResult, VATBookColumnName."Fixed text length", PadCharacter, 1, FieldDelimiter)
+                            else
+                                TextWriterAdl.FixedField(OutStr, DummyText, VATBookColumnName."Fixed text length", PadCharacter, 1, FieldDelimiter)
+
+                        until VATBookColumnName.Next() = 0;
+
+                    TextWriterAdl.NewLine(OutStr);
+                end;
+
+                Clear(CellVal);
+                setrange("Document No.");
+
+            end;
+
+            trigger OnPostDataItem()
             begin
 
-                SetRange("Document No.", "Document No.");
-
-                CreateBookLine("VAT Entry");
-
-                FindLast();
-                setrange("Document No.")
             end;
         }
     }
@@ -110,12 +147,15 @@ report 13062596 "Export VAT Book-adl"
         NotFoundDetails: Boolean;
         VATBookColumnNo: array[100] of Integer;
         VATBookColumnLengt: array[100] of integer;
+        CellVal: array[100] of Decimal;
+        //CellList: List of [Decimal];
         TextWriterAdl: Codeunit "TextWriter-adl";
         OutStr: OutStream;
         OutStrColumn: OutStream;
         PadCharacter: Text[1];
         FieldDelimiter: Text[1];
         DummyText: Text;
+        FixedColumnCreated: Boolean;
         FileName: Label 'IZPIS ODBITKA DDV.TXT';
         ToFilter: Label '*.txt|*.TXT';
         DialogTitle: Label 'Save to';
@@ -178,10 +218,8 @@ report 13062596 "Export VAT Book-adl"
                 Counter += 1;
                 VATBookColumnNo[Counter] := VATBookColumnName."Column No.";
                 VATBookColumnLengt[Counter] := VATBookColumnName."Fixed text length";
-                if (VATBookColumnName."Fixed text length" = 0) then begin
-                    TextWriterAdl.FixedField(OutStr, VATBookColumnName.Description, StrLen(VATBookColumnName.Description), PadCharacter, 1, FieldDelimiter);
-                end else
-                    TextWriterAdl.FixedField(OutStr, VATBookColumnName.Description, VATBookColumnName."Fixed text length", PadCharacter, 1, FieldDelimiter);
+
+                TextWriterAdl.FixedField(OutStr, VATBookColumnName.Description, VATBookColumnName."Fixed text length", PadCharacter, 1, FieldDelimiter);
 
             until VATBookColumnName.Next = 0;
         TextWriterAdl.NewLine(OutStr);
@@ -247,7 +285,10 @@ report 13062596 "Export VAT Book-adl"
     var
         PurchInvHeader: Record "Purch. Inv. Header";
         PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr.";
+        SalesInvHeader: Record "Sales Invoice Header";
+        SalesCrMemoHdr: Record "Sales Cr.Memo Header";
         Vendor: Record Vendor;
+        Customer: Record Customer;
     begin
         VendCustName := '';
         VATRegNo := '';
@@ -255,49 +296,91 @@ report 13062596 "Export VAT Book-adl"
             case "Document Type" of
                 "Document Type"::Invoice:
                     begin
-                        with PurchInvHeader do begin
-                            if get("Document No.") then begin
-                                if ("Pay-to Name" <> '') then
-                                    VendCustName += "Pay-to Name" + ' ';
-                                if ("Pay-to Address" <> '') then
-                                    VendCustName += "Pay-to Address" + ' ';
-                                if ("Pay-to City" <> '') then
-                                    VendCustName += "Pay-to City" + ' ';
-                                if ("Pay-to Country/Region Code" <> '') then
-                                    VendCustName += "Pay-to Country/Region Code" + ' ';
+                        IF (type = Type::Purchase) then
+                            with PurchInvHeader do begin
+                                if get("Document No.") then begin
+                                    if ("Pay-to Name" <> '') then
+                                        VendCustName += "Pay-to Name" + ' ';
+                                    if ("Pay-to Address" <> '') then
+                                        VendCustName += "Pay-to Address" + ' ';
+                                    if ("Pay-to City" <> '') then
+                                        VendCustName += "Pay-to City" + ' ';
+                                    if ("Pay-to Country/Region Code" <> '') then
+                                        VendCustName += "Pay-to Country/Region Code" + ' ';
+                                end;
                             end;
-                        end;
+                        if (Type = Type::Sale) then
+                            with SalesInvHeader do begin
+                                if get("Document No.") then begin
+                                    if ("Sell-to Customer Name" <> '') then
+                                        VendCustName += "Sell-to Customer Name" + ' ';
+                                    if ("Sell-to Address" <> '') then
+                                        VendCustName += "Sell-to Address" + ' ';
+                                    if ("Sell-to City" <> '') then
+                                        VendCustName += "Sell-to City" + ' ';
+                                    if ("Sell-to Country/Region Code" <> '') then
+                                        VendCustName += "Sell-to Country/Region Code" + ' ';
+                                end;
+                            end;
                     end;
                 "Document Type"::"Credit Memo":
                     begin
-                        with PurchCrMemoHdr do begin
-                            if get("Document No.") then begin
-                                if ("Pay-to Name" <> '') then
-                                    VendCustName += "Pay-to Name" + ' ';
-                                if ("Pay-to Address" <> '') then
-                                    VendCustName += "Pay-to Address" + ' ';
-                                if ("Pay-to City" <> '') then
-                                    VendCustName += "Pay-to City" + ' ';
-                                if ("Pay-to Country/Region Code" <> '') then
-                                    VendCustName += "Pay-to Country/Region Code" + ' ';
+                        IF (type = Type::Purchase) then
+                            with PurchCrMemoHdr do begin
+                                if get("Document No.") then begin
+                                    if ("Pay-to Name" <> '') then
+                                        VendCustName += "Pay-to Name" + ' ';
+                                    if ("Pay-to Address" <> '') then
+                                        VendCustName += "Pay-to Address" + ' ';
+                                    if ("Pay-to City" <> '') then
+                                        VendCustName += "Pay-to City" + ' ';
+                                    if ("Pay-to Country/Region Code" <> '') then
+                                        VendCustName += "Pay-to Country/Region Code" + ' ';
+                                end;
                             end;
-                        end;
+                        if (Type = Type::Sale) then
+                            with SalesCrMemoHdr do begin
+                                if get("Document No.") then begin
+                                    if ("Sell-to Customer Name" <> '') then
+                                        VendCustName += "Sell-to Customer Name" + ' ';
+                                    if ("Sell-to Address" <> '') then
+                                        VendCustName += "Sell-to Address" + ' ';
+                                    if ("Sell-to City" <> '') then
+                                        VendCustName += "Sell-to City" + ' ';
+                                    if ("Sell-to Country/Region Code" <> '') then
+                                        VendCustName += "Sell-to Country/Region Code" + ' ';
+                                end;
+                            end;
                     end;
             end;
 
-            /* if Vendor.Get("Bill-to/Pay-to No.") then begin
-                 with Vendor do begin
-                     if (Name <> '') then
-                         VendCustName += Name + '';
-                     if (Address <> '') then
-                         VendCustName += Address + '';
-                     if (City <> '') then
-                         VendCustName += City + '';
-                     if ("Country/Region Code" <> '') then
-                         VendCustName += "Country/Region Code";
-                 end;
-             end;
-           */
+            IF (type = Type::Purchase) then
+                if Vendor.Get("Bill-to/Pay-to No.") then begin
+                    with Vendor do begin
+                        if (Name <> '') then
+                            VendCustName += Name + '';
+                        if (Address <> '') then
+                            VendCustName += Address + '';
+                        if (City <> '') then
+                            VendCustName += City + '';
+                        if ("Country/Region Code" <> '') then
+                            VendCustName += "Country/Region Code";
+                    end;
+                end;
+            IF (type = Type::Sale) then
+                if Customer.Get("Bill-to/Pay-to No.") then begin
+                    with Vendor do begin
+                        if (Name <> '') then
+                            VendCustName += Name + '';
+                        if (Address <> '') then
+                            VendCustName += Address + '';
+                        if (City <> '') then
+                            VendCustName += City + '';
+                        if ("Country/Region Code" <> '') then
+                            VendCustName += "Country/Region Code";
+                    end;
+                end;
+
         end;
     end;
 }
