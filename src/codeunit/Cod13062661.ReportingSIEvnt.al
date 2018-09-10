@@ -115,13 +115,26 @@ codeunit 13062661 "Reporting SI Evnt."
                 GenJournalLine.TestField("FAS Sector Code", '');
         end;
     end;
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitGLEntry', '', true, false)]
+    local procedure OnAfterInitGLEntryBST(var GLEntry: Record "G/L Entry";GenJournalLine: Record "Gen. Journal Line")
+    var
+        GLAcc: Record "G/L Account";
+    begin
+        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::BST) then exit;
 
+        GLAcc.GET(GLEntry."G/L Account No.");
+        if not GLAcc."FAS Account" then exit;
+
+        GLEntry."BST Code" := GLAcc."BST Code";
+    end;
+    
     [EventSubscriber(ObjectType::Table, Database::"G/L Entry", 'OnAfterCopyGLEntryFromGenJnlLine', '', true, false)]
     local procedure OnAfterCopyGLEntryFromGenJnlLineBST(var GLEntry: Record "G/L Entry"; var GenJournalLine: Record "Gen. Journal Line")
     var
         GLAcc: Record "G/L Account";
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::BST) then exit;
+
 
         GLEntry."BST Code" := GLAcc."BST Code";
     end;
