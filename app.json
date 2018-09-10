@@ -18,7 +18,7 @@
   "features": [
     "TranslationFile"
   ],
-  "helpBaseUrl": "https://adriaticorg.github.io/help/{0}/",
+  "helpBaseUrl": "https://docs.microsoft.com/{0}/dynamics365/business-central/",
   "supportedLocales": [
     "en-US","hr-HR","sr-Latn-RS","sl-SI"
   ],
