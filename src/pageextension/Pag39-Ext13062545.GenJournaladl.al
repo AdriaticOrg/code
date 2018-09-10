@@ -49,30 +49,30 @@ pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
                     CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-adl";
                     CustLedgerEntryExtDataLineNo: Integer;
                 begin
-                    CustLedgerEntryExtData.RESET();
-                    CustLedgerEntryExtData.SETCURRENTKEY("Journal Template Name", "Journal Batch Name", "Line No.");
-                    CustLedgerEntryExtData.SETRANGE("Journal Template Name", "Journal Template Name");
-                    CustLedgerEntryExtData.SETRANGE("Journal Batch Name", "Journal Batch Name");
-                    CustLedgerEntryExtData.SETRANGE("Line No.", "Line No.");
-                    if CustLedgerEntryExtData.FINDFIRST() then begin
+                    CustLedgerEntryExtData.Reset();
+                    CustLedgerEntryExtData.SetCurrentKey("Journal Template Name", "Journal Batch Name", "Line No.");
+                    CustLedgerEntryExtData.SetRange("Journal Template Name", "Journal Template Name");
+                    CustLedgerEntryExtData.SetRange("Journal Batch Name", "Journal Batch Name");
+                    CustLedgerEntryExtData.SetRange("Line No.", "Line No.");
+                    if CustLedgerEntryExtData.FindFirst() then begin
                         CustLedgerEntryExtData."Original Document Amount (LCY)" := OriginalDocumentAmountLCY;
                         CustLedgerEntryExtData.MODIFY();
                     end else begin
-                        CustLedgerEntryExtData2.RESET();
-                        CustLedgerEntryExtData2.SETRANGE("Is Journal Line", true);
-                        if CustLedgerEntryExtData2.FINDLAST() then
+                        CustLedgerEntryExtData2.Reset();
+                        CustLedgerEntryExtData2.SetRange("Is Journal Line", true);
+                        if CustLedgerEntryExtData2.FindLast() then
                             CustLedgerEntryExtDataLineNo := CustLedgerEntryExtData2."Entry No." + 1
                         else
                             CustLedgerEntryExtDataLineNo := 1;
-                        CustLedgerEntryExtData2.RESET();
-                        CustLedgerEntryExtData2.INIT();
+                        CustLedgerEntryExtData2.Reset();
+                        CustLedgerEntryExtData2.Init();
                         CustLedgerEntryExtData2."Entry No." := CustLedgerEntryExtDataLineNo;
                         CustLedgerEntryExtData2."Is Journal Line" := true;
                         CustLedgerEntryExtData2."Journal Template Name" := "Journal Template Name";
                         CustLedgerEntryExtData2."Journal Batch Name" := "Journal Batch Name";
                         CustLedgerEntryExtData2."Line No." := "Line No.";
                         CustLedgerEntryExtData2."Original Document Amount (LCY)" := OriginalDocumentAmountLCY;
-                        CustLedgerEntryExtData2.INSERT();
+                        CustLedgerEntryExtData2.Insert();
                     end;
                 end;
             }
@@ -87,30 +87,30 @@ pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
                     CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-adl";
                     CustLedgerEntryExtDataLineNo: Integer;
                 begin
-                    CustLedgerEntryExtData.RESET();
-                    CustLedgerEntryExtData.SETCURRENTKEY("Journal Template Name", "Journal Batch Name", "Line No.");
-                    CustLedgerEntryExtData.SETRANGE("Journal Template Name", "Journal Template Name");
-                    CustLedgerEntryExtData.SETRANGE("Journal Batch Name", "Journal Batch Name");
-                    CustLedgerEntryExtData.SETRANGE("Line No.", "Line No.");
-                    if CustLedgerEntryExtData.FINDFIRST() then begin
+                    CustLedgerEntryExtData.Reset();
+                    CustLedgerEntryExtData.SetCurrentKey("Journal Template Name", "Journal Batch Name", "Line No.");
+                    CustLedgerEntryExtData.SetRange("Journal Template Name", "Journal Template Name");
+                    CustLedgerEntryExtData.SetRange("Journal Batch Name", "Journal Batch Name");
+                    CustLedgerEntryExtData.SetRange("Line No.", "Line No.");
+                    if CustLedgerEntryExtData.FindFirst() then begin
                         CustLedgerEntryExtData."Original VAT Amount (LCY)" := OriginalVATAmountLCY;
                         CustLedgerEntryExtData.MODIFY();
                     end else begin
-                        CustLedgerEntryExtData2.RESET();
-                        CustLedgerEntryExtData2.SETRANGE("Is Journal Line", true);
-                        if CustLedgerEntryExtData2.FINDLAST() then
+                        CustLedgerEntryExtData2.Reset();
+                        CustLedgerEntryExtData2.SetRange("Is Journal Line", true);
+                        if CustLedgerEntryExtData2.FindLast() then
                             CustLedgerEntryExtDataLineNo := CustLedgerEntryExtData2."Entry No." + 1
                         else
                             CustLedgerEntryExtDataLineNo := 1;
-                        CustLedgerEntryExtData2.RESET();
-                        CustLedgerEntryExtData2.INIT();
+                        CustLedgerEntryExtData2.Reset();
+                        CustLedgerEntryExtData2.Init();
                         CustLedgerEntryExtData2."Entry No." := CustLedgerEntryExtDataLineNo;
                         CustLedgerEntryExtData2."Is Journal Line" := true;
                         CustLedgerEntryExtData2."Journal Template Name" := "Journal Template Name";
                         CustLedgerEntryExtData2."Journal Batch Name" := "Journal Batch Name";
                         CustLedgerEntryExtData2."Line No." := "Line No.";
                         CustLedgerEntryExtData2."Original VAT Amount (LCY)" := OriginalVATAmountLCY;
-                        CustLedgerEntryExtData2.INSERT();
+                        CustLedgerEntryExtData2.Insert();
                     end;
                 end;
             }
@@ -125,30 +125,30 @@ pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
                     CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-adl";
                     CustLedgerEntryExtDataLineNo: Integer;
                 begin
-                    CustLedgerEntryExtData.RESET();
-                    CustLedgerEntryExtData.SETCURRENTKEY("Journal Template Name", "Journal Batch Name", "Line No.");
-                    CustLedgerEntryExtData.SETRANGE("Journal Template Name", "Journal Template Name");
-                    CustLedgerEntryExtData.SETRANGE("Journal Batch Name", "Journal Batch Name");
-                    CustLedgerEntryExtData.SETRANGE("Line No.", "Line No.");
-                    if CustLedgerEntryExtData.FINDFIRST() then begin
+                    CustLedgerEntryExtData.Reset();
+                    CustLedgerEntryExtData.SetCurrentKey("Journal Template Name", "Journal Batch Name", "Line No.");
+                    CustLedgerEntryExtData.SetRange("Journal Template Name", "Journal Template Name");
+                    CustLedgerEntryExtData.SetRange("Journal Batch Name", "Journal Batch Name");
+                    CustLedgerEntryExtData.SetRange("Line No.", "Line No.");
+                    if CustLedgerEntryExtData.FindFirst() then begin
                         CustLedgerEntryExtData."Open Amount (LCY) w/o Unreal." := OpenAmounLCYtWithoutUnrealizedERF;
                         CustLedgerEntryExtData.MODIFY();
                     end else begin
-                        CustLedgerEntryExtData2.RESET();
-                        CustLedgerEntryExtData2.SETRANGE("Is Journal Line", true);
-                        if CustLedgerEntryExtData2.FINDLAST() then
+                        CustLedgerEntryExtData2.Reset();
+                        CustLedgerEntryExtData2.SetRange("Is Journal Line", true);
+                        if CustLedgerEntryExtData2.FindLast() then
                             CustLedgerEntryExtDataLineNo := CustLedgerEntryExtData2."Entry No." + 1
                         else
                             CustLedgerEntryExtDataLineNo := 1;
-                        CustLedgerEntryExtData2.RESET();
-                        CustLedgerEntryExtData2.INIT();
+                        CustLedgerEntryExtData2.Reset();
+                        CustLedgerEntryExtData2.Init();
                         CustLedgerEntryExtData2."Entry No." := CustLedgerEntryExtDataLineNo;
                         CustLedgerEntryExtData2."Is Journal Line" := true;
                         CustLedgerEntryExtData2."Journal Template Name" := "Journal Template Name";
                         CustLedgerEntryExtData2."Journal Batch Name" := "Journal Batch Name";
                         CustLedgerEntryExtData2."Line No." := "Line No.";
                         CustLedgerEntryExtData2."Open Amount (LCY) w/o Unreal." := OpenAmounLCYtWithoutUnrealizedERF;
-                        CustLedgerEntryExtData2.INSERT();
+                        CustLedgerEntryExtData2.Insert();
                     end;
                 end;
             }

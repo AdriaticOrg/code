@@ -101,7 +101,7 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
             column(TextHeaderIII; TextHeaderIII)
             {
             }
-            column(TextHeaderIV; TextHeaderIV + FORMAT(WORKDATE, 0, '<Day,2>.<Month,2>.<Year4>'))
+            column(TextHeaderIV; TextHeaderIV + FORMAT(WorkDate(), 0, '<Day,2>.<Month,2>.<Year4>'))
             {
             }
             column(TextHeaderV; TextHeaderV /* + CompanyOfficial."First Name" + ' ' + CompanyOfficial."Last Name"*/)
@@ -123,13 +123,13 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
 
                     trigger OnAfterGetRecord();
                     begin
-                        DetailedCustLedgEntry.RESET;
-                        DetailedCustLedgEntry.SETCURRENTKEY("Cust. Ledger Entry No.", "Entry Type", "Posting Date");
-                        DetailedCustLedgEntry.SETRANGE("Cust. Ledger Entry No.", "Entry No.");
-                        DetailedCustLedgEntry.SETRANGE("Posting Date", 0D, EndPaymentDate);
+                        DetailedCustLedgEntry.Reset();
+                        DetailedCustLedgEntry.SetCurrentKey("Cust. Ledger Entry No.", "Entry Type", "Posting Date");
+                        DetailedCustLedgEntry.SetRange("Cust. Ledger Entry No.", "Entry No.");
+                        DetailedCustLedgEntry.SetRange("Posting Date", 0D, EndPaymentDate);
                         RemainingAmount := 0;
                         RemainingAmountLCY := 0;
-                        if DetailedCustLedgEntry.FINDSET then begin
+                        if DetailedCustLedgEntry.findset() then
                             repeat
                                 if not (DetailedCustLedgEntry."Entry Type" in [DetailedCustLedgEntry."Entry Type"::"Unrealized Gain",
                                   DetailedCustLedgEntry."Entry Type"::"Unrealized Loss"]) and
@@ -137,19 +137,19 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                                     RemainingAmount := RemainingAmount + DetailedCustLedgEntry.Amount;
                                     RemainingAmountLCY := RemainingAmountLCY + DetailedCustLedgEntry."Amount (LCY)";
                                 end;
-                            until DetailedCustLedgEntry.NEXT = 0;
-                        end;
+                            until DetailedCustLedgEntry.Next() = 0;
 
-                        DetailedCustLedgEntry.RESET;
-                        DetailedCustLedgEntry.SETCURRENTKEY("Cust. Ledger Entry No.", "Entry Type", "Posting Date");
-                        DetailedCustLedgEntry.SETRANGE("Cust. Ledger Entry No.", "Entry No.");
-                        DetailedCustLedgEntry.SETRANGE("Posting Date", 0D, "Cust. Ledger Entry"."Posting Date");
-                        if DetailedCustLedgEntry.FINDSET then begin
+
+                        DetailedCustLedgEntry.Reset();
+                        DetailedCustLedgEntry.SetCurrentKey("Cust. Ledger Entry No.", "Entry Type", "Posting Date");
+                        DetailedCustLedgEntry.SetRange("Cust. Ledger Entry No.", "Entry No.");
+                        DetailedCustLedgEntry.SetRange("Posting Date", 0D, "Cust. Ledger Entry"."Posting Date");
+                        if DetailedCustLedgEntry.findset() then
                             repeat
                                 if DetailedCustLedgEntry."Entry Type" = DetailedCustLedgEntry."Entry Type"::"Initial Entry" then begin
                                     RemainingAmount := RemainingAmount + DetailedCustLedgEntry.Amount;
                                     if (Customer."Country/Region Code" <> '') and (Customer."Country/Region Code" <> CompanyInformation."Country/Region Code") then begin
-                                        if CustLedgerEntryExtData.GET("Entry No.", false) then
+                                        if CustLedgerEntryExtData.Get("Entry No.", false) then
                                             RemainingAmountLCY := RemainingAmountLCY + CustLedgerEntryExtData."Open Amount (LCY) w/o Unreal."
                                         //RemainingAmountLCY:=CustLedgerEntryExtData."Open Amount (LCY) w/o Unreal.";
                                         else
@@ -158,31 +158,31 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
 
                                         RemainingAmountLCY := RemainingAmountLCY + DetailedCustLedgEntry."Amount (LCY)";
                                 end;
-                            until DetailedCustLedgEntry.NEXT = 0;
-                        end;
+                            until DetailedCustLedgEntry.Next() = 0;
+
                         /*
                         IF (Customer."Country/Region Code" <> '') AND (Customer."Country/Region Code" <> CompanyInformation."Country/Region Code") THEN BEGIN
-                          IF CustLedgerEntryExtData.GET("Entry No.",FALSE) THEN
+                          IF CustLedgerEntryExtData.Get("Entry No.",FALSE) THEN
                             RemainingAmountLCY:=RemainingAmountLCY + CustLedgerEntryExtData."Open Amount (LCY) w/o Unreal.";
                             //RemainingAmountLCY:=CustLedgerEntryExtData."Open Amount (LCY) w/o Unreal.";
                         END;
                         */
                         if RemainingAmount = 0 then
-                            CurrReport.SKIP;
+                            CurrReport.Skip();
 
-                        VATEntry.RESET;
-                        VATEntry.SETCURRENTKEY("Document No.", "Posting Date"); //"VAT Date");
-                        VATEntry.SETRANGE(Type, VATEntry.Type::Sale);
-                        VATEntry.SETFILTER("Document No.", "Cust. Ledger Entry"."Document No.");
+                        VATEntry.Reset();
+                        VATEntry.SetCurrentKey("Document No.", "Posting Date"); //"VAT Date");
+                        VATEntry.SetRange(Type, VATEntry.Type::Sale);
+                        VATEntry.SetFilter("Document No.", "Cust. Ledger Entry"."Document No.");
                         VATAmount := 0;
                         InvoiceAmount := 0;
-                        if VATEntry.FINDSET then begin
+                        if VATEntry.findset() then
                             repeat
                                 InvoiceAmount := InvoiceAmount - VATEntry.Base;
                                 VATAmount := VATAmount - VATEntry.Amount;
-                            until VATEntry.NEXT = 0;
-                        end else begin
-                            if CustLedgerEntryExtData.GET("Entry No.", false) then begin
+                            until VATEntry.Next() = 0
+                        else begin
+                            if CustLedgerEntryExtData.Get("Entry No.", false) then begin
                                 InvoiceAmount := CustLedgerEntryExtData."Original Document Amount (LCY)";
                                 VATAmount := CustLedgerEntryExtData."Original VAT Amount (LCY)";
                             end;
@@ -206,12 +206,12 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                         else
                             DocumentDate := "Posting Date";
 
-                        TempOverdueandUncollectedBuffer.RESET;
+                        TempOverdueandUncollectedBuffer.Reset();
                         TempBufferLineNo := 0;
-                        if TempOverdueandUncollectedBuffer.FINDLAST then
+                        if TempOverdueandUncollectedBuffer.FindLast() then
                             TempBufferLineNo := TempOverdueandUncollectedBuffer."Line No.";
 
-                        TempOverdueandUncollectedBuffer.INIT;
+                        TempOverdueandUncollectedBuffer.Init();
                         TempOverdueandUncollectedBuffer."Line No." := TempBufferLineNo + 1;
                         TempOverdueandUncollectedBuffer."VAT Registration Type" := CustomerVATTypeInteger;
                         TempOverdueandUncollectedBuffer."VAT Registration No." := CustomerVATRegNo;
@@ -230,26 +230,26 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                           (VATAmount + InvoiceAmount - RemainingAmountLCY);
                         TempOverdueandUncollectedBuffer."Unpaid Amount" := TempOverdueandUncollectedBuffer."Unpaid Amount" +
                           RemainingAmountLCY;
-                        TempOverdueandUncollectedBuffer.INSERT;
+                        TempOverdueandUncollectedBuffer.Insert();
 
-                        TempOverdueandUncollectedBufferHeader.RESET;
-                        TempOverdueandUncollectedBufferHeader.SETCURRENTKEY("VAT Registration Type", "VAT Registration No.", "Line Type");
-                        TempOverdueandUncollectedBufferHeader.SETFILTER("VAT Registration Type", '%1', CustomerVATTypeInteger);
-                        TempOverdueandUncollectedBufferHeader.SETFILTER("VAT Registration No.", '%1', CustomerVATRegNo);
-                        TempOverdueandUncollectedBufferHeader.SETRANGE("Line Type", 0);
-                        if not TempOverdueandUncollectedBufferHeader.FINDFIRST then begin
-                            TempOverdueandUncollectedBufferHeader.RESET;
+                        TempOverdueandUncollectedBufferHeader.Reset();
+                        TempOverdueandUncollectedBufferHeader.SetCurrentKey("VAT Registration Type", "VAT Registration No.", "Line Type");
+                        TempOverdueandUncollectedBufferHeader.SetFilter("VAT Registration Type", '%1', CustomerVATTypeInteger);
+                        TempOverdueandUncollectedBufferHeader.SetFilter("VAT Registration No.", '%1', CustomerVATRegNo);
+                        TempOverdueandUncollectedBufferHeader.SetRange("Line Type", 0);
+                        if not TempOverdueandUncollectedBufferHeader.FindFirst() then begin
+                            TempOverdueandUncollectedBufferHeader.Reset();
                             TempBufferLineNo := 0;
-                            if TempOverdueandUncollectedBufferHeader.FINDLAST then
+                            if TempOverdueandUncollectedBufferHeader.FindLast() then
                                 TempBufferLineNo := TempOverdueandUncollectedBufferHeader."Line No.";
 
-                            TempOverdueandUncollectedBufferHeader.INIT;
+                            TempOverdueandUncollectedBufferHeader.Init();
                             TempOverdueandUncollectedBufferHeader."Line No." := TempBufferLineNo + 1;
                             TempOverdueandUncollectedBufferHeader."VAT Registration Type" := CustomerVATTypeInteger;
                             TempOverdueandUncollectedBufferHeader."VAT Registration No." := CustomerVATRegNo;
                             TempOverdueandUncollectedBufferHeader."Line Type" := 0;
                             TempOverdueandUncollectedBufferHeader."Customer Name" := Customer.Name;
-                            TempOverdueandUncollectedBufferHeader.INSERT;
+                            TempOverdueandUncollectedBufferHeader.Insert();
                         end;
 
                         TempOverdueandUncollectedBufferHeader."Invoice Amount without VAT" := TempOverdueandUncollectedBufferHeader."Invoice Amount without VAT" +
@@ -262,7 +262,7 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                           TempOverdueandUncollectedBuffer."Paid Amount";
                         TempOverdueandUncollectedBufferHeader."Unpaid Amount" := TempOverdueandUncollectedBufferHeader."Unpaid Amount" +
                           TempOverdueandUncollectedBuffer."Unpaid Amount";
-                        TempOverdueandUncollectedBufferHeader.MODIFY;
+                        TempOverdueandUncollectedBufferHeader.Modify();
 
                         if ExportToXML then begin
                             CustomerTotal5 := CustomerTotal5 + InvoiceAmount;
@@ -288,8 +288,8 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
 
                     trigger OnPreDataItem();
                     begin
-                        SETRANGE("Due Date", StartDate, EndDueDate);
-                        SETRANGE("Document Date", StartDate, EndDueDate); //NEW LINE
+                        SetRange("Due Date", StartDate, EndDueDate);
+                        SetRange("Document Date", StartDate, EndDueDate); //NEW LINE
                         LineNo := 0;
                     end;
                 }
@@ -302,50 +302,50 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                     CustomerTotal8 := 0;
                     CustomerTotal9 := 0;
 
-                    CustLedgerEntry.RESET;
-                    CustLedgerEntry.SETCURRENTKEY("Customer No.", Open, Positive, "Due Date", "Currency Code");
-                    CustLedgerEntry.SETFILTER("Document Type", '%1', CustLedgerEntry."Document Type"::Invoice);
+                    CustLedgerEntry.Reset();
+                    CustLedgerEntry.SetCurrentKey("Customer No.", Open, Positive, "Due Date", "Currency Code");
+                    CustLedgerEntry.SetFilter("Document Type", '%1', CustLedgerEntry."Document Type"::Invoice);
                     CustLedgerEntry.COPYFILTERS(CLEForFilter);
-                    CustLedgerEntry.SETFILTER("Customer No.", "No.");
-                    CustLedgerEntry.SETRANGE("Due Date", StartDate, EndDueDate);
-                    CustLedgerEntry.SETRANGE("Document Date", StartDate, EndDueDate); //NEW LINE
-                    CustLedgerEntry.SETFILTER("Date Filter", '..%1', EndPaymentDate);
+                    CustLedgerEntry.SetFilter("Customer No.", "No.");
+                    CustLedgerEntry.SetRange("Due Date", StartDate, EndDueDate);
+                    CustLedgerEntry.SetRange("Document Date", StartDate, EndDueDate); //NEW LINE
+                    CustLedgerEntry.SetFilter("Date Filter", '..%1', EndPaymentDate);
                     RemainingAmount := 0;
-                    if CustLedgerEntry.FINDSET then
+                    if CustLedgerEntry.findset() then
                         repeat
                             //    CustLedgerEntry.CALCFIELDS("Remaining Amt. (LCY)");
                             //    RemainingAmount := RemainingAmount + CustLedgerEntry."Remaining Amt. (LCY)";
-                            DetailedCustLedgEntry.RESET;
-                            DetailedCustLedgEntry.SETCURRENTKEY("Cust. Ledger Entry No.", "Entry Type", "Posting Date");
-                            DetailedCustLedgEntry.SETRANGE("Cust. Ledger Entry No.", CustLedgerEntry."Entry No.");
-                            DetailedCustLedgEntry.SETRANGE("Posting Date", 0D, EndPaymentDate);
+                            DetailedCustLedgEntry.Reset();
+                            DetailedCustLedgEntry.SetCurrentKey("Cust. Ledger Entry No.", "Entry Type", "Posting Date");
+                            DetailedCustLedgEntry.SetRange("Cust. Ledger Entry No.", CustLedgerEntry."Entry No.");
+                            DetailedCustLedgEntry.SetRange("Posting Date", 0D, EndPaymentDate);
 
-                            if DetailedCustLedgEntry.FINDSET then begin
+                            if DetailedCustLedgEntry.findset() then begin
                                 repeat
                                     if not (DetailedCustLedgEntry."Entry Type" in [DetailedCustLedgEntry."Entry Type"::"Unrealized Gain",
                                       DetailedCustLedgEntry."Entry Type"::"Unrealized Loss"]) and
                                       (DetailedCustLedgEntry."Entry Type" <> DetailedCustLedgEntry."Entry Type"::"Initial Entry") then begin
                                         RemainingAmount := RemainingAmount + DetailedCustLedgEntry."Amount (LCY)";
                                     end;
-                                until DetailedCustLedgEntry.NEXT = 0;
+                                until DetailedCustLedgEntry.Next() = 0;
                             end;
-                            DetailedCustLedgEntry.RESET;
-                            DetailedCustLedgEntry.SETCURRENTKEY("Cust. Ledger Entry No.", "Entry Type", "Posting Date");
-                            DetailedCustLedgEntry.SETRANGE("Cust. Ledger Entry No.", CustLedgerEntry."Entry No.");
-                            DetailedCustLedgEntry.SETRANGE("Posting Date", 0D, CustLedgerEntry."Posting Date");
+                            DetailedCustLedgEntry.Reset();
+                            DetailedCustLedgEntry.SetCurrentKey("Cust. Ledger Entry No.", "Entry Type", "Posting Date");
+                            DetailedCustLedgEntry.SetRange("Cust. Ledger Entry No.", CustLedgerEntry."Entry No.");
+                            DetailedCustLedgEntry.SetRange("Posting Date", 0D, CustLedgerEntry."Posting Date");
 
-                            if DetailedCustLedgEntry.FINDSET then begin
+                            if DetailedCustLedgEntry.findset() then begin
                                 repeat
                                     if DetailedCustLedgEntry."Entry Type" = DetailedCustLedgEntry."Entry Type"::"Initial Entry" then begin
                                         RemainingAmount := RemainingAmount + DetailedCustLedgEntry."Amount (LCY)";
                                     end;
-                                until DetailedCustLedgEntry.NEXT = 0;
+                                until DetailedCustLedgEntry.Next() = 0;
                             end;
 
-                        until CustLedgerEntry.NEXT = 0;
+                        until CustLedgerEntry.Next() = 0;
 
                     if RemainingAmount = 0 then
-                        CurrReport.SKIP;
+                        CurrReport.Skip();
 
                     CustomerLineNo := CustomerLineNo + 1;
 
@@ -353,8 +353,8 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                     if ("Country/Region Code" = '') or ("Country/Region Code" = CompanyInformation."Country/Region Code") then begin
                         CustomerVATType := Text001;
                         CustomerVATTypeInteger := 1;
-                    end else begin
-                        if CountryRegion.GET("Country/Region Code") then begin
+                    end else
+                        if CountryRegion.Get("Country/Region Code") then begin
                             if CountryRegion."EU Country/Region Code" <> '' then begin
                                 CustomerVATType := Text002;
                                 CustomerVATTypeInteger := 2;
@@ -363,7 +363,6 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                                 CustomerVATTypeInteger := 3;
                             end;
                         end;
-                    end;
 
                     if "VAT Registration No." = '' then begin
                         CustomerVATType := Text003;
@@ -435,9 +434,9 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                     trigger OnAfterGetRecord();
                     begin
                         if Number = 1 then
-                            TempOverdueandUncollectedBuffer.FINDFIRST
+                            TempOverdueandUncollectedBuffer.FindFirst()
                         else
-                            TempOverdueandUncollectedBuffer.NEXT;
+                            TempOverdueandUncollectedBuffer.Next();
 
                         LineNo := LineNo + 1;
                         /* 
@@ -467,15 +466,15 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
 
                     trigger OnPreDataItem();
                     begin
-                        TempOverdueandUncollectedBuffer.RESET;
-                        TempOverdueandUncollectedBuffer.SETCURRENTKEY("VAT Registration Type", "VAT Registration No.", "Line Type");
-                        TempOverdueandUncollectedBuffer.SETRANGE("VAT Registration Type", TempOverdueandUncollectedBufferHeader."VAT Registration Type");
-                        TempOverdueandUncollectedBuffer.SETFILTER("VAT Registration No.", TempOverdueandUncollectedBufferHeader."VAT Registration No.");
-                        TempOverdueandUncollectedBuffer.SETRANGE("Line Type", 1);
-                        if TempOverdueandUncollectedBuffer.FINDSET then
-                            SETRANGE(Number, 1, TempOverdueandUncollectedBuffer.COUNT)
+                        TempOverdueandUncollectedBuffer.Reset();
+                        TempOverdueandUncollectedBuffer.SetCurrentKey("VAT Registration Type", "VAT Registration No.", "Line Type");
+                        TempOverdueandUncollectedBuffer.SetRange("VAT Registration Type", TempOverdueandUncollectedBufferHeader."VAT Registration Type");
+                        TempOverdueandUncollectedBuffer.SetFilter("VAT Registration No.", TempOverdueandUncollectedBufferHeader."VAT Registration No.");
+                        TempOverdueandUncollectedBuffer.SetRange("Line Type", 1);
+                        if TempOverdueandUncollectedBuffer.findset() then
+                            SetRange(Number, 1, TempOverdueandUncollectedBuffer.Count())
                         else
-                            CurrReport.BREAK;
+                            CurrReport.Break();
 
                         LineNo := 0;
                     end;
@@ -484,12 +483,12 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                 trigger OnAfterGetRecord();
                 begin
                     if Number = 1 then
-                        TempOverdueandUncollectedBufferHeader.FINDFIRST
+                        TempOverdueandUncollectedBufferHeader.FindFirst()
                     else
-                        TempOverdueandUncollectedBufferHeader.NEXT;
+                        TempOverdueandUncollectedBufferHeader.Next();
 
                     if TempOverdueandUncollectedBufferHeader."Invoice Amount without VAT" = 0 then
-                        CurrReport.SKIP;
+                        CurrReport.Skip();
 
                     CustomerLineNo := CustomerLineNo + 1;
 
@@ -511,13 +510,13 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                 trigger OnPreDataItem();
                 begin
 
-                    TempOverdueandUncollectedBufferHeader.RESET;
-                    TempOverdueandUncollectedBufferHeader.SETCURRENTKEY("VAT Registration Type", "VAT Registration No.", "Line Type");
-                    TempOverdueandUncollectedBufferHeader.SETRANGE("Line Type", 0);
-                    if TempOverdueandUncollectedBufferHeader.FINDSET then
-                        SETRANGE(Number, 1, TempOverdueandUncollectedBufferHeader.COUNT)
+                    TempOverdueandUncollectedBufferHeader.Reset();
+                    TempOverdueandUncollectedBufferHeader.SetCurrentKey("VAT Registration Type", "VAT Registration No.", "Line Type");
+                    TempOverdueandUncollectedBufferHeader.SetRange("Line Type", 0);
+                    if TempOverdueandUncollectedBufferHeader.findset() then
+                        SetRange(Number, 1, TempOverdueandUncollectedBufferHeader.Count())
                     else
-                        CurrReport.BREAK;
+                        CurrReport.Break();
 
                     CustomerLineNo := 0;
                 end;
@@ -577,22 +576,22 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
 
     trigger OnPreReport()
     begin
-        SalesReceivablesSetup.GET;
+        SalesReceivablesSetup.Get();
         //StartDate:=CALCDATE('-<6Y>',EndDueDate);
         StartDate := CALCDATE('-<6Y+1D>', EndDueDate); //new
 
         EndPaymentDate := CALCDATE('1M-1D', EndDueDate + 1);
         CLEForFilter.COPYFILTERS("Cust. Ledger Entry");
 
-        CompanyInformation.GET;
-        LocalGUID := CREATEGUID;
+        CompanyInformation.Get();
+        LocalGUID := CreateGuid();
         LocalGUID := DELCHR(LocalGUID, '=', '{}');
         LocalGUID := LOWERCASE(LocalGUID);
 
-        CompanyOfficial.GET(CompanyOfficialNo);
+        CompanyOfficial.Get(CompanyOfficialNo);
 
-        TempOverdueandUncollectedBuffer.DELETEALL;
-        TempOverdueandUncollectedBufferHeader.DELETEALL;
+        TempOverdueandUncollectedBuffer.DeleteAll();
+        TempOverdueandUncollectedBufferHeader.DeleteAll();
     end;
 
     trigger OnPostReport();
@@ -771,11 +770,10 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
         ExitText := '';
         for I := 1 to STRLEN(TextToConvert) do begin
             CharToCheck := COPYSTR(TextToConvert, I, 1);
-            if STRPOS('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-?:().,ŠĐČĆŽšđčćž@+', CharToCheck) > 0 then begin
-                ExitText := ExitText + CharToCheck;
-            end else begin
+            if STRPOS('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-?:().,ŠĐČĆŽšđčćž@+', CharToCheck) > 0 then
+                ExitText := ExitText + CharToCheck
+            else
                 ExitText := ExitText + FORMAT(' ');
-            end;
         end;
         TextToConvert := ExitText;
         ExitText := DELCHR(ExitText, '<', ' ');

@@ -20,7 +20,7 @@ codeunit 13062594 "TextWriter-adl"
 
     procedure FixedField(var OutStr: OutStream; Value: variant; Length: integer; PadCharacter: Text[1]; Justification: Option Right,Left; FIeldDelimiter: Text[1]);
     var
-        TextVal: Text[250];
+        TextVal: Text;
     begin
         if (Value.IsDate()) then
             TextVal := Format(Value, 0, '<day,2><month,2><year,2>')
@@ -80,7 +80,7 @@ codeunit 13062594 "TextWriter-adl"
         FileMgt: Codeunit "File Management";
         StringConversionManagement: Codeunit StringConversionManagement;
         IsDownloadedsucceed: Boolean;
-        Msg001: Label 'File %1 was succesfully prepared.';
+        Msg: Label 'File %1 was succesfully prepared.';
         FieldDelimiter: Text[1];
 
 }
