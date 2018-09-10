@@ -94,13 +94,13 @@ page 13062594 "VAT Book Groups-Adl"
         CurrPage.SetSelectionFilter(VatBookGroup);
     end;
 
-    procedure GetSelectionFilter(): Text;
+    procedure GetSelectionFilter(): Text[250];
     var
         VatBookGroup: Record "VAT Book Group-Adl";
         SelectionFilterManagement: Codeunit "SelectFilterMgmt_VATBook-Adl";
     begin
         CurrPage.SetSelectionFilter(VatBookGroup);
-        exit(SelectionFilterManagement.GetSelectionFilterForVatBookGroup(VatBookGroup));
+        exit(CopyStr(SelectionFilterManagement.GetSelectionFilterForVatBookGroup(VatBookGroup), 1, MaxStrLen(GetSelectionFilter())));
     end;
 }
 
