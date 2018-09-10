@@ -41,7 +41,7 @@ page 13062642 "FAS Sectors"
                 {
                     ApplicationArea = All;
                 }
-                field("AOP Code"; "AOP Code")
+                field("Index Code"; "Index Code")
                 {
                     ApplicationArea = All;
                 }

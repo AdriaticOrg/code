@@ -48,9 +48,9 @@ table 13062642 "FAS Sector"
             Caption = 'Show Credit/Debit';
             DataClassification = SystemMetadata;
         }
-        field(20; "AOP Code"; Code[10])
+        field(20; "Index Code"; Code[10])
         {
-            Caption = 'AOP Code';
+            Caption = 'Index Code';
             DataClassification = SystemMetadata;
         }
     }
