@@ -14,8 +14,9 @@ report 13062661 "Suggest KRD Lines"
             var
                 KRDRepLine:Record "KRD Report Line";
             begin
-                GenLedgSetup.get();
-                GenLedgSetup.TestField("LCY Code"); 
+                RepSISetup.Get();
+                RepSISetup.TestField("KRD Blank LCY Code");
+                RepSISetup.TestField("KRD Blank LCY Num.");
 
                 KRDRepLine.Reset();
                 KRDRepLine.SetRange("Document No.",KRDRepHead."No.");
@@ -86,7 +87,7 @@ report 13062661 "Suggest KRD Lines"
         DeleteExisting:Boolean;
         KRDRepDocNo:Code[20];
         KRDRepHead:Record "KRD Report Header";
-        GenLedgSetup:Record "General Ledger Setup";
+        RepSISetup:Record "Reporting_SI Setup";
         InitialRep:Boolean;
         NewLineNo:Integer;
         Msg01:Label 'Processing complete';
@@ -102,9 +103,9 @@ report 13062661 "Suggest KRD Lines"
         DecrAmt:Decimal;        
     begin
         if CLE."Currency Code" = '' then
-            CLE."Currency Code" := GenLedgSetup."LCY Code";
+            CLE."Currency Code" := RepSISetup."KRD Blank LCY Code";
         if VLE."Currency Code" = '' then
-            VLE."Currency Code" := GenLedgSetup."LCY Code";
+            VLE."Currency Code" := RepSISetup."KRD Blank LCY Code";
 
         case EntryType of
             EntryType::Customer:
@@ -147,7 +148,13 @@ report 13062661 "Suggest KRD Lines"
                         KRDRepLine."Claim/Liability" := cle."KRD Claim/Liability";
                         KRDRepLine."Non-Residnet Sector Code" := cle."KRD Non-Residnet Sector Code";
                         KRDRepLine.validate("Country/Region Code",cle."KRD Country/Region Code");
-                        KRDRepLine.validate("Currency Code",cle."Currency Code");
+
+                        if cle."Currency Code" <> RepSISetup."KRD Blank LCY Code" then begin
+                            KRDRepLine.validate("Currency Code",cle."Currency Code");
+                        end else begin
+                            KRDRepLine."Currency Code" := RepSISetup."KRD Blank LCY Code";
+                            KRDRepLine."Currency No." := RepSISetup."KRD Blank LCY Num.";
+                        end;
 
                         KRDRepLine."Opening Balance" := GetOpeningBalance(cle."KRD Affiliation Type",cle."KRD Instrument Type",
                         cle."KRD Maturity",cle."KRD Claim/Liability",cle."KRD Non-Residnet Sector Code",cle."KRD Country/Region Code",
@@ -202,7 +209,13 @@ report 13062661 "Suggest KRD Lines"
                         KRDRepLine."Claim/Liability" := VLE."KRD Claim/Liability";
                         KRDRepLine."Non-Residnet Sector Code" := VLE."KRD Non-Residnet Sector Code";
                         KRDRepLine.validate("Country/Region Code",VLE."KRD Country/Region Code");
-                        KRDRepLine.validate("Currency Code",VLE."Currency Code");
+
+                        if VLE."Currency Code" <> RepSISetup."KRD Blank LCY Code" then begin
+                            KRDRepLine.validate("Currency Code",VLE."Currency Code");
+                        end else begin
+                            KRDRepLine."Currency Code" := RepSISetup."KRD Blank LCY Code";
+                            KRDRepLine."Currency No." := RepSISetup."KRD Blank LCY Num.";
+                        end;                        
 
                         KRDRepLine."Opening Balance" := GetOpeningBalance(VLE."KRD Affiliation Type",VLE."KRD Instrument Type",
                         VLE."KRD Maturity",VLE."KRD Claim/Liability",VLE."KRD Non-Residnet Sector Code",VLE."KRD Country/Region Code",

@@ -17,6 +17,10 @@ pageextension 13062541 "CustomerCard-adl" extends "Customer Card" //21
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }
+            field("KRD Affiliation Type";"KRD Affiliation Type") {
+                ApplicationArea = All;
+                Visible = KRDFeatureEnabled;
+            }
             // <adl.25>
         }
     }

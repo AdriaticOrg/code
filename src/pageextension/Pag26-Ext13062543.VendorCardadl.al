@@ -17,6 +17,10 @@ pageextension 13062543 "VendorCard-adl" extends "Vendor Card" //26
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }
+            field("KRD Affiliation Type";"KRD Affiliation Type") {
+                ApplicationArea = All;
+                Visible = KRDFeatureEnabled;
+            }            
             // </adl.25>
         }
     }

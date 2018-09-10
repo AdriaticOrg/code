@@ -15,7 +15,6 @@ codeunit 13062661 "Reporting SI Evnt."
         //TODO: what feature toggle should be checked here?
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
 
-        //TODO: @janez changed from event OnAfterInsertVAT to OnAfterInsertVATEntry event
         VATEntry."VAT Correction Date" := GenJnlLine."VAT Correction Date";
         VATEntry."EU Customs Procedure" := GenJnlLine."EU Customs Procedure";
     end;
@@ -81,8 +80,8 @@ codeunit 13062661 "Reporting SI Evnt."
         end;
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"G/L Entry", 'OnAfterCopyGLEntryFromGenJnlLine', '', true, false)]
-    local procedure OnAfterCopyGLEntryFromGenJnlLineFAS(var GLEntry: Record "G/L Entry"; var GenJournalLine: Record "Gen. Journal Line")
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitGLEntry', '', true, false)]
+    local procedure OnAfterInitGLEntryFAS(var GLEntry: Record "G/L Entry";GenJournalLine: Record "Gen. Journal Line")
     var
         GLAcc: Record "G/L Account";
     begin

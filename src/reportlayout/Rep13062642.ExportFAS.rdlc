@@ -616,7 +616,7 @@
                                                                 <Paragraph>
                                                                   <TextRuns>
                                                                     <TextRun>
-                                                                      <Value EvaluationMode="Auto">=sum(Fields!TransactionsInPeriod.Value)</Value>
+                                                                      <Value EvaluationMode="Auto">=Sum(Fields!TransactionsInPeriod.Value)</Value>
                                                                       <Style>
                                                                         <FontFamily>segoe ui</FontFamily>
                                                                         <FontSize>8pt</FontSize>
@@ -707,7 +707,7 @@
                                                                 <Paragraph>
                                                                   <TextRuns>
                                                                     <TextRun>
-                                                                      <Value EvaluationMode="Auto">=Fields!ClosingBalance.Value</Value>
+                                                                      <Value EvaluationMode="Auto">=sum(Fields!ClosingBalance.Value)</Value>
                                                                       <Style>
                                                                         <FontFamily>segoe ui</FontFamily>
                                                                         <FontSize>8pt</FontSize>

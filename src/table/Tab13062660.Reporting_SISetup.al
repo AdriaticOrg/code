@@ -15,30 +15,18 @@ table 13062660 "Reporting_SI Setup"
             DataClassification = SystemMetadata;
             TableRelation = "No. Series";
         }
-        field(13; "FAS Enabled"; Boolean)
-        {
-            Caption = 'FAS Enabled';
-            DataClassification = SystemMetadata;
-            //TODO: removal planned for V0.2 branch
-            //NOTE: do not rename or remove fields on a daily basis
-            //ObsoleteState = Removed;
-            //ObsoleteReason = 'moved to core setup';
-        }
-
         field(12; "FAS Resp. User ID"; Text[100])
         {
             Caption = 'FAS Resp. User ID';
             TableRelation = "User Setup";
             DataClassification = SystemMetadata;
         }
-
         field(15; "FAS Prep. By User ID"; Text[100])
         {
             Caption = 'FAS Prep. By User ID';
             TableRelation = "User Setup";
             DataClassification = SystemMetadata;
         }
-
         field(16; "Budget User Code"; Code[10])
         {
             Caption = 'Budget User Code';
@@ -74,15 +62,16 @@ table 13062660 "Reporting_SI Setup"
             TableRelation = "User Setup";
             DataClassification = SystemMetadata;
         }
-        field(23; "KRD Enabled"; Boolean)
+        field(23; "KRD Blank LCY Code"; Code[20])
         {
-            Caption = 'KRD Enabled';
-            DataClassification = SystemMetadata;
-            //TODO: removal planned for V0.2 branch
-            //NOTE: do not rename or remove fields on a daily basis
-            //ObsoleteState = Removed;
-            //ObsoleteReason = 'moved to core setup';
+            Caption = 'KRD Blank LCY Code';
+            DataClassification = ToBeClassified;
         }
+        field(24; "KRD Blank LCY Num."; Text[10])
+        {
+            Caption = 'KRD Blank LCY Num.';
+            DataClassification = ToBeClassified;
+        }                
 
         field(25; "KRD Prep. By User ID"; Text[100])
         {
@@ -90,7 +79,6 @@ table 13062660 "Reporting_SI Setup"
             TableRelation = "User Setup";
             DataClassification = SystemMetadata;
         }
-
         field(30; "BST Report No. Series"; Code[20])
         {
             Caption = 'BST Report No. Series';
@@ -103,16 +91,6 @@ table 13062660 "Reporting_SI Setup"
             TableRelation = "User Setup";
             DataClassification = SystemMetadata;
         }
-        field(33; "BST Enabled"; Boolean)
-        {
-            Caption = 'BST Enabled';
-            DataClassification = SystemMetadata;
-            //TODO: removal planned for V0.2 branch
-            //NOTE: do not rename or remove fields on a daily basis
-            //ObsoleteState = Removed;
-            //ObsoleteReason = 'moved to core setup';
-        }
-
         field(35; "BST Prep. By User ID"; Text[100])
         {
             Caption = 'BST Prep. By User ID';
@@ -130,15 +108,6 @@ table 13062660 "Reporting_SI Setup"
             Caption = 'VIES Resp. User ID';
             TableRelation = "User Setup";
             DataClassification = SystemMetadata;
-        }
-        field(43; "VIES Enabled"; Boolean)
-        {
-            Caption = 'VIES Enabled';
-            DataClassification = SystemMetadata;
-            //TODO: removal planned for V0.2 branch
-            //NOTE: do not rename or remove fields on a daily basis
-            //ObsoleteState = Removed;
-            //ObsoleteReason = 'moved to core setup';
         }
         field(45; "VIES Prep. By User ID"; Text[100])
         {
@@ -158,7 +127,6 @@ table 13062660 "Reporting_SI Setup"
             TableRelation = "User Setup";
             DataClassification = SystemMetadata;
         }
-
         field(55; "PDO Prep. By User ID"; Text[100])
         {
             Caption = 'PDO Prep. By User ID';

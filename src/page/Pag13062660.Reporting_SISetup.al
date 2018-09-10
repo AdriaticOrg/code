@@ -12,10 +12,6 @@ page 13062660 "Reporting_SI Setup"
         {
             group(FAS)
             {
-                field("FAS Enabled"; "FAS Enabled")
-                {
-                    ApplicationArea = All;
-                }
                 field("FAS Report No. Series"; "FAS Report No. Series")
                 {
                     ApplicationArea = All;
@@ -43,10 +39,6 @@ page 13062660 "Reporting_SI Setup"
             }
             group(KRD)
             {
-                field("KRD Enabled"; "KRD Enabled")
-                {
-                    ApplicationArea = All;
-                }
                 field("KRD Report No. Series"; "KRD Report No. Series")
                 {
                     ApplicationArea = All;
@@ -63,13 +55,15 @@ page 13062660 "Reporting_SI Setup"
                 {
                     ApplicationArea = All;
                 }
+                field("KRD Blank LCY Code";"KRD Blank LCY Code") {
+                    ApplicationArea = All;
+                }
+                field("KRD Blank LCY Num.";"KRD Blank LCY Num.") {
+                    ApplicationArea = All;
+                }
             }
             group(BST)
             {
-                field("BST Enabled"; "BST Enabled")
-                {
-                    ApplicationArea = All;
-                }
                 field("BST Report No. Series"; "BST Report No. Series")
                 {
                     ApplicationArea = All;
@@ -85,10 +79,6 @@ page 13062660 "Reporting_SI Setup"
             }
             group(VIES)
             {
-                field("VIES Enabled"; "VIES Enabled")
-                {
-                    ApplicationArea = All;
-                }
                 field("VIES Report No. Series"; "VIES Report No. Series")
                 {
                     ApplicationArea = All;

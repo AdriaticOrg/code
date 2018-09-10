@@ -858,11 +858,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field FAS Report No. Series - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2369601040 - Field 1672289667 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>FAS Enabled</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field FAS Enabled - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 2369601040 - Field 3701443150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Resp. User ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -903,10 +898,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field KRD Resp. User ID - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2369601040 - Field 2623099996 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>KRD Enabled</source>
+        <trans-unit id="Table 2369601040 - Field 833181936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD Blank LCY Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field KRD Enabled - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field KRD Blank LCY Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369601040 - Field 812757451 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD Blank LCY Num.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field KRD Blank LCY Num. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2369601040 - Field 509467981 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Prep. By User ID</source>
@@ -923,11 +923,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field BST Resp. User ID - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2369601040 - Field 3365681420 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>BST Enabled</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field BST Enabled - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 2369601040 - Field 1060236637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Prep. By User ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -942,11 +937,6 @@
           <source>VIES Resp. User ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field VIES Resp. User ID - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2369601040 - Field 4014791272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VIES Enabled</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field VIES Enabled - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2369601040 - Field 928529433 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VIES Prep. By User ID</source>
@@ -1733,10 +1723,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - Procedure XMLWrite - NamedType Text102</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3311536690 - NamedType 924275788" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 3311536690 - NamedType 3004040435" size-unit="char" translate="yes" xml:space="preserve">
           <source>File %1 was succesfully prepared.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit TextWriter-adl - NamedType Msg001</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit TextWriter-adl - NamedType Msg</note>
         </trans-unit>
         <trans-unit id="Page 701540871 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Types</source>
