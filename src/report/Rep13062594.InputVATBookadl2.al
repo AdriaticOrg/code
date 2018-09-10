@@ -84,8 +84,8 @@ report 13062594 "Input VAT Book-adl 2"
 
                 //Firma/Ime in sedež dobavitelja
                 Clear(VendorData);
-                IF ("Document Type" = "Document Type"::Invoice) then begin
-                    with PurchInvHeader do begin
+                with PurchInvHeader do
+                    IF ("VAT Entry"."Document Type" = "Document Type"::Invoice) then
                         if get("Document No.") then begin
                             if ("Pay-to Name" <> '') then
                                 VendorData += "Pay-to Name";
@@ -96,11 +96,9 @@ report 13062594 "Input VAT Book-adl 2"
                             if ("Pay-to Country/Region Code" <> '') then
                                 VendorData += "Pay-to Country/Region Code";
                         end;
-                    end;
-                end else
-                    IF ("Document Type" = "Document Type"::"Credit Memo") then begin
-                        PurchCrMemoHdr.get("Document No.");
-                        with PurchCrMemoHdr do begin
+
+                with PurchCrMemoHdr do
+                    IF ("VAT Entry"."Document Type" = "Document Type"::"Credit Memo") then
                             if get("Document No.") then begin
                                 if ("Pay-to Name" <> '') then
                                     VendorData += "Pay-to Name";
@@ -111,11 +109,9 @@ report 13062594 "Input VAT Book-adl 2"
                                 if ("Pay-to Country/Region Code" <> '') then
                                     VendorData += "Pay-to Country/Region Code";
                             end;
-                        end;
-                    end;
 
+                with Vendor do
                 If Vendor.get("Bill-to/Pay-to No.") then begin
-                    with Vendor do begin
                         if (Name <> '') then
                             VendorData += Name;
                         if (Address <> '') then
@@ -125,7 +121,7 @@ report 13062594 "Input VAT Book-adl 2"
                         if ("Country/Region Code" <> '') then
                             VendorData += "Country/Region Code";
                     end;
-                end;
+
                 TextWriterAdl.FixedField(OutStr, VendorData, VATBookColumnLengt[6], PadCharacter, 1, FieldDelimiter);
 
 
@@ -142,7 +138,7 @@ report 13062594 "Input VAT Book-adl 2"
                     repeat
                         //columnVal+= VATBookCalc.EvaluateExpression(VATBookGroup, 0, '', VATEntry); 
                         ColumnVal += VATBookCalc.EvaluateExpression(VATBookGroup, 0, Datefilter);
-                    until VATBookGroup.next = 0;
+                    until VATBookGroup.Next() = 0;
                     TextWriterAdl.FixedField(OutStr, ColumnVal, VATBookColumnLengt[8], PadCharacter, 1, FieldDelimiter);
                 end;
 
