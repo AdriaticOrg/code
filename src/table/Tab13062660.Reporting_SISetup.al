@@ -65,13 +65,13 @@ table 13062660 "Reporting_SI Setup"
         field(23; "KRD Blank LCY Code"; Code[20])
         {
             Caption = 'KRD Blank LCY Code';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(24; "KRD Blank LCY Num."; Text[10])
         {
             Caption = 'KRD Blank LCY Num.';
-            DataClassification = ToBeClassified;
-        }                
+            DataClassification = SystemMetadata;
+        }
 
         field(25; "KRD Prep. By User ID"; Text[100])
         {
