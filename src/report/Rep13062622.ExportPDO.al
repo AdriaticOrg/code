@@ -10,7 +10,7 @@ report 13062622 "Export PDO"
         {
             RequestFilterFields = "No.";
 
-            column(CompanyName; CompanyName) { }
+            column(CompanyName; CompanyName()) { }
             column(DocumentNo; "No.")
             {
                 IncludeCaption = true;
@@ -26,20 +26,23 @@ report 13062622 "Export PDO"
             column(PrepairedByName; PrepairedByUser."Reporting_SI Name") { }
             column(ResponsibleName; ResponsibleUser."Reporting_SI Name") { }
 
-            dataitem("PDO Report Line";"PDO Report Line") {
-                column("Type";FORMAT(Type,0,'<Number>')){}
-                column(PeriodID;"Period Round"){}
-                column(VATRegistrationNo;"VAT Registration No.") {
+            dataitem("PDO Report Line"; "PDO Report Line")
+            {
+                column("Type"; FORMAT(Type, 0, '<Number>')) { }
+                column(PeriodID; "Period Round") { }
+                column(VATRegistrationNo; "VAT Registration No.")
+                {
                     IncludeCaption = true;
                 }
-                column(CountryCode;"Country/Region Code") {}
-                column(AmountLCY;"Amount (LCY)") {
+                column(CountryCode; "Country/Region Code") { }
+                column(AmountLCY; "Amount (LCY)")
+                {
                     IncludeCaption = true;
                 }
 
                 trigger OnAfterGetRecord()
                 begin
-                end;                                
+                end;
             }
 
             trigger OnPostDataItem()
@@ -56,7 +59,7 @@ report 13062622 "Export PDO"
                 PrepairedByUser.testfield("Reporting_SI Name");
                 ResponsibleUser.get("Resp. User ID");
                 ResponsibleUser.TestField("Reporting_SI Name");
-            end;            
+            end;
         }
     }
 
@@ -92,35 +95,34 @@ report 13062622 "Export PDO"
 
     }
     var
-        ExpFile: Boolean;
         PrepairedByUser: Record "User Setup";
         ResponsibleUser: Record "User Setup";
-        Msg001: Label 'Export to %1 done OK.';
+        ExpFile: Boolean;
+        ExportDoneMsg: Label 'Export to %1 done OK.';
 
     local procedure ExportPDO(PDORepHead: Record "PDO Report Header")
     var
-        RepSIMgt: Codeunit "Reporting SI Mgt.";
         PDORepLine: Record "PDO Report Line";
-        PDORepLineSum:Record "PDO Report Line";
+        PDORepLineSum: Record "PDO Report Line";
         CompanyInfo: Record "Company Information";
         GLSetup: Record "General Ledger Setup";
         RespUser: Record "User Setup";
         MakerUser: Record "User Setup";
+        TmpBlob: Record TempBlob temporary;
+        RepSIMgt: Codeunit "Reporting SI Mgt.";
         XmlDoc: XmlDocument;
         XmlDec: XmlDeclaration;
         XmlElem: array[10] of XmlElement;
-        XmlAttr: XmlAttribute;
         OutStr: OutStream;
         InStr: InStream;
-        TmpBlob: Record TempBlob temporary;
         FileName: Text;
         ExpOk: Boolean;
-        xmlns: Text;     
+        xmlns: Text;
         StatMonth: Integer;
-        StatYear: Integer;     
-        TotSales:Decimal;       
-        TotPrevSales:Decimal;
-        TxtPrec: Label '<Precision,2:2><Standard Format,9>';
+        StatYear: Integer;
+        TotSales: Decimal;
+        TotPrevSales: Decimal;
+        PrecisionTok: Label '<Precision,2:2><Standard Format,9>';
     begin
         CompanyInfo.get();
         CompanyInfo.TestField("Registration No.");
@@ -145,13 +147,13 @@ report 13062622 "Export PDO"
 
         PDORepLineSum.Reset();
         PDORepLineSum.SetRange("Document No.", PDORepHead."No.");
-        PDORepLineSum.SetRange(Type,PDORepLineSum.type::New);  
+        PDORepLineSum.SetRange(Type, PDORepLineSum.type::New);
         PDORepLineSum.CalcSums("Amount (LCY)");
         TotSales := PDORepLineSum."Amount (LCY)";
 
-        PDORepLineSum.SetRange(Type,PDORepLineSum.Type::Correction);
+        PDORepLineSum.SetRange(Type, PDORepLineSum.Type::Correction);
         PDORepLineSum.CalcSums("Amount (LCY)");
-        TotPrevSales := PDORepLineSum."Amount (LCY)";        
+        TotPrevSales := PDORepLineSum."Amount (LCY)";
 
         XmlDoc := xmlDocument.Create();
         XmlDec := xmlDeclaration.Create('1.0', 'UTF-8', '');
@@ -164,7 +166,7 @@ report 13062622 "Export PDO"
         XmlElem[1].Add(xmlElem[2]);
 
         XmlElem[3] := XmlElement.Create('taxpayer', xmlns);
-        XmlElem[2].Add(xmlElem[3]);        
+        XmlElem[2].Add(xmlElem[3]);
 
         XmlElem[4] := XmlElement.Create('taxNumber', xmlns);
         XmlElem[4].Add(XmlText.Create(RepSIMgt.GetNumsFromStr(CompanyInfo."VAT Registration No.")));
@@ -200,72 +202,70 @@ report 13062622 "Export PDO"
 
         XmlElem[4] := XmlElement.Create('PeriodYear', xmlns);
         XmlElem[4].Add(XmlText.Create(format(StatYear)));
-        XmlElem[3].Add(xmlElem[4]);  
+        XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('PeriodMonth', xmlns);
         XmlElem[4].Add(XmlText.Create(format(StatMonth)));
-        XmlElem[3].Add(xmlElem[4]); 
-        
+        XmlElem[3].Add(xmlElem[4]);
+
         PDORepLine.Reset();
         PDORepLine.SetRange("Document No.", PDORepHead."No.");
-        PDORepLine.SetRange(Type,PDORepLine.type::New);
-        if PDORepLine.FindSet() then begin
-            repeat                
+        PDORepLine.SetRange(Type, PDORepLine.type::New);
+        if PDORepLine.FindSet() then
+            repeat
                 XmlElem[4] := XmlElement.Create('A', xmlns);
-                XmlElem[3].Add(xmlElem[4]);            
+                XmlElem[3].Add(xmlElem[4]);
 
                 XmlElem[5] := XmlElement.Create('A2', xmlns);
                 XmlElem[4].Add(xmlElem[5]);
-                XmlElem[5].Add(XmlText.Create(PDORepLine."VAT Registration No.")); 
+                XmlElem[5].Add(XmlText.Create(PDORepLine."VAT Registration No."));
 
                 XmlElem[5] := XmlElement.Create('A3', xmlns);
                 XmlElem[4].Add(xmlElem[5]);
-                XmlElem[5].Add(XmlText.Create(format(PDORepLine."Amount (LCY)",0,TxtPrec)));
+                XmlElem[5].Add(XmlText.Create(format(PDORepLine."Amount (LCY)", 0, PrecisionTok)));
 
             until PDORepLine.Next() = 0;
-        end;
 
-        XmlElem[3] := XmlElement.Create('B_PastCorrections', xmlns); 
-        XmlElem[2].Add(xmlElem[3]);   
+        XmlElem[3] := XmlElement.Create('B_PastCorrections', xmlns);
+        XmlElem[2].Add(xmlElem[3]);
 
-        XmlElem[3] := XmlElement.Create('A4', xmlns); 
-        XmlElem[2].Add(xmlElem[3]);   
-        XmlElem[3].Add(XmlText.Create(format(TotPrevSales,0,TxtPrec)));
+        XmlElem[3] := XmlElement.Create('A4', xmlns);
+        XmlElem[2].Add(xmlElem[3]);
+        XmlElem[3].Add(XmlText.Create(format(TotPrevSales, 0, PrecisionTok)));
 
-        PDORepLine.SetRange(Type,PDORepLine.type::Correction);
-        if PDORepLine.FindSet() then begin
-            repeat   
+        PDORepLine.SetRange(Type, PDORepLine.type::Correction);
+        if PDORepLine.FindSet() then
+            repeat
                 XmlElem[3] := XmlElement.Create('B', xmlns);
-                XmlElem[2].Add(xmlElem[3]);  
+                XmlElem[2].Add(xmlElem[3]);
 
                 XmlElem[4] := XmlElement.Create('B1_Year', xmlns);
                 XmlElem[3].Add(xmlElem[4]);
-                XmlElem[4].Add(XmlText.Create(format(PDORepLine."Period Year"))); 
+                XmlElem[4].Add(XmlText.Create(format(PDORepLine."Period Year")));
 
                 XmlElem[4] := XmlElement.Create('B1_Month', xmlns);
                 XmlElem[3].Add(xmlElem[4]);
-                XmlElem[4].Add(XmlText.Create(format(PDORepLine."Period Round"))); 
+                XmlElem[4].Add(XmlText.Create(format(PDORepLine."Period Round")));
 
                 XmlElem[4] := XmlElement.Create('B2', xmlns);
                 XmlElem[3].Add(xmlElem[4]);
-                XmlElem[4].Add(XmlText.Create(PDORepLine."VAT Registration No.")); 
+                XmlElem[4].Add(XmlText.Create(PDORepLine."VAT Registration No."));
 
                 XmlElem[4] := XmlElement.Create('B3', xmlns);
                 XmlElem[3].Add(xmlElem[4]);
-                XmlElem[4].Add(XmlText.Create(format(PDORepLine."Amount (LCY)",0,TxtPrec)));
+                XmlElem[4].Add(XmlText.Create(format(PDORepLine."Amount (LCY)", 0, PrecisionTok)));
 
             until PDORepLine.Next() = 0;
-        end;       
 
         //export stream file part
-        TmpBlob.Blob.CreateOutStream(outStr, TextEncoding::UTF8);
-        xmlDoc.WriteTo(outStr);
+        TmpBlob.Blob.CreateOutStream(OutStr, TextEncoding::UTF8);
+        xmlDoc.WriteTo(OutStr);
         TmpBlob.Blob.CreateInStream(inStr, TextEncoding::UTF8);
 
         FileName := 'PDO_' + format(PDORepHead."No.") + '.xml';
         ExpOk := File.DownloadFromStream(InStr, 'Save To File', '', 'All Files (*.*)|*.*', FileName);
 
-        Message(Msg001, FileName);
+        Message(ExportDoneMsg, FileName);
 
     end;
 }

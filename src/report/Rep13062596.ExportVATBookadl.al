@@ -98,19 +98,19 @@ report 13062596 "Export VAT Book-adl"
     }
     var
         VATEntry: Record "VAT Entry";
-        VATBookCode: Code[20];
         Customer: Record Customer;
         Vendor: Record Vendor;
+        VATBookCalc: Codeunit "VAT Book Calculation-Adl";
+        TextWriterAdl: Codeunit "TextWriter-adl";
+        VATBookCode: Code[20];
         Result: Decimal;
         ResultTxt: Text;
-        VATBookCalc: Codeunit "VAT Book Calculation-Adl";
         VATRegNo: Text[20];
         VendCustName: Text;
         ColumnNo: Integer;
         NotFoundDetails: Boolean;
         VATBookColumnNo: array[100] of Integer;
         VATBookColumnLengt: array[100] of integer;
-        TextWriterAdl: Codeunit "TextWriter-adl";
         OutStr: OutStream;
         OutStrColumn: OutStream;
         PadCharacter: Text[1];
@@ -136,7 +136,7 @@ report 13062596 "Export VAT Book-adl"
         FieldDelimiter := ';';
         DummyText := ' ';
 
-        CreateHeaderBook; //Create header line txt 
+        CreateHeaderBook(); //Create header line txt 
     end;
 
     trigger OnPostReport()
@@ -146,9 +146,8 @@ report 13062596 "Export VAT Book-adl"
 
     local procedure CreateHeaderBook()
     var
-        Counter: Integer;
-        ColumnDesc: Text;
         VATBookColumnName: Record "VAT Book Column Name-Adl";
+        Counter: Integer;
     begin
         //<Davčno obdobje>, Posting Date 
         TextWriterAdl.FixedField(OutStr, VATPeriodLbl, 4, PadCharacter, 1, FieldDelimiter);
@@ -173,17 +172,17 @@ report 13062596 "Export VAT Book-adl"
 
         VATBookColumnName.Reset();
         VATBookColumnName.SetRange("VAT Book Code", VATBookCode);
-        if VATBookColumnName.FindSet then
+        if VATBookColumnName.FindSet() then
             repeat
                 Counter += 1;
                 VATBookColumnNo[Counter] := VATBookColumnName."Column No.";
                 VATBookColumnLengt[Counter] := VATBookColumnName."Fixed text length";
-                if (VATBookColumnName."Fixed text length" = 0) then begin
-                    TextWriterAdl.FixedField(OutStr, VATBookColumnName.Description, StrLen(VATBookColumnName.Description), PadCharacter, 1, FieldDelimiter);
-                end else
+                if (VATBookColumnName."Fixed text length" = 0) then
+                    TextWriterAdl.FixedField(OutStr, VATBookColumnName.Description, StrLen(VATBookColumnName.Description), PadCharacter, 1, FieldDelimiter)
+                else
                     TextWriterAdl.FixedField(OutStr, VATBookColumnName.Description, VATBookColumnName."Fixed text length", PadCharacter, 1, FieldDelimiter);
 
-            until VATBookColumnName.Next = 0;
+            until VATBookColumnName.Next() = 0;
         TextWriterAdl.NewLine(OutStr);
     end;
 
@@ -247,7 +246,6 @@ report 13062596 "Export VAT Book-adl"
     var
         PurchInvHeader: Record "Purch. Inv. Header";
         PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr.";
-        Vendor: Record Vendor;
     begin
         VendCustName := '';
         VATRegNo := '';

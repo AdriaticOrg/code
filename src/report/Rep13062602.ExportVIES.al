@@ -10,7 +10,7 @@ report 13062602 "Export VIES"
         {
             RequestFilterFields = "No.";
 
-            column(CompanyName; CompanyName) { }
+            column(CompanyName; CompanyName()) { }
             column(DocumentNo; "No.")
             {
                 IncludeCaption = true;
@@ -26,24 +26,26 @@ report 13062602 "Export VIES"
             column(PrepairedByName; PrepairedByUser."Reporting_SI Name") { }
             column(ResponsibleName; ResponsibleUser."Reporting_SI Name") { }
 
-            dataitem("VIES Report Line";"VIES Report Line") {
-                column("Type";FORMAT(Type,0,'<Number>')){}
-                column(PeriodID;"Period Round"){}
-                column(VATRegistrationNo;"VAT Registration No.") {
+            dataitem("VIES Report Line"; "VIES Report Line")
+            {
+                column("Type"; FORMAT(Type, 0, '<Number>')) { }
+                column(PeriodID; "Period Round") { }
+                column(VATRegistrationNo; "VAT Registration No.")
+                {
                     IncludeCaption = true;
                 }
-                column(CountryCode;"Country/Region Code") {}
-                column(GoodsAmount;SalesGoods) {}
-                column(ServicesAmount;SalesSvcs) {}
-                column(EU3PartyTrade;Sales3Pty) {}
-                column(EUCustomsProcedure;SalesCustoms) {}
+                column(CountryCode; "Country/Region Code") { }
+                column(GoodsAmount; SalesGoods) { }
+                column(ServicesAmount; SalesSvcs) { }
+                column(EU3PartyTrade; Sales3Pty) { }
+                column(EUCustomsProcedure; SalesCustoms) { }
 
                 trigger OnAfterGetRecord()
                 begin
                     Clear(SalesGoods);
                     Clear(SalesSvcs);
                     Clear(Sales3Pty);
-                    clear(SalesCustoms);                    
+                    clear(SalesCustoms);
 
                     if ("EU Sales Type" = "EU Sales Type"::Goods) and
                     (not "EU 3-Party Trade") and (not "EU Customs Procedure")
@@ -60,7 +62,7 @@ report 13062602 "Export VIES"
 
                     if "EU 3-Party Trade" then
                         Sales3Pty := Amount;
-                end;                                
+                end;
             }
 
             trigger OnPostDataItem()
@@ -77,7 +79,7 @@ report 13062602 "Export VIES"
                 PrepairedByUser.testfield("Reporting_SI Name");
                 ResponsibleUser.get("Resp. User ID");
                 ResponsibleUser.TestField("Reporting_SI Name");
-            end;            
+            end;
         }
     }
 
@@ -117,44 +119,43 @@ report 13062602 "Export VIES"
 
     }
     var
+        PrepairedByUser: Record "User Setup";
+        ResponsibleUser: Record "User Setup";
         ExpFile: Boolean;
         IsTotaling: Boolean;
         IsBold: Boolean;
         HideZeros: Boolean;
-        SalesGoods:Decimal;
-        SalesSvcs:Decimal;
-        Sales3Pty:Decimal;
-        SalesCustoms:Decimal;   
-        PrepairedByUser: Record "User Setup";
-        ResponsibleUser: Record "User Setup";
-        Msg001: Label 'Export to %1 done OK.';
+        SalesGoods: Decimal;
+        SalesSvcs: Decimal;
+        Sales3Pty: Decimal;
+        SalesCustoms: Decimal;
+        ExportDoneMsg: Label 'Export to %1 done OK.';
 
     local procedure ExportVIES(VIESRepHead: Record "VIES Report Header")
     var
-        RepSIMgt: Codeunit "Reporting SI Mgt.";
         VIESRepLine: Record "VIES Report Line";
-        VIESRepLineSum:Record "VIES Report Line";
+        VIESRepLineSum: Record "VIES Report Line";
         CompanyInfo: Record "Company Information";
         GLSetup: Record "General Ledger Setup";
         RespUser: Record "User Setup";
         MakerUser: Record "User Setup";
+        TmpBlob: Record TempBlob temporary;
+        RepSIMgt: Codeunit "Reporting SI Mgt.";
         XmlDoc: XmlDocument;
         XmlDec: XmlDeclaration;
         XmlElem: array[10] of XmlElement;
-        XmlAttr: XmlAttribute;
         OutStr: OutStream;
         InStr: InStream;
-        TmpBlob: Record TempBlob temporary;
         FileName: Text;
         ExpOk: Boolean;
-        xmlns: Text;     
+        xmlns: Text;
         StatMonth: Integer;
-        StatYear: Integer;     
-        TotSalesGoods:Decimal;
-        TotSalesSvcs:Decimal;
-        TotSales3Pty:Decimal;
-        TotSalesCustoms:Decimal;        
-        TxtPrec: Label '<Precision,2:2><Standard Format,9>';
+        StatYear: Integer;
+        TotSalesGoods: Decimal;
+        TotSalesSvcs: Decimal;
+        TotSales3Pty: Decimal;
+        TotSalesCustoms: Decimal;
+        PrecisionTok: Label '<Precision,2:2><Standard Format,9>';
     begin
         CompanyInfo.get();
         CompanyInfo.TestField("Registration No.");
@@ -179,24 +180,24 @@ report 13062602 "Export VIES"
 
         VIESRepLineSum.Reset();
         VIESRepLineSum.SetRange("Document No.", VIESRepHead."No.");
-        VIESRepLineSum.SetRange(Type,VIESRepLine.type::New);  
-        VIESRepLineSum.SetRange("EU Sales Type",VIESRepLineSum."EU Sales Type"::Goods);      
-        VIESRepLineSum.SetRange("EU 3-Party Trade",false);
-        VIESRepLineSum.SetRange("EU Customs Procedure",false);
+        VIESRepLineSum.SetRange(Type, VIESRepLine.type::New);
+        VIESRepLineSum.SetRange("EU Sales Type", VIESRepLineSum."EU Sales Type"::Goods);
+        VIESRepLineSum.SetRange("EU 3-Party Trade", false);
+        VIESRepLineSum.SetRange("EU Customs Procedure", false);
         VIESRepLineSum.CalcSums(Amount);
         TotSalesGoods := VIESRepLineSum.Amount;
 
-        VIESRepLineSum.SetRange("EU Sales Type",VIESRepLineSum."EU Sales Type"::Services);
+        VIESRepLineSum.SetRange("EU Sales Type", VIESRepLineSum."EU Sales Type"::Services);
         VIESRepLineSum.CalcSums(Amount);
         TotSalesSvcs := VIESRepLineSum.Amount;
 
         VIESRepLineSum.SetRange("EU Sales Type");
-        VIESRepLineSum.SetRange("EU 3-Party Trade",true);
+        VIESRepLineSum.SetRange("EU 3-Party Trade", true);
         VIESRepLineSum.CalcSums(Amount);
         TotSales3Pty := VIESRepLineSum.Amount;
 
         VIESRepLineSum.SetRange("EU 3-Party Trade");
-        VIESRepLineSum.SetRange("EU Customs Procedure",true);
+        VIESRepLineSum.SetRange("EU Customs Procedure", true);
         VIESRepLineSum.CalcSums(Amount);
         TotSalesCustoms := VIESRepLineSum.Amount;
 
@@ -211,7 +212,7 @@ report 13062602 "Export VIES"
         XmlElem[1].Add(xmlElem[2]);
 
         XmlElem[3] := XmlElement.Create('taxpayer', xmlns);
-        XmlElem[2].Add(xmlElem[3]);        
+        XmlElem[2].Add(xmlElem[3]);
 
         XmlElem[4] := XmlElement.Create('vatNumber', xmlns);
         XmlElem[4].Add(XmlText.Create(CompanyInfo."VAT Registration No."));
@@ -250,71 +251,71 @@ report 13062602 "Export VIES"
 
         XmlElem[4] := XmlElement.Create('H1_Year', xmlns);
         XmlElem[4].Add(XmlText.Create(format(StatYear)));
-        XmlElem[3].Add(xmlElem[4]);  
+        XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('H1_Month', xmlns);
         XmlElem[4].Add(XmlText.Create(format(StatMonth)));
-        XmlElem[3].Add(xmlElem[4]);               
+        XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('A13_CurrentTotal', xmlns);
-        XmlElem[4].Add(XmlText.Create(format(TotSalesGoods,0,TxtPrec)));
-        XmlElem[3].Add(xmlElem[4]);  
+        XmlElem[4].Add(XmlText.Create(format(TotSalesGoods, 0, PrecisionTok)));
+        XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('A14_Current4263Total', xmlns);
-        XmlElem[4].Add(XmlText.Create(format(TotSalesCustoms,0,TxtPrec)));
-        XmlElem[3].Add(xmlElem[4]);  
+        XmlElem[4].Add(XmlText.Create(format(TotSalesCustoms, 0, PrecisionTok)));
+        XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('A15_CurrentThreePartyTotal', xmlns);
-        XmlElem[4].Add(XmlText.Create(format(TotSales3Pty,0,TxtPrec)));
-        XmlElem[3].Add(xmlElem[4]);    
+        XmlElem[4].Add(XmlText.Create(format(TotSales3Pty, 0, PrecisionTok)));
+        XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('A16_CurrentServiceTotal', xmlns);
-        XmlElem[4].Add(XmlText.Create(format(TotSalesSvcs,0,TxtPrec))); 
-        XmlElem[3].Add(xmlElem[4]);  
+        XmlElem[4].Add(XmlText.Create(format(TotSalesSvcs, 0, PrecisionTok)));
+        XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('F17_ResponsiblePerson', xmlns);
-        XmlElem[4].Add(XmlText.Create(RespUser."Reporting_SI Name")); 
-        XmlElem[3].Add(xmlElem[4]);     
+        XmlElem[4].Add(XmlText.Create(RespUser."Reporting_SI Name"));
+        XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('F17_TaxNumber', xmlns); //todo
-        XmlElem[3].Add(xmlElem[4]);   
+        XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('F18_ContactPerson', xmlns);
-        XmlElem[4].Add(XmlText.Create(PrepairedByUser."Reporting_SI Name")); 
-        XmlElem[3].Add(xmlElem[4]);    
+        XmlElem[4].Add(XmlText.Create(PrepairedByUser."Reporting_SI Name"));
+        XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('F18_ContactPerson', xmlns);
-        XmlElem[4].Add(XmlText.Create(PrepairedByUser."Reporting_SI Phone")); 
-        XmlElem[3].Add(xmlElem[4]);   
+        XmlElem[4].Add(XmlText.Create(PrepairedByUser."Reporting_SI Phone"));
+        XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('F13_RepresentativeTaxNumber', xmlns);  //todo
-        XmlElem[3].Add(xmlElem[4]);   
+        XmlElem[3].Add(xmlElem[4]);
 
-        XmlElem[3] := XmlElement.Create('A_Current', xmlns); 
-        XmlElem[2].Add(xmlElem[3]);                                   
+        XmlElem[3] := XmlElement.Create('A_Current', xmlns);
+        XmlElem[2].Add(xmlElem[3]);
 
         VIESRepLine.Reset();
         VIESRepLine.SetRange("Document No.", VIESRepHead."No.");
-        VIESRepLine.SetRange(Type,VIESRepLine.type::New);
-        if VIESRepLine.FindSet() then begin
-            repeat                
+        VIESRepLine.SetRange(Type, VIESRepLine.type::New);
+        if VIESRepLine.FindSet() then
+            repeat
                 XmlElem[4] := XmlElement.Create('A', xmlns);
-                XmlElem[3].Add(xmlElem[4]);            
+                XmlElem[3].Add(xmlElem[4]);
 
                 XmlElem[5] := XmlElement.Create('A1_C', xmlns);
                 XmlElem[4].Add(xmlElem[5]);
-                XmlElem[5].Add(XmlText.Create(VIESRepLine."Country/Region Code")); 
+                XmlElem[5].Add(XmlText.Create(VIESRepLine."Country/Region Code"));
 
                 XmlElem[5] := XmlElement.Create('A2_N', xmlns);
                 XmlElem[4].Add(xmlElem[5]);
-                XmlElem[5].Add(XmlText.Create(VIESRepLine."VAT Registration No.")); 
+                XmlElem[5].Add(XmlText.Create(VIESRepLine."VAT Registration No."));
 
                 if (VIESRepLine."EU Sales Type" = VIESRepLine."EU Sales Type"::Goods) and
                    (not VIESRepLine."EU 3-Party Trade") and (not VIESRepLine."EU Customs Procedure")
                 then begin
                     XmlElem[5] := XmlElement.Create('A3_T', xmlns);
                     XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount,0,TxtPrec)));
+                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount, 0, PrecisionTok)));
                 end;
 
                 if (VIESRepLine."EU Sales Type" = VIESRepLine."EU Sales Type"::Services) and
@@ -322,55 +323,54 @@ report 13062602 "Export VIES"
                 then begin
                     XmlElem[5] := XmlElement.Create('A6_S', xmlns);
                     XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount,0,TxtPrec)));
-                end;                
+                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount, 0, PrecisionTok)));
+                end;
 
                 if VIESRepLine."EU Customs Procedure" then begin
                     XmlElem[5] := XmlElement.Create('A4_C4263', xmlns);
                     XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount,0,TxtPrec)));
+                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount, 0, PrecisionTok)));
                 end;
 
                 if VIESRepLine."EU 3-Party Trade" then begin
                     XmlElem[5] := XmlElement.Create('A5_T3', xmlns);
                     XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount,0,TxtPrec)));
+                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount, 0, PrecisionTok)));
                 end;
 
             until VIESRepLine.Next() = 0;
-        end;
 
-        XmlElem[3] := XmlElement.Create('B_PastCorrections', xmlns); 
-        XmlElem[2].Add(xmlElem[3]);   
+        XmlElem[3] := XmlElement.Create('B_PastCorrections', xmlns);
+        XmlElem[2].Add(xmlElem[3]);
 
-        VIESRepLine.SetRange(Type,VIESRepLine.type::Correction);
-        if VIESRepLine.FindSet() then begin
-            repeat   
+        VIESRepLine.SetRange(Type, VIESRepLine.type::Correction);
+        if VIESRepLine.FindSet() then
+            repeat
                 XmlElem[4] := XmlElement.Create('B', xmlns);
-                XmlElem[3].Add(xmlElem[4]);  
+                XmlElem[3].Add(xmlElem[4]);
 
                 XmlElem[5] := XmlElement.Create('B0_Y', xmlns);
                 XmlElem[4].Add(xmlElem[5]);
-                XmlElem[5].Add(XmlText.Create(format(VIESRepLine."Period Year"))); 
+                XmlElem[5].Add(XmlText.Create(format(VIESRepLine."Period Year")));
 
                 XmlElem[5] := XmlElement.Create('B0_M', xmlns);
                 XmlElem[4].Add(xmlElem[5]);
-                XmlElem[5].Add(XmlText.Create(format(VIESRepLine."Period Round"))); 
+                XmlElem[5].Add(XmlText.Create(format(VIESRepLine."Period Round")));
 
                 XmlElem[5] := XmlElement.Create('B1_C', xmlns);
                 XmlElem[4].Add(xmlElem[5]);
-                XmlElem[5].Add(XmlText.Create(VIESRepLine."Country/Region Code")); 
+                XmlElem[5].Add(XmlText.Create(VIESRepLine."Country/Region Code"));
 
                 XmlElem[5] := XmlElement.Create('B2_N', xmlns);
                 XmlElem[4].Add(xmlElem[5]);
-                XmlElem[5].Add(XmlText.Create(VIESRepLine."VAT Registration No.")); 
+                XmlElem[5].Add(XmlText.Create(VIESRepLine."VAT Registration No."));
 
                 if (VIESRepLine."EU Sales Type" = VIESRepLine."EU Sales Type"::Goods) and
                    (not VIESRepLine."EU 3-Party Trade") and (not VIESRepLine."EU Customs Procedure")
                 then begin
                     XmlElem[5] := XmlElement.Create('B3_T', xmlns);
                     XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount,0,TxtPrec)));
+                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount, 0, PrecisionTok)));
                 end;
 
                 if (VIESRepLine."EU Sales Type" = VIESRepLine."EU Sales Type"::Services) and
@@ -378,32 +378,31 @@ report 13062602 "Export VIES"
                 then begin
                     XmlElem[5] := XmlElement.Create('B6_S', xmlns);
                     XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount,0,TxtPrec)));
-                end;                
+                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount, 0, PrecisionTok)));
+                end;
 
                 if VIESRepLine."EU Customs Procedure" then begin
                     XmlElem[5] := XmlElement.Create('B4_C4263', xmlns);
                     XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount,0,TxtPrec)));
+                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount, 0, PrecisionTok)));
                 end;
 
                 if VIESRepLine."EU 3-Party Trade" then begin
                     XmlElem[5] := XmlElement.Create('B5_T3', xmlns);
                     XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount,0,TxtPrec)));
+                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine.Amount, 0, PrecisionTok)));
                 end;
             until VIESRepLine.Next() = 0;
-        end;       
 
         //export stream file part
-        TmpBlob.Blob.CreateOutStream(outStr, TextEncoding::UTF8);
-        xmlDoc.WriteTo(outStr);
+        TmpBlob.Blob.CreateOutStream(OutStr, TextEncoding::UTF8);
+        xmlDoc.WriteTo(OutStr);
         TmpBlob.Blob.CreateInStream(inStr, TextEncoding::UTF8);
 
         FileName := 'VIES_' + format(VIESRepHead."No.") + '.xml';
         ExpOk := File.DownloadFromStream(InStr, 'Save To File', '', 'All Files (*.*)|*.*', FileName);
 
-        Message(Msg001, FileName);
+        Message(ExportDoneMsg, FileName);
 
     end;
 }

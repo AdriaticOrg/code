@@ -64,7 +64,7 @@ report 13062591 "VAT Book-Adl"
                         trigger OnAfterGetRecord();
                         begin
                             ColumnAmt := 0;
-                            GetCustVendInfo;
+                            GetCustVendInfo();
 
                             if "VAT Book View Line".Operator1 <> "VAT Book View Line".Operator1::" " then
                                 VATBookCalc.CalculateValue(true, ColumnAmt, "VAT Book View Line", "VAT Entry");
@@ -82,7 +82,7 @@ report 13062591 "VAT Book-Adl"
 
                             if VATEntry.GetFilter("VAT Bus. Posting Group") <> '' then
                                 "VAT Entry".Setfilter("VAT Bus. Posting Group", VATEntry.GetFilter("VAT Bus. Posting Group"));
-                            if not FindSet then
+                            if not FindSet() then
                                 NotFoundDetails := true;
                         end;
                     }
@@ -90,15 +90,15 @@ report 13062591 "VAT Book-Adl"
                     trigger OnPreDataItem();
                     begin
                         SetRange("Column No.", "VAT Book Column Name"."Column No.");
-                        if not FindSet then
+                        if not FindSet() then
                             NotFoundDetails := true;
                     end;
                 }
 
                 trigger OnPreDataItem();
                 begin
-                    CompInfo.Get;
-                    if not FindSet then
+                    CompInfo.Get();
+                    if not FindSet() then
                         NotFoundDetails := true;
                 end;
             }
@@ -154,7 +154,7 @@ report 13062591 "VAT Book-Adl"
     begin
         VendCustName := '';
         VATRegNo := '';
-        with "VAT Entry" do begin
+        with "VAT Entry" do
             case Type of
                 Type::Sale:
                     if Customer.Get("Bill-to/Pay-to No.") then begin
@@ -173,7 +173,6 @@ report 13062591 "VAT Book-Adl"
                         VATRegNo := Vendor."VAT Registration No.";
                     end;
             end;
-        end;
     end;
 
 }

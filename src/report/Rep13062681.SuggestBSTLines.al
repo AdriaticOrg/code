@@ -3,18 +3,18 @@ report 13062681 "Suggest BST Lines"
     UsageCategory = Administration;
     ProcessingOnly = true;
     Caption = 'Suggest BST Lines';
-    
+
     dataset
     {
         dataitem("G/L Entry"; "G/L Entry")
         {
-            RequestFilterFields = "Posting Date","Document No.";   
+            RequestFilterFields = "Posting Date", "Document No.";
 
             trigger OnPreDataItem()
             begin
                 if DeleteExisting then begin
                     BSTRepLine.Reset();
-                    BSTRepLine.SetRange("Document No.",BSTRepHead."No.");
+                    BSTRepLine.SetRange("Document No.", BSTRepHead."No.");
                     BSTRepLine.DeleteAll(true);
                 end;
 
@@ -22,25 +22,25 @@ report 13062681 "Suggest BST Lines"
                     NewLineNo += BSTRepLine."Line No";
             end;
 
-            trigger OnAfterGetRecord()  
-            begin                
-                BSTRepLine.SetRange("BST Code","BST Code");
-                if BSTRepLine.FindSet(true,false) then begin
-                    AppendBSTValue(BSTRepLine,"G/L Account No.",Amount);
-                    BSTRepLine.Modify(true);  
+            trigger OnAfterGetRecord()
+            begin
+                BSTRepLine.SetRange("BST Code", "BST Code");
+                if BSTRepLine.FindSet(true, false) then begin
+                    AppendBSTValue(BSTRepLine, "G/L Account No.", Amount);
+                    BSTRepLine.Modify(true);
                 end else begin
                     BSTRepLine.Init();
                     NewLineNo += 10000;
                     BSTRepLine."Document No." := BSTRepHead."No.";
                     BSTRepLine."Line No" := NewLineNo;
-                    BSTRepLine.Validate("BST Code","BST Code");
-                    AppendBSTValue(BSTRepLine,"G/L Account No.",Amount);
+                    BSTRepLine.Validate("BST Code", "BST Code");
+                    AppendBSTValue(BSTRepLine, "G/L Account No.", Amount);
                     BSTRepLine.Insert(true);
-                end;                
+                end;
             end;
         }
     }
-    
+
     requestpage
     {
         layout
@@ -49,61 +49,44 @@ report 13062681 "Suggest BST Lines"
             {
                 group(General)
                 {
-                    field(DeleteExisting;DeleteExisting) {
+                    field(DeleteExisting; DeleteExisting)
+                    {
                         ApplicationArea = All;
                         Caption = 'Delete existing lines';
                     }
                 }
             }
         }
-    
-        actions
-        {
-            area(processing)
-            {
-                action(ActionName)
-                {
-                    ApplicationArea = All;
-                    
-                }
-            }
-        }
     }
 
     var
-        DeleteExisting:Boolean;
-        BSTRepLine:Record "BST Report Line";
-        BSTRepHead:Record "BST Report Header";
-        BSTRepDocNo:Code[20];
-        NewLineNo:Integer;
+        BSTRepLine: Record "BST Report Line";
+        BSTRepHead: Record "BST Report Header";
+        DeleteExisting: Boolean;
+        BSTRepDocNo: Code[20];
+        NewLineNo: Integer;
 
-    procedure SetBSTRepDocNo(BSTDocNoLcl:Code[20]) 
+    procedure SetBSTRepDocNo(BSTDocNoLcl: Code[20])
     begin
-        BSTRepDocNo := BSTDocNoLcl;        
+        BSTRepDocNo := BSTDocNoLcl;
         BSTRepHead.get(BSTRepDocNo);
-    end;          
+    end;
 
-    local procedure AppendBSTValue(var BSTRepLine:Record "BST Report Line";GLAccNo:Code[20];Amt:Decimal)
+    local procedure AppendBSTValue(var BSTRepLine: Record "BST Report Line"; GLAccNo: Code[20]; Amt: Decimal)
     var
-        GLAcc:Record "G/L Account";
+        GLAcc: Record "G/L Account";
     begin
         GLAcc.get(GLAccNo);
         case GLAcc."BST Value Posting" of
             GLAcc."BST Value Posting"::Credit:
-                begin
-                    BSTRepLine."Income Amount" += abs(Amt);                                
-                end;
+                BSTRepLine."Income Amount" += abs(Amt);
             GLAcc."BST Value Posting"::Debit:
-                begin
-                    BSTRepLine."Expense Amount" += abs(Amt); 
-                end;
+                BSTRepLine."Expense Amount" += abs(Amt);
             GLAcc."BST Value Posting"::Both:
-                begin
-                    if Amt > 0 then
-                        BSTRepLine."Income Amount" += Amt
-                    else
-                        BSTRepLine."Expense Amount" += abs(Amt);
-                end;
-        end;        
+                if Amt > 0 then
+                    BSTRepLine."Income Amount" += Amt
+                else
+                    BSTRepLine."Expense Amount" += abs(Amt);
+        end;
     end;
 }
