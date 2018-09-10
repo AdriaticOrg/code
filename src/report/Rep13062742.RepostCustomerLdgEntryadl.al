@@ -12,13 +12,11 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
 
             trigger OnAfterGetRecord();
             var
-                //SubstCustPostingGrp: Record "Subst. Customer Posting Group";
                 Customer: Record Customer;
                 SalesInvoiceHeader: Record "Sales Invoice Header";
                 SalesCrMemoHeader: Record "Sales Cr.Memo Header";
                 ServiceInvoiceHeader: Record "Service Invoice Header";
                 ServiceCrMemoHeader: Record "Service Cr.Memo Header";
-                // PostedSalesPaymentEntry: Record "Posted Sales Payment Entry";
             begin
                 case "Document Type" of
                     "Document Type"::Invoice:
@@ -49,19 +47,16 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
                 CALCFIELDS("Remaining Amount", "Remaining Amt. (LCY)");
 
                 GenJnlLine.INIT;
-                //IF RepostType = RepostType::Fill THEN BEGIN // <FIN.3848/>
                 LineNo += 10000;
                 GenJnlLine."Journal Template Name" := TemplateName;
                 GenJnlLine."Journal Batch Name" := BatchName;
                 GenJnlLine."Line No." := LineNo;
                 GenJnlLine."Source Code" := GenJnlTemplate."Source Code";
-                //END; // <FIN.3848/>
                 if PostingDate <> 0D then
                     GenJnlLine."Posting Date" := PostingDate
                 else
                     GenJnlLine."Posting Date" := "Posting Date";
                 GenJnlLine."Document Date" := "Document Date";
-                //GenJnlLine."VAT Date" := "VAT Date";
                 GenJnlLine."Due Date" := "Due Date";
                 GenJnlLine.Description := Description;
 
@@ -95,12 +90,7 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
                 GenJnlLine.VALIDATE("Currency Code", "Currency Code");
                 GenJnlLine."Source Currency Code" := "Currency Code";
                 GenJnlLine."Applies-to ID" := '';
-                /*
-                IF "Currency Code" = '' THEN
-                  GenJnlLine."Currency Factor" := 1
-                ELSE
-                  GenJnlLine."Currency Factor" := "Original Currency Factor";
-                */
+
                 if GenJnlLine."Source Code" = '' then
                     GenJnlLine."Source Code" := "Source Code";
                 GenJnlLine."Salespers./Purch. Code" := "Salesperson Code";
@@ -108,36 +98,21 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
                 GenJnlLine."Payment Method Code" := "Payment Method Code";
                 GenJnlLine."On Hold" := '';
                 GenJnlLine."Sell-to/Buy-from No." := "Sell-to Customer No.";
-                //GenJnlLine."Country/Region Code" := "Country/Region Code";
                 GenJnlLine.Prepayment := Prepayment;
                 GenJnlLine."Allow Zero-Amount Posting" := true;
-                GenJnlLine."Message to Recipient" := "Message to Recipient";
-                //GenJnlLine."Retail Document" := "Retail Document";
-                // GenJnlLine."Retail Cash Desk Code" := "Retail Cash Desk Code";
-                //GenJnlLine."Show in SKV Other Column" := "Show in SKV Other Column";
-                //GenJnlLine."Book No." := "Export Book No.";
-                //GenJnlLine."Legal Action No." := "Legal Action No.";
-                //GenJnlLine."Posting Group" := "Customer Posting Group";
+                GenJnlLine."Posting Group" := "Customer Posting Group";
                 if ApplyAmount <> 0 then
                     GenJnlLine.VALIDATE(Amount, -("Remaining Amount" / ABS("Remaining Amount")) * ABS(ApplyAmount))
                 else
                     GenJnlLine.VALIDATE(Amount, -"Remaining Amount");
                 GenJnlLine."Applies-to Doc. Type" := "Document Type";
                 GenJnlLine."Applies-to Doc. No." := "Document No.";
-                //GenJnlLine."Applies-to Entry No." := "Entry No.";
-
-                // <FIN.598>
-                //PostedSalesPaymentEntry.GET("Cust. Ledger Entry"."Payment Entry No.");
-                //PreparePaymentEntry(GenJnlLine, PostedSalesPaymentEntry);
-                // </FIN.598>
 
                 GenJnlLine."Sales/Purch. (LCY)" := -"Sales (LCY)";
                 GenJnlLine."Profit (LCY)" := -"Profit (LCY)";
                 GenJnlLine."Inv. Discount (LCY)" := -"Inv. Discount (LCY)";
 
                 GenJnlLine.Correction := Correction;
-                //GenJnlLine.SetFASInstrument;
-                //GenJnlLine.SetFASSource;
                 GenJnlLine.UpdateLineBalance;
                 LineCounter += 1;
                 if RepostType = RepostType::Fill then begin
@@ -148,10 +123,8 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
                     GenJnlLineFirstLine := GenJnlLine;
                 end;
 
-                //IF RepostType = RepostType::Fill THEN BEGIN // <FIN.3848/>
                 LineNo += 10000;
                 GenJnlLine."Line No." := LineNo;
-                //END; // <FIN.3848/>
                 if (NewCustNo <> '') and (NewCustNo <> "Customer No.") then begin
                     Customer.GET(NewCustNo);
                     GenJnlLine."Account No." := NewCustNo;
@@ -162,8 +135,6 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
                         GenJnlLine.Description := Customer.Name;
                 end;
                 if (NewPostingGroup <> '') and (NewPostingGroup <> GenJnlLine."Posting Group") then begin
-                    //SubstCustPostingGrp.TestCustomerPostingGroup
-                    //  (GenJnlLine."Account No.", GenJnlLine."Posting Group", NewPostingGroup, GenJnlLine."Document Type", (GenJnlLine."Prepayment Document" or GenJnlLine.Prepayment));
                     GenJnlLine."Posting Group" := NewPostingGroup;
                 end;
                 if DimChange then begin
@@ -184,13 +155,6 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
                 end;
                 GenJnlLine."Applies-to Doc. Type" := GenJnlLine."Applies-to Doc. Type"::" ";
                 GenJnlLine."Applies-to Doc. No." := '';
-                //GenJnlLine."Applies-to Entry No." := 0;
-
-
-                // <FIN.598>
-                //PostedSalesPaymentEntry.GET("Cust. Ledger Entry"."Payment Entry No.");
-                //PreparePaymentEntry(GenJnlLine, PostedSalesPaymentEntry);
-                // </FIN.598>
 
                 // <FIN.3848>
                 InsertOriginalDocAndVatAmount(GenJnlLine."Document No.", "Cust. Ledger Entry"."Entry No.");
@@ -200,8 +164,6 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
                 GenJnlLine."Profit (LCY)" := 0;
                 GenJnlLine."Inv. Discount (LCY)" := 0;
                 GenJnlLine.Correction := false;
-                //GenJnlLine.SetFASInstrument;
-                //GenJnlLine.SetFASSource;
                 GenJnlLine.UpdateLineBalance;
                 LineCounter += 1;
                 if RepostType = RepostType::Fill then
@@ -233,13 +195,11 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
                 if DimChange and (DimSetID = 0) then
                     ERROR(Text002);
 
-                //IF RepostType = RepostType::Fill THEN BEGIN // <FIN.3848/>
                 GenJnlTemplate.GET(TemplateName);
                 GenJnlLine.SETRANGE("Journal Template Name", TemplateName);
                 GenJnlLine.SETRANGE("Journal Batch Name", BatchName);
                 if GenJnlLine.FINDLAST then
                     LineNo := GenJnlLine."Line No.";
-                //END; // <FIN.3848/>
             end;
         }
     }
@@ -431,7 +391,7 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
 
     procedure UpdateRequestPage();
     begin
-        //FillVisible := RepostType = RepostType::Fill;
+        FillVisible := RepostType = RepostType::Fill;
         FillVisible := true;
         DimVisible := DimChange;
     end;
@@ -447,27 +407,6 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
             BatchName := GenJnlBatch.Name;
     end;
 
-    /*     local procedure PreparePaymentEntry(var GenJournalLine: Record "Gen. Journal Line"; var PostedSalesPaymentEntry: Record "Posted Sales Payment Entry");
-        var
-            PaymentGenJoLineEntry: Record "Payment Gen. Jo. Line Entry";
-        begin
-            PaymentGenJoLineEntry.INIT;
-            PaymentGenJoLineEntry.INSERT(true);
-            PaymentGenJoLineEntry."Account Type" := GenJnlLine."Account Type";
-            PaymentGenJoLineEntry."Account No." := GenJnlLine."Account No.";
-            PaymentGenJoLineEntry."Recipient Bank Account" := PostedSalesPaymentEntry."Customer Bank Account Code";
-            PaymentGenJoLineEntry."Rec. Ref. No. Formula Code" := PostedSalesPaymentEntry."Rec. Ref. No. Formula Code";
-            PaymentGenJoLineEntry."Recipient Model" := PostedSalesPaymentEntry."Recipient Model";
-            PaymentGenJoLineEntry."Recipient Reference" := PostedSalesPaymentEntry."Recipient Reference";
-            PaymentGenJoLineEntry."Remittance Purpose Code" := PostedSalesPaymentEntry."Remittance Purpose Code";
-            PaymentGenJoLineEntry."Payment Basis Code" := PostedSalesPaymentEntry."Payment Basis Code";
-            PaymentGenJoLineEntry."Purpose Category Code" := PostedSalesPaymentEntry."Purpose Category Code";
-            PaymentGenJoLineEntry.MODIFY;
-            PaymentGenJoLineEntry.InitPostedEntry;
-
-            GenJnlLine."Payment Entry No." := PaymentGenJoLineEntry."Entry No.";
-        end; */
-
     local procedure InsertOriginalDocAndVatAmount(DocumentNo: Code[20]; EntryNo: Integer);
     var
         VATEntry: Record "VAT Entry";
@@ -478,7 +417,7 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
         CustLedgerEntryExtDataLineNo: Integer;
     begin
         VATEntry.RESET;
-        //VATEntry.SETCURRENTKEY("Document No.", "VAT Date");
+        VATEntry.SETCURRENTKEY("Document No.", "Posting Date");
         VATEntry.SETRANGE(Type, VATEntry.Type::Sale);
         VATEntry.SETFILTER("Document No.", "Cust. Ledger Entry"."Document No.");
         VATAmount := 0;
