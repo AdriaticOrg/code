@@ -139,9 +139,9 @@ report 13062661 "Suggest KRD Lines"
                         KRDRepLine."Non-Residnet Sector Code" := cle."KRD Non-Residnet Sector Code";
                         KRDRepLine.validate("Country/Region Code",cle."KRD Country/Region Code");
 
-                        if cle."Currency Code" <> RepSISetup."KRD Blank LCY Code" then begin
-                            KRDRepLine.validate("Currency Code",cle."Currency Code");
-                        end else begin
+                        if cle."Currency Code" <> RepSISetup."KRD Blank LCY Code" then
+                            KRDRepLine.validate("Currency Code", cle."Currency Code")
+                        else begin
                             KRDRepLine."Currency Code" := RepSISetup."KRD Blank LCY Code";
                             KRDRepLine."Currency No." := RepSISetup."KRD Blank LCY Num.";
                         end;
@@ -201,7 +201,7 @@ report 13062661 "Suggest KRD Lines"
                         KRDRepLine.validate("Country/Region Code",VLE."KRD Country/Region Code");
 
                         if VLE."Currency Code" <> RepSISetup."KRD Blank LCY Code" then begin
-                            KRDRepLine.validate("Currency Code",VLE."Currency Code");
+                            KRDRepLine.validate("Currency Code", VLE."Currency Code");
                         end else begin
                             KRDRepLine."Currency Code" := RepSISetup."KRD Blank LCY Code";
                             KRDRepLine."Currency No." := RepSISetup."KRD Blank LCY Num.";
