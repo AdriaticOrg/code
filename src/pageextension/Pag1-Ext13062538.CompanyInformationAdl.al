@@ -1,4 +1,4 @@
-pageextension 13062538 "CompanyInfo-adl" extends "Company Information" //1
+pageextension 13062538 "Company Information-Adl" extends "Company Information" //1
 {
     layout
     {

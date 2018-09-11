@@ -1,4 +1,4 @@
-pageextension 13062554 "Chart Of Accounts-adl" extends "Chart of Accounts" //16
+pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
 {
     actions
     {
