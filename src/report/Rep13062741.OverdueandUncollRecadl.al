@@ -187,7 +187,7 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                                 VATAmount := CustLedgerEntryExtData."Original VAT Amount (LCY)";
                             end;
                             if (InvoiceAmount = 0) and (SalesReceivablesSetup."Exteded Data Start Bal. Date" <> 0D) then
-                                ERROR(STRSUBSTNO(Text011, "Entry No."));
+                                Error((StrSubstNo(Text011Txt, "Entry No.")));
                             InvoiceAmount := InvoiceAmount - VATAmount;
                         end;
 
@@ -348,20 +348,20 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
 
                     CustomerVATTypeInteger := 1;
                     if ("Country/Region Code" = '') or ("Country/Region Code" = CompanyInformation."Country/Region Code") then begin
-                        CustomerVATType := Text001;
+                        CustomerVATType := Text001Txt;
                         CustomerVATTypeInteger := 1;
                     end else
                         if CountryRegion.Get("Country/Region Code") then
                             if CountryRegion."EU Country/Region Code" <> '' then begin
-                                CustomerVATType := Text002;
+                                CustomerVATType := Text002Txt;
                                 CustomerVATTypeInteger := 2;
                             end else begin
-                                CustomerVATType := Text003;
+                                CustomerVATType := Text003Txt;
                                 CustomerVATTypeInteger := 3;
                             end;
 
                     if "VAT Registration No." = '' then begin
-                        CustomerVATType := Text003;
+                        CustomerVATType := Text003Txt;
                         CustomerVATTypeInteger := 3;
                     end;
 
@@ -637,9 +637,9 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
         FileMgt: Codeunit "File Management";
         CustomerVATType: Text;
         CustomerVATTypeInteger: Integer;
-        Text001: Label 'VAT Registration No.';
-        Text002: Label 'VAT ID';
-        Text003: Label 'Other';
+        Text001Txt: Label 'VAT Registration No.';
+        Text002Txt: Label 'VAT ID';
+        Text003Txt: Label 'Other';
         InvoiceAmount: Decimal;
         VATAmount: Decimal;
         DocumentNo: Code[20];
@@ -681,7 +681,7 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
         ExportToXML: Boolean;
         ExportFile: File;
         ServerFile: Text;
-        TextError001: Label 'Error creating file on server.';
+        TxtErr: Label 'Error creating file on server.';
         LocalGUID: Text;
         InvoiceExportFile: File;
         InvoiceServerFilename: Text;
@@ -697,20 +697,20 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
         Total7: Decimal;
         Total8: Decimal;
         Total9: Decimal;
-        Text006: Label 'No entries were found to create file.';
+        Text006Txt: Label 'No entries were found to create file.';
         LastSpacePos: Integer;
         CompanyOfficialNo: Code[20];
-        Text007: Label 'Export to XML File';
-        Text008: Label 'XML Files (*.xml)|*.xml|All Files (*.*)|*.*';
+        Text007Txt: Label 'Export to XML File';
+        Text008Txt: Label 'XML Files (*.xml)|*.xml|All Files (*.*)|*.*';
         FileName: Text;
-        Text009: Label 'File is saved on:';
-        Text010: Label '%1 %2';
-        Text011: Label 'Original Invoice Amount (LCY) for Customer Ledger Entry No. %1 cannot be 0 or less.';
+        Text009Txt: Label 'File is saved on:';
+        Text010Txt: Label '%1 %2';
+        Text011Txt: Label 'Original Invoice Amount (LCY) for Customer Ledger Entry No. %1 cannot be 0 or less.';
         DocumentDate: Date;
         TempBufferLineNo: Integer;
         CustomerVATRegNo: Code[20];
-        Text012: Label 'Uncollected_Ovedrue_Entries_%1';
-        Text013: Label 'File %1 was created.';
+        Text012Txt: Label 'Uncollected_Ovedrue_Entries_%1';
+        Text013Txt: Label 'File %1 was created.';
 
     local procedure Add(Name: Text[1024]; Value: Text[1024]): Text[1024];
     begin
