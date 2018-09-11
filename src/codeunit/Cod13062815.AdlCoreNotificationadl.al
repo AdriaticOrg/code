@@ -7,7 +7,7 @@ codeunit 13062815 "Adl Core Notification-adl"
     procedure ShowSetupNotification();
     var
         CoreSetup: Record "CoreSetup-Adl";
-        CoreSetupIsNotRdy: Label 'Adriatic Localization is installed but not setup. Do you want to do this now?';
+        CoreSetupIsNotQst: Label 'Adriatic Localization is installed but not setup. Do you want to do this now?';
         Yes: Label 'Yes';
         DontAskAgain: Label 'No, and please don''t remind me again.';
     begin
@@ -16,7 +16,7 @@ codeunit 13062815 "Adl Core Notification-adl"
         IF not IsCoreSetupNotificationEnabled() then
             exit;
         MyNotification.ID := GetCoreSetupNotificationId();
-        MyNotification.Message := CoreSetupISNotRdy;
+        MyNotification.Message := CoreSetupIsNotQst;
         MyNotification.AddAction(Yes, Codeunit::"Adl Notification Action-adl", 'CoreSetupNotify');
         MyNotification.AddAction(DontAskAgain, Codeunit::"Adl Notification Action-adl", 'DisableCoreSetupNotify');
         MyNotification.Send();

@@ -113,7 +113,6 @@ table 13062812 "ADL Assisted Setup-adl"
     var
         LastId: Integer;
         GroupId: Integer;
-        SortingOption: Option ,,ADLSetup;
         SortingOrder: Integer;
     begin
         SortingOrder := 1;
