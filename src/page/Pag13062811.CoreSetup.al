@@ -70,7 +70,13 @@ page 13062811 "Core Setup"
                 {
                     ApplicationArea = All;
                 }
-                // </adl.26>                
+                // </adl.26>   
+                // </adl.22>
+                field("VIES Enabled"; "VIES Enabled")
+                {
+                    ApplicationArea = All;
+                }
+                // </adl.22>             
             }
         }
     }

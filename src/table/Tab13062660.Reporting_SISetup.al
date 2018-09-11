@@ -71,7 +71,7 @@ table 13062660 "Reporting_SI Setup"
         {
             Caption = 'KRD Blank LCY Num.';
             DataClassification = SystemMetadata;
-        }                
+        }
 
         field(25; "KRD Prep. By User ID"; Text[100])
         {

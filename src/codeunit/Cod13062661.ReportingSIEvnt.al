@@ -17,6 +17,7 @@ codeunit 13062661 "Reporting SI Evnt."
 
         VATEntry."VAT Correction Date" := GenJnlLine."VAT Correction Date";
         VATEntry."EU Customs Procedure" := GenJnlLine."EU Customs Procedure";
+        VATEntry.Modify();
     end;
 
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Post", 'OnBeforePostCustomerEntry', '', false, false)]
@@ -81,7 +82,7 @@ codeunit 13062661 "Reporting SI Evnt."
     end;
 
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitGLEntry', '', true, false)]
-    local procedure OnAfterInitGLEntryFAS(var GLEntry: Record "G/L Entry";GenJournalLine: Record "Gen. Journal Line")
+    local procedure OnAfterInitGLEntryFAS(var GLEntry: Record "G/L Entry"; GenJournalLine: Record "Gen. Journal Line")
     var
         GLAcc: Record "G/L Account";
     begin
@@ -115,8 +116,9 @@ codeunit 13062661 "Reporting SI Evnt."
                 GenJournalLine.TestField("FAS Sector Code", '');
         end;
     end;
+
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitGLEntry', '', true, false)]
-    local procedure OnAfterInitGLEntryBST(var GLEntry: Record "G/L Entry";GenJournalLine: Record "Gen. Journal Line")
+    local procedure OnAfterInitGLEntryBST(var GLEntry: Record "G/L Entry"; GenJournalLine: Record "Gen. Journal Line")
     var
         GLAcc: Record "G/L Account";
     begin
@@ -127,7 +129,7 @@ codeunit 13062661 "Reporting SI Evnt."
 
         GLEntry."BST Code" := GLAcc."BST Code";
     end;
-    
+
     [EventSubscriber(ObjectType::Table, Database::"G/L Entry", 'OnAfterCopyGLEntryFromGenJnlLine', '', true, false)]
     local procedure OnAfterCopyGLEntryFromGenJnlLineBST(var GLEntry: Record "G/L Entry"; var GenJournalLine: Record "Gen. Journal Line")
     var

@@ -20,9 +20,10 @@ pageextension 13062526 "SalesInvoice-Adl" extends "Sales Invoice" //43
             }
             // </adl.10>
             // <adl.22>
-            field("VAT Correction Date";"VAT Correction Date") {
+            field("VAT Correction Date"; "VAT Correction Date")
+            {
                 ApplicationArea = All;
-                Visible = VIESFeatureEnabled;
+                Visible = VATFeatureEnabled;
             }
             // </adl.22>
         }
@@ -43,14 +44,12 @@ pageextension 13062526 "SalesInvoice-Adl" extends "Sales Invoice" //43
         ADLCore: Codeunit "Adl Core";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
-        VIESFeatureEnabled:Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
         VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
-        VIESFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VIES);
         // </adl.0>
     end;
 }

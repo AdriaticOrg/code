@@ -25,6 +25,7 @@ pageextension 13062532 "PostedSalesCreditMemo-Adl" extends "Posted Sales Credit 
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                Editable = false;
             }
             // </adl.22>
         }
@@ -35,13 +36,15 @@ pageextension 13062532 "PostedSalesCreditMemo-Adl" extends "Posted Sales Credit 
             field("Goods Return Type-Adl"; "Goods Return Type-Adl")
             {
                 ApplicationArea = All;
-                Visible = EUCustomsFeatureEnabled;
+                Visible = VIESFeatureEnabled;
+                Editable = false;
             }
             // <adl.22>
             field("EU Customs Procedure"; "EU Customs Procedure")
             {
                 ApplicationArea = All;
-                Visible = EUCustomsFeatureEnabled;
+                Visible = VIESFeatureEnabled;
+                Editable = false;
             }
             // </adl.22>
         }
@@ -98,14 +101,14 @@ pageextension 13062532 "PostedSalesCreditMemo-Adl" extends "Posted Sales Credit 
         ADLCore: Codeunit "Adl Core";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
-        EUCustomsFeatureEnabled: Boolean;
+        VIESFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
         VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
-        EUCustomsFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::EUCustoms);
+        VIESFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VIES);
         // </adl.0>
     end;
 }
