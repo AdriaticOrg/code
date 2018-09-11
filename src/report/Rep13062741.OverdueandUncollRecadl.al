@@ -29,85 +29,85 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
             column(CompanyVATRegistrationNo; CompanyInformation."VAT Registration No.")
             {
             }
-            column(Text004; Text004)
+            column(Text004; Text004txt)
             {
             }
-            column(Text005; STRSUBSTNO(Text005, FORMAT(EndDueDate, 0, '<Day,2>.<Month,2>.<Year4>'), FORMAT(EndPaymentDate, 0, '<Day,2>.<Month,2>.<Year4>')))
+            column(Text005; STRSUBSTNO(Text005Txt, FORMAT(EndDueDate, 0, '<Day,2>.<Month,2>.<Year4>'), FORMAT(EndPaymentDate, 0, '<Day,2>.<Month,2>.<Year4>')))
             {
             }
-            column(TextHeaderI; TextHeaderI)
+            column(TextHeaderI; TextHeaderITxt)
             {
             }
-            column(TextHeaderI1; TextHeaderI1)
+            column(TextHeaderI1; TextHeaderI1Txt)
             {
             }
-            column(TextHeaderI2; TextHeaderI2)
+            column(TextHeaderI2; TextHeaderI2Txt)
             {
             }
-            column(TextHeaderI3; TextHeaderI3)
+            column(TextHeaderI3; TextHeaderI3Txt)
             {
             }
-            column(TextHeaderII; TextHeaderII)
+            column(TextHeaderII; TextHeaderIITxt)
             {
             }
-            column(TextHeaderLine1; TextHeaderLine1)
+            column(TextHeaderLine1; TextHeaderLine1Txt)
             {
             }
-            column(TextHeaderLine2; TextHeaderLine2)
+            column(TextHeaderLine2; TextHeaderLine2Txt)
             {
             }
-            column(TextHeaderLine3; TextHeaderLine3)
+            column(TextHeaderLine3; TextHeaderLine3Txt)
             {
             }
-            column(TextHeaderLine4; TextHeaderLine4)
+            column(TextHeaderLine4; TextHeaderLine4Txt)
             {
             }
-            column(TextHeaderLine5; TextHeaderLine5)
+            column(TextHeaderLine5; TextHeaderLine5Txt)
             {
             }
-            column(TextHeaderLine6; TextHeaderLine6)
+            column(TextHeaderLine6; TextHeaderLine6Txt)
             {
             }
-            column(TextHeaderLine7; TextHeaderLine7)
+            column(TextHeaderLine7; TextHeaderLine7Txt)
             {
             }
-            column(TextHeaderLine8; TextHeaderLine8)
+            column(TextHeaderLine8; TextHeaderLine8Txt)
             {
             }
-            column(TextHeaderLine9; TextHeaderLine9)
+            column(TextHeaderLine9; TextHeaderLine9Txt)
             {
             }
-            column(TextHeaderLine10; TextHeaderLine10)
+            column(TextHeaderLine10; TextHeaderLine10Txt)
             {
             }
-            column(TextHeaderLine11; TextHeaderLine11)
+            column(TextHeaderLine11; TextHeaderLine11Txt)
             {
             }
-            column(TextHeaderLine12; TextHeaderLine12)
+            column(TextHeaderLine12; TextHeaderLine12Txt)
             {
             }
-            column(TextHeaderLine13; TextHeaderLine13)
+            column(TextHeaderLine13; TextHeaderLine13Txt)
             {
             }
-            column(TextHeaderLine14; TextHeaderLine14)
+            column(TextHeaderLine14; TextHeaderLine14Txt)
             {
             }
-            column(TextTotal; TextTotal)
+            column(TextTotal; TextTotalTxt)
             {
             }
-            column(TextTotalUpperCase; TextTotalUpperCase)
+            column(TextTotalUpperCase; TextTotalUpperCaseTxt)
             {
             }
-            column(TextHeaderIII; TextHeaderIII)
+            column(TextHeaderIII; TextHeaderIIITxt)
             {
             }
-            column(TextHeaderIV; TextHeaderIV + FORMAT(WorkDate(), 0, '<Day,2>.<Month,2>.<Year4>'))
+            column(TextHeaderIV; TextHeaderIVTxt + FORMAT(WorkDate(), 0, '<Day,2>.<Month,2>.<Year4>'))
             {
             }
-            column(TextHeaderV; TextHeaderV /* + CompanyOfficial."First Name" + ' ' + CompanyOfficial."Last Name"*/)
+            column(TextHeaderV; TextHeaderVTxt /* + CompanyOfficial."First Name" + ' ' + CompanyOfficial."Last Name"*/)
             {
             }
-            column(TextHeaderVI; TextHeaderVI)
+            column(TextHeaderVI; TextHeaderVITxt)
             {
             }
             dataitem(Customer; Customer)
@@ -358,7 +358,7 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                             end else begin
                                 CustomerVATType := Text003;
                                 CustomerVATTypeInteger := 3;
-                        end;
+                            end;
 
                     if "VAT Registration No." = '' then begin
                         CustomerVATType := Text003;
@@ -651,33 +651,33 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
         RemainingAmount: Decimal;
         RemainingAmountLCY: Decimal;
         CustomerLineNo: Integer;
-        Text004: Label 'STATISTICAL REPORT';
-        Text005: Label 'OF DUE, NOT PAID INVOICES ON DATE %1 WHICH WERE NOT PAID UNTIL %2';
-        TextHeaderI: Label 'I. INFORMATION OF TAX PAYER/APPLICANT OF REPORT';
-        TextHeaderI1: Label 'NAME/FIRST AND LAST NAME:';
-        TextHeaderI2: Label 'VAT REGISTRATION NO.:';
-        TextHeaderI3: Label 'ADDRESS:';
-        TextHeaderII: Label 'II. INFORMATION OF DUE, NONPAID INVOICES ISSUED IN ACCORDANCE WITH VAT LAW';
-        TextHeaderLine1: Label 'LINE NO.';
-        TextHeaderLine2: Label 'VAT REGISTRATION NO. TYPE';
-        TextHeaderLine3: Label 'VAT REGISTRATION NO.';
-        TextHeaderLine4: Label 'NAME/FIRST AND LAST NAME';
-        TextHeaderLine5: Label 'INVOICE LINE NO.';
-        TextHeaderLine6: Label 'INVOICE NO.';
-        TextHeaderLine7: Label 'DATE OF INVOICE';
-        TextHeaderLine8: Label 'INVOICE DUE DATE';
-        TextHeaderLine9: Label 'NO. OF OVERDUE DAYS';
-        TextHeaderLine10: Label 'INVOICE AMOUNT';
-        TextHeaderLine11: Label 'VAT AMOUNT';
-        TextHeaderLine12: Label 'INVOICE AMOUNT INCL. VAT';
-        TextHeaderLine13: Label 'PAID AMOUNT';
-        TextHeaderLine14: Label 'UNPAID AMOUNT';
-        TextTotal: Label 'Total';
-        TextTotalUpperCase: Label 'TOTAL';
-        TextHeaderIII: Label 'III. INFORMATION OF DUE, NONPAID INVOICES ISSUED IN ACCORDANCE WITH OPZ REGULATIONS';
-        TextHeaderIV: Label '"IV. Date: "';
-        TextHeaderV: Label '"V. Created by (first name and last name): "';
-        TextHeaderVI: Label 'VI. Signature:';
+        Text004Txt: Label 'STATISTICAL REPORT';
+        Text005Txt: Label 'OF DUE, NOT PAID INVOICES ON DATE %1 WHICH WERE NOT PAID UNTIL %2';
+        TextHeaderITxt: Label 'I. INFORMATION OF TAX PAYER/APPLICANT OF REPORT';
+        TextHeaderI1Txt: Label 'NAME/FIRST AND LAST NAME:';
+        TextHeaderI2Txt: Label 'VAT REGISTRATION NO.:';
+        TextHeaderI3Txt: Label 'ADDRESS:';
+        TextHeaderIITxt: Label 'II. INFORMATION OF DUE, NONPAID INVOICES ISSUED IN ACCORDANCE WITH VAT LAW';
+        TextHeaderLine1Txt: Label 'LINE NO.';
+        TextHeaderLine2Txt: Label 'VAT REGISTRATION NO. TYPE';
+        TextHeaderLine3Txt: Label 'VAT REGISTRATION NO.';
+        TextHeaderLine4Txt: Label 'NAME/FIRST AND LAST NAME';
+        TextHeaderLine5Txt: Label 'INVOICE LINE NO.';
+        TextHeaderLine6Txt: Label 'INVOICE NO.';
+        TextHeaderLine7Txt: Label 'DATE OF INVOICE';
+        TextHeaderLine8Txt: Label 'INVOICE DUE DATE';
+        TextHeaderLine9Txt: Label 'NO. OF OVERDUE DAYS';
+        TextHeaderLine10Txt: Label 'INVOICE AMOUNT';
+        TextHeaderLine11Txt: Label 'VAT AMOUNT';
+        TextHeaderLine12Txt: Label 'INVOICE AMOUNT INCL. VAT';
+        TextHeaderLine13Txt: Label 'PAID AMOUNT';
+        TextHeaderLine14Txt: Label 'UNPAID AMOUNT';
+        TextTotalTxt: Label 'Total';
+        TextTotalUpperCaseTxt: Label 'TOTAL';
+        TextHeaderIIITxt: Label 'III. INFORMATION OF DUE, NONPAID INVOICES ISSUED IN ACCORDANCE WITH OPZ REGULATIONS';
+        TextHeaderIVTxt: Label '"IV. Date: "';
+        TextHeaderVTxt: Label '"V. Created by (first name and last name): "';
+        TextHeaderVITxt: Label 'VI. Signature:';
         ExportToXML: Boolean;
         ExportFile: File;
         ServerFile: Text;

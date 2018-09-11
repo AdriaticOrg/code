@@ -8,8 +8,8 @@ codeunit 13062816 "Adl Notification Action-adl"
     procedure DisableCoreSetupNotify(var MyNotification: Notification);
     var
         MyNotifications: Record 1518;
-        NotificationID: GUID;
         AdlCoreNotification: Codeunit "Adl Core Notification-adl";
+        NotificationID: GUID;
     begin
         MyNotifications.LockTable();
         NotificationID := MyNotification.ID(AdlCoreNotification.GetCoreSetupNotificationId());  //getid
