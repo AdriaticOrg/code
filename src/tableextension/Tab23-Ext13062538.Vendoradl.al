@@ -1,4 +1,4 @@
-tableextension 13062538 "Vendor-adl" extends Vendor //23
+tableextension 13062538 "Vendor-Adl" extends Vendor //23
 {
     fields
     {

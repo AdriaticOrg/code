@@ -1,4 +1,4 @@
-tableextension 13062534 "GLAccount-adl" extends "G/L Account"  //15
+tableextension 13062534 "G/L Account-Adl" extends "G/L Account"  //15
 {
     fields
     {

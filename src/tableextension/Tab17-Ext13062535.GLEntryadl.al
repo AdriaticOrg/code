@@ -1,4 +1,4 @@
-tableextension 13062535 "GLEntry-adl" extends "G/L Entry" //17
+tableextension 13062535 "G/L Entry-Adl" extends "G/L Entry" //17
 {
     fields
     {
