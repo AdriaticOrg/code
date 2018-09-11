@@ -1,4 +1,4 @@
-tableextension 13062545 "BankAccount-adl" extends "Bank Account" //270
+tableextension 13062545 "Bank Account-Adl" extends "Bank Account" //270
 {
 
     fields

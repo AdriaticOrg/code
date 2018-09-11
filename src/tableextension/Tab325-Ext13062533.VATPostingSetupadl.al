@@ -1,4 +1,4 @@
-tableextension 13062533 "VATPostingSetup-Adl" extends "VAT Posting Setup"  //325
+tableextension 13062533 "VAT Posting Setup-Adl" extends "VAT Posting Setup"  //325
 {
     fields
     {

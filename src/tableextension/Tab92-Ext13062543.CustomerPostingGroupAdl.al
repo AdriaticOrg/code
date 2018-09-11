@@ -1,4 +1,4 @@
-tableextension 13062543 "CustPstGroup-adl" extends "Customer Posting Group" //92
+tableextension 13062543 "Customer Posting Group-Adl" extends "Customer Posting Group" //92
 {
     fields
     {

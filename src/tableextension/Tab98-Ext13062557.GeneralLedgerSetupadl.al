@@ -1,4 +1,4 @@
-tableextension 13062557 "GeneralLedgerSetup-adl" extends "General Ledger Setup" //98
+tableextension 13062557 "General Ledger Setup-Adl" extends "General Ledger Setup" //98
 {
     fields
     {

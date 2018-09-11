@@ -1,4 +1,4 @@
-tableextension 13062544 "VendPstGroup-adl" extends "Vendor Posting Group" //93
+tableextension 13062544 "Vendor Posting Group-Adl" extends "Vendor Posting Group" //93
 {
     fields
     {

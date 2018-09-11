@@ -1,4 +1,4 @@
-tableextension 13062539 "VendLedgEntry-adl" extends "Vendor Ledger Entry" //25
+tableextension 13062539 "Vendor Ledger Entry-Adl" extends "Vendor Ledger Entry" //25
 {
     fields
     {
