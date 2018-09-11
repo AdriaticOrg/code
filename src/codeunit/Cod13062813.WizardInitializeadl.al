@@ -1,4 +1,4 @@
-codeunit 13062813 "ADL Initialize-adl"
+codeunit 13062813 "Wizard Initialize-adl"
 {
     trigger OnRun()
     begin

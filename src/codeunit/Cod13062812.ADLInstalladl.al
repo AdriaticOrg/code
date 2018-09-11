@@ -14,9 +14,10 @@ codeunit 13062812 "ADL Install-adl"
             HandleReinstall();
     end;
 
+
     local procedure HandleFreshInstall();
     var
-        ADLInitialize: Codeunit "ADL Initialize-adl";
+        ADLInitialize: Codeunit "Wizard Initialize-adl";
     begin
         ADLInitialize.Run();
     end;
@@ -36,9 +37,9 @@ codeunit 13062812 "ADL Install-adl"
         if not Company."Evaluation Company" then
             exit;
 
-        //TODO:: Data Clasification
-        //DataClassificationMgt.SetTableFieldsToNormal(Database::"CoreSetup-Adl");
-        // DataClassificationMgt.SetFieldToPersonal(Database::"CoreSetup-Adl", CoreSetup.FieldNo(""));
+        //TODO:: Data Clasification - check sensitive data
+        //DataClassificationMgt.SetTableFieldsToNormal();
+        // DataClassificationMgt.SetFieldToPersonal();
     end;
 
 

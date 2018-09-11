@@ -1,5 +1,8 @@
 codeunit 13062814 "ADL Core Subscriber-adl"
 {
+    var
+        ADLCoreNotification: Codeunit "Adl Core Notification-adl";
+
     [EventSubscriber(ObjectType::Table, Database::"Aggregated Assisted Setup", 'OnRegisterAssistedSetup', '', false, false)]
     local procedure HandleOnRegisterAggregatedSetup(var TempAggregatedAssistedSetup: Record "Aggregated Assisted Setup" temporary)
     var
@@ -30,20 +33,22 @@ codeunit 13062814 "ADL Core Subscriber-adl"
     procedure OnInitializingNotificationWithDefaultStat();
     var
         MyNotifications: Record "My Notifications";
+        AdlCoreNotification: Codeunit "Adl Core Notification-adl";
         SetupADLTxt: Label 'Ask to setup Adriatic Localization.';
-        SetupADLDescriptionTxt: Label 'If you have ADL installed but don''t want to use it, switch off receiving the notification.';
+        SetupADLDescriptionTxt: Label 'If you have installed Adriatic Localization but don''t want to use it, switch off receiving the notification.';
     begin
-        MyNotifications.InsertDefaultWithTableNum('',
-          SetupADLTxt,
-          SetupADLDescriptionTxt,
-          DATABASE::"CoreSetup-Adl");
+        MyNotifications.InsertDefault(AdlCoreNotification.GetCoreSetupNotificationId(),
+             SetupADLTxt,
+             SetupADLDescriptionTxt,
+             true
+        );
     end;
 
-    [EventSubscriber(ObjectType::Page, Page::"Business Manager Role Center", 'OnOpenPageEvent', '', false, false)]
-    local procedure HandleOnPageEventBussinesManagerRC(var Rec: Record "Role Center Notifications")
-    var
-
+    [EventSubscriber(ObjectType::Page, Page::"Headline RC Business Manager", 'OnOpenPageEvent', '', false, false)]
+    local procedure OnRCBusinessManagerOpen(rec: Record "Headline RC Business Manager")
     begin
+        ADLCoreNotification.ShowSetupNotification();
     end;
+
 
 }

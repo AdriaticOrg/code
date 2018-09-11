@@ -48,7 +48,7 @@ page 13062812 "ADL Setup Wizard-adl"
                     group(Group18)
                     {
                         Caption = '';
-                        InstructionalText = 'This assisted setup will guide you through the enabeling configuration of basic company setup, Adriatioc localization and RapidStart configuration.';
+                        InstructionalText = 'This assisted setup will guide you through enabeling diffrent modules of Adriatic Localization and RapidStart configuration.';
                     }
                 }
                 group("Let's go!")
@@ -57,7 +57,7 @@ page 13062812 "ADL Setup Wizard-adl"
                     group(Group22)
                     {
                         Caption = '';
-                        InstructionalText = 'Choose Next so you can set up your core settings, company information and configure rapid start packages';
+                        InstructionalText = 'Choose Next so you can enable core modules of Adriatic Localizatin.';
                     }
                 }
 
@@ -115,7 +115,7 @@ page 13062812 "ADL Setup Wizard-adl"
             group(Step2)
             {
                 Caption = '';
-                InstructionalText = 'Adriatic localization core features';
+                InstructionalText = 'Core features';
                 Visible = Step2Visible;
 
                 group(General)
@@ -125,6 +125,13 @@ page 13062812 "ADL Setup Wizard-adl"
                     {
                         Caption = 'Adriatic Localization Enabled';
                         ApplicationArea = All;
+
+                        trigger OnValidate()
+                        begin
+                            if "ADL Enabled" then
+                                NextActionEnabled := true
+                            else NextActionEnabled := false;
+                        end;
                     }
                 }
                 group(VAT)
@@ -270,7 +277,7 @@ page 13062812 "ADL Setup Wizard-adl"
         MediaResourcesStandard: Record "Media Resources";
         MediaResourcesDone: Record "Media Resources";
         ADLAssistedSetup: Record "ADL Assisted Setup-adl";
-        ADLInitialize: Codeunit "ADL Initialize-adl";
+        ADLInitialize: Codeunit "Wizard Initialize-adl";
         Step: Option Start,Step2,Finish;
         TopBannerVisible: Boolean;
         Step1Visible: Boolean;
@@ -338,12 +345,15 @@ page 13062812 "ADL Setup Wizard-adl"
 
         FinishActionEnabled := false;
         BackActionEnabled := false;
-        NextActionEnabled := false;
+        if AgreePrivacy then
+            NextActionEnabled := true
+        else NextActionEnabled := false;
     end;
 
     local procedure ShowStep2();
     begin
         Step2Visible := true;
+        NextActionEnabled := "ADL Enabled";
     end;
 
     local procedure ShowStep3();
