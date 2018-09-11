@@ -39,5 +39,11 @@ codeunit 13062814 "ADL Core Subscriber-adl"
           DATABASE::"CoreSetup-Adl");
     end;
 
+    [EventSubscriber(ObjectType::Page, Page::"Business Manager Role Center", 'OnOpenPageEvent', '', false, false)]
+    local procedure HandleOnPageEventBussinesManagerRC(var Rec: Record "Role Center Notifications")
+    var
+
+    begin
+    end;
 
 }
