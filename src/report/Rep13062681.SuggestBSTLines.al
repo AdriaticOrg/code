@@ -24,7 +24,7 @@ report 13062681 "Suggest BST Lines"
 
             trigger OnAfterGetRecord()
             begin
-                BSTRepLine.SetRange("BST Code", "BST Code");
+                BSTRepLine.SetRange("BST Code", "BST Code-Adl");
                 if BSTRepLine.FindSet(true, false) then begin
                     AppendBSTValue(BSTRepLine, "G/L Account No.", Amount);
                     BSTRepLine.Modify(true);
@@ -33,7 +33,7 @@ report 13062681 "Suggest BST Lines"
                     NewLineNo += 10000;
                     BSTRepLine."Document No." := BSTRepHead."No.";
                     BSTRepLine."Line No" := NewLineNo;
-                    BSTRepLine.Validate("BST Code", "BST Code");
+                    BSTRepLine.Validate("BST Code", "BST Code-Adl");
                     AppendBSTValue(BSTRepLine, "G/L Account No.", Amount);
                     BSTRepLine.Insert(true);
                 end;
@@ -77,12 +77,12 @@ report 13062681 "Suggest BST Lines"
         GLAcc: Record "G/L Account";
     begin
         GLAcc.get(GLAccNo);
-        case GLAcc."BST Value Posting" of
-            GLAcc."BST Value Posting"::Credit:
+        case GLAcc."BST Value Posting-Adl" of
+            GLAcc."BST Value Posting-Adl"::Credit:
                 BSTRepLine."Income Amount" += abs(Amt);
-            GLAcc."BST Value Posting"::Debit:
+            GLAcc."BST Value Posting-Adl"::Debit:
                 BSTRepLine."Expense Amount" += abs(Amt);
-            GLAcc."BST Value Posting"::Both:
+            GLAcc."BST Value Posting-Adl"::Both:
                 if Amt > 0 then
                     BSTRepLine."Income Amount" += Amt
                 else

@@ -5,43 +5,43 @@ pageextension 13062539 "GLAccountCard-adl" extends "G/L Account Card" //17
         // <adl.24>
         addlast(Reporting)
         {
-            field("FAS Account"; "FAS Account")
+            field("FAS Account"; "FAS Account-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Type"; "FAS Type")
+            field("FAS Type"; "FAS Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Sector Posting"; "FAS Sector Posting")
+            field("FAS Sector Posting"; "FAS Sector Posting-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Instrument Posting"; "FAS Instrument Posting")
+            field("FAS Instrument Posting"; "FAS Instrument Posting-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Sector Code"; "FAS Sector Code")
+            field("FAS Sector Code"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Instrument Code"; "FAS Instrument Code")
+            field("FAS Instrument Code"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
             // <adl.26>
-            field("BST Value Posting"; "BST Value Posting")
+            field("BST Value Posting"; "BST Value Posting-Adl")
             {
                 ApplicationArea = All;
                 Visible = BSTFeatureEnabled;
             }
-            field("BST Code"; "BST Code")
+            field("BST Code"; "BST Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = BSTFeatureEnabled;

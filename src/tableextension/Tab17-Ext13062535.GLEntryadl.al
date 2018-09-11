@@ -3,19 +3,19 @@ tableextension 13062535 "G/L Entry-Adl" extends "G/L Entry" //17
     fields
     {
         // <adl.24>
-        field(13062641; "FAS Instrument Code"; Code[10])
+        field(13062641; "FAS Instrument Code-Adl"; Code[10])
         {
             Caption = 'FAS Instrument Code';
             DataClassification = SystemMetadata;
             TableRelation = "FAS Instrument" where ("Type" = const (Posting));
         }
-        field(13062642; "FAS Sector Code"; Code[10])
+        field(13062642; "FAS Sector Code-Adl"; Code[10])
         {
             Caption = 'FAS Sector Code';
             DataClassification = SystemMetadata;
             TableRelation = "FAS Sector" where ("Type" = const (Posting));
         }
-        field(13062643; "FAS Type"; Option)
+        field(13062643; "FAS Type-Adl"; Option)
         {
             Caption = 'FAS Type';
             OptionMembers = " ",Assets,Liabilities;
@@ -24,7 +24,7 @@ tableextension 13062535 "G/L Entry-Adl" extends "G/L Entry" //17
         }
         // </adl.24>
         // <adl.26>
-        field(13062681; "BST Code"; Code[10])
+        field(13062681; "BST Code-Adl"; Code[10])
         {
             Caption = 'BST Code';
             DataClassification = SystemMetadata;
@@ -35,8 +35,8 @@ tableextension 13062535 "G/L Entry-Adl" extends "G/L Entry" //17
     // <adl.24>
     procedure CopyFASFields(BankAccount: Record "Bank Account")
     begin
-        "FAS Instrument Code" := BankAccount."FAS Instrument Code";
-        "FAS Sector Code" := BankAccount."FAS Sector Code";
+        "FAS Instrument Code-Adl" := BankAccount."FAS Instrument Code";
+        "FAS Sector Code-Adl" := BankAccount."FAS Sector Code";
     end;
     // </adl.24>
 }

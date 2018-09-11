@@ -91,8 +91,8 @@ tableextension 13062542 "Gen. Journal Line-Adl" extends "Gen. Journal Line" // 8
 
     procedure CopyFASFields(GLAccount: Record "G/L Account")
     begin
-        "FAS Sector Code" := GLAccount."FAS Sector Code";
-        "FAS Instrument Code" := GLAccount."FAS Instrument Code";
+        "FAS Sector Code" := GLAccount."FAS Sector Code-Adl";
+        "FAS Instrument Code" := GLAccount."FAS Instrument Code-Adl";
     end;
 
     procedure CopyFASFields(BankAccount: Record "Bank Account")

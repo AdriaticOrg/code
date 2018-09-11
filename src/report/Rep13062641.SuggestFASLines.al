@@ -40,12 +40,12 @@ report 13062641 "Suggest FAS Lines"
             var
                 GLAcc: Record "G/L Account";
             begin
-                if GLAcc.get("G/L Account No.") and GLAcc."FAS Account" then begin
-                    TestField("FAS Type");
+                if GLAcc.get("G/L Account No.") and GLAcc."FAS Account-Adl" then begin
+                    TestField("FAS Type-Adl");
                     FASRepLine.SetRange("Document No.", FASRepDocNo);
-                    FASRepLine.SetRange("Sector Code", "FAS Sector Code");
-                    FASRepLine.SetRange("Instrument Code", "FAS Instrument Code");
-                    FASRepLine.SetRange("FAS Type", "FAS Type");
+                    FASRepLine.SetRange("Sector Code", "FAS Sector Code-Adl");
+                    FASRepLine.SetRange("Instrument Code", "FAS Instrument Code-Adl");
+                    FASRepLine.SetRange("FAS Type", "FAS Type-Adl");
 
                     if FASRepLine.FindSet() then begin
                         FASRepLine."Transactions Amt. in Period" += Amount;
@@ -57,11 +57,11 @@ report 13062641 "Suggest FAS Lines"
                         FASRepLine.Init();
                         FASRepLine."Document No." := FASRepDocNo;
                         FASRepLine."Line No" := NewLineNo;
-                        FASRepLine.validate("Sector Code", "FAS Sector Code");
-                        FASRepLine.validate("Instrument Code", "FAS Instrument Code");
+                        FASRepLine.validate("Sector Code", "FAS Sector Code-Adl");
+                        FASRepLine.validate("Instrument Code", "FAS Instrument Code-Adl");
                         FASRepLine."Transactions Amt. in Period" := Amount;
                         FASRepLine."Changes Amt. in Period" := Amount;
-                        FASRepLine."Period Closing Balance" := GetOpeningBalance("FAS Sector Code", "FAS Instrument Code", "FAS Type") + Amount;
+                        FASRepLine."Period Closing Balance" := GetOpeningBalance("FAS Sector Code-Adl", "FAS Instrument Code-Adl", "FAS Type-Adl") + Amount;
                         FASRepLine.Insert(true);
                     end;
                 end;
@@ -111,9 +111,9 @@ report 13062641 "Suggest FAS Lines"
     begin
         if InitialRep then begin
             OldGLE.Reset();
-            OldGLE.SetRange("FAS Sector Code", SectorCode);
-            OldGLE.SetRange("FAS Instrument Code", InstrumenteCode);
-            OldGLE.SetRange("FAS Type", FASType);
+            OldGLE.SetRange("FAS Sector Code-Adl", SectorCode);
+            OldGLE.SetRange("FAS Instrument Code-Adl", InstrumenteCode);
+            OldGLE.SetRange("FAS Type-Adl", FASType);
             OldGLE.SetFilter("Posting Date", '<=%1', FASREPHead."Period Start Date");
             if OldGLE.FindSet() then
                 repeat
