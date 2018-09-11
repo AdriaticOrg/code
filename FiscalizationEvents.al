@@ -140,11 +140,14 @@ begin
     //END;
 end;
 
-procedure OnAfterInsertSalesInvHeader(VAR SalesInvHeader : Record "Sales Invoice Header";SalesHeader : Record "Sales Header")
+
+[EventSubscriber(ObjectType::Codeunit, 80, 'OnAfterSalesInvHeaderInsert', '', true, true)]
+local procedure OnAfterInsertSalesInvHeader(VAR SalesInvHeader : Record "Sales Invoice Header";SalesHeader : Record "Sales Header")
 begin
   SalesInvHeader."Posting TimeStamp" := CurrentDateTime;
 end;
-procedure OnAfterInsertSalesCrMemoHeader(VAR SalesCrMemoHeader : Record "Sales Cr.Memo Header";SalesHeader : Record "Sales Header")
+[EventSubscriber(ObjectType::Codeunit, 80, 'OnAfterSalesCrMemoHeaderInsert', '', true, true)]
+local procedure OnAfterInsertSalesCrMemoHeader(VAR SalesCrMemoHeader : Record "Sales Cr.Memo Header";SalesHeader : Record "Sales Header")
 begin
   SalesCrMemoHeader."Posting TimeStamp" := CurrentDateTime;
 end;
