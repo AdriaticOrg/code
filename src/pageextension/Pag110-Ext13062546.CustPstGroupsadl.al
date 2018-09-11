@@ -5,17 +5,17 @@ pageextension 13062546 "CustPstGroups-adl" extends "Customer Posting Groups" //1
         addlast(Control1)
         {
             // <adl.25>
-            field("KRD Claim/Liability"; "KRD Claim/Liability")
+            field("KRD Claim/Liability"; "KRD Claim/Liability-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }
-            field("KRD Instrument Type"; "KRD Instrument Type")
+            field("KRD Instrument Type"; "KRD Instrument Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }
-            field("KRD Maturity"; "KRD Maturity")
+            field("KRD Maturity"; "KRD Maturity-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;

@@ -39,18 +39,18 @@ report 13062601 "Suggest VIES Lines"
                 VATPstSetup: Record "VAT Posting Setup";
             begin
                 if not VATPstSetup.get("VAT Bus. Posting Group", "VAT Prod. Posting Group") then exit;
-                if not VATPstSetup."VIES Goods Sales" or VATPstSetup."VIES Service Sales" then exit;
+                if not VATPstSetup."VIES Goods Sales-Adl" or VATPstSetup."VIES Service Sales-Adl" then exit;
                 if not Cust.get("Bill-to/Pay-to No.") then exit;
 
                 Cust.TestField("VAT Registration No.");
                 TestField("Country/Region Code");
 
-                if "VAT Correction Date" = 0D then
+                if "VAT Correction Date-Adl" = 0D then
                     ProcessVATEntry("VAT Entry", Cust, OldViesRepHead, 0)
                 else begin
                     OldViesRepHead.Reset();
-                    OldViesRepHead.SetFilter("Period Start Date", '<=%1', "VAT Correction Date");
-                    OldViesRepHead.SetFilter("Period End Date", '>=%1', "VAT Correction Date");
+                    OldViesRepHead.SetFilter("Period Start Date", '<=%1', "VAT Correction Date-Adl");
+                    OldViesRepHead.SetFilter("Period End Date", '>=%1', "VAT Correction Date-Adl");
                     OldViesRepHead.FindSet();
 
                     ProcessVATEntry("VAT Entry", Cust, OldViesRepHead, 1);
@@ -110,7 +110,7 @@ report 13062601 "Suggest VIES Lines"
         VATSetup: Record "VAT Posting Setup";
     begin
         if not VATSetup.get(VATEntry."VAT Bus. Posting Group", VATEntry."VAT Prod. Posting Group") then exit;
-        if not VATSetup."VIES Goods Sales" or VATSetup."VIES Service Sales" then exit;
+        if not VATSetup."VIES Goods Sales-Adl" or VATSetup."VIES Service Sales-Adl" then exit;
 
         with VATEntry do begin
             VIESRepLine.Reset();
@@ -127,12 +127,12 @@ report 13062601 "Suggest VIES Lines"
             VIESRepLine.SetRange("Country/Region Code", "Country/Region Code");
             VIESRepLine.SetRange("VAT Registration No.", Cust2."VAT Registration No.");
             VIESRepLine.SetRange("EU 3-Party Trade", "EU 3-Party Trade");
-            VIESRepLine.SetRange("EU Customs Procedure", "EU Customs Procedure");
+            VIESRepLine.SetRange("EU Customs Procedure", "EU Customs Procedure-Adl");
 
-            if VATSetup."VIES Goods Sales" then
+            if VATSetup."VIES Goods Sales-Adl" then
                 VIESRepLine.SetRange("EU Sales Type", VIESRepLine."EU Sales Type"::Goods);
 
-            if VATSetup."VIES Service Sales" then
+            if VATSetup."VIES Service Sales-Adl" then
                 VIESRepLine.SetRange("EU Sales Type", VIESRepLine."EU Sales Type"::Services);
 
             if VIESRepLine.FindSet() then begin
@@ -147,12 +147,12 @@ report 13062601 "Suggest VIES Lines"
                 VIESRepLine."Country/Region Code" := "Country/Region Code";
                 VIESRepLine."VAT Registration No." := Cust2."VAT Registration No.";
                 VIESRepLine."EU 3-Party Trade" := "EU 3-Party Trade";
-                VIESRepLine."EU Customs Procedure" := "EU Customs Procedure";
+                VIESRepLine."EU Customs Procedure" := "EU Customs Procedure-Adl";
 
-                if VATSetup."VIES Goods Sales" then
+                if VATSetup."VIES Goods Sales-Adl" then
                     VIESRepLine."EU Sales Type" := VIESRepLine."EU Sales Type"::Goods;
 
-                if VATSetup."VIES Service Sales" then
+                if VATSetup."VIES Service Sales-Adl" then
                     VIESRepLine."EU Sales Type" := VIESRepLine."EU Sales Type"::Services;
 
                 if RepType = RepType::Correction then begin

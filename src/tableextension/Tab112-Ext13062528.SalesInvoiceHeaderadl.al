@@ -18,7 +18,7 @@ tableextension 13062528 "Sales Invoice Header-Adl" extends "Sales Invoice Header
         }
         // </adl.10>
         // <adl.22>
-        field(13062602; "EU Customs Procedure"; Boolean)
+        field(13062602; "EU Customs Procedure-Adl"; Boolean)
         {
             Caption = 'EU Customs Procedure';
             DataClassification = SystemMetadata;

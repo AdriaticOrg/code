@@ -5,19 +5,19 @@ pageextension 13062543 "VendorCard-adl" extends "Vendor Card" //26
         addlast(Invoicing)
         {
             // <adl.24>
-            field("FAS Sector Code"; "FAS Sector Code")
+            field("FAS Sector Code"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
             // </adl.24>
             // <adl.25>
-            field("KRD Non-Residnet Sector Code"; "KRD Non-Residnet Sector Code")
+            field("KRD Non-Residnet Sector Code"; "KRD Non-Residnet Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }
-            field("KRD Affiliation Type";"KRD Affiliation Type") {
+            field("KRD Affiliation Type";"KRD Affiliation Type-Adl") {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }            

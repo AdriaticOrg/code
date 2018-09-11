@@ -7,7 +7,7 @@ pageextension 13062741 "SalesAndReceivablesSetupadl" extends "Sales & Receivable
         {
             group(UnpaidReceivables)
             {
-                field("Exteded Data Start Bal. Date"; "Exteded Data Start Bal. Date")
+                field("Exteded Data Start Bal. Date"; "Exteded Data Start Bal. Date-Adl")
                 {
                     Caption = 'Extended Data Start Balance Date';
                     ApplicationArea = All;

@@ -92,12 +92,12 @@ page 13062663 "KRD Report Subform"
 
                     VLE.Reset();
                     VLE.SetRange("Posting Date", KRDRepHead."Period Start Date", KRDRepHead."Period End Date");
-                    VLE.SetRange("KRD Claim/Liability", "Claim/Liability");
-                    VLE.SetRange("KRD Affiliation Type", "Affiliation Type");
-                    VLE.SetRange("KRD Instrument Type", "Instrument Type");
-                    VLE.SetRange("KRD Maturity", Maturity);
-                    VLE.SetRange("KRD Non-Residnet Sector Code", "Non-Residnet Sector Code");
-                    VLE.SetRange("KRD Country/Region Code", "Country/Region Code");
+                    VLE.SetRange("KRD Claim/Liability-Adl", "Claim/Liability");
+                    VLE.SetRange("KRD Affiliation Type-Adl", "Affiliation Type");
+                    VLE.SetRange("KRD Instrument Type-Adl", "Instrument Type");
+                    VLE.SetRange("KRD Maturity-Adl", Maturity);
+                    VLE.SetRange("KRD Non-Residnet Sector Code-Adl", "Non-Residnet Sector Code");
+                    VLE.SetRange("KRD Country/Region Code-Adl", "Country/Region Code");
                     VLE.SetRange("Currency Code", "Currency Code");
                     PAGE.RunModal(0, VLE);
                 end;
@@ -119,12 +119,12 @@ page 13062663 "KRD Report Subform"
 
                     CLE.Reset();
                     CLE.SetRange("Posting Date", KRDRepHead."Period Start Date", KRDRepHead."Period End Date");
-                    CLE.SetRange("KRD Claim/Liability", "Claim/Liability");
-                    CLE.SetRange("KRD Affiliation Type", "Affiliation Type");
-                    CLE.SetRange("KRD Instrument Type", "Instrument Type");
-                    CLE.SetRange("KRD Maturity", Maturity);
-                    CLE.SetRange("KRD Non-Residnet Sector Code", "Non-Residnet Sector Code");
-                    CLE.SetRange("KRD Country/Region Code", "Country/Region Code");
+                    CLE.SetRange("KRD Claim/Liability-Adl", "Claim/Liability");
+                    CLE.SetRange("KRD Affiliation Type-Adl", "Affiliation Type");
+                    CLE.SetRange("KRD Instrument Type-Adl", "Instrument Type");
+                    CLE.SetRange("KRD Maturity-Adl", Maturity);
+                    CLE.SetRange("KRD Non-Residnet Sector Code-Adl", "Non-Residnet Sector Code");
+                    CLE.SetRange("KRD Country/Region Code-Adl", "Country/Region Code");
                     CLE.SetRange("Currency Code", "Currency Code");
                     PAGE.RunModal(0, CLE);
                 end;

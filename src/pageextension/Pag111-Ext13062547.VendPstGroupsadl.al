@@ -5,17 +5,17 @@ pageextension 13062547 "VendPstGroups-adl" extends "Vendor Posting Groups" //111
         // <adl.25>
         addlast(Control1)
         {
-            field("KRD Claim/Liability"; "KRD Claim/Liability")
+            field("KRD Claim/Liability"; "KRD Claim/Liability-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }
-            field("KRD Instrument Type"; "KRD Instrument Type")
+            field("KRD Instrument Type"; "KRD Instrument Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }
-            field("KRD Maturity"; "KRD Maturity")
+            field("KRD Maturity"; "KRD Maturity-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;

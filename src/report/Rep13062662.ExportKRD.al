@@ -295,34 +295,34 @@ report 13062662 "Export KRD"
 
         XmlElem[7] := XmlElement.Create('Name', xbsrns);
         XmlElem[6].Add(xmlElem[7]);
-        XmlElem[7].Add(XmlText.Create(RespUser."Reporting_SI Name"));
+        XmlElem[7].Add(XmlText.Create(RespUser."Reporting_SI Name-Adl"));
 
         XmlElem[7] := XmlElement.Create('Email', xbsrns);
         XmlElem[6].Add(xmlElem[7]);
-        XmlElem[7].Add(XmlText.Create(RespUser."Reporting_SI Email"));
+        XmlElem[7].Add(XmlText.Create(RespUser."Reporting_SI Email-Adl"));
 
         XmlElem[7] := XmlElement.Create('Telephon', xbsrns);
         XmlElem[6].Add(xmlElem[7]);
-        XmlElem[7].Add(XmlText.Create(RespUser."Reporting_SI Phone"));
+        XmlElem[7].Add(XmlText.Create(RespUser."Reporting_SI Phone-Adl"));
 
         XmlElem[7] := XmlElement.Create('Position', xbsrns);
         XmlElem[6].Add(xmlElem[7]);
-        XmlElem[7].Add(XmlText.Create(RespUser."Reporting_SI Position"));
+        XmlElem[7].Add(XmlText.Create(RespUser."Reporting_SI Position-Adl"));
 
         XmlElem[5] := XmlElement.Create('ReportMaker', xbsrns);
         XmlElem[4].Add(xmlElem[5]);
 
         XmlElem[6] := XmlElement.Create('Name', xbsrns);
         XmlElem[5].Add(xmlElem[6]);
-        XmlElem[6].Add(XmlText.Create(RespUser."Reporting_SI Name"));
+        XmlElem[6].Add(XmlText.Create(RespUser."Reporting_SI Name-Adl"));
 
         XmlElem[6] := XmlElement.Create('Email', xbsrns);
         XmlElem[5].Add(xmlElem[6]);
-        XmlElem[6].Add(XmlText.Create(RespUser."Reporting_SI Email"));
+        XmlElem[6].Add(XmlText.Create(RespUser."Reporting_SI Email-Adl"));
 
         XmlElem[6] := XmlElement.Create('Telephon', xbsrns);
         XmlElem[5].Add(xmlElem[6]);
-        XmlElem[6].Add(XmlText.Create(RespUser."Reporting_SI Phone"));
+        XmlElem[6].Add(XmlText.Create(RespUser."Reporting_SI Phone-Adl"));
 
         XmlElem[4] := XmlElement.Create('ReportSpecifications', xbsrns);
         XmlElem[3].Add(xmlElem[4]);

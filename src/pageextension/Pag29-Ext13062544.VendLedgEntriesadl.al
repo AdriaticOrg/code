@@ -5,44 +5,44 @@ pageextension 13062544 "VendLedgEntries-adl" extends "Vendor Ledger Entries" //2
         addlast(Control1)
         {
             // <adl.24>
-            field("FAS Sector Code"; "FAS Sector Code")
+            field("FAS Sector Code"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
             // </adl.24>
             // <adl.25>
-            field("KRD Non-Residnet Sector Code"; "KRD Non-Residnet Sector Code")
+            field("KRD Non-Residnet Sector Code"; "KRD Non-Residnet Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }
-            field("KRD Affiliation Type"; "KRD Affiliation Type")
+            field("KRD Affiliation Type"; "KRD Affiliation Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }
-            field("KRD Claim/Liability"; "KRD Claim/Liability")
+            field("KRD Claim/Liability"; "KRD Claim/Liability-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }
-            field("KRD Instrument Type"; "KRD Instrument Type")
+            field("KRD Instrument Type"; "KRD Instrument Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }
-            field("KRD Maturity"; "KRD Maturity")
+            field("KRD Maturity"; "KRD Maturity-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }
-            field("KRD Country/Region Code"; "KRD Country/Region Code")
+            field("KRD Country/Region Code"; "KRD Country/Region Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }
-            field("KRD Other Changes"; "KRD Other Changes")
+            field("KRD Other Changes"; "KRD Other Changes-Adl")
             {
                 ApplicationArea = all;
                 Visible = KRDFeatureEnabled;

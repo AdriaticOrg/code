@@ -186,7 +186,7 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                                 InvoiceAmount := CustLedgerEntryExtData."Original Document Amount (LCY)";
                                 VATAmount := CustLedgerEntryExtData."Original VAT Amount (LCY)";
                             end;
-                            if (InvoiceAmount = 0) and (SalesReceivablesSetup."Exteded Data Start Bal. Date" <> 0D) then
+                            if (InvoiceAmount = 0) and (SalesReceivablesSetup."Exteded Data Start Bal. Date-Adl" <> 0D) then
                                 Error((StrSubstNo(Text011Txt, "Entry No.")));
                             InvoiceAmount := InvoiceAmount - VATAmount;
                         end;

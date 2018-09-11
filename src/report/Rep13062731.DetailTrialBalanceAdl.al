@@ -156,13 +156,13 @@ report 13062731 "Detail Trial Balance-Adl"
                         else
                           ClosingEntry := false;
                          // <adl.27>
-                        PostingResponsiblePersonUserID := GeneralLedgerSetup."Global Posting Resp. Person";
-                        PostingApproverUserID := GeneralLedgerSetup."Global Posting Approver";
+                        PostingResponsiblePersonUserID := GeneralLedgerSetup."Global Posting Resp. Person-Adl";
+                        PostingApproverUserID := GeneralLedgerSetup."Global Posting Approver-Adl";
                         if UserSetup.GET("G/L Entry"."User ID") then
                           if UserSetup."Approver ID" <> '' then begin
                             ApproverUserSetup.GET(UserSetup."Approver ID");
-                            PostingResponsiblePersonUserID := ApproverUserSetup."Posting Responsible Person";
-                            PostingApproverUserID := ApproverUserSetup."Posting Approver";
+                            PostingResponsiblePersonUserID := ApproverUserSetup."Posting Responsible Person-Adl";
+                            PostingApproverUserID := ApproverUserSetup."Posting Approver-Adl";
                         end;                        
                         // </adl.27>
                     end;
