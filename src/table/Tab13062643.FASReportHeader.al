@@ -125,6 +125,9 @@ table 13062643 "FAS Report Header"
         }
     }
 
+    var
+        x: Page "Accountant Role Center";
+
     trigger OnInsert()
     begin
         RepSISetup.GET();
