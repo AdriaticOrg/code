@@ -124,21 +124,8 @@ codeunit 13062661 "Reporting SI Evnt."
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::BST) then exit;
 
-        GLAcc.GET(GLEntry."G/L Account No.");
-        if not GLAcc."FAS Account" then exit;
-
-        GLEntry."BST Code" := GLAcc."BST Code";
-    end;
-
-    [EventSubscriber(ObjectType::Table, Database::"G/L Entry", 'OnAfterCopyGLEntryFromGenJnlLine', '', true, false)]
-    local procedure OnAfterCopyGLEntryFromGenJnlLineBST(var GLEntry: Record "G/L Entry"; var GenJournalLine: Record "Gen. Journal Line")
-    var
-        GLAcc: Record "G/L Account";
-    begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::BST) then exit;
-
-
-        GLEntry."BST Code" := GLAcc."BST Code";
+        if GLAcc.GET(GLEntry."G/L Account No.") then
+            GLEntry."BST Code" := GLAcc."BST Code";
     end;
 
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitCustLedgEntry', '', false, false)]

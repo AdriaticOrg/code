@@ -2848,10 +2848,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Suggest KRD Lines - Control DeleteExisting - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 2342850016 - NamedType 782590172" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 2342850016 - NamedType 4079670525" size-unit="char" translate="yes" xml:space="preserve">
           <source>Processing complete</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Suggest KRD Lines - NamedType Msg01</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Suggest KRD Lines - NamedType ProcessingCompleteMsg</note>
         </trans-unit>
         <trans-unit id="Report 3134377883 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export KRD</source>
@@ -3058,10 +3058,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Detail Trial Balance-Adl - ReportLabel EntryNoCaption</note>
         </trans-unit>
-        <trans-unit id="Report 2906589371 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 2906589371 - NamedType 894566561" size-unit="char" translate="yes" xml:space="preserve">
           <source>Period: %1</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Detail Trial Balance-Adl - NamedType Text000</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Detail Trial Balance-Adl - NamedType PeriodLbl</note>
         </trans-unit>
         <trans-unit id="Report 2906589371 - NamedType 3050590124" size-unit="char" translate="yes" xml:space="preserve">
           <source>Detail Trial Balance</source>
@@ -3408,50 +3408,50 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - Control DimSetID - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 1960300502 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1960300502 - NamedType 827052142" size-unit="char" translate="yes" xml:space="preserve">
           <source>Select New Customer No. or New Customer Posting Group or define New Dimension Values.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text001</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType SelectCustomerCustomerPostingGroupErr</note>
         </trans-unit>
-        <trans-unit id="Report 1960300502 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1960300502 - NamedType 481139120" size-unit="char" translate="yes" xml:space="preserve">
           <source>Define dimension values when Dimension Value Change is selected.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text002</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType UndefinedDimensionValueErr</note>
         </trans-unit>
-        <trans-unit id="Report 1960300502 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1960300502 - NamedType 572592439" size-unit="char" translate="yes" xml:space="preserve">
           <source>There are no differences in Customer No., Customer Posting Group or Dimension Values on Ledger Entry No. %1.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text003</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType NoDifferenceInLedgerEntryErr</note>
         </trans-unit>
-        <trans-unit id="Report 1960300502 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1960300502 - NamedType 530922581" size-unit="char" translate="yes" xml:space="preserve">
           <source>The journal lines were successfully filled.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text004</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType JournalLinesFilledMsg</note>
         </trans-unit>
-        <trans-unit id="Report 1960300502 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1960300502 - NamedType 3641032744" size-unit="char" translate="yes" xml:space="preserve">
           <source>The journal lines were successfully posted.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text005</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType JournalLinesPostedMsg</note>
         </trans-unit>
-        <trans-unit id="Report 1960300502 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1960300502 - NamedType 3406413994" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 is not allowed Document Type for reposting.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text006</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType DocumentTypeNotAallowedErr</note>
         </trans-unit>
-        <trans-unit id="Report 1960300502 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1960300502 - NamedType 2574185784" size-unit="char" translate="yes" xml:space="preserve">
           <source>You can not repost customer ledger entry with Document No. %1 due to existing Posted %2.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text007</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType RepostingCLENotAllowedPostedErr</note>
         </trans-unit>
-        <trans-unit id="Report 1960300502 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1960300502 - NamedType 3112034740" size-unit="char" translate="yes" xml:space="preserve">
           <source>You can not repost customer ledger entry with Document No. %1 due to existing Service %2.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text008</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType RepostingCLENotAllowedServiceErr</note>
         </trans-unit>
-        <trans-unit id="Report 1960300502 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1960300502 - NamedType 3366378900" size-unit="char" translate="yes" xml:space="preserve">
           <source>Only one Customer Ledger Entry must be selected when Apply Amount is defined.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType Text009</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Repost Customer Ldg. Entry-adl - NamedType OnlyOneCustomerLedgerEntryErr</note>
         </trans-unit>
         <trans-unit id="Report 1918786967 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales - Invoice</source>
