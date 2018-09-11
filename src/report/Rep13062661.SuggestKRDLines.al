@@ -35,7 +35,7 @@ report 13062661 "Suggest KRD Lines"
                 KRDRepHead."Last Suggest on Date" := Today();
                 KRDRepHead."Last Suggest at Time" := Time();
                 KRDRepHead.Modify(true);
-                Message(Msg01);
+                Message(ProcessingCompleteMsg);
             end;
 
             trigger OnAfterGetRecord()
@@ -73,13 +73,14 @@ report 13062661 "Suggest KRD Lines"
     }
 
     var
-        DeleteExisting:Boolean;
-        KRDRepDocNo:Code[20];
         KRDRepHead:Record "KRD Report Header";
         RepSISetup:Record "Reporting_SI Setup";
+        GenLedgSetup: Record "General Ledger Setup";
+        DeleteExisting: Boolean;
+        KRDRepDocNo: Code[20];
         InitialRep:Boolean;
         NewLineNo:Integer;
-        Msg01:Label 'Processing complete';
+        ProcessingCompleteMsg: Label 'Processing complete';
     procedure SetKRDRepDocNo(KRDDocNoLcl:Code[20]) 
     begin
         KRDRepDocNo := KRDDocNoLcl;
@@ -200,9 +201,9 @@ report 13062661 "Suggest KRD Lines"
                         KRDRepLine."Non-Residnet Sector Code" := VLE."KRD Non-Residnet Sector Code";
                         KRDRepLine.validate("Country/Region Code",VLE."KRD Country/Region Code");
 
-                        if VLE."Currency Code" <> RepSISetup."KRD Blank LCY Code" then begin
-                            KRDRepLine.validate("Currency Code", VLE."Currency Code");
-                        end else begin
+                        if VLE."Currency Code" <> RepSISetup."KRD Blank LCY Code" then
+                            KRDRepLine.validate("Currency Code", VLE."Currency Code")
+                        else begin
                             KRDRepLine."Currency Code" := RepSISetup."KRD Blank LCY Code";
                             KRDRepLine."Currency No." := RepSISetup."KRD Blank LCY Num.";
                         end;                        

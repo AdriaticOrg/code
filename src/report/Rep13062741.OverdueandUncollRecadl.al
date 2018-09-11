@@ -320,27 +320,24 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                             DetailedCustLedgEntry.SetRange("Cust. Ledger Entry No.", CustLedgerEntry."Entry No.");
                             DetailedCustLedgEntry.SetRange("Posting Date", 0D, EndPaymentDate);
 
-                            if DetailedCustLedgEntry.findset() then begin
+                            if DetailedCustLedgEntry.findset() then
                                 repeat
                                     if not (DetailedCustLedgEntry."Entry Type" in [DetailedCustLedgEntry."Entry Type"::"Unrealized Gain",
                                       DetailedCustLedgEntry."Entry Type"::"Unrealized Loss"]) and
-                                      (DetailedCustLedgEntry."Entry Type" <> DetailedCustLedgEntry."Entry Type"::"Initial Entry") then begin
+                                      (DetailedCustLedgEntry."Entry Type" <> DetailedCustLedgEntry."Entry Type"::"Initial Entry") then
                                         RemainingAmount := RemainingAmount + DetailedCustLedgEntry."Amount (LCY)";
-                                    end;
                                 until DetailedCustLedgEntry.Next() = 0;
-                            end;
+
                             DetailedCustLedgEntry.Reset();
                             DetailedCustLedgEntry.SetCurrentKey("Cust. Ledger Entry No.", "Entry Type", "Posting Date");
                             DetailedCustLedgEntry.SetRange("Cust. Ledger Entry No.", CustLedgerEntry."Entry No.");
                             DetailedCustLedgEntry.SetRange("Posting Date", 0D, CustLedgerEntry."Posting Date");
 
-                            if DetailedCustLedgEntry.findset() then begin
+                            if DetailedCustLedgEntry.findset() then
                                 repeat
-                                    if DetailedCustLedgEntry."Entry Type" = DetailedCustLedgEntry."Entry Type"::"Initial Entry" then begin
+                                    if DetailedCustLedgEntry."Entry Type" = DetailedCustLedgEntry."Entry Type"::"Initial Entry" then
                                         RemainingAmount := RemainingAmount + DetailedCustLedgEntry."Amount (LCY)";
-                                    end;
                                 until DetailedCustLedgEntry.Next() = 0;
-                            end;
 
                         until CustLedgerEntry.Next() = 0;
 
@@ -354,14 +351,13 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                         CustomerVATType := Text001;
                         CustomerVATTypeInteger := 1;
                     end else
-                        if CountryRegion.Get("Country/Region Code") then begin
+                        if CountryRegion.Get("Country/Region Code") then
                             if CountryRegion."EU Country/Region Code" <> '' then begin
                                 CustomerVATType := Text002;
                                 CustomerVATTypeInteger := 2;
                             end else begin
                                 CustomerVATType := Text003;
                                 CustomerVATTypeInteger := 3;
-                            end;
                         end;
 
                     if "VAT Registration No." = '' then begin
@@ -628,19 +624,27 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
 
     var
         CompanyInformation: Record "Company Information";
+        CompanyOfficial: Record "Company Information";
+        SalesReceivablesSetup: Record "Sales & Receivables Setup";
+        CustLedgerEntry: Record "Cust. Ledger Entry";
+        CLEForFilter: Record "Cust. Ledger Entry";
+        DetailedCustLedgEntry: Record "Detailed Cust. Ledg. Entry";
+        VATEntry: Record "VAT Entry";
+        CountryRegion: Record "Country/Region";
+        TempOverdueandUncollectedBufferHeader: Record "Overdue and Uncol. Buffer-adl" temporary;
+        TempOverdueandUncollectedBuffer: Record "Overdue and Uncol. Buffer-adl" temporary;
+        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-adl";
+        FileMgt: Codeunit "File Management";
         CustomerVATType: Text;
         CustomerVATTypeInteger: Integer;
-        VATEntry: Record "VAT Entry";
         Text001: Label 'VAT Registration No.';
         Text002: Label 'VAT ID';
         Text003: Label 'Other';
-        CountryRegion: Record "Country/Region";
         InvoiceAmount: Decimal;
         VATAmount: Decimal;
         DocumentNo: Code[20];
         NoOfOverdueDays: Integer;
         LineNo: Integer;
-        DetailedCustLedgEntry: Record "Detailed Cust. Ledg. Entry";
         StartDate: Date;
         EndDueDate: Date;
         EndPaymentDate: Date;
@@ -677,7 +681,6 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
         ExportToXML: Boolean;
         ExportFile: File;
         ServerFile: Text;
-        FileMgt: Codeunit "File Management";
         TextError001: Label 'Error creating file on server.';
         LocalGUID: Text;
         InvoiceExportFile: File;
@@ -696,21 +699,14 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
         Total9: Decimal;
         Text006: Label 'No entries were found to create file.';
         LastSpacePos: Integer;
-        CompanyOfficial: Record "Company Information";
         CompanyOfficialNo: Code[20];
         Text007: Label 'Export to XML File';
         Text008: Label 'XML Files (*.xml)|*.xml|All Files (*.*)|*.*';
         FileName: Text;
         Text009: Label 'File is saved on:';
         Text010: Label '%1 %2';
-        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-adl";
         Text011: Label 'Original Invoice Amount (LCY) for Customer Ledger Entry No. %1 cannot be 0 or less.';
-        SalesReceivablesSetup: Record "Sales & Receivables Setup";
-        CustLedgerEntry: Record "Cust. Ledger Entry";
-        CLEForFilter: Record "Cust. Ledger Entry";
         DocumentDate: Date;
-        TempOverdueandUncollectedBufferHeader: Record "Overdue and Uncol. Buffer-adl" temporary;
-        TempOverdueandUncollectedBuffer: Record "Overdue and Uncol. Buffer-adl" temporary;
         TempBufferLineNo: Integer;
         CustomerVATRegNo: Code[20];
         Text012: Label 'Uncollected_Ovedrue_Entries_%1';

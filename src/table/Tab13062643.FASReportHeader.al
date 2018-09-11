@@ -126,6 +126,8 @@ table 13062643 "FAS Report Header"
     }
 
     trigger OnInsert()
+    var
+        ADLCore: Codeunit "Adl Core";
     begin
         RepSISetup.GET();
         IF "No." = '' THEN BEGIN
@@ -138,7 +140,7 @@ table 13062643 "FAS Report Header"
 
         "Prep. By User ID" := RepSISetup."FAS Prep. By User ID";
         "Resp. User ID" := RepSISetup."FAS Resp. User ID";
-        "User ID" := UserId();
+        "User ID" := ADLCore.TrimmedUserID50();
     end;
 
     trigger OnModify()

@@ -11,10 +11,10 @@ report 13062731 "Detail Trial Balance-Adl"
             DataItemTableView = WHERE("Account Type"=CONST(Posting));
             PrintOnlyIfDetail = true;
             RequestFilterFields = "No.","Search Name","Income/Balance","Debit/Credit","Date Filter";
-            column(PeriodGLDtFilter;STRSUBSTNO(Text000,GLDateFilter))
+            column(PeriodGLDtFilter; STRSUBSTNO(PeriodLbl, GLDateFilter))
             {
             }
-            column(CompanyName;COMPANYPROPERTY.DISPLAYNAME)
+            column(CompanyName; COMPANYPROPERTY.DISPLAYNAME())
             {
             }
             column(ExcludeBalanceOnly;ExcludeBalanceOnly)
@@ -32,7 +32,7 @@ report 13062731 "Detail Trial Balance-Adl"
             column(PrintOnlyCorrections;PrintOnlyCorrections)
             {
             }
-            column(GLAccTableCaption;TABLECAPTION + ': ' + GLFilter)
+            column(GLAccTableCaption; TABLECAPTION() + ': ' + GLFilter)
             {
             }
             column(GLFilter;GLFilter)
@@ -141,9 +141,9 @@ report 13062731 "Detail Trial Balance-Adl"
                     begin
                         if PrintOnlyCorrections then
                           if not (("Debit Amount" < 0) or ("Credit Amount" < 0)) then
-                            CurrReport.SKIP;
+                                CurrReport.SKIP();
                         if not PrintReversedEntries and Reversed then
-                          CurrReport.SKIP;
+                            CurrReport.SKIP();
                          GLBalance := GLBalance + Amount;
                         if ("Posting Date" = CLOSINGDATE("Posting Date")) and
                            not PrintClosingEntries
@@ -158,12 +158,11 @@ report 13062731 "Detail Trial Balance-Adl"
                          // <adl.27>
                         PostingResponsiblePersonUserID := GeneralLedgerSetup."Global Posting Resp. Person";
                         PostingApproverUserID := GeneralLedgerSetup."Global Posting Approver";
-                        if UserSetup.GET("G/L Entry"."User ID") then begin
+                        if UserSetup.GET("G/L Entry"."User ID") then
                           if UserSetup."Approver ID" <> '' then begin
                             ApproverUserSetup.GET(UserSetup."Approver ID");
                             PostingResponsiblePersonUserID := ApproverUserSetup."Posting Responsible Person";
                             PostingApproverUserID := ApproverUserSetup."Posting Approver";
-                          end;
                         end;                        
                         // </adl.27>
                     end;
@@ -185,7 +184,7 @@ report 13062731 "Detail Trial Balance-Adl"
                 if GLDateFilter <> '' then begin
                   Date.SETRANGE("Period Type",Date."Period Type"::Date);
                   Date.SETFILTER("Period Start",GLDateFilter);
-                  if Date.FINDFIRST then begin
+                    if Date.FINDFIRST() then begin
                     SETRANGE("Date Filter",0D,CLOSINGDATE(Date."Period Start" - 1));
                     CALCFIELDS("Net Change");
                     StartBalance := "Net Change";
@@ -193,9 +192,9 @@ report 13062731 "Detail Trial Balance-Adl"
                   end;
                 end;
                  if PrintOnlyOnePerPage then begin
-                  GLEntry.RESET;
+                    GLEntry.RESET();
                   GLEntry.SETRANGE("G/L Account No.","No.");
-                  if GLEntry.FINDFIRST then
+                    if GLEntry.FINDFIRST() then
                     PageGroupNo := PageGroupNo + 1;
                 end;
             end;
@@ -256,17 +255,19 @@ report 13062731 "Detail Trial Balance-Adl"
     }
      labels
     {
-        PostingDateCaption = 'Posting Date';DocNoCaption = 'Document No.';DescCaption = 'Description';VATAmtCaption = 'VAT Amount';EntryNoCaption = 'Entry No.';}
+        PostingDateCaption = 'Posting Date'; DocNoCaption = 'Document No.'; DescCaption = 'Description'; VATAmtCaption = 'VAT Amount'; EntryNoCaption = 'Entry No.';
+    }
      trigger OnPreReport();
     begin
-        GLFilter := "G/L Account".GETFILTERS;
+        GLFilter := "G/L Account".GETFILTERS();
         GLDateFilter := "G/L Account".GETFILTER("Date Filter");
          // <adl.27>
-        GeneralLedgerSetup.GET;
+        GeneralLedgerSetup.GET();
         // </adl.27>
     end;
      var
-        Text000 : Label 'Period: %1';
+        GeneralLedgerSetup: Record "General Ledger Setup";
+        PeriodLbl: Label 'Period: %1';
         GLDateFilter : Text;
         GLFilter : Text;
         GLBalance : Decimal;
@@ -287,7 +288,6 @@ report 13062731 "Detail Trial Balance-Adl"
         GLEntryDebitAmtCaptionLbl : Label 'Debit';
         GLEntryCreditAmtCaptionLbl : Label 'Credit';
         GLBalCaptionLbl : Label 'Balance';
-        GeneralLedgerSetup : Record "General Ledger Setup";
         PostingResponsiblePersonUserID : Code[50];
         PostingApproverUserID : Code[50];
         PostingUserLbl : Label 'Posting User';

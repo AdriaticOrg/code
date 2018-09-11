@@ -23,30 +23,30 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
                         begin
                             SalesInvoiceHeader.SETRANGE("No.", "Document No.");
                             SalesInvoiceHeader.SETRANGE("Posting Date", "Posting Date");
-                            if not SalesInvoiceHeader.ISEMPTY then
-                                ERROR(Text007, "Document No.", "Document Type");
+                            if not SalesInvoiceHeader.ISEMPTY() then
+                                ERROR(RepostingCLENotAllowedPostedErr, "Document No.", "Document Type");
                             ServiceInvoiceHeader.SETRANGE("No.", "Document No.");
                             ServiceInvoiceHeader.SETRANGE("Posting Date", "Posting Date");
-                            if not ServiceInvoiceHeader.ISEMPTY then
-                                ERROR(Text008, "Document No.", "Document Type");
+                            if not ServiceInvoiceHeader.ISEMPTY() then
+                                ERROR(RepostingCLENotAllowedServiceErr, "Document No.", "Document Type");
                         end;
                     "Document Type"::"Credit Memo":
                         begin
                             SalesCrMemoHeader.SETRANGE("No.", "Document No.");
                             SalesCrMemoHeader.SETRANGE("Posting Date", "Posting Date");
                             if not SalesCrMemoHeader.ISEMPTY then
-                                ERROR(Text007, "Document No.", "Document Type");
+                                ERROR(RepostingCLENotAllowedPostedErr, "Document No.", "Document Type");
                             ServiceCrMemoHeader.SETRANGE("No.", "Document No.");
                             ServiceCrMemoHeader.SETRANGE("Posting Date", "Posting Date");
                             if not ServiceCrMemoHeader.ISEMPTY then
-                                ERROR(Text008, "Document No.", "Document Type");
+                                ERROR(RepostingCLENotAllowedServiceErr, "Document No.", "Document Type");
                         end;
                 end;
 
                 TESTFIELD(Open);
                 CALCFIELDS("Remaining Amount", "Remaining Amt. (LCY)");
 
-                GenJnlLine.INIT;
+                GenJnlLine.INIT();
                 LineNo += 10000;
                 GenJnlLine."Journal Template Name" := TemplateName;
                 GenJnlLine."Journal Batch Name" := BatchName;
@@ -83,7 +83,7 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
                     "Document Type"::Refund:
                         GenJnlLine."Document Type" := GenJnlLine."Document Type"::Payment;
                     else
-                        ERROR(Text006, "Document Type");
+                        ERROR(DocumentTypeNotAallowedErr, "Document Type");
                 end;
                 GenJnlLine."Document No." := "Document No.";
                 GenJnlLine."External Document No." := "External Document No.";
@@ -113,11 +113,11 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
                 GenJnlLine."Inv. Discount (LCY)" := -"Inv. Discount (LCY)";
 
                 GenJnlLine.Correction := Correction;
-                GenJnlLine.UpdateLineBalance;
+                GenJnlLine.UpdateLineBalance();
                 LineCounter += 1;
-                if RepostType = RepostType::Fill then begin
-                    GenJnlLine.INSERT
-                end else begin
+                if RepostType = RepostType::Fill then
+                    GenJnlLine.INSERT()
+                else begin
                     GenJnlLine."Recurring Method" := 1;
 
                     GenJnlLineFirstLine := GenJnlLine;
@@ -134,9 +134,9 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
                     if DescSameAsName then
                         GenJnlLine.Description := Customer.Name;
                 end;
-                if (NewPostingGroup <> '') and (NewPostingGroup <> GenJnlLine."Posting Group") then begin
+                if (NewPostingGroup <> '') and (NewPostingGroup <> GenJnlLine."Posting Group") then
                     GenJnlLine."Posting Group" := NewPostingGroup;
-                end;
+
                 if DimChange then begin
                     GenJnlLine."Shortcut Dimension 1 Code" := GlobalDim1;
                     GenJnlLine."Shortcut Dimension 2 Code" := GlobalDim2;
@@ -144,7 +144,7 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
                 end;
 
                 if (GenJnlLine."Account No." = "Customer No.") and (GenJnlLine."Posting Group" = "Customer Posting Group") and (GenJnlLine."Dimension Set ID" = "Dimension Set ID") then
-                    ERROR(Text003, "Entry No.");
+                    ERROR(NoDifferenceInLedgerEntryErr, "Entry No.");
 
                 GenJnlLine."Document Type" := "Document Type";
                 if ApplyAmount <> 0 then
@@ -164,10 +164,10 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
                 GenJnlLine."Profit (LCY)" := 0;
                 GenJnlLine."Inv. Discount (LCY)" := 0;
                 GenJnlLine.Correction := false;
-                GenJnlLine.UpdateLineBalance;
+                GenJnlLine.UpdateLineBalance();
                 LineCounter += 1;
                 if RepostType = RepostType::Fill then
-                    GenJnlLine.INSERT
+                    GenJnlLine.INSERT()
                 else begin
                     GenJnlPostLine.RunWithCheck(GenJnlLineFirstLine);
                     GenJnlPostLine.RunWithCheck(GenJnlLine);
@@ -179,26 +179,26 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
             begin
                 if LineCounter <> 0 then
                     if RepostType = RepostType::Fill then
-                        MESSAGE(Text004, FORMAT(LineCounter))
+                        MESSAGE(JournalLinesFilledMsg, FORMAT(LineCounter))
                     else
-                        MESSAGE(Text005, FORMAT(LineCounter));
+                        MESSAGE(JournalLinesPostedMsg, FORMAT(LineCounter));
             end;
 
             trigger OnPreDataItem();
             begin
                 if (NewCustNo = '') and (NewPostingGroup = '') and (DimChange and (DimSetID = 0)) then
-                    ERROR(Text001);
+                    ERROR(SelectCustomerCustomerPostingGroupErr);
 
-                if (ApplyAmount <> 0) and (COUNT <> 1) then
-                    ERROR(Text009);
+                if (ApplyAmount <> 0) and (COUNT() <> 1) then
+                    ERROR(OnlyOneCustomerLedgerEntryErr);
 
                 if DimChange and (DimSetID = 0) then
-                    ERROR(Text002);
+                    ERROR(UndefinedDimensionValueErr);
 
                 GenJnlTemplate.GET(TemplateName);
                 GenJnlLine.SETRANGE("Journal Template Name", TemplateName);
                 GenJnlLine.SETRANGE("Journal Batch Name", BatchName);
-                if GenJnlLine.FINDLAST then
+                if GenJnlLine.FINDLAST() then
                     LineNo := GenJnlLine."Line No.";
             end;
         }
@@ -241,7 +241,7 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
 
                         trigger OnValidate();
                         begin
-                            UpdateRequestPage;
+                            UpdateRequestPage();
                         end;
                     }
                     field(ApplyAmount; ApplyAmount)
@@ -271,7 +271,7 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
 
                             trigger OnLookup(Text: Text): Boolean;
                             begin
-                                LookupBatch;
+                                LookupBatch();
                             end;
 
                             trigger OnValidate();
@@ -286,7 +286,7 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
 
                         trigger OnValidate();
                         begin
-                            UpdateRequestPage;
+                            UpdateRequestPage();
                         end;
                     }
                     group(Control1000000009)
@@ -345,7 +345,7 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
 
         trigger OnOpenPage();
         begin
-            UpdateRequestPage;
+            UpdateRequestPage();
         end;
     }
 
@@ -354,6 +354,12 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
     }
 
     var
+        GenJnlLine: Record "Gen. Journal Line";
+        GenJnlLineFirstLine: Record "Gen. Journal Line";
+        GenJnlTemplate: Record "Gen. Journal Template";
+        GenJnlManagement: Codeunit GenJnlManagement;
+        DimMgt: Codeunit DimensionManagement;
+        GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line";
         [InDataSet]
         FillVisible: Boolean;
         [InDataSet]
@@ -370,23 +376,17 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
         GlobalDim2: Code[20];
         DimSetID: Integer;
         LineNo: Integer;
-        GenJnlLine: Record "Gen. Journal Line";
-        GenJnlLineFirstLine: Record "Gen. Journal Line";
-        GenJnlManagement: Codeunit GenJnlManagement;
-        DimMgt: Codeunit DimensionManagement;
-        GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line";
-        Text001: Label 'Select New Customer No. or New Customer Posting Group or define New Dimension Values.';
-        Text002: Label 'Define dimension values when Dimension Value Change is selected.';
-        Text003: Label 'There are no differences in Customer No., Customer Posting Group or Dimension Values on Ledger Entry No. %1.';
-        Text004: Label 'The journal lines were successfully filled.';
+        SelectCustomerCustomerPostingGroupErr: Label 'Select New Customer No. or New Customer Posting Group or define New Dimension Values.';
+        UndefinedDimensionValueErr: Label 'Define dimension values when Dimension Value Change is selected.';
+        NoDifferenceInLedgerEntryErr: Label 'There are no differences in Customer No., Customer Posting Group or Dimension Values on Ledger Entry No. %1.';
+        JournalLinesFilledMsg: Label 'The journal lines were successfully filled.';
         LineCounter: Integer;
-        Text005: Label 'The journal lines were successfully posted.';
-        Text006: Label '%1 is not allowed Document Type for reposting.';
-        GenJnlTemplate: Record "Gen. Journal Template";
-        Text007: Label 'You can not repost customer ledger entry with Document No. %1 due to existing Posted %2.';
-        Text008: Label 'You can not repost customer ledger entry with Document No. %1 due to existing Service %2.';
+        JournalLinesPostedMsg: Label 'The journal lines were successfully posted.';
+        DocumentTypeNotAallowedErr: Label '%1 is not allowed Document Type for reposting.';
+        RepostingCLENotAllowedPostedErr: Label 'You can not repost customer ledger entry with Document No. %1 due to existing Posted %2.';
+        RepostingCLENotAllowedServiceErr: Label 'You can not repost customer ledger entry with Document No. %1 due to existing Service %2.';
         ApplyAmount: Decimal;
-        Text009: Label 'Only one Customer Ledger Entry must be selected when Apply Amount is defined.';
+        OnlyOneCustomerLedgerEntryErr: Label 'Only one Customer Ledger Entry must be selected when Apply Amount is defined.';
         DescSameAsName: Boolean;
 
     procedure UpdateRequestPage();
@@ -410,24 +410,24 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
     local procedure InsertOriginalDocAndVatAmount(DocumentNo: Code[20]; EntryNo: Integer);
     var
         VATEntry: Record "VAT Entry";
-        InvoiceAmount: Decimal;
-        VATAmount: Decimal;
         CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-adl";
         CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-adl";
+        InvoiceAmount: Decimal;
+        VATAmount: Decimal;
         CustLedgerEntryExtDataLineNo: Integer;
     begin
-        VATEntry.RESET;
+        VATEntry.RESET();
         VATEntry.SETCURRENTKEY("Document No.", "Posting Date");
         VATEntry.SETRANGE(Type, VATEntry.Type::Sale);
         VATEntry.SETFILTER("Document No.", "Cust. Ledger Entry"."Document No.");
         VATAmount := 0;
         InvoiceAmount := 0;
-        if VATEntry.FINDSET then begin
+        if VATEntry.FINDSET() then
             repeat
                 InvoiceAmount := InvoiceAmount - VATEntry.Base;
                 VATAmount := VATAmount - VATEntry.Amount;
-            until VATEntry.NEXT = 0;
-        end else begin
+            until VATEntry.NEXT() = 0
+        else begin
             if CustLedgerEntryExtData.GET(EntryNo, false) then begin
                 InvoiceAmount := CustLedgerEntryExtData."Original Document Amount (LCY)";
                 VATAmount := CustLedgerEntryExtData."Original VAT Amount (LCY)";
@@ -436,58 +436,58 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
         end;
 
         if InvoiceAmount <> 0 then begin
-            CustLedgerEntryExtData.RESET;
+            CustLedgerEntryExtData.RESET();
             CustLedgerEntryExtData.SETCURRENTKEY("Journal Template Name", "Journal Batch Name", "Line No.");
             CustLedgerEntryExtData.SETRANGE("Journal Template Name", GenJnlLine."Journal Template Name");
             CustLedgerEntryExtData.SETRANGE("Journal Batch Name", GenJnlLine."Journal Batch Name");
             CustLedgerEntryExtData.SETRANGE("Line No.", GenJnlLine."Line No.");
-            if CustLedgerEntryExtData.FINDFIRST then begin
+            if CustLedgerEntryExtData.FINDFIRST() then begin
                 CustLedgerEntryExtData."Original Document Amount (LCY)" := InvoiceAmount + VATAmount;
-                CustLedgerEntryExtData.MODIFY;
+                CustLedgerEntryExtData.MODIFY();
             end else begin
-                CustLedgerEntryExtData2.RESET;
+                CustLedgerEntryExtData2.RESET();
                 CustLedgerEntryExtData2.SETRANGE("Is Journal Line", true);
-                if CustLedgerEntryExtData2.FINDLAST then
+                if CustLedgerEntryExtData2.FINDLAST() then
                     CustLedgerEntryExtDataLineNo := CustLedgerEntryExtData2."Entry No." + 1
                 else
                     CustLedgerEntryExtDataLineNo := 1;
-                CustLedgerEntryExtData2.RESET;
-                CustLedgerEntryExtData2.INIT;
+                CustLedgerEntryExtData2.RESET();
+                CustLedgerEntryExtData2.INIT();
                 CustLedgerEntryExtData2."Entry No." := CustLedgerEntryExtDataLineNo;
                 CustLedgerEntryExtData2."Is Journal Line" := true;
                 CustLedgerEntryExtData2."Journal Template Name" := GenJnlLine."Journal Template Name";
                 CustLedgerEntryExtData2."Journal Batch Name" := GenJnlLine."Journal Batch Name";
                 CustLedgerEntryExtData2."Line No." := GenJnlLine."Line No.";
                 CustLedgerEntryExtData2."Original Document Amount (LCY)" := InvoiceAmount + VATAmount;
-                CustLedgerEntryExtData2.INSERT;
+                CustLedgerEntryExtData2.INSERT();
             end;
         end;
 
         if VATAmount <> 0 then begin
-            CustLedgerEntryExtData.RESET;
+            CustLedgerEntryExtData.RESET();
             CustLedgerEntryExtData.SETCURRENTKEY("Journal Template Name", "Journal Batch Name", "Line No.");
             CustLedgerEntryExtData.SETRANGE("Journal Template Name", GenJnlLine."Journal Template Name");
             CustLedgerEntryExtData.SETRANGE("Journal Batch Name", GenJnlLine."Journal Batch Name");
             CustLedgerEntryExtData.SETRANGE("Line No.", GenJnlLine."Line No.");
-            if CustLedgerEntryExtData.FINDFIRST then begin
+            if CustLedgerEntryExtData.FINDFIRST() then begin
                 CustLedgerEntryExtData."Original VAT Amount (LCY)" := VATAmount;
-                CustLedgerEntryExtData.MODIFY;
+                CustLedgerEntryExtData.MODIFY();
             end else begin
-                CustLedgerEntryExtData2.RESET;
+                CustLedgerEntryExtData2.RESET();
                 CustLedgerEntryExtData2.SETRANGE("Is Journal Line", true);
-                if CustLedgerEntryExtData2.FINDLAST then
+                if CustLedgerEntryExtData2.FINDLAST() then
                     CustLedgerEntryExtDataLineNo := CustLedgerEntryExtData2."Entry No." + 1
                 else
                     CustLedgerEntryExtDataLineNo := 1;
-                CustLedgerEntryExtData2.RESET;
-                CustLedgerEntryExtData2.INIT;
+                CustLedgerEntryExtData2.RESET();
+                CustLedgerEntryExtData2.INIT();
                 CustLedgerEntryExtData2."Entry No." := CustLedgerEntryExtDataLineNo;
                 CustLedgerEntryExtData2."Is Journal Line" := true;
                 CustLedgerEntryExtData2."Journal Template Name" := GenJnlLine."Journal Template Name";
                 CustLedgerEntryExtData2."Journal Batch Name" := GenJnlLine."Journal Batch Name";
                 CustLedgerEntryExtData2."Line No." := GenJnlLine."Line No.";
                 CustLedgerEntryExtData2."Original VAT Amount (LCY)" := VATAmount;
-                CustLedgerEntryExtData2.INSERT;
+                CustLedgerEntryExtData2.INSERT();
             end;
         end;
     end;
