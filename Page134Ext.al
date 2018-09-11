@@ -30,6 +30,10 @@ pageextension 13062630 Page134Ext extends "Posted Sales Credit Memo"
                 {
                 ApplicationArea = All;
                 }
+                field("Posting TimeStamp";"Posting TimeStamp")
+                {
+                ApplicationArea = All;
+                }
             }
         }
     }

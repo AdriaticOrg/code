@@ -41,5 +41,10 @@ tableextension 13062615 Table112Ext extends "Sales Invoice Header"
             Editable = false;
             
         }
+        field(13051866;"Posting TimeStamp";DateTime)
+        {
+            Editable = false;
+            
+        }
     }
 }

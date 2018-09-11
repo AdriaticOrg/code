@@ -30,6 +30,10 @@ pageextension 13062629 Page132Ext extends "Posted Sales Invoice"
                 {
                 ApplicationArea = All;
                 }
+                field("Posting TimeStamp";"Posting TimeStamp")
+                {
+                ApplicationArea = All;
+                }
             }
         }
     }

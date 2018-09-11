@@ -42,5 +42,10 @@ tableextension 13062616 Table114Ext extends "Sales Cr.Memo Header"
             Editable = false;
             
         }
+        field(13051866;"Posting TimeStamp";DateTime)
+        {
+            Editable = false;
+            
+        }
     }
 }

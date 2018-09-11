@@ -15,19 +15,19 @@ page 13062610 "Fisc. Payment Methods-ADL"
                 {
                     ApplicationArea = All;
                 }
-                field(Description; Code)
+                field(Description; Description)
                 {
                     ApplicationArea = All;
                 }
-                 field("Official Code"; Code)
+                 field("Official Code"; "Official Code")
                 {
                     ApplicationArea = All;
                 }
-                field("Subject to Fiscalization"; Code)
+                field("Subject to Fiscalization"; "Subject to Fiscalization")
                 {
                     ApplicationArea = All;
                 }         
-                field("Multiple Payment Methods"; Code)
+                field("Multiple Payment Methods"; "Multiple Payment Methods")
                 {
                     ApplicationArea = All;
                 }                         
