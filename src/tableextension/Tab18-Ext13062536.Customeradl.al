@@ -1,4 +1,4 @@
-tableextension 13062536 "Customer-adl" extends Customer //18
+tableextension 13062536 "Customer-Adl" extends Customer //18
 {
     fields
     {

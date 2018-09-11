@@ -3808,6 +3808,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Chart Of Accounts-adl - Action GLExport - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1370599749 - Action 2213697903 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Detail Trial Balance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Chart Of Accounts-adl - Action DetailTrialBalance - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 679284166 - Action 2106581073 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>GL Export</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3888,11 +3893,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VATPostingSetup-Adl - Field VIES Service Sales - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 187397293 - Field 2326980714 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Numeric Code</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Currency-adl - Field Numeric Code - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 642464550 - Field 2099680485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3968,160 +3968,160 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchCrMemoHdr-Adl - Field Goods Return Type-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 87108442 - Field 1398259200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 717046339 - Field 1398259200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Instrument Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccount-adl - Field FAS Instrument Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Account-Adl - Field FAS Instrument Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 87108442 - Field 4255134359 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 717046339 - Field 4255134359 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccount-adl - Field FAS Sector Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Account-Adl - Field FAS Sector Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 87108442 - Field 2564679863 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 717046339 - Field 2564679863 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Account</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccount-adl - Field FAS Account - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Account-Adl - Field FAS Account - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 87108442 - Field 2332410172 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 717046339 - Field 2332410172 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Sector Posting</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccount-adl - Field FAS Sector Posting - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Account-Adl - Field FAS Sector Posting - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 87108442 - Field 2332410172 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 717046339 - Field 2332410172 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,Code Mandatory,Same Code,No Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccount-adl - Field FAS Sector Posting - Property OptionCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Account-Adl - Field FAS Sector Posting - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 87108442 - Field 2621553835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 717046339 - Field 2621553835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Instrument Posting</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccount-adl - Field FAS Instrument Posting - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Account-Adl - Field FAS Instrument Posting - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 87108442 - Field 2621553835 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 717046339 - Field 2621553835 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,Code Mandatory,Same Code,No Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccount-adl - Field FAS Instrument Posting - Property OptionCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Account-Adl - Field FAS Instrument Posting - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 87108442 - Field 855337200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 717046339 - Field 855337200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccount-adl - Field FAS Type - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Account-Adl - Field FAS Type - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 87108442 - Field 855337200 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 717046339 - Field 855337200 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,Assets,Liabilities</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccount-adl - Field FAS Type - Property OptionCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Account-Adl - Field FAS Type - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 87108442 - Field 1140052474 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 717046339 - Field 1140052474 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,None,Credit,Debit,Both</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccount-adl - Field BST Value Posting - Property OptionCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Account-Adl - Field BST Value Posting - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 87108442 - Field 1140052474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 717046339 - Field 1140052474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Value Posting</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccount-adl - Field BST Value Posting - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Account-Adl - Field BST Value Posting - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 87108442 - Field 392063396 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 717046339 - Field 392063396 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccount-adl - Field BST Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Account-Adl - Field BST Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2162379509 - Field 1398259200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1255201032 - Field 1398259200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Instrument Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntry-adl - Field FAS Instrument Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Entry-Adl - Field FAS Instrument Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2162379509 - Field 4255134359 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1255201032 - Field 4255134359 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntry-adl - Field FAS Sector Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Entry-Adl - Field FAS Sector Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2162379509 - Field 855337200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1255201032 - Field 855337200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntry-adl - Field FAS Type - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Entry-Adl - Field FAS Type - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2162379509 - Field 855337200 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1255201032 - Field 855337200 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,Assets,Liabilities</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntry-adl - Field FAS Type - Property OptionCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Entry-Adl - Field FAS Type - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2162379509 - Field 392063396 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1255201032 - Field 392063396 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntry-adl - Field BST Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Entry-Adl - Field BST Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3076363708 - Field 4255134359 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3081464540 - Field 4255134359 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer-adl - Field FAS Sector Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer-Adl - Field FAS Sector Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3076363708 - Field 3709965764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3081464540 - Field 3709965764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Non-Resident Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer-adl - Field KRD Non-Residnet Sector Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer-Adl - Field KRD Non-Residnet Sector Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3076363708 - Field 2630148503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3081464540 - Field 2630148503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Affiliation Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer-adl - Field KRD Affiliation Type - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer-Adl - Field KRD Affiliation Type - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2917329725 - Field 2630148503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2265272262 - Field 2630148503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Affiliation Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgEntry-adl - Field KRD Affiliation Type - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Cust. Ledger Entry-Adl - Field KRD Affiliation Type - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2917329725 - Field 668650524 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2265272262 - Field 668650524 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Instrument Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgEntry-adl - Field KRD Instrument Type - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Cust. Ledger Entry-Adl - Field KRD Instrument Type - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2917329725 - Field 2210769106 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2265272262 - Field 2210769106 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Maturity</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgEntry-adl - Field KRD Maturity - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Cust. Ledger Entry-Adl - Field KRD Maturity - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2917329725 - Field 1641916353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2265272262 - Field 1641916353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Claim/Liability</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgEntry-adl - Field KRD Claim/Liability - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Cust. Ledger Entry-Adl - Field KRD Claim/Liability - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2917329725 - Field 3709965764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2265272262 - Field 3709965764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Non-Resident Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgEntry-adl - Field KRD Non-Residnet Sector Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Cust. Ledger Entry-Adl - Field KRD Non-Residnet Sector Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2917329725 - Field 3889262209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2265272262 - Field 3889262209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Country/Region Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgEntry-adl - Field KRD Country/Region Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Cust. Ledger Entry-Adl - Field KRD Country/Region Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2917329725 - Field 3390755760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2265272262 - Field 3390755760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Other Changes</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgEntry-adl - Field KRD Other Changes - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Cust. Ledger Entry-Adl - Field KRD Other Changes - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2917329725 - Field 4255134359 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2265272262 - Field 4255134359 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgEntry-adl - Field FAS Sector Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Cust. Ledger Entry-Adl - Field FAS Sector Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3318562596 - Field 4255134359 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3313461764 - Field 4255134359 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor-adl - Field FAS Sector Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor-Adl - Field FAS Sector Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3318562596 - Field 3709965764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3313461764 - Field 3709965764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Non-Resident Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor-adl - Field KRD Non-Residnet Sector Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor-Adl - Field KRD Non-Residnet Sector Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3318562596 - Field 2630148503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3313461764 - Field 2630148503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Affiliation Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor-adl - Field KRD Affiliation Type - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor-Adl - Field KRD Affiliation Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2111787717 - Field 2630148503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Affiliation Type</source>
@@ -4263,6 +4263,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchaseHeader-Adl - Field Goods Return Type-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 182296461 - Field 2326980714 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Numeric Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Currency-Adl - Field Numeric Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3364643929 - Field 3130705431 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT % (informative)</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4353,10 +4358,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJournalLine-Adl - Field EU Customs Procedure - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 800366056 - Field 2326980714 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2964936661 - Field 2326980714 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Numeric Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CountryRegion-adl - Field Numeric Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Country/Region-Adl - Field Numeric Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1660926095 - Field 668650524 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Instrument Type</source>
