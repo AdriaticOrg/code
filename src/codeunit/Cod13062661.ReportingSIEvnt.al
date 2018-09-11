@@ -91,6 +91,15 @@ codeunit 13062661 "Reporting SI Evnt."
         GLAcc.GET(GLEntry."G/L Account No.");
         if not GLAcc."FAS Account" then exit;
 
+        if GenJournalLine."FAS Instrument Code" = '' then
+            GenJournalLine."FAS Instrument Code" := GLAcc."FAS Instrument Code";
+
+        if GenJournalLine."FAS Sector Code" = '' then
+            GenJournalLine."FAS Sector Code" := GLAcc."FAS Sector Code";
+
+        if GenJournalLine."FAS Type" = GenJournalLine."FAS Type"::" " then
+            GenJournalLine."FAS Type" := GLAcc."FAS Type";
+
         GLEntry."FAS Instrument Code" := GenJournalLine."FAS Instrument Code";
         GLEntry."FAS Sector Code" := GenJournalLine."FAS Sector Code";
         GLEntry."FAS Type" := GenJournalLine."FAS Type";

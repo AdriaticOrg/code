@@ -35,9 +35,12 @@ table 13062643 "FAS Report Header"
             trigger OnValidate()
             var
                 Year: Integer;
+                Month: Integer;
             begin
                 Year := Date2DMY("Period Start Date", 3);
+                Month := Date2DMY("Period Start Date", 2);
                 "Period Year" := Year;
+                "Period Round" := Month;
             end;
         }
         field(11; "Period End Date"; Date)

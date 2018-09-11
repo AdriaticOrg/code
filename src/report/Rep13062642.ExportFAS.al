@@ -185,6 +185,8 @@ report 13062642 "Export FAS"
         StatId: text[10];
         Values: array[700, 23] of decimal;
         WarningStr: Text;
+        FASTypeNum: Integer;
+        Amt: Decimal;
 
     begin
         FASRepHead.TestField("Period Year");
@@ -224,6 +226,17 @@ report 13062642 "Export FAS"
                     FinSect.SetFilter("Index Code", '<>%1', '');
                     if FinSect.FindSet() then
                         repeat
+                            EVALUATE(i, FinSect."Index Code");
+                            IF (i > 23) OR (i < 1) THEN
+                                FinSect.FIELDERROR("Index Code");
+
+                            if FormNum mod 2 = 0 then
+                                FASTypeNum := 2
+                            else
+                                FASTypeNum := 1;
+
+                            FasReportLine.SetRange("FAS Type", FASTypeNum);
+
                             IF FinInst.Type = FinInst.Type::Posting THEN
                                 FASRepLine.SETRANGE("Instrument Code", FinInst.Code)
                             ELSE
@@ -234,15 +247,18 @@ report 13062642 "Export FAS"
                             ELSE
                                 FASRepLine.SETFILTER("Sector Code", FinSect.Totaling);
 
-                            FASRepLine.CALCSUMS(Amount);
-                            IF FormNum IN [2, 4, 5, 6] THEN
-                                FASRepLine.Amount *= -1;
+                            FASRepLine.CalcSums("Period Closing Balance", "Transactions Amt. in Period", "Changes Amt. in Period");
 
-                            EVALUATE(i, FinSect."Index Code");
-                            IF (i > 23) OR (i < 1) THEN
-                                FinSect.FIELDERROR("Index Code");
+                            case FormNum of
+                                1, 2:
+                                    Amt := FASRepLine."Period Closing Balance";
+                                3, 4:
+                                    Amt := FASRepLine."Transactions Amt. in Period";
+                                5, 6:
+                                    Amt := FASRepLine."Changes Amt. in Period";
+                            end;
 
-                            Values[currAOP] [i] += FASRepLine.Amount;
+                            Values[currAOP] [i] += Amt;
 
                             IF (curraop >= 100) AND (curraop < 299) AND (FASRepLine.Amount < 0) THEN
                                 WarningStr += StrSubstNo(AmountMiustBePositiveMsg, currAOP, i, FASRepLine.Amount, FASRepLine.GETFILTERS());

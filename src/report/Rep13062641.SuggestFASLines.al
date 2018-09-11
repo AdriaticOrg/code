@@ -40,8 +40,7 @@ report 13062641 "Suggest FAS Lines"
             var
                 GLAcc: Record "G/L Account";
             begin
-                if GLAcc.get("G/L Account No.") and GLAcc."FAS Account" then begin
-                    TestField("FAS Type");
+                if GLAcc.get("G/L Account No.") and GLAcc."FAS Account" and ("FAS Type" <> "FAS Type"::" ") then begin
                     FASRepLine.SetRange("Document No.", FASRepDocNo);
                     FASRepLine.SetRange("Sector Code", "FAS Sector Code");
                     FASRepLine.SetRange("Instrument Code", "FAS Instrument Code");
@@ -57,6 +56,7 @@ report 13062641 "Suggest FAS Lines"
                         FASRepLine.Init();
                         FASRepLine."Document No." := FASRepDocNo;
                         FASRepLine."Line No" := NewLineNo;
+                        FASRepLine."FAS Type" := "FAS Type";
                         FASRepLine.validate("Sector Code", "FAS Sector Code");
                         FASRepLine.validate("Instrument Code", "FAS Instrument Code");
                         FASRepLine."Transactions Amt. in Period" := Amount;

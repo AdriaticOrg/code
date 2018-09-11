@@ -3809,7 +3809,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Chart Of Accounts-adl - Action GLExport - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1370599749 - Action 2213697903 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Detail Trial Balance</source>
+          <source>Detail Trial Balance Extended</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Chart Of Accounts-adl - Action DetailTrialBalance - Property Caption</note>
         </trans-unit>
