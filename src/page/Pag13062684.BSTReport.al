@@ -86,10 +86,16 @@ page 13062684 "BST Report"
                 trigger OnAction()
                 var
                     RepSuggestLines: Report "Suggest BST Lines";
+                    GLEntry: Record "G/L Entry";
                 begin
                     TestField("No.");
                     TestField("Period Start Date");
                     TestField("Period End Date");
+
+                    GLEntry.Reset();
+                    GLEntry.SetRange("Posting Date", "Period Start Date", "Period End Date");
+
+                    RepSuggestLines.SetTableView(GLEntry);
                     RepSuggestLines.SetBSTRepDocNo("No.");
                     RepSuggestLines.RunModal();
                 end;

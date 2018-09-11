@@ -90,10 +90,22 @@ page 13062661 "KRD Report"
                 trigger OnAction()
                 var
                     RepSuggestLines: Report "Suggest KRD Lines";
+                    CLE: Record "Cust. Ledger Entry";
+                    VLE: record "Vendor Ledger Entry";
                 begin
                     TestField("No.");
                     TestField("Period Start Date");
                     TestField("Period End Date");
+
+                    CLE.Reset();
+                    CLE.SetRange("Posting Date", "Period Start Date", "Period End Date");
+
+                    VLE.Reset();
+                    VLE.SetRange("Posting Date", "Period Start Date", "Period End Date");
+
+                    RepSuggestLines.SetTableView(CLE);
+                    RepSuggestLines.SetTableView(VLE);
+
                     RepSuggestLines.SetKRDRepDocNo("No.");
                     RepSuggestLines.RunModal();
                 end;

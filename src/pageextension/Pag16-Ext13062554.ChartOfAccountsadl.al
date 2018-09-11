@@ -31,7 +31,7 @@ pageextension 13062554 "Chart Of Accounts-adl" extends "Chart of Accounts" //16
             // <adl.27>
             action("DetailTrialBalance")
             {
-                Caption = 'Detail Trial Balance';
+                Caption = 'Detail Trial Balance Extended';
                 Promoted = true;
                 PromotedCategory = Report;
                 Image = Report;

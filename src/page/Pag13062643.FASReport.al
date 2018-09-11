@@ -95,15 +95,20 @@ page 13062643 "FAS Report"
                 Promoted = true;
                 ApplicationArea = All;
                 Image = CalculateLines;
-                //RunObject = report 50100;      
 
                 trigger OnAction()
                 var
                     RepSuggestLines: Report "Suggest FAS Lines";
+                    GLEntry: Record "G/L Entry";
                 begin
                     TestField("No.");
                     TestField("Period Start Date");
                     TestField("Period End Date");
+
+                    GLEntry.Reset();
+                    GLEntry.SetRange("Posting Date", "Period Start Date", "Period End Date");
+
+                    RepSuggestLines.SetTableView(GLEntry);
                     RepSuggestLines.SetFASRepDocNo("No.");
                     RepSuggestLines.RunModal();
                 end;

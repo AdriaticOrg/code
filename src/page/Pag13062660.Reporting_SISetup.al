@@ -55,10 +55,12 @@ page 13062660 "Reporting_SI Setup"
                 {
                     ApplicationArea = All;
                 }
-                field("KRD Blank LCY Code";"KRD Blank LCY Code") {
+                field("KRD Blank LCY Code"; "KRD Blank LCY Code")
+                {
                     ApplicationArea = All;
                 }
-                field("KRD Blank LCY Num.";"KRD Blank LCY Num.") {
+                field("KRD Blank LCY Num."; "KRD Blank LCY Num.")
+                {
                     ApplicationArea = All;
                 }
             }
@@ -103,6 +105,10 @@ page 13062660 "Reporting_SI Setup"
                     ApplicationArea = All;
                 }
                 field("PDO Resp. User ID"; "PDO Resp. User ID")
+                {
+                    ApplicationArea = All;
+                }
+                field("PDO VAT Ident. Filter Code "; "PDO VAT Ident. Filter Code ")
                 {
                     ApplicationArea = All;
                 }
