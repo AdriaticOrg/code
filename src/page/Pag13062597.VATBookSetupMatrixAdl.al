@@ -504,7 +504,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
     begin
         For I := 1 TO ArrayLen(MATRIX_CellData) do begin
             MATRIX_CellData[I] := '';
-            if MatrixRec.Get("VAT Book Code", "VAT Book Group Code", "VAT Identifier", I - 1) then
+            if MatrixRec.Get("VAT Book Code", "VAT Book Group Code", "VAT Identifier", I) then
                 if MatrixRec.Condition <> '' then
                     MATRIX_CellData[I] := StrSubstNo('%1%2%3%4 %5%6',
                                                         Format(MatrixRec.Operator1),
