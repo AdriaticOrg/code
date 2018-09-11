@@ -953,6 +953,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field PDO Resp. User ID - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2369601040 - Field 3549802619 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PDO VAT Ident. Filter Code </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field PDO VAT Ident. Filter Code  - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2369601040 - Field 2233261575 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>PDO Prep. By User ID</source>
           <note from="Developer" annotates="general" priority="2"></note>

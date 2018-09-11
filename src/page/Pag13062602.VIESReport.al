@@ -94,10 +94,16 @@ page 13062602 "VIES Report"
                 trigger OnAction()
                 var
                     RepSuggestLines: Report "Suggest VIES Lines";
+                    VATEntry: Record "VAT Entry";
                 begin
                     TestField("No.");
                     TestField("Period Start Date");
                     TestField("Period End Date");
+
+                    VATEntry.Reset();
+                    VATEntry.SetRange("Posting Date", "Period Start Date", "Period End Date");
+
+                    RepSuggestLines.SetTableView(VATEntry);
                     RepSuggestLines.SetVIESRepDocNo("No.");
                     RepSuggestLines.RunModal();
                 end;

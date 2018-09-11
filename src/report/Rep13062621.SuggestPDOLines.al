@@ -9,7 +9,7 @@ report 13062621 "Suggest PDO Lines"
         dataitem("VAT Entry"; "VAT Entry")
         {
             DataItemTableView = sorting ("Type") where ("Type" = const (Sale));
-            RequestFilterFields = "Posting Date", "Document No.";
+            RequestFilterFields = "Posting Date", "Document No.", "VAT Identifier-Adl";
 
             trigger OnPreDataItem()
             begin
