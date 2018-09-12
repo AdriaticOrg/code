@@ -2,29 +2,29 @@ table 13062605 "Fisc. Payment Method-ADL"
 {
     LookupPageId = "Fisc. Payment Methods-ADL";
     DrillDownPageId = "Fisc. Payment Methods-ADL";
-    DataClassification = ToBeClassified;
+    DataClassification = SystemMetadata;
     
     fields
     {
         field(1;Code; Code[10])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(2;Description; Text[30])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(3;"Official Code"; Code[1])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(4;"Subject to Fiscalization"; Boolean)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(5;"Multiple Payment Methods"; Boolean)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
     }
     

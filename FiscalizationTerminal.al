@@ -1,24 +1,24 @@
 table 13062602 "Fiscalization Terminal-ADL"
 {
-    DataClassification = ToBeClassified;
+    DataClassification = SystemMetadata;
     fields
     {
         field(1;"Fisc. Terminal Code"; Text[30])
         {
             NotBlank = True;
             Description = 'Terminal Code';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
 
        field(2;Name; Text[30])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         
        field(3;"Fisc. No. Series"; code[20])
         {   
             TableRelation = "No. Series";
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             trigger Onvalidate()
             var FiscTerminal : Record "Fiscalization Terminal-ADL";
             Text001: TextConst ENU='Serial No. %1 is already used for Room %2 and Cash Desk %3.';
@@ -31,13 +31,13 @@ table 13062602 "Fiscalization Terminal-ADL"
         }
        field(4;"Fisc. Location Code"; code[10])
         {
-            //TableRelation = "Fiscalization Location";
-            DataClassification = ToBeClassified;
+            TableRelation = "Fiscalization Location-ADL";
+            DataClassification = SystemMetadata;
         }
        field(5;"User ID"; code[50])
         {
             TableRelation = "User Setup";
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
        field(6;"Computer Name"; text[50])
         {
@@ -68,12 +68,12 @@ table 13062602 "Fiscalization Terminal-ADL"
        field(7;"Creation Date"; Date)
         {
             Editable = False;
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(8;"Creation Time"; Time)
         {
             Editable = False;
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
     }
     

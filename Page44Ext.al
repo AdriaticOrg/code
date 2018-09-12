@@ -10,23 +10,23 @@ pageextension 13062628 Page44Ext extends "Sales Credit Memo"
                 {
 
                 }
-                field("Fisc. No. Series";"Fisc. Subject")
+                field("Fisc. No. Series";"Fisc. No. Series")
                 {
 
                 }
-                field("Fisc. Terminal";"Fisc. Subject")
+                field("Fisc. Terminal";"Fisc. Terminal")
                 {
 
                 }
-                field("Fisc. Location Code";"Fisc. Subject")
+                field("Fisc. Location Code";"Fisc. Location Code")
                 {
 
                 }
-                field("Fisc. Doc. No.";"Fisc. Subject")
+                field("Fisc. Doc. No.";"Fisc. Doc. No.")
                 {
 
                 }
-                field("Full Fisc. Doc. No.";"Fisc. Subject")
+                field("Full Fisc. Doc. No.";"Full Fisc. Doc. No.")
                 {
 
                 }

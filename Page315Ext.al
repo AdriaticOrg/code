@@ -1,4 +1,4 @@
-pageextension 13062631 Page143Ext extends "Posted Sales Invoices"
+pageextension 13062632 Page315Ext extends "VAT Entries"
 {
     layout
     {

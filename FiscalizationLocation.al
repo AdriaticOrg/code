@@ -8,13 +8,13 @@ table 13062603 "Fiscalization Location-ADL"
         field(1;"Fisc. Location Code"; Code[10])
         {
             NotBlank = True;
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             
         }
         
         field(2;"Fisc. Street"; text[100])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
                 ValidateFiscData;
@@ -22,7 +22,7 @@ table 13062603 "Fiscalization Location-ADL"
         }
         field(3;"Fisc. House Number"; text[4])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
                 ValidateFiscData;
@@ -30,7 +30,7 @@ table 13062603 "Fiscalization Location-ADL"
         }
         field(4;"Fisc. House Number Appendix"; text[4])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
                 ValidateFiscData;
@@ -38,7 +38,7 @@ table 13062603 "Fiscalization Location-ADL"
         }
         field(5;"Fisc. Settlement"; Text[35])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
                 ValidateFiscData;
@@ -46,7 +46,7 @@ table 13062603 "Fiscalization Location-ADL"
         }
         field(6;"Fisc. City/Municipality"; Text[35])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
                 ValidateFiscData;
@@ -54,7 +54,7 @@ table 13062603 "Fiscalization Location-ADL"
         }
         field(7;"Fisc. Post Code"; Code[20])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             TableRelation = "Post Code";  
             trigger OnValidate()
             var PostCode : Record "Post Code";
@@ -68,7 +68,7 @@ table 13062603 "Fiscalization Location-ADL"
         }
         field(8;"Fisc. Location Description"; Text[100])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
                 ValidateFiscData;
@@ -76,7 +76,7 @@ table 13062603 "Fiscalization Location-ADL"
         }
         field(9;"Working Hours"; Text[100])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
                 ValidateFiscData;
@@ -84,37 +84,37 @@ table 13062603 "Fiscalization Location-ADL"
         }
         field(10;"Date Of Application"; Date)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(11;"Fisc. No. Series"; Code[20])
         {
             TableRelation = "No. Series";
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(12;"Fisc. Active"; Boolean)
         {
             Description = 'Active';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(13;"Creation Date"; Date)
         {
             Editable = False;
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(14;"Creation Time"; Time)
         {
             Editable = False;
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(15;"User ID"; Code[50])
         {
             Editable = false;
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
         field(16;"Ending Date"; Date)
         {
             Editable = false;
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
     }
     
