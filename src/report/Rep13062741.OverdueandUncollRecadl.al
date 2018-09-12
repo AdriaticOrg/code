@@ -104,7 +104,7 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
             column(TextHeaderIV; TextHeaderIVLbl + FORMAT(WorkDate(), 0, '<Day,2>.<Month,2>.<Year4>'))
             {
             }
-            column(TextHeaderV; TextHeaderVLbl + ' ' + CompanyOfficial."Reporting_SI Name")
+            column(TextHeaderV; TextHeaderVLbl + ' ' + CompanyOfficial."Reporting_SI Name-Adl")
             {
             }
             column(TextHeaderVI; TextHeaderVILbl)
