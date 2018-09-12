@@ -10,28 +10,24 @@ pageextension 13062548 "User Setup-Adl" extends "User Setup" //119
                 Caption = 'Reporting Name';
                 ApplicationArea = All;
                 Visible = RepSIFeatureEnabled;
-                Caption = 'Reporting Name';
             }
             field("Reporting_SI Email"; "Reporting_SI Email-Adl")
             {
                 Caption = 'Reporting E-mail';
                 ApplicationArea = All;
                 Visible = RepSIFeatureEnabled;
-                Caption = 'Reporting E-mail';
             }
             field("Reporting_SI Phone"; "Reporting_SI Phone-Adl")
             {
                 Caption = 'Reporting Phone';
                 ApplicationArea = All;
                 Visible = RepSIFeatureEnabled;
-                Caption = 'Reporting Phone';
             }
             field("Reporting_SI Position"; "Reporting_SI Position-Adl")
             {
                 Caption = 'Reporting Position';
                 ApplicationArea = All;
                 Visible = RepSIFeatureEnabled;
-                Caption = 'Reporting Position';
             }
             // </adl.24>
             // <adl.27>

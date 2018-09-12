@@ -3489,204 +3489,204 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - Control EndDueDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 787011548 - Control 1954028305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Company InformaationB</source>
+          <source>Copmany official</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - Control CompanyOfficialNo - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 1196336482" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Registration No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text001</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text001Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 1753513791" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text002</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text002Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3779895200" size-unit="char" translate="yes" xml:space="preserve">
           <source>Other</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text003</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text003Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3140410629" size-unit="char" translate="yes" xml:space="preserve">
           <source>STATISTICAL REPORT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text004</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text004Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2287756966" size-unit="char" translate="yes" xml:space="preserve">
           <source>OF DUE, NOT PAID INVOICES ON DATE %1 WHICH WERE NOT PAID UNTIL %2</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text005</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text005Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3073937421" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2660039675" size-unit="char" translate="yes" xml:space="preserve">
           <source>I. INFORMATION OF TAX PAYER/APPLICANT OF REPORT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderILbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2507091926" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 443599932" size-unit="char" translate="yes" xml:space="preserve">
           <source>NAME/FIRST AND LAST NAME:</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI1</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI1Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 594002075" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 4091509405" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT REGISTRATION NO.:</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI2Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1231698692" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2854992382" size-unit="char" translate="yes" xml:space="preserve">
           <source>ADDRESS:</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI3</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI3Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3313697566" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3430751556" size-unit="char" translate="yes" xml:space="preserve">
           <source>II. INFORMATION OF DUE, NONPAID INVOICES ISSUED IN ACCORDANCE WITH VAT LAW</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderII</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderIILbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2929281271" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 4281021913" size-unit="char" translate="yes" xml:space="preserve">
           <source>LINE NO.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine1</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine1Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 547403826" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2075426936" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT REGISTRATION NO. TYPE</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine2Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 4204674505" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 1848456087" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT REGISTRATION NO.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine3</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine3Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1822797060" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 603692030" size-unit="char" translate="yes" xml:space="preserve">
           <source>NAME/FIRST AND LAST NAME</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine4</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine4Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1185100443" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 1840209053" size-unit="char" translate="yes" xml:space="preserve">
           <source>INVOICE LINE NO.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine5</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine5Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3098190294" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2487266876" size-unit="char" translate="yes" xml:space="preserve">
           <source>INVOICE NO.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine6</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine6Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2460493677" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2981453275" size-unit="char" translate="yes" xml:space="preserve">
           <source>DATE OF INVOICE</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine7</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine7Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2760372248" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 467598898" size-unit="char" translate="yes" xml:space="preserve">
           <source>INVOICE DUE DATE</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine8</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine8Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2122675631" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2736184785" size-unit="char" translate="yes" xml:space="preserve">
           <source>NO. OF OVERDUE DAYS</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine9</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine9Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3944622599" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2861535785" size-unit="char" translate="yes" xml:space="preserve">
           <source>INVOICE AMOUNT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine10</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine10Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 287351920" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 1687768842" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT AMOUNT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine11</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine11Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 925048537" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2628809511" size-unit="char" translate="yes" xml:space="preserve">
           <source>INVOICE AMOUNT INCL. VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine12</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine12Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1562745154" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 1392292488" size-unit="char" translate="yes" xml:space="preserve">
           <source>PAID AMOUNT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine13</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine13Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2200441771" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3994532973" size-unit="char" translate="yes" xml:space="preserve">
           <source>UNPAID AMOUNT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine14</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine14Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 4087776577" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 4200521935" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextTotal</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextTotalLbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2490333051" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3987187709" size-unit="char" translate="yes" xml:space="preserve">
           <source>TOTAL</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextTotalUpperCase</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextTotalUpperCaseLbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1023367749" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 169133427" size-unit="char" translate="yes" xml:space="preserve">
           <source>III. INFORMATION OF DUE, NONPAID INVOICES ISSUED IN ACCORDANCE WITH OPZ REGULATIONS</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderIII</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderIIILbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1269638167" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3524397689" size-unit="char" translate="yes" xml:space="preserve">
           <source>"IV. Date: "</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderIV</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderIVLbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1760604712" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3722446274" size-unit="char" translate="yes" xml:space="preserve">
           <source>"V. Created by (first name and last name): "</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderV</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderVLbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1685776735" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 937594561" size-unit="char" translate="yes" xml:space="preserve">
           <source>VI. Signature:</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderVI</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderVILbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1700519688" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3141268898" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error creating file on server.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextError001</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextError001Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2165353731" size-unit="char" translate="yes" xml:space="preserve">
           <source>No entries were found to create file.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text006</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text006Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 576348388" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export to XML File</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text007</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text007Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 4273407817" size-unit="char" translate="yes" xml:space="preserve">
           <source>XML Files (*.xml)|*.xml|All Files (*.*)|*.*</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text008</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text008Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3078467498" size-unit="char" translate="yes" xml:space="preserve">
           <source>File is saved on:</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text009</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text009Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3797269194" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 %2</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text010</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text010Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1026443335" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 17661673" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original Invoice Amount (LCY) for Customer Ledger Entry No. %1 cannot be 0 or less.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text011</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text011Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2939533186" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3543369544" size-unit="char" translate="yes" xml:space="preserve">
           <source>Uncollected_Ovedrue_Entries_%1</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text012</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text012Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2301836569" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 443342567" size-unit="char" translate="yes" xml:space="preserve">
           <source>File %1 was created.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text013</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text013Lbl</note>
         </trans-unit>
         <trans-unit id="Report 1960300502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Repost Customer Ledger Entry</source>
