@@ -1,4 +1,4 @@
-pageextension 13062554 "Chart Of Accounts-adl" extends "Chart of Accounts" //16
+pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
 {
     actions
     {
@@ -15,7 +15,7 @@ pageextension 13062554 "Chart Of Accounts-adl" extends "Chart of Accounts" //16
                 ApplicationArea = All;
                 Visible = RepSIFeatureEnabled;
 
-                trigger OnAction()                
+                trigger OnAction()
                 var
                     GLAccount: Record "G/L Account";
                     GLExportSIadl: Report "GL ExportSI-adl";
@@ -27,7 +27,7 @@ pageextension 13062554 "Chart Of Accounts-adl" extends "Chart of Accounts" //16
                 end;
             }
             // </adl.21> 
-            
+
             // <adl.27>
             action("DetailTrialBalance")
             {

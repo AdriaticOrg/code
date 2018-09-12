@@ -26,12 +26,12 @@ tableextension 13062529 "Sales Cr.Memo Header-Adl" extends "Sales Cr.Memo Header
         }
         // </adl.18>
         // <adl.22>
-        field(13062601; "VAT Correction Date"; Date)
+        field(13062601; "VAT Correction Date-Adl"; Date)
         {
             Caption = 'VAT Correction Date';
             DataClassification = SystemMetadata;
         }
-        field(13062602; "EU Customs Procedure"; Boolean)
+        field(13062602; "EU Customs Procedure-Adl"; Boolean)
         {
             Caption = 'EU Customs Procedure';
             DataClassification = SystemMetadata;

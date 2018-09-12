@@ -1,4 +1,4 @@
-pageextension 13062537 "VATPostingSetupCard-Adl" extends "VAT Posting Setup Card"  //473
+pageextension 13062537 "VAT Posting Setup Card-Adl" extends "VAT Posting Setup Card"  //473
 {
     layout
     {

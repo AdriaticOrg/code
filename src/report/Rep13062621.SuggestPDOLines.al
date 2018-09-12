@@ -46,12 +46,12 @@ report 13062621 "Suggest PDO Lines"
                 Cust.TestField("VAT Registration No.");
                 TestField("Country/Region Code");
 
-                if "VAT Correction Date" = 0D then
+                if "VAT Correction Date-Adl" = 0D then
                     ProcessVATEntry("VAT Entry", Cust, OldPDORepHead, 0)
                 else begin
                     OldPDORepHead.Reset();
-                    OldPDORepHead.SetFilter("Period Start Date", '<=%1', "VAT Correction Date");
-                    OldPDORepHead.SetFilter("Period End Date", '>=%1', "VAT Correction Date");
+                    OldPDORepHead.SetFilter("Period Start Date", '<=%1', "VAT Correction Date-Adl");
+                    OldPDORepHead.SetFilter("Period End Date", '>=%1', "VAT Correction Date-Adl");
                     OldPDORepHead.FindSet();
 
                     ProcessVATEntry("VAT Entry", Cust, OldPDORepHead, 1);

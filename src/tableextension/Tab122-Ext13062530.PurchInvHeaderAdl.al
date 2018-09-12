@@ -1,4 +1,4 @@
-tableextension 13062530 "PurchaseInvHeader-Adl" extends "Purch. Inv. Header"  //122
+tableextension 13062530 "Purch. Inv. Header-Adl" extends "Purch. Inv. Header"  //122
 {
     fields
     {

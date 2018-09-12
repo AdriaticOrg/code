@@ -1,4 +1,4 @@
-pageextension 13062531 "PostedSalesInvoice-Adl" extends "Posted Sales Invoice" //132
+pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice" //132
 {
     layout
     {
@@ -24,7 +24,7 @@ pageextension 13062531 "PostedSalesInvoice-Adl" extends "Posted Sales Invoice" /
         // <adl.22>
         addafter("EU 3-Party Trade")
         {
-            field("EU Customs Procedure"; "EU Customs Procedure")
+            field("EU Customs Procedure"; "EU Customs Procedure-Adl")
             {
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;

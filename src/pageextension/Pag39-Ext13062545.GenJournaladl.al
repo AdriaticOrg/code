@@ -1,36 +1,36 @@
-pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
+pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
 {
     layout
     {
         addlast(Control1)
         {
             // <adl.24>
-            field("FAS Type"; "FAS Type")
+            field("FAS Type"; "FAS Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Instrument Code"; "FAS Instrument Code")
+            field("FAS Instrument Code"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Sector Code"; "FAS Sector Code")
+            field("FAS Sector Code"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("Bal. FAS Type"; "Bal. FAS Type")
+            field("Bal. FAS Type"; "Bal. FAS Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("Bal. FAS Instrument Code"; "Bal. FAS Instrument Code")
+            field("Bal. FAS Instrument Code"; "Bal. FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("Bal. FAS Sector Code"; "Bal. FAS Sector Code")
+            field("Bal. FAS Sector Code"; "Bal. FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;

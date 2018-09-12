@@ -23,8 +23,8 @@ report 13062642 "Export FAS"
             {
                 IncludeCaption = true;
             }
-            column(PrepairedByName; PrepairedByUser."Reporting_SI Name") { }
-            column(ResponsibleName; ResponsibleUser."Reporting_SI Name") { }
+            column(PrepairedByName; PrepairedByUser."Reporting_SI Name-Adl") { }
+            column(ResponsibleName; ResponsibleUser."Reporting_SI Name-Adl") { }
             column(ShadowBackgroundOnPosting; ShadowBackgroundOnPosting) { }
 
             dataitem(Integer; Integer)
@@ -102,9 +102,9 @@ report 13062642 "Export FAS"
             trigger OnAfterGetRecord()
             begin
                 PrepairedByUser.get("Prep. By User ID");
-                PrepairedByUser.testfield("Reporting_SI Name");
+                PrepairedByUser.testfield("Reporting_SI Name-Adl");
                 ResponsibleUser.get("Resp. User ID");
-                ResponsibleUser.TestField("Reporting_SI Name");
+                ResponsibleUser.TestField("Reporting_SI Name-Adl");
             end;
         }
     }
@@ -193,16 +193,16 @@ report 13062642 "Export FAS"
         FASRepHead.TestField("Period Round");
 
         ResponsibleUser.Get(FASRepHead."Resp. User ID");
-        ResponsibleUser.TestField("Reporting_SI Name");
-        ResponsibleUser.TestField("Reporting_SI Email");
-        ResponsibleUser.TestField("Reporting_SI Phone");
+        ResponsibleUser.TestField("Reporting_SI Name-Adl");
+        ResponsibleUser.TestField("Reporting_SI Email-Adl");
+        ResponsibleUser.TestField("Reporting_SI Phone-Adl");
 
         RepSISetup.Get();
         RepSISetup.TestField("Budget User Code");
         RepSISetup.TestField("Company Sector Code");
 
         MngUserSetup.get(RepSISetup."FAS Director User ID");
-        MngUserSetup.TestField("Reporting_SI Name");
+        MngUserSetup.TestField("Reporting_SI Name-Adl");
 
         CompanyInfo.Get();
         CompanyInfo.TestField("Registration No.");
@@ -329,19 +329,19 @@ report 13062642 "Export FAS"
 
         XmlElem[3] := XmlElement.Create('OdgovornaOseba');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Name"));
+        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Name-Adl"));
 
         XmlElem[3] := XmlElement.Create('TelefonskaStevilka');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Phone"));
+        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Phone-Adl"));
 
         XmlElem[3] := XmlElement.Create('Email');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Email"));
+        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Email-Adl"));
 
         XmlElem[3] := XmlElement.Create('VodjaPodjetja');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(MngUserSetup."Reporting_SI Name"));
+        XmlElem[3].add(XmlText.Create(MngUserSetup."Reporting_SI Name-Adl"));
 
         XmlElem[3] := XmlElement.Create('Datum');
         XmlElem[2].Add(XmlElem[3]);

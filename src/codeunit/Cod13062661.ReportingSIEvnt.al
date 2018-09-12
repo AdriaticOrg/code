@@ -15,8 +15,8 @@ codeunit 13062661 "Reporting SI Evnt."
         //TODO: what feature toggle should be checked here?
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
 
-        VATEntry."VAT Correction Date" := GenJnlLine."VAT Correction Date";
-        VATEntry."EU Customs Procedure" := GenJnlLine."EU Customs Procedure";
+        VATEntry."VAT Correction Date-Adl" := GenJnlLine."VAT Correction Date-Adl";
+        VATEntry."EU Customs Procedure-Adl" := GenJnlLine."EU Customs Procedure-Adl";
         VATEntry.Modify();
     end;
 
@@ -89,40 +89,40 @@ codeunit 13062661 "Reporting SI Evnt."
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
 
         GLAcc.GET(GLEntry."G/L Account No.");
-        if not GLAcc."FAS Account" then exit;
+        if not GLAcc."FAS Account-Adl" then exit;
 
-        if GenJournalLine."FAS Instrument Code" = '' then
-            GenJournalLine."FAS Instrument Code" := GLAcc."FAS Instrument Code";
+        if GenJournalLine."FAS Instrument Code-Adl" = '' then
+            GenJournalLine."FAS Instrument Code-Adl" := GLAcc."FAS Instrument Code-Adl";
 
-        if GenJournalLine."FAS Sector Code" = '' then
-            GenJournalLine."FAS Sector Code" := GLAcc."FAS Sector Code";
+        if GenJournalLine."FAS Sector Code-Adl" = '' then
+            GenJournalLine."FAS Sector Code-Adl" := GLAcc."FAS Sector Code-Adl";
 
-        if GenJournalLine."FAS Type" = GenJournalLine."FAS Type"::" " then
-            GenJournalLine."FAS Type" := GLAcc."FAS Type";
+        if GenJournalLine."FAS Type-Adl" = GenJournalLine."FAS Type-Adl"::" " then
+            GenJournalLine."FAS Type-Adl" := GLAcc."FAS Type-Adl";
 
-        GLEntry."FAS Instrument Code" := GenJournalLine."FAS Instrument Code";
-        GLEntry."FAS Sector Code" := GenJournalLine."FAS Sector Code";
-        GLEntry."FAS Type" := GenJournalLine."FAS Type";
+        GLEntry."FAS Instrument Code-Adl" := GenJournalLine."FAS Instrument Code-Adl";
+        GLEntry."FAS Sector Code-Adl" := GenJournalLine."FAS Sector Code-Adl";
+        GLEntry."FAS Type-Adl" := GenJournalLine."FAS Type-Adl";
 
-        case GLAcc."FAS Instrument Posting" of
-            GLAcc."FAS Instrument Posting"::"Code Mandatory":
+        case GLAcc."FAS Instrument Posting-Adl" of
+            GLAcc."FAS Instrument Posting-Adl"::"Code Mandatory":
                 begin
-                    GenJournalLine.TestField("FAS Type");
-                    GenJournalLine.TestField("FAS Instrument Code");
+                    GenJournalLine.TestField("FAS Type-Adl");
+                    GenJournalLine.TestField("FAS Instrument Code-Adl");
                 end;
-            GLAcc."FAS Instrument Posting"::"Same Code":
-                GenJournalLine.TestField("FAS Instrument Code", GLAcc."FAS Instrument Code");
-            GLAcc."FAS Instrument Posting"::"No Code":
-                GenJournalLine.TestField("FAS Instrument Code", '');
+            GLAcc."FAS Instrument Posting-Adl"::"Same Code":
+                GenJournalLine.TestField("FAS Instrument Code-Adl", GLAcc."FAS Instrument Code-Adl");
+            GLAcc."FAS Instrument Posting-Adl"::"No Code":
+                GenJournalLine.TestField("FAS Instrument Code-Adl", '');
         end;
 
-        case GLAcc."FAS Sector Posting" of
-            GLAcc."FAS Sector Posting"::"Code Mandatory":
-                GenJournalLine.TestField("FAS Sector Code");
-            GLAcc."FAS Sector Posting"::"Same Code":
-                GenJournalLine.TestField("FAS Sector Code", GLAcc."FAS Sector Code");
-            GLAcc."FAS Sector Posting"::"No Code":
-                GenJournalLine.TestField("FAS Sector Code", '');
+        case GLAcc."FAS Sector Posting-Adl" of
+            GLAcc."FAS Sector Posting-Adl"::"Code Mandatory":
+                GenJournalLine.TestField("FAS Sector Code-Adl");
+            GLAcc."FAS Sector Posting-Adl"::"Same Code":
+                GenJournalLine.TestField("FAS Sector Code-Adl", GLAcc."FAS Sector Code-Adl");
+            GLAcc."FAS Sector Posting-Adl"::"No Code":
+                GenJournalLine.TestField("FAS Sector Code-Adl", '');
         end;
     end;
 
@@ -134,7 +134,7 @@ codeunit 13062661 "Reporting SI Evnt."
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::BST) then exit;
 
         if GLAcc.GET(GLEntry."G/L Account No.") then
-            GLEntry."BST Code" := GLAcc."BST Code";
+            GLEntry."BST Code-Adl" := GLAcc."BST Code-Adl";
     end;
 
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitCustLedgEntry', '', false, false)]
@@ -158,7 +158,7 @@ codeunit 13062661 "Reporting SI Evnt."
 
         Cust.get(CustLedgerEntry."Customer No.");
         CustLedgerEntry.CopyKRDFields(Cust);
-        CustLedgerEntry.TestField("KRD Affiliation Type");
+        CustLedgerEntry.TestField("KRD Affiliation Type-Adl");
 
         if CustPstgGrp.get(CustLedgerEntry."Customer Posting Group") then
             CustLedgerEntry.CopyKRDFields(CustPstgGrp);

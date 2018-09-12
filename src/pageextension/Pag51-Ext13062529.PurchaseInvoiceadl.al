@@ -1,4 +1,4 @@
-pageextension 13062529 "PurchaseInvoice-Adl" extends "Purchase Invoice"  //51
+pageextension 13062529 "Purchase Invoice-Adl" extends "Purchase Invoice"  //51
 {
     layout
     {

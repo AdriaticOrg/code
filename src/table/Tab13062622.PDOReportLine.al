@@ -55,7 +55,7 @@ table 13062622 "PDO Report Line"
                 Country: Record "Country/Region";
             begin
                 if Country.get("Country/Region Code") then
-                    "Country/Region No." := Country."Numeric Code"
+                    "Country/Region No." := Country."Numeric Code-Adl"
                 else
                     clear("Country/Region No.");
             end;

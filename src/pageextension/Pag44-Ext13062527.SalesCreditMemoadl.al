@@ -1,4 +1,4 @@
-pageextension 13062527 "SalesCreditMemo-Adl" extends "Sales Credit Memo" //44
+pageextension 13062527 "Sales Credit Memo-Adl" extends "Sales Credit Memo" //44
 {
     layout
     {
@@ -20,7 +20,7 @@ pageextension 13062527 "SalesCreditMemo-Adl" extends "Sales Credit Memo" //44
             }
             // </adl.10>
             // <adl.22>
-            field("VAT Correction Date"; "VAT Correction Date")
+            field("VAT Correction Date"; "VAT Correction Date-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
@@ -31,7 +31,7 @@ pageextension 13062527 "SalesCreditMemo-Adl" extends "Sales Credit Memo" //44
         addafter("EU 3-Party Trade")
         {
             // <adl.22>
-            field("EU Customs Procedure"; "EU Customs Procedure")
+            field("EU Customs Procedure"; "EU Customs Procedure-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;

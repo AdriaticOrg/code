@@ -1,4 +1,4 @@
-tableextension 13062532 "VATEntry-Adl" extends "VAT Entry" //254
+tableextension 13062532 "VAT Entry-Adl" extends "VAT Entry" //254
 {
     fields
     {
@@ -38,12 +38,12 @@ tableextension 13062532 "VATEntry-Adl" extends "VAT Entry" //254
         }
         // </adl.11>
         // <adl.22>
-        field(13062601; "VAT Correction Date"; Date)
+        field(13062601; "VAT Correction Date-Adl"; Date)
         {
             Caption = 'VAT Correction Date';
             DataClassification = SystemMetadata;
         }
-        field(13062602; "EU Customs Procedure"; Boolean)
+        field(13062602; "EU Customs Procedure-Adl"; Boolean)
         {
             Caption = 'EU Customs Procedure';
             DataClassification = SystemMetadata;

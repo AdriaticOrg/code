@@ -1,4 +1,4 @@
-tableextension 13062531 "PurchCrMemoHdr-Adl" extends "Purch. Cr. Memo Hdr."  //124
+tableextension 13062531 "Purch. Cr. Memo Hdr.-Adl" extends "Purch. Cr. Memo Hdr."  //124
 {
     fields
     {

@@ -23,8 +23,8 @@ report 13062622 "Export PDO"
             {
                 IncludeCaption = true;
             }
-            column(PrepairedByName; PrepairedByUser."Reporting_SI Name") { }
-            column(ResponsibleName; ResponsibleUser."Reporting_SI Name") { }
+            column(PrepairedByName; PrepairedByUser."Reporting_SI Name-Adl") { }
+            column(ResponsibleName; ResponsibleUser."Reporting_SI Name-Adl") { }
 
             dataitem("PDO Report Line"; "PDO Report Line")
             {
@@ -56,9 +56,9 @@ report 13062622 "Export PDO"
             trigger OnAfterGetRecord()
             begin
                 PrepairedByUser.get("Prep. By User ID");
-                PrepairedByUser.testfield("Reporting_SI Name");
+                PrepairedByUser.testfield("Reporting_SI Name-Adl");
                 ResponsibleUser.get("Resp. User ID");
-                ResponsibleUser.TestField("Reporting_SI Name");
+                ResponsibleUser.TestField("Reporting_SI Name-Adl");
             end;
         }
     }

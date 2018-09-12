@@ -1,4 +1,4 @@
-tableextension 13062526 "PurchaseHeader-Adl" extends "Purchase Header"  //38
+tableextension 13062526 "Purchase Header-Adl" extends "Purchase Header"  //38
 {
     fields
     {

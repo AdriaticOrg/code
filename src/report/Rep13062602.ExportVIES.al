@@ -23,8 +23,8 @@ report 13062602 "Export VIES"
             {
                 IncludeCaption = true;
             }
-            column(PrepairedByName; PrepairedByUser."Reporting_SI Name") { }
-            column(ResponsibleName; ResponsibleUser."Reporting_SI Name") { }
+            column(PrepairedByName; PrepairedByUser."Reporting_SI Name-Adl") { }
+            column(ResponsibleName; ResponsibleUser."Reporting_SI Name-Adl") { }
 
             dataitem("VIES Report Line"; "VIES Report Line")
             {
@@ -76,9 +76,9 @@ report 13062602 "Export VIES"
             trigger OnAfterGetRecord()
             begin
                 PrepairedByUser.get("Prep. By User ID");
-                PrepairedByUser.testfield("Reporting_SI Name");
+                PrepairedByUser.testfield("Reporting_SI Name-Adl");
                 ResponsibleUser.get("Resp. User ID");
-                ResponsibleUser.TestField("Reporting_SI Name");
+                ResponsibleUser.TestField("Reporting_SI Name-Adl");
             end;
         }
     }
@@ -274,18 +274,18 @@ report 13062602 "Export VIES"
         XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('F17_ResponsiblePerson', xmlns);
-        XmlElem[4].Add(XmlText.Create(RespUser."Reporting_SI Name"));
+        XmlElem[4].Add(XmlText.Create(RespUser."Reporting_SI Name-Adl"));
         XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('F17_TaxNumber', xmlns); //todo
         XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('F18_ContactPerson', xmlns);
-        XmlElem[4].Add(XmlText.Create(PrepairedByUser."Reporting_SI Name"));
+        XmlElem[4].Add(XmlText.Create(PrepairedByUser."Reporting_SI Name-Adl"));
         XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('F18_ContactPerson', xmlns);
-        XmlElem[4].Add(XmlText.Create(PrepairedByUser."Reporting_SI Phone"));
+        XmlElem[4].Add(XmlText.Create(PrepairedByUser."Reporting_SI Phone-Adl"));
         XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('F13_RepresentativeTaxNumber', xmlns);  //todo
