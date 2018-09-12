@@ -186,4 +186,11 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
         UnpaidRecEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables);
         // </adl.0>
     end;
+
+    trigger OnAfterGetCurrRecord()
+    begin
+        Clear(OriginalDocumentAmountLCY);
+        Clear(OriginalVATAmountLCY);
+        Clear(OpenAmounLCYtWithoutUnrealizedERF);
+    end;
 }
