@@ -3,7 +3,7 @@ pageextension 13062741 "Sales & Receivables Setup-Adl" extends "Sales & Receivab
     layout
     {
         // <adl.28>
-        addlast("Dynamics 365 for Sales")
+        addlast(General)
         {
             group(UnpaidReceivables)
             {

@@ -104,7 +104,7 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
             column(TextHeaderIV; TextHeaderIVLbl + FORMAT(WorkDate(), 0, '<Day,2>.<Month,2>.<Year4>'))
             {
             }
-            column(TextHeaderV; TextHeaderVLbl + ' ' + CompanyOfficial."User ID")
+            column(TextHeaderV; TextHeaderVLbl + ' ' + CompanyOfficial."Reporting_SI Name")
             {
             }
             column(TextHeaderVI; TextHeaderVILbl)
@@ -553,7 +553,7 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
 
                     field(CompanyOfficialNo; CompanyOfficialNo)
                     {
-                        Caption = 'Copmany official';
+                        Caption = 'Compmany official';
                         TableRelation = "User Setup"."User ID";
                         ApplicationArea = All;
                     }
