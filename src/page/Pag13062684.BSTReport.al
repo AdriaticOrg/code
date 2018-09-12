@@ -85,8 +85,8 @@ page 13062684 "BST Report"
 
                 trigger OnAction()
                 var
-                    RepSuggestLines: Report "Suggest BST Lines";
                     GLEntry: Record "G/L Entry";
+                    RepSuggestLines: Report "Suggest BST Lines";
                 begin
                     TestField("No.");
                     TestField("Period Start Date");

@@ -968,6 +968,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2369601040 - Action 2590055782 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjust FAS on Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup - Action Adjust FAS on Entries - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2632500464 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Report Header</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1643,190 +1648,180 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Book Calculation-Adl - NamedType CircularRefErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 329424276" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1622207341 - NamedType 1582893390" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Books</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType Title</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType TitleLbl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 3265227388" size-unit="char" translate="yes" xml:space="preserve">
-          <source>obracuni</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType CalculationsTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 913156796" size-unit="char" translate="yes" xml:space="preserve">
-          <source>PPPDV</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType PPPDVTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 2912601267" size-unit="char" translate="yes" xml:space="preserve">
-          <source>&lt;!-- %1 --&gt;</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ComTxt</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 1164219065" size-unit="char" translate="yes" xml:space="preserve">
-          <source>OJ</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType OJTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 2940094709" size-unit="char" translate="yes" xml:space="preserve">
-          <source>PIB</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType RegNoTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 3546732671" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Firma</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType CompanyTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 1576715754" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Opstina</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType MunicipalityTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 1011442566" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Adresa</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType AdresaTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 767026292" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Od_Datum</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType From_Date_Tag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 105780703" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Do_Datum</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType To_Date_Tag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 1753336578" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ElektronskaPosta</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType EmailTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 4275360384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>JMBGPoreskiSavetnik</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType TaxAdviserIDTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 1385599323" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Mesto</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType PlaceTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 4204289456" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Datum_Prijave</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ApplicationDateTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 2810011269" size-unit="char" translate="yes" xml:space="preserve">
-          <source>OdgovornoLice</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ResponsiblePersonTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 2938825169" size-unit="char" translate="yes" xml:space="preserve">
-          <source>PovracajDA</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ReturnYesTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 1766002539" size-unit="char" translate="yes" xml:space="preserve">
-          <source>PovracajNE</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ReturnNoTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 1421209966" size-unit="char" translate="yes" xml:space="preserve">
-          <source>PeriodPOB</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType PeriodPOBTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 2728851995" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TipPodnosioca</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ApplierTypeTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 3561366697" size-unit="char" translate="yes" xml:space="preserve">
-          <source>IzmenaPrijave</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ApplicatonChangeTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 1877370264" size-unit="char" translate="yes" xml:space="preserve">
-          <source>IdentifikacioniBrojPrijaveKojaSeMenja</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ApplicationNoForChangeTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 4170943693" size-unit="char" translate="yes" xml:space="preserve">
-          <source>"ns1:EPPPDV xmlns:ns1=""urn:poreskauprava.gov.rs/zim"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"""</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType RootTagbegin</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 2070488645" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ns1:EPPPDV</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType RootTagEnd</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 1721192301" size-unit="char" translate="yes" xml:space="preserve">
-          <source>sadrzaj</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ContentTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 1264441863" size-unit="char" translate="yes" xml:space="preserve">
-          <source>signatures</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType SignaturesTag</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 1755599862" size-unit="char" translate="yes" xml:space="preserve">
-          <source>envelopa</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType Envelopa</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 4248029050" size-unit="char" translate="yes" xml:space="preserve">
-          <source>prilozi</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType AttachmentTab</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 1843627308" size-unit="char" translate="yes" xml:space="preserve">
-          <source>"nacinPodnosenja=""elektronski"""</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ApplyMethodAttr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 2700165863" size-unit="char" translate="yes" xml:space="preserve">
-          <source>"timestamp=""%1"""</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType TimestampAttr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 2524690250" size-unit="char" translate="yes" xml:space="preserve">
-          <source>"id="""""</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType IdAttr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 1039674498" size-unit="char" translate="yes" xml:space="preserve">
-          <source>"tipIdentifikatora=""JMBG"""</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType IndentyfierTypeAttr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 3273961662" size-unit="char" translate="yes" xml:space="preserve">
-          <source>"vremePodnosenja=""%1"""</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ApplyTimeAttr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 648188553" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Iznos_63</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType Tag63</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 2561278404" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Iznos_64</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType Tag64</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - Method 3624787637 - NamedType 4133778232" size-unit="char" translate="yes" xml:space="preserve">
-          <source>"&lt;?xml version=""1.0""?&gt;"</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - Method XMLFileOpen - NamedType Text001Loc</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - Method 3624787637 - NamedType 3006441801" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1622207341 - NamedType 922298287" size-unit="char" translate="yes" xml:space="preserve">
           <source>"&lt;?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?&gt;"</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - Method XMLFileOpen - NamedType XMLVarsionLoc</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType XMLVarsionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 3538455222" size-unit="char" translate="yes" xml:space="preserve">
+          <source>obracuni</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType CalculationsTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 3789320566" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PPPDV</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType PPPDVTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 2195025013" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&lt;!-- %1 --&gt;</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ComTxtLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 599088519" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OJ</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType OJTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 1252655523" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PIB</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType RegNoTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 1120300641" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Firma</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType CompanyTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 138231344" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Opstina</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType MunicipalityTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 1813351148" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adresa</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType AdresaTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 2147693998" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Od_Datum</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType From_Date_TagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 616060737" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do_Datum</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType To_Date_TagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 4001562312" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ElektronskaPosta</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType EmailTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 653848282" size-unit="char" translate="yes" xml:space="preserve">
+          <source>JMBGPoreskiSavetnik</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType TaxAdviserIDTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 1031281885" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mesto</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType PlaceTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 2477293002" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Datum_Prijave</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ApplicationDateTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 2980046643" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OdgovornoLice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ResponsiblePersonTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 3028973279" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PovracajDA</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ReturnYesTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 1247648429" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PovracajNE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ReturnNoTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 1452197204" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PeriodPOB</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType PeriodPOBTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 3495487517" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TipPodnosioca</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ApplierTypeTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 788983" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IzmenaPrijave</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ApplicatonChangeTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 295552946" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IdentifikacioniBrojPrijaveKojaSeMenja</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ApplicationNoForChangeTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 1704182331" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"ns1:EPPPDV xmlns:ns1=""urn:poreskauprava.gov.rs/zim"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"""</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType RootTagbeginLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 2396008819" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ns1:EPPPDV</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType RootTagEndLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 3706406363" size-unit="char" translate="yes" xml:space="preserve">
+          <source>sadrzaj</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ContentTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 726778409" size-unit="char" translate="yes" xml:space="preserve">
+          <source>signatures</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType SignaturesTagLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 3274351964" size-unit="char" translate="yes" xml:space="preserve">
+          <source>envelopa</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType EnvelopaLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 1315845248" size-unit="char" translate="yes" xml:space="preserve">
+          <source>prilozi</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType AttachmentTabLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 1349515366" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"nacinPodnosenja=""elektronski"""</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ApplyMethodAttrLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 1446148745" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"timestamp=""%1"""</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType TimestampAttrLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 2555852688" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"id="""""</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType IdAttrLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 377015012" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"vremePodnosenja=""%1"""</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType ApplyTimeAttrLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 3485938391" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Iznos_63</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType Tag63Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 840436542" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Iznos_64</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType Tag64Lbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 1622207341 - Method 3329076000 - NamedType 2251364989" size-unit="char" translate="yes" xml:space="preserve">
           <source>Wrong XML indent writing text %1</source>
@@ -1862,6 +1857,16 @@
           <source>No, and please don't remind me again.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Adl Core Notification-adl - Method ShowSetupNotification - NamedType DontAskAgainLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 794882899 - NamedType 3546745230" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Failed to contact the address endpoint.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Wizard RapidStart-adl - NamedType HttpGetRequestErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 794882899 - NamedType 1091991448" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Failed to read response.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Wizard RapidStart-adl - NamedType HttpReadResponseErr</note>
         </trans-unit>
         <trans-unit id="Page 701540871 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Types</source>
@@ -2257,6 +2262,11 @@
           <source>FAS Report Subform</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2373169676 - Action 3768474506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show related entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform - Action Show related entries - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 427742547 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Reports</source>
@@ -2838,25 +2848,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Book-adl - Control VATBookCode - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 3256069342 - NamedType 989751795" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3256069342 - NamedType 3415447349" size-unit="char" translate="yes" xml:space="preserve">
           <source>IZPIS ODBITKA DDV.TXT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Book-adl - NamedType FileName</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Book-adl - NamedType FileNameLbl</note>
         </trans-unit>
-        <trans-unit id="Report 3256069342 - NamedType 3427126301" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3256069342 - NamedType 71216523" size-unit="char" translate="yes" xml:space="preserve">
           <source>*.txt|*.TXT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Book-adl - NamedType ToFilter</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Book-adl - NamedType ToFilterLbl</note>
         </trans-unit>
-        <trans-unit id="Report 3256069342 - NamedType 1968152428" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3256069342 - NamedType 1997510694" size-unit="char" translate="yes" xml:space="preserve">
           <source>Save to</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Book-adl - NamedType DialogTitle</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Book-adl - NamedType DialogTitleLbl</note>
         </trans-unit>
-        <trans-unit id="Report 3256069342 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3256069342 - NamedType 1614022648" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Group Code must be selected!</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Book-adl - NamedType Text001</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Book-adl - NamedType Text001Txt</note>
         </trans-unit>
         <trans-unit id="Report 3256069342 - NamedType 1539999200" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Period</source>
@@ -3152,6 +3162,31 @@
           <source>Sheet 1 and 2 must have positive amounts. FAS Reporting Line sum for AOP %1 (%2) is %3. Filters:\\%4</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export FAS - NamedType AmountMiustBePositiveMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 2590055782 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjust FAS on Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust FAS on Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2590055782 - Control 1796811495 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update all from G/L Account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust FAS on Entries - Control UpdateAllFromGL - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2590055782 - NamedType 1000469645" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to update entries based on values in master tables?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust FAS on Entries - NamedType ConfrimMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 2590055782 - NamedType 789090302" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processing finished.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust FAS on Entries - NamedType FinishMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 2590055782 - NamedType 3426155563" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aborted by user</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust FAS on Entries - NamedType AbortByUserMsg</note>
         </trans-unit>
         <trans-unit id="Report 2342850016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest KRD Lines</source>
@@ -3454,204 +3489,204 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - Control EndDueDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 787011548 - Control 1954028305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Company InformaationB</source>
+          <source>Copmany official</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - Control CompanyOfficialNo - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 1196336482" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Registration No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text001</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text001Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 1753513791" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text002</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text002Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3779895200" size-unit="char" translate="yes" xml:space="preserve">
           <source>Other</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text003</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text003Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3140410629" size-unit="char" translate="yes" xml:space="preserve">
           <source>STATISTICAL REPORT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text004</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text004Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2287756966" size-unit="char" translate="yes" xml:space="preserve">
           <source>OF DUE, NOT PAID INVOICES ON DATE %1 WHICH WERE NOT PAID UNTIL %2</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text005</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text005Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3073937421" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2660039675" size-unit="char" translate="yes" xml:space="preserve">
           <source>I. INFORMATION OF TAX PAYER/APPLICANT OF REPORT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderILbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2507091926" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 443599932" size-unit="char" translate="yes" xml:space="preserve">
           <source>NAME/FIRST AND LAST NAME:</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI1</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI1Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 594002075" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 4091509405" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT REGISTRATION NO.:</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI2Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1231698692" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2854992382" size-unit="char" translate="yes" xml:space="preserve">
           <source>ADDRESS:</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI3</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderI3Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3313697566" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3430751556" size-unit="char" translate="yes" xml:space="preserve">
           <source>II. INFORMATION OF DUE, NONPAID INVOICES ISSUED IN ACCORDANCE WITH VAT LAW</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderII</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderIILbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2929281271" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 4281021913" size-unit="char" translate="yes" xml:space="preserve">
           <source>LINE NO.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine1</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine1Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 547403826" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2075426936" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT REGISTRATION NO. TYPE</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine2Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 4204674505" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 1848456087" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT REGISTRATION NO.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine3</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine3Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1822797060" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 603692030" size-unit="char" translate="yes" xml:space="preserve">
           <source>NAME/FIRST AND LAST NAME</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine4</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine4Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1185100443" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 1840209053" size-unit="char" translate="yes" xml:space="preserve">
           <source>INVOICE LINE NO.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine5</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine5Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3098190294" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2487266876" size-unit="char" translate="yes" xml:space="preserve">
           <source>INVOICE NO.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine6</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine6Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2460493677" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2981453275" size-unit="char" translate="yes" xml:space="preserve">
           <source>DATE OF INVOICE</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine7</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine7Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2760372248" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 467598898" size-unit="char" translate="yes" xml:space="preserve">
           <source>INVOICE DUE DATE</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine8</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine8Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2122675631" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2736184785" size-unit="char" translate="yes" xml:space="preserve">
           <source>NO. OF OVERDUE DAYS</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine9</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine9Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3944622599" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2861535785" size-unit="char" translate="yes" xml:space="preserve">
           <source>INVOICE AMOUNT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine10</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine10Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 287351920" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 1687768842" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT AMOUNT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine11</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine11Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 925048537" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2628809511" size-unit="char" translate="yes" xml:space="preserve">
           <source>INVOICE AMOUNT INCL. VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine12</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine12Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1562745154" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 1392292488" size-unit="char" translate="yes" xml:space="preserve">
           <source>PAID AMOUNT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine13</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine13Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2200441771" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3994532973" size-unit="char" translate="yes" xml:space="preserve">
           <source>UNPAID AMOUNT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine14</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderLine14Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 4087776577" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 4200521935" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextTotal</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextTotalLbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2490333051" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3987187709" size-unit="char" translate="yes" xml:space="preserve">
           <source>TOTAL</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextTotalUpperCase</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextTotalUpperCaseLbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1023367749" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 169133427" size-unit="char" translate="yes" xml:space="preserve">
           <source>III. INFORMATION OF DUE, NONPAID INVOICES ISSUED IN ACCORDANCE WITH OPZ REGULATIONS</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderIII</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderIIILbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1269638167" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3524397689" size-unit="char" translate="yes" xml:space="preserve">
           <source>"IV. Date: "</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderIV</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderIVLbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1760604712" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3722446274" size-unit="char" translate="yes" xml:space="preserve">
           <source>"V. Created by (first name and last name): "</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderV</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderVLbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1685776735" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 937594561" size-unit="char" translate="yes" xml:space="preserve">
           <source>VI. Signature:</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderVI</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextHeaderVILbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1700519688" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3141268898" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error creating file on server.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextError001</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType TextError001Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 2165353731" size-unit="char" translate="yes" xml:space="preserve">
           <source>No entries were found to create file.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text006</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text006Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 576348388" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export to XML File</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text007</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text007Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 4273407817" size-unit="char" translate="yes" xml:space="preserve">
           <source>XML Files (*.xml)|*.xml|All Files (*.*)|*.*</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text008</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text008Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3078467498" size-unit="char" translate="yes" xml:space="preserve">
           <source>File is saved on:</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text009</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text009Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3797269194" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 %2</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text010</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text010Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 1026443335" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 17661673" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original Invoice Amount (LCY) for Customer Ledger Entry No. %1 cannot be 0 or less.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text011</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text011Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2939533186" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 3543369544" size-unit="char" translate="yes" xml:space="preserve">
           <source>Uncollected_Ovedrue_Entries_%1</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text012</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text012Lbl</note>
         </trans-unit>
-        <trans-unit id="Report 787011548 - NamedType 2301836569" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 787011548 - NamedType 443342567" size-unit="char" translate="yes" xml:space="preserve">
           <source>File %1 was created.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text013</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - NamedType Text013Lbl</note>
         </trans-unit>
         <trans-unit id="Report 1960300502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Repost Customer Ledger Entry</source>
@@ -4052,6 +4087,26 @@
           <source>Global Posting Approver</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup-Adl - Field Global Posting Approver-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1018799998 - Control 3246291640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reporting Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting_SI Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1018799998 - Control 271637889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reporting E-mail</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting_SI Email - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1018799998 - Control 1426040801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reporting Phone</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting_SI Phone - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1018799998 - Control 691763358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reporting Position</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting_SI Position - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1018799998 - Field 3745021044 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting_SI Name</source>

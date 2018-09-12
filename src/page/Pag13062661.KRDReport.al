@@ -89,9 +89,9 @@ page 13062661 "KRD Report"
 
                 trigger OnAction()
                 var
-                    RepSuggestLines: Report "Suggest KRD Lines";
                     CLE: Record "Cust. Ledger Entry";
                     VLE: record "Vendor Ledger Entry";
+                    RepSuggestLines: Report "Suggest KRD Lines";
                 begin
                     TestField("No.");
                     TestField("Period Start Date");
