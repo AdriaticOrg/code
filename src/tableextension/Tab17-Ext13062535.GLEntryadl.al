@@ -32,6 +32,14 @@ tableextension 13062535 "G/L Entry-Adl" extends "G/L Entry" //17
         }
         // </adl.26>
     }
+
+    keys
+    {
+        // <adl.24>
+        key(FAS; "FAS Type-Adl", "FAS Instrument Code-Adl", "FAS Sector Code-Adl") { }
+        // </adl.24>
+    }
+
     // <adl.24>
     procedure CopyFASFields(BankAccount: Record "Bank Account")
     begin

@@ -1653,6 +1653,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType TitleLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1622207341 - NamedType 922298287" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"&lt;?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?&gt;"</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType XMLVarsionLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1622207341 - NamedType 3538455222" size-unit="char" translate="yes" xml:space="preserve">
           <source>obracuni</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1803,11 +1808,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType IdAttrLbl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - NamedType 1039674498" size-unit="char" translate="yes" xml:space="preserve">
-          <source>"tipIdentifikatora=""JMBG"""</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType IndentyfierTypeAttr</note>
-        </trans-unit>
         <trans-unit id="Codeunit 1622207341 - NamedType 377015012" size-unit="char" translate="yes" xml:space="preserve">
           <source>"vremePodnosenja=""%1"""</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1822,16 +1822,6 @@
           <source>Iznos_64</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType Tag64Lbl</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - Method 3624787637 - NamedType 4133778232" size-unit="char" translate="yes" xml:space="preserve">
-          <source>"&lt;?xml version=""1.0""?&gt;"</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - Method XMLFileOpen - NamedType Text001Loc</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1622207341 - Method 3624787637 - NamedType 3006441801" size-unit="char" translate="yes" xml:space="preserve">
-          <source>"&lt;?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?&gt;"</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - Method XMLFileOpen - NamedType XMLVarsionLoc</note>
         </trans-unit>
         <trans-unit id="Codeunit 1622207341 - Method 3329076000 - NamedType 2251364989" size-unit="char" translate="yes" xml:space="preserve">
           <source>Wrong XML indent writing text %1</source>
@@ -1867,6 +1857,16 @@
           <source>No, and please don't remind me again.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Adl Core Notification-adl - Method ShowSetupNotification - NamedType DontAskAgainLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 794882899 - NamedType 3546745230" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Failed to contact the address endpoint.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Wizard RapidStart-adl - NamedType HttpGetRequestErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 794882899 - NamedType 1091991448" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Failed to read response.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Wizard RapidStart-adl - NamedType HttpReadResponseErr</note>
         </trans-unit>
         <trans-unit id="Page 701540871 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Types</source>
@@ -2262,6 +2262,11 @@
           <source>FAS Report Subform</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2373169676 - Action 3768474506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show related entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform - Action Show related entries - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 427742547 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Reports</source>
@@ -4082,6 +4087,26 @@
           <source>Global Posting Approver</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup-Adl - Field Global Posting Approver-adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1018799998 - Control 3246291640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reporting Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting_SI Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1018799998 - Control 271637889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reporting E-mail</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting_SI Email - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1018799998 - Control 1426040801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reporting Phone</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting_SI Phone - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1018799998 - Control 691763358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reporting Position</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting_SI Position - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1018799998 - Field 3745021044 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting_SI Name</source>
