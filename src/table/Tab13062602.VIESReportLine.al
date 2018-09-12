@@ -21,6 +21,14 @@ table 13062602 "VIES Report Line"
             Caption = 'Description';
             DataClassification = SystemMetadata;
         }
+        field(6; "Source Type"; Option)
+        {
+            OptionMembers = " ",Sales,Purchases;
+            OptionCaption = ' ,Sales,Purchases';
+            Caption = 'Source Type';
+            DataClassification = SystemMetadata;
+        }
+
         field(10; "Type"; Option)
         {
             Caption = 'Type';
@@ -107,6 +115,7 @@ table 13062602 "VIES Report Line"
     trigger OnInsert()
     begin
         TestHeadStatusOpen();
+        SetSurceType();
     end;
 
     trigger OnModify()
@@ -124,6 +133,24 @@ table 13062602 "VIES Report Line"
         VIESRepHead: Record "VIES Report Header";
     begin
         VIESRepHead.TestStatusOpen("Document No.");
+    end;
+
+    local procedure SetSurceType()
+    var
+        ViesRepHead: Record "VIES Report Header";
+    begin
+        ViesRepHead.get("Document No.");
+        ViesRepHead.TestField("VIES Country");
+
+        if ViesRepHead."VIES Country" = ViesRepHead."VIES Country"::Croatia then
+            ViesRepHead.TestField("VIES Type");
+
+        "Source Type" := "Source Type"::Sales;
+
+        if (ViesRepHead."VIES Country" = ViesRepHead."VIES Country"::Croatia) and
+            (ViesRepHead."VIES Type" = ViesRepHead."VIES Type"::"PDV-S")
+        then
+            "Source Type" := "Source Type"::Purchases;
     end;
 
 }

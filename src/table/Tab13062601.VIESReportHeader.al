@@ -27,6 +27,36 @@ table 13062601 "VIES Report Header"
             TableRelation = "No. Series";
         }
 
+        field(7; "VIES Country"; Option)
+        {
+            Caption = 'VIES Country';
+            OptionMembers = " ",Slovenia,Croatia;
+            OptionCaption = ' ,Slovenia,Croatia';
+            DataClassification = SystemMetadata;
+
+            trigger OnValidate()
+            begin
+                if (Rec."VIES Country" <> xRec."VIES Country") and CheckLinesExist() then
+                    Error(LineExistErr);
+                clear("VIES Type");
+            end;
+        }
+        field(8; "VIES Type"; Option)
+        {
+            OptionMembers = " ",ZP,"PDV-S";
+            OptionCaption = ' ,ZP,PDV-S';
+            Caption = 'VIES Type';
+            DataClassification = SystemMetadata;
+
+            trigger OnValidate()
+            begin
+                if (Rec."VIES Type" <> xRec."VIES Type") and CheckLinesExist() then
+                    Error(LineExistErr);
+
+                if "VIES Type" <> "VIES Type"::" " then
+                    TestField("VIES Country", "VIES Country"::Croatia);
+            end;
+        }
         field(10; "Period Start Date"; Date)
         {
             Caption = 'Period Start Date';
@@ -137,7 +167,10 @@ table 13062601 "VIES Report Header"
 
         "Prep. By User ID" := RepSISetup."VIES Prep. By User ID";
         "Resp. User ID" := RepSISetup."VIES Resp. User ID";
+        "VIES Country" := RepSISetup."Default VIES Country";
+        "VIES Type" := RepSISetup."Default VIES Type";
         "User ID" := ADLCore.TrimmedUserID50();
+
     end;
 
     trigger OnModify()
@@ -158,6 +191,14 @@ table 13062601 "VIES Report Header"
     local procedure GetNoSeriesCode(): Code[20]
     begin
         exit(RepSISetup."VIES Report No. Series")
+    end;
+
+    local procedure CheckLinesExist(): Boolean
+    var
+        VIESRepLine: Record "VIES Report Line";
+    begin
+        VIESRepLine.SetRange("Document No.", "No.");
+        exit(VIESRepLine.findset());
     end;
 
     procedure AssistEdit(OldVIESRepHead: record "VIES Report Header"): Boolean
@@ -196,4 +237,5 @@ table 13062601 "VIES Report Header"
         RepSISetup: Record "Reporting_SI Setup";
         VIESRepHead: Record "VIES Report Header";
         NoSeriesMgt: Codeunit NoSeriesManagement;
+        LineExistErr: Label 'Document already has lines, please remove them first.';
 }

@@ -21,6 +21,15 @@ page 13062602 "VIES Report"
                             CurrPage.UPDATE();
                     end;
                 }
+                field("VIES Country"; "VIES Country")
+                {
+                    ApplicationArea = All;
+                }
+                field("VIES Type"; "VIES Type")
+                {
+                    ApplicationArea = All;
+                    Editable = "VIES Country" = "VIES Country"::Croatia;
+                }
                 field("Period Start Date"; "Period Start Date")
                 {
                     ApplicationArea = All;
@@ -97,11 +106,18 @@ page 13062602 "VIES Report"
                     RepSuggestLines: Report "Suggest VIES Lines";
                 begin
                     TestField("No.");
+                    TestField("VIES Country");
+                    if "VIES Country" = "VIES Country"::Croatia then
+                        TestField("VIES Type");
                     TestField("Period Start Date");
                     TestField("Period End Date");
 
                     VATEntry.Reset();
                     VATEntry.SetRange("Posting Date", "Period Start Date", "Period End Date");
+
+                    VATEntry.SetRange(Type, VATEntry.type::Sale);
+                    if ("VIES Country" = "VIES Country"::Croatia) and ("VIES Type" = "VIES Type"::"PDV-S") then
+                        VATEntry.SetRange(Type, VATEntry.Type::Purchase);
 
                     RepSuggestLines.SetTableView(VATEntry);
                     RepSuggestLines.SetVIESRepDocNo("No.");

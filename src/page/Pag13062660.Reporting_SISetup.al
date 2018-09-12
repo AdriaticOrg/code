@@ -81,6 +81,14 @@ page 13062660 "Reporting_SI Setup"
             }
             group(VIES)
             {
+                field("Default VIES Country"; "Default VIES Country")
+                {
+                    ApplicationArea = All;
+                }
+                field("Default VIES Type"; "Default VIES Type")
+                {
+                    ApplicationArea = All;
+                }
                 field("VIES Report No. Series"; "VIES Report No. Series")
                 {
                     ApplicationArea = All;
