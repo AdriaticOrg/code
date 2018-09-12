@@ -28,12 +28,13 @@ pageextension 13062541 "Customer Card-Adl" extends "Customer Card" //21
     // <adl.25>   
     actions
     {
-        addlast(Documents)
+        addlast("&Customer")
         {
-            action("Show Vendors")
+            action(Vendors)
             {
                 RunObject = page "Vendor List";
                 ApplicationArea = All;
+                Image = Vendor;
             }
         }
     }
