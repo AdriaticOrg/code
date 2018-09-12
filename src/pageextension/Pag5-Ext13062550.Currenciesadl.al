@@ -1,11 +1,11 @@
-pageextension 13062550 "Currencies-adl" extends Currencies //5
+pageextension 13062550 "Currencies-Adl" extends Currencies //5
 {
     layout
     {
         // <adl.24> 
         addlast(Control1)
         {
-            field("Numeric Code"; "Numeric Code")
+            field("Numeric Code"; "Numeric Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = ADLCoreEnabled;

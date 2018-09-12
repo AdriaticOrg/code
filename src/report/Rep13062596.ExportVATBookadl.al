@@ -27,26 +27,21 @@ report 13062596 "Export VAT Book-adl"
 
                     trigger OnAfterGetRecord()
                     begin
-                        result := 0;
-                        VATEntry.SetRange("Document No.", "VAT Entry"."Document No.");
-                        VATBookCalc.CalcCellValue("VAT Book Group", "VAT Book Column Name"."Column No.", Result, '', VATEntry);
 
-                        if (Result <> 0) then
-                            TextWriterAdl.FixedField(OutStr, result, "VAT Book Column Name"."Fixed text length", PadCharacter, 1, FieldDelimiter)
-
-                        else
-                            TextWriterAdl.FixedField(OutStr, DummyText, "VAT Book Column Name"."Fixed text length", PadCharacter, 1, FieldDelimiter)
                     end;
                 }
 
-                trigger OnPostDataItem()
+                trigger OnAfterGetRecord()
                 begin
-                    TextWriterAdl.NewLine(OutStr);
+
                 end;
             }
 
             trigger OnPreDataItem();
             begin
+                VATBookGrp.Reset();
+                VATBookGrp.SetRange("VAT Book Code", VATBookCode);
+                if VATBookGrp.FindFirst() then;
 
                 if "VAT Entry".GetFilter("Posting Date") <> '' then
                     VATEntry.Setfilter("Posting Date", "VAT Entry".GetFilter("Posting Date"));
@@ -57,14 +52,53 @@ report 13062596 "Export VAT Book-adl"
             end;
 
             trigger OnAfterGetRecord()
+            var
+                VATBookColumnName: Record "VAT Book Column Name-Adl";
+                DecVal: Decimal;
+                Found: Boolean;
+                i: Integer;
             begin
-
                 SetRange("Document No.", "Document No.");
-
-                CreateBookLine("VAT Entry");
-
                 FindLast();
-                setrange("Document No.")
+                setrange("Document No.");
+
+                VATEntry.SetRange("Document No.", "Document No.");
+                If VATEntry.FindFirst() then;
+
+                VATBookColumnName.Reset();
+                VATBookColumnName.SetRange("VAT Book Code", VATBookCode);
+                if VATBookColumnName.FindSet() then
+                    repeat
+                        Result := 0;
+                        VATBookCalc.CalcCellValue(VATBookGrp, VATBookColumnName."Column No.", Result, '', VATEntry);
+                        ListResut.Insert(VATBookColumnName."Column No.", Result);
+                    until VATBookColumnName.Next() = 0;
+
+                for i := 1 to ListResut.Count() do begin
+                    Clear(DecVal);
+                    ListResut.Get(i, DecVal);
+                    If (DecVal > 0) then
+                        Found := true;
+                end;
+
+                if Found then begin
+                    CreateBookLine(VATEntry);
+
+                    VATBookColumnName.Reset();
+                    VATBookColumnName.SetRange("VAT Book Code", VATBookCode);
+                    if VATBookColumnName.FindSet() then
+                        repeat
+                            ListResut.Get(VATBookColumnName."Column No.", Result);
+                            if (Result = 0) then
+                                TextWriterAdl.FixedField(OutStr, DummyText, VATBookColumnName."Fixed text length", PadCharacter, 1, FieldDelimiter)
+                            else
+                                TextWriterAdl.FixedField(OutStr, Result, VATBookColumnName."Fixed text length", PadCharacter, 1, FieldDelimiter);
+                        until VATBookColumnName.Next() = 0;
+                    TextWriterAdl.NewLine(OutStr);
+                    Found := false;
+                end;
+
+                Clear(ListResut);
             end;
         }
     }
@@ -90,7 +124,7 @@ report 13062596 "Export VAT Book-adl"
         trigger OnClosePage()
         begin
             if (VATBookCode = '') then begin
-                Message('%1', Text001);
+                Message('%1', Text001Txt);
                 Error('');
             end;
 
@@ -98,28 +132,29 @@ report 13062596 "Export VAT Book-adl"
     }
     var
         VATEntry: Record "VAT Entry";
-        VATBookCode: Code[20];
         Customer: Record Customer;
         Vendor: Record Vendor;
+        VATBookGrp: Record "VAT Book Group-Adl";
+        VATBookCalc: Codeunit "VAT Book Calculation-Adl";
+        TextWriterAdl: Codeunit "TextWriter-adl";
+        VATBookCode: Code[20];
         Result: Decimal;
         ResultTxt: Text;
-        VATBookCalc: Codeunit "VAT Book Calculation-Adl";
         VATRegNo: Text[20];
         VendCustName: Text;
         ColumnNo: Integer;
         NotFoundDetails: Boolean;
         VATBookColumnNo: array[100] of Integer;
         VATBookColumnLengt: array[100] of integer;
-        TextWriterAdl: Codeunit "TextWriter-adl";
         OutStr: OutStream;
         OutStrColumn: OutStream;
         PadCharacter: Text[1];
         FieldDelimiter: Text[1];
         DummyText: Text;
-        FileName: Label 'IZPIS ODBITKA DDV.TXT';
-        ToFilter: Label '*.txt|*.TXT';
-        DialogTitle: Label 'Save to';
-        Text001: Label 'VAT Group Code must be selected!';
+        FileNameLbl: Label 'IZPIS ODBITKA DDV.TXT';
+        ToFilterLbl: Label '*.txt|*.TXT';
+        DialogTitleLbl: Label 'Save to';
+        Text001Txt: Label 'VAT Group Code must be selected!';
         VATPeriodLbl: Label 'VAT Period';
         CreationDateLbl: Label 'Creation Date';
         DocumentReceiptLbl: Label 'Document Receipt Date';
@@ -127,6 +162,8 @@ report 13062596 "Export VAT Book-adl"
         DocumentDateLbl: Label 'Document Date';
         VendCustomLbl: Label 'Firm / Name and place of supplier';
         VATRegistrationNoLbl: Label 'VAT Registration No.';
+        ListResut: List of [Decimal];
+        ResultArr: array[100] of Decimal;
 
     trigger OnPreReport();
     begin
@@ -136,19 +173,18 @@ report 13062596 "Export VAT Book-adl"
         FieldDelimiter := ';';
         DummyText := ' ';
 
-        CreateHeaderBook; //Create header line txt 
+        CreateHeaderBook();
     end;
 
     trigger OnPostReport()
     begin
-        TextWriterAdl.Download(DialogTitle, ToFilter, FileName);
+        TextWriterAdl.Download(DialogTitleLbl, ToFilterLbl, FileNameLbl);
     end;
 
     local procedure CreateHeaderBook()
     var
-        Counter: Integer;
-        ColumnDesc: Text;
         VATBookColumnName: Record "VAT Book Column Name-Adl";
+        Counter: Integer;
     begin
         //<Davčno obdobje>, Posting Date 
         TextWriterAdl.FixedField(OutStr, VATPeriodLbl, 4, PadCharacter, 1, FieldDelimiter);
@@ -173,21 +209,20 @@ report 13062596 "Export VAT Book-adl"
 
         VATBookColumnName.Reset();
         VATBookColumnName.SetRange("VAT Book Code", VATBookCode);
-        if VATBookColumnName.FindSet then
+        if VATBookColumnName.FindSet() then
             repeat
                 Counter += 1;
                 VATBookColumnNo[Counter] := VATBookColumnName."Column No.";
                 VATBookColumnLengt[Counter] := VATBookColumnName."Fixed text length";
-                if (VATBookColumnName."Fixed text length" = 0) then begin
-                    TextWriterAdl.FixedField(OutStr, VATBookColumnName.Description, StrLen(VATBookColumnName.Description), PadCharacter, 1, FieldDelimiter);
-                end else
+                if (VATBookColumnName."Fixed text length" = 0) then
+                    TextWriterAdl.FixedField(OutStr, VATBookColumnName.Description, StrLen(VATBookColumnName.Description), PadCharacter, 1, FieldDelimiter)
+                else
                     TextWriterAdl.FixedField(OutStr, VATBookColumnName.Description, VATBookColumnName."Fixed text length", PadCharacter, 1, FieldDelimiter);
-
-            until VATBookColumnName.Next = 0;
+            until VATBookColumnName.Next() = 0;
         TextWriterAdl.NewLine(OutStr);
     end;
 
-    local procedure CreateBookLine(var VATEntry: Record "VAT Entry")
+    local procedure CreateBookLine(VATEntry: Record "VAT Entry")
     var
         MinDatePeriod: Date;
         MaxDatePeriod: Date;
@@ -217,31 +252,6 @@ report 13062596 "Export VAT Book-adl"
         end;
     end;
 
-    procedure FixedFieldTxt(var Result: Text; Value: variant; Length: integer; PadCharacter: Text[1]; Justification: Option Right,Left; FIeldDelimiter: Text[1])
-    var
-        StringConversionManagement: Codeunit StringConversionManagement;
-        TextVal: Text[250];
-    begin
-        if (Value.IsDate()) then
-            TextVal := Format(Value, 0, '<day,2><month,2><year,2>')
-        else
-            if (Value.IsDecimal()) then
-                TextVal := Format(Value, 0, '<Precision,2><Standard Format,9>')
-            else
-                TextVal := Format(Value);
-
-        TextVal :=
-            StringConversionManagement.GetPaddedString(
-                TextVal,
-                Length,
-                PadCharacter,
-                Justification);
-
-        if (FieldDelimiter <> '') then
-            TextVal += FIeldDelimiter;
-        Result += TextVal;
-    end;
-
 
     local procedure GetCustVendInfo(VATEntry: Record "VAT Entry");
     var
@@ -254,50 +264,40 @@ report 13062596 "Export VAT Book-adl"
         with VATEntry do begin
             case "Document Type" of
                 "Document Type"::Invoice:
-                    begin
-                        with PurchInvHeader do begin
-                            if get("Document No.") then begin
-                                if ("Pay-to Name" <> '') then
-                                    VendCustName += "Pay-to Name" + ' ';
-                                if ("Pay-to Address" <> '') then
-                                    VendCustName += "Pay-to Address" + ' ';
-                                if ("Pay-to City" <> '') then
-                                    VendCustName += "Pay-to City" + ' ';
-                                if ("Pay-to Country/Region Code" <> '') then
-                                    VendCustName += "Pay-to Country/Region Code" + ' ';
-                            end;
-                        end;
+                    if PurchInvHeader.get("Document No.") then begin
+                        if (PurchInvHeader."Pay-to Name" <> '') then
+                            VendCustName += PurchInvHeader."Pay-to Name" + ' ';
+                        if (PurchInvHeader."Pay-to Address" <> '') then
+                            VendCustName += PurchInvHeader."Pay-to Address" + ' ';
+                        if (PurchInvHeader."Pay-to City" <> '') then
+                            VendCustName += PurchInvHeader."Pay-to City" + ' ';
+                        if (PurchInvHeader."Pay-to Country/Region Code" <> '') then
+                            VendCustName += PurchInvHeader."Pay-to Country/Region Code" + ' ';
                     end;
+
                 "Document Type"::"Credit Memo":
-                    begin
-                        with PurchCrMemoHdr do begin
-                            if get("Document No.") then begin
-                                if ("Pay-to Name" <> '') then
-                                    VendCustName += "Pay-to Name" + ' ';
-                                if ("Pay-to Address" <> '') then
-                                    VendCustName += "Pay-to Address" + ' ';
-                                if ("Pay-to City" <> '') then
-                                    VendCustName += "Pay-to City" + ' ';
-                                if ("Pay-to Country/Region Code" <> '') then
-                                    VendCustName += "Pay-to Country/Region Code" + ' ';
-                            end;
-                        end;
+                    if PurchCrMemoHdr.get("Document No.") then begin
+                        if (PurchCrMemoHdr."Pay-to Name" <> '') then
+                            VendCustName += PurchCrMemoHdr."Pay-to Name" + ' ';
+                        if (PurchCrMemoHdr."Pay-to Address" <> '') then
+                            VendCustName += PurchCrMemoHdr."Pay-to Address" + ' ';
+                        if (PurchCrMemoHdr."Pay-to City" <> '') then
+                            VendCustName += PurchCrMemoHdr."Pay-to City" + ' ';
+                        if (PurchCrMemoHdr."Pay-to Country/Region Code" <> '') then
+                            VendCustName += PurchCrMemoHdr."Pay-to Country/Region Code" + ' ';
                     end;
             end;
 
-            /* if Vendor.Get("Bill-to/Pay-to No.") then begin
-                 with Vendor do begin
-                     if (Name <> '') then
-                         VendCustName += Name + '';
-                     if (Address <> '') then
-                         VendCustName += Address + '';
-                     if (City <> '') then
-                         VendCustName += City + '';
-                     if ("Country/Region Code" <> '') then
-                         VendCustName += "Country/Region Code";
-                 end;
-             end;
-           */
+            if Vendor.Get("Bill-to/Pay-to No.") then begin
+                if (Vendor.Name <> '') then
+                    VendCustName += Vendor.Name + '';
+                if (Vendor.Address <> '') then
+                    VendCustName += Vendor.Address + '';
+                if (Vendor.City <> '') then
+                    VendCustName += Vendor.City + '';
+                if ("Country/Region Code" <> '') then
+                    VendCustName += Vendor."Country/Region Code";
+            end;
         end;
     end;
 }

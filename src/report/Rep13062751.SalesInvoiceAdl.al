@@ -485,7 +485,7 @@ Report 13062751 "Sales - Invoice Adl"
                             trigger OnAfterGetRecord();
                             begin
                                 if Number = 1 then begin
-                                    if not DimSetEntry2.FINDSET then
+                                    if not DimSetEntry2.FINDSET() then
                                         CurrReport.BREAK();
                                 end else
                                     if not Continue then
@@ -1442,12 +1442,12 @@ Report 13062751 "Sales - Invoice Adl"
 
         LineFeeNoteOnReportHist.SETRANGE("Cust. Ledger Entry No", CustLedgerEntry."Entry No.");
         LineFeeNoteOnReportHist.SETRANGE("Language Code", Customer."Language Code");
-        if LineFeeNoteOnReportHist.FINDSET() then begin
+        if LineFeeNoteOnReportHist.FINDSET() then
             repeat
                 InsertTempLineFeeNoteOnReportHist(LineFeeNoteOnReportHist, TempLineFeeNoteOnReportHist);
-            until LineFeeNoteOnReportHist.NEXT() = 0;
-        end else begin
-            LineFeeNoteOnReportHist.SETRANGE("Language Code", Language.GetUserLanguage);
+            until LineFeeNoteOnReportHist.NEXT() = 0
+        else begin
+            LineFeeNoteOnReportHist.SETRANGE("Language Code", Language.GetUserLanguage());
             if LineFeeNoteOnReportHist.FINDSET() then
                 repeat
                     InsertTempLineFeeNoteOnReportHist(LineFeeNoteOnReportHist, TempLineFeeNoteOnReportHist);

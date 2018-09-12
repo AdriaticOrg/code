@@ -199,7 +199,7 @@ codeunit 13062591 "VAT Book Calculation-Adl"
             end else
                 if (Expression[1] = '(') and (Expression[StrLen(Expression)] = ')') then begin
                     VBGroup := VATBookGroup;
-                    VBGroup.Totaling := CopyStr(Expression, 2, StrLen(Expression) - 2);
+                    VBGroup.Totaling := CopyStr(CopyStr(Expression, 2, StrLen(Expression) - 2), 0, 250);
                     Result += EvaluateExpression(VBGroup, ColumnNo, DateFilter);
                 end else begin
                     IsFilter := (StrPos(Expression, '..') + StrPos(Expression, '|') > 0);

@@ -113,7 +113,6 @@ table 13062812 "ADL Assisted Setup-adl"
     var
         LastId: Integer;
         GroupId: Integer;
-        SortingOption: Option ,,ADLSetup;
         SortingOrder: Integer;
     begin
         SortingOrder := 1;
@@ -130,13 +129,13 @@ table 13062812 "ADL Assisted Setup-adl"
 
     local procedure AddSetupAssistant(EnteryNo: Integer; AssistantName: Text[250]; SortingOrder: Integer; AssistantVisible: Boolean; ParentId: Integer; IsFeatured: Boolean; EnteryType: Option)
     begin
-        if not GET(EnteryNo) then begin
+        if not Get(EnteryNo) then begin
             init();
             "Page ID" := EnteryNo;
             Visible := AssistantVisible;
             if EnteryType = "Item Type"::Group then
                 Status := Status::" ";
-            INSERT(true);
+            Insert(true);
         end;
 
         "Page ID" := EnteryNo;

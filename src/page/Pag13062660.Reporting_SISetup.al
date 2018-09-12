@@ -55,10 +55,12 @@ page 13062660 "Reporting_SI Setup"
                 {
                     ApplicationArea = All;
                 }
-                field("KRD Blank LCY Code";"KRD Blank LCY Code") {
+                field("KRD Blank LCY Code"; "KRD Blank LCY Code")
+                {
                     ApplicationArea = All;
                 }
-                field("KRD Blank LCY Num.";"KRD Blank LCY Num.") {
+                field("KRD Blank LCY Num."; "KRD Blank LCY Num.")
+                {
                     ApplicationArea = All;
                 }
             }
@@ -106,6 +108,28 @@ page 13062660 "Reporting_SI Setup"
                 {
                     ApplicationArea = All;
                 }
+                field("PDO VAT Ident. Filter Code "; "PDO VAT Ident. Filter Code ")
+                {
+                    ApplicationArea = All;
+                }
+            }
+        }
+    }
+
+    actions
+    {
+        area(Processing)
+        {
+            action("Adjust FAS on Entries")
+            {
+                Caption = 'Adjust FAS on Entries';
+                ApplicationArea = All;
+                Image = Suggest;
+
+                trigger OnAction()
+                begin
+                    report.RunModal(Report::"Adjust FAS on Entries");
+                end;
             }
         }
     }

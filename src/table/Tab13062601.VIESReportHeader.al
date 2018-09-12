@@ -123,6 +123,8 @@ table 13062601 "VIES Report Header"
     }
 
     trigger OnInsert()
+    var
+        ADLCore: Codeunit "Adl Core";
     begin
         RepSISetup.GET();
         IF "No." = '' THEN BEGIN
@@ -135,7 +137,7 @@ table 13062601 "VIES Report Header"
 
         "Prep. By User ID" := RepSISetup."VIES Prep. By User ID";
         "Resp. User ID" := RepSISetup."VIES Resp. User ID";
-        "User ID" := UserId();
+        "User ID" := ADLCore.TrimmedUserID50();
     end;
 
     trigger OnModify()

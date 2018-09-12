@@ -71,7 +71,7 @@ table 13062660 "Reporting_SI Setup"
         {
             Caption = 'KRD Blank LCY Num.';
             DataClassification = SystemMetadata;
-        }                
+        }
 
         field(25; "KRD Prep. By User ID"; Text[100])
         {
@@ -126,6 +126,12 @@ table 13062660 "Reporting_SI Setup"
             Caption = 'PDO Resp. User ID';
             TableRelation = "User Setup";
             DataClassification = SystemMetadata;
+        }
+        field(53; "PDO VAT Ident. Filter Code "; Code[20])
+        {
+            Caption = 'PDO VAT Ident. Filter Code ';
+            DataClassification = SystemMetadata;
+            TableRelation = "VAT Identifier-Adl";
         }
         field(55; "PDO Prep. By User ID"; Text[100])
         {

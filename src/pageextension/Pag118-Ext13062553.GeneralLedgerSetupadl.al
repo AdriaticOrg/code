@@ -1,16 +1,16 @@
-pageextension 13062553 "General Ledger Setup-adl" extends "General Ledger Setup" //118
+pageextension 13062553 "General Ledger Setup-Adl" extends "General Ledger Setup" //118
 {
     layout
     {
         // <adl.27>
         addlast(General)
         {
-            field("Global Posting Approver"; "Global Posting Approver")
+            field("Global Posting Approver"; "Global Posting Approver-Adl")
             {
                 ApplicationArea = All;
                 Visible = ADLCoreEnabled;
             }
-            field("Global Posting Resp. Person"; "Global Posting Resp. Person")
+            field("Global Posting Resp. Person"; "Global Posting Resp. Person-Adl")
             {
                 ApplicationArea = All;
                 Visible = ADLCoreEnabled;

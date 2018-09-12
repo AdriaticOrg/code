@@ -1,28 +1,28 @@
-pageextension 13062540 "GenLedgEntries-adl" extends "General Ledger Entries"  //20
+pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entries"  //20
 {
     layout
     {
         addlast(Control1)
         {
             // <adl.24>
-            field("FAS Type"; "FAS Type")
+            field("FAS Type"; "FAS Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Instrument Code"; "FAS Instrument Code")
+            field("FAS Instrument Code"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Sector Code"; "FAS Sector Code")
+            field("FAS Sector Code"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
             // </adl.24>
             // <adl.26>
-            field("BST Code"; "BST Code")
+            field("BST Code"; "BST Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = BSTFeatureEnabled;
@@ -54,10 +54,10 @@ pageextension 13062540 "GenLedgEntries-adl" extends "General Ledger Entries"  //
                     begin
                         FASInstrument.Reset();
                         FASInstrument.SetRange(Type, FASInstrument.Type::Posting);
-                        if FASInstrument.get("FAS Instrument Code") then;
+                        if FASInstrument.get("FAS Instrument Code-Adl") then;
 
                         if page.RunModal(0, FASInstrument) = Action::LookupOK then begin
-                            "FAS Instrument Code" := FASInstrument.Code;
+                            "FAS Instrument Code-Adl" := FASInstrument.Code;
                             Modify();
                         end;
                     end;
@@ -74,10 +74,10 @@ pageextension 13062540 "GenLedgEntries-adl" extends "General Ledger Entries"  //
                     begin
                         FASSector.Reset();
                         FASSector.SetRange(Type, FASSector.Type::Posting);
-                        if FASSector.get("FAS Sector Code") then;
+                        if FASSector.get("FAS Sector Code-Adl") then;
 
                         if page.RunModal(0, FASSector) = Action::LookupOK then begin
-                            "FAS Sector Code" := FASSector.Code;
+                            "FAS Sector Code-Adl" := FASSector.Code;
                             Modify();
                         end;
                     end;
@@ -95,10 +95,10 @@ pageextension 13062540 "GenLedgEntries-adl" extends "General Ledger Entries"  //
                     begin
                         BSTCode.Reset();
                         BSTCode.SetRange(Type, BSTCode.Type::Posting);
-                        if BSTcode.get("BST Code") then;
+                        if BSTcode.get("BST Code-Adl") then;
 
                         if page.RunModal(0, BSTCode) = Action::LookupOK then begin
-                            "BST Code" := BSTCode.Code;
+                            "BST Code-Adl" := BSTCode.Code;
                             Modify();
                         end;
                     end;

@@ -23,8 +23,8 @@ report 13062642 "Export FAS"
             {
                 IncludeCaption = true;
             }
-            column(PrepairedByName; PrepairedByUser."Reporting_SI Name") { }
-            column(ResponsibleName; ResponsibleUser."Reporting_SI Name") { }
+            column(PrepairedByName; PrepairedByUser."Reporting_SI Name-Adl") { }
+            column(ResponsibleName; ResponsibleUser."Reporting_SI Name-Adl") { }
             column(ShadowBackgroundOnPosting; ShadowBackgroundOnPosting) { }
 
             dataitem(Integer; Integer)
@@ -102,9 +102,9 @@ report 13062642 "Export FAS"
             trigger OnAfterGetRecord()
             begin
                 PrepairedByUser.get("Prep. By User ID");
-                PrepairedByUser.testfield("Reporting_SI Name");
+                PrepairedByUser.testfield("Reporting_SI Name-Adl");
                 ResponsibleUser.get("Resp. User ID");
-                ResponsibleUser.TestField("Reporting_SI Name");
+                ResponsibleUser.TestField("Reporting_SI Name-Adl");
             end;
         }
     }
@@ -185,22 +185,24 @@ report 13062642 "Export FAS"
         StatId: text[10];
         Values: array[700, 23] of decimal;
         WarningStr: Text;
+        FASTypeNum: Integer;
+        Amt: Decimal;
 
     begin
         FASRepHead.TestField("Period Year");
         FASRepHead.TestField("Period Round");
 
         ResponsibleUser.Get(FASRepHead."Resp. User ID");
-        ResponsibleUser.TestField("Reporting_SI Name");
-        ResponsibleUser.TestField("Reporting_SI Email");
-        ResponsibleUser.TestField("Reporting_SI Phone");
+        ResponsibleUser.TestField("Reporting_SI Name-Adl");
+        ResponsibleUser.TestField("Reporting_SI Email-Adl");
+        ResponsibleUser.TestField("Reporting_SI Phone-Adl");
 
         RepSISetup.Get();
         RepSISetup.TestField("Budget User Code");
         RepSISetup.TestField("Company Sector Code");
 
         MngUserSetup.get(RepSISetup."FAS Director User ID");
-        MngUserSetup.TestField("Reporting_SI Name");
+        MngUserSetup.TestField("Reporting_SI Name-Adl");
 
         CompanyInfo.Get();
         CompanyInfo.TestField("Registration No.");
@@ -224,6 +226,17 @@ report 13062642 "Export FAS"
                     FinSect.SetFilter("Index Code", '<>%1', '');
                     if FinSect.FindSet() then
                         repeat
+                            EVALUATE(i, FinSect."Index Code");
+                            IF (i > 23) OR (i < 1) THEN
+                                FinSect.FIELDERROR("Index Code");
+
+                            if FormNum mod 2 = 0 then
+                                FASTypeNum := 2
+                            else
+                                FASTypeNum := 1;
+
+                            FasReportLine.SetRange("FAS Type", FASTypeNum);
+
                             IF FinInst.Type = FinInst.Type::Posting THEN
                                 FASRepLine.SETRANGE("Instrument Code", FinInst.Code)
                             ELSE
@@ -234,15 +247,18 @@ report 13062642 "Export FAS"
                             ELSE
                                 FASRepLine.SETFILTER("Sector Code", FinSect.Totaling);
 
-                            FASRepLine.CALCSUMS(Amount);
-                            IF FormNum IN [2, 4, 5, 6] THEN
-                                FASRepLine.Amount *= -1;
+                            FASRepLine.CalcSums("Period Closing Balance", "Transactions Amt. in Period", "Changes Amt. in Period");
 
-                            EVALUATE(i, FinSect."Index Code");
-                            IF (i > 23) OR (i < 1) THEN
-                                FinSect.FIELDERROR("Index Code");
+                            case FormNum of
+                                1, 2:
+                                    Amt := FASRepLine."Period Closing Balance";
+                                3, 4:
+                                    Amt := FASRepLine."Transactions Amt. in Period";
+                                5, 6:
+                                    Amt := FASRepLine."Changes Amt. in Period";
+                            end;
 
-                            Values[currAOP] [i] += FASRepLine.Amount;
+                            Values[currAOP] [i] += Amt;
 
                             IF (curraop >= 100) AND (curraop < 299) AND (FASRepLine.Amount < 0) THEN
                                 WarningStr += StrSubstNo(AmountMiustBePositiveMsg, currAOP, i, FASRepLine.Amount, FASRepLine.GETFILTERS());
@@ -313,19 +329,19 @@ report 13062642 "Export FAS"
 
         XmlElem[3] := XmlElement.Create('OdgovornaOseba');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Name"));
+        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Name-Adl"));
 
         XmlElem[3] := XmlElement.Create('TelefonskaStevilka');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Phone"));
+        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Phone-Adl"));
 
         XmlElem[3] := XmlElement.Create('Email');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Email"));
+        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Email-Adl"));
 
         XmlElem[3] := XmlElement.Create('VodjaPodjetja');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(MngUserSetup."Reporting_SI Name"));
+        XmlElem[3].add(XmlText.Create(MngUserSetup."Reporting_SI Name-Adl"));
 
         XmlElem[3] := XmlElement.Create('Datum');
         XmlElem[2].Add(XmlElem[3]);

@@ -161,9 +161,9 @@ page 13062741 "Cust. Ledger Entries Ext.-adl"
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables) then exit;
 
         SalesReceivablesSetup.GET();
-        SalesReceivablesSetup.testfield("Exteded Data Start Bal. Date");
-        if SalesReceivablesSetup."Exteded Data Start Bal. Date" <> 0D then
-            SetRange("Posting Date", 0D, SalesReceivablesSetup."Exteded Data Start Bal. Date")
+        SalesReceivablesSetup.testfield("Exteded Data Start Bal. Date-Adl");
+        if SalesReceivablesSetup."Exteded Data Start Bal. Date-Adl" <> 0D then
+            SetRange("Posting Date", 0D, SalesReceivablesSetup."Exteded Data Start Bal. Date-Adl")
         else
             exit;
     end;

@@ -62,7 +62,7 @@ table 13062662 "KRD Report Line"
                 Country: Record "Country/Region";
             begin
                 if Country.get("Country/Region Code") then
-                    "Country/Region No." := Country."Numeric Code"
+                    "Country/Region No." := Country."Numeric Code-Adl"
                 else
                     clear("Country/Region No.");
             end;
@@ -83,7 +83,7 @@ table 13062662 "KRD Report Line"
                 Currency: Record Currency;
             begin
                 if Currency.get("Currency Code") then
-                    "Currency No." := Currency."Numeric Code"
+                    "Currency No." := Currency."Numeric Code-Adl"
                 else
                     Clear("Currency No.");
             end;

@@ -6,52 +6,49 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
         TempBlob: Record TempBlob temporary;
         XMLOutStream: OutStream;
         XMLInStream: InStream;
-        Title: Label 'VAT Books';
-        CalculationsTag: Label 'obracuni';
-        PPPDVTag: Label 'PPPDV';
-        ComTxt: Label '<!-- %1 -->';
-        OJTag: Label 'OJ';
-        RegNoTag: Label 'PIB';
-        CompanyTag: Label 'Firma';
-        MunicipalityTag: Label 'Opstina';
-        AdresaTag: Label 'Adresa';
-        From_Date_Tag: Label 'Od_Datum';
-        To_Date_Tag: Label 'Do_Datum';
-        EmailTag: Label 'ElektronskaPosta';
-        TaxAdviserIDTag: Label 'JMBGPoreskiSavetnik';
-        PlaceTag: Label 'Mesto';
-        ApplicationDateTag: Label 'Datum_Prijave';
-        ResponsiblePersonTag: Label 'OdgovornoLice';
-        ReturnYesTag: Label 'PovracajDA';
-        ReturnNoTag: Label 'PovracajNE';
-        PeriodPOBTag: Label 'PeriodPOB';
-        ApplierTypeTag: Label 'TipPodnosioca';
-        ApplicatonChangeTag: Label 'IzmenaPrijave';
-        ApplicationNoForChangeTag: Label 'IdentifikacioniBrojPrijaveKojaSeMenja';
-        RootTagbegin: Label '"ns1:EPPPDV xmlns:ns1=""urn:poreskauprava.gov.rs/zim"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"""';
-        RootTagEnd: Label 'ns1:EPPPDV';
-        ContentTag: Label 'sadrzaj';
-        SignaturesTag: Label 'signatures';
-        Envelopa: Label 'envelopa';
-        AttachmentTab: Label 'prilozi';
-        ApplyMethodAttr: Label '"nacinPodnosenja=""elektronski"""';
-        TimestampAttr: Label '"timestamp=""%1"""';
-        IdAttr: Label '"id="""""';
-        IndentyfierTypeAttr: Label '"tipIdentifikatora=""JMBG"""';
-        ApplyTimeAttr: Label '"vremePodnosenja=""%1"""';
-        Tag63: Label 'Iznos_63';
-        Tag64: Label 'Iznos_64';
+        TitleLbl: Label 'VAT Books';
+        XMLVarsionLbl: Label '"<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?>"';
+        CalculationsTagLbl: Label 'obracuni';
+        PPPDVTagLbl: Label 'PPPDV';
+        ComTxtLbl: Label '<!-- %1 -->';
+        OJTagLbl: Label 'OJ';
+        RegNoTagLbl: Label 'PIB';
+        CompanyTagLbl: Label 'Firma';
+        MunicipalityTagLbl: Label 'Opstina';
+        AdresaTagLbl: Label 'Adresa';
+        From_Date_TagLbl: Label 'Od_Datum';
+        To_Date_TagLbl: Label 'Do_Datum';
+        EmailTagLbl: Label 'ElektronskaPosta';
+        TaxAdviserIDTagLbl: Label 'JMBGPoreskiSavetnik';
+        PlaceTagLbl: Label 'Mesto';
+        ApplicationDateTagLbl: Label 'Datum_Prijave';
+        ResponsiblePersonTagLbl: Label 'OdgovornoLice';
+        ReturnYesTagLbl: Label 'PovracajDA';
+        ReturnNoTagLbl: Label 'PovracajNE';
+        PeriodPOBTagLbl: Label 'PeriodPOB';
+        ApplierTypeTagLbl: Label 'TipPodnosioca';
+        ApplicatonChangeTagLbl: Label 'IzmenaPrijave';
+        ApplicationNoForChangeTagLbl: Label 'IdentifikacioniBrojPrijaveKojaSeMenja';
+        RootTagbeginLbl: Label '"ns1:EPPPDV xmlns:ns1=""urn:poreskauprava.gov.rs/zim"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"""';
+        RootTagEndLbl: Label 'ns1:EPPPDV';
+        ContentTagLbl: Label 'sadrzaj';
+        SignaturesTagLbl: Label 'signatures';
+        EnvelopaLbl: Label 'envelopa';
+        AttachmentTabLbl: Label 'prilozi';
+        ApplyMethodAttrLbl: Label '"nacinPodnosenja=""elektronski"""';
+        TimestampAttrLbl: Label '"timestamp=""%1"""';
+        IdAttrLbl: Label '"id="""""';
+        ApplyTimeAttrLbl: Label '"vremePodnosenja=""%1"""';
+        Tag63Lbl: Label 'Iznos_63';
+        Tag64Lbl: Label 'Iznos_64';
 
     local procedure XMLFileOpen();
-    var
-        Text001Loc: Label '"<?xml version=""1.0""?>"';
-        XMLVarsionLoc: Label '"<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?>"';
     begin
         TempBlob.DeleteAll();
         Clear(TempBlob);
         TempBlob.Init();
         TempBlob.Blob.CreateOutStream(XMLOutStream);
-        XMLOutStream.WriteText(XMLVarsionLoc);
+        XMLOutStream.WriteText(XMLVarsionLbl);
         XMLOutStream.WriteText();
     end;
 
@@ -65,11 +62,11 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
         Tempblob.CalcFields(Blob);
         TempBlob.Blob.CreateInStream(InStream);
         DateTimeTxt := ConvertStr(Format(CurrentDateTime()), ':', '_');
-        FileName := Title + '_' + ConvertStr(DateTimeTxt, ' ', '_');
+        FileName := TitleLbl + '_' + ConvertStr(DateTimeTxt, ' ', '_');
         DownloadFromStream(InStream, 'Export', '', 'XML Files (*.xml)|*.xml', FileName);
     end;
 
-    local procedure XMLWrite(Text: Text[250]; Tag: Text[250]; Indent: Integer; PrintTag: Option Both,Front,Back,None; LongTag: Boolean);
+    local procedure XMLWrite(Text: Text; Tag: Text; Indent: Integer; PrintTag: Option Both,Front,Back,None; LongTag: Boolean);
     var
         i: Integer;
         WrongXMLIndentErr: Label 'Wrong XML indent writing text %1';
@@ -110,28 +107,28 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
         ToDate: Date;
     begin
         XMLFileOpen();
-        XMLWrite('', RootTagbegin, 0, 1, false);
-        XMLWrite('', Envelopa + ' ' + IdAttr + ' ' + StrSubstNo(TimestampAttr, Format(DT2DATE(CurrentDateTime()), 0, 9) + 'T' + Format(DT2TIME(CurrentDateTime()), 0, 9)) + ' ' + ApplyMethodAttr, 0, 1, false);
-        XMLWrite('', ContentTag, 1, 1, false);
+        XMLWrite('', RootTagbeginLbl, 0, 1, false);
+        XMLWrite('', EnvelopaLbl + ' ' + IdAttrLbl + ' ' + StrSubstNo(TimestampAttrLbl, Format(DT2DATE(CurrentDateTime()), 0, 9) + 'T' + Format(DT2TIME(CurrentDateTime()), 0, 9)) + ' ' + ApplyMethodAttrLbl, 0, 1, false);
+        XMLWrite('', ContentTagLbl, 1, 1, false);
         if CompanyInFormation.get() then begin
-            XMLWrite(CompanyInFormation.City, OJTag, 2, 0, false);
-            XMLWrite(CompanyInFormation."VAT Registration No.", RegNoTag, 2, 0, false);
-            XMLWrite(CompanyInFormation.Name, CompanyTag, 2, 0, false);
-            XMLWrite(CompanyInFormation.City, MunicipalityTag, 2, 0, false);
-            XMLWrite(CompanyInFormation.Address, AdresaTag, 2, 0, false);
+            XMLWrite(CompanyInFormation.City, OJTagLbl, 2, 0, false);
+            XMLWrite(CompanyInFormation."VAT Registration No.", RegNoTagLbl, 2, 0, false);
+            XMLWrite(CompanyInFormation.Name, CompanyTagLbl, 2, 0, false);
+            XMLWrite(CompanyInFormation.City, MunicipalityTagLbl, 2, 0, false);
+            XMLWrite(CompanyInFormation.Address, AdresaTagLbl, 2, 0, false);
             FromDateText := COPYSTR(DateFilter, 1, 8);
             ToDateText := COPYSTR(DateFilter, 11, 8);
             Evaluate(FromDate, FromDateText);
             Evaluate(ToDate, ToDateText);
-            XMLWrite(Format(FromDate, 0, 9), From_Date_Tag, 2, 0, false);
-            XMLWrite(Format(ToDate, 0, 9), To_Date_Tag, 2, 0, false);
-            XMLWrite(CompanyInFormation."E-Mail", EmailTag, 2, 0, false);
-            XMLWrite(CompanyInFormation.City, PlaceTag, 2, 0, false);
-            XMLWrite(Format(PPPDVDate, 0, 9), ApplicationDateTag, 2, 0, false);
+            XMLWrite(Format(FromDate, 0, 9), From_Date_TagLbl, 2, 0, false);
+            XMLWrite(Format(ToDate, 0, 9), To_Date_TagLbl, 2, 0, false);
+            XMLWrite(CompanyInFormation."E-Mail", EmailTagLbl, 2, 0, false);
+            XMLWrite(CompanyInFormation.City, PlaceTagLbl, 2, 0, false);
+            XMLWrite(Format(PPPDVDate, 0, 9), ApplicationDateTagLbl, 2, 0, false);
             User.SetRange("User Name", ResponsiblePerson);
             if User.FindFirst() then
                 FullUserName := User."Full Name";
-            XMLWrite(FullUserName, ResponsiblePersonTag, 2, 0, false);
+            XMLWrite(FullUserName, ResponsiblePersonTagLbl, 2, 0, false);
 
             VATBook.SetRange("Tag Name", '0');
             if VATBook.FindFirst() then
@@ -147,15 +144,15 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
                     end;
                 until VATBookGroup.Next() = 0;
 
-            XMLWrite('0', ReturnYesTag, 2, 0, false);
-            XMLWrite('0', ReturnNoTag, 2, 0, false);
-            XMLWrite('1', PeriodPOBTag, 2, 0, false);
-            XMLWrite('1', ApplierTypeTag, 2, 0, false);
-            XMLWrite('0', ApplicatonChangeTag, 2, 0, false);
-            XMLWrite('0', ApplicationNoForChangeTag, 2, 0, false);
+            XMLWrite('0', ReturnYesTagLbl, 2, 0, false);
+            XMLWrite('0', ReturnNoTagLbl, 2, 0, false);
+            XMLWrite('1', PeriodPOBTagLbl, 2, 0, false);
+            XMLWrite('1', ApplierTypeTagLbl, 2, 0, false);
+            XMLWrite('0', ApplicatonChangeTagLbl, 2, 0, false);
+            XMLWrite('0', ApplicationNoForChangeTagLbl, 2, 0, false);
         end;
-        XMLWrite('', ContentTag, 1, 2, false);
-        XMLWrite('', CalculationsTag, 1, 1, false);
+        XMLWrite('', ContentTagLbl, 1, 2, false);
+        XMLWrite('', CalculationsTagLbl, 1, 1, false);
         VATBook.Reset();
         VATBook.SETCURRENTKEY("Sorting Appearance", Code);
         VATBook.SetRange("Include in XML", true);
@@ -187,8 +184,8 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
                                         or (VATBookGroup."Include Columns" = ''))
                                         and (Round(ColumnAmt, 1) <> 0)
                                     then
-                                        if (VATBookGroup."Tag Name" = Tag63)
-                                           or (VATBookGroup."Tag Name" = Tag64)
+                                        if (VATBookGroup."Tag Name" = Tag63Lbl)
+                                           or (VATBookGroup."Tag Name" = Tag64Lbl)
                                         then
                                             XMLWrite(DelChr(Format(Round(ColumnAmt, 1)), '<=>', '.'), VATBookGroup."Tag Name", 2, 0, false)
                                         else
@@ -205,9 +202,9 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
                     until VATBookGroup.Next() = 0;
             until VATBook.Next() = 0;
         XMLWrite('', VATBook."Tag Name", 1, 2, false);
-        XMLWrite('', CalculationsTag, 1, 2, false);
-        XMLWrite('', Envelopa, 0, 2, false);
-        XMLWrite('', RootTagEnd, 0, 2, false);
+        XMLWrite('', CalculationsTagLbl, 1, 2, false);
+        XMLWrite('', EnvelopaLbl, 0, 2, false);
+        XMLWrite('', RootTagEndLbl, 0, 2, false);
         XMLFileClose();
     end;
 }

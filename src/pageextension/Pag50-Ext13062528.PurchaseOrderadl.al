@@ -1,4 +1,4 @@
-pageextension 13062528 "PurchaseOrder-Adl" extends "Purchase Order" //50
+pageextension 13062528 "Purchase Order-Adl" extends "Purchase Order" //50
 {
     layout
     {

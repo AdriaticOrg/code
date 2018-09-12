@@ -280,6 +280,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     procedure PostUnrealVATEntry(GenJnlLine: Record "Gen. Journal Line"; VAR VATEntry2: Record "VAT Entry"; VATAmount: Decimal; VATBase: Decimal; VATAmountAddCurr: Decimal; VATBaseAddCurr: Decimal)
     var
         VATPostingSetup: Record "VAT Posting Setup";
+        ADLCore: Codeunit "Adl Core";
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         VATPostingSetup.GET(VATEntry2."VAT Bus. Posting Group", VATEntry2."VAT Prod. Posting Group");
@@ -295,7 +296,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         VATEntry."Additional-Currency Amount" := VATAmountAddCurr;
         VATEntry."Additional-Currency Base" := VATBaseAddCurr;
         VATEntry.SetUnrealAmountsToZero();
-        VATEntry."User ID" := USERID();
+        VATEntry."User ID" := ADLCore.TrimmedUserID50();
         VATEntry."Source Code" := GenJnlLine."Source Code";
         VATEntry."Reason Code" := GenJnlLine."Reason Code";
         VATEntry."Closed by Entry No." := 0;
@@ -550,6 +551,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     var
         GenJnlTemplate: Record "Gen. Journal Template";
         AccountingPeriod: Record "Accounting Period";
+        ADLCore: Codeunit "Adl Core";
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         WITH GenJnlLine DO BEGIN
@@ -595,7 +597,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
             GLReg."Creation Date" := TODAY();
             GLReg."Source Code" := "Source Code";
             GLReg."Journal Batch Name" := "Journal Batch Name";
-            GLReg."User ID" := USERID();
+            GLReg."User ID" := ADLCore.TrimmedUserID50();
             IsGLRegInserted := FALSE;
 
 
@@ -806,7 +808,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
                     "Transaction No." := NextTransactionNo;
                     "Source Code" := GenJnlLine."Source Code";
-                    "User ID" := USERID();
+                    "User ID" := ADLCore.TrimmedUserID50();
                     "Entry No." := NextVATEntryNo;
                     "Reversed Entry No." := VATEntry."Entry No.";
                     Reversed := TRUE;

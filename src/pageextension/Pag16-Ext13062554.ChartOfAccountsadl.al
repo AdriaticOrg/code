@@ -1,4 +1,4 @@
-pageextension 13062554 "Chart Of Accounts-adl" extends "Chart of Accounts" //16
+pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
 {
     actions
     {
@@ -27,6 +27,18 @@ pageextension 13062554 "Chart Of Accounts-adl" extends "Chart of Accounts" //16
                 end;
             }
             // </adl.21> 
+
+            // <adl.27>
+            action("DetailTrialBalance")
+            {
+                Caption = 'Detail Trial Balance Extended';
+                Promoted = true;
+                PromotedCategory = Report;
+                Image = Report;
+                ApplicationArea = All;
+                RunObject = report "Detail Trial Balance-Adl";
+            }
+            // </adl.27>
         }
     }
 

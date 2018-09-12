@@ -1,4 +1,4 @@
-pageextension 13062532 "PostedSalesCreditMemo-Adl" extends "Posted Sales Credit Memo" //134
+pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Credit Memo" //134
 {
     layout
     {
@@ -21,10 +21,11 @@ pageextension 13062532 "PostedSalesCreditMemo-Adl" extends "Posted Sales Credit 
             // </adl.10>
             // <adl.10>
             // <adl.22>
-            field("VAT Correction Date"; "VAT Correction Date")
+            field("VAT Correction Date"; "VAT Correction Date-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                Editable = false;
             }
             // </adl.22>
         }
@@ -35,13 +36,15 @@ pageextension 13062532 "PostedSalesCreditMemo-Adl" extends "Posted Sales Credit 
             field("Goods Return Type-Adl"; "Goods Return Type-Adl")
             {
                 ApplicationArea = All;
-                Visible = EUCustomsFeatureEnabled;
+                Visible = VIESFeatureEnabled;
+                Editable = false;
             }
             // <adl.22>
-            field("EU Customs Procedure"; "EU Customs Procedure")
+            field("EU Customs Procedure"; "EU Customs Procedure-Adl")
             {
                 ApplicationArea = All;
-                Visible = EUCustomsFeatureEnabled;
+                Visible = VIESFeatureEnabled;
+                Editable = false;
             }
             // </adl.22>
         }
@@ -98,14 +101,14 @@ pageextension 13062532 "PostedSalesCreditMemo-Adl" extends "Posted Sales Credit 
         ADLCore: Codeunit "Adl Core";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
-        EUCustomsFeatureEnabled: Boolean;
+        VIESFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
         VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
-        EUCustomsFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::EUCustoms);
+        VIESFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VIES);
         // </adl.0>
     end;
 }

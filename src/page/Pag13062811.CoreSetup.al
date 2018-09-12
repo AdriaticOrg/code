@@ -27,6 +27,13 @@ page 13062811 "Core Setup"
                     ApplicationArea = All;
                 }
                 // </adl.6>
+
+                // <adl.28>
+                field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled")
+                {
+                    ApplicationArea = All;
+                }
+                // </adl.28>
             }
             group(Reporting)
             {
@@ -70,7 +77,13 @@ page 13062811 "Core Setup"
                 {
                     ApplicationArea = All;
                 }
-                // </adl.26>                
+                // </adl.26>   
+                // </adl.22>
+                field("VIES Enabled"; "VIES Enabled")
+                {
+                    ApplicationArea = All;
+                }
+                // </adl.22>             
             }
         }
     }

@@ -2,31 +2,42 @@ codeunit 13062811 "Adl Core"
 {
     Permissions = tabledata 13062811 = rm,
                   tabledata 13062660 = rm;
-    procedure FeatureEnabled(Feature: Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms,UnpaidReceivables): Boolean
+    procedure FeatureEnabled(Feature: Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,UnpaidReceivables): Boolean
     var
-        //ReportSISetup: Record "Reporting_SI Setup";
         CoreSetup: Record "CoreSetup-Adl";
     begin
         with CoreSetup do begin
             if not Get() or not "ADL Enabled" then exit(false);
 
-            if (Feature = Feature::Core) and "ADL Enabled" then exit(true);
-
-            if (Feature = Feature::VAT) and "VAT Enabled" then exit(true);
-
-            if (Feature = Feature::RepHR) and "Rep HR Enabled" then exit(true);
-            if (Feature = Feature::RepRS) and "Rep RS Enabled" then exit(true);
-            if (Feature = Feature::RepSI) and "Rep SI Enabled" then exit(true);
-
-            if (Feature = Feature::FAS) and "FAS Enabled" then exit(true);
-            if (Feature = Feature::KRD) and "KRD Enabled" then exit(true);
-            if (Feature = Feature::BST) and "BST Enabled" then exit(true);
-            if (Feature = Feature::VIES) and "VIES Enabled" then exit(true);
-
-            if (Feature = Feature::EUCustoms) and "EU Customs" then exit(true);
-            if (Feature = Feature::UnpaidReceivables) and CoreSetup."Unpaid Receivables Enabled" then exit(true);
+            case Feature of
+                Feature::Core:
+                    exit("ADL Enabled");
+                Feature::VAT:
+                    exit("VAT Enabled");
+                Feature::RepSI:
+                    exit("Rep SI Enabled");
+                Feature::RepHR:
+                    exit("Rep HR Enabled");
+                Feature::RepRS:
+                    exit("Rep RS Enabled");
+                Feature::FAS:
+                    exit("FAS Enabled");
+                Feature::KRD:
+                    exit("KRD Enabled");
+                Feature::BST:
+                    exit("BST Enabled");
+                Feature::VIES:
+                    exit("VIES Enabled");
+                Feature::UnpaidReceivables:
+                    exit("Unpaid Receivables Enabled");
+            end;
         end;
 
         exit(false);
+    end;
+
+    procedure TrimmedUserID50(): Text[50]
+    begin
+        EXIT(CopyStr(UserId(), 1, 50));
     end;
 }

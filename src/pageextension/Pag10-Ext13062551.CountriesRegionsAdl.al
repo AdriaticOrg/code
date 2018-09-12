@@ -1,11 +1,11 @@
-pageextension 13062551 "Countries-adl" extends "Countries/Regions" //10
+pageextension 13062551 "Countries/Regions-Adl" extends "Countries/Regions" //10
 {
     layout
     {
         // <adl.24>
         addlast(Control1)
         {
-            field("Numeric Code"; "Numeric Code")
+            field("Numeric Code-adl"; "Numeric Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;

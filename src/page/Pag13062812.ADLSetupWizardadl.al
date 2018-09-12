@@ -141,6 +141,11 @@ page 13062812 "ADL Setup Wizard-adl"
                     {
                         ApplicationArea = All;
                     }
+                    field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled")
+                    {
+                        ApplicationArea = All;
+                    }
+
                 }
                 group(Reporting)
                 {

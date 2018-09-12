@@ -1,11 +1,11 @@
-pageextension 13062552 "Currency-adl" extends "Currency Card" //495
+pageextension 13062552 "Currency Card-Adl" extends "Currency Card" //495
 {
     layout
     {
         // <adl.24>
         addafter(Code)
         {
-            field("Numeric Code"; "Numeric Code")
+            field("Numeric Code"; "Numeric Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = ADLCoreEnabled;

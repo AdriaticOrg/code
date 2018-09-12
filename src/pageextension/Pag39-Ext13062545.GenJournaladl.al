@@ -1,36 +1,36 @@
-pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
+pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
 {
     layout
     {
         addlast(Control1)
         {
             // <adl.24>
-            field("FAS Type"; "FAS Type")
+            field("FAS Type"; "FAS Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Instrument Code"; "FAS Instrument Code")
+            field("FAS Instrument Code"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Sector Code"; "FAS Sector Code")
+            field("FAS Sector Code"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("Bal. FAS Type"; "Bal. FAS Type")
+            field("Bal. FAS Type"; "Bal. FAS Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("Bal. FAS Instrument Code"; "Bal. FAS Instrument Code")
+            field("Bal. FAS Instrument Code"; "Bal. FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("Bal. FAS Sector Code"; "Bal. FAS Sector Code")
+            field("Bal. FAS Sector Code"; "Bal. FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
@@ -173,7 +173,7 @@ pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
         OriginalDocumentAmountLCY: Decimal;
         OriginalVATAmountLCY: Decimal;
         OpenAmounLCYtWithoutUnrealizedERF: Decimal;
-        // <adl.28>
+        // </adl.28>
 
     trigger OnOpenPage();
     begin
@@ -185,5 +185,26 @@ pageextension 13062545 "GenJournal-adl" extends "General Journal" //39
         BSTFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::BST);
         UnpaidRecEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables);
         // </adl.0>
+    end;
+
+    trigger OnAfterGetRecord()
+    begin
+        // <adl.28>
+        CustLedgerEntryExtData.Reset();
+        CustLedgerEntryExtData.SetCurrentKey("Journal Template Name", "Journal Batch Name", "Line No.");
+        CustLedgerEntryExtData.SetRange("Journal Template Name", "Journal Template Name");
+        CustLedgerEntryExtData.SetRange("Journal Batch Name", "Journal Batch Name");
+        CustLedgerEntryExtData.SetRange("Line No.", "Line No.");
+        IF not CustLedgerEntryExtData.FindFirst() THEN
+            Clear(CustLedgerEntryExtData);
+        OriginalDocumentAmountLCY := CustLedgerEntryExtData."Original Document Amount (LCY)";
+        OriginalVATAmountLCY := CustLedgerEntryExtData."Original VAT Amount (LCY)";
+        OpenAmounLCYtWithoutUnrealizedERF := CustLedgerEntryExtData."Open Amount (LCY) w/o Unreal.";
+        // </adl.28>
+    end;
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        Clear(CustLedgerEntryExtData); // <adl.28>
     end;
 }

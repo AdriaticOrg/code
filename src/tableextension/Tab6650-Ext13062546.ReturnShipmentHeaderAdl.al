@@ -1,4 +1,4 @@
-tableextension 13062546 "Return Shipment Header -Adl" extends "Return Shipment Header" //6650
+tableextension 13062546 "Return Shipment Header-Adl" extends "Return Shipment Header" //6650
 {
     fields
     {

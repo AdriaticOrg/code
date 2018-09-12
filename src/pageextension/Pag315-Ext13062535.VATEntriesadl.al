@@ -1,4 +1,4 @@
-pageextension 13062535 "VATEntries-Adl" extends "VAT Entries"  //315
+pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
 {
     layout
     {
@@ -11,6 +11,14 @@ pageextension 13062535 "VATEntries-Adl" extends "VAT Entries"  //315
                 Visible = VATFeatureEnabled;
                 Editable = false;
             }
+            // <adl.22> 
+            field("VAT Correction Date"; "VAT Correction Date-Adl")
+            {
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+                Editable = false;
+            }
+            // </adl.22> 
         }
         // </adl.10>
         // <adl.14>
@@ -28,10 +36,10 @@ pageextension 13062535 "VATEntries-Adl" extends "VAT Entries"  //315
         // <adl.22> 
         addbefore("EU 3-Party Trade")
         {
-            field("EU Customs Procedure"; "EU Customs Procedure")
+            field("EU Customs Procedure"; "EU Customs Procedure-Adl")
             {
                 ApplicationArea = All;
-                Visible = EUCustomsFeatureEnabled;
+                Visible = VIESFeatureEnabled;
             }
             // </adl.14>
             // <adl.10>
@@ -59,14 +67,14 @@ pageextension 13062535 "VATEntries-Adl" extends "VAT Entries"  //315
         ADLCore: Codeunit "Adl Core";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
-        EUCustomsFeatureEnabled: Boolean;
+        VIESFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
         VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
-        EUCustomsFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::EUCustoms);
+        VIESFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VIES);
         // </adl.0>
     end;
 }
