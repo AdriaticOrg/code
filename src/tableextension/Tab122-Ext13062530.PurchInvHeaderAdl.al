@@ -8,6 +8,11 @@ tableextension 13062530 "Purch. Inv. Header-Adl" extends "Purch. Inv. Header"  /
             Caption = 'VAT Date';
             DataClassification = SystemMetadata;
         }
+        field(13062527; "VAT Output Date-Adl"; Date)
+        {
+            Caption = 'VAT Output Date';
+            DataClassification = SystemMetadata;
+        }
         // </adl.6>
         // <adl.10>
         field(13062526; "Postponed VAT-Adl"; Option)

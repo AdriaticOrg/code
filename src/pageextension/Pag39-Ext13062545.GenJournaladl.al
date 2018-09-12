@@ -173,7 +173,7 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
         OriginalDocumentAmountLCY: Decimal;
         OriginalVATAmountLCY: Decimal;
         OpenAmounLCYtWithoutUnrealizedERF: Decimal;
-        // <adl.28>
+        // </adl.28>
 
     trigger OnOpenPage();
     begin
@@ -187,10 +187,24 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
         // </adl.0>
     end;
 
-    trigger OnAfterGetCurrRecord()
+    trigger OnAfterGetRecord()
     begin
-        Clear(OriginalDocumentAmountLCY);
-        Clear(OriginalVATAmountLCY);
-        Clear(OpenAmounLCYtWithoutUnrealizedERF);
+        // <adl.28>
+        CustLedgerEntryExtData.Reset();
+        CustLedgerEntryExtData.SetCurrentKey("Journal Template Name", "Journal Batch Name", "Line No.");
+        CustLedgerEntryExtData.SetRange("Journal Template Name", "Journal Template Name");
+        CustLedgerEntryExtData.SetRange("Journal Batch Name", "Journal Batch Name");
+        CustLedgerEntryExtData.SetRange("Line No.", "Line No.");
+        IF not CustLedgerEntryExtData.FindFirst() THEN
+            Clear(CustLedgerEntryExtData);
+        OriginalDocumentAmountLCY := CustLedgerEntryExtData."Original Document Amount (LCY)";
+        OriginalVATAmountLCY := CustLedgerEntryExtData."Original VAT Amount (LCY)";
+        OpenAmounLCYtWithoutUnrealizedERF := CustLedgerEntryExtData."Open Amount (LCY) w/o Unreal.";
+        // </adl.28>
+    end;
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        Clear(CustLedgerEntryExtData); // <adl.28>
     end;
 }

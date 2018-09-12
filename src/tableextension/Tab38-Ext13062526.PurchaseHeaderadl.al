@@ -15,6 +15,11 @@ tableextension 13062526 "Purchase Header-Adl" extends "Purchase Header"  //38
                     "Postponed VAT-Adl" := "Postponed VAT-Adl"::"Realized VAT";
             end;
         }
+        field(13062527; "VAT Output Date-Adl"; Date)
+        {
+            Caption = 'VAT Output Date';
+            DataClassification = SystemMetadata;
+        }
         // </adl.6>
         // <adl.10>
         field(13062526; "Postponed VAT-Adl"; Option)

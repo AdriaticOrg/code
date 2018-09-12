@@ -11,6 +11,12 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
                 Visible = VATFeatureEnabled;
                 Editable = false;
             }
+            field("VAT Output Date-Adl"; "VAT Output Date-Adl")
+            {
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+                Editable = false;
+            }
             // <adl.10>
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
             {

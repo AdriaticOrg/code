@@ -1678,26 +1678,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Management-Adl - NamedType UpdVatDateQst</note>
         </trans-unit>
-        <trans-unit id="Codeunit 477704930 - NamedType 3186350222" size-unit="char" translate="yes" xml:space="preserve">
-          <source>A dimension used in %1 %2, %3, %4 has caused an error. %5.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Manage Postponed VAT-Adl - NamedType DimensionUsedErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 477704930 - NamedType 2821468818" size-unit="char" translate="yes" xml:space="preserve">
-          <source>%1 needs to be rounded</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Manage Postponed VAT-Adl - NamedType NeedsRoundingErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 477704930 - NamedType 1071034234" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Residual caused by rounding of %1</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Manage Postponed VAT-Adl - NamedType ResidualRoundingErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 477704930 - NamedType 1473608331" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You cannot reverse the transaction, because it has already been reversed.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Manage Postponed VAT-Adl - NamedType ReverseTransactionErr</note>
-        </trans-unit>
         <trans-unit id="Codeunit 1848479569 - NamedType 210726671" size-unit="char" translate="yes" xml:space="preserve">
           <source>Because of circular references, the program cannot calculate a formula.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1888,15 +1868,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit TextWriter-adl - NamedType Msg</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3076656488 - Method 3885559574 - NamedType 1419097282" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 2743949416 - Method 3885559574 - NamedType 1419097282" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ask to setup Adriatic Localization.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADL Core Subscriber-adl - Method OnInitializingNotificationWithDefaultStat - NamedType SetupADLTxt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Adl Core Subscriber-adl - Method OnInitializingNotificationWithDefaultStat - NamedType SetupADLTxt</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3076656488 - Method 3885559574 - NamedType 734865084" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 2743949416 - Method 3885559574 - NamedType 734865084" size-unit="char" translate="yes" xml:space="preserve">
           <source>If you have installed Adriatic Localization but don't want to use it, switch off receiving the notification.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADL Core Subscriber-adl - Method OnInitializingNotificationWithDefaultStat - NamedType SetupADLDescriptionTxt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Adl Core Subscriber-adl - Method OnInitializingNotificationWithDefaultStat - NamedType SetupADLDescriptionTxt</note>
         </trans-unit>
         <trans-unit id="Codeunit 1060767525 - Method 1348281459 - NamedType 2813755727" size-unit="char" translate="yes" xml:space="preserve">
           <source>Adriatic Localization is installed but not setup. Do you want to do this now?</source>
@@ -3544,7 +3524,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - Control EndDueDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 787011548 - Control 1954028305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Copmany official</source>
+          <source>Compmany official</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-adl - Control CompanyOfficialNo - Property Caption</note>
         </trans-unit>
@@ -4333,6 +4313,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Header-Adl - Field VAT Date-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 642464550 - Field 3077258184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Output Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Header-Adl - Field VAT Output Date-Adl - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 642464550 - Field 163338849 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Postponed VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4352,6 +4337,11 @@
           <source>VAT Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr.Memo Header-Adl - Field VAT Date-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2684467970 - Field 3077258184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Output Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr.Memo Header-Adl - Field VAT Output Date-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2684467970 - Field 163338849 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Postponed VAT</source>
@@ -4383,6 +4373,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Inv. Header-Adl - Field VAT Date-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1470944762 - Field 3077258184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Output Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Inv. Header-Adl - Field VAT Output Date-Adl - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1470944762 - Field 163338849 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Postponed VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4392,6 +4387,11 @@
           <source>VAT Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Cr. Memo Hdr.-Adl - Field VAT Date-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3670207285 - Field 3077258184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Output Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Cr. Memo Hdr.-Adl - Field VAT Output Date-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3670207285 - Field 163338849 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Postponed VAT</source>
@@ -4648,10 +4648,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Amount Line-Adl - Field VAT % (informative)-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2784758571 - Field 2409954441 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use VAT Output Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchasePayablesSetup-adl - Field Use VAT Output Date-adl - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2348541669 - Field 2099680485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Header-Adl - Field VAT Date-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2348541669 - Field 3077258184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Output Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Header-Adl - Field VAT Output Date-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2348541669 - Field 163338849 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Postponed VAT</source>
@@ -4682,6 +4692,11 @@
           <source>VAT Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header-Adl - Field VAT Date-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2195868692 - Field 3077258184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Output Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header-Adl - Field VAT Output Date-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2195868692 - Field 163338849 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Postponed VAT</source>

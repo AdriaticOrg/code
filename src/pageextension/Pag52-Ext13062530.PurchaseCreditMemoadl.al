@@ -10,6 +10,11 @@ pageextension 13062530 "Purchase Credit Memo-Adl" extends "Purchase Credit Memo"
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
             }
+            field("VAT Output Date-Adl"; "VAT Output Date-Adl")
+            {
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+            }
             // <adl.10>
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
             {
