@@ -50,5 +50,10 @@ codeunit 13062814 "ADL Core Subscriber-adl"
         ADLCoreNotification.ShowSetupNotification();
     end;
 
+    [EventSubscriber(ObjectType::Page, page::"SO Processor Activities", 'OnOpenPageEvent', '', false, false)]
+    procedure OnSOProcessorActivitiesOpen()
+    begin
+        ADLCoreNotification.ShowSetupNotification();
+    end;
 
 }
