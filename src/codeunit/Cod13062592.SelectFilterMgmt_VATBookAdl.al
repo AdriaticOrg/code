@@ -68,7 +68,7 @@ codeunit 13062592 "SelectFilterMgmt_VATBook-Adl"
     end;
 
     [Scope('Personalization')]
-    procedure AddQuotes(inString: Text[1024]): Text;
+    procedure AddQuotes(inString: Text): Text;
     begin
         if DelChr(inString, '=', ' &|()*') = inString then
             exit(inString);
