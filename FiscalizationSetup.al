@@ -1,17 +1,17 @@
 table 13062601 "Fiscalization Setup-ADL"  
 {
-    DataClassification = ToBeClassified;
+    DataClassification = CustomerContent;
     
     fields
     {
         field(1;"Primary Key"; code [10])
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(2;Active; Boolean)
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             trigger OnValidate()
             var ActiveSession :Record "Active Session";
             begin
@@ -26,75 +26,75 @@ table 13062601 "Fiscalization Setup-ADL"
 
         field(3;"In VAT Register"; Boolean)
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(6;"Start Date"; Date)
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(7;"End Date"; Date)
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(8;"Default Fiscalization Location"; code[10])
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             TableRelation = "Fiscalization Location-ADL";
         }
         field(9;"Default Fiscalization Terminal"; Text[30])
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             TableRelation = "Fiscalization Terminal-ADL";
         }
         field(10;Operator; Option)
         { 
             OptionMembers = " ",User,Salesperson,"Company Official";
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(11;"Source of No. Series"; Option)
         {
             OptionMembers = " ","Fiscalization Location","Fiscalization Terminal";
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(12;"Show Web Service Messages"; Boolean)
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(13;"Send Data Automaticaly"; Boolean)
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(14;"Test on Posting"; Boolean)
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(15;"Service Name"; Text[250])
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(16;"Service Instance"; Text[250])
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(17;"Database Name"; Text[250])
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(18;"Reference URI"; Text[10])
         {
             ValuesAllowed = 'test','data';
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(19;"TimeOut WEB Service (s)"; Integer)
@@ -102,37 +102,37 @@ table 13062601 "Fiscalization Setup-ADL"
             InitValue = 4;
             MinValue = 4;
             MaxValue = 15;
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(20;"Send All Fisc Doc"; Boolean)
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(21;"VAT Ident.-Exempt"; Text[30])
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(22;"VAT Ident.-Non-taxable trans."; Text[30])
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(23;"VAT Ident.-Reversed tax"; Text[30])
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(24;"VAT Ident.-Other taxes"; Text[30])
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
         field(25;"Allow Fiscalization on Server"; Boolean)
         {
-            DataClassification = SystemMetadata;
+            DataClassification = CustomerContent;
             
         }
 
