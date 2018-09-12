@@ -9,7 +9,7 @@ pageextension 13062548 "User Setup-Adl" extends "User Setup" //119
             {
                 Caption = 'Reporting Name';
                 ApplicationArea = All;
-                Visible = RepSIFeatureEnabled;
+                Visible = (RepSIFeatureEnabled or UnpaidReceivablesEnabled);
             }
             field("Reporting_SI Email"; "Reporting_SI Email-Adl")
             {
@@ -52,12 +52,16 @@ pageextension 13062548 "User Setup-Adl" extends "User Setup" //119
         RepHRFeatureEnabled: Boolean;
         RepSIFeatureEnabled: Boolean;
         // </adl.0>
+        // <adl.28>
+        UnpaidReceivablesEnabled: Boolean;
+
 
     trigger OnOpenPage();
     begin
         // <adl.0>
         RepHRFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::RepHR);
         RepSIFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::RepSI);
+        UnpaidReceivablesEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables);
         // </adl.0>
     end;
 }

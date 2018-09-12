@@ -187,7 +187,7 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
         // </adl.0>
     end;
 
-    trigger OnAfterGetCurrRecord()
+    trigger OnAfterGetRecord()
     begin
         // <adl.28>
         CustLedgerEntryExtData.Reset();
