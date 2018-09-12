@@ -98,8 +98,8 @@ page 13062643 "FAS Report"
 
                 trigger OnAction()
                 var
-                    RepSuggestLines: Report "Suggest FAS Lines";
                     GLEntry: Record "G/L Entry";
+                    RepSuggestLines: Report "Suggest FAS Lines";
                 begin
                     TestField("No.");
                     TestField("Period Start Date");

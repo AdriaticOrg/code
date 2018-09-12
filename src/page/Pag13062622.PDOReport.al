@@ -93,9 +93,9 @@ page 13062622 "PDO Report"
 
                 trigger OnAction()
                 var
-                    RepSuggestLines: Report "Suggest PDO Lines";
                     VATEntry: Record "VAT Entry";
                     RepSISetup: Record "Reporting_SI Setup";
+                    RepSuggestLines: Report "Suggest PDO Lines";
                 begin
                     TestField("No.");
                     TestField("Period Start Date");

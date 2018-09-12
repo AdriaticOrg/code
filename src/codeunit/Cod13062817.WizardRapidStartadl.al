@@ -11,16 +11,18 @@ codeunit 13062817 "Wizard RapidStart-adl"
         httpResponse: HttpResponseMessage;
         ResponseString: text;
     begin
-        if (not httpClient.Get(url, httpResponse)) then begin
-            Error('Failed to contact the address endpoint.');
-        end;
+        if (not httpClient.Get(url, httpResponse)) then
+            Error(HttpGetRequestErr);
 
-        if (not httpResponse.IsSuccessStatusCode) then begin
-            Error('Failed to read response.');
-        end;
+        if (not httpResponse.IsSuccessStatusCode()) then
+            Error(HttpReadResponseErr);
 
         httpResponse.Content().ReadAs(ResponseString);
 
         exit(ResponseString);
     end;
+
+    var
+        HttpGetRequestErr: Label 'Failed to contact the address endpoint.';
+        HttpReadResponseErr: Label 'Failed to read response.';
 }
