@@ -8,6 +8,11 @@ tableextension 13062529 "Sales Cr.Memo Header-Adl" extends "Sales Cr.Memo Header
             Caption = 'VAT Date';
             DataClassification = SystemMetadata;
         }
+        field(13062527; "VAT Output Date-Adl"; Date)
+        {
+            Caption = 'VAT Output Date';
+            DataClassification = SystemMetadata;
+        }
         // </adl.6>
         // <adl.10>
         field(13062526; "Postponed VAT-Adl"; Option)

@@ -11,6 +11,12 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
                 Visible = VATFeatureEnabled;
                 Editable = false;
             }
+            field("VAT Output Date-Adl"; "VAT Output Date-Adl")
+            {
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+                Editable = false;
+            }
             // </adl.6>
             // <adl.10>
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")

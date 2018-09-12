@@ -10,6 +10,11 @@ pageextension 13062528 "Purchase Order-Adl" extends "Purchase Order" //50
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
             }
+            field("VAT Output Date-Adl"; "VAT Output Date-Adl")
+            {
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+            }
             // </adl.6>
             // <adl.10>
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")

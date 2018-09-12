@@ -11,6 +11,12 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
                 Visible = VATFeatureEnabled;
                 Editable = false;
             }
+            field("VAT Output Date-Adl"; "VAT Output Date-Adl")
+            {
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+                Editable = false;
+            }
             // </adl.6>
             // <adl.10>
             field("Postponed VAT -Adl"; "Postponed VAT-Adl")
