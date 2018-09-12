@@ -20,7 +20,7 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
         EmailTagLbl: Label 'ElektronskaPosta';
         TaxAdviserIDTagLbl: Label 'JMBGPoreskiSavetnik';
         PlaceTagLbl: Label 'Mesto';
-        ApplicationDateTag: Label 'Datum_Prijave';
+        ApplicationDateTagLbl: Label 'Datum_Prijave';
         ResponsiblePersonTagLbl: Label 'OdgovornoLice';
         ReturnYesTagLbl: Label 'PovracajDA';
         ReturnNoTagLbl: Label 'PovracajNE';
@@ -127,7 +127,7 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
             XMLWrite(Format(ToDate, 0, 9), To_Date_TagLbl, 2, 0, false);
             XMLWrite(CompanyInFormation."E-Mail", EmailTagLbl, 2, 0, false);
             XMLWrite(CompanyInFormation.City, PlaceTagLbl, 2, 0, false);
-            XMLWrite(Format(PPPDVDate, 0, 9), ApplicationDateTag, 2, 0, false);
+            XMLWrite(Format(PPPDVDate, 0, 9), ApplicationDateTagLbl, 2, 0, false);
             User.SetRange("User Name", ResponsiblePerson);
             if User.FindFirst() then
                 FullUserName := User."Full Name";
