@@ -4,42 +4,42 @@ report 13062595 "GL ExportSI-adl"
 
     dataset
     {
-        dataitem("G/L Account";"G/L Account")
+        dataitem("G/L Account"; "G/L Account")
         {
-            DataItemTableView = SORTING("No.") WHERE("Account Type"=FILTER(Posting));
-            RequestFilterFields = "No.","Date Filter";
-            dataitem(GLAccountBal;"G/L Account")
+            DataItemTableView = SORTING ("No.") WHERE ("Account Type" = FILTER (Posting));
+            RequestFilterFields = "No.", "Date Filter";
+            dataitem(GLAccountBal; "G/L Account")
             {
-                DataItemLink = "No."=FIELD("No.");
-                column(GLAccountNoBal;"No.")
+                DataItemLink = "No." = FIELD ("No.");
+                column(GLAccountNoBal; "No.")
                 {
-                    
+
                 }
-                column(GLAccountNameBal;Name)
-                {
-                }
-                column(PostingDateBal;DummyText)
+                column(GLAccountNameBal; Name)
                 {
                 }
-                column(DocumentDateBal;DummyText)
+                column(PostingDateBal; DummyText)
                 {
                 }
-                column(DocumentNoBal;DummyText)
+                column(DocumentDateBal; DummyText)
                 {
                 }
-                column(TypeBal;Type)
+                column(DocumentNoBal; DummyText)
                 {
                 }
-                column(DescriptionBal;DummyText)
+                column(TypeBal; Type)
                 {
                 }
-                column(DebitAmtBal;"Debit Amount")
+                column(DescriptionBal; DummyText)
                 {
                 }
-                column(CreditAmtBal;"Credit Amount")
+                column(DebitAmtBal; "Debit Amount")
                 {
                 }
-                column(NoteBal;DummyText)
+                column(CreditAmtBal; "Credit Amount")
+                {
+                }
+                column(NoteBal; DummyText)
                 {
                 }
 
@@ -48,9 +48,9 @@ report 13062595 "GL ExportSI-adl"
                     GLAccountBal.SETFILTER("Date Filter", '..%1', "G/L Account".GetrangeMIN("Date Filter"));
                     GLAccountBal.setfilter("Balance at Date", '<>%1', 0);
                     CalcFields("Balance at Date");
-                    BalanceAtDate:= GLAccountBal."Balance at Date";
-                    BalanceYear:= Date2DMY("G/L Account".GetrangeMIN("Date Filter"), 3);
-                    Type:= 'OTV';
+                    BalanceAtDate := GLAccountBal."Balance at Date";
+                    BalanceYear := Date2DMY("G/L Account".GetrangeMIN("Date Filter"), 3);
+                    Type := 'OTV';
                     IF (BalanceAtDate = 0) then
                         CurrReport.Break();
                 end;
@@ -72,41 +72,41 @@ report 13062595 "GL ExportSI-adl"
 
                 trigger OnPostDataItem()
                 begin
-                    Type:= '';
+                    Type := '';
                     TextWriterAdl.NewLine(OutStr);
                 end;
             }
-            dataitem(GLEntryTrans;"G/L Entry")
+            dataitem(GLEntryTrans; "G/L Entry")
             {
-                DataItemLink = "G/L Account No."=FIELD("No.");
-                column(GLAccountNoTrans;"G/L Account No.")
+                DataItemLink = "G/L Account No." = FIELD ("No.");
+                column(GLAccountNoTrans; "G/L Account No.")
                 {
                 }
-                column(GLAccountNameTrans;"G/L Account Name")
+                column(GLAccountNameTrans; "G/L Account Name")
                 {
                 }
-                column(PostingDateTrans;"Posting Date")
+                column(PostingDateTrans; "Posting Date")
                 {
                 }
-                column(DocumentDateTrans;"Document Date")
+                column(DocumentDateTrans; "Document Date")
                 {
                 }
-                column(DocumentNoTrans;"Document No.")
+                column(DocumentNoTrans; "Document No.")
                 {
                 }
-                column(TypeTrans;Type)
+                column(TypeTrans; Type)
                 {
                 }
-                column(DescriptionTrans;Description)
+                column(DescriptionTrans; Description)
                 {
                 }
-                column(DebitAmtTrans;"Debit Amount")
+                column(DebitAmtTrans; "Debit Amount")
                 {
                 }
-                column(CreditAmtTrans;"Credit Amount")
+                column(CreditAmtTrans; "Credit Amount")
                 {
                 }
-                column(NoteTrans;"Entry No.")
+                column(NoteTrans; "Entry No.")
                 {
                 }
 
@@ -135,47 +135,47 @@ report 13062595 "GL ExportSI-adl"
                     //TextWriterAdl.NewLine(OutStr);
                 end;
             }
-            dataitem(GLAccountZAK;"G/L Account")
+            dataitem(GLAccountZAK; "G/L Account")
             {
-                DataItemLink = "No."=FIELD("No.");                
-                column(GLAccountNoZAK;"No.")
+                DataItemLink = "No." = FIELD ("No.");
+                column(GLAccountNoZAK; "No.")
                 {
                 }
-                column(GLAccountNameZAK;Name)
+                column(GLAccountNameZAK; Name)
                 {
                 }
-                column(PostingDateZAK;DummyText)
+                column(PostingDateZAK; DummyText)
                 {
                 }
-                column(DocumentDateZAK;DummyText)
+                column(DocumentDateZAK; DummyText)
                 {
                 }
-                column(DocumentNoZAK;DummyText)
+                column(DocumentNoZAK; DummyText)
                 {
                 }
-                column(TypeZAK;Type)
+                column(TypeZAK; Type)
                 {
                 }
-                column(DescriptionZAK;DummyText)
+                column(DescriptionZAK; DummyText)
                 {
                 }
-                column(DebitAmtZAK;"Debit Amount")
+                column(DebitAmtZAK; "Debit Amount")
                 {
                 }
-                column(CreditAmtZAK;"Credit Amount")
+                column(CreditAmtZAK; "Credit Amount")
                 {
                 }
-                column(NoteZAK;DummyText)
+                column(NoteZAK; DummyText)
                 {
                 }
 
                 trigger OnPreDataItem()
-                begin  
-                    GLAccountZAK.SETFILTER("Date Filter", '%1', CLOSINGDATE("G/L Account".GetRangeMax("Date Filter")));                 
+                begin
+                    GLAccountZAK.SETFILTER("Date Filter", '%1', CLOSINGDATE("G/L Account".GetRangeMax("Date Filter")));
                     CalcFields("Debit Amount", "Credit Amount");
-                    ClosingYear:= Date2DMY(CLOSINGDATE("G/L Account".GetRangeMax("Date Filter")), 3);
-                    Type:= 'ZAK';
-                    IF ("Debit Amount" = 0) AND ("Credit Amount" = 0) then    
+                    ClosingYear := Date2DMY(CLOSINGDATE("G/L Account".GetRangeMax("Date Filter")), 3);
+                    Type := 'ZAK';
+                    IF ("Debit Amount" = 0) AND ("Credit Amount" = 0) then
                         CurrReport.Break();
                 end;
 
@@ -197,13 +197,13 @@ report 13062595 "GL ExportSI-adl"
                 trigger OnPostDataItem()
                 begin
                     //TextWriterAdl.NewLine(OutStr);
-                    Type:= '';
+                    Type := '';
                 end;
             }
 
             trigger OnPreDataItem()
             begin
-                FieldDelimiter:= '';
+                FieldDelimiter := '';
                 TextWriterAdl.FixedField(OutStr, AccountNoLbl, 11, PadCharacter, 1, FieldDelimiter);
                 TextWriterAdl.FixedField(OutStr, NameLbl, 51, PadCharacter, 1, FieldDelimiter);
                 TextWriterAdl.FixedField(OutStr, PostingDateLbl, 9, PadCharacter, 0, FieldDelimiter);
@@ -214,7 +214,7 @@ report 13062595 "GL ExportSI-adl"
                 TextWriterAdl.FixedField(OutStr, DebitAmountLbl, 17, PadCharacter, 0, FieldDelimiter);
                 TextWriterAdl.FixedField(OutStr, CreditAmountLbl, 17, PadCharacter, 0, FieldDelimiter);
                 TextWriterAdl.FixedField(OutStr, NoteLbl, 161, PadCharacter, 1, FieldDelimiter);
-                FieldDelimiter:= ';';
+                FieldDelimiter := ';';
             end;
         }
     }
@@ -238,12 +238,12 @@ report 13062595 "GL ExportSI-adl"
     trigger OnInitReport();
     begin
         TextWriterAdl.Create(OutStr);
-        ToFilter:= '*.txt|*.TXT';
-        FileName:= 'IZPIS GLAVNE KNJIGE.TXT';
-        DialogTitle:= 'Save to';
-        PadCharacter:= ' ';
-        FieldDelimiter:= ';';
-        DummyText:= ' ';
+        ToFilter := '*.txt|*.TXT';
+        FileName := 'IZPIS GLAVNE KNJIGE.TXT';
+        DialogTitle := 'Save to';
+        PadCharacter := ' ';
+        FieldDelimiter := ';';
+        DummyText := ' ';
     end;
 
     trigger OnPostReport()
@@ -259,19 +259,19 @@ report 13062595 "GL ExportSI-adl"
         DialogTitle: Text;
         PadCharacter: Text[1];
         FieldDelimiter: Text[1];
-        Type : Text[3];
+        Type: Text[3];
         BalanceAtDate: Decimal;
-        DummyText : Text;
+        DummyText: Text;
         BalanceYear: Integer;
         ClosingYear: Integer;
-        BalanceDesc : Label 'Opening item for the year %1';
-        BalanceDocumentNo : Label 'Opening %1';
-        ClosingDesc : Label 'Closing GL account for the year %1';
+        BalanceDesc: Label 'Opening item for the year %1';
+        BalanceDocumentNo: Label 'Opening %1';
+        ClosingDesc: Label 'Closing GL account for the year %1';
         AccountNoLbl: Label 'Account';
         NameLbl: Label 'Account Name';
         PostingDateLbl: Label 'Post.Date';
         DocumentDateLbl: Label 'Doc.Date';
-        DocumentNoLbl: Label 'Document No.';                                                                                                                                          
+        DocumentNoLbl: Label 'Document No.';
         TypeLbl: Label 'Type';
         DescriptionLbl: Label 'Description';
         DebitAmountLbl: Label 'Debit Amount';

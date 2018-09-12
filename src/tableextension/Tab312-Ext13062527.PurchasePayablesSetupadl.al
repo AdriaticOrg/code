@@ -2,10 +2,10 @@ tableextension 13062527 "PurchasePayablesSetup-adl" extends "Purchases & Payable
 {
     fields
     {
-        field(13062525;"Use VAT Output Date-adl";Boolean)
+        field(13062525; "Use VAT Output Date-adl"; Boolean)
         {
             Caption = 'Use VAT Output Date';
-            DataClassification = ToBeClassified;
+            DataClassification = SystemMetadata;
         }
     }
 }

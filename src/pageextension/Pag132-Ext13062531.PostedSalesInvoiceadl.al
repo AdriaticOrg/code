@@ -54,15 +54,15 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
 
                     trigger OnAction()
                     var
-                        PostApplication: Page "Post Application";
                         ManagePostponedVAT: Codeunit "VAT Management-Adl";
+                        PostApplication: Page "Post Application";
                         CustVend: Option Customer,Vendor;
                         VATDate: Date;
                     begin
-                        PostApplication.SetValues("No.",WorkDate);
+                        PostApplication.SetValues("No.", WorkDate());
                         PostApplication.RunModal();
-                        PostApplication.GetValues("No.",VATDate);
-                        ManagePostponedVAT.HandlePostponedVAT(Database::"Sales Invoice Header","No.",VATDate,true,CustVend::Customer,"Postponed VAT-Adl");
+                        PostApplication.GetValues("No.", VATDate);
+                        ManagePostponedVAT.HandlePostponedVAT(Database::"Sales Invoice Header", "No.", VATDate, true, CustVend::Customer, "Postponed VAT-Adl");
                     end;
                 }
                 action(CorrectPostponed)
