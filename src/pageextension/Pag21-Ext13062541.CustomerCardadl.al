@@ -5,19 +5,19 @@ pageextension 13062541 "Customer Card-Adl" extends "Customer Card" //21
         addlast(Invoicing)
         {
             // <adl.24>
-            field("FAS Sector Code"; "FAS Sector Code-Adl")
+            field("FAS Sector Code-Adl"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
             // </adl.24>
             // <adl.25>
-            field("KRD Non-Residnet Sector Code"; "KRD Non-Residnet Sector Code-Adl")
+            field("KRD Non-Residnet Sector Code-Adl"; "KRD Non-Residnet Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
             }
-            field("KRD Affiliation Type"; "KRD Affiliation Type-Adl")
+            field("KRD Affiliation Type-Adl"; "KRD Affiliation Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;

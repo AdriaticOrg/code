@@ -228,13 +228,16 @@ codeunit 13062525 "VAT Management-Adl"
                             PostPostponedVAT(CustLedgerEntry, VendLedgerEntry, GenJnlLineLoc, SalesPurchase::Vendor);
                         end;
                 end
-            else
+            else begin
+                /* 
                 CASE SalesPurchase OF
-                /*SalesPurchase::Customer:
-                    ReversePostponedVAT(GenJnlLineLoc, CustLedgerEntry."Transaction No.", SalesPurchase::Customer);
-                SalesPurchase::Vendor:
-                    ReversePostponedVAT(GenJnlLineLoc, VendLedgerEntry."Transaction No.", SalesPurchase::Vendor);*/
+                    SalesPurchase::Customer:
+                        ReversePostponedVAT(GenJnlLineLoc, CustLedgerEntry."Transaction No.", SalesPurchase::Customer);
+                    SalesPurchase::Vendor:
+                        ReversePostponedVAT(GenJnlLineLoc, VendLedgerEntry."Transaction No.", SalesPurchase::Vendor);
                 end;
+                */
+            end;
         end;
     end;
 
