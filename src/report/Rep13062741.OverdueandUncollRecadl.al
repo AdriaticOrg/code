@@ -104,7 +104,7 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
             column(TextHeaderIV; TextHeaderIV + FORMAT(WorkDate(), 0, '<Day,2>.<Month,2>.<Year4>'))
             {
             }
-            column(TextHeaderV; TextHeaderV /* + CompanyOfficial."First Name" + ' ' + CompanyOfficial."Last Name"*/)
+            column(TextHeaderV; TextHeaderV + ' ' + CompanyOfficial."User ID")
             {
             }
             column(TextHeaderVI; TextHeaderVI)
@@ -187,7 +187,7 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
                                 VATAmount := CustLedgerEntryExtData."Original VAT Amount (LCY)";
                             end;
                             if (InvoiceAmount = 0) and (SalesReceivablesSetup."Exteded Data Start Bal. Date-Adl" <> 0D) then
-                                ERROR(STRSUBSTNO(Text011, "Entry No."));
+                                ERROR(STRSUBSTNO(Text011Lbl, "Entry No."));
                             InvoiceAmount := InvoiceAmount - VATAmount;
                         end;
 
@@ -553,8 +553,8 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
 
                     field(CompanyOfficialNo; CompanyOfficialNo)
                     {
-                        Caption = 'Company InformaationB';
-                        TableRelation = "Company Information";
+                        Caption = 'Copmany official';
+                        TableRelation = "User Setup"."User ID";
                         ApplicationArea = All;
                     }
                 }
@@ -624,7 +624,7 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
 
     var
         CompanyInformation: Record "Company Information";
-        CompanyOfficial: Record "Company Information";
+        CompanyOfficial: Record "User Setup";
         SalesReceivablesSetup: Record "Sales & Receivables Setup";
         CustLedgerEntry: Record "Cust. Ledger Entry";
         CLEForFilter: Record "Cust. Ledger Entry";
@@ -697,25 +697,25 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
         Total7: Decimal;
         Total8: Decimal;
         Total9: Decimal;
-        Text006: Label 'No entries were found to create file.';
+        Text006Lbl: Label 'No entries were found to create file.';
         LastSpacePos: Integer;
         CompanyOfficialNo: Code[20];
-        Text007: Label 'Export to XML File';
-        Text008: Label 'XML Files (*.xml)|*.xml|All Files (*.*)|*.*';
+        Text007Lbl: Label 'Export to XML File';
+        Text008Lbl: Label 'XML Files (*.xml)|*.xml|All Files (*.*)|*.*';
         FileName: Text;
-        Text009: Label 'File is saved on:';
-        Text010: Label '%1 %2';
-        Text011: Label 'Original Invoice Amount (LCY) for Customer Ledger Entry No. %1 cannot be 0 or less.';
+        Text009Lbl: Label 'File is saved on:';
+        Text010Lbl: Label '%1 %2';
+        Text011Lbl: Label 'Original Invoice Amount (LCY) for Customer Ledger Entry No. %1 cannot be 0 or less.';
         DocumentDate: Date;
         TempBufferLineNo: Integer;
         CustomerVATRegNo: Code[20];
-        Text012: Label 'Uncollected_Ovedrue_Entries_%1';
-        Text013: Label 'File %1 was created.';
+        Text012Lbl: Label 'Uncollected_Ovedrue_Entries_%1';
+        Text013Lbl: Label 'File %1 was created.';
 
     local procedure Add(Name: Text[1024]; Value: Text[1024]): Text[1024];
     begin
         Value := CheckAllowedChars(Value); //new line
-        Value := DELCHR(Value, '=', '&');
+        Value := DelChr(Value, '=', '&');
         exit('<' + Name + '>' + Value + '</' + Name + '>');
     end;
 
