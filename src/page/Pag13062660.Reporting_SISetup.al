@@ -115,4 +115,22 @@ page 13062660 "Reporting_SI Setup"
             }
         }
     }
+
+    actions
+    {
+        area(Processing)
+        {
+            action("Adjust FAS on Entries")
+            {
+                Caption = 'Adjust FAS on Entries';
+                ApplicationArea = All;
+                Image = Suggest;
+
+                trigger OnAction()
+                begin
+                    report.RunModal(Report::"Adjust FAS on Entries");
+                end;
+            }
+        }
+    }
 }

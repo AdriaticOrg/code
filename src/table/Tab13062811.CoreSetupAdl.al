@@ -10,7 +10,7 @@ table 13062811 "CoreSetup-Adl"
         field(999999; "ADL Features"; Option)
         {
             Caption = 'ADL Features';
-            OptionMembers = Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,EUCustoms,UnpaidReceivables;
+            OptionMembers = Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,UnpaidReceivables;
             DataClassification = SystemMetadata;
             Description = 'We really need to transition to an emum!';
         }
