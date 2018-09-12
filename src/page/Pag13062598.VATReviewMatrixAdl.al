@@ -30,7 +30,7 @@ page 13062598 "VAT Review Matrix-Adl"
                     trigger OnValidate();
                     begin
                         FindPeriod('');
-                        CurrPage.Update;
+                        CurrPage.Update();
                     end;
                 }
                 field(DateFilter; DateFilter)
@@ -283,11 +283,6 @@ page 13062598 "VAT Review Matrix-Adl"
                         MatrixOnDrillDown(20);
                     end;
                 }
-
-
-
-
-
                 field(Field21; MATRIX_CellData[11])
                 {
                     CaptionClass = '3,' + MatrixColumnCaptions[21];
@@ -603,12 +598,14 @@ page 13062598 "VAT Review Matrix-Adl"
     end;
 
     local procedure MatrixOnDrillDown(Column: Integer);
+    /*
     var
         VATEntry: Record "VAT Entry";
         VATBookViewFormula: Record "VAT Book View Formula-Adl";
         VATReviewMatrix: Page "VAT Review Matrix-Adl";
+    */
     begin
-        exit; //GRM-toDo
+        /*GRMToDo
         case "Group Type" of
             "Group Type"::"VAT Entries":
                 begin
@@ -625,6 +622,7 @@ page 13062598 "VAT Review Matrix-Adl"
                     VATReviewMatrix.RunModal;
                 end;
         end;
+        */
     end;
 
     procedure SetVisible();
@@ -661,7 +659,7 @@ page 13062598 "VAT Review Matrix-Adl"
         Field30Visible := MatrixColumnCaptions[30] <> '';
     end;
 
-    local procedure FindPeriod(SearchText: Code[10]);
+    local procedure FindPeriod(SearchText: Code[3]);
     var
         Calendar: Record Date;
         PeriodFormMgt: Codeunit PeriodFormManagement;

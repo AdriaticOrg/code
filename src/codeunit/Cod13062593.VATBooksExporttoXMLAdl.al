@@ -7,6 +7,7 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
         XMLOutStream: OutStream;
         XMLInStream: InStream;
         TitleLbl: Label 'VAT Books';
+        XMLVarsionLbl: Label '"<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?>"';
         CalculationsTagLbl: Label 'obracuni';
         PPPDVTagLbl: Label 'PPPDV';
         ComTxtLbl: Label '<!-- %1 -->';
@@ -37,21 +38,17 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
         ApplyMethodAttrLbl: Label '"nacinPodnosenja=""elektronski"""';
         TimestampAttrLbl: Label '"timestamp=""%1"""';
         IdAttrLbl: Label '"id="""""';
-        IndentyfierTypeAttr: Label '"tipIdentifikatora=""JMBG"""';
         ApplyTimeAttrLbl: Label '"vremePodnosenja=""%1"""';
         Tag63Lbl: Label 'Iznos_63';
         Tag64Lbl: Label 'Iznos_64';
 
     local procedure XMLFileOpen();
-    var
-        Text001Loc: Label '"<?xml version=""1.0""?>"';
-        XMLVarsionLoc: Label '"<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?>"';
     begin
         TempBlob.DeleteAll();
         Clear(TempBlob);
         TempBlob.Init();
         TempBlob.Blob.CreateOutStream(XMLOutStream);
-        XMLOutStream.WriteText(XMLVarsionLoc);
+        XMLOutStream.WriteText(XMLVarsionLbl);
         XMLOutStream.WriteText();
     end;
 
@@ -69,7 +66,7 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
         DownloadFromStream(InStream, 'Export', '', 'XML Files (*.xml)|*.xml', FileName);
     end;
 
-    local procedure XMLWrite(Text: Text[250]; Tag: Text[250]; Indent: Integer; PrintTag: Option Both,Front,Back,None; LongTag: Boolean);
+    local procedure XMLWrite(Text: Text; Tag: Text; Indent: Integer; PrintTag: Option Both,Front,Back,None; LongTag: Boolean);
     var
         i: Integer;
         WrongXMLIndentErr: Label 'Wrong XML indent writing text %1';

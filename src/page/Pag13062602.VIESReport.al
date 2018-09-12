@@ -93,8 +93,8 @@ page 13062602 "VIES Report"
 
                 trigger OnAction()
                 var
-                    RepSuggestLines: Report "Suggest VIES Lines";
                     VATEntry: Record "VAT Entry";
+                    RepSuggestLines: Report "Suggest VIES Lines";
                 begin
                     TestField("No.");
                     TestField("Period Start Date");
