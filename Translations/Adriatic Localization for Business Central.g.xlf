@@ -1568,6 +1568,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CoreSetup-Adl - Field EU Customs - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 909224780 - Field 822403876 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forced Credit/Debit Enabled</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CoreSetup-Adl - Field Forced Credit/Debit Enabled - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1974829520 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ADL Assisted Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2527,6 +2532,11 @@
           <source>VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2739645971 - Control 2808404044 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Posting - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2739645971 - Control 2057091634 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting</source>
