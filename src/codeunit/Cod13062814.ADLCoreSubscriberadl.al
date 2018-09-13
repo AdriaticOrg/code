@@ -38,7 +38,7 @@ codeunit 13062814 "Adl Core Subscriber-adl"
         SetupADLDescriptionTxt: Label 'If you have installed Adriatic Localization but don''t want to use it, switch off receiving the notification.';
     begin
         MyNotifications.InsertDefault(AdlCoreNotification.GetCoreSetupNotificationId(),
-             SetupADLTxt,
+             CopyStr(SetupADLTxt, 1, 128),
              SetupADLDescriptionTxt,
              true
         );
