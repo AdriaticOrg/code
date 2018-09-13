@@ -1325,10 +1325,10 @@ Report 13062751 "Sales - Invoice Adl"
     begin
         OnBeforeGetDocumentCaption("Sales Invoice Header", DocCaption);
         if DocCaption <> '' then
-            exit(DocCaption);
+            exit(CopyStr(DocCaption, 1, 250));
         if "Sales Invoice Header"."Prepayment Invoice" then
-            exit(Text010);
-        exit(Text004);
+            exit(CopyStr(Text010, 1, 250);
+        exit(CopyStr(Text004, 1, 250));
     end;
 
     procedure InitializeRequest(NewNoOfCopies: Integer; NewShowInternalInfo: Boolean; NewLogInteraction: Boolean; DisplayAsmInfo: Boolean);
