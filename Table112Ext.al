@@ -21,11 +21,7 @@ tableextension 13062615 Table112Ext extends "Sales Invoice Header"
             Editable = false;
             TableRelation = "Fiscalization Location-ADL";
         }
-        field(13051862;"Fisc. Doc. No.";Code[20])
-        {
-            Editable = false;
-            
-        }
+
         field(13051863;"Full Fisc. Doc. No.";Code[20])
         {
             Editable = false;

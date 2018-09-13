@@ -22,11 +22,7 @@ tableextension 13062616 Table114Ext extends "Sales Cr.Memo Header"
             Editable = false;
             TableRelation = "Fiscalization Location-ADL";
         }
-        field(13051862;"Fisc. Doc. No.";Code[20])
-        {
-            Editable = false;
-            
-        }
+
         field(13051863;"Full Fisc. Doc. No.";Code[20])
         {
             Editable = false;

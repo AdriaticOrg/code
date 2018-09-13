@@ -22,10 +22,7 @@ pageextension 13062625 Page41Ext extends "Sales Quote"
                 {
                 ApplicationArea = All;
                 }
-                field("Fisc. Doc. No.";"Fisc. Doc. No.")
-                {
-                ApplicationArea = All;
-                }
+
                 field("Full Fisc. Doc. No.";"Full Fisc. Doc. No.")
                 {
                 ApplicationArea = All;

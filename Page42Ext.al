@@ -22,10 +22,7 @@ pageextension 13062626 Page42Ext extends "Sales Order"
                 {
                 ApplicationArea = All;
                 }
-                field("Fisc. Doc. No.";"Fisc. Doc. No.")
-                {
-                ApplicationArea = All;
-                }
+
                 field("Full Fisc. Doc. No.";"Full Fisc. Doc. No.")
                 {
                 ApplicationArea = All;

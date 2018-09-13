@@ -22,10 +22,7 @@ pageextension 13062630 Page134Ext extends "Posted Sales Credit Memo"
                 {
                 ApplicationArea = All;
                 }
-                field("Fisc. Doc. No.";"Fisc. Doc. No.")
-                {
-                ApplicationArea = All;
-                }
+
                 field("Full Fisc. Doc. No.";"Full Fisc. Doc. No.")
                 {
                 ApplicationArea = All;

@@ -22,10 +22,7 @@ pageextension 13062629 Page132Ext extends "Posted Sales Invoice"
                 {
                 ApplicationArea = All;
                 }
-                field("Fisc. Doc. No.";"Fisc. Doc. No.")
-                {
-                ApplicationArea = All;
-                }
+
                 field("Full Fisc. Doc. No.";"Full Fisc. Doc. No.")
                 {
                 ApplicationArea = All;

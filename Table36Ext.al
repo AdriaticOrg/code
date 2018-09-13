@@ -18,10 +18,6 @@ tableextension 13062612 Table36Ext extends "Sales Header"
         {
             TableRelation = "Fiscalization Location-ADL";
         }
-        field(13051862;"Fisc. Doc. No.";Code[20])
-        {
-            
-        }
         field(13051863;"Full Fisc. Doc. No.";Code[20])
         {
             

@@ -22,10 +22,7 @@ pageextension 13062628 Page44Ext extends "Sales Credit Memo"
                 {
 
                 }
-                field("Fisc. Doc. No.";"Fisc. Doc. No.")
-                {
 
-                }
                 field("Full Fisc. Doc. No.";"Full Fisc. Doc. No.")
                 {
 
