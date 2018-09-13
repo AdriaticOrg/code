@@ -144,10 +144,31 @@ end;
 local procedure OnAfterInsertSalesInvHeader(VAR SalesInvHeader : Record "Sales Invoice Header";SalesHeader : Record "Sales Header")
 begin
   SalesInvHeader."Posting TimeStamp" := CurrentDateTime;
+  SalesInvHeader."Full Fisc. Doc. No." := GetFullFiscDocNo(SalesInvHeader."Fisc. No. Series",SalesInvHeader."Fisc. Location Code",SalesInvHeader."Fisc. Terminal");
 end;
 [EventSubscriber(ObjectType::Codeunit, 80, 'OnAfterSalesCrMemoHeaderInsert', '', true, true)]
 local procedure OnAfterInsertSalesCrMemoHeader(VAR SalesCrMemoHeader : Record "Sales Cr.Memo Header";SalesHeader : Record "Sales Header")
 begin
   SalesCrMemoHeader."Posting TimeStamp" := CurrentDateTime;
+  SalesCrMemoHeader."Full Fisc. Doc. No." := GetFullFiscDocNo(SalesCrMemoHeader."Fisc. No. Series",SalesCrMemoHeader."Fisc. Location Code",SalesCrMemoHeader."Fisc. Terminal");
+
+end;
+
+local procedure GetFullFiscDocNo(FiscNoSeries : code[20];FiscLocCode : code[20];FiscTermCode : code[20]) : code[60]
+var
+  NoSeries : Record "No. Series";
+  NoSeriesMgt : Codeunit NoSeriesManagement;
+  FiscNo : code[20];
+  FiscalizationSetup : Record "Fiscalization Setup-ADL";
+begin
+  if not NoSeries.Get(FiscNoSeries) then
+    exit('');
+  NoSeriesMgt.InitSeries(FiscNoSeries,'',0D,FiscNo,FiscNoSeries);
+    CASE TRUE OF
+    FiscalizationSetup.CountryCodeSI:
+        exit(StrSubstNo('%1-%2-%3',FiscLocCode,FiscTermCode,FiscNo));
+    FiscalizationSetup.CountryCodeHR:
+        exit(StrSubstNo('%1-%2-%3',FiscNo,FiscLocCode,FiscTermCode));
+    end;
 end;
 }
