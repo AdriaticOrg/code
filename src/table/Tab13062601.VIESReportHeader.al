@@ -233,6 +233,16 @@ table 13062601 "VIES Report Header"
         VIESRepHead.TestField(Status, VIESRepHead.Status::Open);
     end;
 
+    procedure CheckBaseData()
+    begin
+        TestField("No.");
+        TestField("VIES Country");
+        if "VIES Country" = "VIES Country"::Croatia then
+            TestField("VIES Type");
+        TestField("Period Start Date");
+        TestField("Period End Date");
+    end;
+
     var
         RepSISetup: Record "Reporting_SI Setup";
         VIESRepHead: Record "VIES Report Header";

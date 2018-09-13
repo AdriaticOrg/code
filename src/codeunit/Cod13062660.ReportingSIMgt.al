@@ -30,7 +30,7 @@ codeunit 13062660 "Reporting SI Mgt."
         WHILE ((NOT SpaceFound) AND (Cntr > 0)) DO BEGIN
             ChrStr := COPYSTR(OrgAddress, Cntr, 1);
             EVALUATE(Chr, ChrStr);
-            ;
+
             IF Chr = 32 THEN BEGIN
                 Street := COPYSTR(OrgAddress, 1, Cntr - 1);
                 House := COPYSTR(OrgAddress, Cntr + 1);
@@ -39,6 +39,29 @@ codeunit 13062660 "Reporting SI Mgt."
             Cntr -= 1;
         end;
     END;
+
+    procedure SplitUserName(SrcName: Text[200]; var Name: text[200]; var SurName: Text[200])
+    var
+        SpaceFound: Boolean;
+        Cntr: Integer;
+        Len: Integer;
+        Chr: char;
+        ChrStr: Text[1];
+    begin
+        Len := STRLEN(SrcName);
+        Cntr := 1;
+        WHILE ((NOT SpaceFound) AND (Cntr < Len)) DO BEGIN
+            ChrStr := COPYSTR(SrcName, Cntr, 1);
+            EVALUATE(Chr, ChrStr);
+
+            IF Chr = 32 THEN BEGIN
+                Name := COPYSTR(SrcName, 1, Cntr - 1);
+                SurName := COPYSTR(SrcName, Cntr + 1);
+                SpaceFound := TRUE;
+            end;
+            Cntr += 1;
+        end;
+    end;
 
     procedure GetUser(var UserSetup: Record "User Setup"; UserID: Code[59])
     begin
