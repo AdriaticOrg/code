@@ -24,7 +24,6 @@ codeunit 13062817 "Wizard RapidStart-adl"
         httpResponse.Content().ReadAs(InputStr);
         TempBlob.Blob.CreateOutStream(OutputStream);
         CopyStream(OutputStream, InputStr);
-        TempBlob.Insert();
 
         //DownloadFromStream(InputStr, '', 'C:\', '', FileName);
         //UploadIntoStream('', 'c:\', '', FileName, InputStr);
