@@ -91,11 +91,10 @@ IF FiscalizationSetup.IsActive THEN BEGIN
       BEGIN
         IF Rec."Fisc. Location Code" = '' THEN BEGIN
           FiscalizationLocationMapping.SETRANGE("Location Code", Rec."Location Code");
-          IF FiscalizationLocationMapping.FINDFIRST THEN BEGIN
-            Rec.VALIDATE("Fisc. Location Code",FiscalizationLocationMapping."Fisc. Location Code");
-          END ELSE BEGIN
+          IF FiscalizationLocationMapping.FINDFIRST THEN
+            Rec.VALIDATE("Fisc. Location Code",FiscalizationLocationMapping."Fisc. Location Code")
+          ELSE
             Rec.VALIDATE("Fisc. Location Code",'');
-          END;
         END;
       END;
     FiscalizationSetup.CountryCodeHR:

@@ -43,6 +43,7 @@ page 13062605 "Fiscalization Setup-ADL"
         {
             action(FiscalizationTerminalList)
             {
+                ApplicationArea = all;
                 RunObject = Page "Fisc. Terminal List-ADL";
                 image = SetupList;
                 Promoted = True;
@@ -54,6 +55,7 @@ page 13062605 "Fiscalization Setup-ADL"
             }
             action(FiscalizationLocationList)
             {
+                ApplicationArea = all;
                 RunObject = Page "Fisc. Location List-ADL";
                 image = SetupList;
                 Promoted = True;
@@ -65,6 +67,7 @@ page 13062605 "Fiscalization Setup-ADL"
             }
             action(FiscalizationLocationMapping)
             {
+                ApplicationArea = all;
                 RunObject = Page "Fisc. Location Mapping-ADL";
                 image = SetupList;
                 Promoted = True;

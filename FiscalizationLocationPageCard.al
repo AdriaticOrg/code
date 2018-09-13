@@ -128,6 +128,7 @@ page 13062608 "Fisc. Location Card-ADL"
             }
             action("Fiscalization Location Mapping")
             {
+                ApplicationArea = all;
                 trigger OnAction()
                 var
                   FiscalizationLocationMappingPage : Page "Fisc. Location Mapping-ADL";
