@@ -105,12 +105,7 @@ page 13062602 "VIES Report"
                     VATEntry: Record "VAT Entry";
                     RepSuggestLines: Report "Suggest VIES Lines";
                 begin
-                    TestField("No.");
-                    TestField("VIES Country");
-                    if "VIES Country" = "VIES Country"::Croatia then
-                        TestField("VIES Type");
-                    TestField("Period Start Date");
-                    TestField("Period End Date");
+                    CheckBaseData();
 
                     VATEntry.Reset();
                     VATEntry.SetRange("Posting Date", "Period Start Date", "Period End Date");
@@ -137,6 +132,7 @@ page 13062602 "VIES Report"
                     VIESRepHead: Record "VIES Report Header";
                 begin
                     VIESRepHead := Rec;
+                    VIESRepHead.CheckBaseData();
                     VIESRepHead.SetRecFilter();
                     Report.RunModal(report::"Export VIES", true, false, VIESRepHead);
                 end;

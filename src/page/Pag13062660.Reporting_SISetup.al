@@ -89,6 +89,10 @@ page 13062660 "Reporting_SI Setup"
                 {
                     ApplicationArea = All;
                 }
+                field("VIES Company Branch Code"; "VIES Company Branch Code")
+                {
+                    ApplicationArea = All;
+                }
                 field("VIES Report No. Series"; "VIES Report No. Series")
                 {
                     ApplicationArea = All;

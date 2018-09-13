@@ -998,6 +998,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field VIES Prep. By User ID - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2369601040 - Field 4143331729 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES Company Branch Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field VIES Company Branch Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2369601040 - Field 497126115 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>PDO Report No. Series</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3033,10 +3038,35 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - NamedType ExportDoneMsg</note>
         </trans-unit>
-        <trans-unit id="Report 3974229927 - Method 3712419375 - NamedType 4082645074" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3974229927 - Method 1607865889 - NamedType 4082645074" size-unit="char" translate="yes" xml:space="preserve">
           <source>&lt;Precision,2:2&gt;&lt;Standard Format,9&gt;</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIES - NamedType PrecisionTok</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIESSI - NamedType PrecisionTok</note>
+        </trans-unit>
+        <trans-unit id="Report 3974229927 - Method 896196217 - NamedType 4082645074" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&lt;Precision,2:2&gt;&lt;Standard Format,9&gt;</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIESHR - NamedType PrecisionTok</note>
+        </trans-unit>
+        <trans-unit id="Report 3974229927 - Method 896196217 - NamedType 3973589956" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Zbirna prijavu za isporuke dobara i usluga u druge države članice Europske unije</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIESHR - NamedType HeadTxt</note>
+        </trans-unit>
+        <trans-unit id="Report 3974229927 - Method 896196217 - NamedType 2759810053" size-unit="char" translate="yes" xml:space="preserve">
+          <source>http://purl.org/dc/elements/1.1/</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIESHR - NamedType HeadAttrPrefix</note>
+        </trans-unit>
+        <trans-unit id="Report 3974229927 - Method 896196217 - NamedType 94790872" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Elektronički obrazac</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIESHR - NamedType FormLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3974229927 - Method 896196217 - NamedType 1753012857" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ministarstvo Financija, Porezna uprava, Zagreb</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIESHR - NamedType AddressantLbl</note>
         </trans-unit>
         <trans-unit id="Report 1146297910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest PDO Lines</source>
