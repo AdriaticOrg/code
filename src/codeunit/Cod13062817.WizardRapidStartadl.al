@@ -22,20 +22,49 @@ codeunit 13062817 "Wizard RapidStart-adl"
             Error(HttpReadResponseErr);
 
         httpResponse.Content().ReadAs(InputStr);
-        TempBlob.Blob.CREATEOUTSTREAM(OutputStream);
-        COPYSTREAM(OutputStream, InputStr);
+        TempBlob.Blob.CreateOutStream(OutputStream);
+        CopyStream(OutputStream, InputStr);
+        TempBlob.Insert();
+
+        //DownloadFromStream(InputStr, '', 'C:\', '', FileName);
+        //UploadIntoStream('', 'c:\', '', FileName, InputStr);
         LoadConfigurationPackages(TempBlob);
     end;
 
     procedure LoadConfigurationPackages(var TempBlob: Record TempBlob)
     var
         ConfigSetupTemp: Record "Config. Setup" temporary;
-        ConfigPackageImport: Codeunit "Config. Package - Import";
         ApplyingError: Integer;
     begin
-        ConfigPackageImport.ImportRapidStartPackageStream(TempBlob, ConfigSetupTemp);
+        ImportRapidStartPackageStream(TempBlob, ConfigSetupTemp);
         ApplyingError := ConfigSetupTemp.ApplyPackages();
     end;
+
+    procedure ImportRapidStartPackageStream(VAR TempBlob: Record TempBlob; VAR TempConfigSetup: Record "Config. Setup" temporary)
+    var
+        TempBlobUncompressed: Record TempBlob;
+        InStream: InStream;
+    begin
+        IF TempConfigSetup.Get('ImportRS') THEN
+            TempConfigSetup.Delete();
+
+        TempConfigSetup.Init();
+        TempConfigSetup."Primary Key" := 'ImportRS';
+        TempConfigSetup."Package File Name" := 'ImportRapidStartPackageFromStream';
+        TempConfigSetup.Insert();
+        // TempBlob contains the compressed .rapidstart file
+        // Decompress the file and put into the TempBlobUncompressed blob
+        TempConfigSetup.DecompressPackageToBlob(TempBlob, TempBlobUncompressed);
+
+        TempConfigSetup."Package File" := TempBlobUncompressed.Blob;
+        TempConfigSetup."Package File".CREATEINSTREAM(InStream);
+        TempConfigSetup.CalcFields("Package File");
+        TempConfigSetup.SetHideDialog(true);
+        TempConfigSetup.ReadPackageHeaderFromStream(InStream);
+        TempConfigSetup.ImportPackageFromStream(InStream);
+
+    end;
+
 
     var
         TempBlob: Record TempBlob temporary;
