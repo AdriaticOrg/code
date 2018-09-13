@@ -22,7 +22,6 @@ report 13062641 "Suggest FAS Lines"
                     NewLineNo := FASRepLine."Line No";
 
                 InitialRep := FASRepHead."Previous Report No." = '';
-
             end;
 
             trigger OnPostDataItem()
