@@ -265,12 +265,13 @@ Report 13062751 "Sales - Invoice Adl"
                             repeat
                                 OldDimText := DimText;
                                 if DimText = '' then
-                                    DimText := STRSUBSTNO('%1 %2', DimSetEntry1."Dimension Code", DimSetEntry1."Dimension Value Code")
+                                    DimText := CopyStr(StrSubstNo('%1 %2', DimSetEntry1."Dimension Code", DimSetEntry1."Dimension Value Code"), 1, 120)
                                 else
-                                    DimText :=
-                                      STRSUBSTNO(
-                                        '%1, %2 %3', DimText,
-                                        DimSetEntry1."Dimension Code", DimSetEntry1."Dimension Value Code");
+                                    DimText := 
+                                        CopyStr(
+                                            StrSubstNo(
+                                                '%1, %2 %3', DimText,
+                                                DimSetEntry1."Dimension Code", DimSetEntry1."Dimension Value Code"), 1, 120);
                                 if STRLEN(DimText) > MAXSTRLEN(OldDimText) then begin
                                     DimText := OldDimText;
                                     Continue := true;
@@ -496,12 +497,13 @@ Report 13062751 "Sales - Invoice Adl"
                                 repeat
                                     OldDimText := DimText;
                                     if DimText = '' then
-                                        DimText := STRSUBSTNO('%1 %2', DimSetEntry2."Dimension Code", DimSetEntry2."Dimension Value Code")
+                                        DimText := CopyStr(STRSUBSTNO('%1 %2', DimSetEntry2."Dimension Code", DimSetEntry2."Dimension Value Code"), 1, MaxStrLen(DimText))
                                     else
                                         DimText :=
-                                          STRSUBSTNO(
-                                            '%1, %2 %3', DimText,
-                                            DimSetEntry2."Dimension Code", DimSetEntry2."Dimension Value Code");
+                                            CopyStr(
+                                                STRSUBSTNO(
+                                                    '%1, %2 %3', DimText,
+                                                    DimSetEntry2."Dimension Code", DimSetEntry2."Dimension Value Code"), 1, MaxStrLen(DimText));
                                     if STRLEN(DimText) > MAXSTRLEN(OldDimText) then begin
                                         DimText := OldDimText;
                                         Continue := true;
@@ -780,7 +782,7 @@ Report 13062751 "Sales - Invoice Adl"
 
                             CurrExchRate.FindCurrency("Sales Invoice Header"."Posting Date", "Sales Invoice Header"."Currency Code", 1);
                             CalculatedExchRate := ROUND(1 / "Sales Invoice Header"."Currency Factor" * CurrExchRate."Exchange Rate Amount", 0.000001);
-                            VALExchRate := STRSUBSTNO(Text009, CalculatedExchRate, CurrExchRate."Exchange Rate Amount");
+                            VALExchRate := CopyStr(STRSUBSTNO(Text009, CalculatedExchRate, CurrExchRate."Exchange Rate Amount"), 1, MaxStrLen(VALExchRate));
                         end;
                     }
                     dataitem(PaymentReportingArgument; "Payment Reporting Argument")
@@ -1072,7 +1074,7 @@ Report 13062751 "Sales - Invoice Adl"
         NextEntryNo: Integer;
         FirstValueEntryNo: Integer;
         DimText: Text[120];
-        OldDimText: Text[75];
+        OldDimText: Text[120];
         ShowInternalInfo: Boolean;
         Continue: Boolean;
         LogInteraction: Boolean;
