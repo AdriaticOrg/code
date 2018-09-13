@@ -46,14 +46,13 @@ tableextension 13062526 "Purchase Header-Adl" extends "Purchase Header"  //38
                     GoodsReturnType.TestField("VAT Bus. Posting Group");
                     Validate("VAT Bus. Posting Group", GoodsReturnType."VAT Bus. Posting Group");
                 end else begin
-                    GLSetup.GET;
+                    GLSetup.Get();
                     if GLSetup."Bill-to/Sell-to VAT Calc." = GLSetup."Bill-to/Sell-to VAT Calc."::"Bill-to/Pay-to No." then begin
                         if Vendor.GET("Pay-to Vendor No.") then
                             Validate("VAT Bus. Posting Group", Vendor."VAT Bus. Posting Group");
-                    end else begin
+                    end else
                         if Vendor.GET("Buy-from Vendor No.") then
                             Validate("VAT Bus. Posting Group", Vendor."VAT Bus. Posting Group");
-                    end;
                 end;
             end;
         }
