@@ -10,7 +10,7 @@ table 13062811 "CoreSetup-Adl"
         field(999999; "ADL Features"; Option)
         {
             Caption = 'ADL Features';
-            OptionMembers = Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,UnpaidReceivables;
+            OptionMembers = Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,UnpaidReceivables,ForcedCreditDebit;
             DataClassification = SystemMetadata;
             Description = 'We really need to transition to an emum!';
         }
@@ -72,6 +72,12 @@ table 13062811 "CoreSetup-Adl"
         field(100; "EU Customs"; Boolean)
         {
             Caption = 'EU Customs';
+            DataClassification = SystemMetadata;
+        }
+
+        field(200; "Forced Credit/Debit Enabled"; Boolean)
+        {
+            Caption = 'Forced Credit/Debit Enabled';
             DataClassification = SystemMetadata;
         }
     }

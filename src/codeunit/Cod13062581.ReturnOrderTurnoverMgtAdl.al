@@ -4,67 +4,39 @@ codeunit 13062581 "Return Order Turnover Mgt.-Adl"
         CoreSetup: Record "CoreSetup-Adl";
         ADLCore: Codeunit "Adl Core";
 
-    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'VAT Prod. Posting Group', true, false)]
-    local procedure OnBeforeValidateVatProsPostGroupInSalesLine(var Rec: Record "Sales Line")
+    [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterSetFieldsBilltoCustomer', '', true, false)]
+    local procedure OnAfterSetFieldsBilltoCustomer(var SalesHeader: Record "Sales Header"; Customer: Record Customer)
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
-        HandleSalesVATProdPostingSetup(Rec);
+        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then
+            exit;
+        if SalesHeader."Goods Return Type-Adl" <> '' then
+            SalesHeader.Validate("Goods Return Type-Adl");
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Purchase Line", 'OnBeforeValidateEvent', 'VAT Prod. Posting Group', true, false)]
-    local procedure OnBeforeValidateVatProsPostGroupInPurchLine(var Rec: Record "Purchase Line")
+    [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterCopySellToCustomerAddressFieldsFromCustomer', '', true, false)]
+    local procedure OnAfterCopySellToCustomerAddressFieldsFromCustomer(var SalesHeader: Record "Sales Header"; SellToCustomer: Record Customer);
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
-        HandlePurchVATProdPostingSetup(Rec);
+        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then
+            exit;
+        if SalesHeader."Goods Return Type-Adl" <> '' then
+            SalesHeader.Validate("Goods Return Type-Adl");
     end;
 
-    procedure HandleSalesVATProdPostingSetup(var SalesLine: Record "Sales Line")
-    var
-        SalesHeader: Record "Sales Header";
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnAfterValidateEvent', 'Buy-from Vendor No.', true, false)]
+    local procedure OnAfterValidateBuyFromVendorNo(var Rec: Record "Purchase Header"; var xRec: Record "Purchase Header"; CurrFieldNo: Integer)
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
-        with SalesLine do
-            if "Document Type" IN ["Document Type"::"Credit Memo", "Document Type"::"Return Order"] then begin
-                SalesHeader.GET(SalesLine."Document Type", SalesLine."Document No.");
-                "VAT Prod. Posting Group" := GetVATProdPostingGroup(
-                    SalesHeader."Goods Return Type-Adl", "VAT Bus. Posting Group", "VAT Prod. Posting Group")
-            end;
+        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then
+            exit;
+        if Rec."Goods Return Type-Adl" <> '' then
+            Rec.Validate("Goods Return Type-Adl");
     end;
 
-    procedure HandlePurchVATProdPostingSetup(var PurchLine: Record "Purchase Line")
-    var
-        PurchHeader: Record "Purchase Header";
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnAfterValidateEvent', 'Pay-to Vendor No.', true, false)]
+    local procedure OnAfterValidatePayToVendorNo(var Rec: Record "Purchase Header"; var xRec: Record "Purchase Header"; CurrFieldNo: Integer)
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
-        with PurchLine do
-            if "Document Type" IN ["Document Type"::"Credit Memo", "Document Type"::"Return Order"] then begin
-                PurchHeader.GET(PurchLine."Document Type", PurchLine."Document No.");
-                "VAT Prod. Posting Group" := GetVATProdPostingGroup(
-                    PurchHeader."Goods Return Type-Adl", "VAT Bus. Posting Group", "VAT Prod. Posting Group")
-            end;
-    end;
-
-    procedure GetVATProdPostingGroup(GoodsReturnTypeCode: Code[10]; VATBusPostGr: Code[10]; VATProdPostGr: Code[10]): Code[10]
-    var
-        GoodsReturnType: Record "Goods Return Type-Adl";
-    begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
-        IF NOT GoodsReturnType.IsEmpty() then begin
-            GoodsReturnType.SetRange("VAT Bus. Posting Group", VATBusPostGr);
-            if GoodsReturnTypeCode <> '' then begin
-                GoodsReturnType.SetRange("Code", GoodsReturnTypeCode);
-                GoodsReturnType.SetRange("VAT Prod. Posting Group", VATProdPostGr);
-                GoodsReturnType.FindFirst();
-                exit(GoodsReturnType."New VAT Prod. Posting Group");
-            end else begin
-                GoodsReturnType.SetRange("Code");
-                GoodsReturnType.SetRange("New VAT Prod. Posting Group", VATProdPostGr);
-                IF GoodsReturnType.FindFirst() THEN begin
-                    GoodsReturnType.TestField("VAT Prod. Posting Group");
-                    exit(GoodsReturnType."VAT Prod. Posting Group");
-                end;
-            end;
-        end;
-        exit(VATProdPostGr);
+        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then
+            exit;
+        if Rec."Goods Return Type-Adl" <> '' then
+            Rec.Validate("Goods Return Type-Adl");
     end;
 }
