@@ -1327,7 +1327,7 @@ Report 13062751 "Sales - Invoice Adl"
         if DocCaption <> '' then
             exit(CopyStr(DocCaption, 1, 250));
         if "Sales Invoice Header"."Prepayment Invoice" then
-            exit(CopyStr(Text010, 1, 250);
+            exit(CopyStr(Text010, 1, 250));
         exit(CopyStr(Text004, 1, 250));
     end;
 
@@ -1340,16 +1340,19 @@ Report 13062751 "Sales - Invoice Adl"
     end;
 
     local procedure FormatDocumentFields(SalesInvoiceHeader: Record "Sales Invoice Header");
+    var
+        LocSalesPersonText: Text[50];
     begin
         with SalesInvoiceHeader do begin
+            LocSalesPersonText := SalesPersonText;
             FormatDocument.SetTotalLabels("Currency Code", TotalText, TotalInclVATText, TotalExclVATText);
-            FormatDocument.SetSalesPerson(SalesPurchPerson, "Salesperson Code", SalesPersonText);
+            FormatDocument.SetSalesPerson(SalesPurchPerson, "Salesperson Code", LocSalesPersonText);
             FormatDocument.SetPaymentTerms(PaymentTerms, "Payment Terms Code", "Language Code");
             FormatDocument.SetShipmentMethod(ShipmentMethod, "Shipment Method Code", "Language Code");
 
-            OrderNoText := FormatDocument.SetText("Order No." <> '', FIELDCAPTION("Order No."));
-            ReferenceText := FormatDocument.SetText("Your Reference" <> '', FIELDCAPTION("Your Reference"));
-            VATNoText := FormatDocument.SetText("VAT Registration No." <> '', FIELDCAPTION("VAT Registration No."));
+            OrderNoText := FormatDocument.SetText("Order No." <> '', CopyStr(FIELDCAPTION("Order No."), 1, 80));
+            ReferenceText := FormatDocument.SetText("Your Reference" <> '', CopyStr(FIELDCAPTION("Your Reference"), 1, 80));
+            VATNoText := FormatDocument.SetText("VAT Registration No." <> '', CopyStr(FIELDCAPTION("VAT Registration No."), 1, 80));
         end;
     end;
 
@@ -1424,7 +1427,7 @@ Report 13062751 "Sales - Invoice Adl"
 
     procedure BlanksForIndent(): Text[10];
     begin
-        exit(PADSTR('', 2, ' '));
+        exit(CopyStr(PADSTR('', 2, ' '), 1, 10));
     end;
 
     local procedure GetLineFeeNoteOnReportHist(SalesInvoiceHeaderNo: Code[20]);
