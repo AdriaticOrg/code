@@ -3,7 +3,6 @@ page 13062813 "MyPage"
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = "CoreSetup-Adl";
 
     layout
     {
@@ -12,10 +11,6 @@ page 13062813 "MyPage"
         {
             group(GroupName)
             {
-                field(MyField; "ADL Enabled")
-                {
-                    ApplicationArea = All;
-                }
 
             }
         }
