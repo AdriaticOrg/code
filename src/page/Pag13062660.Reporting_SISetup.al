@@ -4,7 +4,7 @@ page 13062660 "Reporting_SI Setup"
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "Reporting_SI Setup";
-    Caption = 'Reporting_SI Setup';
+    Caption = 'Reporting SI Setup';
 
     layout
     {
@@ -12,6 +12,7 @@ page 13062660 "Reporting_SI Setup"
         {
             group(FAS)
             {
+                Caption = 'FAS';
                 field("FAS Report No. Series"; "FAS Report No. Series")
                 {
                     ApplicationArea = All;
@@ -39,6 +40,7 @@ page 13062660 "Reporting_SI Setup"
             }
             group(KRD)
             {
+                Caption = 'KRD';
                 field("KRD Report No. Series"; "KRD Report No. Series")
                 {
                     ApplicationArea = All;
@@ -66,6 +68,7 @@ page 13062660 "Reporting_SI Setup"
             }
             group(BST)
             {
+                Caption = 'BST';
                 field("BST Report No. Series"; "BST Report No. Series")
                 {
                     ApplicationArea = All;
@@ -81,6 +84,7 @@ page 13062660 "Reporting_SI Setup"
             }
             group(VIES)
             {
+                Caption = 'VIES';
                 field("Default VIES Country"; "Default VIES Country")
                 {
                     ApplicationArea = All;
@@ -88,6 +92,7 @@ page 13062660 "Reporting_SI Setup"
                 field("Default VIES Type"; "Default VIES Type")
                 {
                     ApplicationArea = All;
+                    Editable = "Default VIES Country" = "Default VIES Country"::Croatia;
                 }
                 field("VIES Company Branch Code"; "VIES Company Branch Code")
                 {
@@ -108,6 +113,7 @@ page 13062660 "Reporting_SI Setup"
             }
             group(PDO)
             {
+                Caption = 'PDO';
                 field("PDO Report No. Series"; "PDO Report No. Series")
                 {
                     ApplicationArea = All;

@@ -11,6 +11,7 @@ page 13062602 "VIES Report"
         {
             group(General)
             {
+                Caption = 'General';
                 field("No."; "No.")
                 {
                     ApplicationArea = All;

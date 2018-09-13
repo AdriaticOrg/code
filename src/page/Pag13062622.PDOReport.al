@@ -11,6 +11,7 @@ page 13062622 "PDO Report"
         {
             group(General)
             {
+                Caption = 'General';
                 field("No."; "No.")
                 {
                     ApplicationArea = All;

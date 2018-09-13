@@ -38,7 +38,7 @@ report 13062601 "Suggest VIES Lines"
                 VATPstSetup: Record "VAT Posting Setup";
             begin
                 if not VATPstSetup.get("VAT Bus. Posting Group", "VAT Prod. Posting Group") then exit;
-                if not VATPstSetup."VIES Goods Sales-Adl" or VATPstSetup."VIES Service Sales-Adl" then exit;
+                if (not VATPstSetup."VIES Goods Sales-Adl") and (not VATPstSetup."VIES Service Sales-Adl") then exit;
 
                 TestField("Country/Region Code");
 
@@ -115,7 +115,7 @@ report 13062601 "Suggest VIES Lines"
         VATRegNo: Text[20];
     begin
         if not VATSetup.get(VATEntry."VAT Bus. Posting Group", VATEntry."VAT Prod. Posting Group") then exit;
-        if not VATSetup."VIES Goods Sales-Adl" or VATSetup."VIES Service Sales-Adl" then exit;
+        if (not VATSetup."VIES Goods Sales-Adl") and (not VATSetup."VIES Service Sales-Adl") then exit;
 
         with VATEntry do begin
 
