@@ -9,7 +9,7 @@ codeunit 13062571 "ForceCreditDebit-Adl"
     var
         GLAccount: Record "G/L Account";
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::ForcedCreditDebit) then exit;
         with GLAccount do begin
             Get(TempGLEntryBuf."G/L Account No.");
             if "Debit/Credit" = "Debit/Credit"::Both then

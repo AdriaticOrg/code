@@ -147,6 +147,16 @@ page 13062812 "ADL Setup Wizard-adl"
                     }
 
                 }
+
+                group(Posting)
+                {
+                    Caption = 'Posting';
+                    field("Forced Credit/Debit Enabled"; "Forced Credit/Debit Enabled")
+                    {
+                        ApplicationArea = All;
+                    }
+                }
+
                 group(Reporting)
                 {
                     Caption = 'Reporting';
