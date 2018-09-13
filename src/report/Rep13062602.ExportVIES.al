@@ -515,7 +515,7 @@ report 13062602 "Export VIES"
         XmlElem[3] := XmlElement.Create('Datum', xmlns);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(FORMAT(WORKDATE(), 0, '<Year4>-<Month,2>-<Day,2>') + 'T' +
-         FORMAT(TIME, 0, '<Hours24,2><Filler Character,0>:<Minutes,2>:<Seconds,2>')));
+         FORMAT(Time(), 0, '<Hours24,2><Filler Character,0>:<Minutes,2>:<Seconds,2>')));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefix + 'date');
         XmlElem[3].Add(XmlAttr);
 

@@ -32,8 +32,8 @@ codeunit 13062660 "Reporting SI Mgt."
             EVALUATE(Chr, ChrStr);
 
             IF Chr = 32 THEN BEGIN
-                Street := COPYSTR(OrgAddress, 1, Cntr - 1);
-                House := COPYSTR(OrgAddress, Cntr + 1);
+                Street := CopyStr(CopyStr(OrgAddress, 1, Cntr - 1), 1, MaxStrLen(Street));
+                House := CopyStr(OrgAddress, Cntr + 1, MaxStrLen(House));
                 SpaceFound := TRUE;
             END;
             Cntr -= 1;
@@ -55,8 +55,8 @@ codeunit 13062660 "Reporting SI Mgt."
             EVALUATE(Chr, ChrStr);
 
             IF Chr = 32 THEN BEGIN
-                Name := COPYSTR(SrcName, 1, Cntr - 1);
-                SurName := COPYSTR(SrcName, Cntr + 1);
+                Name := CopyStr(CopyStr(SrcName, 1, Cntr - 1), 1, MaxStrLen(Name));
+                SurName := CopyStr(SrcName, Cntr + 1, MaxStrLen(SurName));
                 SpaceFound := TRUE;
             end;
             Cntr += 1;

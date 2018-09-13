@@ -691,7 +691,7 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
         CustomerTotal8: Decimal;
         CustomerTotal9: Decimal;
         FileLength: Integer;
-        FileLineString: Text[1024];
+        FileLineString: Text;
         Total5: Decimal;
         Total6: Decimal;
         Total7: Decimal;
@@ -712,24 +712,24 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
         Text012Lbl: Label 'Uncollected_Ovedrue_Entries_%1';
         Text013Lbl: Label 'File %1 was created.';
 
-    local procedure Add(Name: Text[1024]; Value: Text[1024]): Text[1024];
+    local procedure Add(Name: Text; Value: Text): Text;
     begin
         Value := CheckAllowedChars(Value); //new line
         Value := DelChr(Value, '=', '&');
         exit('<' + Name + '>' + Value + '</' + Name + '>');
     end;
 
-    local procedure NodeStart(NodeValue: Text[1024]): Text[1024];
+    local procedure NodeStart(NodeValue: Text): Text;
     begin
         exit('<' + NodeValue + '>');
     end;
 
-    local procedure NodeEnd(NodeValue: Text[1024]): Text[1024];
+    local procedure NodeEnd(NodeValue: Text): Text;
     begin
         exit('</' + NodeValue + '>');
     end;
 
-    procedure RevStrPos(String: Text[1024]; Substring: Text[1024]): Integer;
+    procedure RevStrPos(String: Text; Substring: Text): Integer;
     var
         i: Integer;
         SubstringLen: Integer;

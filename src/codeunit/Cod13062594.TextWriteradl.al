@@ -32,7 +32,7 @@ codeunit 13062594 "TextWriter-adl"
 
         TextVal :=
            CopyStr(StringConversionManagement.GetPaddedString(
-                TextVal,
+                CopyStr(TextVal, 1, 250),
                 Length,
                 PadCharacter,
                 Justification),
