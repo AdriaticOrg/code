@@ -494,7 +494,7 @@ Report 13062751 "Sales - Invoice Adl"
                                 CLEAR(DimText);
                                 Continue := false;
                                 repeat
-                                    OldDimText := DimText;
+                                    OldDimText := COPYSTR(DimText, 1, 50);
                                     if DimText = '' then
                                         DimText := STRSUBSTNO('%1 %2', DimSetEntry2."Dimension Code", DimSetEntry2."Dimension Value Code")
                                     else
@@ -780,7 +780,7 @@ Report 13062751 "Sales - Invoice Adl"
 
                             CurrExchRate.FindCurrency("Sales Invoice Header"."Posting Date", "Sales Invoice Header"."Currency Code", 1);
                             CalculatedExchRate := ROUND(1 / "Sales Invoice Header"."Currency Factor" * CurrExchRate."Exchange Rate Amount", 0.000001);
-                            VALExchRate := STRSUBSTNO(Text009, CalculatedExchRate, CurrExchRate."Exchange Rate Amount");
+                            VALExchRate := COPYSTR(STRSUBSTNO(Text009, CalculatedExchRate, CurrExchRate."Exchange Rate Amount"), 1, 50);
                         end;
                     }
                     dataitem(PaymentReportingArgument; "Payment Reporting Argument")
@@ -1058,7 +1058,7 @@ Report 13062751 "Sales - Invoice Adl"
         ShipToAddr: array[8] of Text[50];
         CompanyAddr: array[8] of Text[50];
         OrderNoText: Text[80];
-        SalesPersonText: Text[30];
+        SalesPersonText: Text[50];
         VATNoText: Text[80];
         ReferenceText: Text[80];
         TotalText: Text[50];
@@ -1071,8 +1071,8 @@ Report 13062751 "Sales - Invoice Adl"
         ShowShippingAddr: Boolean;
         NextEntryNo: Integer;
         FirstValueEntryNo: Integer;
-        DimText: Text[120];
-        OldDimText: Text[75];
+        DimText: Text;
+        OldDimText: Text;
         ShowInternalInfo: Boolean;
         Continue: Boolean;
         LogInteraction: Boolean;
@@ -1317,7 +1317,7 @@ Report 13062751 "Sales - Invoice Adl"
         end;
     end;
 
-    local procedure DocumentCaption(): Text[250];
+    local procedure DocumentCaption(): Text;
     var
         DocCaption: Text;
     begin
@@ -1345,9 +1345,9 @@ Report 13062751 "Sales - Invoice Adl"
             FormatDocument.SetPaymentTerms(PaymentTerms, "Payment Terms Code", "Language Code");
             FormatDocument.SetShipmentMethod(ShipmentMethod, "Shipment Method Code", "Language Code");
 
-            OrderNoText := FormatDocument.SetText("Order No." <> '', FIELDCAPTION("Order No."));
-            ReferenceText := FormatDocument.SetText("Your Reference" <> '', FIELDCAPTION("Your Reference"));
-            VATNoText := FormatDocument.SetText("VAT Registration No." <> '', FIELDCAPTION("VAT Registration No."));
+            OrderNoText := COPYSTR(FormatDocument.SetText("Order No." <> '', COPYSTR(FIELDCAPTION("Order No."), 1, 80)), 1, 80);
+            ReferenceText := COPYSTR(FormatDocument.SetText("Your Reference" <> '', COPYSTR(FIELDCAPTION("Your Reference"), 1, 80)), 1, 80);
+            VATNoText := COPYSTR(FormatDocument.SetText("VAT Registration No." <> '', COPYSTR(FIELDCAPTION("VAT Registration No."), 1, 80)), 1, 80);
         end;
     end;
 
@@ -1422,7 +1422,7 @@ Report 13062751 "Sales - Invoice Adl"
 
     procedure BlanksForIndent(): Text[10];
     begin
-        exit(PADSTR('', 2, ' '));
+        exit(COPYSTR(PADSTR('', 2, ' '), 1, 10));
     end;
 
     local procedure GetLineFeeNoteOnReportHist(SalesInvoiceHeaderNo: Code[20]);
