@@ -151,10 +151,9 @@ local procedure OnAfterInsertSalesCrMemoHeader(VAR SalesCrMemoHeader : Record "S
 begin
   SalesCrMemoHeader."Posting TimeStamp" := CurrentDateTime;
   SalesCrMemoHeader."Full Fisc. Doc. No." := GetFullFiscDocNo(SalesCrMemoHeader."Fisc. No. Series",SalesCrMemoHeader."Fisc. Location Code",SalesCrMemoHeader."Fisc. Terminal");
-
 end;
 
-local procedure GetFullFiscDocNo(FiscNoSeries : code[20];FiscLocCode : code[20];FiscTermCode : code[20]) : code[60]
+local procedure GetFullFiscDocNo(FiscNoSeries : code[20];FiscLocCode : code[10];FiscTermCode : text[30]) : code[20]
 var
   NoSeries : Record "No. Series";
   NoSeriesMgt : Codeunit NoSeriesManagement;
