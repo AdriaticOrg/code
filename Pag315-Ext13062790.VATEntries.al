@@ -1,4 +1,4 @@
-pageextension 13062790 Page315Ext extends "VAT Entries"
+pageextension 13062790 "VAT Entries" extends "VAT Entries" //315
 {
     layout
     {

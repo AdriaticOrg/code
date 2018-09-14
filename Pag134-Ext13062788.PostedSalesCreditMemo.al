@@ -1,4 +1,4 @@
-pageextension 13062785 Page43Ext extends "Sales Invoice"
+pageextension 13062788 "Posted Sales Credit Memo" extends "Posted Sales Credit Memo" //134
 {
     layout
     {
@@ -24,6 +24,10 @@ pageextension 13062785 Page43Ext extends "Sales Invoice"
                 }
 
                 field("Full Fisc. Doc. No.";"Full Fisc. Doc. No.")
+                {
+                ApplicationArea = All;
+                }
+                field("Posting TimeStamp";"Posting TimeStamp")
                 {
                 ApplicationArea = All;
                 }

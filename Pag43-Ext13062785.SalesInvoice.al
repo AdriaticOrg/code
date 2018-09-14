@@ -1,4 +1,4 @@
-pageextension 13062787 Page132Ext extends "Posted Sales Invoice"
+pageextension 13062785 "Sales Invoice" extends "Sales Invoice" //43
 {
     layout
     {
@@ -24,10 +24,6 @@ pageextension 13062787 Page132Ext extends "Posted Sales Invoice"
                 }
 
                 field("Full Fisc. Doc. No.";"Full Fisc. Doc. No.")
-                {
-                ApplicationArea = All;
-                }
-                field("Posting TimeStamp";"Posting TimeStamp")
                 {
                 ApplicationArea = All;
                 }

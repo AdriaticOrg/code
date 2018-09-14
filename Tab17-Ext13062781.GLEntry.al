@@ -1,4 +1,4 @@
-tableextension 13062781 Table17Ext extends "G/L Entry"
+tableextension 13062781 "G/L Entry" extends "G/L Entry" //17
 {
     fields
     {
