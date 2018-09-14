@@ -58,4 +58,29 @@ tableextension 13062813 "Config. Setup-adl" extends "Config. Setup" //8627
             DataClassification = SystemMetadata;
         }
     }
+
+    procedure CopyCoreSetupInfo()
+    var
+        CoreSetup: Record "CoreSetup-Adl";
+    begin
+        if not CoreSetup.get() then begin
+            CoreSetup.Init();
+            CoreSetup.Insert()
+        end;
+
+        CoreSetup."ADL Enabled" := "ADL Enabled";
+        CoreSetup."BST Enabled" := "BST Enabled";
+        CoreSetup."EU Customs" := "EU Customs";
+        CoreSetup."FAS Enabled" := "FAS Enabled";
+        CoreSetup."KRD Enabled" := "KRD Enabled";
+        CoreSetup."Rep HR Enabled" := "Rep HR Enabled";
+        CoreSetup."Rep SI Enabled" := "Rep SI Enabled";
+        CoreSetup."Rep RS Enabled" := "Rep RS Enabled";
+        CoreSetup."Unpaid Receivables Enabled" := "Unpaid Receivables Enabled";
+        CoreSetup."VAT Enabled" := "VAT Enabled";
+        CoreSetup."VIES Enabled" := "VIES Enabled";
+
+        CoreSetup.modify();
+        Commit();
+    end;
 }

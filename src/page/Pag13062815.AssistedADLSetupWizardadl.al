@@ -38,7 +38,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     ShowCaption = false;
                 }
             }
-            group(Control8)
+            group(StartStep)
             {
                 ShowCaption = false;
                 Visible = IntroVisible;
@@ -53,7 +53,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     InstructionalText = 'Choose Next so you can specify basic company information.';
                 }
             }
-            group(Control18)
+            group(Step1)
             {
                 ShowCaption = false;
                 Visible = SelectTypeVisible AND TypeSelectionEnabled;
@@ -100,7 +100,85 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     Visible = TypeStandard OR TypeEvaluation;
                 }
             }
-            group(Control56)
+
+            group(step2)
+            {
+                Caption = 'Adriatic Localization core features';
+                InstructionalText = 'With this setup you can choose which features you want to enable for Adriatic Localization';
+                Visible = CoreSetupDetailsVisible;
+
+                group(General)
+                {
+                    Caption = 'General';
+                    field("ADL Enabled"; "ADL Enabled")
+                    {
+                        Caption = 'Adriatic Localization Enabled';
+                        ApplicationArea = All;
+
+                        trigger OnValidate()
+                        begin
+                            if "ADL Enabled" then
+                                NextEnabled := true
+                            else NextEnabled := false;
+                        end;
+                    }
+                }
+                group(VAT)
+                {
+                    Caption = 'VAT';
+                    field("VAT Enabled"; "VAT Enabled")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                }
+                group(Reporting)
+                {
+                    Caption = 'Reporting';
+                    field("Rep HR Enabled"; "Rep HR Enabled")
+                    {
+                        Caption = 'Reporting HR Enabled';
+                        ApplicationArea = All;
+                    }
+                    field("Rep RS Enabled"; "Rep RS Enabled")
+                    {
+                        Caption = 'Reporting RS Enabled';
+                        ApplicationArea = All;
+                    }
+                    field("Rep SI Enabled"; "Rep SI Enabled")
+                    {
+                        Caption = 'Reporting SI Enabled';
+                        ApplicationArea = All;
+                    }
+                    field("EU Customs"; "EU Customs")
+                    {
+                        ApplicationArea = All;
+                    }
+                }
+                group(ReportingSI)
+                {
+                    Caption = 'Reporting SI';
+                    field("FAS Enabled"; "FAS Enabled")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("KRD Enabled"; "KRD Enabled")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("BST Enabled"; "BST Enabled")
+                    {
+                        ApplicationArea = All;
+                    }
+                }
+
+            }
+
+            group(Step3)
             {
                 ShowCaption = false;
                 Visible = CompanyDetailsVisible;
@@ -172,7 +250,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     }
                 }
             }
-            group(Control45)
+            group(Step4)
             {
                 ShowCaption = false;
                 Visible = CommunicationDetailsVisible;
@@ -226,7 +304,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     }
                 }
             }
-            group(Control29)
+            group(Step5)
             {
                 ShowCaption = false;
                 Visible = BankStatementConfirmationVisible;
@@ -444,12 +522,10 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                 begin
                     AssistedCompanySetup.WaitForPackageImportToComplete();
                     BankAccount.TransferFields(TempBankAccount, true);
+                    CopyCoreSetupInfo();
                     AssistedCompanySetup.ApplyUserInput(Rec, BankAccount, AccountingPeriodStartDate, TypeEvaluation);
 
-
-
-
-                    AssistedSetup.SetStatus(PAGE::"Assisted Company Setup Wizard", AssistedSetup.Status::Completed);
+                    AssistedSetup.SetStatus(PAGE::"Assisted ADL Setup Wizard-adl", AssistedSetup.Status::Completed);
                     if (BankAccount."No." <> '') and (not TempOnlineBankAccLink.IsEmpty()) then
                         if not TryLinkBankAccount() then
                             ErrorText := GetLastErrorText();
@@ -508,7 +584,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         CompanyData: Option "Evaluation Data","Standard Data","None","Extended Data","Full No Data";
         TypeStandard: Boolean;
         TypeEvaluation: Boolean;
-        Step: Option Intro,Sync,"Select Type","Company Details","Communication Details",BankStatementFeed,SelectBankAccont,"Payment Details","Accounting Period","Costing Method",Done;
+        Step: Option Intro,Sync,"Select Type","Core Setup","Company Details","Communication Details",BankStatementFeed,SelectBankAccont,"Payment Details","Accounting Period","Costing Method",Done;
         BackEnabled: Boolean;
         NextEnabled: Boolean;
         FinishEnabled: Boolean;
@@ -520,6 +596,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         PaymentDetailsVisible: Boolean;
         AccountingPeriodVisible: Boolean;
         CostingMethodVisible: Boolean;
+        CoreSetupDetailsVisible: Boolean;
         DoneVisible: Boolean;
         TypeSelectionEnabled: Boolean;
         StandardVisible: Boolean;
@@ -534,6 +611,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         UseBankStatementFeed: Boolean;
         UseBankStatementFeedInitialized: Boolean;
         BankAccountInformationUpdated: Boolean;
+        CoreSetupUpdated: Boolean;
         SelectBankAccountVisible: Boolean;
         TermsOfUseLbl: Label 'Envestnet Yodlee Terms of Use';
         TermsOfUseUrlTxt: Label '', Locked = true;
@@ -562,7 +640,16 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                 if not TypeSelectionEnabled then
                     NextStep(Backwards)
                 else
-                    ShowSelectTypeStep;
+                    ShowSelectTypeStep();
+            step::"Core Setup":
+                if TypeEvaluation then begin
+                    Step := Step::Done;
+                    ShowDoneStep;
+                end else begin
+                    ShowCoreSetupDetailsStep();
+                    NextEnabled := "ADL Enabled";
+                end;
+
             Step::"Company Details":
                 if TypeEvaluation then begin
                     Step := Step::Done;
@@ -621,13 +708,14 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         SelectTypeVisible := true;
     end;
 
+    local procedure ShowCoreSetupType()
+    begin
+        CoreSetupDetailsVisible := true;
+    end;
+
     local procedure ShowCompanyDetailsStep()
     begin
         CompanyDetailsVisible := true;
-        if TypeSelectionEnabled then begin
-            StartConfigPackageImport();
-            BackEnabled := false;
-        end;
     end;
 
     local procedure ShowCommunicationDetailsStep()
@@ -638,6 +726,15 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
     local procedure ShowPaymentDetailsStep()
     begin
         PaymentDetailsVisible := true;
+    end;
+
+    local procedure ShowCoreSetupDetailsStep()
+    begin
+        CoreSetupDetailsVisible := true;
+        if TypeSelectionEnabled then begin
+            StartConfigPackageImport();
+            BackEnabled := false;
+        end;
     end;
 
     local procedure ShowOnlineBankStatement()
@@ -711,12 +808,15 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         AccountingPeriodVisible := false;
         CostingMethodVisible := false;
         DoneVisible := false;
+        CoreSetupDetailsVisible := false;
+
     end;
 
     local procedure InitializeRecord()
     var
         CompanyInformation: Record "Company Information";
         AccountingPeriod: Record "Accounting Period";
+        CoreSetup: Record "CoreSetup-Adl";
     begin
         Init();
 
@@ -731,6 +831,9 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         if not SkipAccountingPeriod then
             AccountingPeriodStartDate := CALCDATE('<-CY>', Today());
 
+        If CoreSetup.Get() then
+            TransferfieldsFromCoreSetup(CoreSetup);
+
         Insert();
     end;
 
@@ -741,6 +844,21 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
             CompanyData := CompanyData::"Standard Data";
         if TypeEvaluation then
             CompanyData := CompanyData::"Evaluation Data";
+    end;
+
+    local procedure TransferfieldsFromCoreSetup(var CoreSetup: Record "CoreSetup-Adl")
+    begin
+        "ADL Enabled" := CoreSetup."ADL Enabled";
+        "BST Enabled" := CoreSetup."BST Enabled";
+        "EU Customs" := CoreSetup."EU Customs";
+        "FAS Enabled" := CoreSetup."FAS Enabled";
+        "KRD Enabled" := CoreSetup."KRD Enabled";
+        "Rep HR Enabled" := CoreSetup."Rep HR Enabled";
+        "Rep SI Enabled" := CoreSetup."Rep SI Enabled";
+        "Rep RS Enabled" := CoreSetup."Rep RS Enabled";
+        "Unpaid Receivables Enabled" := CoreSetup."Unpaid Receivables Enabled";
+        "VAT Enabled" := CoreSetup."VAT Enabled";
+        "VIES Enabled" := CoreSetup."VIES Enabled";
     end;
 
     local procedure StartConfigPackageImport()
@@ -782,18 +900,6 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                 TopBannerVisible := MediaResourcesDone."Media Reference".HasValue();
     end;
 
-    local procedure PopulateAdlCoreSetup()
-    begin
-    end;
-
-    local procedure StoreAdlCoreSetup(var BufferCoreSetup: Record "CoreSetup-Adl")
-    begin
-    end;
-
-    local procedure RestoreCoreSetup(var BufferCoreSetup: Record "CoreSetup-Adl")
-    begin
-    end;
-
     local procedure PopulateBankAccountInformation()
     begin
         if BankAccountInformationUpdated then
@@ -813,7 +919,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
             exit;
 
         if not IsBankAccountFormatValid(TempOnlineBankAccLink."Bank Account No.") then
-            CLEAR(TempOnlineBankAccLink."Bank Account No.");
+            Clear(TempOnlineBankAccLink."Bank Account No.");
 
         if not BankAccountInformationUpdated then
             StoreBankAccountInformation(TempSavedBankAccount);
