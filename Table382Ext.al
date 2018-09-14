@@ -1,4 +1,4 @@
-tableextension 13062619 Table382Ext extends "CV Ledger Entry Buffer"
+tableextension 13062790 Table382Ext extends "CV Ledger Entry Buffer"
 {
     fields
     {

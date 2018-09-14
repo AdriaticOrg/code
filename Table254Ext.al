@@ -1,4 +1,4 @@
-tableextension 13062617 Table254Ext extends "VAT Entry"
+tableextension 13062788 Table254Ext extends "VAT Entry"
 {
     fields
     {

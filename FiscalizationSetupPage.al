@@ -1,4 +1,4 @@
-page 13062605 "Fiscalization Setup-ADL"
+page 13062781 "Fiscalization Setup-ADL"
 {
     UsageCategory = Documents;
     ApplicationArea = All;

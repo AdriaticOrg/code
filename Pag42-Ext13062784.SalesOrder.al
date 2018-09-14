@@ -1,4 +1,4 @@
-pageextension 13062625 Page41Ext extends "Sales Quote"
+pageextension 13062784 "Sales Order" extends "Sales Order" //42
 {
     layout
     {

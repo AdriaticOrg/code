@@ -1,4 +1,4 @@
-tableextension 13062610 Table17Ext extends "G/L Entry"
+tableextension 13062781 Table17Ext extends "G/L Entry"
 {
     fields
     {

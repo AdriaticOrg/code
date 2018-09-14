@@ -1,4 +1,4 @@
-table 13062605 "Fisc. Payment Method-ADL"
+table 13062783 "Fisc. Payment Method-ADL"
 {
     LookupPageId = "Fisc. Payment Methods-ADL";
     DrillDownPageId = "Fisc. Payment Methods-ADL";

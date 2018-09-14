@@ -1,4 +1,4 @@
-page 13062608 "Fisc. Location Card-ADL"
+page 13062784 "Fisc. Location Card-ADL"
 {
     PageType = Card;
     UsageCategory = Documents;

@@ -1,4 +1,4 @@
-tableextension 13062612 Table36Ext extends "Sales Header"
+tableextension 13062783 Table36Ext extends "Sales Header"
 {
     fields
     {

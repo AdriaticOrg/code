@@ -1,4 +1,4 @@
-tableextension 13062620 Table5900Ext extends "Service Header"
+tableextension 13062791 Table5900Ext extends "Service Header"
 {
     fields
     {

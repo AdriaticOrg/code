@@ -1,4 +1,4 @@
-tableextension 13062618 Table289Ext extends "Payment Method"
+tableextension 13062789 Table289Ext extends "Payment Method"
 {
     fields
     {

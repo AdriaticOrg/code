@@ -1,4 +1,4 @@
-table 13062602 "Fiscalization Terminal-ADL"
+table 13062782 "Fiscalization Terminal-ADL"
 {
     DataClassification = CustomerContent;
     fields

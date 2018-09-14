@@ -1,4 +1,4 @@
-pageextension 13062629 Page132Ext extends "Posted Sales Invoice"
+pageextension 13062787 Page132Ext extends "Posted Sales Invoice"
 {
     layout
     {

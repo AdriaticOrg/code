@@ -1,4 +1,4 @@
-codeunit 13062610 "Fisc. Management-ADL"
+codeunit 13062781 "Fisc. Management-ADL"
 {
     TableNo = "Sales Invoice Header";
     Permissions = TableData "Sales Invoice Header"=rimd,TableData "Sales Cr.Memo Header"=rimd;

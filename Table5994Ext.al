@@ -1,4 +1,4 @@
-tableextension 13062622 Table5994Ext extends "Service Cr.Memo Header"
+tableextension 13062793 Table5994Ext extends "Service Cr.Memo Header"
 {
     fields
     {

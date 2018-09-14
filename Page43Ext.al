@@ -1,4 +1,4 @@
-pageextension 13062627 Page43Ext extends "Sales Invoice"
+pageextension 13062785 Page43Ext extends "Sales Invoice"
 {
     layout
     {

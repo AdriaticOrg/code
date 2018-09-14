@@ -1,4 +1,4 @@
-tableextension 13062613 Table81Ext extends "Gen. Journal Line"
+tableextension 13062784 Table81Ext extends "Gen. Journal Line"
 {
     fields
     {

@@ -1,4 +1,4 @@
-pageextension 13062630 Page134Ext extends "Posted Sales Credit Memo"
+pageextension 13062788 Page134Ext extends "Posted Sales Credit Memo"
 {
     layout
     {

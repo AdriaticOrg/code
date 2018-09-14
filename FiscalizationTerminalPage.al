@@ -1,4 +1,4 @@
-page 13062606 "Fisc. Terminal List-ADL"
+page 13062782 "Fisc. Terminal List-ADL"
 {
     PageType = List;
     UsageCategory = Documents;
