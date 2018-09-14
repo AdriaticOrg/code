@@ -10,11 +10,6 @@ pageextension 13062559 "Sales Return Order-Adl" extends "Sales Return Order" //6
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
             }
-            field("VAT Output Date-Adl"; "VAT Output Date-Adl")
-            {
-                ApplicationArea = All;
-                Visible = VATFeatureEnabled;
-            }
             // </adl.6>
             // <adl.10>
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
