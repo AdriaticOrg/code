@@ -149,6 +149,28 @@ page 13062660 "Reporting_SI Setup"
                     report.RunModal(Report::"Adjust FAS on Entries");
                 end;
             }
+            action("Adjust BST on Entries")
+            {
+                Caption = 'Adjust BST on Entries';
+                ApplicationArea = All;
+                Image = Suggest;
+
+                trigger OnAction()
+                begin
+                    Report.RunModal(Report::"Adjust BST on Entries");
+                end;
+            }
+            action("Adjust KRD on Entries")
+            {
+                Caption = 'Adjust KRD on Entries';
+                ApplicationArea = All;
+                Image = Suggest;
+
+                trigger OnAction()
+                begin
+                    Report.RunModal(Report::"Adjust KRD on Entries");
+                end;
+            }
         }
     }
 }

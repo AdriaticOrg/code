@@ -1118,6 +1118,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup - Action Adjust FAS on Entries - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2369601040 - Action 1523575733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjust BST on Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup - Action Adjust BST on Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2369601040 - Action 2174835573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjust KRD on Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup - Action Adjust KRD on Entries - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2632500464 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Report Header</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3159,7 +3169,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - NamedType ExportDoneMsg</note>
         </trans-unit>
         <trans-unit id="Report 3974229927 - Method 1607865889 - NamedType 4082645074" size-unit="char" translate="yes" xml:space="preserve">
-          <source>&lt;Precision,2:2&gt;&lt;Standard Format,9&gt;</source>
+          <source>&lt;Precision,0:0&gt;&lt;Standard Format,9&gt;</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIESSI - NamedType PrecisionTok</note>
         </trans-unit>
@@ -3443,6 +3453,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export KRD - Method ExportKRD - NamedType PrecisionFormatTxt</note>
         </trans-unit>
+        <trans-unit id="Report 2174835573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjust KRD on Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust KRD on Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2174835573 - NamedType 1000469645" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to update entries based on values in master tables?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust KRD on Entries - NamedType ConfrimMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 2174835573 - NamedType 789090302" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processing finished.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust KRD on Entries - NamedType FinishMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 2174835573 - NamedType 3426155563" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aborted by user</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust KRD on Entries - NamedType AbortByUserMsg</note>
+        </trans-unit>
         <trans-unit id="Report 1199976608 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest BST Lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3507,6 +3537,26 @@
           <source>&lt;Precision,2:2&gt;&lt;Standard Format,9&gt;</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export BST - Method ExportBST - NamedType PrecisionFormatTxt</note>
+        </trans-unit>
+        <trans-unit id="Report 1523575733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjust BST on Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust BST on Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1523575733 - NamedType 1000469645" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to update entries based on values in %1 table?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust BST on Entries - NamedType ConfrimMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 1523575733 - NamedType 789090302" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processing finished.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust BST on Entries - NamedType FinishMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 1523575733 - NamedType 3426155563" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aborted by user</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust BST on Entries - NamedType AbortByUserMsg</note>
         </trans-unit>
         <trans-unit id="Report 2906589371 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Detail Trial Balance</source>

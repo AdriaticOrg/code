@@ -1,4 +1,4 @@
-pageextension 13062555 "Purchases&PayablesSetup-adl" extends "Purchases & Payables Setup"  //460
+pageextension 13062555 "Purchases&PayablesSetup-Adl" extends "Purchases & Payables Setup"  //460
 {
     layout
     {
@@ -15,6 +15,7 @@ pageextension 13062555 "Purchases&PayablesSetup-adl" extends "Purchases & Payabl
         ADLCore: Codeunit "Adl Core";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
+
     trigger OnOpenPage();
     begin
         VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);

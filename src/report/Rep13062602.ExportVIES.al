@@ -164,7 +164,7 @@ report 13062602 "Export VIES"
         TotSalesSvcs: Decimal;
         TotSales3Pty: Decimal;
         TotSalesCustoms: Decimal;
-        PrecisionTok: Label '<Precision,2:2><Standard Format,9>';
+        PrecisionTok: Label '<Precision,0:0><Standard Format,9>';
     begin
         CompanyInfo.get();
         CompanyInfo.TestField("Registration No.");
@@ -185,7 +185,7 @@ report 13062602 "Export VIES"
         StatMonth := DATE2DMY(VIESRepHead."Period Start Date", 2);
         StatYear := DATE2DMY(VIESRepHead."Period Start Date", 3);
 
-        xmlns := 'http://edavki.durs.si/Documents/Schemas/VIES_KP_5.xs';
+        xmlns := 'http://edavki.durs.si/Documents/Schemas/VIES_KP_5.xsd';
 
         FillRepBuffer(VIESRepHead, ViesRepBuff);
         ViesRepBuff.reset();
@@ -242,126 +242,126 @@ report 13062602 "Export VIES"
         XmlElem[3] := XmlElement.Create('VIES_KP', xmlns);
         XmlElem[2].Add(xmlElem[3]);
 
-        XmlElem[3] := XmlElement.Create('General', xmlns);
-        XmlElem[2].Add(xmlElem[3]);
-
-        XmlElem[4] := XmlElement.Create('H1_Year', xmlns);
-        XmlElem[4].Add(XmlText.Create(format(StatYear)));
+        XmlElem[4] := XmlElement.Create('General', xmlns);
         XmlElem[3].Add(xmlElem[4]);
 
-        XmlElem[4] := XmlElement.Create('H1_Month', xmlns);
-        XmlElem[4].Add(XmlText.Create(format(StatMonth)));
-        XmlElem[3].Add(xmlElem[4]);
+        XmlElem[5] := XmlElement.Create('H1_Year', xmlns);
+        XmlElem[5].Add(XmlText.Create(format(StatYear)));
+        XmlElem[4].Add(xmlElem[5]);
 
-        XmlElem[4] := XmlElement.Create('A13_CurrentTotal', xmlns);
-        XmlElem[4].Add(XmlText.Create(format(TotSalesGoods, 0, PrecisionTok)));
-        XmlElem[3].Add(xmlElem[4]);
+        XmlElem[5] := XmlElement.Create('H1_Month', xmlns);
+        XmlElem[5].Add(XmlText.Create(format(StatMonth)));
+        XmlElem[4].Add(xmlElem[5]);
 
-        XmlElem[4] := XmlElement.Create('A14_Current4263Total', xmlns);
-        XmlElem[4].Add(XmlText.Create(format(TotSalesCustoms, 0, PrecisionTok)));
-        XmlElem[3].Add(xmlElem[4]);
+        XmlElem[5] := XmlElement.Create('A13_CurrentTotal', xmlns);
+        XmlElem[5].Add(XmlText.Create(format(TotSalesGoods, 0, PrecisionTok)));
+        XmlElem[4].Add(xmlElem[5]);
 
-        XmlElem[4] := XmlElement.Create('A15_CurrentThreePartyTotal', xmlns);
-        XmlElem[4].Add(XmlText.Create(format(TotSales3Pty, 0, PrecisionTok)));
-        XmlElem[3].Add(xmlElem[4]);
+        XmlElem[5] := XmlElement.Create('A14_Current4263Total', xmlns);
+        XmlElem[5].Add(XmlText.Create(format(TotSalesCustoms, 0, PrecisionTok)));
+        XmlElem[4].Add(xmlElem[5]);
 
-        XmlElem[4] := XmlElement.Create('A16_CurrentServiceTotal', xmlns);
-        XmlElem[4].Add(XmlText.Create(format(TotSalesSvcs, 0, PrecisionTok)));
-        XmlElem[3].Add(xmlElem[4]);
+        XmlElem[5] := XmlElement.Create('A15_CurrentThreePartyTotal', xmlns);
+        XmlElem[5].Add(XmlText.Create(format(TotSales3Pty, 0, PrecisionTok)));
+        XmlElem[4].Add(xmlElem[5]);
 
-        XmlElem[4] := XmlElement.Create('F17_ResponsiblePerson', xmlns);
-        XmlElem[4].Add(XmlText.Create(RespUser."Reporting_SI Name-Adl"));
-        XmlElem[3].Add(xmlElem[4]);
+        XmlElem[5] := XmlElement.Create('A16_CurrentServiceTotal', xmlns);
+        XmlElem[5].Add(XmlText.Create(format(TotSalesSvcs, 0, PrecisionTok)));
+        XmlElem[4].Add(xmlElem[5]);
 
-        XmlElem[4] := XmlElement.Create('F17_TaxNumber', xmlns); //todo
-        XmlElem[3].Add(xmlElem[4]);
+        XmlElem[5] := XmlElement.Create('F17_ResponsiblePerson', xmlns);
+        XmlElem[5].Add(XmlText.Create(RespUser."Reporting_SI Name-Adl"));
+        XmlElem[4].Add(xmlElem[5]);
 
-        XmlElem[4] := XmlElement.Create('F18_ContactPerson', xmlns);
-        XmlElem[4].Add(XmlText.Create(PrepairedByUser."Reporting_SI Name-Adl"));
-        XmlElem[3].Add(xmlElem[4]);
+        XmlElem[5] := XmlElement.Create('F17_TaxNumber', xmlns); //todo
+        XmlElem[4].Add(xmlElem[5]);
 
-        XmlElem[4] := XmlElement.Create('F18_ContactPerson', xmlns);
-        XmlElem[4].Add(XmlText.Create(PrepairedByUser."Reporting_SI Phone-Adl"));
-        XmlElem[3].Add(xmlElem[4]);
+        XmlElem[5] := XmlElement.Create('F18_ContactPerson', xmlns);
+        XmlElem[5].Add(XmlText.Create(PrepairedByUser."Reporting_SI Name-Adl"));
+        XmlElem[4].Add(xmlElem[5]);
 
-        XmlElem[4] := XmlElement.Create('F13_RepresentativeTaxNumber', xmlns);  //todo
-        XmlElem[3].Add(xmlElem[4]);
+        XmlElem[5] := XmlElement.Create('F18_ContactPerson', xmlns);
+        XmlElem[5].Add(XmlText.Create(PrepairedByUser."Reporting_SI Phone-Adl"));
+        XmlElem[4].Add(xmlElem[5]);
 
-        XmlElem[3] := XmlElement.Create('A_Current', xmlns);
-        XmlElem[2].Add(xmlElem[3]);
+        XmlElem[5] := XmlElement.Create('F13_RepresentativeTaxNumber', xmlns);  //todo
+        XmlElem[4].Add(xmlElem[5]);
+
+        XmlElem[4] := XmlElement.Create('A_Current', xmlns);
+        XmlElem[2].Add(xmlElem[4]);
 
         with ViesRepBuff do begin
             if FindSet() then
                 repeat
-                    XmlElem[4] := XmlElement.Create('A', xmlns);
-                    XmlElem[3].Add(xmlElem[4]);
-
-                    XmlElem[5] := XmlElement.Create('A1_C', xmlns);
+                    XmlElem[5] := XmlElement.Create('A', xmlns);
                     XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create("Country/Region Code"));
 
-                    XmlElem[5] := XmlElement.Create('A2_N', xmlns);
-                    XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create("VAT Registration No."));
+                    XmlElem[6] := XmlElement.Create('A1_C', xmlns);
+                    XmlElem[5].Add(xmlElem[6]);
+                    XmlElem[6].Add(XmlText.Create("Country/Region Code"));
 
-                    XmlElem[5] := XmlElement.Create('A3_T', xmlns);
-                    XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format("EU Sales Goods Amt.", 0, PrecisionTok)));
+                    XmlElem[6] := XmlElement.Create('A2_N', xmlns);
+                    XmlElem[5].Add(xmlElem[6]);
+                    XmlElem[6].Add(XmlText.Create("VAT Registration No."));
 
-                    XmlElem[5] := XmlElement.Create('A6_S', xmlns);
-                    XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format("EU Sales Srvc. Amt.", 0, PrecisionTok)));
+                    XmlElem[6] := XmlElement.Create('A3_T', xmlns);
+                    XmlElem[5].Add(xmlElem[6]);
+                    XmlElem[6].Add(XmlText.Create(format("EU Sales Goods Amt.", 0, PrecisionTok)));
 
-                    XmlElem[5] := XmlElement.Create('A4_C4263', xmlns);
-                    XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format("EU Customs Proc. Amt", 0, PrecisionTok)));
+                    XmlElem[6] := XmlElement.Create('A4_C4263', xmlns);
+                    XmlElem[5].Add(xmlElem[6]);
+                    XmlElem[6].Add(XmlText.Create(format("EU Customs Proc. Amt", 0, PrecisionTok)));
 
-                    XmlElem[5] := XmlElement.Create('A5_T3', xmlns);
-                    XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format("EU 3-Party Amt.", 0, PrecisionTok)));
+                    XmlElem[6] := XmlElement.Create('A5_T3', xmlns);
+                    XmlElem[5].Add(xmlElem[6]);
+                    XmlElem[6].Add(XmlText.Create(format("EU 3-Party Amt.", 0, PrecisionTok)));
+
+                    XmlElem[6] := XmlElement.Create('A6_S', xmlns);
+                    XmlElem[5].Add(xmlElem[6]);
+                    XmlElem[6].Add(XmlText.Create(format("EU Sales Srvc. Amt.", 0, PrecisionTok)));
 
                 until Next() = 0;
 
             ViesRepBuff.SetRange(Type, ViesRepBuff.Type::Correction);
             if FindSet() then begin
-                XmlElem[3] := XmlElement.Create('B_PastCorrections', xmlns);
-                XmlElem[2].Add(xmlElem[3]);
+                XmlElem[4] := XmlElement.Create('B_PastCorrections', xmlns);
+                XmlElem[2].Add(xmlElem[4]);
 
                 repeat
-                    XmlElem[4] := XmlElement.Create('B', xmlns);
-                    XmlElem[3].Add(xmlElem[4]);
-
-                    XmlElem[5] := XmlElement.Create('B0_Y', xmlns);
+                    XmlElem[5] := XmlElement.Create('B', xmlns);
                     XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine."Period Year")));  //fix it
 
-                    XmlElem[5] := XmlElement.Create('B0_M', xmlns);
-                    XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format(VIESRepLine."Period Round")));  //fix it
+                    XmlElem[6] := XmlElement.Create('B0_Y', xmlns);
+                    XmlElem[5].Add(xmlElem[6]);
+                    XmlElem[6].Add(XmlText.Create(format(VIESRepLine."Period Year")));  //fix it
 
-                    XmlElem[5] := XmlElement.Create('B1_C', xmlns);
-                    XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create("Country/Region Code"));
+                    XmlElem[6] := XmlElement.Create('B0_M', xmlns);
+                    XmlElem[5].Add(xmlElem[6]);
+                    XmlElem[6].Add(XmlText.Create(format(VIESRepLine."Period Round")));  //fix it
 
-                    XmlElem[5] := XmlElement.Create('B2_N', xmlns);
-                    XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create("VAT Registration No."));
+                    XmlElem[6] := XmlElement.Create('B1_C', xmlns);
+                    XmlElem[5].Add(xmlElem[6]);
+                    XmlElem[6].Add(XmlText.Create("Country/Region Code"));
 
-                    XmlElem[5] := XmlElement.Create('B3_T', xmlns);
-                    XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format("EU Sales Goods Amt.", 0, PrecisionTok)));
+                    XmlElem[6] := XmlElement.Create('B2_N', xmlns);
+                    XmlElem[5].Add(xmlElem[6]);
+                    XmlElem[6].Add(XmlText.Create("VAT Registration No."));
 
-                    XmlElem[5] := XmlElement.Create('B6_S', xmlns);
-                    XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format("EU Sales Srvc. Amt.", 0, PrecisionTok)));
+                    XmlElem[6] := XmlElement.Create('B3_T', xmlns);
+                    XmlElem[5].Add(xmlElem[6]);
+                    XmlElem[6].Add(XmlText.Create(format("EU Sales Goods Amt.", 0, PrecisionTok)));
 
-                    XmlElem[5] := XmlElement.Create('B4_C4263', xmlns);
-                    XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format("EU Customs Proc. Amt", 0, PrecisionTok)));
+                    XmlElem[6] := XmlElement.Create('B4_C4263', xmlns);
+                    XmlElem[5].Add(xmlElem[6]);
+                    XmlElem[6].Add(XmlText.Create(format("EU Customs Proc. Amt", 0, PrecisionTok)));
 
-                    XmlElem[5] := XmlElement.Create('B5_T3', xmlns);
-                    XmlElem[4].Add(xmlElem[5]);
-                    XmlElem[5].Add(XmlText.Create(format("EU 3-Party Amt.", 0, PrecisionTok)));
+                    XmlElem[6] := XmlElement.Create('B5_T3', xmlns);
+                    XmlElem[5].Add(xmlElem[6]);
+                    XmlElem[6].Add(XmlText.Create(format("EU 3-Party Amt.", 0, PrecisionTok)));
+
+                    XmlElem[6] := XmlElement.Create('B6_S', xmlns);
+                    XmlElem[5].Add(xmlElem[6]);
+                    XmlElem[6].Add(XmlText.Create(format("EU Sales Srvc. Amt.", 0, PrecisionTok)));
 
                 until Next() = 0;
             end;
