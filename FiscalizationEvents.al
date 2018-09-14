@@ -116,10 +116,10 @@ begin
     exit('');
   NoSeriesMgt.InitSeries(FiscNoSeries,'',0D,FiscNo,FiscNoSeries);
     CASE TRUE OF
-    FiscalizationSetup.CountryCodeSI:
-        exit(StrSubstNo('%1-%2-%3',FiscLocCode,FiscTermCode,FiscNo));
-    FiscalizationSetup.CountryCodeHR:
-        exit(StrSubstNo('%1-%2-%3',FiscNo,FiscLocCode,FiscTermCode));
+      FiscalizationSetup.CountryCodeSI:
+          exit(StrSubstNo('%1-%2-%3',FiscLocCode,FiscTermCode,FiscNo));
+      FiscalizationSetup.CountryCodeHR:
+          exit(StrSubstNo('%1-%2-%3',FiscNo,FiscLocCode,FiscTermCode));
     end;
 end;
 }
