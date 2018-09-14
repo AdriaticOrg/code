@@ -46,14 +46,13 @@ tableextension 13062525 "Sales Header-Adl" extends "Sales Header" //36
                     GoodsReturnType.TestField("VAT Bus. Posting Group");
                     Validate("VAT Bus. Posting Group", GoodsReturnType."VAT Bus. Posting Group");
                 end else begin
-                    GLSetup.GET;
+                    GLSetup.Get();
                     if GLSetup."Bill-to/Sell-to VAT Calc." = GLSetup."Bill-to/Sell-to VAT Calc."::"Bill-to/Pay-to No." then begin
                         if Customer.GET("Bill-to Customer No.") then
                             Validate("VAT Bus. Posting Group", Customer."VAT Bus. Posting Group");
-                    end else begin
+                    end else
                         if Customer.GET("Sell-to Customer No.") then
                             Validate("VAT Bus. Posting Group", Customer."VAT Bus. Posting Group");
-                    end;
                 end;
             end;
         }

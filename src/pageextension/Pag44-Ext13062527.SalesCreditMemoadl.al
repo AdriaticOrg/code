@@ -32,16 +32,21 @@ pageextension 13062527 "Sales Credit Memo-Adl" extends "Sales Credit Memo" //44
             }
             // </adl.22>
         }
-        // <adl.18>  
+
+        // <adl.22>
         addafter("EU 3-Party Trade")
         {
-            // <adl.22>
+
             field("EU Customs Procedure"; "EU Customs Procedure-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
             }
-            // </adl.22>
+        }
+        // </adl.22>
+        // <adl.18>
+        addlast("Credit Memo Details")
+        {
             field("Goods Return Type-Adl"; "Goods Return Type-Adl")
             {
                 ApplicationArea = All;

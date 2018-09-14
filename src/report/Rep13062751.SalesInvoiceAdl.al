@@ -265,12 +265,13 @@ Report 13062751 "Sales - Invoice Adl"
                             repeat
                                 OldDimText := DimText;
                                 if DimText = '' then
-                                    DimText := STRSUBSTNO('%1 %2', DimSetEntry1."Dimension Code", DimSetEntry1."Dimension Value Code")
+                                    DimText := CopyStr(StrSubstNo('%1 %2', DimSetEntry1."Dimension Code", DimSetEntry1."Dimension Value Code"), 1, 120)
                                 else
-                                    DimText :=
-                                      STRSUBSTNO(
-                                        '%1, %2 %3', DimText,
-                                        DimSetEntry1."Dimension Code", DimSetEntry1."Dimension Value Code");
+                                    DimText := 
+                                        CopyStr(
+                                            StrSubstNo(
+                                                '%1, %2 %3', DimText,
+                                                DimSetEntry1."Dimension Code", DimSetEntry1."Dimension Value Code"), 1, 120);
                                 if STRLEN(DimText) > MAXSTRLEN(OldDimText) then begin
                                     DimText := OldDimText;
                                     Continue := true;
@@ -496,12 +497,13 @@ Report 13062751 "Sales - Invoice Adl"
                                 repeat
                                     OldDimText := DimText;
                                     if DimText = '' then
-                                        DimText := STRSUBSTNO('%1 %2', DimSetEntry2."Dimension Code", DimSetEntry2."Dimension Value Code")
+                                        DimText := CopyStr(STRSUBSTNO('%1 %2', DimSetEntry2."Dimension Code", DimSetEntry2."Dimension Value Code"), 1, MaxStrLen(DimText))
                                     else
                                         DimText :=
-                                          STRSUBSTNO(
-                                            '%1, %2 %3', DimText,
-                                            DimSetEntry2."Dimension Code", DimSetEntry2."Dimension Value Code");
+                                            CopyStr(
+                                                STRSUBSTNO(
+                                                    '%1, %2 %3', DimText,
+                                                    DimSetEntry2."Dimension Code", DimSetEntry2."Dimension Value Code"), 1, MaxStrLen(DimText));
                                     if STRLEN(DimText) > MAXSTRLEN(OldDimText) then begin
                                         DimText := OldDimText;
                                         Continue := true;
@@ -780,7 +782,7 @@ Report 13062751 "Sales - Invoice Adl"
 
                             CurrExchRate.FindCurrency("Sales Invoice Header"."Posting Date", "Sales Invoice Header"."Currency Code", 1);
                             CalculatedExchRate := ROUND(1 / "Sales Invoice Header"."Currency Factor" * CurrExchRate."Exchange Rate Amount", 0.000001);
-                            VALExchRate := STRSUBSTNO(Text009, CalculatedExchRate, CurrExchRate."Exchange Rate Amount");
+                            VALExchRate := CopyStr(STRSUBSTNO(Text009, CalculatedExchRate, CurrExchRate."Exchange Rate Amount"), 1, MaxStrLen(VALExchRate));
                         end;
                     }
                     dataitem(PaymentReportingArgument; "Payment Reporting Argument")
@@ -1072,7 +1074,7 @@ Report 13062751 "Sales - Invoice Adl"
         NextEntryNo: Integer;
         FirstValueEntryNo: Integer;
         DimText: Text[120];
-        OldDimText: Text[75];
+        OldDimText: Text[120];
         ShowInternalInfo: Boolean;
         Continue: Boolean;
         LogInteraction: Boolean;
@@ -1323,10 +1325,10 @@ Report 13062751 "Sales - Invoice Adl"
     begin
         OnBeforeGetDocumentCaption("Sales Invoice Header", DocCaption);
         if DocCaption <> '' then
-            exit(DocCaption);
+            exit(CopyStr(DocCaption, 1, 250));
         if "Sales Invoice Header"."Prepayment Invoice" then
-            exit(Text010);
-        exit(Text004);
+            exit(CopyStr(Text010, 1, 250));
+        exit(CopyStr(Text004, 1, 250));
     end;
 
     procedure InitializeRequest(NewNoOfCopies: Integer; NewShowInternalInfo: Boolean; NewLogInteraction: Boolean; DisplayAsmInfo: Boolean);
@@ -1338,16 +1340,19 @@ Report 13062751 "Sales - Invoice Adl"
     end;
 
     local procedure FormatDocumentFields(SalesInvoiceHeader: Record "Sales Invoice Header");
+    var
+        LocSalesPersonText: Text[50];
     begin
         with SalesInvoiceHeader do begin
+            LocSalesPersonText := SalesPersonText;
             FormatDocument.SetTotalLabels("Currency Code", TotalText, TotalInclVATText, TotalExclVATText);
-            FormatDocument.SetSalesPerson(SalesPurchPerson, "Salesperson Code", SalesPersonText);
+            FormatDocument.SetSalesPerson(SalesPurchPerson, "Salesperson Code", LocSalesPersonText);
             FormatDocument.SetPaymentTerms(PaymentTerms, "Payment Terms Code", "Language Code");
             FormatDocument.SetShipmentMethod(ShipmentMethod, "Shipment Method Code", "Language Code");
 
-            OrderNoText := FormatDocument.SetText("Order No." <> '', FIELDCAPTION("Order No."));
-            ReferenceText := FormatDocument.SetText("Your Reference" <> '', FIELDCAPTION("Your Reference"));
-            VATNoText := FormatDocument.SetText("VAT Registration No." <> '', FIELDCAPTION("VAT Registration No."));
+            OrderNoText := FormatDocument.SetText("Order No." <> '', CopyStr(FIELDCAPTION("Order No."), 1, 80));
+            ReferenceText := FormatDocument.SetText("Your Reference" <> '', CopyStr(FIELDCAPTION("Your Reference"), 1, 80));
+            VATNoText := FormatDocument.SetText("VAT Registration No." <> '', CopyStr(FIELDCAPTION("VAT Registration No."), 1, 80));
         end;
     end;
 
@@ -1422,7 +1427,7 @@ Report 13062751 "Sales - Invoice Adl"
 
     procedure BlanksForIndent(): Text[10];
     begin
-        exit(PADSTR('', 2, ' '));
+        exit(CopyStr(PADSTR('', 2, ' '), 1, 10));
     end;
 
     local procedure GetLineFeeNoteOnReportHist(SalesInvoiceHeaderNo: Code[20]);

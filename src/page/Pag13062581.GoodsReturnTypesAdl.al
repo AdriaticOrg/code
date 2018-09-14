@@ -28,16 +28,6 @@ page 13062581 "Goods Return Types-Adl"
                     ApplicationArea = All;
                     ToolTip = 'Specifies a VAT Bus. Posting Group on which this Goods Return Type have impact';
                 }
-                field("VAT Prod. Posting Group"; "VAT Prod. Posting Group")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies a VAT Prod. Posting Group on which this Goods Return Type have impact';
-                }
-                field("New VAT Prod. Posting Group"; "New VAT Prod. Posting Group")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies New VAT Prod. Posting Group for this Goods Return Type';
-                }
             }
         }
 

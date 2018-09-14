@@ -1,4 +1,4 @@
-pageextension 13062530 "Purchase Credit Memo-Adl" extends "Purchase Credit Memo"  //52
+pageextension 13062560 "Purchase Return Order-Adl" extends "Purchase Return Order"  //6640
 {
     layout
     {
