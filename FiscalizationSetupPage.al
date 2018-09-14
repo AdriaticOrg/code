@@ -84,11 +84,11 @@ page 13062605 "Fiscalization Setup-ADL"
       VisibleSI : Boolean;
     trigger OnOpenPage()
     begin
-        IF NOT GET THEN
-          INSERT;
-        IF GetCountryCode() = 'SI' THEN BEGIN
-          VisibleSI := TRUE;
-        END ELSE 
+        IF NOT GET() THEN
+          INSERT();
+        IF GetCountryCode() = 'SI' THEN
+          VisibleSI := TRUE
+        ELSE 
           IF GetCountryCode() = 'HR' THEN
             VisibleHR := TRUE;
     end;

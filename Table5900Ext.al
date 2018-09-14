@@ -2,24 +2,24 @@ tableextension 13062620 Table5900Ext extends "Service Header"
 {
     fields
     {
-        field(13051858;"Fisc. Subject";Boolean)
+        field(13062525;"Fisc. Subject";Boolean)
         {
 
         }
-        field(13051859;"Fisc. No. Series";Code[20])
+        field(13062526;"Fisc. No. Series";Code[20])
         {
             TableRelation = "No. Series";
         }
-        field(13051860;"Fisc. Terminal";Text[30])
+        field(13062527;"Fisc. Terminal";Text[30])
         {
             TableRelation = "Fiscalization Terminal-ADL";
         }
-        field(13051861;"Fisc. Location Code";Code[10])
+        field(13062528;"Fisc. Location Code";Code[10])
         {
             TableRelation = "Fiscalization Location-ADL";
         }
 
-        field(13051863;"Full Fisc. Doc. No.";Code[20])
+        field(13062529;"Full Fisc. Doc. No.";Code[20])
         {
             
         }

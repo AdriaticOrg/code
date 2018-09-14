@@ -64,18 +64,14 @@ page 13062606 "Fisc. Terminal List-ADL"
     var
       FiscalizationSetup : Record "Fiscalization Setup-ADL";
     begin
-        FiscalizationSetup.GET;
+        FiscalizationSetup.GET();
         CASE TRUE OF
         // SI
         FiscalizationSetup.CountryCodeSI:
-            BEGIN
             VisibleSI := TRUE;
-            END;
         // HR
         FiscalizationSetup.CountryCodeHR:
-            BEGIN
             VisibleHR := TRUE;
-            END;
         END;
     end;
 }

@@ -86,45 +86,6 @@ page 13062607 "Fisc. Location List-ADL"
     {
         area(processing)
         {
-            action(Register)
-            {
-                trigger OnAction()
-                begin
-                   //FiscLocation.GET("Fisc. Location Code");
-                   //FiscLocation.TESTFIELD("Fisc. Active",FALSE);
-                   //FiscLocation.TESTFIELD("Closing Tag",'');
-                   //FiscLocation.TESTFIELD("Ending Date",0D);
-                   //FiscManagementSI.RegisterPlace(FiscLocation);
-                   //CurrPage.UPDATE; 
-                end;
-            }
-            action(UnRegister)
-            {
-                trigger OnAction()
-                var
-                  Text001 : TextConst ENU='Do you really want to check out the place %1? Renotification of the same area is no longer possible.';
-                begin
-                    //TESTFIELD("Fisc. Active");
-                    //TESTFIELD("Closing Tag",'');
-                    //TESTFIELD("Ending Date",0D);
-                    //IF GUIALLOWED THEN BEGIN
-                      //IF CONFIRM(STRSUBSTNO(Text001,"Fisc. Location Code"),FALSE) THEN BEGIN
-                        //FiscLocation.GET("Fisc. Location Code");
-                        //FiscLocation."Closing Tag" := 'Z';
-                        //FiscLocation.MODIFY;
-                        //FiscManagementSI.RegisterPlace(FiscLocation);
-                        //CurrPage.UPDATE;
-                      //END;
-                    //END;
-                end;
-            }
-            action(SubmitLocation)
-            {
-                trigger OnAction()
-                begin
-                    //FiscManagementSI.SubmitLocationXMLFile(Rec);
-                end;
-            }
             action("Fiscalization Location Mapping")
             {
                 trigger OnAction()
@@ -134,7 +95,7 @@ page 13062607 "Fisc. Location List-ADL"
                 begin
                     FiscalizationLocationMapping.SETRANGE("Fisc. Location Code","Fisc. Location Code");
                     FiscalizationLocationMappingPage.SETTABLEVIEW(FiscalizationLocationMapping);
-                    FiscalizationLocationMappingPage.RUNMODAL;
+                    FiscalizationLocationMappingPage.RUNMODAL();
                 end;
             }
         }
@@ -149,18 +110,14 @@ page 13062607 "Fisc. Location List-ADL"
             var
                 FiscalizationSetup : Record "Fiscalization Setup-ADL";
             begin
-                FiscalizationSetup.GET;
+                FiscalizationSetup.GET();
                 CASE TRUE OF
                 // SI
                 FiscalizationSetup.CountryCodeSI:
-                    BEGIN
                     VisibleSI := TRUE;
-                    END;
                 // HR
                 FiscalizationSetup.CountryCodeHR:
-                    BEGIN
                     VisibleHR := TRUE;
-                    END;
                 END;
             end;
 }

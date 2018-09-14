@@ -17,7 +17,7 @@ table 13062603 "Fiscalization Location-ADL"
             DataClassification = CustomerContent;
             trigger OnValidate()
             begin
-                ValidateFiscData;
+                ValidateFiscData();
             end;
         }
         field(3;"Fisc. House Number"; text[4])
@@ -25,7 +25,7 @@ table 13062603 "Fiscalization Location-ADL"
             DataClassification = CustomerContent;
             trigger OnValidate()
             begin
-                ValidateFiscData;
+                ValidateFiscData();
             end;            
         }
         field(4;"Fisc. House Number Appendix"; text[4])
@@ -33,7 +33,7 @@ table 13062603 "Fiscalization Location-ADL"
             DataClassification = CustomerContent;
             trigger OnValidate()
             begin
-                ValidateFiscData;
+                ValidateFiscData();
             end;            
         }
         field(5;"Fisc. Settlement"; Text[35])
@@ -41,7 +41,7 @@ table 13062603 "Fiscalization Location-ADL"
             DataClassification = CustomerContent;
             trigger OnValidate()
             begin
-                ValidateFiscData;
+                ValidateFiscData();
             end;            
         }
         field(6;"Fisc. City/Municipality"; Text[35])
@@ -49,7 +49,7 @@ table 13062603 "Fiscalization Location-ADL"
             DataClassification = CustomerContent;
             trigger OnValidate()
             begin
-                ValidateFiscData;
+                ValidateFiscData();
             end;            
         }
         field(7;"Fisc. Post Code"; Code[20])
@@ -59,11 +59,10 @@ table 13062603 "Fiscalization Location-ADL"
             trigger OnValidate()
             var PostCode : Record "Post Code";
             begin
-                ValidateFiscData;
+                ValidateFiscData();
                 PostCode.SETRANGE(Code,"Fisc. Post Code");
-                IF PostCode.FINDFIRST THEN BEGIN
+                IF PostCode.FINDFIRST() THEN
                   "Fisc. City/Municipality" := PostCode.City;
-                END;
             end;  
         }
         field(8;"Fisc. Location Description"; Text[100])
@@ -71,7 +70,7 @@ table 13062603 "Fiscalization Location-ADL"
             DataClassification = CustomerContent;
             trigger OnValidate()
             begin
-                ValidateFiscData;
+                ValidateFiscData();
             end;               
         }
         field(9;"Working Hours"; Text[100])
@@ -79,7 +78,7 @@ table 13062603 "Fiscalization Location-ADL"
             DataClassification = CustomerContent;
             trigger OnValidate()
             begin
-                ValidateFiscData;
+                ValidateFiscData();
             end;              
         }
         field(10;"Date Of Application"; Date)
@@ -131,9 +130,9 @@ table 13062603 "Fiscalization Location-ADL"
     
     trigger OnInsert()
     begin
-        "Creation Date" := TODAY;
-        "Creation Time" := TIME;
-        "User ID" := UserId();
+        "Creation Date" := TODAY();
+        "Creation Time" := TIME();
+        "User ID" := copystr(UserId(),1,50);
     end;
     
     trigger OnModify()
@@ -153,7 +152,7 @@ table 13062603 "Fiscalization Location-ADL"
     
     procedure ValidateFiscData();
     var
-      Text001: TextConst ENU='If you change this value location must be resubmited to provider. Do you wish to continue';
+      Msg001Txt : TextConst ENU='If you change this value location must be resubmited to provider. Do you wish to continue';
     begin
       IF (((Rec."Fisc. Street"<>xRec."Fisc. Street") OR
             (Rec."Fisc. House Number"<>xRec."Fisc. House Number") OR
@@ -165,12 +164,12 @@ table 13062603 "Fiscalization Location-ADL"
             (Rec."Working Hours"<>xRec."Working Hours")) AND
             (Rec."Fisc. Active"))
         THEN BEGIN
-            IF GUIALLOWED THEN
-                IF NOT CONFIRM(Text001,FALSE) THEN BEGIN
-                    Rec:=xRec;
+            IF GUIALLOWED() THEN
+                IF NOT CONFIRM(Msg001Txt,FALSE) THEN BEGIN
+                    Rec := xRec;
                     EXIT;
                 END;
-            "Fisc. Active":=FALSE;
+            "Fisc. Active" := FALSE;
         END;
     end;
 }
