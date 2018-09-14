@@ -2,7 +2,7 @@ codeunit 13062811 "Adl Core"
 {
     Permissions = tabledata 13062811 = rm,
                   tabledata 13062660 = rm;
-    procedure FeatureEnabled(Feature: Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,UnpaidReceivables): Boolean
+    procedure FeatureEnabled(Feature: Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,UnpaidReceivables,ForcedCreditDebit): Boolean
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
@@ -30,6 +30,8 @@ codeunit 13062811 "Adl Core"
                     exit("VIES Enabled");
                 Feature::UnpaidReceivables:
                     exit("Unpaid Receivables Enabled");
+                Feature::ForcedCreditDebit:
+                    exit("Forced Credit/Debit Enabled");
             end;
         end;
 

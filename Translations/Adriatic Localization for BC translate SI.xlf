@@ -8,7 +8,7 @@
       <group id="body" datatype="resx">
         <trans-unit id="Table 1439163258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Type</source>
-          <target state="new"></target>
+          <target state="translated">Vrsta vračila blaga</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table Goods Return Type-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1439163258 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -213,7 +213,7 @@
         </trans-unit>
         <trans-unit id="Table 3465818742 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Book Group Identifier</source>
-          <target state="new"></target>
+          <target state="translated">Identifikator skupine knjige DDV</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book Group Identifier-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3465818742 - Field 3651471105 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -223,7 +223,7 @@
         </trans-unit>
         <trans-unit id="Table 3465818742 - Field 3790207796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Book Group Code</source>
-          <target state="new"></target>
+          <target state="translated">Šifra skupine</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book Group Identifier-Adl - Field VAT Book Group Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3465818742 - Field 2534656220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -248,7 +248,7 @@
         </trans-unit>
         <trans-unit id="Table 2340829247 - Field 3790207796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Book Group Code</source>
-          <target state="translated"></target>
+          <target state="translated">Šifra skupine</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book View Formula-Adl - Field VAT Book Group Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2340829247 - Field 2534656220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -299,7 +299,7 @@
         </trans-unit>
         <trans-unit id="Table 2340829247 - Field 2533693419 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,Base Amount,VAT Amount,Amount Inc. VAT,Base Amount(retro.),Unrealizied Base,Unrealized Amount,Unrealized Amount Inc. VAT,VAT Retro,Amount Inc. VAT(retro)</source>
-          <target state="new"></target>
+          <target state="translated"> </target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book View Formula-Adl - Field Value2 - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 2340829247 - Field 696389717 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -809,7 +809,7 @@
         </trans-unit>
         <trans-unit id="Table 4192115680 - Field 855337200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Type</source>
-          <target state="translated">Vrsta SFR (FAS)</target>
+          <target state="translated">Vrsta SFR</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table FAS Report Line - Field FAS Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4192115680 - Field 855337200 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
@@ -899,7 +899,7 @@
         </trans-unit>
         <trans-unit id="Table 2369601040 - Field 1086121858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Default KRD Affiliation Type</source>
-          <target state="translated"></target>
+          <target state="translated">Privzeta kapitalska povezanost</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field Default KRD Affiliation Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2369601040 - Field 625572741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1029,7 +1029,7 @@
         </trans-unit>
         <trans-unit id="Table 2632500464 - Field 723961636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Previous Report No.</source>
-          <target state="new"></target>
+          <target state="translated">Št. predhodnjega poročila</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table KRD Report Header - Field Previous Report No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2632500464 - Field 2923034786 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1064,7 +1064,7 @@
         </trans-unit>
         <trans-unit id="Table 3368388279 - Field 3820818388 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Affiliation Type</source>
-          <target state="new"></target>
+          <target state="translated">Kapitalska povezanost</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table KRD Report Line - Field Affiliation Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3368388279 - Field 1378896471 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1119,7 +1119,7 @@
         </trans-unit>
         <trans-unit id="Table 3368388279 - Field 1753327380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Increase Amount</source>
-          <target state="new"></target>
+          <target state="translated">Povečanje zneska</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table KRD Report Line - Field Increase Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3368388279 - Field 1200115082 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1144,7 +1144,7 @@
         </trans-unit>
         <trans-unit id="Table 3386777076 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Affiliation Type,Instrument Type,Maturity</source>
-          <target state="new"></target>
+          <target state="translated">Kapitalska povezanost,Vrsta instrumenta,Ročnost</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table KRD Code - Field Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 3386777076 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1309,7 +1309,7 @@
         </trans-unit>
         <trans-unit id="Table 2473585447 - Field 862773401 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Income Amount</source>
-          <target state="new"></target>
+          <target state="translated">Znesek prejemka</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table BST Report Line - Field Income Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2473585447 - Field 909421352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1364,7 +1364,7 @@
         </trans-unit>
         <trans-unit id="Codeunit 477704930 - NamedType 3186350222" size-unit="char" translate="yes" xml:space="preserve">
           <source>A dimension used in %1 %2, %3, %4 has caused an error. %5.</source>
-          <target state="new"></target>
+          <target state="translated">Dimenzija uporabljena v %1 %2, %3, %4 je povzročila napako. %5.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Manage Postponed VAT-Adl - NamedType DimensionUsedErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 477704930 - NamedType 2821468818" size-unit="char" translate="yes" xml:space="preserve">
@@ -1539,7 +1539,7 @@
         </trans-unit>
         <trans-unit id="Codeunit 1622207341 - NamedType 2524690250" size-unit="char" translate="yes" xml:space="preserve">
           <source>"id="""""</source>
-          <target state="new"></target>
+          <target state="translated">"id="""""</target>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - NamedType IdAttr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1622207341 - NamedType 1039674498" size-unit="char" translate="yes" xml:space="preserve">
@@ -1584,32 +1584,32 @@
         </trans-unit>
         <trans-unit id="Page 701540871 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Types</source>
-          <target state="new"></target>
+          <target state="translated">Vrsta vračila blaga</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Goods Return Types-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 701540871 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies a code for Goods Return Type</source>
-          <target state="new"></target>
+          <target state="translated">Določi šifro za vrstao vračila blaga.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Goods Return Types-Adl - Control Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 701540871 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies a description of the Goods Return Type</source>
-          <target state="new"></target>
+          <target state="translated">Določi opis za vrstao vračila blaga.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Goods Return Types-Adl - Control Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 701540871 - Control 1844012642 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies a VAT Bus. Posting Group on which this Goods Return Type have impact</source>
-          <target state="new"></target>
+          <target state="translated">Določi knjižno skupino tržišča za DDV, na katero vpliva ta vrsta vračila blaga.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Goods Return Types-Adl - Control VAT Bus. Posting Group - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 701540871 - Control 236064653 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies a VAT Prod. Posting Group on which this Goods Return Type have impact</source>
-          <target state="new"></target>
+          <target state="translated">Določi knjižno skupino izdelka za DDV, na katero vpliva ta vrsta vračila blaga.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Goods Return Types-Adl - Control VAT Prod. Posting Group - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 701540871 - Control 1004898937 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies New VAT Prod. Posting Group for this Goods Return Type</source>
-          <target state="new"></target>
+          <target state="translated">Določi novo knjižno skupino izdelka za DDV za to vrsto vračila blaga.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Goods Return Types-Adl - Control New VAT Prod. Posting Group - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2518329585 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1619,12 +1619,12 @@
         </trans-unit>
         <trans-unit id="Page 2518329585 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies a code for VAT identifier which is selected to group of various VAT posting setups with similar attributes, for example VAT percentage.</source>
-          <target state="new"></target>
+          <target state="translated">Določa šifro identifikatorja DDV, ki je izbrana na različnih nastavitvah knjiženja za DDV, npr. DDV %.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Identifiers-Adl - Control Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2518329585 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies a description of the VAT identifier</source>
-          <target state="new"></target>
+          <target state="translated">Določa opis identifikatorja DDV</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Identifiers-Adl - Control Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1522232855 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1634,7 +1634,7 @@
         </trans-unit>
         <trans-unit id="Page 1522232855 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies a code to VAT book which is uses for regional VAT reporting legislation.</source>
-          <target state="new"></target>
+          <target state="translated">Določa šifro knjige DDV, ki se uporablja za regionalno zakonodajo o poročanju o DDV.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Books-Adl - Control Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1522232855 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -1644,7 +1644,7 @@
         </trans-unit>
         <trans-unit id="Page 1522232855 - Control 3601724630 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies if book is set to export to XML via action "Export to XML".</source>
-          <target state="new"></target>
+          <target state="translated">Določa, ali je knjiga nastavljena za izvoz v XML preko "Izvoz v XML".</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Books-Adl - Control Include in XML - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1522232855 - Control 1880378808 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -1654,7 +1654,7 @@
         </trans-unit>
         <trans-unit id="Page 1522232855 - Control 2807378183 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies tag name in XML file which is exported via action "Export to XML".</source>
-          <target state="new"></target>
+          <target state="translated">Določa ime oznake v datoteki XML, ki se izvaža z "Izvoz v XML".</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Books-Adl - Control Tag Name - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1522232855 - Action 3237504299 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1674,12 +1674,12 @@
         </trans-unit>
         <trans-unit id="Page 1522232855 - Action 1955477746 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Book Groups</source>
-          <target state="new"></target>
+          <target state="translated">Skupine knjig DDV</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Books-Adl - Action VAT Book Groups - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1522232855 - Action 1955477746 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>View or edit the VAT book groups which is used as setup for VAT reporting and XML.</source>
-          <target state="new"></target>
+          <target state="translated"></target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Books-Adl - Action VAT Book Groups - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1522232855 - Action 3766682519 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1699,7 +1699,7 @@
         </trans-unit>
         <trans-unit id="Page 1522232855 - Action 3076291003 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shows VAT book matrix preview.</source>
-          <target state="new"></target>
+          <target state="translated">Prikaže predogled matrice knjige DDV.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Books-Adl - Action VAT Review - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1522232855 - Action 2536953766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1734,37 +1734,37 @@
         </trans-unit>
         <trans-unit id="Page 3568658896 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Book Column Names</source>
-          <target state="new"></target>
+          <target state="translated"></target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Column Names-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3568658896 - Control 1389794395 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies column number which is used as setup for VAT reporting and XML.</source>
-          <target state="new"></target>
+          <target state="translated">Določa številko stolpca, ki je uporabljen v nastavitvah za poročanje DDV in XML.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Column Names-Adl - Control Column No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3568658896 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies a description of the VAT book columns.</source>
-          <target state="new"></target>
+          <target state="translated">Določi opis stolpcev za knjigo DDV.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Column Names-Adl - Control Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3568658896 - Control 3589601625 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies fixed text length of the VAT book columns.</source>
-          <target state="new"></target>
+          <target state="translated">Določa fiksno dolžino besedila stolpcev knjige DDV.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Column Names-Adl - Control Fixed text length - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3898502574 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Book Groups</source>
-          <target state="new"></target>
+          <target state="translated">Skupine knjig DDV</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3898502574 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies VAT book group code which is used as setup for VAT reporting and XML.</source>
-          <target state="new"></target>
+          <target state="translated">Določi šifro skupine knjig DDV, ki se uporablja kot nastavitev za poročanje o DDV in XML.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3898502574 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies a description of the VAT book group</source>
-          <target state="new"></target>
+          <target state="translated">Določi opis za skupina knjige DDV</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3898502574 - Action 3237504299 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1779,7 +1779,7 @@
         </trans-unit>
         <trans-unit id="Page 2587470435 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Book Group Identifiers</source>
-          <target state="new"></target>
+          <target state="translated">Identifikatorji skupine knjige DDV</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Group Identifiers-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2587470435 - Control 2534656220 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -1824,12 +1824,12 @@
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 43593927 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies by which period amounts are displayed.</source>
-          <target state="new"></target>
+          <target state="translated">Določi, za katero obdobje se prikazujejo zneski.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control PeriodType - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 539546824 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date Filter</source>
-          <target state="translated">Datumski filter</target>
+          <target state="translated">Filter datuma</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control DateFilter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1844,7 +1844,7 @@
         </trans-unit>
         <trans-unit id="Page 2436641618 - Action 477982176 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show the information based on the previous period. If you set the View by field to Day, the date filter changes to the day before.</source>
-          <target state="translated">Datumski filter</target>
+          <target state="translated">Filter datuma</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Action PreviousPeriod - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Action 1639220638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1854,7 +1854,7 @@
         </trans-unit>
         <trans-unit id="Page 2436641618 - Action 1639220638 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show the information based on the next period. If you set the View by field to Day, the date filter changes to the day before.</source>
-          <target state="translated">Datumski filter</target>
+          <target state="translated">Filter datuma</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Action NextPeriod - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Action 2536953766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2114,7 +2114,7 @@
         </trans-unit>
         <trans-unit id="Report 2007895818 - Control 1452022969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date Filter</source>
-          <target state="translated">Datumski filter</target>
+          <target state="translated">Filter datuma</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Calc. Details-Adl - Control SetedDateFilter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2007895818 - Control 1965887750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2169,7 +2169,7 @@
         </trans-unit>
         <trans-unit id="Report 959239765 - Control 995090288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date Filter</source>
-          <target state="translated">Datumski filter</target>
+          <target state="translated">Filter datuma</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Books To XML-Adl - Control Date Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 959239765 - Control 694692658 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2184,7 +2184,7 @@
         </trans-unit>
         <trans-unit id="Report 959239765 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must enter Date Filter</source>
-          <target state="translated">Vpisati morate datumski filter</target>
+          <target state="translated">Vpisati morate filter datuma</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Books To XML-Adl - NamedType Text001</note>
         </trans-unit>
         <trans-unit id="Report 833133062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2334,7 +2334,7 @@
         </trans-unit>
         <trans-unit id="Report 3256069342 - NamedType 989751795" size-unit="char" translate="yes" xml:space="preserve">
           <source>IZPIS ODBITKA DDV.TXT</source>
-          <target state="new"></target>
+          <target state="translated">IZPIS ODBITKA DDV.TXT</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Book-adl - NamedType FileName</note>
         </trans-unit>
         <trans-unit id="Report 3256069342 - NamedType 3427126301" size-unit="char" translate="yes" xml:space="preserve">
@@ -2379,7 +2379,7 @@
         </trans-unit>
         <trans-unit id="Report 3256069342 - NamedType 224678124" size-unit="char" translate="yes" xml:space="preserve">
           <source>Firm / Name and place of supplier</source>
-          <target state="new"></target>
+          <target state="translated">Podjetje / Ime in kraj dobavitelja</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Book-adl - NamedType VendCustomLbl</note>
         </trans-unit>
         <trans-unit id="Report 3256069342 - NamedType 864933667" size-unit="char" translate="yes" xml:space="preserve">
@@ -2719,7 +2719,7 @@
         </trans-unit>
         <trans-unit id="Report 998367019 - ReportLabel 1026656943" size-unit="char" translate="yes" xml:space="preserve">
           <source>Income Amount</source>
-          <target state="new"></target>
+          <target state="translated">Znesek prejemka</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export BST - ReportLabel LblIncomeAmount</note>
         </trans-unit>
         <trans-unit id="Report 998367019 - ReportLabel 4292763498" size-unit="char" translate="yes" xml:space="preserve">
@@ -2754,7 +2754,7 @@
         </trans-unit>
         <trans-unit id="Report 2906589371 - Control 3214291206 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies if each G/L account information is printed on a new page if you have chosen two or more G/L accounts to be included in the report.</source>
-          <target state="new"></target>
+          <target state="translated">Določa, ali so podatki konta GK natisnjeni na novi strani, če ste v poročilo vključili dva ali več kontov GK.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Detail Trial Balance-Adl - Control NewPageperGLAcc - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 2906589371 - Control 3183705145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2764,7 +2764,7 @@
         </trans-unit>
         <trans-unit id="Report 2906589371 - Control 3183705145 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies if you do not want the report to include entries for G/L accounts that have a balance but do not have a net change during the selected time period.</source>
-          <target state="new"></target>
+          <target state="translated">Določa, če da ne želite, da poročilo vključuje vnose za konte GK, ki imajo saldo, vendar nimajo spremembe med izbranim časovnim obdobjem.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Detail Trial Balance-Adl - Control ExcludeGLAccsHaveBalanceOnly - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 2906589371 - Control 3201262307 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2775,7 +2775,7 @@
         </trans-unit>
         <trans-unit id="Report 2906589371 - Control 3201262307 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies if you want the report to include closing entries. This is useful if the report covers an entire fiscal year. Closing entries are listed on a fictitious date between the last day of one fiscal year and the first day of the next one. They have a C before the date, such as C123194. If you do not select this field, no closing entries are shown.</source>
-          <target state="new"></target>
+          <target state="translated">Določa, da poročilo vsebuje tudi zaključne postavke.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Detail Trial Balance-Adl - Control InclClosingEntriesWithinPeriod - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 2906589371 - Control 3414096222 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2785,7 +2785,7 @@
         </trans-unit>
         <trans-unit id="Report 2906589371 - Control 3414096222 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies if you want to include reversed entries in the report.</source>
-          <target state="new"></target>
+          <target state="translated">Določa, da poročilo vsebuje tudi stornirane postavke.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Detail Trial Balance-Adl - Control IncludeReversedEntries - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 2906589371 - Control 4258595164 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2795,7 +2795,7 @@
         </trans-unit>
         <trans-unit id="Report 2906589371 - Control 4258595164 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies if you want the report to show only the entries that have been reversed and their matching correcting entries.</source>
-          <target state="new"></target>
+          <target state="translated">Določi, ali želite poročilo prikazati samo vnose, ki so bili stornirani, in njihove ujemajoče postavke.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Detail Trial Balance-Adl - Control PrintCorrectionsOnly - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 2906589371 - ReportLabel 2020178030" size-unit="char" translate="yes" xml:space="preserve">
@@ -2880,7 +2880,7 @@
         </trans-unit>
         <trans-unit id="Report 2906589371 - NamedType 3285348309" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Responsible Person</source>
-          <target state="new"></target>
+          <target state="translated">Knjiženje odgovorna oseba</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Detail Trial Balance-Adl - NamedType PostingRespPersonLbl</note>
         </trans-unit>
         <trans-unit id="Report 1918786967 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2905,7 +2905,7 @@
         </trans-unit>
         <trans-unit id="Report 1918786967 - Control 2578066365 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies how many copies of the document to print.</source>
-          <target state="new"></target>
+          <target state="translated">Določa, koliko kopij dokumenta naj se natisne.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Invoice Adl - Control NoOfCopies - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 1918786967 - Control 316520822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2915,7 +2915,7 @@
         </trans-unit>
         <trans-unit id="Report 1918786967 - Control 316520822 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies if you want the printed report to show information that is only for internal use.</source>
-          <target state="new"></target>
+          <target state="translated">Določa, ali želite v natisnjenem poročilu prikazati informacije, ki so samo za interno uporabo.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Invoice Adl - Control ShowInternalInfo - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 1918786967 - Control 816368762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2925,7 +2925,7 @@
         </trans-unit>
         <trans-unit id="Report 1918786967 - Control 816368762 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies that interactions with the contact are logged.</source>
-          <target state="new"></target>
+          <target state="translated">Določa, da so interakcije s stikom zapisane v dnevnik</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Invoice Adl - Control LogInteraction - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 1918786967 - Control 1885540899 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2945,7 +2945,7 @@
         </trans-unit>
         <trans-unit id="Report 1918786967 - Control 215716959 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies that any notes about additional fees are included on the document.</source>
-          <target state="new"></target>
+          <target state="translated">Določa, da so v dokumentu vključene morebitne dodatne opombe.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Invoice Adl - Control DisplayAdditionalFeeNote - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 1918786967 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
@@ -3160,32 +3160,32 @@
         </trans-unit>
         <trans-unit id="TableExtension 4021696606 - Field 3246291640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting_SI Name</source>
-          <target state="new"></target>
+          <target state="translated">Ime</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetup-adl - Field Reporting_SI Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4021696606 - Field 271637889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting_SI Email</source>
-          <target state="translated"></target>
+          <target state="translated">E-naslov</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetup-adl - Field Reporting_SI Email - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4021696606 - Field 691763358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting_SI Position</source>
-          <target state="new"></target>
+          <target state="translated">Položaj</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetup-adl - Field Reporting_SI Position - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4021696606 - Field 1426040801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting_SI Phone</source>
-          <target state="new"></target>
+          <target state="translated">Telefon</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetup-adl - Field Reporting_SI Phone - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4021696606 - Field 2480918195 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Responsible Person</source>
-          <target state="new"></target>
+          <target state="translated">Odgovorna oseba</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetup-adl - Field Posting Responsible Person - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4021696606 - Field 3524318887 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Approver</source>
-          <target state="new"></target>
+          <target state="translated">Potrjevalec</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetup-adl - Field Posting Approver - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1136403560 - Action 293191964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3345,7 +3345,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2684467970 - Field 1439163258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Type</source>
-          <target state="new"></target>
+          <target state="translated">Vrsta vračila blaga</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr.Memo Header-Adl - Field Goods Return Type-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2684467970 - Field 2674211939 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3385,7 +3385,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2715391543 - Field 1439163258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Type</source>
-          <target state="new"></target>
+          <target state="translated">Vrsta vračila blaga</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchCrMemoHdr-Adl - Field Goods Return Type-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 87108442 - Field 1398259200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3435,7 +3435,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 87108442 - Field 1140052474 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,None,Credit,Debit,Both</source>
-          <target state="new"></target>
+          <target state="translated"> ,Noben,Dobro,Breme,Oboje</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccount-adl - Field BST Value Posting - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 87108442 - Field 1140052474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3485,12 +3485,12 @@
         </trans-unit>
         <trans-unit id="TableExtension 3076363708 - Field 2630148503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Affiliation Type</source>
-          <target state="translated"></target>
+          <target state="translated">Kapitalska povezanost</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer-adl - Field KRD Affiliation Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2917329725 - Field 2630148503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Affiliation Type</source>
-          <target state="new"></target>
+          <target state="translated">Kapitalska povezanost</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgEntry-adl - Field KRD Affiliation Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2917329725 - Field 668650524 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3541,12 +3541,12 @@
         </trans-unit>
         <trans-unit id="TableExtension 3318562596 - Field 2630148503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Affiliation Type</source>
-          <target state="new"></target>
+          <target state="translated">Kapitalska povezanost</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor-adl - Field KRD Affiliation Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2111787717 - Field 2630148503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Affiliation Type</source>
-          <target state="new"></target>
+          <target state="translated">Kapitalska povezanost</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VendLedgEntry-adl - Field KRD Affiliation Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2111787717 - Field 668650524 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3646,7 +3646,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2348541669 - Field 1439163258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Type</source>
-          <target state="new"></target>
+          <target state="translated">Vrsta vračila blaga</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Header-Adl - Field Goods Return Type-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2348541669 - Field 2674211939 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3676,7 +3676,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 160176228 - Field 1439163258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Type</source>
-          <target state="new"></target>
+          <target state="translated">Vrsta vračila blaga</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchaseHeader-Adl - Field Goods Return Type-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3364643929 - Field 3130705431 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3696,12 +3696,12 @@
         </trans-unit>
         <trans-unit id="TableExtension 3048079099 - Field 1439163258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Type</source>
-          <target state="new"></target>
+          <target state="translated">Vrsta vračila blaga</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Return Shipment Header -Adl - Field Goods Return Type-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4174485391 - Field 1439163258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Type</source>
-          <target state="new"></target>
+          <target state="translated">Vrsta vračila blaga</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Return Receipt Header-Adl - Field Goods Return Type-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 684499033 - Field 2099680485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3731,12 +3731,12 @@
         </trans-unit>
         <trans-unit id="TableExtension 684499033 - Field 2568589023 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bal. FAS Instrument Code</source>
-          <target state="new"></target>
+          <target state="translated">Protikonto instrumenta</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJournalLine-Adl - Field Bal. FAS Instrument Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 684499033 - Field 4158294552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bal. FAS Sector Code</source>
-          <target state="new"></target>
+          <target state="translated">Protikonto sektorja</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJournalLine-Adl - Field Bal. FAS Sector Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 684499033 - Field 855337200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3751,7 +3751,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 684499033 - Field 3622220599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bal. FAS Type</source>
-          <target state="translated"></target>
+          <target state="translated">Protikonto vrste SFR </target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJournalLine-Adl - Field Bal. FAS Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 684499033 - Field 3622220599 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
@@ -3816,12 +3816,12 @@
         </trans-unit>
         <trans-unit id="TableExtension 1424627196 - Field 551116200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Global Posting Responsible Person</source>
-          <target state="new"></target>
+          <target state="translated">Odgovorna oseba</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GeneralLedgerSetup-adl - Field Global Posting Resp. Person - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1424627196 - Field 3091543986 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Global Posting Approver</source>
-          <target state="new"></target>
+          <target state="translated">Potrjevalec</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GeneralLedgerSetup-adl - Field Global Posting Approver - Property Caption</note>
         </trans-unit>
       </group>

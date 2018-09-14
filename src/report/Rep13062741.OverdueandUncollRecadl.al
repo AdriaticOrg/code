@@ -714,19 +714,19 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
 
     local procedure Add(Name: Text[1024]; Value: Text[1024]): Text[1024];
     begin
-        Value := CheckAllowedChars(Value); //new line
-        Value := DelChr(Value, '=', '&');
-        exit('<' + Name + '>' + Value + '</' + Name + '>');
+        Value := CopyStr(CheckAllowedChars(Value), 1, MaxStrLen(Value)); //new line
+        Value := CopyStr(DelChr(Value, '=', '&'), 1, MaxStrLen(Value));
+        exit(CopyStr('<' + Name + '>' + Value + '</' + Name + '>', 1, MaxStrLen(Value)));
     end;
 
     local procedure NodeStart(NodeValue: Text[1024]): Text[1024];
     begin
-        exit('<' + NodeValue + '>');
+        exit(CopyStr('<' + NodeValue + '>', 1, MaxStrLen(NodeValue)));
     end;
 
     local procedure NodeEnd(NodeValue: Text[1024]): Text[1024];
     begin
-        exit('</' + NodeValue + '>');
+        exit(CopyStr('</' + NodeValue + '>', 1, MaxStrLen(NodeValue)));
     end;
 
     procedure RevStrPos(String: Text[1024]; Substring: Text[1024]): Integer;

@@ -11,6 +11,7 @@ page 13062661 "KRD Report"
         {
             group(General)
             {
+                Caption = 'General';
                 field("No."; "No.")
                 {
                     ApplicationArea = All;

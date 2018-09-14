@@ -1,10 +1,10 @@
-pageextension 13062530 "Purchase Credit Memo-Adl" extends "Purchase Credit Memo"  //52
+pageextension 13062559 "Sales Return Order-Adl" extends "Sales Return Order" //6630
 {
     layout
     {
-        // <adl.6>
         addafter("Posting Date")
         {
+            // <adl.6>
             field("VAT Date-Adl"; "VAT Date-Adl")
             {
                 ApplicationArea = All;
@@ -15,6 +15,7 @@ pageextension 13062530 "Purchase Credit Memo-Adl" extends "Purchase Credit Memo"
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
             }
+            // </adl.6>
             // <adl.10>
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
             {
@@ -23,8 +24,25 @@ pageextension 13062530 "Purchase Credit Memo-Adl" extends "Purchase Credit Memo"
                 Editable = false;
             }
             // </adl.10>
+            // <adl.22>
+            field("VAT Correction Date"; "VAT Correction Date-Adl")
+            {
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+            }
+            // </adl.22>
         }
-        // </adl.6>
+
+        // <adl.22>
+        addafter("EU 3-Party Trade")
+        {
+            field("EU Customs Procedure"; "EU Customs Procedure-Adl")
+            {
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+            }
+        }
+        // </adl.22>
         // <adl.18>
         addlast("Invoice Details")
         {
