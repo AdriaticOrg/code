@@ -77,7 +77,10 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                             GenJnlLine.Amount := GenJnlLine."VAT Amount";
                             GenJnlLine."Amount (LCY)" := GenJnlLine."VAT Amount (LCY)";
                             GenJnlLine."Account No." := VATPostingSetup.GetRevChargeAccount(true);
-                            GenJnlLine."Bal. Account No." := VATPostingSetup.GetPurchAccount(true);
+                            if GenJnlLine."Gen. Posting Type" = GenJnlLine."Gen. Posting Type"::Sale then
+                                GenJnlLine."Bal. Account No." := VATPostingSetup.GetSalesAccount(true)
+                            else
+                                GenJnlLine."Bal. Account No." := VATPostingSetup.GetPurchAccount(true);
                         end
                         else
                             if GenJnlLine."Gen. Posting Type" = GenJnlLine."Gen. Posting Type"::Sale then

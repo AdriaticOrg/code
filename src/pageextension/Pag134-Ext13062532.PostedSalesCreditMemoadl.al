@@ -11,12 +11,6 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
                 Visible = VATFeatureEnabled;
                 Editable = false;
             }
-            field("VAT Output Date-Adl"; "VAT Output Date-Adl")
-            {
-                ApplicationArea = All;
-                Visible = VATFeatureEnabled;
-                Editable = false;
-            }
             // <adl.10>
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
             {
@@ -58,47 +52,48 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
     }
     actions
     {
-        addafter(Dimensions)
+        addafter(Customer)
         {
-            group(Functions)
+            // <adl.10>
+            action(PostPostponed)
             {
-                // <adl.10>
-                action(PostPostponed)
-                {
-                    Caption = 'Post postponed VAT';
-                    ApplicationArea = All;
-                    Visible = VATFeatureEnabled;
-
-                    trigger OnAction()
-                    var
-                        PostCorr: Report "Post or Corr Postponed VAT-Adl";
-                        CustomerVendor: Option Customer,Vendor;
-                    begin
-                        CLEAR(PostCorr);
-                        TESTFIELD("Postponed VAT-Adl", "Postponed VAT-Adl"::"Postponed VAT");
-                        PostCorr.SetParameters(DATABASE::"Sales Cr.Memo Header", "No.", CustomerVendor::Customer, "Postponed VAT-Adl", true);
-                        PostCorr.RUNMODAL();
-                    end;
-                }
-                action(CorrectPostponed)
-                {
-                    Caption = 'Correct postponed VAT';
-                    ApplicationArea = All;
-                    Visible = VATFeatureEnabled;
-
-                    trigger OnAction()
-                    var
-                        PostCorr: Report "Post or Corr Postponed VAT-Adl";
-                        CustomerVendor: Option Customer,Vendor;
-                    begin
-                        CLEAR(PostCorr);
-                        TESTFIELD("Postponed VAT-Adl", "Postponed VAT-Adl"::"Realized VAT");
-                        PostCorr.SetParameters(DATABASE::"Sales Cr.Memo Header", "No.", CustomerVendor::Customer, "Postponed VAT-Adl", false);
-                        PostCorr.RUNMODAL();
-                    end;
-                }
-                // </adl.10>
+                Caption = 'Post postponed VAT';
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+                Image = "ReverseRegister";
+                trigger OnAction()
+                var
+                    ManagePostponedVAT: Codeunit "VAT Management-Adl";
+                    PostApplication: Page "Post Application";
+                    CustVend: Option Customer,Vendor;
+                    VATDate: Date;
+                begin
+                    PostApplication.SetValues("No.", WorkDate());
+                    PostApplication.RunModal();
+                    PostApplication.GetValues("No.", VATDate);
+                    ManagePostponedVAT.HandlePostponedVAT(Database::"Sales Cr.Memo Header", "No.", VATDate, true, CustVend::Customer, "Postponed VAT-Adl",false,false);
+                end;
             }
+            action(CorrectPostponed)
+            {
+                Caption = 'Correct postponed VAT';
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+                Image = "ReverseRegister";
+                trigger OnAction()
+                var
+                    ManagePostponedVAT: Codeunit "VAT Management-Adl";
+                    PostApplication: Page "Post Application";
+                    CustVend: Option Customer,Vendor;
+                    VATDate: Date;
+                begin
+                    PostApplication.SetValues("No.", WorkDate());
+                    PostApplication.RunModal();
+                    PostApplication.GetValues("No.", VATDate);
+                    ManagePostponedVAT.HandlePostponedVAT(Database::"Sales Cr.Memo Header", "No.", VATDate, false, CustVend::Customer, "Postponed VAT-Adl",false,false);
+                end;
+            }
+            // </adl.10>
         }
     }
 

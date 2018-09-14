@@ -30,47 +30,86 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
     }
     actions
     {
-        addafter(Dimensions)
+        addafter(Vendor)
         {
-            group(Functions)
+            // <adl.10>
+            action(PostPostponed)
             {
-                // <adl.10>
-                action(PostPostponed)
-                {
-                    Caption = 'Post postponed VAT';
-                    ApplicationArea = All;
-                    Visible = VATFeatureEnabled;
-
-                    trigger OnAction()
-                    var
-                        PostCorr: Report "Post or Corr Postponed VAT-Adl";
-                        CustomerVendor: Option Customer,Vendor;
-                    begin
-                        CLEAR(PostCorr);
-                        TESTFIELD("Postponed VAT-Adl", "Postponed VAT-Adl"::"Postponed VAT");
-                        PostCorr.SetParameters(DATABASE::"Purch. Inv. Header", "No.", CustomerVendor::Vendor, "Postponed VAT-Adl", TRUE);
-                        PostCorr.RUNMODAL();
-                    end;
-                }
-                action(CorrectPostponed)
-                {
-                    Caption = 'Correct postponed VAT';
-                    ApplicationArea = All;
-                    Visible = VATFeatureEnabled;
-
-                    trigger OnAction()
-                    var
-                        PostCorr: Report "Post or Corr Postponed VAT-Adl";
-                        CustomerVendor: Option Customer,Vendor;
-                    begin
-                        CLEAR(PostCorr);
-                        TESTFIELD("Postponed VAT-Adl", "Postponed VAT-Adl"::"Realized VAT");
-                        PostCorr.SetParameters(DATABASE::"Purch. Inv. Header", "No.", CustomerVendor::Vendor, "Postponed VAT-Adl", false);
-                        PostCorr.RUNMODAL();
-                    end;
-                }
-                // </adl.10>
+                Caption = 'Post postponed VAT';
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+                Image = "ReverseRegister";
+                trigger OnAction()
+                var
+                    ManagePostponedVAT: Codeunit "VAT Management-Adl";
+                    PostApplication: Page "Post Application";
+                    CustVend: Option Customer,Vendor;
+                    VATDate: Date;
+                begin
+                    PostApplication.SetValues("No.", WorkDate());
+                    PostApplication.RunModal();
+                    PostApplication.GetValues("No.", VATDate);
+                    ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, true, CustVend::Vendor, "Postponed VAT-Adl",false,false);
+                end;
             }
+            action(CorrectPostponed)
+            {
+                Caption = 'Correct postponed VAT';
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+                Image = "ReverseRegister";
+                trigger OnAction()
+                var
+                    ManagePostponedVAT: Codeunit "VAT Management-Adl";
+                    PostApplication: Page "Post Application";
+                    CustVend: Option Customer,Vendor;
+                    VATDate: Date;
+                begin
+                    PostApplication.SetValues("No.", WorkDate());
+                    PostApplication.RunModal();
+                    PostApplication.GetValues("No.", VATDate);
+                    ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, false, CustVend::Vendor, "Postponed VAT-Adl",false,false);
+                end;
+            }
+            action(PostVATOutput)
+            {
+                Caption = 'Post VAT Vat Output Date';
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+                Image = "ReverseRegister";
+                trigger OnAction()
+                var
+                    ManagePostponedVAT: Codeunit "VAT Management-Adl";
+                    PostApplication: Page "Post Application";
+                    CustVend: Option Customer,Vendor;
+                    VATDate: Date;
+                begin
+                    PostApplication.SetValues("No.", WorkDate());
+                    PostApplication.RunModal();
+                    PostApplication.GetValues("No.", VATDate);
+                    ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, true, CustVend::Vendor, "Postponed VAT-Adl",false,true);
+                end;
+            }
+            action(CorrectVATOutput)
+            {
+                Caption = 'Correct VAT Output Date';
+                ApplicationArea = All;
+                Visible = VATFeatureEnabled;
+                Image = "ReverseRegister";
+                trigger OnAction()
+                var
+                    ManagePostponedVAT: Codeunit "VAT Management-Adl";
+                    PostApplication: Page "Post Application";
+                    CustVend: Option Customer,Vendor;
+                    VATDate: Date;
+                begin
+                    PostApplication.SetValues("No.", WorkDate());
+                    PostApplication.RunModal();
+                    PostApplication.GetValues("No.", VATDate);
+                    ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, false, CustVend::Vendor, "Postponed VAT-Adl",false,true);
+                end;
+            }
+            // </adl.10>
         }
     }
 
