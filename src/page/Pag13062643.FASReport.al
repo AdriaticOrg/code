@@ -11,6 +11,7 @@ page 13062643 "FAS Report"
         {
             group(General)
             {
+                Caption = 'General';
                 field("No."; "No.")
                 {
                     ApplicationArea = All;

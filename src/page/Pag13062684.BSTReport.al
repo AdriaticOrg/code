@@ -11,6 +11,7 @@ page 13062684 "BST Report"
         {
             group(General)
             {
+                Caption = 'General';
                 field("No."; "No.")
                 {
                     ApplicationArea = All;

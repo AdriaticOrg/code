@@ -118,9 +118,9 @@ table 13062812 "ADL Assisted Setup-adl"
         SortingOrder := 1;
         LastId := 200000;
 
-        AddSetupAssistant(Page::"ADL Setup Wizard-adl", ADLIntroTxt, SortingOrder, true,
+        AddSetupAssistant(Page::"ADL Setup Wizard-adl", CopyStr(ADLIntroTxt, 1, 250), SortingOrder, true,
             GroupId, false, "Item Type"::"Setup and Help");
-        AddSetupAssistantResources(Page::"ADL Setup Wizard-adl", '', DocumentUrlADLTxt, 0, Page::"ADL Setup Wizard-adl", '');
+        AddSetupAssistantResources(Page::"ADL Setup Wizard-adl", '', CopyStr(DocumentUrlADLTxt, 1, 250), 0, Page::"ADL Setup Wizard-adl", '');
         LastId += 1;
         SortingOrder += 1;
 

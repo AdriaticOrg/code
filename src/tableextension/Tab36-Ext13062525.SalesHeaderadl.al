@@ -35,6 +35,26 @@ tableextension 13062525 "Sales Header-Adl" extends "Sales Header" //36
             DataClassification = SystemMetadata;
             Caption = 'Goods Return Type';
             TableRelation = "Goods Return Type-Adl";
+            trigger OnValidate()
+            var
+                GoodsReturnType: Record "Goods Return Type-Adl";
+                Customer: Record Customer;
+                GLSetup: Record "General Ledger Setup";
+            begin
+                IF "Goods Return Type-Adl" <> '' then begin
+                    GoodsReturnType.GET("Goods Return Type-Adl");
+                    GoodsReturnType.TestField("VAT Bus. Posting Group");
+                    Validate("VAT Bus. Posting Group", GoodsReturnType."VAT Bus. Posting Group");
+                end else begin
+                    GLSetup.Get();
+                    if GLSetup."Bill-to/Sell-to VAT Calc." = GLSetup."Bill-to/Sell-to VAT Calc."::"Bill-to/Pay-to No." then begin
+                        if Customer.GET("Bill-to Customer No.") then
+                            Validate("VAT Bus. Posting Group", Customer."VAT Bus. Posting Group");
+                    end else
+                        if Customer.GET("Sell-to Customer No.") then
+                            Validate("VAT Bus. Posting Group", Customer."VAT Bus. Posting Group");
+                end;
+            end;
         }
         // </adl.18>
         // <adl.22>

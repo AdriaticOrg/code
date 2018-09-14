@@ -28,6 +28,8 @@ report 13062622 "Export PDO"
 
             dataitem("PDO Report Line"; "PDO Report Line")
             {
+                DataItemLink = "Document No." = field ("No.");
+
                 column("Type"; FORMAT(Type, 0, '<Number>')) { }
                 column(PeriodID; "Period Round") { }
                 column(VATRegistrationNo; "VAT Registration No.")

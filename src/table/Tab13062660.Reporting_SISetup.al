@@ -140,6 +140,12 @@ table 13062660 "Reporting_SI Setup"
             TableRelation = "User Setup";
             DataClassification = SystemMetadata;
         }
+        field(46; "VIES Company Branch Code"; Text[30])
+        {
+            Caption = 'VIES Company Branch Code';
+            DataClassification = SystemMetadata;
+        }
+
         field(50; "PDO Report No. Series"; Code[20])
         {
             Caption = 'PDO Report No. Series';

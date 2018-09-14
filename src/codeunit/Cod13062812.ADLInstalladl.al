@@ -30,15 +30,14 @@ codeunit 13062812 "ADL Install-adl"
     procedure ApplyEvaluationClassificationsForPrivacy()
     var
         Company: Record Company;
-        CoreSetup: Record "CoreSetup-Adl";
-        DataClassificationMgt: Codeunit "Data Classification Mgt.";
+        // DataClassificationMgt: Codeunit "Data Classification Mgt.";
     begin
         Company.Get(CompanyName());
         if not Company."Evaluation Company" then
             exit;
 
-        //TODO:: Data Clasification - check sensitive data
-        //DataClassificationMgt.SetTableFieldsToNormal();
+        // TODO:: Data Clasification - check sensitive data
+        // DataClassificationMgt.SetTableFieldsToNormal();
         // DataClassificationMgt.SetFieldToPersonal();
     end;
 

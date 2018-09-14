@@ -513,6 +513,66 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Line - Field Amount - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3243527641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES Report Buffer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Buffer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3243527641 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Buffer - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3243527641 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Buffer - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3243527641 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Correction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Buffer - Field Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3243527641 - Field 284764054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"Country/Region Code"  </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Buffer - Field Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3243527641 - Field 617267791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"VAT Registration No."</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Buffer - Field VAT Registration No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3243527641 - Field 1887885398 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period Year</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Buffer - Field Period Year - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3243527641 - Field 1157942089 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period Round</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Buffer - Field Period Round - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3243527641 - Field 1630203402 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EU 3-Party Amt.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Buffer - Field EU 3-Party Amt. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3243527641 - Field 2430243172 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EU Customs Proc. Amt</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Buffer - Field EU Customs Proc. Amt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3243527641 - Field 2170637242 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EU Sales Goods Amt.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Buffer - Field EU Sales Goods Amt. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3243527641 - Field 499222272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EU Sales Svc. Amt.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Buffer - Field EU Sales Srvc. Amt. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1068504198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>PDO Report Header</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -998,6 +1058,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field VIES Prep. By User ID - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2369601040 - Field 4143331729 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES Company Branch Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field VIES Company Branch Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2369601040 - Field 497126115 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>PDO Report No. Series</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1019,14 +1084,49 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Reporting_SI Setup - Field PDO Prep. By User ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2369601040 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting_SI Setup</source>
+          <source>Reporting SI Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2369601040 - Control 1727325440 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FAS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup - Control FAS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2369601040 - Control 407507527 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup - Control KRD - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2369601040 - Control 734800247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BST</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup - Control BST - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2369601040 - Control 3718789915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup - Control VIES - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2369601040 - Control 3900088957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PDO</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup - Control PDO - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2369601040 - Action 2590055782 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Adjust FAS on Entries</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup - Action Adjust FAS on Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2369601040 - Action 1523575733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjust BST on Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup - Action Adjust BST on Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2369601040 - Action 2174835573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjust KRD on Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup - Action Adjust KRD on Entries - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2632500464 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Report Header</source>
@@ -2203,6 +2303,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2584564081 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report - Control General - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2584564081 - Action 1384210787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2237,6 +2342,11 @@
           <source>PDO Report</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2303047807 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report - Control General - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2303047807 - Action 1384210787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Lines</source>
@@ -2278,6 +2388,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2006923334 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report - Control General - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2006923334 - Action 1384210787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2317,6 +2432,11 @@
           <source>KRD Report</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 792092229 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report - Control General - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 792092229 - Action 1384210787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Lines</source>
@@ -2377,6 +2497,11 @@
           <source>BST Report</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Report - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3331887925 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report - Control General - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3331887925 - Action 1384210787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Lines</source>
@@ -3043,10 +3168,35 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - NamedType ExportDoneMsg</note>
         </trans-unit>
-        <trans-unit id="Report 3974229927 - Method 3712419375 - NamedType 4082645074" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3974229927 - Method 1607865889 - NamedType 4082645074" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&lt;Precision,0:0&gt;&lt;Standard Format,9&gt;</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIESSI - NamedType PrecisionTok</note>
+        </trans-unit>
+        <trans-unit id="Report 3974229927 - Method 896196217 - NamedType 4082645074" size-unit="char" translate="yes" xml:space="preserve">
           <source>&lt;Precision,2:2&gt;&lt;Standard Format,9&gt;</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIES - NamedType PrecisionTok</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIESHR - NamedType PrecisionTok</note>
+        </trans-unit>
+        <trans-unit id="Report 3974229927 - Method 896196217 - NamedType 3973589956" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Zbirna prijavu za isporuke dobara i usluga u druge države članice Europske unije</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIESHR - NamedType HeadTxt</note>
+        </trans-unit>
+        <trans-unit id="Report 3974229927 - Method 896196217 - NamedType 2759810053" size-unit="char" translate="yes" xml:space="preserve">
+          <source>http://purl.org/dc/elements/1.1/</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIESHR - NamedType HeadAttrPrefix</note>
+        </trans-unit>
+        <trans-unit id="Report 3974229927 - Method 896196217 - NamedType 94790872" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Elektronički obrazac</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIESHR - NamedType FormLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3974229927 - Method 896196217 - NamedType 1753012857" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ministarstvo Financija, Porezna uprava, Zagreb</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES - Method ExportVIESHR - NamedType AddressantLbl</note>
         </trans-unit>
         <trans-unit id="Report 1146297910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest PDO Lines</source>
@@ -3303,6 +3453,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export KRD - Method ExportKRD - NamedType PrecisionFormatTxt</note>
         </trans-unit>
+        <trans-unit id="Report 2174835573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjust KRD on Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust KRD on Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2174835573 - NamedType 1000469645" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to update entries based on values in master tables?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust KRD on Entries - NamedType ConfrimMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 2174835573 - NamedType 789090302" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processing finished.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust KRD on Entries - NamedType FinishMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 2174835573 - NamedType 3426155563" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aborted by user</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust KRD on Entries - NamedType AbortByUserMsg</note>
+        </trans-unit>
         <trans-unit id="Report 1199976608 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest BST Lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3367,6 +3537,26 @@
           <source>&lt;Precision,2:2&gt;&lt;Standard Format,9&gt;</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export BST - Method ExportBST - NamedType PrecisionFormatTxt</note>
+        </trans-unit>
+        <trans-unit id="Report 1523575733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjust BST on Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust BST on Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1523575733 - NamedType 1000469645" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to update entries based on values in %1 table?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust BST on Entries - NamedType ConfrimMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 1523575733 - NamedType 789090302" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processing finished.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust BST on Entries - NamedType FinishMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 1523575733 - NamedType 3426155563" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aborted by user</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust BST on Entries - NamedType AbortByUserMsg</note>
         </trans-unit>
         <trans-unit id="Report 2906589371 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Detail Trial Balance</source>

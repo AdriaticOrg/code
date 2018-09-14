@@ -35,6 +35,26 @@ tableextension 13062526 "Purchase Header-Adl" extends "Purchase Header"  //38
             DataClassification = SystemMetadata;
             Caption = 'Goods Return Type';
             TableRelation = "Goods Return Type-Adl";
+            trigger OnValidate()
+            var
+                GoodsReturnType: Record "Goods Return Type-Adl";
+                Vendor: Record Vendor;
+                GLSetup: Record "General Ledger Setup";
+            begin
+                IF "Goods Return Type-Adl" <> '' then begin
+                    GoodsReturnType.GET("Goods Return Type-Adl");
+                    GoodsReturnType.TestField("VAT Bus. Posting Group");
+                    Validate("VAT Bus. Posting Group", GoodsReturnType."VAT Bus. Posting Group");
+                end else begin
+                    GLSetup.Get();
+                    if GLSetup."Bill-to/Sell-to VAT Calc." = GLSetup."Bill-to/Sell-to VAT Calc."::"Bill-to/Pay-to No." then begin
+                        if Vendor.GET("Pay-to Vendor No.") then
+                            Validate("VAT Bus. Posting Group", Vendor."VAT Bus. Posting Group");
+                    end else
+                        if Vendor.GET("Buy-from Vendor No.") then
+                            Validate("VAT Bus. Posting Group", Vendor."VAT Bus. Posting Group");
+                end;
+            end;
         }
         // </adl.18>
     }

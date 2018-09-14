@@ -34,7 +34,18 @@ page 13062811 "Core Setup"
                     ApplicationArea = All;
                 }
                 // </adl.28>
+
             }
+
+            group(Posting)
+            {
+                Caption = 'Posting';
+                field("Forced Credit/Debit Enabled"; "Forced Credit/Debit Enabled")
+                {
+                    ApplicationArea = All;
+                }
+            }
+
             group(Reporting)
             {
                 Caption = 'Reporting';
@@ -83,8 +94,10 @@ page 13062811 "Core Setup"
                 {
                     ApplicationArea = All;
                 }
-                // </adl.22>             
+                // </adl.22>       
+
             }
+
         }
     }
 
