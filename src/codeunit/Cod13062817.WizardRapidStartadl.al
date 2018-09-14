@@ -2,37 +2,42 @@ codeunit 13062817 "Wizard RapidStart-adl"
 {
     trigger OnRun()
     begin
-        //FileName := 'BASIC%20SETUP_HR';
-        FileName := 'BASIC%20SETUP_SI';
-        FileUrl := 'https://github.com/AdriaticOrg/setup/blob/master/' + format(FileName) + '.rapidstart';
+        FileName := 'BASICSETUP_HR';
+        FileUrl := 'https://github.com/AdriaticOrg/setup/blob/master/BASIC%20SETUP_HR.rapidstart';
         ReadFromHttp(FileUrl);
     end;
 
     procedure ReadFromHttp(url: Text)
     var
+        TempBlob: Record TempBlob temporary;
         httpResponse: HttpResponseMessage;
         InputStr: InStream;
         OutputStream: OutStream;
         FileExt: text;
+        FileMgmt: Codeunit "File Management";
     begin
         if (not Client.Get(url, httpResponse)) then
-            Error(HttpGetRequestErr);
+            ;//Error(HttpGetRequestErr);
 
         if (not httpResponse.IsSuccessStatusCode()) then
-            Error(HttpReadResponseErr);
+            ;//Error(HttpReadResponseErr);
 
-        httpResponse.Content().ReadAs(InputStr);
+        //httpResponse.Content().ReadAs(InputStr);
+
         TempBlob.Blob.CreateOutStream(OutputStream);
-        CopyStream(OutputStream, InputStr);
+        //CopyStream(OutputStream, InputStr);
+        FileMgmt.BLOBImportWithFilter(TempBlob, 'import rapidstart file', '', 'Rapidstart Files(*.rapidstart)|*.rapidstart', 'rapidstart');
 
         //DownloadFromStream(InputStr, '', 'C:\', '', FileName);
         //UploadIntoStream('', 'c:\', '', FileName, InputStr);
+
         LoadConfigurationPackages(TempBlob);
     end;
 
     procedure LoadConfigurationPackages(var TempBlob: Record TempBlob)
     var
         ConfigSetupTemp: Record "Config. Setup" temporary;
+        ConfigPackImport: Codeunit "Config. Package - Import";
         ApplyingError: Integer;
     begin
         ImportRapidStartPackageStream(TempBlob, ConfigSetupTemp);
@@ -43,6 +48,7 @@ codeunit 13062817 "Wizard RapidStart-adl"
     var
         TempBlobUncompressed: Record TempBlob;
         InStream: InStream;
+        FileName: Text;
     begin
         IF TempConfigSetup.Get('ImportRS') THEN
             TempConfigSetup.Delete();
@@ -53,10 +59,11 @@ codeunit 13062817 "Wizard RapidStart-adl"
         TempConfigSetup.Insert();
         // TempBlob contains the compressed .rapidstart file
         // Decompress the file and put into the TempBlobUncompressed blob
-        TempConfigSetup.DecompressPackageToBlob(TempBlob, TempBlobUncompressed);
 
+        TempConfigSetup.DecompressPackageToBlob(TempBlob, TempBlobUncompressed);
         TempConfigSetup."Package File" := TempBlobUncompressed.Blob;
         TempConfigSetup."Package File".CREATEINSTREAM(InStream);
+
         TempConfigSetup.CalcFields("Package File");
         TempConfigSetup.SetHideDialog(true);
         TempConfigSetup.ReadPackageHeaderFromStream(InStream);
@@ -66,7 +73,6 @@ codeunit 13062817 "Wizard RapidStart-adl"
 
 
     var
-        TempBlob: Record TempBlob temporary;
         ZipStream: Codeunit "Zip Stream Wrapper";
         Client: HttpClient;
         Content: HttpContent;
