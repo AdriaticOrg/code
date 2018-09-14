@@ -32,16 +32,20 @@ pageextension 13062559 "Sales Return Order-Adl" extends "Sales Return Order" //6
             }
             // </adl.22>
         }
-        // <adl.18>  
+
+        // <adl.22>
         addafter("EU 3-Party Trade")
         {
-            // <adl.22>
             field("EU Customs Procedure"; "EU Customs Procedure-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
             }
-            // </adl.22>
+        }
+        // </adl.22>
+        // <adl.18>
+        addlast("Invoice Details")
+        {
             field("Goods Return Type-Adl"; "Goods Return Type-Adl")
             {
                 ApplicationArea = All;
