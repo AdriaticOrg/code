@@ -171,12 +171,11 @@ codeunit 13062525 "VAT Management-Adl"
                     SalesCrMemo.Get(No);
                     if CustLedgerEntry.Get(SalesCrMemo."Cust. Ledger Entry No.") then begin
                         LedgEntryFound := true;
-                        if not VatOutput then begin
+                        if not VatOutput then
                             if Post then
                                 SalesCrMemo."Postponed VAT-Adl" := SalesCrMemo."Postponed VAT-Adl"::"Realized VAT"
                             else
                                 SalesCrMemo."Postponed VAT-Adl" := SalesCrMemo."Postponed VAT-Adl"::"Postponed VAT";
-                        end;
                         SalesCrMemo.Modify;
                     end;
                 end;
@@ -185,12 +184,11 @@ codeunit 13062525 "VAT Management-Adl"
                     SalesInvoice.Get(No);
                     if CustLedgerEntry.Get(SalesInvoice."Cust. Ledger Entry No.") then begin
                         LedgEntryFound := true;
-                        if not VatOutput then begin
+                        if not VatOutput then
                             if Post then
                                 SalesInvoice."Postponed VAT-Adl" := SalesInvoice."Postponed VAT-Adl"::"Realized VAT"
                             else
                                 SalesInvoice."Postponed VAT-Adl" := SalesInvoice."Postponed VAT-Adl"::"Postponed VAT";
-                        end;
                         SalesInvoice.Modify;
                     end;
                 end;
@@ -204,13 +202,11 @@ codeunit 13062525 "VAT Management-Adl"
                                 PurchInvoice."Postponed VAT-Adl" := PurchInvoice."Postponed VAT-Adl"::"Realized VAT"
                             else
                                 PurchInvoice."Postponed VAT-Adl" := PurchInvoice."Postponed VAT-Adl"::"Postponed VAT";
-                        end
-                        else begin
+                        end else
                             if Post then
                                 PurchInvoice."VAT Output Date-Adl" := PostDate
                             else
                                 PurchInvoice."VAT Output Date-Adl" := 0D;
-                        end;
                         PurchInvoice.Modify;
                     end;
                 end;
@@ -224,13 +220,11 @@ codeunit 13062525 "VAT Management-Adl"
                                 PurchCrMemo."Postponed VAT-Adl" := PurchCrMemo."Postponed VAT-Adl"::"Realized VAT"
                             else
                                 PurchCrMemo."Postponed VAT-Adl" := PurchCrMemo."Postponed VAT-Adl"::"Postponed VAT";
-                        end
-                        else begin
+                        end else 
                             if Post then
                                 PurchCrMemo."VAT Output Date-Adl" := PostDate
                             else
                                 PurchCrMemo."VAT Output Date-Adl" := 0D;
-                        end;
                         PurchCrMemo.Modify;
                     end;
                 end;
@@ -244,9 +238,8 @@ codeunit 13062525 "VAT Management-Adl"
                             repeat
                                 if not VatOutput then begin
                                     FillGeneralJournalLine(GenJnlLineLoc,0,CustLedgerEntry,VendLedgerEntry,VATEntry,Post,PostDate);
-                                    if Preview then begin
-                                        GenJnlPostPreview.Preview(GenJnlPostLine,GenJnlLineLoc);
-                                    end
+                                    if Preview then
+                                        GenJnlPostPreview.Preview(GenJnlPostLine,GenJnlLineLoc)
                                     else
                                         GenJnlPostLine.RunWithCheck(GenJnlLineLoc);
                                 end;
@@ -262,9 +255,8 @@ codeunit 13062525 "VAT Management-Adl"
                             repeat
                                 if not VatOutput then begin
                                     FillGeneralJournalLine(GenJnlLineLoc,1,CustLedgerEntry,VendLedgerEntry,VATEntry,Post,PostDate);
-                                    if Preview then begin
-                                        GenJnlPostPreview.Preview(GenJnlPostLine,GenJnlLineLoc);
-                                    end
+                                    if Preview then 
+                                        GenJnlPostPreview.Preview(GenJnlPostLine,GenJnlLineLoc)
                                     else
                                         GenJnlPostLine.RunWithCheck(GenJnlLineLoc);
                                 end
@@ -292,7 +284,6 @@ codeunit 13062525 "VAT Management-Adl"
     procedure FillGeneralJournalLine(VAR GenJnlLine: Record "Gen. Journal Line"; CustVend: Option Customer,Vendor; CustLedgEntry: Record "Cust. Ledger Entry"; VendLedgEntry: Record "Vendor Ledger Entry"; VATEntry: Record "VAT Entry";Post: Boolean; PostDate: Date)
     var
         VATPostingSetup: Record "VAT Posting Setup";
-        SourceCodeSetup: Record "Source Code Setup";
     begin
         VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group",VATEntry."VAT Prod. Posting Group");
         with GenJnlLine do begin
@@ -368,7 +359,6 @@ codeunit 13062525 "VAT Management-Adl"
      procedure FillGeneralJournalLineVATOutput(VAR GenJnlLine: Record "Gen. Journal Line";VendLedgEntry: Record "Vendor Ledger Entry"; VATEntry: Record "VAT Entry";Post: Boolean; PostDate: Date)
     var
         VATPostingSetup: Record "VAT Posting Setup";
-        SourceCodeSetup: Record "Source Code Setup";
         GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line";
     begin
         VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group",VATEntry."VAT Prod. Posting Group");
