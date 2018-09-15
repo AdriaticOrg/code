@@ -27,8 +27,12 @@ page 13062813 "MyPage"
                 ApplicationArea = All;
 
                 trigger OnAction()
+                var
+                    ConfigSetup: Record "Config. Setup";
                 begin
-                    RapidStart.Run()
+                    ConfigSetup."Country/Region Code" := 'HR';
+                    //RapidStart.ReadFromHttp(ConfigSetup);
+                    RapidStart.Run();
                 end;
             }
         }

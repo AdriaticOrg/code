@@ -14,7 +14,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
     {
         area(content)
         {
-            group(Control96)
+            group(MediaResourceStandard)
             {
                 Editable = false;
                 ShowCaption = false;
@@ -26,7 +26,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     ShowCaption = false;
                 }
             }
-            group(Control98)
+            group(MediaResourceDone)
             {
                 Editable = false;
                 ShowCaption = false;
@@ -50,32 +50,40 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                 group("Let's go!")
                 {
                     Caption = 'Let''s go!';
-                    InstructionalText = 'Choose Next so you can specify basic company information.';
+                    InstructionalText = 'Choose Next so you can specify basic Adriatic Localization features.';
                 }
             }
             group(Step1)
             {
                 ShowCaption = false;
                 Visible = SelectTypeVisible AND TypeSelectionEnabled;
-                group("Standard Setup")
+                group("Extended Setup")
                 {
                     Caption = 'Adriatic Localization Setup';
                     InstructionalText = 'The company will be ready to use when Setup has completed.';
-                    Visible = StandardVisible;
-                    field(Standard; TypeStandard)
+                    Visible = ExtendedVisible;
+                    field(Extended; TypeExtended)
                     {
                         ApplicationArea = Basic, Suite;
                         Caption = 'Set up as Adriatic Localization';
 
                         trigger OnValidate()
                         begin
-                            if TypeStandard then
+                            if TypeExtended then
                                 TypeEvaluation := false;
                             CalcCompanyData();
                         end;
                     }
+
+                    field(RapidFromHttp; RapidFromHttp)
+                    {
+                        ApplicationArea = Basic, Suite;
+                        Caption = 'Download RapidStart data from web';
+                    }
+
+
                 }
-                group("Evaluation Setup")
+                /*group("Evaluation Setup")
                 {
                     Caption = 'Evaluation Setup';
                     InstructionalText = 'The company will be set up in demonstration mode for exploring and testing.';
@@ -92,12 +100,12 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                             CalcCompanyData();
                         end;
                     }
-                }
+                }*/
                 group(Important)
                 {
                     Caption = 'Important';
                     InstructionalText = 'You cannot change your choice of setup after you choose Next.';
-                    Visible = TypeStandard OR TypeEvaluation;
+                    Visible = TypeExtended or TypeStandard or TypeEvaluation;
                 }
             }
 
@@ -304,38 +312,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     }
                 }
             }
-            group(Step5)
-            {
-                ShowCaption = false;
-                Visible = BankStatementConfirmationVisible;
-                group("Bank Feed Service")
-                {
-                    Caption = 'Bank Feed Service';
-                    InstructionalText = 'You can use a bank feeds service to import electronic bank statements from your bank to quickly process payments.';
-                    field(UseBankStatementFeed; UseBankStatementFeed)
-                    {
-                        ApplicationArea = Basic, Suite;
-                        Caption = 'Use a bank feed service';
-                    }
-                }
-                group("NOTE:")
-                {
-                    Caption = 'NOTE:';
-                    InstructionalText = 'When you choose Next, you accept the terms of use for the bank feed service.';
-                    Visible = UseBankStatementFeed;
-                    field(TermsOfUseLbl; TermsOfUseLbl)
-                    {
-                        ApplicationArea = Basic, Suite;
-                        Editable = false;
-                        ShowCaption = false;
 
-                        trigger OnDrillDown()
-                        begin
-                            HYPERLINK(TermsOfUseUrlTxt);
-                        end;
-                    }
-                }
-            }
             group("Select bank account.")
             {
                 Caption = 'Select bank account.';
@@ -345,7 +322,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     ApplicationArea = Basic, Suite;
                 }
             }
-            group(Control37)
+            group(Bank)
             {
                 ShowCaption = false;
                 Visible = PaymentDetailsVisible;
@@ -379,78 +356,10 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                         ApplicationArea = Basic, Suite;
                     }
                 }
-                group(" ")
-                {
-                    Caption = ' ';
-                    InstructionalText = 'To create a bank account that is linked to the related online bank account, you must specify the bank account information above.';
-                    Visible = ShowBankAccountCreationWarning;
-                }
             }
-            group(Control6)
-            {
-                ShowCaption = false;
-                Visible = AccountingPeriodVisible;
-                group("Specify the start date of the company's fiscal year.")
-                {
-                    Caption = 'Specify the start date of the company''s fiscal year.';
-                    field(AccountingPeriodStartDate; AccountingPeriodStartDate)
-                    {
-                        ApplicationArea = Basic, Suite;
-                        Caption = 'Fiscal Year Start Date';
-                        NotBlank = true;
-                        ShowMandatory = true;
-                    }
-                }
-            }
-            group(Control57)
-            {
-                ShowCaption = false;
-                Visible = CostingMethodVisible;
-                group("Specify the costing method for your inventory valuation.")
-                {
-                    Caption = 'Specify the costing method for your inventory valuation.';
-                    group(CostingMethodLbl)
-                    {
-                        Caption = 'The costing method works together with the posting date and sequence to determine how to record the cost flow.';
-                        field("Cost Method"; CostMethodeLbl)
-                        {
-                            ApplicationArea = Basic, Suite;
-                            Editable = false;
-                            ShowCaption = false;
 
-                            trigger OnDrillDown()
-                            begin
-                                HYPERLINK(CostMethodUrlTxt);
-                            end;
-                        }
-                        field("Costing Method"; InventorySetup."Default Costing Method")
-                        {
-                            ApplicationArea = Basic, Suite;
-                            Caption = 'Costing Method';
-                            ShowMandatory = true;
 
-                            trigger OnValidate()
-                            var
-                                ExistingInventorySetup: Record "Inventory Setup";
-                            begin
-                                if not ExistingInventorySetup.Get() then begin
-                                    InventorySetup."Automatic Cost Adjustment" := InventorySetup."Automatic Cost Adjustment"::Always;
-                                    InventorySetup."Automatic Cost Posting" := true;
-                                end;
-
-                                if InventorySetup."Default Costing Method" = InventorySetup."Default Costing Method"::Average then begin
-                                    InventorySetup."Average Cost Period" := InventorySetup."Average Cost Period"::Day;
-                                    InventorySetup."Average Cost Calc. Type" := InventorySetup."Average Cost Calc. Type"::Item;
-                                end;
-
-                                if not InventorySetup.Modify() then
-                                    InventorySetup.Insert();
-                            end;
-                        }
-                    }
-                }
-            }
-            group(Control9)
+            group(Finish)
             {
                 ShowCaption = false;
                 Visible = DoneVisible;
@@ -500,7 +409,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
 
                 trigger OnAction()
                 begin
-                    if (Step = Step::"Select Type") and not (TypeStandard or TypeEvaluation) then
+                    if (Step = Step::"Select Type") and not (TypeExtended or TypeStandard or TypeEvaluation) then
                         if not CONFIRM(NoSetupTypeSelectedQst, false) then
                             ERROR('');
                     NextStep(false);
@@ -516,25 +425,17 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
 
                 trigger OnAction()
                 var
-                    AssistedSetup: Record "Assisted Setup";
+                    AssistedSetupAdl: Record "Assisted Setup-adl";
                     AssistedCompanySetup: Codeunit "Assisted Company Setup";
                     ErrorText: Text;
                 begin
-                    AssistedCompanySetup.WaitForPackageImportToComplete();
+                    //AssistedCompanySetup.WaitForPackageImportToComplete();
                     BankAccount.TransferFields(TempBankAccount, true);
                     CopyCoreSetupInfo();
-                    AssistedCompanySetup.ApplyUserInput(Rec, BankAccount, AccountingPeriodStartDate, TypeEvaluation);
+                    AssistedCompanySetup.ApplyUserInput(Rec, BankAccount, 0D, TypeEvaluation);
 
-                    AssistedSetup.SetStatus(PAGE::"Assisted ADL Setup Wizard-adl", AssistedSetup.Status::Completed);
-                    if (BankAccount."No." <> '') and (not TempOnlineBankAccLink.IsEmpty()) then
-                        if not TryLinkBankAccount() then
-                            ErrorText := GetLastErrorText();
+                    AssistedSetupAdl.SetStatus(PAGE::"Assisted ADL Setup Wizard-adl", AssistedSetupAdl.Status::Completed);
                     CurrPage.Close();
-
-                    if ErrorText <> '' then begin
-                        Message(StrSubstNo(BankAccountLinkingFailedMsg, ErrorText));
-                        PAGE.RUN(PAGE::"Bank Account List");
-                    end;
                 end;
             }
         }
@@ -560,10 +461,10 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean
     var
-        ADLAssistedSetup: Record "ADL Assisted Setup-adl";
+        AssistedSetupAdl: Record "Assisted Setup-adl";
     begin
         if CloseAction = ACTION::OK then
-            IF ADLAssistedSetup.GetStatus(PAGE::"ADL Setup Wizard-adl") = ADLAssistedSetup.Status::"Not Completed" THEN
+            IF AssistedSetupAdl.GetStatus(PAGE::"Assisted ADL Setup Wizard-adl") = AssistedSetupAdl.Status::"Not Completed" THEN
                 IF NOT Confirm(NotSetUpQst, FALSE) THEN
                     Error('');
     end;
@@ -578,13 +479,13 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         MediaResourcesStandard: Record "Media Resources";
         MediaResourcesDone: Record "Media Resources";
         InventorySetup: Record "Inventory Setup";
-        AssistedCompanySetup: Codeunit "Assisted Company Setup";
         ClientTypeManagement: Codeunit ClientTypeManagement;
-        AccountingPeriodStartDate: Date;
+        RapidStartWizard: Codeunit "Wizard RapidStart-adl";
         CompanyData: Option "Evaluation Data","Standard Data","None","Extended Data","Full No Data";
         TypeStandard: Boolean;
+        TypeExtended: Boolean;
         TypeEvaluation: Boolean;
-        Step: Option Intro,Sync,"Select Type","Core Setup","Company Details","Communication Details",BankStatementFeed,SelectBankAccont,"Payment Details","Accounting Period","Costing Method",Done;
+        Step: Option Intro,Sync,"Select Type","Core Setup","Company Details","Communication Details",SelectBankAccont,"Payment Details",Done;
         BackEnabled: Boolean;
         NextEnabled: Boolean;
         FinishEnabled: Boolean;
@@ -594,22 +495,21 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         CompanyDetailsVisible: Boolean;
         CommunicationDetailsVisible: Boolean;
         PaymentDetailsVisible: Boolean;
-        AccountingPeriodVisible: Boolean;
-        CostingMethodVisible: Boolean;
         CoreSetupDetailsVisible: Boolean;
         DoneVisible: Boolean;
         TypeSelectionEnabled: Boolean;
+        ExtendedVisible: Boolean;
         StandardVisible: Boolean;
         EvaluationVisible: Boolean;
-        SkipAccountingPeriod: Boolean;
-        NotSetUpQst: Label 'The application has not been set up. Setup will continue the next time you start the program.\\Are you sure that you want to exit?';
+        NotSetUpQst: Label 'The application has not been set up. Setup could be run again from role center notification.\\Are you sure that you want to exit?';
         HideBankStatementProvider: Boolean;
         NoSetupTypeSelectedQst: Label 'You have not selected any setup type. If you proceed, the application will not be fully functional, until you set it up manually.\\Do you want to continue?';
         HelpLbl: Label 'Learn more about setting up your company';
         HelpLinkTxt: Label 'http://go.microsoft.com/fwlink/?LinkId=746160', Locked = true;
         BankStatementConfirmationVisible: Boolean;
         UseBankStatementFeed: Boolean;
-        UseBankStatementFeedInitialized: Boolean;
+        RapidFromHttp: Boolean;
+
         BankAccountInformationUpdated: Boolean;
         CoreSetupUpdated: Boolean;
         SelectBankAccountVisible: Boolean;
@@ -620,7 +520,6 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         InvalidPhoneNumberErr: Label 'The phone number is invalid.';
         CostMethodeLbl: Label 'Learn more';
         CostMethodUrlTxt: Label 'https://go.microsoft.com/fwlink/?linkid=858295', Locked = true;
-        BankAccountLinkingFailedMsg: Label 'Linking the company bank account failed with the following Message:\''%1''\Link the company bank account from the Bank Accounts page.', Comment = '%1 - an error Message';
 
     local procedure NextStep(Backwards: Boolean)
     begin
@@ -658,20 +557,11 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     ShowCompanyDetailsStep;
             Step::"Communication Details":
                 ShowCommunicationDetailsStep;
-            Step::BankStatementFeed:
-                if not ShowBankStatementFeedStep then
+            Step::SelectBankAccont:
+                if not ShowSelectBankAccountStep then
                     NextStep(Backwards)
                 else
-                    ShowBankStatementFeedConfirmation;
-            Step::SelectBankAccont:
-                begin
-                    if not Backwards then
-                        ShowOnlineBankStatement;
-                    if not ShowSelectBankAccountStep then
-                        NextStep(Backwards)
-                    else
-                        ShowSelectBankAccount;
-                end;
+                    ShowSelectBankAccount;
             Step::"Payment Details":
                 begin
                     if not Backwards then
@@ -679,13 +569,6 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     ShowPaymentDetailsStep;
                     ShowBankAccountCreationWarning := not ValidateBankAccountNotEmpty;
                 end;
-            Step::"Accounting Period":
-                if SkipAccountingPeriod then
-                    NextStep(Backwards)
-                else
-                    ShowAccountingPeriodStep;
-            Step::"Costing Method":
-                ShowCostingMethodStep;
             Step::Done:
                 ShowDoneStep;
         end;
@@ -737,46 +620,6 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         end;
     end;
 
-    local procedure ShowOnlineBankStatement()
-    var
-        CompanyInformationMgt: Codeunit "Company Information Mgt.";
-    begin
-        if CompanyInformationMgt.IsDemoCompany() then
-            exit;
-
-        if HideBankStatementProvider then
-            exit;
-
-        TempOnlineBankAccLink.Reset();
-        TempOnlineBankAccLink.Delete();
-
-        if not TempBankAccount.StatementProvidersExist() then
-            exit;
-
-        if UseBankStatementFeed then begin
-            TempBankAccount.SimpleLinkStatementProvider(TempOnlineBankAccLink);
-            if TempOnlineBankAccLink.FindFirst() then
-                if not TempOnlineBankAccLink.IsEmpty() then begin
-                    CurrPage.OnlineBanckAccountLinkPagePart.PAGE.SetRecs(TempOnlineBankAccLink);
-                    HideBankStatementProvider := true;
-                end;
-        end else begin
-            TempBankAccount.UnlinkStatementProvider();
-            TempBankAccount.DisableStatementProviders();
-        end;
-    end;
-
-    local procedure ShowAccountingPeriodStep()
-    begin
-        AccountingPeriodVisible := true;
-    end;
-
-    local procedure ShowCostingMethodStep()
-    begin
-        if InventorySetup.get() then;
-        CostingMethodVisible := true;
-    end;
-
     local procedure ShowDoneStep()
     begin
         DoneVisible := true;
@@ -792,12 +635,10 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
     begin
         CompanyData := CompanyData::None;
 
-        // Buttons
         BackEnabled := true;
         NextEnabled := true;
         FinishEnabled := false;
 
-        // Tabs
         IntroVisible := false;
         SelectTypeVisible := false;
         CompanyDetailsVisible := false;
@@ -805,8 +646,6 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         BankStatementConfirmationVisible := false;
         SelectBankAccountVisible := false;
         PaymentDetailsVisible := false;
-        AccountingPeriodVisible := false;
-        CostingMethodVisible := false;
         DoneVisible := false;
         CoreSetupDetailsVisible := false;
 
@@ -815,11 +654,9 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
     local procedure InitializeRecord()
     var
         CompanyInformation: Record "Company Information";
-        AccountingPeriod: Record "Accounting Period";
         CoreSetup: Record "CoreSetup-Adl";
     begin
         Init();
-
         if CompanyInformation.Get() then begin
             TRANSFERFIELDS(CompanyInformation);
             if Name = '' then
@@ -827,19 +664,16 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         end else
             Name := CompanyName();
 
-        SkipAccountingPeriod := not AccountingPeriod.IsEmpty();
-        if not SkipAccountingPeriod then
-            AccountingPeriodStartDate := CALCDATE('<-CY>', Today());
-
         If CoreSetup.Get() then
             TransferfieldsFromCoreSetup(CoreSetup);
-
         Insert();
     end;
 
     local procedure CalcCompanyData()
     begin
         CompanyData := CompanyData::None;
+        If TypeExtended then
+            CompanyData := CompanyData::"Extended Data";
         if TypeStandard then
             CompanyData := CompanyData::"Standard Data";
         if TypeEvaluation then
@@ -865,28 +699,28 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
     begin
         if not TypeSelectionEnabled then
             exit;
-        if CompanyData in [CompanyData::None, CompanyData::"Full No Data"] then
-            exit;
-        if AssistedCompanySetup.IsCompanySetupInProgress(CompanyName()) then
-            exit;
-        //AssistedCompanySetup.FillCompanyData(CompanyName(), CompanyData);
+        //if CompanyData in [CompanyData::"Extended Data"] then begin
+        RapidStartWizard.ReadFromHttp(Rec);
+        //
+        //end else exit;
+        //if AssistedCompanySetup.IsCompanySetupInProgress(CompanyName()) then
+        //    exit
     end;
 
     local procedure LoadConfigTypes(): Boolean
+    var
+        AssistedSetupAdl: Record "Assisted Setup-adl";
     begin
-        StandardVisible :=
-          AssistedCompanySetup.ExistsConfigurationPackageFile(CompanyData::"Standard Data");
-        EvaluationVisible :=
-          AssistedCompanySetup.ExistsConfigurationPackageFile(CompanyData::"Evaluation Data");
-        exit(StandardVisible or EvaluationVisible);
+        ExtendedVisible := true;
+        exit(ExtendedVisible or StandardVisible or EvaluationVisible);
     end;
 
     local procedure PackageImported(): Boolean
     var
-        AssistedCompanySetupStatus: Record "Assisted Company Setup Status";
+        AssistedSetupAdl: Record "Assisted Setup-adl";
     begin
-        AssistedCompanySetupStatus.GET(CompanyName());
-        exit(AssistedCompanySetupStatus."Package Imported" or AssistedCompanySetupStatus."Import Failed");
+        exit(false);
+        //exit(AssistedSetupAdl."Package Imported" or AssistedSetupAdl."Import Failed");
     end;
 
     local procedure LoadTopBanners()
@@ -954,32 +788,6 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         IBAN := BufferBankAccount.IBAN;
     end;
 
-    local procedure ShowBankStatementFeedConfirmation()
-    begin
-        BankStatementConfirmationVisible := true;
-    end;
-
-    local procedure ShowBankStatementFeedStep(): Boolean
-    var
-        GeneralLedgerSetup: Record "General Ledger Setup";
-        BankStatementProviderExists: Boolean;
-    begin
-        if not GeneralLedgerSetup.Get() then
-            exit(false);
-
-        if GeneralLedgerSetup."LCY Code" = '' then
-            exit(false);
-
-        BankStatementProviderExists := BankAccount.StatementProvidersExist();
-
-        if not UseBankStatementFeedInitialized then begin
-            UseBankStatementFeed := BankStatementProviderExists;
-            UseBankStatementFeedInitialized := true;
-        end;
-
-        exit(BankStatementProviderExists);
-    end;
-
     local procedure ShowSelectBankAccountStep(): Boolean
     begin
         exit(TempOnlineBankAccLink.Count() > 1);
@@ -1004,9 +812,4 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         exit(("Bank Account No." <> '') or TempOnlineBankAccLink.IsEmpty());
     end;
 
-    [TryFunction]
-    local procedure TryLinkBankAccount()
-    begin
-        BankAccount.OnMarkAccountLinkedEvent(TempOnlineBankAccLink, BankAccount);
-    end;
 }

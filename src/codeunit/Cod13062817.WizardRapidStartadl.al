@@ -2,42 +2,80 @@ codeunit 13062817 "Wizard RapidStart-adl"
 {
     trigger OnRun()
     begin
-        FileName := 'BASICSETUP_HR';
-        FileUrl := 'https://github.com/AdriaticOrg/setup/blob/master/BASIC%20SETUP_HR.rapidstart';
-        ReadFromHttp(FileUrl);
+        Message(ReadFromHttp('https://github.com/AdriaticOrg/setup/raw/master/PackageAPP%20SETUP%20-%20SI.rapidstart'));
     end;
 
-    procedure ReadFromHttp(url: Text)
+    procedure ReadFromHttp(url: Text): Text
+    var
+        httpCli: HttpClient;
+        httpResponse: HttpResponseMessage;
+        ResponseString: text;
+    begin
+        if (not httpCli.Get(url, httpResponse)) then
+            Error('Failed to contact the address endpoint.');
+
+        if (not httpResponse.IsSuccessStatusCode()) then
+            Error('Failed to read response.');
+
+        httpResponse.Content().ReadAs(ResponseString);
+        exit(ResponseString);
+    end;
+
+    procedure ReadFromHttp(ConfigSetup: record "Config. Setup")
     var
         TempBlob: Record TempBlob temporary;
         httpResponse: HttpResponseMessage;
         InputStr: InStream;
         OutputStream: OutStream;
-        FileExt: text;
-        FileMgmt: Codeunit "File Management";
+        Window: Dialog;
+        FileName: Text;
+        Url: Text;
+        PackageName: Text;
     begin
-        if (not Client.Get(url, httpResponse)) then
-            ;//Error(HttpGetRequestErr);
+        case ConfigSetup."Country/Region Code" of
+            'SI':
+                PackageName := 'BASIC%20SETUP_SI';
+            'HR':
+                PackageName := 'BASIC%20SETUP_HR';
+            'RS':
+                PackageName := 'BASIC%20SETUP_RS';
+            else begin
+                    Message(PackageMissingErr);
+                    Error('');
+                end;
+        end;
+        Url := 'https://github.com/AdriaticOrg/setup/blob/master/' + PackageName + '.rapidstart';
+        Url := 'https://raw.githubusercontent.com/AdriaticOrg/setup/master/README.md';
+        Message(Url);
+
+        if (not Client.Get(Url, httpResponse)) then
+            Error(HttpGetRequestErr);
 
         if (not httpResponse.IsSuccessStatusCode()) then
-            ;//Error(HttpReadResponseErr);
+            Error(HttpReadResponseErr);
 
-        //httpResponse.Content().ReadAs(InputStr);
-
+        Window.Open(PackageIsBeingDownloadedTxt);
+        httpResponse.Content().ReadAs(InputStr);
         TempBlob.Blob.CreateOutStream(OutputStream);
-        //CopyStream(OutputStream, InputStr);
-        FileMgmt.BLOBImportWithFilter(TempBlob, 'import rapidstart file', '', 'Rapidstart Files(*.rapidstart)|*.rapidstart', 'rapidstart');
+        Window.Close();
 
+        //CopyStream(OutputStream, InputStr);
         //DownloadFromStream(InputStr, '', 'C:\', '', FileName);
         //UploadIntoStream('', 'c:\', '', FileName, InputStr);
-
         LoadConfigurationPackages(TempBlob);
+    end;
+
+    procedure LoadFromFile()
+    var
+        TempBlob: Record TempBlob temporary;
+        FileMgmt: Codeunit "File Management";
+    begin
+        FileMgmt.BLOBImportWithFilter(TempBlob, 'import rapidstart file', '', 'Rapidstart Files(*.rapidstart)|*.rapidstart', 'rapidstart');
     end;
 
     procedure LoadConfigurationPackages(var TempBlob: Record TempBlob)
     var
         ConfigSetupTemp: Record "Config. Setup" temporary;
-        ConfigPackImport: Codeunit "Config. Package - Import";
         ApplyingError: Integer;
     begin
         ImportRapidStartPackageStream(TempBlob, ConfigSetupTemp);
@@ -48,7 +86,6 @@ codeunit 13062817 "Wizard RapidStart-adl"
     var
         TempBlobUncompressed: Record TempBlob;
         InStream: InStream;
-        FileName: Text;
     begin
         IF TempConfigSetup.Get('ImportRS') THEN
             TempConfigSetup.Delete();
@@ -57,9 +94,6 @@ codeunit 13062817 "Wizard RapidStart-adl"
         TempConfigSetup."Primary Key" := 'ImportRS';
         TempConfigSetup."Package File Name" := 'ImportRapidStartPackageFromStream';
         TempConfigSetup.Insert();
-        // TempBlob contains the compressed .rapidstart file
-        // Decompress the file and put into the TempBlobUncompressed blob
-
         TempConfigSetup.DecompressPackageToBlob(TempBlob, TempBlobUncompressed);
         TempConfigSetup."Package File" := TempBlobUncompressed.Blob;
         TempConfigSetup."Package File".CREATEINSTREAM(InStream);
@@ -68,6 +102,13 @@ codeunit 13062817 "Wizard RapidStart-adl"
         TempConfigSetup.SetHideDialog(true);
         TempConfigSetup.ReadPackageHeaderFromStream(InStream);
         TempConfigSetup.ImportPackageFromStream(InStream);
+
+    end;
+
+    //------- GO -----------//
+    procedure FillCompanyData()
+    var
+    begin
 
     end;
 
@@ -82,4 +123,6 @@ codeunit 13062817 "Wizard RapidStart-adl"
         FileUrl: Text;
         HttpGetRequestErr: Label 'Failed to contact the address endpoint.';
         HttpReadResponseErr: Label 'Failed to read response.';
+        PackageIsBeingDownloadedTxt: Label 'Downloading rapidstart from web...';
+        PackageMissingErr: Label 'There is no package available for download for selected country.';
 }
