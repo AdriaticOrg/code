@@ -1,4 +1,4 @@
-table 13062812 "ADL Assisted Setup-adl"
+table 13062812 "ADL Assisted Setup-Adl"
 {
     Caption = 'ADL Assisted Setup';
 
@@ -118,13 +118,13 @@ table 13062812 "ADL Assisted Setup-adl"
         SortingOrder := 1;
         LastId := 200000;
 
-        AddSetupAssistant(Page::"ADL Setup Wizard-adl", CopyStr(ADLIntroTxt, 1, 250), SortingOrder, true,
+        AddSetupAssistant(Page::"ADL Setup Wizard-Adl", CopyStr(ADLIntroTxt, 1, 250), SortingOrder, true,
             GroupId, false, "Item Type"::"Setup and Help");
-        AddSetupAssistantResources(Page::"ADL Setup Wizard-adl", '', CopyStr(DocumentUrlADLTxt, 1, 250), 0, Page::"ADL Setup Wizard-adl", '');
+        AddSetupAssistantResources(Page::"ADL Setup Wizard-Adl", '', CopyStr(DocumentUrlADLTxt, 1, 250), 0, Page::"ADL Setup Wizard-Adl", '');
         LastId += 1;
         SortingOrder += 1;
 
-        UpdateSetUpPageVisibility(Page::"ADL Setup Wizard-adl");
+        UpdateSetUpPageVisibility(Page::"ADL Setup Wizard-Adl");
     end;
 
     local procedure AddSetupAssistant(EnteryNo: Integer; AssistantName: Text[250]; SortingOrder: Integer; AssistantVisible: Boolean; ParentId: Integer; IsFeatured: Boolean; EnteryType: Option)
@@ -149,7 +149,7 @@ table 13062812 "ADL Assisted Setup-adl"
 
     local procedure UpdateSetUpPageVisibility(PageId: Integer)
     var
-        ADLAssistedSetup: Record "ADL Assisted Setup-adl";
+        ADLAssistedSetup: Record "ADL Assisted Setup-Adl";
         ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
     begin
         if ADLAssistedSetup.GET(PageId) then begin
@@ -174,7 +174,7 @@ table 13062812 "ADL Assisted Setup-adl"
 
     procedure SetStatus(EnteryId: Integer; ItemStatus: Option)
     var
-        ADLAssistedSetup: Record "ADL Assisted Setup-adl";
+        ADLAssistedSetup: Record "ADL Assisted Setup-Adl";
     begin
         ADLAssistedSetup.GET(EnteryId);
         ADLAssistedSetup.Status := ItemStatus;
@@ -207,7 +207,7 @@ table 13062812 "ADL Assisted Setup-adl"
 
     procedure GetStatus(WizardPageID: Integer): Integer
     var
-        ADLAssistedSetup: Record "ADL Assisted Setup-adl";
+        ADLAssistedSetup: Record "ADL Assisted Setup-Adl";
     begin
 
         ADLAssistedSetup.SETRANGE("Assisted Setup Page ID", WizardPageID);

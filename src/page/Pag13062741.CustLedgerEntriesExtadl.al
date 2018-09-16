@@ -1,4 +1,4 @@
-page 13062741 "Cust. Ledger Entries Ext.-adl"
+page 13062741 "Cust. Ledger Entries Ext.-Adl"
 {
     Caption = 'Cust. Ledger Entries Extended';
     DeleteAllowed = false;
@@ -170,7 +170,7 @@ page 13062741 "Cust. Ledger Entries Ext.-adl"
 
     var
         CoreSetup: Record "CoreSetup-Adl";
-        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-adl";
+        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-Adl";
         ADLCore: Codeunit "Adl Core";
         OriginalDocumentAmount: Decimal;
         OriginalVATAmount: Decimal;

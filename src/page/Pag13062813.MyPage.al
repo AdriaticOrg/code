@@ -40,5 +40,5 @@ page 13062813 "MyPage"
     }
 
     var
-        RapidStart: Codeunit "Wizard RapidStart-adl";
+        RapidStart: Codeunit "Wizard RapidStart-Adl";
 }

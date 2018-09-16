@@ -1,4 +1,4 @@
-report 13062594 "Input VAT Book-adl 2"
+report 13062594 "Input VAT Book-Adl 2"
 {
     Caption = 'Input VAT Book';
     ProcessingOnly = true;
@@ -10,7 +10,7 @@ report 13062594 "Input VAT Book-adl 2"
         dataitem("Vat Entry"; "VAT Entry")
         {
             DataItemTableView = SORTING ("Document No.");
-            RequestFilterFields = "Posting Date", "Document No.", "VAT Bus. Posting Group", "VAT Prod. Posting Group", "Gen. Bus. Posting Group", "Gen. Prod. Posting Group", "VAT Identifier-adl", "VAT Calculation Type", "Country/Region Code", "Entry No.", "Bill-to/Pay-to No.", "External Document No.";
+            RequestFilterFields = "Posting Date", "Document No.", "VAT Bus. Posting Group", "VAT Prod. Posting Group", "Gen. Bus. Posting Group", "Gen. Prod. Posting Group", "VAT Identifier-Adl", "VAT Calculation Type", "Country/Region Code", "Entry No.", "Bill-to/Pay-to No.", "External Document No.";
 
             trigger OnPreDataItem()
             var
@@ -338,7 +338,7 @@ report 13062594 "Input VAT Book-adl 2"
         VATBook: Record "VAT Book-Adl";
         VATBookGroup: Record "VAT Book Group-Adl";
         VATBookColumnName: Record "VAT Book Column Name-Adl";
-        TextWriterAdl: Codeunit "TextWriter-adl";
+        TextWriterAdl: Codeunit "TextWriter-Adl";
         VATBookCalc: Codeunit "VAT Book Calculation-Adl";
         OutStr: OutStream;
         VATBookColumnNo: array[100] of Integer;

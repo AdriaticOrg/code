@@ -363,7 +363,7 @@ codeunit 13062525 "VAT Management-Adl"
     begin
         VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group",VATEntry."VAT Prod. Posting Group");
         PurchaseSetup.Get();
-        if (not PurchaseSetup."Use VAT Output Date-adl") and (VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT") then exit;
+        if (not PurchaseSetup."Use VAT Output Date-Adl") and (VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT") then exit;
         with GenJnlLine do begin
             Init();
             "Document No." := VATEntry."Document No.";

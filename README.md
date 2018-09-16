@@ -61,7 +61,7 @@ Countries postfixes are:
 
 Country|Postfix
 -|-
-Adriatic Localization|-adl
+Adriatic Localization|-Adl
 Slovenia|-si
 Croatia|-hr
 Serbia|-rs

@@ -1,4 +1,4 @@
-report 13062596 "Export VAT Book-adl"
+report 13062596 "Export VAT Book-Adl"
 {
     Caption = 'Input Output VAT Book';
     ProcessingOnly = true;
@@ -136,7 +136,7 @@ report 13062596 "Export VAT Book-adl"
         Vendor: Record Vendor;
         VATBookGrp: Record "VAT Book Group-Adl";
         VATBookCalc: Codeunit "VAT Book Calculation-Adl";
-        TextWriterAdl: Codeunit "TextWriter-adl";
+        TextWriterAdl: Codeunit "TextWriter-Adl";
         VATBookCode: Code[20];
         Result: Decimal;
         ResultTxt: Text;

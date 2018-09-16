@@ -1,4 +1,4 @@
-codeunit 13062813 "Wizard Initialize-adl"
+codeunit 13062813 "Wizard Initialize-Adl"
 {
     trigger OnRun()
     begin
@@ -7,7 +7,7 @@ codeunit 13062813 "Wizard Initialize-adl"
         RunWizardIfSetupDoesNotExist();
     end;
 
-    procedure InitSetup(var CoreSetup: Record "CoreSetup-adl");
+    procedure InitSetup(var CoreSetup: Record "CoreSetup-Adl");
     begin
         if CoreSetup.Get() then
             exit;
@@ -17,19 +17,19 @@ codeunit 13062813 "Wizard Initialize-adl"
 
     local procedure CoreSetupExists(): Boolean;
     var
-        CoreSetup: Record "CoreSetup-adl";
+        CoreSetup: Record "CoreSetup-Adl";
     begin
         exit(CoreSetup.Get());
     end;
 
     local procedure RunWizardIfSetupDoesNotExist();
     var
-        CoreSetup: Record "CoreSetup-adl";
+        CoreSetup: Record "CoreSetup-Adl";
     begin
         if CoreSetup.Get() then
             exit;
 
-        Page.RunModal(PAGE::"ADL Setup Wizard-adl");
+        Page.RunModal(PAGE::"ADL Setup Wizard-Adl");
         if CoreSetup.Get() then
             Commit();
     end;

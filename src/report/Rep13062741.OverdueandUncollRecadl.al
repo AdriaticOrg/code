@@ -1,4 +1,4 @@
-report 13062741 "Overdue and Uncoll.Rec-adl"
+report 13062741 "Overdue and Uncoll.Rec-Adl"
 {
 
     DefaultLayout = RDLC;
@@ -631,9 +631,9 @@ report 13062741 "Overdue and Uncoll.Rec-adl"
         DetailedCustLedgEntry: Record "Detailed Cust. Ledg. Entry";
         VATEntry: Record "VAT Entry";
         CountryRegion: Record "Country/Region";
-        TempOverdueandUncollectedBufferHeader: Record "Overdue and Uncol. Buffer-adl" temporary;
-        TempOverdueandUncollectedBuffer: Record "Overdue and Uncol. Buffer-adl" temporary;
-        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-adl";
+        TempOverdueandUncollectedBufferHeader: Record "Overdue and Uncol. Buffer-Adl" temporary;
+        TempOverdueandUncollectedBuffer: Record "Overdue and Uncol. Buffer-Adl" temporary;
+        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-Adl";
         FileMgt: Codeunit "File Management";
         CustomerVATType: Text;
         CustomerVATTypeInteger: Integer;

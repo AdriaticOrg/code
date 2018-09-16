@@ -58,7 +58,7 @@ pageextension 13062542 "Customer Ledger Entries-Adl" extends "Customer Ledger En
             {
                 Caption = 'Edit Extended Data';
                 ApplicationArea = All;
-                RunObject = Page "Cust. Ledger Entries Ext.-adl";
+                RunObject = Page "Cust. Ledger Entries Ext.-Adl";
                 Promoted = true;
                 PromotedCategory = Process;
                 Image = Edit;

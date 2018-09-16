@@ -1,4 +1,4 @@
-table 13062742 "Overdue and Uncol. Buffer-adl"
+table 13062742 "Overdue and Uncol. Buffer-Adl"
 {
     Caption = 'Overdue and Uncollected Recievables Buffer';
     Permissions = tabledata 13062742 = rm;

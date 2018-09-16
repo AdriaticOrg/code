@@ -1,4 +1,4 @@
-codeunit 13062812 "ADL Install-adl"
+codeunit 13062812 "ADL Install-Adl"
 {
     Subtype = Install;
 
@@ -17,7 +17,7 @@ codeunit 13062812 "ADL Install-adl"
 
     local procedure HandleFreshInstall();
     var
-        ADLInitialize: Codeunit "Wizard Initialize-adl";
+        ADLInitialize: Codeunit "Wizard Initialize-Adl";
     begin
         ADLInitialize.Run();
     end;

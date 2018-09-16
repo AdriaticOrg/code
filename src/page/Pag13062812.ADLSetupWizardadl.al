@@ -1,4 +1,4 @@
-page 13062812 "ADL Setup Wizard-adl"
+page 13062812 "ADL Setup Wizard-Adl"
 {
     Caption = 'ADL Setup Wizard';
     Pagetype = NavigatePage;
@@ -281,7 +281,7 @@ page 13062812 "ADL Setup Wizard-adl"
     trigger OnQueryClosePage(CloseAction: Action): Boolean;
     begin
         IF CloseAction = ACTION::OK THEN
-            IF ADLAssistedSetup.GetStatus(PAGE::"ADL Setup Wizard-adl") = ADLAssistedSetup.Status::"Not Completed" THEN
+            IF ADLAssistedSetup.GetStatus(PAGE::"ADL Setup Wizard-Adl") = ADLAssistedSetup.Status::"Not Completed" THEN
                 IF NOT Confirm(ADLNotSetUpQst, FALSE) THEN
                     Error('');
     end;
@@ -291,8 +291,8 @@ page 13062812 "ADL Setup Wizard-adl"
         MediaRepositoryDone: Record "Media Repository";
         MediaResourcesStandard: Record "Media Resources";
         MediaResourcesDone: Record "Media Resources";
-        ADLAssistedSetup: Record "ADL Assisted Setup-adl";
-        ADLInitialize: Codeunit "Wizard Initialize-adl";
+        ADLAssistedSetup: Record "ADL Assisted Setup-Adl";
+        ADLInitialize: Codeunit "Wizard Initialize-Adl";
         Step: Option Start,Step2,Finish;
         TopBannerVisible: Boolean;
         Step1Visible: Boolean;
@@ -340,7 +340,7 @@ page 13062812 "ADL Setup Wizard-adl"
     local procedure FinishAction();
     begin
         StoreCoreSetup();
-        ADLAssistedSetup.SetStatus(PAGE::"ADL Setup Wizard-adl", ADLAssistedSetup.Status::Completed);
+        ADLAssistedSetup.SetStatus(PAGE::"ADL Setup Wizard-Adl", ADLAssistedSetup.Status::Completed);
         CurrPage.Close();
     end;
 

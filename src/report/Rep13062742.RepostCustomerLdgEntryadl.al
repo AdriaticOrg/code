@@ -1,4 +1,4 @@
-report 13062742 "Repost Customer Ldg. Entry-adl"
+report 13062742 "Repost Customer Ldg. Entry-Adl"
 {
     Caption = 'Repost Customer Ledger Entry';
     ProcessingOnly = true;
@@ -410,8 +410,8 @@ report 13062742 "Repost Customer Ldg. Entry-adl"
     local procedure InsertOriginalDocAndVatAmount(DocumentNo: Code[20]; EntryNo: Integer);
     var
         VATEntry: Record "VAT Entry";
-        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-adl";
-        CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-adl";
+        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-Adl";
+        CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-Adl";
         InvoiceAmount: Decimal;
         VATAmount: Decimal;
         CustLedgerEntryExtDataLineNo: Integer;

@@ -177,7 +177,7 @@ page 13062592 "VAT Books-Adl"
 
                 trigger OnAction();
                 begin
-                    Report.RunModal(Report::"Export VAT Book-adl", true, false);
+                    Report.RunModal(Report::"Export VAT Book-Adl", true, false);
                 end;
             }
             // </adl.21>

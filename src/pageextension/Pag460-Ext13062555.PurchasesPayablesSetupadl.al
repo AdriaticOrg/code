@@ -4,7 +4,7 @@ pageextension 13062555 "Purchases&PayablesSetup-Adl" extends "Purchases & Payabl
     {
         addlast(General)
         {
-            field("Use VAT Output Date-adl"; "Use VAT Output Date-adl")
+            field("Use VAT Output Date-Adl"; "Use VAT Output Date-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;

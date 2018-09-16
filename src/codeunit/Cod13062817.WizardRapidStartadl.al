@@ -1,4 +1,4 @@
-codeunit 13062817 "Wizard RapidStart-adl"
+codeunit 13062817 "Wizard RapidStart-Adl"
 {
     trigger OnRun()
     begin

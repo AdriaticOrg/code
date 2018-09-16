@@ -18,7 +18,7 @@ pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
                 trigger OnAction()
                 var
                     GLAccount: Record "G/L Account";
-                    GLExportSIadl: Report "GL ExportSI-adl";
+                    GLExportSIadl: Report "GL ExportSI-Adl";
                 begin
                     GLAccount := Rec;
                     GLAccount.SetRecFilter();

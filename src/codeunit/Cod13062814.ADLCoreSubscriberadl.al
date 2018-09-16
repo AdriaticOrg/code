@@ -1,17 +1,17 @@
-codeunit 13062814 "Adl Core Subscriber-adl"
+codeunit 13062814 "Adl Core Subscriber-Adl"
 {
     var
-        ADLCoreNotification: Codeunit "Adl Core Notification-adl";
+        ADLCoreNotification: Codeunit "Adl Core Notification-Adl";
 
     [EventSubscriber(ObjectType::Table, Database::"Aggregated Assisted Setup", 'OnRegisterAssistedSetup', '', false, false)]
     local procedure HandleOnRegisterAggregatedSetup(var TempAggregatedAssistedSetup: Record "Aggregated Assisted Setup" temporary)
     var
-        ADLAssistedSetup: Record "ADL Assisted Setup-adl";
+        ADLAssistedSetup: Record "ADL Assisted Setup-Adl";
     begin
         ADLAssistedSetup.Initialize();
 
         ADLAssistedSetup.SetRange(Visible, true);
-        ADLAssistedSetup.SetFilter("Assisted Setup Page ID", '%1', Page::"ADL Setup Wizard-adl");
+        ADLAssistedSetup.SetFilter("Assisted Setup Page ID", '%1', Page::"ADL Setup Wizard-Adl");
 
         CLEAR(TempAggregatedAssistedSetup);
         TempAggregatedAssistedSetup.TransferFields(ADLAssistedSetup, TRUE);
@@ -20,12 +20,12 @@ codeunit 13062814 "Adl Core Subscriber-adl"
         TempAggregatedAssistedSetup.Insert();
     end;
 
-    [EventSubscriber(ObjectType::Page, Page::"ADL Setup Wizard-adl", 'OnOpenPageEvent', '', false, false)]
+    [EventSubscriber(ObjectType::Page, Page::"ADL Setup Wizard-Adl", 'OnOpenPageEvent', '', false, false)]
     local procedure HandleOnPageEventADLWizard()
     var
-        ADLAssistedSetup: Record "ADL Assisted Setup-adl";
+        ADLAssistedSetup: Record "ADL Assisted Setup-Adl";
     begin
-        If not ADLAssistedSetup.GET(Page::"ADL Setup Wizard-adl") then
+        If not ADLAssistedSetup.GET(Page::"ADL Setup Wizard-Adl") then
             ADLAssistedSetup.Initialize();
     end;
 
@@ -33,7 +33,7 @@ codeunit 13062814 "Adl Core Subscriber-adl"
     procedure OnInitializingNotificationWithDefaultStat();
     var
         MyNotifications: Record "My Notifications";
-        AdlCoreNotification: Codeunit "Adl Core Notification-adl";
+        AdlCoreNotification: Codeunit "Adl Core Notification-Adl";
         SetupADLTxt: Label 'Ask to setup Adriatic Localization.';
         SetupADLDescriptionTxt: Label 'If you have installed Adriatic Localization but don''t want to use it, switch off receiving the notification.';
     begin

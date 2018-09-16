@@ -1,4 +1,4 @@
-report 13062595 "GL ExportSI-adl"
+report 13062595 "GL ExportSI-Adl"
 {
     ProcessingOnly = true;
 
@@ -252,7 +252,7 @@ report 13062595 "GL ExportSI-adl"
     end;
 
     var
-        TextWriterAdl: Codeunit "TextWriter-adl";
+        TextWriterAdl: Codeunit "TextWriter-Adl";
         OutStr: OutStream;
         FileName: Text;
         ToFilter: Text;
