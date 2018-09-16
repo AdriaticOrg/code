@@ -17,8 +17,8 @@ codeunit 13062815 "Adl Core Notification-Adl"
             exit;
         MyNotification.ID := GetCoreSetupNotificationId();
         MyNotification.Message := CoreSetupIsNotQst;
-        MyNotification.AddAction(YesLbl, Codeunit::"Adl Notification Action-Adl", 'CoreSetupNotify');
-        MyNotification.AddAction(DontAskAgainLbl, Codeunit::"Adl Notification Action-Adl", 'DisableCoreSetupNotify');
+        MyNotification.AddAction(YesLbl, Codeunit::"Adl Core Notification Act.-Adl", 'CoreSetupNotify');
+        MyNotification.AddAction(DontAskAgainLbl, Codeunit::"Adl Core Notification Act.-Adl", 'DisableCoreSetupNotify');
         MyNotification.Send();
     end;
 

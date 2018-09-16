@@ -1,14 +1,14 @@
-codeunit 13062816 "Adl Notification Action-Adl"
+codeunit 13062816 "Adl Core Notification Act.-Adl"
 {
     procedure CoreSetupNotify(var MyNotification: Notification);
     begin
-        Codeunit.Run(Codeunit::"Wizard Initialize-Adl");
+        Codeunit.Run(Codeunit::"Wizard Initialize-adl");
     end;
 
     procedure DisableCoreSetupNotify(var MyNotification: Notification);
     var
         MyNotifications: Record 1518;
-        AdlCoreNotification: Codeunit "Adl Core Notification-Adl";
+        AdlCoreNotification: Codeunit "Adl Core Notification-adl";
         NotificationID: GUID;
     begin
         MyNotifications.LockTable();
