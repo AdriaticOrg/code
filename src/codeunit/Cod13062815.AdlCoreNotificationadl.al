@@ -1,4 +1,4 @@
-codeunit 13062815 "Adl Core Notification-adl"
+codeunit 13062815 "Adl Core Notification-Adl"
 {
     var
         MyNotifications: Record "My Notifications";
@@ -17,8 +17,8 @@ codeunit 13062815 "Adl Core Notification-adl"
             exit;
         MyNotification.ID := GetCoreSetupNotificationId();
         MyNotification.Message := CoreSetupIsNotQst;
-        MyNotification.AddAction(YesLbl, Codeunit::"Adl Notification Action-adl", 'CoreSetupNotify');
-        MyNotification.AddAction(DontAskAgainLbl, Codeunit::"Adl Notification Action-adl", 'DisableCoreSetupNotify');
+        MyNotification.AddAction(YesLbl, Codeunit::"Adl Core Notification Act.-adl", 'CoreSetupNotify');
+        MyNotification.AddAction(DontAskAgainLbl, Codeunit::"Adl Core Notification Act.-adl", 'DisableCoreSetupNotify');
         MyNotification.Send();
     end;
 

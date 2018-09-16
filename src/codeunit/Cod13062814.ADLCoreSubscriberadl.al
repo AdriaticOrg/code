@@ -1,4 +1,4 @@
-codeunit 13062814 "ADL Core Subscriber-adl"
+codeunit 13062814 "Adl Core Subscriber-Adl"
 {
     var
         ADLCoreNotification: Codeunit "Adl Core Notification-adl";
@@ -20,7 +20,7 @@ codeunit 13062814 "ADL Core Subscriber-adl"
         TempAggregatedAssistedSetup.Insert();
     end;
 
-    [EventSubscriber(ObjectType::Page, Page::"ADL Setup Wizard-adl", 'OnOpenPageEvent', '', false, false)]
+    [EventSubscriber(ObjectType::Page, Page::"Assisted ADL Setup Wizard-adl", 'OnOpenPageEvent', '', false, false)]
     local procedure HandleOnPageEventADLWizard()
     var
         AssistedSetupAdl: Record "Assisted Setup-adl";

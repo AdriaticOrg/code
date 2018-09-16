@@ -1513,110 +1513,110 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CoreSetup-Adl - Field EU Customs - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ADL Assisted Setup</source>
+        <trans-unit id="Table 2819792135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Assisted Setup ADL</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 894914730 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 894914730 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Page ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Page ID - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Page ID - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Name - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Name - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 146219450 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 146219450 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Order</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Order - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Order - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Status</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Status - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Status - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Not Completed,Completed,Not Started,Seen,Watched,Read, </source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Status - Property OptionCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Status - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 1539408610 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 1539408610 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Visible</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Visible - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Visible - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 4206260792 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 4206260792 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Parent</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Parent - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Parent - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 692639126 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 692639126 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Video Url</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Video Url - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Video Url - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 4036313429 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 4036313429 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Icon</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Icon - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Icon - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 4093180191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 4093180191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Item Type - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Item Type - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 4093180191 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 4093180191 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,Group,Setup and Help</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Item Type - Property OptionCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Item Type - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 3950520716 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 3950520716 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Featured</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Featured - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Featured - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 1513519486 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 1513519486 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Help Url</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Help Url - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Help Url - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 3512150049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 3512150049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Assisted Setup Page ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Assisted Setup Page ID - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Assisted Setup Page ID - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 62955203 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 62955203 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tour Id</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Tour Id - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Tour Id - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 448805223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 448805223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Video Status</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Video Status - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Video Status - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 1358400863 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 1358400863 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Help Status</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Help Status - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Help Status - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - Field 2362958084 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - Field 2362958084 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tour Status</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - Field Tour Status - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - Field Tour Status - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - NamedType 39926383" size-unit="char" translate="no" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - NamedType 39926383" size-unit="char" translate="no" xml:space="preserve">
           <source></source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - NamedType DocumentUrlADLTxt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - NamedType DocumentUrlADLTxt</note>
         </trans-unit>
-        <trans-unit id="Table 1974829520 - NamedType 2843039689" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2819792135 - NamedType 2843039689" size-unit="char" translate="yes" xml:space="preserve">
           <source>Set up Adriatic Localization</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADL Assisted Setup-adl - NamedType ADLIntroTxt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - NamedType ADLIntroTxt</note>
         </trans-unit>
         <trans-unit id="Codeunit 1890036800 - NamedType 936337972" size-unit="char" translate="yes" xml:space="preserve">
           <source>Do you want to change VAT Date</source>
@@ -1833,40 +1833,55 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit TextWriter-adl - NamedType Msg</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3076656488 - Method 3885559574 - NamedType 1419097282" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 2749050248 - Method 3885559574 - NamedType 1419097282" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ask to setup Adriatic Localization.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADL Core Subscriber-adl - Method OnInitializingNotificationWithDefaultStat - NamedType SetupADLTxt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Adl Core Subscriber-Adl - Method OnInitializingNotificationWithDefaultStat - NamedType SetupADLTxt</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3076656488 - Method 3885559574 - NamedType 734865084" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 2749050248 - Method 3885559574 - NamedType 734865084" size-unit="char" translate="yes" xml:space="preserve">
           <source>If you have installed Adriatic Localization but don't want to use it, switch off receiving the notification.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADL Core Subscriber-adl - Method OnInitializingNotificationWithDefaultStat - NamedType SetupADLDescriptionTxt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Adl Core Subscriber-Adl - Method OnInitializingNotificationWithDefaultStat - NamedType SetupADLDescriptionTxt</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1060767525 - Method 1348281459 - NamedType 2813755727" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1055666693 - Method 1348281459 - NamedType 2813755727" size-unit="char" translate="yes" xml:space="preserve">
           <source>Adriatic Localization is installed but not setup. Do you want to do this now?</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Adl Core Notification-adl - Method ShowSetupNotification - NamedType CoreSetupIsNotQst</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Adl Core Notification-Adl - Method ShowSetupNotification - NamedType CoreSetupIsNotQst</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1060767525 - Method 1348281459 - NamedType 4212456975" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1055666693 - Method 1348281459 - NamedType 4212456975" size-unit="char" translate="yes" xml:space="preserve">
           <source>Yes</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Adl Core Notification-adl - Method ShowSetupNotification - NamedType YesLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Adl Core Notification-Adl - Method ShowSetupNotification - NamedType YesLbl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1060767525 - Method 1348281459 - NamedType 3513985302" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1055666693 - Method 1348281459 - NamedType 3513985302" size-unit="char" translate="yes" xml:space="preserve">
           <source>No, and please don't remind me again.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Adl Core Notification-adl - Method ShowSetupNotification - NamedType DontAskAgainLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Adl Core Notification-Adl - Method ShowSetupNotification - NamedType DontAskAgainLbl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 794882899 - NamedType 3546745230" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 3727984632 - Method 922748632 - NamedType 2175096710" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select a package file.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Wizard Management-Adl - Method OpenRapidStartPackageStream - NamedType SelectPackageTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3727984632 - NamedType 3546745230" size-unit="char" translate="yes" xml:space="preserve">
           <source>Failed to contact the address endpoint.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Wizard RapidStart-adl - NamedType HttpGetRequestErr</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Wizard Management-Adl - NamedType HttpGetRequestErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 794882899 - NamedType 1091991448" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 3727984632 - NamedType 1091991448" size-unit="char" translate="yes" xml:space="preserve">
           <source>Failed to read response.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Wizard RapidStart-adl - NamedType HttpReadResponseErr</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Wizard Management-Adl - NamedType HttpReadResponseErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3727984632 - NamedType 804665334" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Downloading rapidstart from web...</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Wizard Management-Adl - NamedType PackageIsBeingDownloadedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3727984632 - NamedType 3501741077" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is no package available for download for selected country.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Wizard Management-Adl - NamedType PackageMissingErr</note>
         </trans-unit>
         <trans-unit id="Page 701540871 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Types</source>
@@ -2403,665 +2418,325 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Core Setup - Control ReportingSI - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2739645971 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ADL Setup Wizard</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 1121962313 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control StandardBanner - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 300852202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control FinishedBanner - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 280978840 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Welcome to Adriatic Localization Setup</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Welcome to ADL Setup Wizard - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 1612614122 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Group18 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 1612614122 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>This assisted setup will guide you through enabeling diffrent modules of Adriatic Localization and RapidStart configuration.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Group18 - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 3647570164 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Let's go!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Let's go! - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 727926705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Group22 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 727926705 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Choose Next so you can enable core modules of Adriatic Localizatin.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Group22 - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 66970393 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Warning</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Para1.2 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 2447377260 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Help</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Para1.2.1 - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 3085073877 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Privacy Notice for more information.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Para1.2.2 - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 1253594254 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>I accept warning &amp; privacy notice.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control AgreePrivacy - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 2279239964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Step2 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 2279239964 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Core features</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Step2 - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control General - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 1696271000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Adriatic Localization Enabled</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control ADL Enabled - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 334623485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control VAT - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 2057091634 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Reporting - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 4105025428 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting HR Enabled</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Rep HR Enabled - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 1759159013 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting RS Enabled</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Rep RS Enabled - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 3144246588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting SI Enabled</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Rep SI Enabled - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 2487071696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting SI</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control ReportingSI - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 1365623322 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Group23 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 1365623322 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Finish your setup</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Group23 - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 1546979963 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>That's it!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control That's it! - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 2641016556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Group25 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Control 2641016556 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>To save this setup, choose Finish.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Control Group25 - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Action 2438272767 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Back</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Action ActionBack - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Action 914282563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Next</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Action ActionNext - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - Action 3259912055 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Finish</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - Action ActionFinish - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - NamedType 293623711" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ADL has not been set up.\\Are you sure you want to exit?</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - NamedType ADLNotSetUpQst</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - NamedType 2028240083" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Help</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - NamedType HelpTxt</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - NamedType 3247921854" size-unit="char" translate="no" xml:space="preserve">
-          <source>https://docs.microsoft.com/{0}/dynamics365/business-central/</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - NamedType HelpUrlTxt</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - NamedType 2591681840" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Privacy Notice</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - NamedType PrivacyNoticeTxt</note>
-        </trans-unit>
-        <trans-unit id="Page 2739645971 - NamedType 2422754289" size-unit="char" translate="no" xml:space="preserve">
-          <source>https://privacy.microsoft.com/en-us/privacystatement#mainnoticetoendusersmodule</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl - NamedType PrivacyNoticeUrlTxt</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ADL Setup Wizard</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 1121962313 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control StandardBanner - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 300852202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control FinishedBanner - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 280978840 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Welcome to Adriatic Localization Setup</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Welcome to ADL Setup Wizard - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 1612614122 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Group18 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 1612614122 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>This assisted setup will guide you through enabeling diffrent modules of Adriatic Localization and RapidStart configuration.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Group18 - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 3647570164 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Let's go!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Let's go! - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 727926705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Group22 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 727926705 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Choose Next so you can enable core modules of Adriatic Localizatin.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Group22 - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 66970393 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Warning</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Para1.2 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 2447377260 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Help</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Para1.2.1 - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 3085073877 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Privacy Notice for more information.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Para1.2.2 - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 1253594254 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>I accept warning &amp; privacy notice.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control AgreePrivacy - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 3385724175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Step7 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 3385724175 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Core features</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Step7 - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control General - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 1696271000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Adriatic Localization Enabled</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control ADL Enabled - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 334623485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control VAT - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 2057091634 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Reporting - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 4105025428 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting HR Enabled</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Rep HR Enabled - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 1759159013 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting RS Enabled</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Rep RS Enabled - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 3144246588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting SI Enabled</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Rep SI Enabled - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 2487071696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting SI</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control ReportingSI - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 1365623322 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Group23 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 1365623322 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Finish your setup</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Group23 - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 1546979963 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>That's it!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control That's it! - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 2641016556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Group25 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Control 2641016556 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>To save this setup, choose Finish.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Control Group25 - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Action 2438272767 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Back</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Action ActionBack - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Action 914282563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Next</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Action ActionNext - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - Action 3259912055 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Finish</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - Action ActionFinish - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - NamedType 293623711" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ADL has not been set up.\\Are you sure you want to exit?</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - NamedType ADLNotSetUpQst</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - NamedType 2028240083" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Help</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - NamedType HelpTxt</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - NamedType 3247921854" size-unit="char" translate="no" xml:space="preserve">
-          <source>https://docs.microsoft.com/{0}/dynamics365/business-central/</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - NamedType HelpUrlTxt</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - NamedType 2591681840" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Privacy Notice</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - NamedType PrivacyNoticeTxt</note>
-        </trans-unit>
-        <trans-unit id="Page 1329756623 - NamedType 2422754289" size-unit="char" translate="no" xml:space="preserve">
-          <source>https://privacy.microsoft.com/en-us/privacystatement#mainnoticetoendusersmodule</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADL Setup Wizard-adl NEW - NamedType PrivacyNoticeUrlTxt</note>
-        </trans-unit>
-        <trans-unit id="Page 2909244945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Company Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
           <source>New,Process,Report,Step 4,Step 5</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Property PromotedActionCategories</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Property PromotedActionCategories</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1138556399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 1138556399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Welcome to Adriatic Localization Company Company Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Welcome to Adriatic Localization Company Setup. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Welcome to Adriatic Localization Company Setup. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1138556399 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>To prepare Dynamics 365 Business Central with Adriatic Localization for first use, you must specify which features of this module you will use. We will also guide you through specifiying some basic information about your company. This information is used to enable on your external documents, such as sales invoices, and includes your company logo and bank information</source>
+        <trans-unit id="Page 2914345777 - Control 1138556399 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To prepare Dynamics 365 Business Central with Adriatic Localization for first use, you need to choose features you will use. We will also guide you through specifiying some basic information about your company.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Welcome to Adriatic Localization Company Setup. - Property InstructionalText</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Welcome to Adriatic Localization Company Setup. - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 3647570164 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Let's go!</source>
+        <trans-unit id="Page 2914345777 - Control 66970393 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Warning</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Let's go! - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Para1.2 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 3647570164 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Choose Next so you can specify basic company information.</source>
+        <trans-unit id="Page 2914345777 - Control 2447377260 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Help</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Let's go! - Property InstructionalText</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Para1.2.1 - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 3157022552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 3085073877 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Privacy Notice for more information.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Para1.2.2 - Property InstructionalText</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1253594254 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>I accept warning &amp; privacy notice.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control AgreePrivacy - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 2979398708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Adriatic Localization Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Standard Setup - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Extended Setup - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 3157022552 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 2979398708 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
           <source>The company will be ready to use when Setup has completed.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Standard Setup - Property InstructionalText</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Extended Setup - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 2672704373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 727939721 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Set up as Adriatic Localization</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Standard - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Extended - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1351565579 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Evaluation Setup</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Evaluation Setup - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1351565579 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The company will be set up in demonstration mode for exploring and testing.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Evaluation Setup - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 2208614754 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Set up as Evaluation</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Evaluation - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 3749788842 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 3749788842 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Important</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Important - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Important - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 3749788842 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 3749788842 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
           <source>You cannot change your choice of setup after you choose Next.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Important - Property InstructionalText</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Important - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 4156972860 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 4156972860 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Adriatic Localization core features</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control step2 - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control step2 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 4156972860 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 4156972860 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
           <source>With this setup you can choose which features you want to enable for Adriatic Localization</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control step2 - Property InstructionalText</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control step2 - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control General - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control General - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1696271000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 1696271000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Adriatic Localization Enabled</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control ADL Enabled - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control ADL Enabled - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 334623485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 334623485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control VAT - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control VAT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 2057091634 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 2057091634 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Reporting - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Reporting - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 4105025428 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 4105025428 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting HR Enabled</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Rep HR Enabled - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Rep HR Enabled - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1759159013 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 1759159013 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting RS Enabled</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Rep RS Enabled - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Rep RS Enabled - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 3144246588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 3144246588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting SI Enabled</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Rep SI Enabled - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Rep SI Enabled - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 2487071696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 2487071696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting SI</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control ReportingSI - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control ReportingSI - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 2565465511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 2565465511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specify your company's address information and logo.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Specify your company's address information and logo. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Specify your company's address information and logo. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 2565465511 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 2565465511 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
           <source>This is used in invoices and other documents where general information about your company is printed.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Specify your company's address information and logo. - Property InstructionalText</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Specify your company's address information and logo. - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Company Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Name - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Name - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1594621544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 1594621544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Company Logo</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Picture - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Picture - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 3479442805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 3479442805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specify the contact details for your company.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Specify the contact details for your company. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Specify the contact details for your company. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 3479442805 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 3479442805 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
           <source>This is used in invoices and other documents where general information about your company is printed.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Specify the contact details for your company. - Property InstructionalText</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Specify the contact details for your company. - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 873215827 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bank Feed Service</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Bank Feed Service - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 873215827 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You can use a bank feeds service to import electronic bank statements from your bank to quickly process payments.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Bank Feed Service - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 3502656966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Use a bank feed service</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control UseBankStatementFeed - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1951462166 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>NOTE:</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control NOTE: - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1951462166 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>When you choose Next, you accept the terms of use for the bank feed service.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control NOTE: - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 4047236755 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 4047236755 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Select bank account.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Select bank account. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Select bank account. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 2714816479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 2714816479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specify your company's bank information.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Specify your company's bank information. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Specify your company's bank information. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 2714816479 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 2714816479 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
           <source>This information is included on documents that you send to customer and vendors to inform about payments to your bank account.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Specify your company's bank information. - Property InstructionalText</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Specify your company's bank information. - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source> </source>
+        <trans-unit id="Page 2914345777 - Control 63266223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rapidstart data import</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control   - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Control2 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1371923692 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>To create a bank account that is linked to the related online bank account, you must specify the bank account information above.</source>
+        <trans-unit id="Page 2914345777 - Control 63266223 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Here you can choose package data to import</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control   - Property InstructionalText</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Control2 - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1134971354 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specify the start date of the company's fiscal year.</source>
+        <trans-unit id="Page 2914345777 - Control 745115794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select the configuration package you want to load:</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Specify the start date of the company's fiscal year. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control PackageFileNameRtc - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 2913801068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fiscal Year Start Date</source>
+        <trans-unit id="Page 2914345777 - Control 745115794 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the configuration package that you have created.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control AccountingPeriodStartDate - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control PackageFileNameRtc - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1184711069 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specify the costing method for your inventory valuation.</source>
+        <trans-unit id="Page 2914345777 - Control 4253581577 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code of the configuration package.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Specify the costing method for your inventory valuation. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Package Code - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 2546009642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The costing method works together with the posting date and sequence to determine how to record the cost flow.</source>
+        <trans-unit id="Page 2914345777 - Control 1051671103 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the package that contains the configuration information.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control CostingMethodLbl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Package Name - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 2165769856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Costing Method</source>
+        <trans-unit id="Page 2914345777 - Control 2743310173 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Choose Apply Package action to load the data from the configuration to Business Central tables.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control Costing Method - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Choose Apply Package action to load the data from the configuration to Business Central tables. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1546979963 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 2743310173 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the action that loads the configuration data.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Choose Apply Package action to load the data from the configuration to Business Central tables. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1865521560 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Choose Configuration Worksheet if you want to edit and modify applied data.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Choose Configuration Worksheet if you want to edit and modify applied data. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1865521560 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the action that loads the configuration data.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Choose Configuration Worksheet if you want to edit and modify applied data. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1546979963 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>That's it!</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control That's it! - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control That's it! - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Control 1546979963 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 1546979963 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
           <source>Choose Finish to prepare the application for first use. This will take a few moments.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Control That's it! - Property InstructionalText</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control That's it! - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Action 2438272767 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Action 1162059498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Apply Package</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Action Apply Package - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Action 1162059498 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import the configuration package and apply the package database data at the same time.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Action Apply Package - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Action 903958114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Configuration Worksheet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Action Configuration Worksheet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Action 903958114 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Plan and configure how to initialize a new solution based on legacy data and the customers requirements.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Action Configuration Worksheet - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Action 2438272767 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Back</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Action ActionBack - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Action ActionBack - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Action 914282563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Action 914282563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Next</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Action ActionNext - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Action ActionNext - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - Action 3259912055 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Action 3259912055 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Finish</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - Action ActionFinish - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Action ActionFinish - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - NamedType 1147111024" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The application has not been set up. Setup will continue the next time you start the program.\\Are you sure that you want to exit?</source>
+        <trans-unit id="Page 2914345777 - NamedType 1147111024" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The application has not been set up. Setup could be run again from role center notification.\\Are you sure that you want to exit?</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - NamedType NotSetUpQst</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType NotSetUpQst</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - NamedType 2233394715" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - NamedType 2233394715" size-unit="char" translate="yes" xml:space="preserve">
           <source>You have not selected any setup type. If you proceed, the application will not be fully functional, until you set it up manually.\\Do you want to continue?</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - NamedType NoSetupTypeSelectedQst</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType NoSetupTypeSelectedQst</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - NamedType 2938128749" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - NamedType 2938128749" size-unit="char" translate="yes" xml:space="preserve">
           <source>Learn more about setting up your company</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - NamedType HelpLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType HelpLbl</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - NamedType 3736455171" size-unit="char" translate="no" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - NamedType 3736455171" size-unit="char" translate="no" xml:space="preserve">
           <source>http://go.microsoft.com/fwlink/?LinkId=746160</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - NamedType HelpLinkTxt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType HelpLinkTxt</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - NamedType 2038165031" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Envestnet Yodlee Terms of Use</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - NamedType TermsOfUseLbl</note>
-        </trans-unit>
-        <trans-unit id="Page 2909244945 - NamedType 3746871464" size-unit="char" translate="no" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - NamedType TermsOfUseUrlTxt</note>
-        </trans-unit>
-        <trans-unit id="Page 2909244945 - NamedType 1751367413" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - NamedType 1751367413" size-unit="char" translate="yes" xml:space="preserve">
           <source>The phone number is invalid.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - NamedType InvalidPhoneNumberErr</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType InvalidPhoneNumberErr</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - NamedType 2676419893" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - NamedType 2676419893" size-unit="char" translate="yes" xml:space="preserve">
           <source>Learn more</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - NamedType CostMethodeLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType CostMethodeLbl</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - NamedType 1805485265" size-unit="char" translate="no" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - NamedType 1805485265" size-unit="char" translate="no" xml:space="preserve">
           <source>https://go.microsoft.com/fwlink/?linkid=858295</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - NamedType CostMethodUrlTxt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType CostMethodUrlTxt</note>
         </trans-unit>
-        <trans-unit id="Page 2909244945 - NamedType 1966189223" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Linking the company bank account failed with the following Message:\'%1'\Link the company bank account from the Bank Accounts page.</source>
-          <note from="Developer" annotates="general" priority="2">%1 - an error Message</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-adl - NamedType BankAccountLinkingFailedMsg</note>
+        <trans-unit id="Page 2914345777 - NamedType 2591681840" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Privacy Notice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType PrivacyNoticeTxt</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - NamedType 2422754289" size-unit="char" translate="no" xml:space="preserve">
+          <source>https://privacy.microsoft.com/en-us/privacystatement#mainnoticetoendusersmodule</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType PrivacyNoticeUrlTxt</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - NamedType 3275291946" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A package has already been selected and applied.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType PackageIsAlreadyAppliedErr</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - NamedType 2287603855" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select a package to run the Apply Package function.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType SelectPackageAndApplyTxt</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - NamedType 2559826610" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Click here to download BASIC DATA package</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType PackageDownloadBasicLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - NamedType 1341651604" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Click here to download MASTER DATA package</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType PackageDownloadMasterLbl</note>
         </trans-unit>
         <trans-unit id="Report 2476976794 - Method 1544076788 - NamedType 2060172885" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Postponed VAT was successfully posted.</source>

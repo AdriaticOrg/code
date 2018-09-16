@@ -1,4 +1,4 @@
-table 13062812 "Assisted Setup-adl"
+table 13062812 "Assisted Setup-Adl"
 {
     Caption = 'Assisted Setup ADL';
 

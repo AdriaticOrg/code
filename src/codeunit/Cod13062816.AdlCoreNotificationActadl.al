@@ -1,4 +1,4 @@
-codeunit 13062816 "Adl Notification Action-adl"
+codeunit 13062816 "Adl Core Notification Act.-Adl"
 {
     procedure CoreSetupNotify(var MyNotification: Notification);
     begin

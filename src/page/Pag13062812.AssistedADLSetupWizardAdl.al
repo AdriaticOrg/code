@@ -1,4 +1,4 @@
-page 13062815 "Assisted ADL Setup Wizard-adl"
+page 13062812 "Assisted ADL Setup Wizard-Adl"
 {
     Caption = 'Company Setup';
     DeleteAllowed = false;
@@ -21,7 +21,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                 Visible = TopBannerVisible AND NOT DoneVisible;
                 field(MediaResourcesStandard; MediaResourcesStandard."Media Reference")
                 {
-                    ApplicationArea = Basic, Suite;
+                    ApplicationArea = All;
                     Editable = false;
                     ShowCaption = false;
                 }
@@ -33,7 +33,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                 Visible = TopBannerVisible AND DoneVisible;
                 field(MediaResourcesDone; MediaResourcesDone."Media Reference")
                 {
-                    ApplicationArea = Basic, Suite;
+                    ApplicationArea = All;
                     Editable = false;
                     ShowCaption = false;
                 }
@@ -45,12 +45,56 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                 group("Welcome to Adriatic Localization Company Setup.")
                 {
                     Caption = 'Welcome to Adriatic Localization Company Company Setup.';
-                    InstructionalText = 'To prepare Dynamics 365 Business Central with Adriatic Localization for first use, you must specify which features of this module you will use. We will also guide you through specifiying some basic information about your company. This information is used to enable on your external documents, such as sales invoices, and includes your company logo and bank information';
+                    InstructionalText = 'To prepare Dynamics 365 Business Central with Adriatic Localization for first use, you need to choose features you will use. We will also guide you through specifiying some basic information about your company.';
                 }
-                group("Let's go!")
+                group("Para1.2")
                 {
-                    Caption = 'Let''s go!';
-                    InstructionalText = 'Choose Next so you can specify basic Adriatic Localization features.';
+                    Caption = 'Warning';
+                    group("Para1.2.1")
+                    {
+                        ShowCaption = false;
+                        InstructionalText = 'Help';
+
+                        field(HelpLblPrivacy; HelpLbl)
+                        {
+                            ApplicationArea = All;
+                            ShowCaption = false;
+
+                            trigger OnDrillDown()
+                            begin
+                                Hyperlink(HelpLinkTxt);
+                            end;
+                        }
+                        group("Para1.2.2")
+                        {
+                            ShowCaption = false;
+                            InstructionalText = 'Privacy Notice for more information.';
+
+                            field(PrivacyNotice; PrivacyNoticeTxt)
+                            {
+                                ApplicationArea = all;
+                                ShowCaption = false;
+
+                                trigger OnDrillDown()
+                                begin
+                                    Hyperlink(PrivacyNoticeUrlTxt);
+                                end;
+                            }
+                            field(AgreePrivacy; AgreePrivacy)
+                            {
+                                ApplicationArea = All;
+                                Caption = 'I accept warning & privacy notice.';
+                                ShowCaption = true;
+
+                                trigger OnValidate()
+                                begin
+                                    if AgreePrivacy then
+                                        NextEnabled := true
+                                    else NextEnabled := false;
+                                end;
+                            }
+                        }
+                    }
                 }
             }
             group(Step1)
@@ -61,10 +105,10 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                 {
                     Caption = 'Adriatic Localization Setup';
                     InstructionalText = 'The company will be ready to use when Setup has completed.';
-                    Visible = ExtendedVisible;
+                    Visible = true;
                     field(Extended; TypeExtended)
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
                         Caption = 'Set up as Adriatic Localization';
 
                         trigger OnValidate()
@@ -74,33 +118,8 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                             CalcCompanyData();
                         end;
                     }
-
-                    field(RapidFromHttp; RapidFromHttp)
-                    {
-                        ApplicationArea = Basic, Suite;
-                        Caption = 'Download RapidStart data from web';
-                    }
-
-
                 }
-                /*group("Evaluation Setup")
-                {
-                    Caption = 'Evaluation Setup';
-                    InstructionalText = 'The company will be set up in demonstration mode for exploring and testing.';
-                    Visible = EvaluationVisible;
-                    field(Evaluation; TypeEvaluation)
-                    {
-                        ApplicationArea = Basic, Suite;
-                        Caption = 'Set up as Evaluation';
 
-                        trigger OnValidate()
-                        begin
-                            if TypeEvaluation then
-                                TypeStandard := false;
-                            CalcCompanyData();
-                        end;
-                    }
-                }*/
                 group(Important)
                 {
                     Caption = 'Important';
@@ -196,14 +215,14 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     InstructionalText = 'This is used in invoices and other documents where general information about your company is printed.';
                     field(Name; Name)
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
                         Caption = 'Company Name';
                         NotBlank = true;
                         ShowMandatory = true;
                     }
                     field(Address; Address)
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
                     }
                     field("Address 2"; "Address 2")
                     {
@@ -212,15 +231,15 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     }
                     field("Post Code"; "Post Code")
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
                     }
                     field(City; City)
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
                     }
                     field("Country/Region Code"; "Country/Region Code")
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
                         TableRelation = "Country/Region".Code;
                     }
                     field("VAT Registration No."; "VAT Registration No.")
@@ -237,7 +256,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     }
                     field(Picture; Picture)
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
                         Caption = 'Company Logo';
 
                         trigger OnValidate()
@@ -268,7 +287,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     InstructionalText = 'This is used in invoices and other documents where general information about your company is printed.';
                     field("Phone No."; "Phone No.")
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
 
                         trigger OnValidate()
                         var
@@ -283,7 +302,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     }
                     field("E-Mail"; "E-Mail")
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
                         ExtendedDatatype = EMail;
 
                         trigger OnValidate()
@@ -298,7 +317,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     }
                     field("Home Page"; "Home Page")
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
 
                         trigger OnValidate()
                         var
@@ -319,7 +338,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                 Visible = SelectBankAccountVisible;
                 part(OnlineBanckAccountLinkPagePart; "Online Bank Accounts")
                 {
-                    ApplicationArea = Basic, Suite;
+                    ApplicationArea = All;
                 }
             }
             group(Bank)
@@ -332,15 +351,15 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     InstructionalText = 'This information is included on documents that you send to customer and vendors to inform about payments to your bank account.';
                     field("Bank Name"; "Bank Name")
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
                     }
                     field("Bank Branch No."; "Bank Branch No.")
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
                     }
                     field("Bank Account No."; "Bank Account No.")
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
 
                         trigger OnValidate()
                         begin
@@ -349,15 +368,95 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     }
                     field("SWIFT Code"; "SWIFT Code")
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
                     }
                     field(IBAN; IBAN)
                     {
-                        ApplicationArea = Basic, Suite;
+                        ApplicationArea = All;
                     }
                 }
             }
 
+            group("Select package.")
+            {
+                ShowCaption = false;
+                Visible = PackageImportDetailesVIsible and TypeSelectionEnabled;
+
+                group(Control2)
+                {
+                    Caption = 'Rapidstart data import';
+                    InstructionalText = 'Here you can choose package data to import';
+
+                    field(PackageDownloadBasicLbl; PackageDownloadBasicLbl)
+                    {
+                        ApplicationArea = All;
+                        ShowCaption = false;
+
+                        trigger OnDrillDown()
+                        begin
+                            StartConfigPackageImport(0); //Basic setup
+                        end;
+                    }
+                    field(PackageDownloadMasterLbl; PackageDownloadMasterLbl)
+                    {
+                        ApplicationArea = All;
+                        ShowCaption = false;
+
+                        trigger OnDrillDown()
+                        begin
+                            StartConfigPackageImport(1); //Master data
+                        end;
+                    }
+
+                    field(PackageFileNameRtc; PackageFileName)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Select the configuration package you want to load:';
+                        Editable = false;
+                        ToolTip = 'Specifies the name of the configuration package that you have created.';
+
+                        trigger OnDrillDown()
+                        begin
+                            if ConfigVisible then
+                                Error(PackageIsAlreadyAppliedErr);
+                            ApplyVisible := WizardMgmt.OpenRapidStartPackageStream(Rec);
+                            PackageFileName := "Package File Name";
+                        end;
+
+                        trigger OnValidate()
+                        begin
+                            if "Package File Name" = '' then
+                                ApplyVisible := false;
+
+                            CurrPage.Update();
+                        end;
+                    }
+                    field("Package Code"; "Package Code")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies the code of the configuration package.';
+                    }
+                    field("Package Name"; "Package Name")
+                    {
+                        ApplicationArea = All;
+                        Editable = false;
+                        ToolTip = 'Specifies the name of the package that contains the configuration information.';
+                    }
+                    field("Choose Apply Package action to load the data from the configuration to Business Central tables."; '')
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Choose Apply Package action to load the data from the configuration to Business Central tables.';
+                        ToolTip = 'Specifies the action that loads the configuration data.';
+                    }
+                    field("Choose Configuration Worksheet if you want to edit and modify applied data."; '')
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Choose Configuration Worksheet if you want to edit and modify applied data.';
+                        ToolTip = 'Specifies the action that loads the configuration data.';
+                    }
+                }
+
+            }
 
             group(Finish)
             {
@@ -367,16 +466,6 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                 {
                     Caption = 'That''s it!';
                     InstructionalText = 'Choose Finish to prepare the application for first use. This will take a few moments.';
-                    field(HelpLbl; HelpLbl)
-                    {
-                        ApplicationArea = Basic, Suite;
-                        Editable = false;
-
-                        trigger OnDrillDown()
-                        begin
-                            HYPERLINK(HelpLinkTxt);
-                        end;
-                    }
                 }
             }
         }
@@ -386,9 +475,38 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
     {
         area(processing)
         {
+            action("Apply Package")
+            {
+                ApplicationArea = All;
+                Caption = 'Apply Package';
+                Enabled = ApplyVisible;
+                Visible = ApplyVisible;
+                Image = Apply;
+                InFooterBar = true;
+                ToolTip = 'Import the configuration package and apply the package database data at the same time.';
+
+                trigger OnAction()
+                begin
+                    if WizardMgmt.CompleteWizard(Rec, TempBlob) then
+                        ConfigVisible := true
+                    else
+                        Error(SelectPackageAndApplyTxt);
+                end;
+            }
+            action("Configuration Worksheet")
+            {
+                ApplicationArea = All;
+                Caption = 'Configuration Worksheet';
+                Enabled = ConfigVisible;
+                Visible = ConfigVisible;
+                InFooterBar = true;
+                Image = SetupLines;
+                RunObject = Page "Config. Worksheet";
+                ToolTip = 'Plan and configure how to initialize a new solution based on legacy data and the customers requirements.';
+            }
             action(ActionBack)
             {
-                ApplicationArea = Basic, Suite;
+                ApplicationArea = All;
                 Caption = 'Back';
                 Enabled = BackEnabled;
                 Image = PreviousRecord;
@@ -401,7 +519,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
             }
             action(ActionNext)
             {
-                ApplicationArea = Basic, Suite;
+                ApplicationArea = All;
                 Caption = 'Next';
                 Enabled = NextEnabled;
                 Image = NextRecord;
@@ -417,7 +535,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
             }
             action(ActionFinish)
             {
-                ApplicationArea = Basic, Suite;
+                ApplicationArea = All;
                 Caption = 'Finish';
                 Enabled = FinishEnabled;
                 Image = Approve;
@@ -427,9 +545,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                 var
                     AssistedSetupAdl: Record "Assisted Setup-adl";
                     AssistedCompanySetup: Codeunit "Assisted Company Setup";
-                    ErrorText: Text;
                 begin
-                    //AssistedCompanySetup.WaitForPackageImportToComplete();
                     BankAccount.TransferFields(TempBankAccount, true);
                     CopyCoreSetupInfo();
                     AssistedCompanySetup.ApplyUserInput(Rec, BankAccount, 0D, TypeEvaluation);
@@ -456,7 +572,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
     begin
         ResetWizardControls();
         ShowIntroStep();
-        TypeSelectionEnabled := LoadConfigTypes() and not PackageImported();
+        TypeSelectionEnabled := PackageImported();
     end;
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean
@@ -470,6 +586,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
     end;
 
     var
+        TempBlob: Record TempBlob temporary;
         MediaRepositoryStandard: Record "Media Repository";
         TempSavedBankAccount: Record "Bank Account" temporary;
         TempBankAccount: Record "Bank Account" temporary;
@@ -479,13 +596,15 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         MediaResourcesStandard: Record "Media Resources";
         MediaResourcesDone: Record "Media Resources";
         InventorySetup: Record "Inventory Setup";
+        TempBlobUncompressed: Record TempBlob;
         ClientTypeManagement: Codeunit ClientTypeManagement;
-        RapidStartWizard: Codeunit "Wizard RapidStart-adl";
+        WizardMgmt: Codeunit "Wizard Management-adl";
+        XMLDOMManagement: Codeunit "XML DOM Management";
         CompanyData: Option "Evaluation Data","Standard Data","None","Extended Data","Full No Data";
         TypeStandard: Boolean;
         TypeExtended: Boolean;
         TypeEvaluation: Boolean;
-        Step: Option Intro,Sync,"Select Type","Core Setup","Company Details","Communication Details",SelectBankAccont,"Payment Details",Done;
+        Step: Option Intro,Sync,"Select Type","Core Setup","Company Details","Communication Details",SelectBankAccont,"Payment Details","Package Import",Done;
         BackEnabled: Boolean;
         NextEnabled: Boolean;
         FinishEnabled: Boolean;
@@ -496,30 +615,32 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         CommunicationDetailsVisible: Boolean;
         PaymentDetailsVisible: Boolean;
         CoreSetupDetailsVisible: Boolean;
+        PackageImportDetailesVIsible: Boolean;
         DoneVisible: Boolean;
         TypeSelectionEnabled: Boolean;
         ExtendedVisible: Boolean;
-        StandardVisible: Boolean;
-        EvaluationVisible: Boolean;
         NotSetUpQst: Label 'The application has not been set up. Setup could be run again from role center notification.\\Are you sure that you want to exit?';
-        HideBankStatementProvider: Boolean;
         NoSetupTypeSelectedQst: Label 'You have not selected any setup type. If you proceed, the application will not be fully functional, until you set it up manually.\\Do you want to continue?';
         HelpLbl: Label 'Learn more about setting up your company';
         HelpLinkTxt: Label 'http://go.microsoft.com/fwlink/?LinkId=746160', Locked = true;
         BankStatementConfirmationVisible: Boolean;
-        UseBankStatementFeed: Boolean;
-        RapidFromHttp: Boolean;
-
         BankAccountInformationUpdated: Boolean;
-        CoreSetupUpdated: Boolean;
         SelectBankAccountVisible: Boolean;
-        TermsOfUseLbl: Label 'Envestnet Yodlee Terms of Use';
-        TermsOfUseUrlTxt: Label '', Locked = true;
         LogoPositionOnDocumentsShown: Boolean;
         ShowBankAccountCreationWarning: Boolean;
         InvalidPhoneNumberErr: Label 'The phone number is invalid.';
         CostMethodeLbl: Label 'Learn more';
         CostMethodUrlTxt: Label 'https://go.microsoft.com/fwlink/?linkid=858295', Locked = true;
+        PrivacyNoticeTxt: Label 'Privacy Notice';
+        AgreePrivacy: Boolean;
+        PrivacyNoticeUrlTxt: Label 'https://privacy.microsoft.com/en-us/privacystatement#mainnoticetoendusersmodule', Locked = true;
+        ApplyVisible: Boolean;
+        ConfigVisible: Boolean;
+        PackageIsAlreadyAppliedErr: Label 'A package has already been selected and applied.';
+        SelectPackageAndApplyTxt: Label 'Select a package to run the Apply Package function.';
+        PackageFileName: Text;
+        PackageDownloadBasicLbl: Label 'Click here to download BASIC DATA package';
+        PackageDownloadMasterLbl: Label 'Click here to download MASTER DATA package';
 
     local procedure NextStep(Backwards: Boolean)
     begin
@@ -548,7 +669,6 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     ShowCoreSetupDetailsStep();
                     NextEnabled := "ADL Enabled";
                 end;
-
             Step::"Company Details":
                 if TypeEvaluation then begin
                     Step := Step::Done;
@@ -558,7 +678,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
             Step::"Communication Details":
                 ShowCommunicationDetailsStep;
             Step::SelectBankAccont:
-                if not ShowSelectBankAccountStep then
+                if not ShowSelectBankAccountStep() then
                     NextStep(Backwards)
                 else
                     ShowSelectBankAccount;
@@ -569,6 +689,11 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
                     ShowPaymentDetailsStep;
                     ShowBankAccountCreationWarning := not ValidateBankAccountNotEmpty;
                 end;
+            Step::"Package Import":
+                if not TypeSelectionEnabled then
+                    NextStep(Backwards)
+                else
+                    ShowPackageImportStep;
             Step::Done:
                 ShowDoneStep;
         end;
@@ -579,6 +704,9 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
     begin
         IntroVisible := true;
         BackEnabled := false;
+        if AgreePrivacy then
+            NextEnabled := true
+        else NextEnabled := false;
     end;
 
     local procedure ShowSyncStep(Backwards: Boolean)
@@ -614,10 +742,13 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
     local procedure ShowCoreSetupDetailsStep()
     begin
         CoreSetupDetailsVisible := true;
-        if TypeSelectionEnabled then begin
-            StartConfigPackageImport();
+        if TypeSelectionEnabled then
             BackEnabled := false;
-        end;
+    end;
+
+    local procedure ShowPackageImportStep()
+    begin
+        PackageImportDetailesVIsible := true;
     end;
 
     local procedure ShowDoneStep()
@@ -625,10 +756,8 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         DoneVisible := true;
         NextEnabled := false;
         FinishEnabled := true;
-        if TypeEvaluation then begin
-            StartConfigPackageImport();
+        if TypeEvaluation then
             BackEnabled := false;
-        end;
     end;
 
     local procedure ResetWizardControls()
@@ -638,6 +767,8 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         BackEnabled := true;
         NextEnabled := true;
         FinishEnabled := false;
+        ApplyVisible := false;
+        ConfigVisible := false;
 
         IntroVisible := false;
         SelectTypeVisible := false;
@@ -648,7 +779,7 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         PaymentDetailsVisible := false;
         DoneVisible := false;
         CoreSetupDetailsVisible := false;
-
+        PackageImportDetailesVIsible := false
     end;
 
     local procedure InitializeRecord()
@@ -695,32 +826,19 @@ page 13062815 "Assisted ADL Setup Wizard-adl"
         "VIES Enabled" := CoreSetup."VIES Enabled";
     end;
 
-    local procedure StartConfigPackageImport()
+    local procedure StartConfigPackageImport(PackageType: Option "Basic","Master")
     begin
         if not TypeSelectionEnabled then
             exit;
-        //if CompanyData in [CompanyData::"Extended Data"] then begin
-        RapidStartWizard.ReadFromHttp(Rec);
-        //
-        //end else exit;
-        //if AssistedCompanySetup.IsCompanySetupInProgress(CompanyName()) then
-        //    exit
-    end;
-
-    local procedure LoadConfigTypes(): Boolean
-    var
-        AssistedSetupAdl: Record "Assisted Setup-adl";
-    begin
-        ExtendedVisible := true;
-        exit(ExtendedVisible or StandardVisible or EvaluationVisible);
+        CalcCompanyData();
+        if CompanyData in [CompanyData::"Extended Data"] then
+            WizardMgmt.ReadFromHttp(Rec, PackageType);
     end;
 
     local procedure PackageImported(): Boolean
-    var
-        AssistedSetupAdl: Record "Assisted Setup-adl";
     begin
-        exit(false);
-        //exit(AssistedSetupAdl."Package Imported" or AssistedSetupAdl."Import Failed");
+        //TODO:: Additional checks
+        exit(true);
     end;
 
     local procedure LoadTopBanners()
