@@ -2,7 +2,7 @@ report 13062642 "Export FAS-Adl"
 {
     UsageCategory = Administration;
     Caption = 'Export FAS';
-    RDLCLayout = './src/reportlayout/Rep13062642.ExportFAS.rdlc';
+    RDLCLayout = './src/reportlayout/Rep13062642.ExportFASAdl.rdlc';
 
     dataset
     {

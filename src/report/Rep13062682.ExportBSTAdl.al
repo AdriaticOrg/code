@@ -1,7 +1,7 @@
 report 13062682 "Export BST-Adl"
 {
     UsageCategory = Administration;
-    RDLCLayout = './src/reportlayout/Rep13062682.ExportBST.rdlc';
+    RDLCLayout = './src/reportlayout/Rep13062682.ExportBSTAdl.rdlc';
     Caption = 'Export BST';
 
     dataset

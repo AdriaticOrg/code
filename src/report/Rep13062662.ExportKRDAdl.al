@@ -1,7 +1,7 @@
 report 13062662 "Export KRD-Adl"
 {
     UsageCategory = Administration;
-    RDLCLayout = './src/reportlayout/Rep13062662.ExportKRD.rdlc';
+    RDLCLayout = './src/reportlayout/Rep13062662.ExportKRDAdl.rdlc';
     Caption = 'Export KRD';
 
     dataset

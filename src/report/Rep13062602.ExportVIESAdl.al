@@ -1,7 +1,7 @@
 report 13062602 "Export VIES-Adl"
 {
     UsageCategory = Administration;
-    RDLCLayout = './src/reportlayout/Rep13062602.ExportVIES.rdlc';
+    RDLCLayout = './src/reportlayout/Rep13062602.ExportVIESAdl.rdlc';
     Caption = 'Export VIES';
 
     dataset

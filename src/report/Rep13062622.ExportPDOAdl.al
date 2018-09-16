@@ -1,7 +1,7 @@
 report 13062622 "Export PDO-Adl"
 {
     UsageCategory = Administration;
-    RDLCLayout = './src/reportlayout/Rep13062622.ExportPDO.rdlc';
+    RDLCLayout = './src/reportlayout/Rep13062622.ExportPDOAdl.rdlc';
     Caption = 'Export PDO';
 
     dataset
