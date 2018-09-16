@@ -1,4 +1,4 @@
-Report 13062751 "Sales - Invoice Adl-Adl"
+Report 13062751 "Sales - Invoice-Adl"
 {
     // version NAVW113.00
 
