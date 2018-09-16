@@ -412,8 +412,8 @@ report 13062602 "Export VIES-Adl"
         MakerName: Text[200];
         MakerSurname: Text[200];
         PrecisionTok: Label '<Precision,2:2><Standard Format,9>';
-        HeadTxt: Label 'Zbirna prijavu za isporuke dobara i usluga u druge države članice Europske unije';
-        HeadAttrPrefix: Label 'http://purl.org/dc/elements/1.1/';
+        HeadTxt: Label 'Zbirna prijava za isporuke dobara i usluga u druge države članice Europske unije';
+        HeadAttrPrefixTok: Label 'http://purl.org/dc/elements/1.1/';
         FormLbl: Label 'Elektronički obrazac';
         AddressantLbl: Label 'Ministarstvo Financija, Porezna uprava, Zagreb';
     begin
@@ -479,50 +479,50 @@ report 13062602 "Export VIES-Adl"
         XmlElem[3] := XmlElement.Create('Naslov', xmlns);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(HeadTxt));
-        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefix + 'title');
+        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'title');
         XmlElem[3].Add(XmlAttr);
 
         XmlElem[3] := XmlElement.Create('Autor', xmlns);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(MakerUser."Reporting_SI Name-Adl"));
-        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefix + 'creator');
+        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'creator');
         XmlElem[3].Add(XmlAttr);
 
         XmlElem[3] := XmlElement.Create('Datum', xmlns);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(FORMAT(WORKDATE(), 0, '<Year4>-<Month,2>-<Day,2>') + 'T' +
          FORMAT(TIME(), 0, '<Hours24,2><Filler Character,0>:<Minutes,2>:<Seconds,2>')));
-        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefix + 'date');
+        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'date');
         XmlElem[3].Add(XmlAttr);
 
         XmlElem[3] := XmlElement.Create('Format', xmlns);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create('text/xml'));
-        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefix + 'format');
+        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'format');
         XmlElem[3].Add(XmlAttr);
 
         XmlElem[3] := XmlElement.Create('Jezik', xmlns);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create('hr-HR'));
-        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefix + 'language');
+        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'language');
         XmlElem[3].Add(XmlAttr);
 
         XmlElem[3] := XmlElement.Create('Identifikator', xmlns);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(LOWERCASE((DELCHR(CREATEGUID(), '<>', '{}')))));
-        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefix + 'identifier');
+        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'identifier');
         XmlElem[3].Add(XmlAttr);
 
         XmlElem[3] := XmlElement.Create('Uskladjenost', xmlns);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(ConformsTo));
-        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefix + 'conformsTo');
+        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'conformsTo');
         XmlElem[3].Add(XmlAttr);
 
         XmlElem[3] := XmlElement.Create('Tip', xmlns);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(FormLbl));
-        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefix + 'type');
+        XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'type');
         XmlElem[3].Add(XmlAttr);
 
         XmlElem[3] := XmlElement.Create('Adresant', xmlns);

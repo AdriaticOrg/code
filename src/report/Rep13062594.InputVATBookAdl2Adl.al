@@ -99,19 +99,19 @@ report 13062594 "Input VAT Book-Adl 2-Adl"
 
                 with PurchCrMemoHdr do
                     IF ("VAT Entry"."Document Type" = "Document Type"::"Credit Memo") then
-                            if get("Document No.") then begin
-                                if ("Pay-to Name" <> '') then
-                                    VendorData += "Pay-to Name";
-                                if ("Pay-to Address" <> '') then
-                                    VendorData += "Pay-to Address";
-                                if ("Pay-to City" <> '') then
-                                    VendorData += "Pay-to City";
-                                if ("Pay-to Country/Region Code" <> '') then
-                                    VendorData += "Pay-to Country/Region Code";
-                            end;
+                        if get("Document No.") then begin
+                            if ("Pay-to Name" <> '') then
+                                VendorData += "Pay-to Name";
+                            if ("Pay-to Address" <> '') then
+                                VendorData += "Pay-to Address";
+                            if ("Pay-to City" <> '') then
+                                VendorData += "Pay-to City";
+                            if ("Pay-to Country/Region Code" <> '') then
+                                VendorData += "Pay-to Country/Region Code";
+                        end;
 
                 with Vendor do
-                If Vendor.get("Bill-to/Pay-to No.") then begin
+                    If Vendor.get("Bill-to/Pay-to No.") then begin
                         if (Name <> '') then
                             VendorData += Name;
                         if (Address <> '') then
@@ -354,9 +354,6 @@ report 13062594 "Input VAT Book-Adl 2-Adl"
         BalanceYear: Integer;
         ClosingYear: Integer;
         DateFilter: Text;
-        BalanceDesc: Label 'Opening item for the year %1';
-        BalanceDocumentNo: Label 'Opening %1';
-        ClosingDesc: Label 'Closing GL account for the year %1';
         AccountNoLbl: Label 'Account';
         NameLbl: Label 'Account Name';
         PostingDateLbl: Label 'Post.Date';

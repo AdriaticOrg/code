@@ -132,20 +132,22 @@ codeunit 13062525 "VAT Management-Adl"
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         ManagePostponedVAT.SetPostponedVAT(GenJnlLine, PurchHeader."VAT Date-Adl", PurchHeader."Posting Date", false, GenJnlPostLine, PurchHeader."VAT Output Date-Adl", InvoicePostBuffer);
     end;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnBeforePostCommitPurchaseDoc', '', false, false)]
-    local procedure OnBeforePostCommitPurchaseDoc(VAR PurchaseHeader : Record "Purchase Header";VAR GenJnlPostLine : Codeunit "Gen. Jnl.-Post Line";PreviewMode : Boolean;ModifyHeader : Boolean;CommitIsSupressed : Boolean)
+    local procedure OnBeforePostCommitPurchaseDoc(VAR PurchaseHeader: Record "Purchase Header"; VAR GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; PreviewMode: Boolean; ModifyHeader: Boolean; CommitIsSupressed: Boolean)
     begin
         if PurchaseHeader."VAT Date-Adl" <> 0D then
             PurchaseHeader."Postponed VAT-Adl" := PurchaseHeader."Postponed VAT-Adl"::"Realized VAT";
     end;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforePostCommitSalesDoc', '', false, false)]
-    local procedure OnBeforePostCommitSalesDoc(VAR SalesHeader : Record "Sales Header";VAR GenJnlPostLine : Codeunit "Gen. Jnl.-Post Line";PreviewMode : Boolean;ModifyHeader : Boolean)
+    local procedure OnBeforePostCommitSalesDoc(VAR SalesHeader: Record "Sales Header"; VAR GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; PreviewMode: Boolean; ModifyHeader: Boolean)
     begin
         if SalesHeader."VAT Date-Adl" <> 0D then
             SalesHeader."Postponed VAT-Adl" := SalesHeader."Postponed VAT-Adl"::"Realized VAT";
     end;
     //</adl.10>
-    procedure HandlePostponedVAT(TableNo: Integer; No: Code[20]; PostDate: Date; Post: Boolean; SalesPurchase: Option Customer,Vendor; PostponedVAT: Option "Realized VAT","Postponed VAT";Preview: Boolean;VatOutput: Boolean)
+    procedure HandlePostponedVAT(TableNo: Integer; No: Code[20]; PostDate: Date; Post: Boolean; SalesPurchase: Option Customer,Vendor; PostponedVAT: Option "Realized VAT","Postponed VAT"; Preview: Boolean; VatOutput: Boolean)
     var
         CustLedgerEntry: Record "Cust. Ledger Entry";
         VendLedgerEntry: Record "Vendor Ledger Entry";
@@ -158,10 +160,10 @@ codeunit 13062525 "VAT Management-Adl"
         GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line";
         GenJnlPostPreview: Codeunit "Gen. Jnl.-Post Preview";
         LedgEntryFound: Boolean;
-        SuccessMsgPostMsg: Label 'The Postponed VAT was successfully posted.';
-        SuccessMsgCorrectMsg: Label 'The Postponed VAT was successfully corrected.';
-        SuccessMsgPostVATOutput: Label 'The VAT Output Date was successfully posted.';
-        SuccessMsgCorrectVATOutput: Label 'The VAT Output Date was successfully corrected.';
+        SuccessfulPostingMsg: Label 'The Postponed VAT was successfully posted.';
+        SuccessfulCorrectionMsg: Label 'The Postponed VAT was successfully corrected.';
+        SuccessfulPostingVATOutputMsg: Label 'The VAT Output Date was successfully posted.';
+        SuccessfulCorrectionVATOutputMsg: Label 'The VAT Output Date was successfully corrected.';
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         if PostDate = 0D then exit;
@@ -220,7 +222,7 @@ codeunit 13062525 "VAT Management-Adl"
                                 PurchCrMemo."Postponed VAT-Adl" := PurchCrMemo."Postponed VAT-Adl"::"Realized VAT"
                             else
                                 PurchCrMemo."Postponed VAT-Adl" := PurchCrMemo."Postponed VAT-Adl"::"Postponed VAT";
-                        end else 
+                        end else
                             if Post then
                                 PurchCrMemo."VAT Output Date-Adl" := PostDate
                             else
@@ -233,59 +235,59 @@ codeunit 13062525 "VAT Management-Adl"
             CASE SalesPurchase OF
                 SalesPurchase::Customer:
                     begin
-                        VATEntry.SetRange("Transaction No.",CustLedgerEntry."Transaction No.");
+                        VATEntry.SetRange("Transaction No.", CustLedgerEntry."Transaction No.");
                         if VATEntry.FindSet() then
                             repeat
                                 if not VatOutput then begin
-                                    FillGeneralJournalLine(GenJnlLineLoc,0,CustLedgerEntry,VendLedgerEntry,VATEntry,Post,PostDate);
+                                    FillGeneralJournalLine(GenJnlLineLoc, 0, CustLedgerEntry, VendLedgerEntry, VATEntry, Post, PostDate);
                                     if Preview then
-                                        GenJnlPostPreview.Preview(GenJnlPostLine,GenJnlLineLoc)
+                                        GenJnlPostPreview.Preview(GenJnlPostLine, GenJnlLineLoc)
                                     else
                                         GenJnlPostLine.RunWithCheck(GenJnlLineLoc);
                                 end;
-                                ReverseVATSetup(VATEntry,Post);
+                                ReverseVATSetup(VATEntry, Post);
                             until VATEntry.Next() = 0;
                     end;
                 SalesPurchase::Vendor:
                     begin
-                        VATEntry.SetRange("Transaction No.",VendLedgerEntry."Transaction No.");
+                        VATEntry.SetRange("Transaction No.", VendLedgerEntry."Transaction No.");
                         if VatOutput then
-                            VATEntry.SetRange(Type,VATEntry.Type::Sale);
+                            VATEntry.SetRange(Type, VATEntry.Type::Sale);
                         if VATEntry.FindSet() then
                             repeat
                                 if not VatOutput then begin
-                                    FillGeneralJournalLine(GenJnlLineLoc,1,CustLedgerEntry,VendLedgerEntry,VATEntry,Post,PostDate);
-                                    if Preview then 
-                                        GenJnlPostPreview.Preview(GenJnlPostLine,GenJnlLineLoc)
+                                    FillGeneralJournalLine(GenJnlLineLoc, 1, CustLedgerEntry, VendLedgerEntry, VATEntry, Post, PostDate);
+                                    if Preview then
+                                        GenJnlPostPreview.Preview(GenJnlPostLine, GenJnlLineLoc)
                                     else
                                         GenJnlPostLine.RunWithCheck(GenJnlLineLoc);
                                 end
                                 else
-                                    FillGeneralJournalLineVATOutput(GenJnlLineLoc,VendLedgerEntry,VATEntry,Post,PostDate);
-                                ReverseVATSetup(VATEntry,Post);
+                                    FillGeneralJournalLineVATOutput(GenJnlLineLoc, VendLedgerEntry, VATEntry, Post, PostDate);
+                                ReverseVATSetup(VATEntry, Post);
                             until VATEntry.Next() = 0;
                     end;
             end;
             case Post of
                 true:
                     if VatOutput then
-                        Message(SuccessMsgPostVATOutput)
+                        Message(SuccessfulPostingVATOutputMsg)
                     else
-                        Message(SuccessMsgPostMsg);
+                        Message(SuccessfulPostingMsg);
                 false:
                     if VatOutput then
-                        Message(SuccessMsgCorrectVATOutput)
+                        Message(SuccessfulCorrectionVATOutputMsg)
                     else
-                        Message(SuccessMsgCorrectMsg);
+                        Message(SuccessfulCorrectionMsg);
             end;
         end;
     end;
 
-    procedure FillGeneralJournalLine(VAR GenJnlLine: Record "Gen. Journal Line"; CustVend: Option Customer,Vendor; CustLedgEntry: Record "Cust. Ledger Entry"; VendLedgEntry: Record "Vendor Ledger Entry"; VATEntry: Record "VAT Entry";Post: Boolean; PostDate: Date)
+    procedure FillGeneralJournalLine(VAR GenJnlLine: Record "Gen. Journal Line"; CustVend: Option Customer,Vendor; CustLedgEntry: Record "Cust. Ledger Entry"; VendLedgEntry: Record "Vendor Ledger Entry"; VATEntry: Record "VAT Entry"; Post: Boolean; PostDate: Date)
     var
         VATPostingSetup: Record "VAT Posting Setup";
     begin
-        VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group",VATEntry."VAT Prod. Posting Group");
+        VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group", VATEntry."VAT Prod. Posting Group");
         with GenJnlLine do begin
             Init();
             "Document No." := VATEntry."Document No.";
@@ -304,7 +306,7 @@ codeunit 13062525 "VAT Management-Adl"
             "Source Code" := VATEntry."Source Code";
             "VAT Posting" := "VAT Posting"::"Manual VAT Entry";
             "VAT Calculation Type" := VATEntry."VAT Calculation Type";
-            "Allow Application" := true; 
+            "Allow Application" := true;
             "VAT Amount" := VATEntry."Unrealized Amount";
             "VAT Amount (LCY)" := VATEntry."Unrealized Amount";
             Amount := -VATEntry."Unrealized Amount";
@@ -356,12 +358,12 @@ codeunit 13062525 "VAT Management-Adl"
         end;
     end;
 
-     procedure FillGeneralJournalLineVATOutput(VAR GenJnlLine: Record "Gen. Journal Line";VendLedgEntry: Record "Vendor Ledger Entry"; VATEntry: Record "VAT Entry";Post: Boolean; PostDate: Date)
+    procedure FillGeneralJournalLineVATOutput(VAR GenJnlLine: Record "Gen. Journal Line"; VendLedgEntry: Record "Vendor Ledger Entry"; VATEntry: Record "VAT Entry"; Post: Boolean; PostDate: Date)
     var
         VATPostingSetup: Record "VAT Posting Setup";
         GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line";
     begin
-        VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group",VATEntry."VAT Prod. Posting Group");
+        VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group", VATEntry."VAT Prod. Posting Group");
         PurchaseSetup.Get();
         if (not PurchaseSetup."Use VAT Output Date-Adl") and (VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT") then exit;
         with GenJnlLine do begin
@@ -381,7 +383,7 @@ codeunit 13062525 "VAT Management-Adl"
             "Gen. Posting Type" := VATEntry.Type;
             "Source Code" := VATEntry."Source Code";
             "VAT Posting" := "VAT Posting"::"Manual VAT Entry";
-            "Allow Application" := true; 
+            "Allow Application" := true;
             "VAT Amount" := VATEntry."Unrealized Amount";
             "VAT Amount (LCY)" := VATEntry."Unrealized Amount";
             Amount := -VATEntry."Unrealized Amount";
@@ -402,7 +404,7 @@ codeunit 13062525 "VAT Management-Adl"
                     begin
                         VATPostingSetup."Unrealized VAT Type" := 0;
                         "Postponed VAT-Adl" := "Postponed VAT-Adl"::"Realized VAT";
-                        "Account No." := VATPostingSetup.GetSalesAccount(TRUE); 
+                        "Account No." := VATPostingSetup.GetSalesAccount(TRUE);
                     end;
                 false:
                     begin
@@ -424,7 +426,7 @@ codeunit 13062525 "VAT Management-Adl"
     var
         VATPostingSetup: Record "VAT Posting Setup";
     begin
-        VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group",VATEntry."VAT Prod. Posting Group");
+        VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group", VATEntry."VAT Prod. Posting Group");
         if IsReverseVat then begin
             VATPostingSetup."VAT Calculation Type" := VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT";
             VATPostingSetup.Modify();
@@ -434,7 +436,7 @@ codeunit 13062525 "VAT Management-Adl"
             VATPostingSetup."Unrealized VAT Type" := 0;
             VATPostingSetup.Modify();
             IsPercent := false;
-        end;   
+        end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Entry - Edit", 'OnBeforeVATEntryModify', '', true, true)]

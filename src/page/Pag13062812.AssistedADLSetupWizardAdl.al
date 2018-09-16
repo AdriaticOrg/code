@@ -786,14 +786,19 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
     var
         CompanyInformation: Record "Company Information";
         CoreSetup: Record "CoreSetup-Adl";
+        TrimmedCompanyName: Text[50];
     begin
         Init();
+
+        //TODO: find a way to avoid hardcoding string lengths
+        TrimmedCompanyName := CopyStr(CompanyName(), 1, MaxStrLen(TrimmedCompanyName));
+
         if CompanyInformation.Get() then begin
             TRANSFERFIELDS(CompanyInformation);
             if Name = '' then
-                Name := CompanyName();
+                Name := TrimmedCompanyName;
         end else
-            Name := CompanyName();
+            Name := TrimmedCompanyName;
 
         If CoreSetup.Get() then
             TransferfieldsFromCoreSetup(CoreSetup);

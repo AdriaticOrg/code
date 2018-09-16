@@ -125,13 +125,19 @@ table 13062812 "Assisted Setup-Adl"
         LastId: Integer;
         GroupId: Integer;
         SortingOrder: Integer;
+        ADLIntroTxtCopy: Text[250];
+        DocumentUrlADLTxtCopy: Text[250];
     begin
         SortingOrder := 1;
         LastId := 200000;
 
-        AddSetupAssistant(Page::"Assisted ADL Setup Wizard-adl", ADLIntroTxt, SortingOrder, true,
+        //TODO: find a way to avoid hardcoding string lengths
+        ADLIntroTxtCopy := CopyStr(ADLIntroTxt, 1, MaxStrLen(ADLIntroTxtCopy));
+        DocumentUrlADLTxtCopy := CopyStr(DocumentUrlADLTxt, 1, MaxStrLen(DocumentUrlADLTxtCopy));
+
+        AddSetupAssistant(Page::"Assisted ADL Setup Wizard-adl", ADLIntroTxtCopy, SortingOrder, true,
             GroupId, false, "Item Type"::"Setup and Help");
-        AddSetupAssistantResources(Page::"Assisted ADL Setup Wizard-adl", '', DocumentUrlADLTxt, 0, Page::"Assisted ADL Setup Wizard-adl", '');
+        AddSetupAssistantResources(Page::"Assisted ADL Setup Wizard-adl", '', DocumentUrlADLTxtCopy, 0, Page::"Assisted ADL Setup Wizard-adl", '');
         LastId += 1;
         SortingOrder += 1;
 
