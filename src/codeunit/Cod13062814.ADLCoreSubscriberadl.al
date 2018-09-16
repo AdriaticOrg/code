@@ -20,7 +20,7 @@ codeunit 13062814 "Adl Core Subscriber-Adl"
         TempAggregatedAssistedSetup.Insert();
     end;
 
-    [EventSubscriber(ObjectType::Page, Page::"ADL Setup Wizard-Adl", 'OnOpenPageEvent', '', false, false)]
+    [EventSubscriber(ObjectType::Page, Page::"Assisted ADL Setup Wizard-Adl", 'OnOpenPageEvent', '', false, false)]
     local procedure HandleOnPageEventADLWizard()
     var
         ADLAssistedSetup: Record "ADL Assisted Setup-Adl";

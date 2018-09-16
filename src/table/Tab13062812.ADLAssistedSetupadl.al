@@ -9,7 +9,7 @@ table 13062812 "ADL Assisted Setup-Adl"
             Caption = 'Page ID';
             DataClassification = SystemMetadata;
         }
-        field(2; Name; Text[250])
+        field(2; "Name"; Text[250])
         {
             Caption = 'Name';
             DataClassification = SystemMetadata;
@@ -19,19 +19,19 @@ table 13062812 "ADL Assisted Setup-Adl"
             Caption = 'Order';
             DataClassification = SystemMetadata;
         }
-        field(4; Status; Option)
+        field(4; "Status"; Option)
         {
             Caption = 'Status';
             OptionCaption = 'Not Completed,Completed,Not Started,Seen,Watched,Read, ';
             OptionMembers = "Not Completed",Completed,"Not Started",Seen,Watched,Read," ";
             DataClassification = SystemMetadata;
         }
-        field(5; Visible; Boolean)
+        field(5; "Visible"; Boolean)
         {
             Caption = 'Visible';
             DataClassification = SystemMetadata;
         }
-        field(6; Parent; Integer)
+        field(6; "Parent"; Integer)
         {
             Caption = 'Parent';
             DataClassification = SystemMetadata;
@@ -41,7 +41,7 @@ table 13062812 "ADL Assisted Setup-Adl"
             Caption = 'Video Url';
             DataClassification = SystemMetadata;
         }
-        field(8; Icon; Media)
+        field(8; "Icon"; Media)
         {
             Caption = 'Icon';
             DataClassification = SystemMetadata;
@@ -54,7 +54,7 @@ table 13062812 "ADL Assisted Setup-Adl"
             OptionMembers = " ",Group,"Setup and Help";
             DataClassification = SystemMetadata;
         }
-        field(10; Featured; Boolean)
+        field(10; "Featured"; Boolean)
         {
             Caption = 'Featured';
             DataClassification = SystemMetadata;
@@ -118,13 +118,13 @@ table 13062812 "ADL Assisted Setup-Adl"
         SortingOrder := 1;
         LastId := 200000;
 
-        AddSetupAssistant(Page::"Assisted ADL Setup Wizard-adl", ADLIntroTxt, SortingOrder, true,
+        AddSetupAssistant(Page::"ADL Setup Wizard-Adl", CopyStr(ADLIntroTxt, 1, 250), SortingOrder, true,
             GroupId, false, "Item Type"::"Setup and Help");
-        AddSetupAssistantResources(Page::"Assisted ADL Setup Wizard-Adl", '', DocumentUrlADLTxt, 0, Page::"Assisted ADL Setup Wizard-adl", '');
+        AddSetupAssistantResources(Page::"ADL Setup Wizard-Adl", '', CopyStr(DocumentUrlADLTxt, 1, 250), 0, Page::"ADL Setup Wizard-Adl", '');
         LastId += 1;
         SortingOrder += 1;
 
-        UpdateSetUpPageVisibility(Page::"Assisted ADL Setup Wizard-Adl");
+        UpdateSetUpPageVisibility(Page::"ADL Setup Wizard-Adl");
     end;
 
     local procedure AddSetupAssistant(EnteryNo: Integer; AssistantName: Text[250]; SortingOrder: Integer; AssistantVisible: Boolean; ParentId: Integer; IsFeatured: Boolean; EnteryType: Option)
@@ -149,7 +149,7 @@ table 13062812 "ADL Assisted Setup-Adl"
 
     local procedure UpdateSetUpPageVisibility(PageId: Integer)
     var
-        ADLAssistedSetup: Record "Assisted Setup-Adl";
+        ADLAssistedSetup: Record "ADL Assisted Setup-Adl";
         ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
     begin
         if ADLAssistedSetup.GET(PageId) then begin
@@ -174,7 +174,7 @@ table 13062812 "ADL Assisted Setup-Adl"
 
     procedure SetStatus(EnteryId: Integer; ItemStatus: Option)
     var
-        ADLAssistedSetup: Record "Assisted Setup-Adl";
+        ADLAssistedSetup: Record "ADL Assisted Setup-Adl";
     begin
         ADLAssistedSetup.GET(EnteryId);
         ADLAssistedSetup.Status := ItemStatus;
@@ -207,7 +207,7 @@ table 13062812 "ADL Assisted Setup-Adl"
 
     procedure GetStatus(WizardPageID: Integer): Integer
     var
-        ADLAssistedSetup: Record "Assisted Setup-Adl";
+        ADLAssistedSetup: Record "ADL Assisted Setup-Adl";
     begin
 
         ADLAssistedSetup.SETRANGE("Assisted Setup Page ID", WizardPageID);
