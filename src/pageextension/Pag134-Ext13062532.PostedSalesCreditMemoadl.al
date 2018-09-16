@@ -55,7 +55,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
         addafter(Customer)
         {
             // <adl.10>
-            action(PostPostponed)
+            action("PostPostponed-Adl")
             {
                 Caption = 'Post postponed VAT';
                 ApplicationArea = All;
@@ -74,7 +74,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
                     ManagePostponedVAT.HandlePostponedVAT(Database::"Sales Cr.Memo Header", "No.", VATDate, true, CustVend::Customer, "Postponed VAT-Adl",false,false);
                 end;
             }
-            action(CorrectPostponed)
+            action("CorrectPostponed-Adl")
             {
                 Caption = 'Correct postponed VAT';
                 ApplicationArea = All;
@@ -99,7 +99,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
         VIESFeatureEnabled: Boolean;

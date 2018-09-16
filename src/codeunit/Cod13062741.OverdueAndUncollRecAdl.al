@@ -8,7 +8,7 @@ codeunit 13062741 "Overdue And Uncoll.Rec-Adl"
 
     var
         CoreSetup: Record "CoreSetup-Adl";
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterPostCust', '', false, false)]
     local procedure OverdueandUncollRec(var GenJournalLine: Record "Gen. Journal Line"; Balancing: Boolean)

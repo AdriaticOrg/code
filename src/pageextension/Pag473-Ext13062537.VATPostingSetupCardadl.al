@@ -41,7 +41,7 @@ pageextension 13062537 "VAT Posting Setup Card-Adl" extends "VAT Posting Setup C
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;

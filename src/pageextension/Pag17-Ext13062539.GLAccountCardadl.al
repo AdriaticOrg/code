@@ -55,7 +55,7 @@ pageextension 13062539 "G/L Account Card-Adl" extends "G/L Account Card" //17
         addafter("A&ccount")
         {
             // <adl.21>
-            action("GLExport")
+            action("GLExport-Adl")
             {
                 Caption = 'GL Export';
                 Promoted = true;
@@ -82,7 +82,7 @@ pageextension 13062539 "G/L Account Card-Adl" extends "G/L Account Card" //17
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;

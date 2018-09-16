@@ -7,19 +7,19 @@ tableextension 13062537 "Cust. Ledger Entry-Adl" extends "Cust. Ledger Entry" //
         {
             Caption = 'KRD Affiliation Type';
             DataClassification = SystemMetadata;
-            TableRelation = "KRD Code".Code where ("Type" = const ("Affiliation Type"));
+            TableRelation = "KRD Code-Adl".Code where ("Type" = const ("Affiliation Type"));
         }
         field(13062662; "KRD Instrument Type-Adl"; Code[10])
         {
             Caption = 'KRD Instrument Type';
             DataClassification = SystemMetadata;
-            TableRelation = "KRD Code".Code where ("Type" = const ("Instrument Type"));
+            TableRelation = "KRD Code-Adl".Code where ("Type" = const ("Instrument Type"));
         }
         field(13062663; "KRD Maturity-Adl"; Code[10])
         {
             Caption = 'KRD Maturity';
             DataClassification = SystemMetadata;
-            TableRelation = "KRD Code".Code where ("Type" = const (Maturity));
+            TableRelation = "KRD Code-Adl".Code where ("Type" = const (Maturity));
         }
         field(13062664; "KRD Claim/Liability-Adl"; Option)
         {
@@ -31,7 +31,7 @@ tableextension 13062537 "Cust. Ledger Entry-Adl" extends "Cust. Ledger Entry" //
         {
             Caption = 'KRD Non-Resident Sector Code';
             DataClassification = SystemMetadata;
-            TableRelation = "FAS Sector" where ("Type" = const (Posting));
+            TableRelation = "FAS Sector-Adl" where ("Type" = const (Posting));
         }
         field(13062666; "KRD Country/Region Code-Adl"; Code[10])
         {
@@ -50,7 +50,7 @@ tableextension 13062537 "Cust. Ledger Entry-Adl" extends "Cust. Ledger Entry" //
         {
             Caption = 'FAS Sector Code';
             DataClassification = SystemMetadata;
-            TableRelation = "FAS Sector" where ("Type" = const (Posting));
+            TableRelation = "FAS Sector-Adl" where ("Type" = const (Posting));
         }
         // </adl.24>
     }
@@ -63,7 +63,7 @@ tableextension 13062537 "Cust. Ledger Entry-Adl" extends "Cust. Ledger Entry" //
     // <adl.25>
     procedure CopyKRDFields(Customer: Record Customer)
     var
-        ReportSISetup: Record "Reporting_SI Setup";
+        ReportSISetup: Record "Reporting_SI Setup-Adl";
     begin
         "KRD Country/Region Code-Adl" := Customer."Country/Region Code";
         "KRD Non-Residnet Sector Code-Adl" := Customer."KRD Non-Residnet Sector Code-Adl";

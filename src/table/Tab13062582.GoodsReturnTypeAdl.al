@@ -14,7 +14,7 @@ table 13062582 "Goods Return Type-Adl"
             NotBlank = true;
             DataClassification = SystemMetadata;
         }
-        field(2; Description; Text[250])
+        field(2; "Description"; Text[250])
         {
             Caption = 'Description';
             DataClassification = SystemMetadata;

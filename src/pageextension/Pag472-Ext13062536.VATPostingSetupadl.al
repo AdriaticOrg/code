@@ -53,7 +53,7 @@ pageextension 13062536 "VAT Posting Setup-Adl" extends "VAT Posting Setup"  //47
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;

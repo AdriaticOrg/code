@@ -47,7 +47,7 @@ pageextension 13062548 "User Setup-Adl" extends "User Setup" //119
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         RepHRFeatureEnabled: Boolean;
         RepSIFeatureEnabled: Boolean;

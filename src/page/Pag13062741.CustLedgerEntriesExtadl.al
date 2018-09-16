@@ -171,7 +171,7 @@ page 13062741 "Cust. Ledger Entries Ext.-Adl"
     var
         CoreSetup: Record "CoreSetup-Adl";
         CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-Adl";
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         OriginalDocumentAmount: Decimal;
         OriginalVATAmount: Decimal;
         OpenAmountLCYWithoutUnreal: Decimal;

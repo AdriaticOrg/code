@@ -30,25 +30,25 @@ tableextension 13062542 "Gen. Journal Line-Adl" extends "Gen. Journal Line" // 8
         {
             Caption = 'FAS Instrument Code';
             DataClassification = SystemMetadata;
-            TableRelation = "FAS Instrument";
+            TableRelation = "FAS Instrument-Adl";
         }
         field(13062642; "FAS Sector Code-Adl"; Code[10])
         {
             Caption = 'FAS Sector Code';
             DataClassification = SystemMetadata;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector-Adl";
         }
         field(13062643; "Bal. FAS Instrument Code-Adl"; Code[10])
         {
             Caption = 'Bal. FAS Instrument Code';
             DataClassification = SystemMetadata;
-            TableRelation = "FAS Instrument";
+            TableRelation = "FAS Instrument-Adl";
         }
         field(13062644; "Bal. FAS Sector Code-Adl"; Code[10])
         {
             Caption = 'Bal. FAS Sector Code';
             DataClassification = SystemMetadata;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector-Adl";
         }
         field(13062645; "FAS Type-Adl"; Option)
         {

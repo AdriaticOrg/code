@@ -24,7 +24,7 @@ table 13062594 "VAT Book Group-Adl"
                 "Book Link Code" := "VAT Book Code" + '_' + Code;
             end;
         }
-        field(3; Description; Text[250])
+        field(3; "Description"; Text[250])
         {
             Caption = 'Description';
             DataClassification = CustomerContent;
@@ -48,7 +48,7 @@ table 13062594 "VAT Book Group-Adl"
                 end;
             end;
         }
-        field(5; Totaling; Text[250])
+        field(5; "Totaling"; Text[250])
         {
             Caption = 'Totaling';
             DataClassification = CustomerContent;

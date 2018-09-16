@@ -100,5 +100,5 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     //</adl.10>
     var
         CoreSetup: Record "CoreSetup-Adl";
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
 }

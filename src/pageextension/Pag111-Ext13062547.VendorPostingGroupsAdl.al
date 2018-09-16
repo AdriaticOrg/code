@@ -26,7 +26,7 @@ pageextension 13062547 "Vendor Posting Groups-Adl" extends "Vendor Posting Group
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;

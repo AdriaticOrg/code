@@ -447,7 +447,7 @@ codeunit 13062525 "VAT Management-Adl"
     var
         CoreSetup: Record "CoreSetup-Adl";
         PurchaseSetup: Record "Purchases & Payables Setup";
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         ManagePostponedVAT: Codeunit "Manage Postponed VAT-Adl";
         UpdVatDateQst: Label 'Do you want to change VAT Date';
         IsReverseVat: Boolean;

@@ -7,13 +7,13 @@ tableextension 13062543 "Customer Posting Group-Adl" extends "Customer Posting G
         {
             Caption = 'KRD Instrument Type';
             DataClassification = SystemMetadata;
-            TableRelation = "KRD Code".Code where ("Type" = const ("Instrument Type"));
+            TableRelation = "KRD Code-Adl".Code where ("Type" = const ("Instrument Type"));
         }
         field(13062663; "KRD Maturity-Adl"; Code[10])
         {
             Caption = 'KRD Maturity';
             DataClassification = SystemMetadata;
-            TableRelation = "KRD Code".Code where ("Type" = const (Maturity));
+            TableRelation = "KRD Code-Adl".Code where ("Type" = const (Maturity));
         }
         field(13062664; "KRD Claim/Liability-Adl"; Option)
         {

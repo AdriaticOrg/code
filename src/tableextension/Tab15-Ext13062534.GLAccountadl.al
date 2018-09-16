@@ -7,13 +7,13 @@ tableextension 13062534 "G/L Account-Adl" extends "G/L Account"  //15
         {
             Caption = 'FAS Instrument Code';
             DataClassification = SystemMetadata;
-            TableRelation = "FAS Instrument" where ("Type" = const (Posting));
+            TableRelation = "FAS Instrument-Adl" where ("Type" = const (Posting));
         }
         field(13062642; "FAS Sector Code-Adl"; Code[10])
         {
             Caption = 'FAS Sector Code';
             DataClassification = SystemMetadata;
-            TableRelation = "FAS Sector" where ("Type" = const (Posting));
+            TableRelation = "FAS Sector-Adl" where ("Type" = const (Posting));
         }
         field(13062643; "FAS Account-Adl"; Boolean)
         {
@@ -55,7 +55,7 @@ tableextension 13062534 "G/L Account-Adl" extends "G/L Account"  //15
         {
             Caption = 'BST Code';
             DataClassification = SystemMetadata;
-            TableRelation = "BST Code" where (Type = const (Posting));
+            TableRelation = "BST Code-Adl" where (Type = const (Posting));
         }
         // </adl.26>
     }

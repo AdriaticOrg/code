@@ -12,7 +12,7 @@ pageextension 13062555 "Purchases&PayablesSetup-Adl" extends "Purchases & Payabl
         }
     }
     var
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
 

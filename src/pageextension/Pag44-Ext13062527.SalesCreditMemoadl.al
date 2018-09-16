@@ -53,7 +53,7 @@ pageextension 13062527 "Sales Credit Memo-Adl" extends "Sales Credit Memo" //44
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
         // </adl.0>

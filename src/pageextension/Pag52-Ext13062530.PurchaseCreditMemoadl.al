@@ -39,7 +39,7 @@ pageextension 13062530 "Purchase Credit Memo-Adl" extends "Purchase Credit Memo"
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
         // </adl.0>

@@ -64,7 +64,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
         VIESFeatureEnabled: Boolean;

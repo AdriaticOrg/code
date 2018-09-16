@@ -30,7 +30,7 @@ pageextension 13062541 "Customer Card-Adl" extends "Customer Card" //21
     {
         addlast("&Customer")
         {
-            action(Vendors)
+            action("Vendors-Adl")
             {
                 RunObject = page "Vendor List";
                 ApplicationArea = All;
@@ -42,7 +42,7 @@ pageextension 13062541 "Customer Card-Adl" extends "Customer Card" //21
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;

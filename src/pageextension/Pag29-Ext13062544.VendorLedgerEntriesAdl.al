@@ -53,7 +53,7 @@ pageextension 13062544 "Vendor Ledger Entries-Adl" extends "Vendor Ledger Entrie
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;

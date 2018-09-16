@@ -41,7 +41,7 @@ pageextension 13062526 "Sales Invoice-Adl" extends "Sales Invoice" //43
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
         // </adl.0>

@@ -38,7 +38,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
         addafter(Customer)
         {
             // <adl.10>
-            action(PostPostponed)
+            action("PostPostponed-Adl")
             {
                 Caption = 'Post postponed VAT';
                 ApplicationArea = All;
@@ -57,7 +57,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
                     ManagePostponedVAT.HandlePostponedVAT(Database::"Sales Invoice Header", "No.", VATDate, true, CustVend::Customer, "Postponed VAT-Adl",false,false);
                 end;
             }
-            action(CorrectPostponed)
+            action("CorrectPostponed-Adl")
             {
                 Caption = 'Correct postponed VAT';
                 ApplicationArea = All;
@@ -82,7 +82,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
         VIESFeatureEnabled: Boolean;

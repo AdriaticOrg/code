@@ -9,7 +9,7 @@ table 13062812 "ADL Assisted Setup-Adl"
             Caption = 'Page ID';
             DataClassification = SystemMetadata;
         }
-        field(2; Name; Text[250])
+        field(2; "Name"; Text[250])
         {
             Caption = 'Name';
             DataClassification = SystemMetadata;
@@ -19,19 +19,19 @@ table 13062812 "ADL Assisted Setup-Adl"
             Caption = 'Order';
             DataClassification = SystemMetadata;
         }
-        field(4; Status; Option)
+        field(4; "Status"; Option)
         {
             Caption = 'Status';
             OptionCaption = 'Not Completed,Completed,Not Started,Seen,Watched,Read, ';
             OptionMembers = "Not Completed",Completed,"Not Started",Seen,Watched,Read," ";
             DataClassification = SystemMetadata;
         }
-        field(5; Visible; Boolean)
+        field(5; "Visible"; Boolean)
         {
             Caption = 'Visible';
             DataClassification = SystemMetadata;
         }
-        field(6; Parent; Integer)
+        field(6; "Parent"; Integer)
         {
             Caption = 'Parent';
             DataClassification = SystemMetadata;
@@ -41,7 +41,7 @@ table 13062812 "ADL Assisted Setup-Adl"
             Caption = 'Video Url';
             DataClassification = SystemMetadata;
         }
-        field(8; Icon; Media)
+        field(8; "Icon"; Media)
         {
             Caption = 'Icon';
             DataClassification = SystemMetadata;
@@ -54,7 +54,7 @@ table 13062812 "ADL Assisted Setup-Adl"
             OptionMembers = " ",Group,"Setup and Help";
             DataClassification = SystemMetadata;
         }
-        field(10; Featured; Boolean)
+        field(10; "Featured"; Boolean)
         {
             Caption = 'Featured';
             DataClassification = SystemMetadata;

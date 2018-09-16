@@ -406,7 +406,7 @@ page 13062598 "VAT Review Matrix-Adl"
                 Caption = 'F&unctions';
                 Image = "Action";
             }
-            action(PreviousPeriod)
+            action("PreviousPeriod")
             {
                 Caption = 'Previous Period';
                 ToolTip = 'Show the information based on the previous period. If you set the View by field to Day, the date filter changes to the day before.';
@@ -420,7 +420,7 @@ page 13062598 "VAT Review Matrix-Adl"
                     FindPeriod('<=');
                 end;
             }
-            action(NextPeriod)
+            action("NextPeriod")
             {
                 Caption = 'Next Period';
                 ToolTip = 'Show the information based on the next period. If you set the View by field to Day, the date filter changes to the day before.';
@@ -438,7 +438,7 @@ page 13062598 "VAT Review Matrix-Adl"
 
         area(reporting)
         {
-            action(VATBook)
+            action("VATBook")
             {
                 Caption = 'VAT Calculation Details';
                 ToolTip = 'View or print the VAT calculation details.';

@@ -21,7 +21,7 @@ pageextension 13062549 "Bank Account Card-Adl" extends "Bank Account Card" //370
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;

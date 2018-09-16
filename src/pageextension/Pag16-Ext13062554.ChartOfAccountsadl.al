@@ -6,7 +6,7 @@ pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
         addlast(Reporting)
         {
             // <adl.21>
-            action("GLExport")
+            action("GLExport-Adl")
             {
                 Caption = 'GL Export';
                 Promoted = true;
@@ -29,7 +29,7 @@ pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
             // </adl.21> 
 
             // <adl.27>
-            action("DetailTrialBalance")
+            action("DetailTrialBalance-Adl")
             {
                 Caption = 'Detail Trial Balance Extended';
                 Promoted = true;
@@ -44,7 +44,7 @@ pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         RepSIFeatureEnabled: Boolean;
         // </adl.0>

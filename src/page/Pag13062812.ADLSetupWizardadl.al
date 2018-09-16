@@ -222,7 +222,7 @@ page 13062812 "ADL Setup Wizard-Adl"
     {
         area(processing)
         {
-            action(ActionBack)
+            action("ActionBack")
             {
                 ApplicationArea = All;
                 Caption = 'Back';
@@ -234,7 +234,7 @@ page 13062812 "ADL Setup Wizard-Adl"
                     NextStep(true);
                 end;
             }
-            action(ActionNext)
+            action("ActionNext")
             {
                 ApplicationArea = All;
                 Caption = 'Next';
@@ -246,7 +246,7 @@ page 13062812 "ADL Setup Wizard-Adl"
                     NextStep(false);
                 end;
             }
-            action(ActionFinish)
+            action("ActionFinish")
             {
                 ApplicationArea = All;
                 Caption = 'Finish';

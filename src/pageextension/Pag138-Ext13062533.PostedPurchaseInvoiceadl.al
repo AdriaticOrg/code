@@ -33,7 +33,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
         addafter(Vendor)
         {
             // <adl.10>
-            action(PostPostponed)
+            action("PostPostponed-Adl")
             {
                 Caption = 'Post postponed VAT';
                 ApplicationArea = All;
@@ -52,7 +52,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
                     ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, true, CustVend::Vendor, "Postponed VAT-Adl",false,false);
                 end;
             }
-            action(CorrectPostponed)
+            action("CorrectPostponed-Adl")
             {
                 Caption = 'Correct postponed VAT';
                 ApplicationArea = All;
@@ -71,7 +71,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
                     ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, false, CustVend::Vendor, "Postponed VAT-Adl",false,false);
                 end;
             }
-            action(PostVATOutput)
+            action("PostVATOutput-Adl")
             {
                 Caption = 'Post VAT Vat Output Date';
                 ApplicationArea = All;
@@ -90,7 +90,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
                     ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, true, CustVend::Vendor, "Postponed VAT-Adl",false,true);
                 end;
             }
-            action(CorrectVATOutput)
+            action("CorrectVATOutput-Adl")
             {
                 Caption = 'Correct VAT Output Date';
                 ApplicationArea = All;
@@ -115,7 +115,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
         // </adl.0>
