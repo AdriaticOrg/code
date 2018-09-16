@@ -61,9 +61,9 @@ report 13062595 "GL ExportSI-Adl"
                     TextWriterAdl.FixedField(OutStr, Name, 50, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
-                    TextWriterAdl.FixedField(OutStr, BalanceDocumentNo, 30, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, BalanceDocumentNoFormatTxt, 30, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, Type, 3, PadCharacter, 1, FieldDelimiter);
-                    TextWriterAdl.FixedField(OutStr, StrSubstNo(BalanceDesc, BalanceYear), 50, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, StrSubstNo(BalanceDescFormatTxt, BalanceYear), 50, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, BalanceAtDate, 16, PadCharacter, 0, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 16, PadCharacter, 0, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 160, PadCharacter, 1, FieldDelimiter);
@@ -187,7 +187,7 @@ report 13062595 "GL ExportSI-Adl"
                     TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 30, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, Type, 3, PadCharacter, 1, FieldDelimiter);
-                    TextWriterAdl.FixedField(OutStr, StrSubstNo(ClosingDesc, ClosingYear), 50, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, StrSubstNo(ClosingDescFormatTxt, ClosingYear), 50, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, "Debit Amount", 16, PadCharacter, 0, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, "Credit Amount", 16, PadCharacter, 0, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 160, PadCharacter, 1, FieldDelimiter);
@@ -264,9 +264,9 @@ report 13062595 "GL ExportSI-Adl"
         DummyText: Text;
         BalanceYear: Integer;
         ClosingYear: Integer;
-        BalanceDesc: Label 'Opening item for the year %1';
-        BalanceDocumentNo: Label 'Opening %1';
-        ClosingDesc: Label 'Closing GL account for the year %1';
+        BalanceDescFormatTxt: Label 'Opening item for the year %1';
+        BalanceDocumentNoFormatTxt: Label 'Opening %1';
+        ClosingDescFormatTxt: Label 'Closing GL account for the year %1';
         AccountNoLbl: Label 'Account';
         NameLbl: Label 'Account Name';
         PostingDateLbl: Label 'Post.Date';
