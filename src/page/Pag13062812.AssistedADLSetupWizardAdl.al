@@ -134,343 +134,343 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                 InstructionalText = 'With this setup you can choose which features you want to enable for Adriatic Localization';
                 Visible = CoreSetupDetailsVisible;
 
-                group(General)
-                {
-                    Caption = 'General';
-                    field("ADL Enabled"; "ADL Enabled")
-                    {
-                        Caption = 'Adriatic Localization Enabled';
-                        ApplicationArea = All;
+                /*         group(General)
+                        {
+                            Caption = 'General';
+                            field("ADL Enabled"; "ADL Enabled")
+                            {
+                                Caption = 'Adriatic Localization Enabled';
+                                ApplicationArea = All;
 
-                        trigger OnValidate()
-                        begin
-                            if "ADL Enabled" then
-                                NextEnabled := true
-                            else NextEnabled := false;
-                        end;
+                                trigger OnValidate()
+                                begin
+                                    if "ADL Enabled" then
+                                        NextEnabled := true
+                                    else NextEnabled := false;
+                                end;
+                            }
+                        }
+                        group(VAT)
+                        {
+                            Caption = 'VAT';
+                            field("VAT Enabled"; "VAT Enabled")
+                            {
+                                ApplicationArea = All;
+                            }
+                            field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled")
+                            {
+                                ApplicationArea = All;
+                            }
+
+                        }
+                        group(Reporting)
+                        {
+                            Caption = 'Reporting';
+                            field("Rep HR Enabled"; "Rep HR Enabled")
+                            {
+                                Caption = 'Reporting HR Enabled';
+                                ApplicationArea = All;
+                            }
+                            field("Rep RS Enabled"; "Rep RS Enabled")
+                            {
+                                Caption = 'Reporting RS Enabled';
+                                ApplicationArea = All;
+                            }
+                            field("Rep SI Enabled"; "Rep SI Enabled")
+                            {
+                                Caption = 'Reporting SI Enabled';
+                                ApplicationArea = All;
+                            }
+                            field("EU Customs"; "EU Customs")
+                            {
+                                ApplicationArea = All;
+                            }
+                        }
+                        group(ReportingSI)
+                        {
+                            Caption = 'Reporting SI';
+                            field("FAS Enabled"; "FAS Enabled")
+                            {
+                                ApplicationArea = All;
+                            }
+                            field("KRD Enabled"; "KRD Enabled")
+                            {
+                                ApplicationArea = All;
+                            }
+                            field("BST Enabled"; "BST Enabled")
+                            {
+                                ApplicationArea = All;
+                            }
+                        }
+
+                    } */
+
+                group(Step3)
+                {
+                    ShowCaption = false;
+                    Visible = CompanyDetailsVisible;
+                    group("Specify your company's address information and logo.")
+                    {
+                        Caption = 'Specify your company''s address information and logo.';
+                        InstructionalText = 'This is used in invoices and other documents where general information about your company is printed.';
+                        field(Name; Name)
+                        {
+                            ApplicationArea = All;
+                            Caption = 'Company Name';
+                            NotBlank = true;
+                            ShowMandatory = true;
+                        }
+                        field(Address; Address)
+                        {
+                            ApplicationArea = All;
+                        }
+                        field("Address 2"; "Address 2")
+                        {
+                            ApplicationArea = Advanced;
+                            Visible = false;
+                        }
+                        field("Post Code"; "Post Code")
+                        {
+                            ApplicationArea = All;
+                        }
+                        field(City; City)
+                        {
+                            ApplicationArea = All;
+                        }
+                        field("Country/Region Code"; "Country/Region Code")
+                        {
+                            ApplicationArea = All;
+                            TableRelation = "Country/Region".Code;
+                        }
+                        field("VAT Registration No."; "VAT Registration No.")
+                        {
+                            ApplicationArea = Advanced;
+                            Visible = false;
+                        }
+                        field("Industrial Classification"; "Industrial Classification")
+                        {
+                            ApplicationArea = Advanced;
+                            NotBlank = true;
+                            ShowMandatory = true;
+                            Visible = false;
+                        }
+                        field(Picture; Picture)
+                        {
+                            ApplicationArea = All;
+                            Caption = 'Company Logo';
+
+                            trigger OnValidate()
+                            begin
+                                LogoPositionOnDocumentsShown := Picture.hasValue();
+                                if LogoPositionOnDocumentsShown then begin
+                                    if "Logo Position on Documents" = "Logo Position on Documents"::"No Logo" then
+                                        "Logo Position on Documents" := "Logo Position on Documents"::Right;
+                                end else
+                                    "Logo Position on Documents" := "Logo Position on Documents"::"No Logo";
+                                CurrPage.UPDATE(true);
+                            end;
+                        }
+                        field("Logo Position on Documents"; "Logo Position on Documents")
+                        {
+                            ApplicationArea = Advanced;
+                            Editable = LogoPositionOnDocumentsShown;
+                        }
                     }
                 }
-                group(VAT)
+                group(Step4)
                 {
-                    Caption = 'VAT';
-                    field("VAT Enabled"; "VAT Enabled")
+                    ShowCaption = false;
+                    Visible = CommunicationDetailsVisible;
+                    group("Specify the contact details for your company.")
                     {
-                        ApplicationArea = All;
-                    }
-                    field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled")
-                    {
-                        ApplicationArea = All;
-                    }
+                        Caption = 'Specify the contact details for your company.';
+                        InstructionalText = 'This is used in invoices and other documents where general information about your company is printed.';
+                        field("Phone No."; "Phone No.")
+                        {
+                            ApplicationArea = All;
 
-                }
-                group(Reporting)
-                {
-                    Caption = 'Reporting';
-                    field("Rep HR Enabled"; "Rep HR Enabled")
-                    {
-                        Caption = 'Reporting HR Enabled';
-                        ApplicationArea = All;
-                    }
-                    field("Rep RS Enabled"; "Rep RS Enabled")
-                    {
-                        Caption = 'Reporting RS Enabled';
-                        ApplicationArea = All;
-                    }
-                    field("Rep SI Enabled"; "Rep SI Enabled")
-                    {
-                        Caption = 'Reporting SI Enabled';
-                        ApplicationArea = All;
-                    }
-                    field("EU Customs"; "EU Customs")
-                    {
-                        ApplicationArea = All;
-                    }
-                }
-                group(ReportingSI)
-                {
-                    Caption = 'Reporting SI';
-                    field("FAS Enabled"; "FAS Enabled")
-                    {
-                        ApplicationArea = All;
-                    }
-                    field("KRD Enabled"; "KRD Enabled")
-                    {
-                        ApplicationArea = All;
-                    }
-                    field("BST Enabled"; "BST Enabled")
-                    {
-                        ApplicationArea = All;
-                    }
-                }
+                            trigger OnValidate()
+                            var
+                                TypeHelper: Codeunit "Type Helper";
+                            begin
+                                if "Phone No." = '' then
+                                    exit;
 
-            }
+                                if not TypeHelper.IsPhoneNumber("Phone No.") then
+                                    ERROR(InvalidPhoneNumberErr)
+                            end;
+                        }
+                        field("E-Mail"; "E-Mail")
+                        {
+                            ApplicationArea = All;
+                            ExtendedDatatype = EMail;
 
-            group(Step3)
-            {
-                ShowCaption = false;
-                Visible = CompanyDetailsVisible;
-                group("Specify your company's address information and logo.")
-                {
-                    Caption = 'Specify your company''s address information and logo.';
-                    InstructionalText = 'This is used in invoices and other documents where general information about your company is printed.';
-                    field(Name; Name)
-                    {
-                        ApplicationArea = All;
-                        Caption = 'Company Name';
-                        NotBlank = true;
-                        ShowMandatory = true;
-                    }
-                    field(Address; Address)
-                    {
-                        ApplicationArea = All;
-                    }
-                    field("Address 2"; "Address 2")
-                    {
-                        ApplicationArea = Advanced;
-                        Visible = false;
-                    }
-                    field("Post Code"; "Post Code")
-                    {
-                        ApplicationArea = All;
-                    }
-                    field(City; City)
-                    {
-                        ApplicationArea = All;
-                    }
-                    field("Country/Region Code"; "Country/Region Code")
-                    {
-                        ApplicationArea = All;
-                        TableRelation = "Country/Region".Code;
-                    }
-                    field("VAT Registration No."; "VAT Registration No.")
-                    {
-                        ApplicationArea = Advanced;
-                        Visible = false;
-                    }
-                    field("Industrial Classification"; "Industrial Classification")
-                    {
-                        ApplicationArea = Advanced;
-                        NotBlank = true;
-                        ShowMandatory = true;
-                        Visible = false;
-                    }
-                    field(Picture; Picture)
-                    {
-                        ApplicationArea = All;
-                        Caption = 'Company Logo';
+                            trigger OnValidate()
+                            var
+                                MailManagement: Codeunit "Mail Management";
+                            begin
+                                if "E-Mail" = '' then
+                                    exit;
 
-                        trigger OnValidate()
-                        begin
-                            LogoPositionOnDocumentsShown := Picture.hasValue();
-                            if LogoPositionOnDocumentsShown then begin
-                                if "Logo Position on Documents" = "Logo Position on Documents"::"No Logo" then
-                                    "Logo Position on Documents" := "Logo Position on Documents"::Right;
-                            end else
-                                "Logo Position on Documents" := "Logo Position on Documents"::"No Logo";
-                            CurrPage.UPDATE(true);
-                        end;
-                    }
-                    field("Logo Position on Documents"; "Logo Position on Documents")
-                    {
-                        ApplicationArea = Advanced;
-                        Editable = LogoPositionOnDocumentsShown;
+                                MailManagement.CheckValidEmailAddress("E-Mail");
+                            end;
+                        }
+                        field("Home Page"; "Home Page")
+                        {
+                            ApplicationArea = All;
+
+                            trigger OnValidate()
+                            var
+                                WebRequestHelper: Codeunit "Web Request Helper";
+                            begin
+                                if "Home Page" = '' then
+                                    exit;
+
+                                WebRequestHelper.IsValidUriWithoutProtocol("Home Page");
+                            end;
+                        }
                     }
                 }
-            }
-            group(Step4)
-            {
-                ShowCaption = false;
-                Visible = CommunicationDetailsVisible;
-                group("Specify the contact details for your company.")
+
+                group("Select bank account.")
                 {
-                    Caption = 'Specify the contact details for your company.';
-                    InstructionalText = 'This is used in invoices and other documents where general information about your company is printed.';
-                    field("Phone No."; "Phone No.")
-                    {
-                        ApplicationArea = All;
-
-                        trigger OnValidate()
-                        var
-                            TypeHelper: Codeunit "Type Helper";
-                        begin
-                            if "Phone No." = '' then
-                                exit;
-
-                            if not TypeHelper.IsPhoneNumber("Phone No.") then
-                                ERROR(InvalidPhoneNumberErr)
-                        end;
-                    }
-                    field("E-Mail"; "E-Mail")
-                    {
-                        ApplicationArea = All;
-                        ExtendedDatatype = EMail;
-
-                        trigger OnValidate()
-                        var
-                            MailManagement: Codeunit "Mail Management";
-                        begin
-                            if "E-Mail" = '' then
-                                exit;
-
-                            MailManagement.CheckValidEmailAddress("E-Mail");
-                        end;
-                    }
-                    field("Home Page"; "Home Page")
-                    {
-                        ApplicationArea = All;
-
-                        trigger OnValidate()
-                        var
-                            WebRequestHelper: Codeunit "Web Request Helper";
-                        begin
-                            if "Home Page" = '' then
-                                exit;
-
-                            WebRequestHelper.IsValidUriWithoutProtocol("Home Page");
-                        end;
-                    }
-                }
-            }
-
-            group("Select bank account.")
-            {
-                Caption = 'Select bank account.';
-                Visible = SelectBankAccountVisible;
-                part(OnlineBanckAccountLinkPagePart; "Online Bank Accounts")
-                {
-                    ApplicationArea = All;
-                }
-            }
-            group(Bank)
-            {
-                ShowCaption = false;
-                Visible = PaymentDetailsVisible;
-                group("Specify your company's bank information.")
-                {
-                    Caption = 'Specify your company''s bank information.';
-                    InstructionalText = 'This information is included on documents that you send to customer and vendors to inform about payments to your bank account.';
-                    field("Bank Name"; "Bank Name")
-                    {
-                        ApplicationArea = All;
-                    }
-                    field("Bank Branch No."; "Bank Branch No.")
-                    {
-                        ApplicationArea = All;
-                    }
-                    field("Bank Account No."; "Bank Account No.")
-                    {
-                        ApplicationArea = All;
-
-                        trigger OnValidate()
-                        begin
-                            ShowBankAccountCreationWarning := not ValidateBankAccountNotEmpty();
-                        end;
-                    }
-                    field("SWIFT Code"; "SWIFT Code")
-                    {
-                        ApplicationArea = All;
-                    }
-                    field(IBAN; IBAN)
+                    Caption = 'Select bank account.';
+                    Visible = SelectBankAccountVisible;
+                    part(OnlineBanckAccountLinkPagePart; "Online Bank Accounts")
                     {
                         ApplicationArea = All;
                     }
                 }
-            }
-
-            group("Select package.")
-            {
-                ShowCaption = false;
-                Visible = PackageImportDetailesVIsible and TypeSelectionEnabled;
-
-                group(Control2)
+                group(Bank)
                 {
-                    Caption = 'Rapidstart data import';
-                    InstructionalText = 'Here you can choose package data to import';
-
-                    field(PackageDownloadBasicLbl; PackageDownloadBasicLbl)
+                    ShowCaption = false;
+                    Visible = PaymentDetailsVisible;
+                    group("Specify your company's bank information.")
                     {
-                        ApplicationArea = All;
-                        ShowCaption = false;
+                        Caption = 'Specify your company''s bank information.';
+                        InstructionalText = 'This information is included on documents that you send to customer and vendors to inform about payments to your bank account.';
+                        field("Bank Name"; "Bank Name")
+                        {
+                            ApplicationArea = All;
+                        }
+                        field("Bank Branch No."; "Bank Branch No.")
+                        {
+                            ApplicationArea = All;
+                        }
+                        field("Bank Account No."; "Bank Account No.")
+                        {
+                            ApplicationArea = All;
 
-                        trigger OnDrillDown()
-                        begin
-                            StartConfigPackageImport(0); //Basic setup
-                        end;
-                    }
-                    field(PackageDownloadMasterLbl; PackageDownloadMasterLbl)
-                    {
-                        ApplicationArea = All;
-                        ShowCaption = false;
-
-                        trigger OnDrillDown()
-                        begin
-                            StartConfigPackageImport(1); //Master data
-                        end;
-                    }
-
-                    field(PackageFileNameRtc; PackageFileName)
-                    {
-                        ApplicationArea = All;
-                        Caption = 'Select the configuration package you want to load:';
-                        Editable = false;
-                        ToolTip = 'Specifies the name of the configuration package that you have created.';
-
-                        trigger OnDrillDown()
-                        begin
-                            if ConfigVisible then
-                                Error(PackageIsAlreadyAppliedErr);
-                            ApplyVisible := WizardMgmt.OpenRapidStartPackageStream(Rec);
-                            PackageFileName := "Package File Name";
-                        end;
-
-                        trigger OnValidate()
-                        begin
-                            if "Package File Name" = '' then
-                                ApplyVisible := false;
-
-                            CurrPage.Update();
-                        end;
-                    }
-                    field("Package Code"; "Package Code")
-                    {
-                        ApplicationArea = All;
-                        ToolTip = 'Specifies the code of the configuration package.';
-                    }
-                    field("Package Name"; "Package Name")
-                    {
-                        ApplicationArea = All;
-                        Editable = false;
-                        ToolTip = 'Specifies the name of the package that contains the configuration information.';
-                    }
-                    field("Choose Apply Package action to load the data from the configuration to Business Central tables."; '')
-                    {
-                        ApplicationArea = All;
-                        Caption = 'Choose Apply Package action to load the data from the configuration to Business Central tables.';
-                        ToolTip = 'Specifies the action that loads the configuration data.';
-                    }
-                    field("Choose Configuration Worksheet if you want to edit and modify applied data."; '')
-                    {
-                        ApplicationArea = All;
-                        Caption = 'Choose Configuration Worksheet if you want to edit and modify applied data.';
-                        ToolTip = 'Specifies the action that loads the configuration data.';
+                            trigger OnValidate()
+                            begin
+                                ShowBankAccountCreationWarning := not ValidateBankAccountNotEmpty();
+                            end;
+                        }
+                        field("SWIFT Code"; "SWIFT Code")
+                        {
+                            ApplicationArea = All;
+                        }
+                        field(IBAN; IBAN)
+                        {
+                            ApplicationArea = All;
+                        }
                     }
                 }
 
-            }
-
-            group(Finish)
-            {
-                ShowCaption = false;
-                Visible = DoneVisible;
-                group("That's it!")
+                group("Select package.")
                 {
-                    Caption = 'That''s it!';
-                    InstructionalText = 'Choose Finish to prepare the application for first use. This will take a few moments.';
+                    ShowCaption = false;
+                    Visible = PackageImportDetailesVIsible and TypeSelectionEnabled;
+
+                    group(Control2)
+                    {
+                        Caption = 'Rapidstart data import';
+                        InstructionalText = 'Here you can choose package data to import';
+
+                        field(PackageDownloadBasicLbl; PackageDownloadBasicLbl)
+                        {
+                            ApplicationArea = All;
+                            ShowCaption = false;
+
+                            trigger OnDrillDown()
+                            begin
+                                StartConfigPackageImport(0); //Basic setup
+                            end;
+                        }
+                        field(PackageDownloadMasterLbl; PackageDownloadMasterLbl)
+                        {
+                            ApplicationArea = All;
+                            ShowCaption = false;
+
+                            trigger OnDrillDown()
+                            begin
+                                StartConfigPackageImport(1); //Master data
+                            end;
+                        }
+
+                        field(PackageFileNameRtc; PackageFileName)
+                        {
+                            ApplicationArea = All;
+                            Caption = 'Select the configuration package you want to load:';
+                            Editable = false;
+                            ToolTip = 'Specifies the name of the configuration package that you have created.';
+
+                            trigger OnDrillDown()
+                            begin
+                                if ConfigVisible then
+                                    Error(PackageIsAlreadyAppliedErr);
+                                ApplyVisible := WizardMgmt.OpenRapidStartPackageStream(Rec);
+                                PackageFileName := "Package File Name";
+                            end;
+
+                            trigger OnValidate()
+                            begin
+                                if "Package File Name" = '' then
+                                    ApplyVisible := false;
+
+                                CurrPage.Update();
+                            end;
+                        }
+                        field("Package Code"; "Package Code")
+                        {
+                            ApplicationArea = All;
+                            ToolTip = 'Specifies the code of the configuration package.';
+                        }
+                        field("Package Name"; "Package Name")
+                        {
+                            ApplicationArea = All;
+                            Editable = false;
+                            ToolTip = 'Specifies the name of the package that contains the configuration information.';
+                        }
+                        field("Choose Apply Package action to load the data from the configuration to Business Central tables."; '')
+                        {
+                            ApplicationArea = All;
+                            Caption = 'Choose Apply Package action to load the data from the configuration to Business Central tables.';
+                            ToolTip = 'Specifies the action that loads the configuration data.';
+                        }
+                        field("Choose Configuration Worksheet if you want to edit and modify applied data."; '')
+                        {
+                            ApplicationArea = All;
+                            Caption = 'Choose Configuration Worksheet if you want to edit and modify applied data.';
+                            ToolTip = 'Specifies the action that loads the configuration data.';
+                        }
+                    }
+
+                }
+
+                group(Finish)
+                {
+                    ShowCaption = false;
+                    Visible = DoneVisible;
+                    group("That's it!")
+                    {
+                        Caption = 'That''s it!';
+                        InstructionalText = 'Choose Finish to prepare the application for first use. This will take a few moments.';
+                    }
                 }
             }
         }
     }
-
     actions
     {
         area(processing)
@@ -543,11 +543,11 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
 
                 trigger OnAction()
                 var
-                    AssistedSetupAdl: Record "Assisted Setup-adl";
+                    AssistedSetupAdl: Record "ADL Assisted Setup-adl";
                     AssistedCompanySetup: Codeunit "Assisted Company Setup";
                 begin
                     BankAccount.TransferFields(TempBankAccount, true);
-                    CopyCoreSetupInfo();
+                    //CopyCoreSetupInfo();
                     AssistedCompanySetup.ApplyUserInput(Rec, BankAccount, 0D, TypeEvaluation);
 
                     AssistedSetupAdl.SetStatus(PAGE::"Assisted ADL Setup Wizard-adl", AssistedSetupAdl.Status::Completed);
@@ -577,7 +577,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean
     var
-        AssistedSetupAdl: Record "Assisted Setup-adl";
+        AssistedSetupAdl: Record "ADL Assisted Setup-Adl";
     begin
         if CloseAction = ACTION::OK then
             IF AssistedSetupAdl.GetStatus(PAGE::"Assisted ADL Setup Wizard-adl") = AssistedSetupAdl.Status::"Not Completed" THEN
@@ -667,7 +667,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     ShowDoneStep;
                 end else begin
                     ShowCoreSetupDetailsStep();
-                    NextEnabled := "ADL Enabled";
+                    //NextEnabled := "ADL Enabled";
                 end;
             Step::"Company Details":
                 if TypeEvaluation then begin
@@ -813,7 +813,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
 
     local procedure TransferfieldsFromCoreSetup(var CoreSetup: Record "CoreSetup-Adl")
     begin
-        "ADL Enabled" := CoreSetup."ADL Enabled";
+        /* "ADL Enabled" := CoreSetup."ADL Enabled";
         "BST Enabled" := CoreSetup."BST Enabled";
         "EU Customs" := CoreSetup."EU Customs";
         "FAS Enabled" := CoreSetup."FAS Enabled";
@@ -823,7 +823,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         "Rep RS Enabled" := CoreSetup."Rep RS Enabled";
         "Unpaid Receivables Enabled" := CoreSetup."Unpaid Receivables Enabled";
         "VAT Enabled" := CoreSetup."VAT Enabled";
-        "VIES Enabled" := CoreSetup."VIES Enabled";
+        "VIES Enabled" := CoreSetup."VIES Enabled"; */
     end;
 
     local procedure StartConfigPackageImport(PackageType: Option "Basic","Master")

@@ -1,10 +1,5 @@
 codeunit 13062817 "Wizard Management-Adl"
 {
-    trigger OnRun()
-    begin
-        Message(ReadFromHttp(''));
-    end;
-
     procedure ReadFromHttp(url: Text): Text
     var
         httpCli: HttpClient;
@@ -49,7 +44,7 @@ codeunit 13062817 "Wizard Management-Adl"
                     PackageName := 'MASTER%20DATA_SR';
 
             else begin
-                    Message(PackageMissingErr);
+                    //Message(PackageMissingErr);
                     Error('');
                 end;
         end;
@@ -61,11 +56,8 @@ codeunit 13062817 "Wizard Management-Adl"
         if (not httpResponse.IsSuccessStatusCode()) then
             Error(HttpReadResponseErr);
 
-        Window.Open(PackageIsBeingDownloadedTxt);
-        Sleep(3000);
         httpResponse.Content().ReadAs(InputStr);
         TempBlob.Blob.CreateOutStream(OutputStream);
-        Window.Close();
         FileName := PackageName + '.rapidstart';
         DownloadFromStream(InputStr, 'Save rapid start file', '', 'Rapidstart Files(*.rapidstart)|*rapidstart', FileName);
     end;

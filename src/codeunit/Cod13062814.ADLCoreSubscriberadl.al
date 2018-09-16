@@ -11,7 +11,7 @@ codeunit 13062814 "Adl Core Subscriber-Adl"
         ADLAssistedSetup.Initialize();
 
         ADLAssistedSetup.SetRange(Visible, true);
-        ADLAssistedSetup.SetFilter("Assisted Setup Page ID", '%1', Page::"ADL Setup Wizard-Adl");
+        ADLAssistedSetup.SetFilter("Assisted Setup Page ID", '%1', Page::"Assisted ADL Setup Wizard-Adl");
 
         CLEAR(TempAggregatedAssistedSetup);
         TempAggregatedAssistedSetup.TransferFields(ADLAssistedSetup, TRUE);
@@ -25,7 +25,7 @@ codeunit 13062814 "Adl Core Subscriber-Adl"
     var
         ADLAssistedSetup: Record "ADL Assisted Setup-Adl";
     begin
-        If not ADLAssistedSetup.GET(Page::"ADL Setup Wizard-Adl") then
+        If not ADLAssistedSetup.GET(Page::"Assisted ADL Setup Wizard-Adl") then
             ADLAssistedSetup.Initialize();
     end;
 

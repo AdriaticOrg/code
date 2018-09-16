@@ -29,7 +29,7 @@ codeunit 13062813 "Wizard Initialize-Adl"
         if CoreSetup.Get() then
             exit;
 
-        Page.RunModal(PAGE::"ADL Setup Wizard-Adl");
+        Page.RunModal(PAGE::"Assisted ADL Setup Wizard-Adl");
         if CoreSetup.Get() then
             Commit();
     end;
