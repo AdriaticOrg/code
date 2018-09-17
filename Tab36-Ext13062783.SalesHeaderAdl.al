@@ -1,4 +1,4 @@
-tableextension 13062791 "Service Header" extends "Service Header" //5900
+tableextension 13062783 "Sales Header-Adl" extends "Sales Header" //36
 {
     fields
     {
@@ -18,10 +18,10 @@ tableextension 13062791 "Service Header" extends "Service Header" //5900
         {
             TableRelation = "Fiscalization Location-ADL";
         }
-
         field(13062529;"Full Fisc. Doc. No.";Code[20])
         {
             
         }
     }
 }
+

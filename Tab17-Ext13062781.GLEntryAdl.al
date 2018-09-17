@@ -1,4 +1,4 @@
-tableextension 13062782 "Cust. Ledger Entry" extends "Cust. Ledger Entry" //21
+tableextension 13062781 "G/L Entry-Adl" extends "G/L Entry" //17
 {
     fields
     {

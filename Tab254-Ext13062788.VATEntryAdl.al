@@ -1,4 +1,4 @@
-tableextension 13062781 "G/L Entry" extends "G/L Entry" //17
+tableextension 13062788 "VAT Entry-Adl" extends "VAT Entry" //254
 {
     fields
     {

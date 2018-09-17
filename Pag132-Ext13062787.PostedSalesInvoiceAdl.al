@@ -1,4 +1,4 @@
-pageextension 13062788 "Posted Sales Credit Memo" extends "Posted Sales Credit Memo" //134
+pageextension 13062787 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice" //132
 {
     layout
     {

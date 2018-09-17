@@ -1,4 +1,4 @@
-pageextension 13062784 "Sales Order" extends "Sales Order" //42
+pageextension 13062785 "Sales Invoice-Adl" extends "Sales Invoice" //43
 {
     layout
     {

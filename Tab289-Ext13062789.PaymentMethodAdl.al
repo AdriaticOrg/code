@@ -1,4 +1,4 @@
-tableextension 13062789 "Payment Method" extends "Payment Method" //289
+tableextension 13062789 "Payment Method-Adl" extends "Payment Method" //289
 {
     fields
     {

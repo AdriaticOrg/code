@@ -1,4 +1,4 @@
-pageextension 13062783 "Sales Quote" extends "Sales Quote" //41
+pageextension 13062788 "Posted Sales Credit Memo-Adl" extends "Posted Sales Credit Memo" //134
 {
     layout
     {
@@ -24,6 +24,10 @@ pageextension 13062783 "Sales Quote" extends "Sales Quote" //41
                 }
 
                 field("Full Fisc. Doc. No.";"Full Fisc. Doc. No.")
+                {
+                ApplicationArea = All;
+                }
+                field("Posting TimeStamp";"Posting TimeStamp")
                 {
                 ApplicationArea = All;
                 }

@@ -1,10 +1,11 @@
-tableextension 13062786 "Sales Invoice Header" extends "Sales Invoice Header" //112
+tableextension 13062793 "Service Cr.Memo Header-Adl" extends "Service Cr.Memo Header" //5994
 {
     fields
     {
         field(13062525;"Fisc. Subject";Boolean)
         {
             Editable = false;
+
         }
         field(13062526;"Fisc. No. Series";Code[20])
         {

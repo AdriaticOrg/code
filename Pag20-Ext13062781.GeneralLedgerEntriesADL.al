@@ -1,4 +1,4 @@
-pageextension 13062781 "General Ledger Entries-ADL" extends "General Ledger Entries" //20
+pageextension 13062781 "General Ledger Entries-Adl" extends "General Ledger Entries" //20
 {
     layout
     {

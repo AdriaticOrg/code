@@ -1,4 +1,4 @@
-tableextension 13062788 "VAT Entry" extends "VAT Entry" //254
+tableextension 13062790 "CV Ledger Entry Buffer-Adl" extends "CV Ledger Entry Buffer" //382
 {
     fields
     {

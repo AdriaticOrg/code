@@ -1,4 +1,4 @@
-tableextension 13062790 "CV Ledger Entry Buffer" extends "CV Ledger Entry Buffer" //382
+tableextension 13062784 "Gen. Journal Line-Adl" extends "Gen. Journal Line" //81
 {
     fields
     {
