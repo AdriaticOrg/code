@@ -1,4 +1,4 @@
-page 13062783 "Fisc. Payment Methods-ADL"
+page 13062783 "Fisc. Payment Methods-Adl"
 {
     PageType = List;
     UsageCategory = Documents;

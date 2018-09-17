@@ -1,4 +1,4 @@
-page 13062786 "Fisc. Location Mapping-ADL"
+page 13062786 "Fisc. Location Mapping-Adl"
 {
     PageType = List;
     UsageCategory = Documents;

@@ -1,4 +1,4 @@
-table 13062784 "Fiscalization Location-ADL"
+table 13062784 "Fiscalization Location-Adl"
 {
     DataClassification = ToBeClassified;
     LookupPageId = "Fisc. Location List-ADL";

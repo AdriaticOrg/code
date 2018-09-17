@@ -1,4 +1,4 @@
-codeunit 13062782 FiscalizationEvents
+codeunit 13062782 "FiscalizationEvents-Adl"
 {
     trigger OnRun()
     begin

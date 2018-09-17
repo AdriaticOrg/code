@@ -1,4 +1,4 @@
-page 13062785 "Fisc. Location List-ADL"
+page 13062785 "Fisc. Location List-Adl"
 {   
     UsageCategory = Documents;
     ApplicationArea = All;

@@ -1,4 +1,4 @@
-table 13062785 "Fiscalization Loc. Mapping-ADL"
+table 13062785 "Fiscalization Loc. Mapping-Adl"
 {
     DataClassification = CustomerContent;
     
