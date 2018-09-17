@@ -1,4 +1,4 @@
-tableextension 13062785 Table91Ext extends "User Setup"
+tableextension 13062785 "User Setup" extends "User Setup" //91
 {
     fields
     {

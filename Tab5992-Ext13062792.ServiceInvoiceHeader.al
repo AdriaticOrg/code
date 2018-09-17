@@ -1,4 +1,4 @@
-tableextension 13062792 Table5992Ext extends "Service Invoice Header"
+tableextension 13062792 "Service Invoice Header" extends "Service Invoice Header" //5992
 {
     fields
     {
