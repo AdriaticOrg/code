@@ -185,6 +185,7 @@ report 13062601 "Suggest VIES Lines-Adl"
                     VIESRepLine."Source Type" := VIESRepLine."Source Type"::Purchases;
 
                 VIESRepLine.Type := RepType;
+                VIESRepLine."VAT Identifier" := "VAT Identifier-Adl";
                 VIESRepLine."Country/Region Code" := "Country/Region Code";
                 VIESRepLine."VAT Registration No." := VATRegNo;
                 VIESRepLine."EU 3-Party Trade" := "EU 3-Party Trade";

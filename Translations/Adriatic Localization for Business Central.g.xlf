@@ -473,6 +473,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Line-Adl - Field Period Round - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 119955295 - Field 2534656220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Identifier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Line-Adl - Field VAT Identifier - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 119955295 - Field 284764054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Country/Region Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -692,6 +697,11 @@
           <source>Period Round</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table PDO Report Line-Adl - Field Period Round - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3514768801 - Field 2534656220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Identifier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table PDO Report Line-Adl - Field VAT Identifier - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3514768801 - Field 284764054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Country/Region Code</source>
@@ -2322,6 +2332,11 @@
           <source>VIES Report Subform</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1166695459 - Action 3768474506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show related entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Action Show related entries - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3774304813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VIES Report</source>

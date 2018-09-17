@@ -50,4 +50,10 @@ tableextension 13062532 "VAT Entry-Adl" extends "VAT Entry" //254
         }
         // </adl.22>         
     }
+    keys
+    {
+        // <adl.22>
+        key(VIES; "VAT Identifier-Adl") { }
+        // </adl.22>
+    }
 }
