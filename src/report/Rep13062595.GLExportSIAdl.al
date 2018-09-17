@@ -53,10 +53,7 @@ report 13062595 "GL ExportSI-Adl"
                     Type := 'OTV';
                     IF (BalanceAtDate = 0) then
                         CurrReport.Break();
-                end;
 
-                trigger OnAfterGetRecord()
-                begin
                     TextWriterAdl.FixedField(OutStr, "No.", 10, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, Name, 50, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
@@ -68,6 +65,11 @@ report 13062595 "GL ExportSI-Adl"
                     TextWriterAdl.FixedField(OutStr, DummyText, 16, PadCharacter, 0, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 160, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.NewLine(OutStr);
+                end;
+
+                trigger OnAfterGetRecord()
+                begin
+
                 end;
 
                 trigger OnPostDataItem()
@@ -112,7 +114,7 @@ report 13062595 "GL ExportSI-Adl"
 
                 trigger OnPreDataItem();
                 begin
-                    GLAccountZak.SETRANGE("Date Filter", "G/L Account"."Date Filter");
+                    //GLAccountZak.SETRANGE("Date Filter", "G/L Account"."Date Filter");
                 end;
 
                 trigger OnAfterGetRecord()
@@ -132,7 +134,6 @@ report 13062595 "GL ExportSI-Adl"
 
                 trigger OnPostDataItem()
                 begin
-                    //TextWriterAdl.NewLine(OutStr);
                 end;
             }
             dataitem(GLAccountZAK; "G/L Account")
@@ -196,7 +197,6 @@ report 13062595 "GL ExportSI-Adl"
 
                 trigger OnPostDataItem()
                 begin
-                    //TextWriterAdl.NewLine(OutStr);
                     Type := '';
                 end;
             }
