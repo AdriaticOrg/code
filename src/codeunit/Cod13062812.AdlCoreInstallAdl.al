@@ -21,7 +21,7 @@ codeunit 13062812 "Adl Core Install-Adl"
     begin
         //ADLInitialize.Run();
         SetApplicationArea();
-        en;
+    end;
 
     local procedure HandleReinstall();
     begin
