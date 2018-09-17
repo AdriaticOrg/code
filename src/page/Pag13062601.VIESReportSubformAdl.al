@@ -60,4 +60,30 @@ page 13062601 "VIES Report Subform-Adl"
             }
         }
     }
+    actions
+    {
+        area(Processing)
+        {
+            action("Show related entries")
+            {
+                Caption = 'Show related entries';
+                ApplicationArea = All;
+                Image = InsuranceLedger;
+
+                trigger OnAction()
+                var
+                    VATEntry: Record "VAT Entry";
+                    VIESRepHead: Record "VIES Report Header-Adl";
+                begin
+                    VIESRepHead.get("Document No.");
+
+                    VATEntry.SetCurrentKey("VAT Identifier-Adl", "Posting Date");
+                    VATEntry.SetRange("VAT Identifier-Adl", "VAT Identifier");
+                    VATEntry.SetRange("VAT Registration No.", "VAT Registration No.");
+                    VATEntry.SetRange("Posting Date", VIESRepHead."Period Start Date", VIESRepHead."Period End Date");
+                    page.RunModal(0, VATEntry);
+                end;
+            }
+        }
+    }
 }

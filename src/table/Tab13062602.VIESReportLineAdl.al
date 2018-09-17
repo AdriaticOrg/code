@@ -51,7 +51,12 @@ table 13062602 "VIES Report Line-Adl"
             Caption = 'Period Round';
             DataClassification = SystemMetadata;
         }
-
+        field(23; "VAT Identifier"; Code[10])
+        {
+            Caption = 'VAT Identifier';
+            DataClassification = SystemMetadata;
+            TableRelation = "VAT Identifier-Adl";
+        }
         field(24; "Country/Region Code"; Code[10])
         {
             Caption = 'Country/Region Code';

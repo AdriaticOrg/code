@@ -473,6 +473,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Line-Adl - Field Period Round - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 119955295 - Field 2534656220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Identifier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Line-Adl - Field VAT Identifier - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 119955295 - Field 284764054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Country/Region Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -692,6 +697,11 @@
           <source>Period Round</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table PDO Report Line-Adl - Field Period Round - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3514768801 - Field 2534656220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Identifier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table PDO Report Line-Adl - Field VAT Identifier - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3514768801 - Field 284764054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Country/Region Code</source>
@@ -2214,9 +2224,24 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3898502574 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies a description of the VAT book group</source>
+          <source>Specifies a description of the VAT Book Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3898502574 - Control 720431001 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if type of VAT Book Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Group Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3898502574 - Control 478049462 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies totaling formula for VAT Book Group.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Totaling - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3898502574 - Control 2807378183 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies tag name for XML export.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Tag Name - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3898502574 - Action 3237504299 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>&amp;Setup</source>
@@ -2227,6 +2252,11 @@
           <source>VAT Identifiers</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Action VAT Identifiers - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3898502574 - Action 3390847837 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View or edit the VAT Identifiers for VAT Book Group.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Action VAT Identifiers - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2587470435 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Book Group Identifiers</source>
@@ -2323,6 +2353,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1166695459 - Action 3768474506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show related entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Action Show related entries - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3774304813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VIES Report</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2362,6 +2397,11 @@
           <source>PDO Report Subform</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report Subform-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2978206997 - Action 3768474506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show related entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report Subform-Adl - Action Show related entries - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2490513083 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>PDO Report</source>

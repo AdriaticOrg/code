@@ -158,7 +158,7 @@ table 13062660 "Reporting SI Setup-Adl"
             TableRelation = "User Setup";
             DataClassification = SystemMetadata;
         }
-        field(53; "PDO VAT Ident. Filter Code"; Code[20])
+        field(53; "PDO VAT Ident. Filter Code"; Code[100])
         {
             Caption = 'PDO VAT Ident. Filter Code ';
             DataClassification = SystemMetadata;
