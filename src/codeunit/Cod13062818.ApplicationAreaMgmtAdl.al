@@ -6,7 +6,7 @@ codeunit 13062818 "Application Area Mgmt-Adl"
         ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
     begin
         if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then
-            exit(ApplicationAreaSetup."Unpaid Receivables Enabled Adl");
+            exit(ApplicationAreaSetup."Adl Unpaid Receivables");
     end;
 
     procedure IsFASApplicationAreaEnabled(): Boolean
@@ -15,7 +15,7 @@ codeunit 13062818 "Application Area Mgmt-Adl"
         ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
     begin
         if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then
-            exit(ApplicationAreaSetup."FAS Enabled Adl");
+            exit(ApplicationAreaSetup."Adl FAS");
     end;
 
     procedure IsBSTApplicationAreaEnabled(): Boolean
@@ -24,7 +24,7 @@ codeunit 13062818 "Application Area Mgmt-Adl"
         ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
     begin
         if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then
-            exit(ApplicationAreaSetup."BST Enabled Adl");
+            exit(ApplicationAreaSetup."Adl BST");
     end;
 
     procedure IsKRDApplicationAreaEnabled(): Boolean
@@ -33,14 +33,13 @@ codeunit 13062818 "Application Area Mgmt-Adl"
         ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
     begin
         if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then
-            exit(ApplicationAreaSetup."KRD Enabled Adl");
+            exit(ApplicationAreaSetup."Adl KRD");
     end;
 
     procedure EnableAdlCoreApplicationArea(CoreSetup: Record "CoreSetup-Adl")
     var
         ApplicationAreaSetup: Record "Application Area Setup";
         ExperienceTierSetup: Record "Experience Tier Setup";
-
         ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
     begin
         if ExperienceTierSetup.Get(CompanyName()) then;
@@ -48,15 +47,31 @@ codeunit 13062818 "Application Area Mgmt-Adl"
             exit;
         if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then begin
             if CoreSetup."Unpaid Receivables Enabled" then
-                ApplicationAreaSetup."Unpaid Receivables Enabled Adl" := true;
+                ApplicationAreaSetup."Adl Unpaid Receivables" := true;
             if CoreSetup."KRD Enabled" then
-                ApplicationAreaSetup."KRD Enabled Adl" := true;
+                ApplicationAreaSetup."Adl KRD" := true;
             if CoreSetup."BST Enabled" then
-                ApplicationAreaSetup."BST Enabled Adl" := true;
+                ApplicationAreaSetup."Adl BST" := true;
             if CoreSetup."FAS Enabled" then
-                ApplicationAreaSetup."FAS Enabled Adl" := true;
+                ApplicationAreaSetup."Adl FAS" := true;
 
             //TODO:: ...and some more...
+            ApplicationAreaSetup.Modify();
+            ApplicationAreaMgmtFacade.SetupApplicationArea();
+        end;
+    end;
+
+    procedure EnableUnpaidReceivableApplicationArea()
+    var
+        ApplicationAreaSetup: Record "Application Area Setup";
+        ExperienceTierSetup: Record "Experience Tier Setup";
+        ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
+    begin
+        if ExperienceTierSetup.Get(CompanyName()) then;
+        if not ExperienceTierSetup.Custom then             //Set this to Custom in Isnall CU
+            exit;
+        if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then begin
+            ApplicationAreaSetup."Adl Unpaid Receivables" := true;
             ApplicationAreaSetup.Modify();
             ApplicationAreaMgmtFacade.SetupApplicationArea();
         end;
@@ -65,10 +80,10 @@ codeunit 13062818 "Application Area Mgmt-Adl"
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Application Area Mgmt. Facade", 'OnSetExperienceTier', '', false, false)]
     local procedure EnableADLCoreAppAreaOnSetExperienceTier(ExperienceTierSetup: record 9176; var TempApplicationAreaSetup: record 9178 temporary; var ApplicationAreasSet: boolean)
     begin
-        TempApplicationAreaSetup."Unpaid Receivables Enabled Adl" := true;
-        TempApplicationAreaSetup."BST Enabled Adl" := true;
-        TempApplicationAreaSetup."KRD Enabled Adl" := true;
-        TempApplicationAreaSetup."FAS Enabled Adl" := true;
+        TempApplicationAreaSetup."Adl Unpaid Receivables" := true;
+        TempApplicationAreaSetup."Adl BST" := true;
+        TempApplicationAreaSetup."Adl KRD" := true;
+        TempApplicationAreaSetup."Adl FAS" := true;
         //...
     end;
 }

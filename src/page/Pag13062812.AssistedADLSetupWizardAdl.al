@@ -160,6 +160,15 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled-Adl")
                     {
                         ApplicationArea = All;
+
+                        trigger OnValidate()
+                        var
+                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
+                        begin
+                            if (ApplicatonAreaMgmtAdl.IsKRDApplicationAreaEnabled()) then
+                                exit;
+                            ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea();
+                        end;
                     }
 
                 }
