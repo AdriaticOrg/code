@@ -137,14 +137,14 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                 group(General)
                 {
                     Caption = 'General';
-                    field("ADL Enabled"; "ADL Enabled")
+                    field("ADL Enabled"; "ADL Enabled-Adl")
                     {
                         Caption = 'Adriatic Localization Enabled';
                         ApplicationArea = All;
 
                         trigger OnValidate()
                         begin
-                            if "ADL Enabled" then
+                            if "ADL Enabled-Adl" then
                                 NextEnabled := true
                             else NextEnabled := false;
                         end;
@@ -153,11 +153,11 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                 group(VAT)
                 {
                     Caption = 'VAT';
-                    field("VAT Enabled"; "VAT Enabled")
+                    field("VAT Enabled"; "VAT Enabled-Adl")
                     {
                         ApplicationArea = All;
                     }
-                    field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled")
+                    field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled-Adl")
                     {
                         ApplicationArea = All;
                     }
@@ -166,22 +166,22 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                 group(Reporting)
                 {
                     Caption = 'Reporting';
-                    field("Rep HR Enabled"; "Rep HR Enabled")
+                    field("Rep HR Enabled"; "Rep HR Enabled-Adl")
                     {
                         Caption = 'Reporting HR Enabled';
                         ApplicationArea = All;
                     }
-                    field("Rep RS Enabled"; "Rep RS Enabled")
+                    field("Rep RS Enabled"; "Rep RS Enabled-Adl")
                     {
                         Caption = 'Reporting RS Enabled';
                         ApplicationArea = All;
                     }
-                    field("Rep SI Enabled"; "Rep SI Enabled")
+                    field("Rep SI Enabled"; "Rep SI Enabled-Adl")
                     {
                         Caption = 'Reporting SI Enabled';
                         ApplicationArea = All;
                     }
-                    field("EU Customs"; "EU Customs")
+                    field("EU Customs"; "EU Customs-Adl")
                     {
                         ApplicationArea = All;
                     }
@@ -189,15 +189,15 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                 group(ReportingSI)
                 {
                     Caption = 'Reporting SI';
-                    field("FAS Enabled"; "FAS Enabled")
+                    field("FAS Enabled"; "FAS Enabled-Adl")
                     {
                         ApplicationArea = All;
                     }
-                    field("KRD Enabled"; "KRD Enabled")
+                    field("KRD Enabled"; "KRD Enabled-Adl")
                     {
                         ApplicationArea = All;
                     }
-                    field("BST Enabled"; "BST Enabled")
+                    field("BST Enabled"; "BST Enabled-Adl")
                     {
                         ApplicationArea = All;
                     }
@@ -667,7 +667,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     ShowDoneStep;
                 end else begin
                     ShowCoreSetupDetailsStep();
-                    NextEnabled := "ADL Enabled";
+                    NextEnabled := "ADL Enabled-Adl";
                 end;
             Step::"Company Details":
                 if TypeEvaluation then begin
@@ -818,17 +818,17 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
 
     local procedure TransferfieldsFromCoreSetup(var CoreSetup: Record "CoreSetup-Adl")
     begin
-        "ADL Enabled" := CoreSetup."ADL Enabled";
-        "BST Enabled" := CoreSetup."BST Enabled";
-        "EU Customs" := CoreSetup."EU Customs";
-        "FAS Enabled" := CoreSetup."FAS Enabled";
-        "KRD Enabled" := CoreSetup."KRD Enabled";
-        "Rep HR Enabled" := CoreSetup."Rep HR Enabled";
-        "Rep SI Enabled" := CoreSetup."Rep SI Enabled";
-        "Rep RS Enabled" := CoreSetup."Rep RS Enabled";
-        "Unpaid Receivables Enabled" := CoreSetup."Unpaid Receivables Enabled";
-        "VAT Enabled" := CoreSetup."VAT Enabled";
-        "VIES Enabled" := CoreSetup."VIES Enabled";
+        "ADL Enabled-Adl" := CoreSetup."ADL Enabled";
+        "BST Enabled-Adl" := CoreSetup."BST Enabled";
+        "EU Customs-Adl" := CoreSetup."EU Customs";
+        "FAS Enabled-Adl" := CoreSetup."FAS Enabled";
+        "KRD Enabled-Adl" := CoreSetup."KRD Enabled";
+        "Rep HR Enabled-Adl" := CoreSetup."Rep HR Enabled";
+        "Rep SI Enabled-Adl" := CoreSetup."Rep SI Enabled";
+        "Rep RS Enabled-Adl" := CoreSetup."Rep RS Enabled";
+        "Unpaid Receivables Enabled-Adl" := CoreSetup."Unpaid Receivables Enabled";
+        "VAT Enabled-Adl" := CoreSetup."VAT Enabled";
+        "VIES Enabled-Adl" := CoreSetup."VIES Enabled";
     end;
 
     local procedure StartConfigPackageImport(PackageType: Option "Basic","Master")

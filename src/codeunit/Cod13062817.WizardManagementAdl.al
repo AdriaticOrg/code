@@ -27,7 +27,6 @@ codeunit 13062817 "Wizard Management-Adl"
         httpResponse: HttpResponseMessage;
         InputStr: InStream;
         OutputStream: OutStream;
-        Window: Dialog;
         Url: Text;
         PackageName: Text;
     begin
@@ -61,11 +60,8 @@ codeunit 13062817 "Wizard Management-Adl"
         if (not httpResponse.IsSuccessStatusCode()) then
             Error(HttpReadResponseErr);
 
-        Window.Open(PackageIsBeingDownloadedTxt);
-        Sleep(3000);
         httpResponse.Content().ReadAs(InputStr);
         TempBlob.Blob.CreateOutStream(OutputStream);
-        Window.Close();
         FileName := PackageName + '.rapidstart';
         DownloadFromStream(InputStr, 'Save rapid start file', '', 'Rapidstart Files(*.rapidstart)|*rapidstart', FileName);
     end;

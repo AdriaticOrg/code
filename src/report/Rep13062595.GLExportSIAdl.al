@@ -67,15 +67,10 @@ report 13062595 "GL ExportSI-Adl"
                     TextWriterAdl.NewLine(OutStr);
                 end;
 
-                trigger OnAfterGetRecord()
-                begin
-
-                end;
 
                 trigger OnPostDataItem()
                 begin
                     Type := '';
-                    TextWriterAdl.NewLine(OutStr);
                 end;
             }
             dataitem(GLEntryTrans; "G/L Entry")
@@ -114,7 +109,8 @@ report 13062595 "GL ExportSI-Adl"
 
                 trigger OnPreDataItem();
                 begin
-                    //GLAccountZak.SETRANGE("Date Filter", "G/L Account"."Date Filter");
+                    if "G/L Account".Getfilter("Date Filter") <> '' then
+                        ;//GLEntryTrans.SETRANGE("Posting Date", "G/L Account"."Date Filter");
                 end;
 
                 trigger OnAfterGetRecord()

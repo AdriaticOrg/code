@@ -30,12 +30,18 @@ table 13062582 "Goods Return Type-Adl"
             DataClassification = SystemMetadata;
             Caption = 'VAT Product Posting Group';
             TableRelation = "VAT Product Posting Group";
+            //TODO: field is obsolete nad will be removed in branch V0.2
+            ObsoleteState = Removed;
+            ObsoleteReason = 'feature redesign';
         }
         field(13; "New VAT Prod. Posting Group"; Code[10])
         {
             DataClassification = SystemMetadata;
             Caption = 'New VAT Product Posting Group';
             TableRelation = "VAT Product Posting Group";
+            //TODO: field is obsolete nad will be removed in branch V0.2
+            ObsoleteState = Removed;
+            ObsoleteReason = 'feature redesign';
         }
     }
 
