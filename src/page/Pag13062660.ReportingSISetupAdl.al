@@ -1,4 +1,4 @@
-page 13062660 "Reporting_SI Setup-Adl"
+page 13062660 "Reporting SI Setup-Adl"
 {
     PageType = Card;
     ApplicationArea = All;

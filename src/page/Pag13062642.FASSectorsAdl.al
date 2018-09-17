@@ -29,7 +29,7 @@ page 13062642 "FAS Sectors-Adl"
                 }
                 field(Totaling; Totaling)
                 {
-                    Editable = false;
+                    Editable = true;
                     ApplicationArea = All;
                 }
                 field(Indentation; Indentation)

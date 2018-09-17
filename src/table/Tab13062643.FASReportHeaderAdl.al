@@ -47,6 +47,15 @@ table 13062643 "FAS Report Header-Adl"
         {
             Caption = 'Period End Date';
             DataClassification = SystemMetadata;
+
+            trigger OnValidate()
+            var
+                Month: Integer;
+            begin
+                Month := Date2DMY("Period End Date", 2);
+                "Period Round" := round((Month / 3), 1, '>');
+
+            end;
         }
         field(12; "Period Year"; Integer)
         {

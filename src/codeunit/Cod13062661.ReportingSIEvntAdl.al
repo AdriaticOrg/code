@@ -160,7 +160,6 @@ codeunit 13062661 "Reporting SI Evnt.-Adl"
 
         Cust.get(CustLedgerEntry."Customer No.");
         CustLedgerEntry.CopyKRDFields(Cust);
-        CustLedgerEntry.TestField("KRD Affiliation Type-Adl");
 
         if CustPstgGrp.get(CustLedgerEntry."Customer Posting Group") then
             CustLedgerEntry.CopyKRDFields(CustPstgGrp);

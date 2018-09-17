@@ -29,7 +29,7 @@ page 13062641 "FAS Instruments-Adl"
                 }
                 field(Totaling; Totaling)
                 {
-                    Editable = false;
+                    Editable = true;
                     ApplicationArea = All;
                 }
                 field(Indentation; Indentation)

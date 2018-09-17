@@ -163,6 +163,7 @@ table 13062660 "Reporting SI Setup-Adl"
             Caption = 'PDO VAT Ident. Filter Code ';
             DataClassification = SystemMetadata;
             TableRelation = "VAT Identifier-Adl";
+            ValidateTableRelation = false;
         }
         field(55; "PDO Prep. By User ID"; Text[100])
         {
