@@ -31,7 +31,7 @@ tableextension 13062539 "Vendor Ledger Entry-Adl" extends "Vendor Ledger Entry" 
         {
             Caption = 'KRD Non-Resident Sector Code';
             DataClassification = SystemMetadata;
-            TableRelation = "FAS Sector-Adl" where ("Type" = const (Posting));
+            TableRelation = "KRD Sector-Adl" where ("Type" = const (Posting));
         }
         field(13062666; "KRD Country/Region Code-Adl"; Code[10])
         {

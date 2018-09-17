@@ -1323,6 +1323,51 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table KRD Code-Adl - Field Description - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 47841055 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD Sector</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table KRD Sector-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 47841055 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table KRD Sector-Adl - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 47841055 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table KRD Sector-Adl - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 47841055 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table KRD Sector-Adl - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 47841055 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting,Total</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table KRD Sector-Adl - Field Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 47841055 - Field 478049462 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Totaling</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table KRD Sector-Adl - Field Totaling - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 47841055 - Field 2200046723 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Indentation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table KRD Sector-Adl - Field Indentation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 47841055 - Field 3459602849 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Credit/Debit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table KRD Sector-Adl - Field Show Credit/Debit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 47841055 - Field 4096422333 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Index Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table KRD Sector-Adl - Field Index Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 360767640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2444,7 +2489,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Instruments-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1237048865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Finance Sectors</source>
+          <source>FAS Finance Sectors</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Sectors-Adl - Property Caption</note>
         </trans-unit>
@@ -2547,6 +2592,11 @@
           <source>KRD Codes</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Codes-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2127075594 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD Finance Sectors</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Sectors-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1695213696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Reports</source>

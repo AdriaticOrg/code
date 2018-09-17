@@ -100,7 +100,6 @@ table 13062602 "VIES Report Line-Adl"
             OptionCaption = 'Goods,Services';
             DataClassification = SystemMetadata;
         }
-
         field(45; "Amount"; Decimal)
         {
             Caption = 'Amount';

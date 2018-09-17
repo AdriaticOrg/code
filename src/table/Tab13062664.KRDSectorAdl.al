@@ -1,7 +1,7 @@
-table 13062642 "FAS Sector-Adl"
+table 13062664 "KRD Sector-Adl"
 {
-    Caption = 'FAS Sector';
-    LookupPageId = 13062642;
+    Caption = 'KRD Sector';
+    LookupPageId = 13062665;
 
     fields
     {
@@ -27,7 +27,7 @@ table 13062642 "FAS Sector-Adl"
         {
             Caption = 'Totaling';
             DataClassification = SystemMetadata;
-            TableRelation = IF (Type = CONST (Total)) "FAS Sector-Adl".Code;
+            TableRelation = IF (Type = CONST (Total)) "KRD Sector-Adl".Code;
             ValidateTableRelation = false;
 
             trigger OnValidate()

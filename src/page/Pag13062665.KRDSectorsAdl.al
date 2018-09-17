@@ -1,8 +1,8 @@
-page 13062642 "FAS Sectors-Adl"
+page 13062665 "KRD Sectors-Adl"
 {
-    Caption = 'FAS Finance Sectors';
+    Caption = 'KRD Finance Sectors';
     PageType = List;
-    SourceTable = "FAS Sector-Adl";
+    SourceTable = "KRD Sector-Adl";
     Editable = true;
     UsageCategory = Administration;
     ApplicationArea = All;

@@ -15,7 +15,7 @@ tableextension 13062536 "Customer-Adl" extends Customer //18
         {
             Caption = 'KRD Non-Resident Sector Code';
             DataClassification = SystemMetadata;
-            TableRelation = "FAS Sector-Adl" where ("Type" = const (Posting));
+            TableRelation = "KRD Sector-Adl" where ("Type" = const (Posting));
         }
         field(13062662; "KRD Affiliation Type-Adl"; Code[10])
         {

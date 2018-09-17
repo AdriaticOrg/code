@@ -247,6 +247,11 @@ report 13062642 "Export FAS-Adl"
                             ELSE
                                 FASRepLine.SETFILTER("Sector Code", FinSect.Totaling);
 
+                            if FormNum mod 2 = 0 then
+                                FASRepLine.SetRange("FAS Type", FASRepLine."FAS Type"::Liabilities)
+                            else
+                                FASRepLine.SetRange("FAS Type", FASRepLine."FAS Type"::Assets);
+
                             FASRepLine.CalcSums("Period Closing Balance", "Transactions Amt. in Period", "Changes Amt. in Period");
 
                             case FormNum of
