@@ -21,7 +21,7 @@ codeunit 13062812 "Adl Core Install-Adl"
     begin
         //ADLInitialize.Run();
         SetApplicationArea();
-    end;
+        en;
 
     local procedure HandleReinstall();
     begin
@@ -43,20 +43,16 @@ codeunit 13062812 "Adl Core Install-Adl"
         ExperienceTierSetup."Company Name" := CopyStr(CompanyName(), 1, 30);
         ExperienceTierSetup.Custom := true;
         ExperienceTierSetup.Modify();
-
         if not ApplicationAreaSetup.Get(CompanyName()) then begin
             ApplicationAreaSetup.Init();
             ApplicationAreaSetup."Company Name" := CopyStr(CompanyName(), 1, 30);
             ApplicationAreaSetup.Insert();
         end;
-        ApplicationAreaSetup.Init();
-        ApplicationAreaSetup."Company Name" := CopyStr(CompanyName(), 1, 30);
-        ApplicationAreaSetup."ADL Enabled Adl" := false;
-        ApplicationAreaSetup."VAT Enabled Adl" := false;
-        //
-        ApplicationAreaSetup.Modify();
-
-        ApplicationAreaMgmtFacade.SetupApplicationArea();
+        //ApplicationAreaSetup.Init();
+        //ApplicationAreaSetup."Company Name" := CopyStr(CompanyName(), 1, 30);
+        //enable app area her or
+        //ApplicationAreaSetup.Modify();
+        //ApplicationAreaMgmtFacade.SetupApplicationArea();
     end;
 
 
