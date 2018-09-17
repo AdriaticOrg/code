@@ -135,6 +135,8 @@ codeunit 13062661 "Reporting SI Evnt.-Adl"
 
         if GLAcc.GET(GLEntry."G/L Account No.") then
             GLEntry."BST Code-Adl" := GLAcc."BST Code-Adl";
+
+        GLEntry."Country/Region Code-Adl" := GenJournalLine."Country/Region Code";
     end;
 
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitCustLedgEntry', '', false, false)]

@@ -30,6 +30,12 @@ tableextension 13062535 "G/L Entry-Adl" extends "G/L Entry" //17
             DataClassification = SystemMetadata;
             TableRelation = "BST Code-Adl" where ("Type" = const (Posting));
         }
+        field(13062682; "Country/Region Code-Adl"; Code[10])
+        {
+            Caption = 'Country/Region Code';
+            DataClassification = SystemMetadata;
+            TableRelation = "Country/Region";
+        }
         // </adl.26>
     }
 

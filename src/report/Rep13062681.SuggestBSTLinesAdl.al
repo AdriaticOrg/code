@@ -25,6 +25,7 @@ report 13062681 "Suggest BST Lines-Adl"
             trigger OnAfterGetRecord()
             begin
                 BSTRepLine.SetRange("BST Code", "BST Code-Adl");
+                BSTRepLine.SetRange("Country/Region Code", "Country/Region Code-Adl");
                 if BSTRepLine.FindSet(true, false) then begin
                     AppendBSTValue(BSTRepLine, "G/L Account No.", Amount);
                     BSTRepLine.Modify(true);
@@ -34,6 +35,7 @@ report 13062681 "Suggest BST Lines-Adl"
                     BSTRepLine."Document No." := BSTRepHead."No.";
                     BSTRepLine."Line No" := NewLineNo;
                     BSTRepLine.Validate("BST Code", "BST Code-Adl");
+                    BSTRepLine.Validate("Country/Region Code", "Country/Region Code-Adl");
                     AppendBSTValue(BSTRepLine, "G/L Account No.", Amount);
                     BSTRepLine.Insert(true);
                 end;

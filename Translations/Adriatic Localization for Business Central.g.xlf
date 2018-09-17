@@ -4813,6 +4813,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Entry-Adl - Field BST Code-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1255201032 - Field 1973965194 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country/Region Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Entry-Adl - Field Country/Region Code-Adl - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3081464540 - Field 369363763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>

@@ -22,6 +22,11 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
             }
             // </adl.24>
             // <adl.26>
+            field("Country/Region Code"; "Country/Region Code-Adl")
+            {
+                ApplicationArea = All;
+                Visible = BSTFeatureEnabled;
+            }
             field("BST Code"; "BST Code-Adl")
             {
                 ApplicationArea = All;
