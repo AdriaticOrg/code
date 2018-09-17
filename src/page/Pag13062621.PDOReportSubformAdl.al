@@ -56,7 +56,7 @@ page 13062621 "PDO Report Subform-Adl"
                 trigger OnAction()
                 var
                     VATEntry: Record "VAT Entry";
-                    PDORepHead: Record "VIES Report Header-Adl";
+                    PDORepHead: Record "PDO Report Header-Adl";
                 begin
                     PDORepHead.get("Document No.");
 
