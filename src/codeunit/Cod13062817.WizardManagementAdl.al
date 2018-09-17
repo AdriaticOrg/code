@@ -27,7 +27,6 @@ codeunit 13062817 "Wizard Management-Adl"
         httpResponse: HttpResponseMessage;
         InputStr: InStream;
         OutputStream: OutStream;
-        Window: Dialog;
         Url: Text;
         PackageName: Text;
     begin
