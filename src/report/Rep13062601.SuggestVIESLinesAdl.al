@@ -134,7 +134,11 @@ report 13062601 "Suggest VIES Lines-Adl"
                     end;
             end;
 
-            IsSales := Type = Type::Sale;
+            IsSales := true;
+            if (VIESRepHeader."VIES Country" = VIESRepHeader."VIES Country"::Croatia) and
+                (VIESRepHeader."VIES Type" = VIESRepHeader."VIES Type"::"PDV-S")
+            then
+                IsSales := false;
 
             VIESRepLine.Reset();
 

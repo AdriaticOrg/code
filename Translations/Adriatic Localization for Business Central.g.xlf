@@ -1083,6 +1083,51 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Reporting SI Setup-Adl - Field PDO Prep. By User ID - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1149250649 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reporting SI Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting SI Setup-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1149250649 - Control 1727325440 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FAS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting SI Setup-Adl - Control FAS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1149250649 - Control 407507527 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting SI Setup-Adl - Control KRD - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1149250649 - Control 734800247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BST</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting SI Setup-Adl - Control BST - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1149250649 - Control 3718789915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting SI Setup-Adl - Control VIES - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1149250649 - Control 3900088957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PDO</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting SI Setup-Adl - Control PDO - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1149250649 - Action 2590055782 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjust FAS on Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting SI Setup-Adl - Action Adjust FAS on Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1149250649 - Action 1523575733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjust BST on Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting SI Setup-Adl - Action Adjust BST on Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1149250649 - Action 2174835573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjust KRD on Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting SI Setup-Adl - Action Adjust KRD on Entries - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2464815596 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Report Header</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2407,51 +2452,6 @@
           <source>FAS Reports</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Reports-Adl - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1319733580 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting SI Setup</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup-Adl - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1319733580 - Control 1727325440 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>FAS</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup-Adl - Control FAS - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1319733580 - Control 407507527 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>KRD</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup-Adl - Control KRD - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1319733580 - Control 734800247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>BST</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup-Adl - Control BST - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1319733580 - Control 3718789915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VIES</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup-Adl - Control VIES - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1319733580 - Control 3900088957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>PDO</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup-Adl - Control PDO - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1319733580 - Action 2590055782 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Adjust FAS on Entries</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup-Adl - Action Adjust FAS on Entries - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1319733580 - Action 1523575733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Adjust BST on Entries</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup-Adl - Action Adjust BST on Entries - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1319733580 - Action 2174835573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Adjust KRD on Entries</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Reporting_SI Setup-Adl - Action Adjust KRD on Entries - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3755217273 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Report</source>
