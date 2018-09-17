@@ -27,8 +27,7 @@ table 13062782 "Fiscalization Terminal-Adl"
                 FiscTerminal.SETFILTER("Fisc. Terminal Code",'<>%1',"Fisc. Terminal Code");
                 FiscTerminal.SETRANGE("Fisc. No. Series","Fisc. No. Series");
                 IF FiscTerminal.FINDFIRST() THEN
-                    ERROR(Err001txt,"Fisc. No. Series",FiscTerminal."Fisc. Location Code",FiscTerminal."Fisc. Terminal Code");
-
+                    ERROR(Err001Txt,"Fisc. No. Series",FiscTerminal."Fisc. Location Code",FiscTerminal."Fisc. Terminal Code");
             end;
         }
        field(4;"Fisc. Location Code"; code[10])
