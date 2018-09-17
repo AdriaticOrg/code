@@ -33,14 +33,14 @@ tableextension 13062533 "VAT Posting Setup-Adl" extends "VAT Posting Setup"  //3
         }
         //</adl.11>
         // <adl.22>
-        field(13062601; "VIES Goods Sales-Adl"; Boolean)
+        field(13062601; "VIES Goods-Adl"; Boolean)
         {
-            Caption = 'VIES Goods Sales';
+            Caption = 'VIES Goods';
             DataClassification = SystemMetadata;
         }
-        field(13062602; "VIES Service Sales-Adl"; Boolean)
+        field(13062602; "VIES Service-Adl"; Boolean)
         {
-            Caption = 'VIES Service Sales';
+            Caption = 'VIES Service';
             DataClassification = SystemMetadata;
         }
         // </adl.22>          

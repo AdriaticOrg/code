@@ -244,7 +244,7 @@ table 13062601 "VIES Report Header-Adl"
     end;
 
     var
-        RepSISetup: Record "Reporting_SI Setup-Adl";
+        RepSISetup: Record "Reporting SI Setup-Adl";
         VIESRepHead: Record "VIES Report Header-Adl";
         NoSeriesMgt: Codeunit NoSeriesManagement;
         LineExistErr: Label 'Document already has lines, please remove them first.';

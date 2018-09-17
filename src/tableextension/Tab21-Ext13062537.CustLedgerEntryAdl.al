@@ -63,7 +63,7 @@ tableextension 13062537 "Cust. Ledger Entry-Adl" extends "Cust. Ledger Entry" //
     // <adl.25>
     procedure CopyKRDFields(Customer: Record Customer)
     var
-        ReportSISetup: Record "Reporting_SI Setup-Adl";
+        ReportSISetup: Record "Reporting SI Setup-Adl";
     begin
         "KRD Country/Region Code-Adl" := Customer."Country/Region Code";
         "KRD Non-Residnet Sector Code-Adl" := Customer."KRD Non-Residnet Sector Code-Adl";

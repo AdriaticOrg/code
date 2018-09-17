@@ -178,7 +178,7 @@ table 13062661 "KRD Report Header-Adl"
     end;
 
     var
-        RepSISetup: Record "Reporting_SI Setup-Adl";
+        RepSISetup: Record "Reporting SI Setup-Adl";
         KRDRepHead: Record "KRD Report Header-Adl";
         NoSeriesMgt: Codeunit NoSeriesManagement;
 }

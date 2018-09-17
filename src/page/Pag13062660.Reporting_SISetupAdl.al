@@ -3,7 +3,7 @@ page 13062660 "Reporting_SI Setup-Adl"
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = "Reporting_SI Setup-Adl";
+    SourceTable = "Reporting SI Setup-Adl";
     Caption = 'Reporting SI Setup';
 
     layout

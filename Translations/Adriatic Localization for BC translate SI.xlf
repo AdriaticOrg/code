@@ -659,7 +659,7 @@
         </trans-unit>
         <trans-unit id="Table 517661179 - Field 1720050989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AOP Code</source>
-          <target state="translated">Šifra AOP</target>
+          <target state="translated">AOP</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table FAS Instrument - Field AOP Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1456558188 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -704,7 +704,7 @@
         </trans-unit>
         <trans-unit id="Table 1456558188 - Field 1720050989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AOP Code</source>
-          <target state="translated">Šifra AOP</target>
+          <target state="translated">AOP</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table FAS Sector - Field AOP Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3781648711 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -819,7 +819,7 @@
         </trans-unit>
         <trans-unit id="Table 4192115680 - Field 1720050989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AOP Code</source>
-          <target state="translated">Šifra AOP</target>
+          <target state="translated">AOP</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table FAS Report Line - Field AOP Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4192115680 - Field 3608700979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1044,7 +1044,7 @@
         </trans-unit>
         <trans-unit id="Table 3368388279 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Report Line</source>
-          <target state="translated">Postavke poročila o poslovnih terjatvah/obveznostih in finančnih naložbah/obveznostih do nerezidentov (KRD)</target>
+          <target state="translated">Postavke poročila KRD</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table KRD Report Line - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3368388279 - Field 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1114,17 +1114,17 @@
         </trans-unit>
         <trans-unit id="Table 3368388279 - Field 1562843158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Opening Balance</source>
-          <target state="translated">Otvoritveno stanje</target>
+          <target state="translated">Začetno stanje</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table KRD Report Line - Field Opening Balance - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3368388279 - Field 1753327380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Increase Amount</source>
-          <target state="translated">Povečanje zneska</target>
+          <target state="translated">Povečanje</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table KRD Report Line - Field Increase Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3368388279 - Field 1200115082 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Decrease Amount</source>
-          <target state="translated">Zmanjšaj znesek</target>
+          <target state="translated">Zmanjšaje</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table KRD Report Line - Field Decrease Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3368388279 - Field 3120492303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1294,7 +1294,7 @@
         </trans-unit>
         <trans-unit id="Table 2473585447 - Field 1385633078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Serial No.</source>
-          <target state="translated">Serijska številka BST</target>
+          <target state="translated">Serijska št. BST</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table BST Report Line - Field BST Serial No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2473585447 - Field 284764054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1869,7 +1869,7 @@
         </trans-unit>
         <trans-unit id="Page 3986888071 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VIES Report Subform</source>
-          <target state="translated">Podobrazec RP-O poročila (VIES)</target>
+          <target state="translated">Vrstice RP-O poročila (VIES)</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2584564081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1904,7 +1904,7 @@
         </trans-unit>
         <trans-unit id="Page 3077981369 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>PDO Report Subform</source>
-          <target state="translated">Podobrazec poročila o dobavah (PD-O)</target>
+          <target state="translated">Vrstice poročila o dobavah (PD-O)</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report Subform - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2303047807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1974,7 +1974,7 @@
         </trans-unit>
         <trans-unit id="Page 2373169676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Report Subform</source>
-          <target state="translated">Podobrazec SFR poročila</target>
+          <target state="translated">Vrstice SFR poročila</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 427742547 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1984,7 +1984,7 @@
         </trans-unit>
         <trans-unit id="Page 792092229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Report</source>
-          <target state="translated">Poročilo o poslovnih terjatvah/obveznostih in finančnih naložbah/obveznostih do nerezidentov (KRD)</target>
+          <target state="translated">Poročilo o posl. terjatvah/obveznostih in fin. naložbah/obveznostih do nerezidentov (KRD)</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 792092229 - Action 1384210787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2009,12 +2009,12 @@
         </trans-unit>
         <trans-unit id="Page 3768313276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Reports</source>
-          <target state="translated">Poročila o poslovnih terjatvah/obveznostih in finančnih naložbah/obveznostih do nerezidentov (KRD)</target>
+          <target state="translated">Poročila o posl. terjatvah/obveznostih in fin. naložbah/obveznostih do nerezidentov (KRD)</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Reports - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2328779643 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Report Subform</source>
-          <target state="translated">Podobrazec Poročilo o poslovnih terjatvah/obveznostih in finančnih naložbah/obveznostih do nerezidentov (KRD)</target>
+          <target state="translated">Vrstice Poročilo o poslovnih terjatvah/obveznostih in finančnih naložbah/obveznostih do nerezidentov (KRD)</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2328779643 - Action 3954504776 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2034,17 +2034,17 @@
         </trans-unit>
         <trans-unit id="Page 2404206924 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Reports</source>
-          <target state="translated">Poročila o storitveni menjavi in delu blagovne menjave ter o tekočih kapitalskih transferih z nerezidenti (BST)</target>
+          <target state="translated">Poročila o stor. menjavi in delu blag. menjave ter o tekočih kap. transferih z nerezidenti (BST)</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Reports - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2937115531 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Report Subform</source>
-          <target state="translated">Podobrazec BST poročila</target>
+          <target state="translated">Vrstice BST poročila</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Report Subform - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3331887925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Report</source>
-          <target state="translated">Poročilo o storitveni menjavi in delu blagovne menjave ter o tekočih kapitalskih transferih z nerezidenti (BST)</target>
+          <target state="translated">Poročilo o stor. menjavi in delu blag. menjave ter o tekočih kap. transferih z nerezidenti (BST)</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Report - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3331887925 - Action 1384210787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

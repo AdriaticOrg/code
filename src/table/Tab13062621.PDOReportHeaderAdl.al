@@ -193,7 +193,7 @@ table 13062621 "PDO Report Header-Adl"
     end;
 
     var
-        RepSISetup: Record "Reporting_SI Setup-Adl";
+        RepSISetup: Record "Reporting SI Setup-Adl";
         PDORepHead: Record "PDO Report Header-Adl";
         NoSeriesMgt: Codeunit NoSeriesManagement;
 }

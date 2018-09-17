@@ -5,25 +5,25 @@ pageextension 13062548 "User Setup-Adl" extends "User Setup" //119
         addlast(Control1)
         {
             // <adl.24>
-            field("Reporting_SI Name"; "Reporting_SI Name-Adl")
+            field("Reporting Name"; "Reporting Name-Adl")
             {
                 Caption = 'Reporting Name';
                 ApplicationArea = All;
                 Visible = (RepSIFeatureEnabled or UnpaidReceivablesEnabled);
             }
-            field("Reporting_SI Email"; "Reporting_SI Email-Adl")
+            field("Reporting Email"; "Reporting Email-Adl")
             {
                 Caption = 'Reporting E-mail';
                 ApplicationArea = All;
                 Visible = RepSIFeatureEnabled;
             }
-            field("Reporting_SI Phone"; "Reporting_SI Phone-Adl")
+            field("Reporting Phone"; "Reporting Phone-Adl")
             {
                 Caption = 'Reporting Phone';
                 ApplicationArea = All;
                 Visible = RepSIFeatureEnabled;
             }
-            field("Reporting_SI Position"; "Reporting_SI Position-Adl")
+            field("Reporting Position"; "Reporting Position-Adl")
             {
                 Caption = 'Reporting Position';
                 ApplicationArea = All;

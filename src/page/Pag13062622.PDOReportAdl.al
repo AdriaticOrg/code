@@ -95,7 +95,7 @@ page 13062622 "PDO Report-Adl"
                 trigger OnAction()
                 var
                     VATEntry: Record "VAT Entry";
-                    RepSISetup: Record "Reporting_SI Setup-Adl";
+                    RepSISetup: Record "Reporting SI Setup-Adl";
                     RepSuggestLines: Report "Suggest PDO Lines-Adl";
                 begin
                     TestField("No.");

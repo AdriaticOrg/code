@@ -66,9 +66,9 @@ codeunit 13062660 "Reporting SI Mgt.-Adl"
     procedure GetUser(var UserSetup: Record "User Setup"; UserID: Code[59])
     begin
         UserSetup.get(UserID);
-        UserSetup.TestField("Reporting_SI Name-Adl");
-        UserSetup.TestField("Reporting_SI Email-Adl");
-        UserSetup.TestField("Reporting_SI Phone-Adl");
-        UserSetup.TestField("Reporting_SI Position-Adl");
+        UserSetup.TestField("Reporting Name-Adl");
+        UserSetup.TestField("Reporting Email-Adl");
+        UserSetup.TestField("Reporting Phone-Adl");
+        UserSetup.TestField("Reporting Position-Adl");
     end;
 }

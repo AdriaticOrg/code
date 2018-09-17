@@ -190,7 +190,7 @@ table 13062682 "BST Report Header-Adl"
     end;
 
     var
-        RepSISetup: Record "Reporting_SI Setup-Adl";
+        RepSISetup: Record "Reporting SI Setup-Adl";
         BSTRepHead: Record "BST Report Header-Adl";
         NoSeriesMgt: Codeunit NoSeriesManagement;
 }

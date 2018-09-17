@@ -38,7 +38,7 @@ report 13062601 "Suggest VIES Lines-Adl"
                 VATPstSetup: Record "VAT Posting Setup";
             begin
                 if not VATPstSetup.get("VAT Bus. Posting Group", "VAT Prod. Posting Group") then exit;
-                if (not VATPstSetup."VIES Goods Sales-Adl") and (not VATPstSetup."VIES Service Sales-Adl") then exit;
+                if (not VATPstSetup."VIES Goods-Adl") and (not VATPstSetup."VIES Service-Adl") then exit;
 
                 TestField("Country/Region Code");
 
@@ -115,7 +115,7 @@ report 13062601 "Suggest VIES Lines-Adl"
         VATRegNo: Text[20];
     begin
         if not VATSetup.get(VATEntry."VAT Bus. Posting Group", VATEntry."VAT Prod. Posting Group") then exit;
-        if (not VATSetup."VIES Goods Sales-Adl") and (not VATSetup."VIES Service Sales-Adl") then exit;
+        if (not VATSetup."VIES Goods-Adl") and (not VATSetup."VIES Service-Adl") then exit;
 
         with VATEntry do begin
 
@@ -157,10 +157,10 @@ report 13062601 "Suggest VIES Lines-Adl"
             VIESRepLine.SetRange("EU 3-Party Trade", "EU 3-Party Trade");
             VIESRepLine.SetRange("EU Customs Procedure", "EU Customs Procedure-Adl");
 
-            if VATSetup."VIES Goods Sales-Adl" then
+            if VATSetup."VIES Goods-Adl" then
                 VIESRepLine.SetRange("EU Sales Type", VIESRepLine."EU Sales Type"::Goods);
 
-            if VATSetup."VIES Service Sales-Adl" then
+            if VATSetup."VIES Service-Adl" then
                 VIESRepLine.SetRange("EU Sales Type", VIESRepLine."EU Sales Type"::Services);
 
             if VIESRepLine.FindSet() then begin
@@ -186,10 +186,10 @@ report 13062601 "Suggest VIES Lines-Adl"
                 VIESRepLine."EU 3-Party Trade" := "EU 3-Party Trade";
                 VIESRepLine."EU Customs Procedure" := "EU Customs Procedure-Adl";
 
-                if VATSetup."VIES Goods Sales-Adl" then
+                if VATSetup."VIES Goods-Adl" then
                     VIESRepLine."EU Sales Type" := VIESRepLine."EU Sales Type"::Goods;
 
-                if VATSetup."VIES Service Sales-Adl" then
+                if VATSetup."VIES Service-Adl" then
                     VIESRepLine."EU Sales Type" := VIESRepLine."EU Sales Type"::Services;
 
                 if RepType = RepType::Correction then begin

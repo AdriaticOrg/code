@@ -63,7 +63,7 @@ tableextension 13062539 "Vendor Ledger Entry-Adl" extends "Vendor Ledger Entry" 
     // <adl.25>
     procedure CopyKRDFields(Vendor: Record Vendor)
     var
-        ReportSISetup: Record "Reporting_SI Setup-Adl";
+        ReportSISetup: Record "Reporting SI Setup-Adl";
     begin
         "KRD Country/Region Code-Adl" := Vendor."Country/Region Code";
         "KRD Non-Residnet Sector Code-Adl" := Vendor."KRD Non-Residnet Sector Code-Adl";

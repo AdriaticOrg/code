@@ -23,8 +23,8 @@ report 13062602 "Export VIES-Adl"
             {
                 IncludeCaption = true;
             }
-            column(PrepairedByName; PrepairedByUser."Reporting_SI Name-Adl") { }
-            column(ResponsibleName; ResponsibleUser."Reporting_SI Name-Adl") { }
+            column(PrepairedByName; PrepairedByUser."Reporting Name-Adl") { }
+            column(ResponsibleName; ResponsibleUser."Reporting Name-Adl") { }
 
             dataitem("VIES Report Line"; "VIES Report Line-Adl")
             {
@@ -74,9 +74,9 @@ report 13062602 "Export VIES-Adl"
             trigger OnAfterGetRecord()
             begin
                 PrepairedByUser.get("Prep. By User ID");
-                PrepairedByUser.testfield("Reporting_SI Name-Adl");
+                PrepairedByUser.testfield("Reporting Name-Adl");
                 ResponsibleUser.get("Resp. User ID");
-                ResponsibleUser.TestField("Reporting_SI Name-Adl");
+                ResponsibleUser.TestField("Reporting Name-Adl");
 
                 if ExpFile then begin
                     case "VIES Report Header"."VIES Country" of
@@ -270,18 +270,18 @@ report 13062602 "Export VIES-Adl"
         XmlElem[4].Add(xmlElem[5]);
 
         XmlElem[5] := XmlElement.Create('F17_ResponsiblePerson', xmlns);
-        XmlElem[5].Add(XmlText.Create(RespUser."Reporting_SI Name-Adl"));
+        XmlElem[5].Add(XmlText.Create(RespUser."Reporting Name-Adl"));
         XmlElem[4].Add(xmlElem[5]);
 
         XmlElem[5] := XmlElement.Create('F17_TaxNumber', xmlns); //todo
         XmlElem[4].Add(xmlElem[5]);
 
         XmlElem[5] := XmlElement.Create('F18_ContactPerson', xmlns);
-        XmlElem[5].Add(XmlText.Create(PrepairedByUser."Reporting_SI Name-Adl"));
+        XmlElem[5].Add(XmlText.Create(PrepairedByUser."Reporting Name-Adl"));
         XmlElem[4].Add(xmlElem[5]);
 
         XmlElem[5] := XmlElement.Create('F18_ContactPerson', xmlns);
-        XmlElem[5].Add(XmlText.Create(PrepairedByUser."Reporting_SI Phone-Adl"));
+        XmlElem[5].Add(XmlText.Create(PrepairedByUser."Reporting Phone-Adl"));
         XmlElem[4].Add(xmlElem[5]);
 
         XmlElem[5] := XmlElement.Create('F13_RepresentativeTaxNumber', xmlns);  //todo
@@ -386,7 +386,7 @@ report 13062602 "Export VIES-Adl"
         ViesRepBuff: Record "VIES Report Buffer-Adl" temporary;
         RespUser: Record "User Setup";
         MakerUser: Record "User Setup";
-        RepSISetup: Record "Reporting_SI Setup-Adl";
+        RepSISetup: Record "Reporting SI Setup-Adl";
         TmpBlob: Record TempBlob temporary;
         RepSIMgt: Codeunit "Reporting SI Mgt.-Adl";
         XmlDoc: XmlDocument;
@@ -437,7 +437,7 @@ report 13062602 "Export VIES-Adl"
 
         RepSIMgt.GetUser(RespUser, VIESRepHead."Resp. User ID");
         RepSIMgt.GetUser(MakerUser, VIESRepHead."Prep. By User ID");
-        RepSIMgt.SplitUserName(MakerUser."Reporting_SI Name-Adl", MakerName, MakerSurname);
+        RepSIMgt.SplitUserName(MakerUser."Reporting Name-Adl", MakerName, MakerSurname);
 
         StatMonth := DATE2DMY(VIESRepHead."Period Start Date", 2);
         StatYear := DATE2DMY(VIESRepHead."Period Start Date", 3);
@@ -484,7 +484,7 @@ report 13062602 "Export VIES-Adl"
 
         XmlElem[3] := XmlElement.Create('Autor', xmlns);
         XmlElem[2].Add(xmlElem[3]);
-        XmlElem[3].Add(XmlText.Create(MakerUser."Reporting_SI Name-Adl"));
+        XmlElem[3].Add(XmlText.Create(MakerUser."Reporting Name-Adl"));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'creator');
         XmlElem[3].Add(XmlAttr);
 
@@ -581,11 +581,11 @@ report 13062602 "Export VIES-Adl"
         XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('Telefon', xmlns);
-        XmlElem[4].Add((XmlText.Create(MakerUser."Reporting_SI Phone-Adl")));
+        XmlElem[4].Add((XmlText.Create(MakerUser."Reporting Phone-Adl")));
         XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('Email', xmlns);
-        XmlElem[4].Add((XmlText.Create(MakerUser."Reporting_SI Email-Adl")));
+        XmlElem[4].Add((XmlText.Create(MakerUser."Reporting Email-Adl")));
         XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[3] := XmlElement.Create('Ispostava', xmlns);

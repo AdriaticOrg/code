@@ -199,7 +199,7 @@ table 13062643 "FAS Report Header-Adl"
     end;
 
     var
-        RepSISetup: Record "Reporting_SI Setup-Adl";
+        RepSISetup: Record "Reporting SI Setup-Adl";
         FASRepHead: Record "FAS Report Header-Adl";
         NoSeriesMgt: Codeunit NoSeriesManagement;
 }

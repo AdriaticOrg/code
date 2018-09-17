@@ -23,8 +23,8 @@ report 13062642 "Export FAS-Adl"
             {
                 IncludeCaption = true;
             }
-            column(PrepairedByName; PrepairedByUser."Reporting_SI Name-Adl") { }
-            column(ResponsibleName; ResponsibleUser."Reporting_SI Name-Adl") { }
+            column(PrepairedByName; PrepairedByUser."Reporting Name-Adl") { }
+            column(ResponsibleName; ResponsibleUser."Reporting Name-Adl") { }
             column(ShadowBackgroundOnPosting; ShadowBackgroundOnPosting) { }
 
             dataitem(Integer; Integer)
@@ -102,9 +102,9 @@ report 13062642 "Export FAS-Adl"
             trigger OnAfterGetRecord()
             begin
                 PrepairedByUser.get("Prep. By User ID");
-                PrepairedByUser.testfield("Reporting_SI Name-Adl");
+                PrepairedByUser.testfield("Reporting Name-Adl");
                 ResponsibleUser.get("Resp. User ID");
-                ResponsibleUser.TestField("Reporting_SI Name-Adl");
+                ResponsibleUser.TestField("Reporting Name-Adl");
             end;
         }
     }
@@ -147,7 +147,7 @@ report 13062642 "Export FAS-Adl"
 
 
     var
-        RepSISetup: Record "Reporting_SI Setup-Adl";
+        RepSISetup: Record "Reporting SI Setup-Adl";
         CompanyInfo: Record "Company Information";
         PrepairedByUser: Record "User Setup";
         ResponsibleUser: Record "User Setup";
@@ -193,16 +193,16 @@ report 13062642 "Export FAS-Adl"
         FASRepHead.TestField("Period Round");
 
         ResponsibleUser.Get(FASRepHead."Resp. User ID");
-        ResponsibleUser.TestField("Reporting_SI Name-Adl");
-        ResponsibleUser.TestField("Reporting_SI Email-Adl");
-        ResponsibleUser.TestField("Reporting_SI Phone-Adl");
+        ResponsibleUser.TestField("Reporting Name-Adl");
+        ResponsibleUser.TestField("Reporting Email-Adl");
+        ResponsibleUser.TestField("Reporting Phone-Adl");
 
         RepSISetup.Get();
         RepSISetup.TestField("Budget User Code");
         RepSISetup.TestField("Company Sector Code");
 
         MngUserSetup.get(RepSISetup."FAS Director User ID");
-        MngUserSetup.TestField("Reporting_SI Name-Adl");
+        MngUserSetup.TestField("Reporting Name-Adl");
 
         CompanyInfo.Get();
         CompanyInfo.TestField("Registration No.");
@@ -329,19 +329,19 @@ report 13062642 "Export FAS-Adl"
 
         XmlElem[3] := XmlElement.Create('OdgovornaOseba');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Name-Adl"));
+        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting Name-Adl"));
 
         XmlElem[3] := XmlElement.Create('TelefonskaStevilka');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Phone-Adl"));
+        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting Phone-Adl"));
 
         XmlElem[3] := XmlElement.Create('Email');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting_SI Email-Adl"));
+        XmlElem[3].add(XmlText.Create(ResponsibleUser."Reporting Email-Adl"));
 
         XmlElem[3] := XmlElement.Create('VodjaPodjetja');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(MngUserSetup."Reporting_SI Name-Adl"));
+        XmlElem[3].add(XmlText.Create(MngUserSetup."Reporting Name-Adl"));
 
         XmlElem[3] := XmlElement.Create('Datum');
         XmlElem[2].Add(XmlElem[3]);

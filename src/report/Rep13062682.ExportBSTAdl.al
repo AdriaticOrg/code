@@ -23,8 +23,8 @@ report 13062682 "Export BST-Adl"
             {
                 IncludeCaption = true;
             }
-            column(PrepairedByName; PrepairedByUser."Reporting_SI Name-Adl") { }
-            column(ResponsibleName; ResponsibleUser."Reporting_SI Name-Adl") { }
+            column(PrepairedByName; PrepairedByUser."Reporting Name-Adl") { }
+            column(ResponsibleName; ResponsibleUser."Reporting Name-Adl") { }
 
             dataitem("BST Code"; "BST Code-Adl")
             {
@@ -77,9 +77,9 @@ report 13062682 "Export BST-Adl"
             trigger OnAfterGetRecord()
             begin
                 PrepairedByUser.get("Prep. By User ID");
-                PrepairedByUser.testfield("Reporting_SI Name-Adl");
+                PrepairedByUser.testfield("Reporting Name-Adl");
                 ResponsibleUser.get("Resp. User ID");
-                ResponsibleUser.TestField("Reporting_SI Name-Adl");
+                ResponsibleUser.TestField("Reporting Name-Adl");
             end;
         }
     }
@@ -269,7 +269,7 @@ report 13062682 "Export BST-Adl"
         XmlElem[3].Add(XmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('Telephone', xbsrns);
-        XmlElem[4].Add(XmlText.Create(PrepairedByUser."Reporting_SI Phone-Adl"));
+        XmlElem[4].Add(XmlText.Create(PrepairedByUser."Reporting Phone-Adl"));
         XmlElem[3].Add(XmlElem[4]);
 
         XmlElem[2] := XmlElement.Create('SMO', xbsrns);
@@ -300,34 +300,34 @@ report 13062682 "Export BST-Adl"
 
         XmlElem[7] := XmlElement.Create('Name', xbsrns);
         XmlElem[6].Add(xmlElem[7]);
-        XmlElem[7].Add(XmlText.Create(RespUser."Reporting_SI Name-Adl"));
+        XmlElem[7].Add(XmlText.Create(RespUser."Reporting Name-Adl"));
 
         XmlElem[7] := XmlElement.Create('Email', xbsrns);
         XmlElem[6].Add(xmlElem[7]);
-        XmlElem[7].Add(XmlText.Create(RespUser."Reporting_SI Email-Adl"));
+        XmlElem[7].Add(XmlText.Create(RespUser."Reporting Email-Adl"));
 
         XmlElem[7] := XmlElement.Create('Telephon', xbsrns);
         XmlElem[6].Add(xmlElem[7]);
-        XmlElem[7].Add(XmlText.Create(RespUser."Reporting_SI Phone-Adl"));
+        XmlElem[7].Add(XmlText.Create(RespUser."Reporting Phone-Adl"));
 
         XmlElem[7] := XmlElement.Create('Position', xbsrns);
         XmlElem[6].Add(xmlElem[7]);
-        XmlElem[7].Add(XmlText.Create(RespUser."Reporting_SI Position-Adl"));
+        XmlElem[7].Add(XmlText.Create(RespUser."Reporting Position-Adl"));
 
         XmlElem[5] := XmlElement.Create('ReportMaker', xbsrns);
         XmlElem[4].Add(xmlElem[5]);
 
         XmlElem[6] := XmlElement.Create('Name', xbsrns);
         XmlElem[5].Add(xmlElem[6]);
-        XmlElem[6].Add(XmlText.Create(RespUser."Reporting_SI Name-Adl"));
+        XmlElem[6].Add(XmlText.Create(RespUser."Reporting Name-Adl"));
 
         XmlElem[6] := XmlElement.Create('Email', xbsrns);
         XmlElem[5].Add(xmlElem[6]);
-        XmlElem[6].Add(XmlText.Create(RespUser."Reporting_SI Email-Adl"));
+        XmlElem[6].Add(XmlText.Create(RespUser."Reporting Email-Adl"));
 
         XmlElem[6] := XmlElement.Create('Telephon', xbsrns);
         XmlElem[5].Add(xmlElem[6]);
-        XmlElem[6].Add(XmlText.Create(RespUser."Reporting_SI Phone-Adl"));
+        XmlElem[6].Add(XmlText.Create(RespUser."Reporting Phone-Adl"));
 
         XmlElem[6] := XmlElement.Create('Currency', xbsrns);
         XmlElem[5].Add(xmlElem[6]);

@@ -83,7 +83,7 @@ report 13062663 "Adjust KRD on Entries-Adl"
 
     var
         GLAcc: Record "G/L Account";
-        ReportSISetup: Record "Reporting_SI Setup-Adl";
+        ReportSISetup: Record "Reporting SI Setup-Adl";
         ConfrimMsg: Label 'Are you sure you want to update entries based on values in master tables?';
         FinishMsg: Label 'Processing finished.';
         AbortByUserMsg: Label 'Aborted by user';

@@ -1,4 +1,4 @@
-table 13062660 "Reporting_SI Setup-Adl"
+table 13062660 "Reporting SI Setup-Adl"
 {
     DataClassification = SystemMetadata;
 
