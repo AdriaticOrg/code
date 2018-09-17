@@ -23,7 +23,7 @@ codeunit 13062594 "TextWriter-Adl"
         TextVal: Text;
     begin
         if (Value.IsDate()) then
-            TextVal := Format(Value, 0, '<day,2><month,2><year,2>')
+            TextVal := Format(Value, 0, '<day,2><month,2><year,4>')
         else
             if (Value.IsDecimal()) then
                 TextVal := Format(Value, 0, '<Precision,2><Standard Format,9>')
