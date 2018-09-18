@@ -5293,6 +5293,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Unpaid Receivables Enabled-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 1491443078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unpaid Receivables Enabled</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field PDO Enabled-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 3029142040 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unpaid Receivables Enabled</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Forced Credit/Debit Enabled-Adl - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2964936661 - Field 164629734 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Numeric Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5352,6 +5362,16 @@
           <source>EU Customs</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Adl EU Customs - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2100386450 - Field 2763228750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PDO Enabled</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Adl PDO - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2100386450 - Field 613931757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forced Credit/Debit Enabled</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Adl Forced CreditDebit - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4059529745 - Field 1226769296 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Instrument Type</source>

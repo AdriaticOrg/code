@@ -401,6 +401,7 @@ report 13062602 "Export VIES-Adl"
         FileName: Text;
         ExpOk: Boolean;
         xmlns: Text;
+        xmlnsmeta: Text;
         LineCntr: Integer;
         HeadTagName: Text;
         StatMonth: Integer;
@@ -445,6 +446,7 @@ report 13062602 "Export VIES-Adl"
         StatMonth := DATE2DMY(VIESRepHead."Period Start Date", 2);
         StatYear := DATE2DMY(VIESRepHead."Period Start Date", 3);
 
+        xmlnsmeta := 'http://e-porezna.porezna-uprava.hr/sheme/Metapodaci/v2-0';
         case VIESRepHead."VIES Type" of
             VIESRepHead."VIES Type"::ZP:
                 begin
@@ -474,61 +476,64 @@ report 13062602 "Export VIES-Adl"
         XmlDoc.SetDeclaration(XmlDec);
 
         XmlElem[1] := xmlElement.Create(HeadTagName, xmlns);
+        XmlAttr := XmlAttribute.Create('verzijaSheme', '1.0');
+        XmlElem[1].Add(XmlAttr);
         XmlDoc.Add(xmlElem[1]);
 
-        XmlElem[2] := XmlElement.Create('Metapodaci', xmlns);
+        XmlElem[2] := XmlElement.Create('Metapodaci', xmlnsmeta);
+        //XmlElem[2].Add(XmlAttribute.CreateNamespaceDeclaration('xmlns', xmlnsmeta));
         XmlElem[1].Add(xmlElem[2]);
 
-        XmlElem[3] := XmlElement.Create('Naslov', xmlns);
+        XmlElem[3] := XmlElement.Create('Naslov', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(HeadTxt));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'title');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Autor', xmlns);
+        XmlElem[3] := XmlElement.Create('Autor', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(MakerUser."Reporting Name-Adl"));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'creator');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Datum', xmlns);
+        XmlElem[3] := XmlElement.Create('Datum', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(FORMAT(WORKDATE(), 0, '<Year4>-<Month,2>-<Day,2>') + 'T' +
          FORMAT(TIME(), 0, '<Hours24,2><Filler Character,0>:<Minutes,2>:<Seconds,2>')));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'date');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Format', xmlns);
+        XmlElem[3] := XmlElement.Create('Format', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create('text/xml'));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'format');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Jezik', xmlns);
+        XmlElem[3] := XmlElement.Create('Jezik', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create('hr-HR'));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'language');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Identifikator', xmlns);
+        XmlElem[3] := XmlElement.Create('Identifikator', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(LOWERCASE((DELCHR(CREATEGUID(), '<>', '{}')))));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'identifier');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Uskladjenost', xmlns);
+        XmlElem[3] := XmlElement.Create('Uskladjenost', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(ConformsTo));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'conformsTo');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Tip', xmlns);
+        XmlElem[3] := XmlElement.Create('Tip', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(FormLbl));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'type');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Adresant', xmlns);
+        XmlElem[3] := XmlElement.Create('Adresant', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(AddressantLbl));
 
