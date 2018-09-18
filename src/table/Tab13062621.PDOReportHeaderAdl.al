@@ -13,7 +13,7 @@ table 13062621 "PDO Report Header-Adl"
             trigger OnValidate()
             begin
                 IF "No." <> xRec."No." THEN BEGIN
-                    RepSISetup.GET();
+                    PDOSetup.GET();
                     TestNoSeriesManual();
                     "No. Series" := '';
                 END;
@@ -126,17 +126,17 @@ table 13062621 "PDO Report Header-Adl"
     var
         ADLCore: Codeunit "Adl Core-Adl";
     begin
-        RepSISetup.GET();
+        PDOSetup.GET();
         IF "No." = '' THEN BEGIN
             TestNoSeries();
             NoSeriesMgt.InitSeries(GetNoSeriesCode(), xRec."No. Series", 0D, "No.", "No. Series");
         END;
 
-        RepSISetup.TestField("PDO Prep. By User ID");
-        RepSISetup.TestField("PDO Resp. User ID");
+        PDOSetup.TestField("PDO Prep. By User ID");
+        PDOSetup.TestField("PDO Resp. User ID");
 
-        "Prep. By User ID" := RepSISetup."PDO Prep. By User ID";
-        "Resp. User ID" := RepSISetup."PDO Resp. User ID";
+        "Prep. By User ID" := PDOSetup."PDO Prep. By User ID";
+        "Resp. User ID" := PDOSetup."PDO Resp. User ID";
         "User ID" := ADLCore.TrimmedUserID50();
     end;
 
@@ -147,24 +147,24 @@ table 13062621 "PDO Report Header-Adl"
 
     local procedure TestNoSeries()
     begin
-        RepSISetup.TestField("PDO Report No. Series");
+        PDOSetup.TestField("PDO Report No. Series");
     end;
 
     local procedure TestNoSeriesManual()
     begin
-        NoSeriesMgt.TestManual(RepSISetup."PDO Report No. Series");
+        NoSeriesMgt.TestManual(PDOSetup."PDO Report No. Series");
     end;
 
     local procedure GetNoSeriesCode(): Code[20]
     begin
-        exit(RepSISetup."PDO Report No. Series")
+        exit(PDOSetup."PDO Report No. Series")
     end;
 
     procedure AssistEdit(OldPDORepHead: record "PDO Report Header-Adl"): Boolean
     begin
         with PDORepHead do begin
             copy(Rec);
-            RepSISetup.Get();
+            PDOSetup.Get();
             TestNoSeries();
             IF NoSeriesMgt.SelectSeries(GetNoSeriesCode(), OldPDORepHead."No. Series", "No. Series") THEN BEGIN
                 NoSeriesMgt.SetSeries("No.");
@@ -193,7 +193,7 @@ table 13062621 "PDO Report Header-Adl"
     end;
 
     var
-        RepSISetup: Record "Reporting SI Setup-Adl";
+        PDOSetup: Record "PDO Setup-Adl";
         PDORepHead: Record "PDO Report Header-Adl";
         NoSeriesMgt: Codeunit NoSeriesManagement;
 }

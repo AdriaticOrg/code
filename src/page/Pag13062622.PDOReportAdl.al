@@ -95,7 +95,7 @@ page 13062622 "PDO Report-Adl"
                 trigger OnAction()
                 var
                     VATEntry: Record "VAT Entry";
-                    RepSISetup: Record "Reporting SI Setup-Adl";
+                    PDOSetup: Record "PDO Setup-Adl";
                     RepSuggestLines: Report "Suggest PDO Lines-Adl";
                 begin
                     TestField("No.");
@@ -105,8 +105,8 @@ page 13062622 "PDO Report-Adl"
                     VATEntry.Reset();
                     VATEntry.SetRange("Posting Date", "Period Start Date", "Period End Date");
 
-                    if RepSISetup.Get() and (RepSISetup."PDO VAT Ident. Filter Code" <> '') then
-                        VATEntry.SetRange("VAT Identifier-Adl", RepSISetup."PDO VAT Ident. Filter Code");
+                    if PDOSetup.Get() and (PDOSetup."PDO VAT Ident. Filter Code" <> '') then
+                        VATEntry.SetRange("VAT Identifier-Adl", PDOSetup."PDO VAT Ident. Filter Code");
 
                     RepSuggestLines.SetTableView(VATEntry);
                     RepSuggestLines.SetPDORepDocNo("No.");

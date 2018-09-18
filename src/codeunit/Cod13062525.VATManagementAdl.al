@@ -66,10 +66,10 @@ codeunit 13062525 "VAT Management-Adl"
                     VATEntry."Remaining Unrealized Base" := 0;
                 END;
             GenJournalLine."Postponed VAT-Adl"::"Realized VAT":
-                BEGIN
+                if GenJournalLine."Posting Date" <> GenJournalLine."VAT Date-Adl" then begin
                     VATEntry."Unrealized Amount" := -VATEntry.Amount;
                     VATEntry."Unrealized Base" := -VATEntry.Base;
-                END;
+                end;
         END;
         //TEST
 

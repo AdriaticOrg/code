@@ -14,9 +14,9 @@ report 13062661 "Suggest KRD Lines-Adl"
             var
                 KRDRepLine: Record "KRD Report Line-Adl";
             begin
-                RepSISetup.Get();
-                RepSISetup.TestField("KRD Blank LCY Code");
-                RepSISetup.TestField("KRD Blank LCY Num.");
+                KRDSetup.Get();
+                KRDSetup.TestField("KRD Blank LCY Code");
+                KRDSetup.TestField("KRD Blank LCY Num.");
 
                 KRDRepLine.Reset();
                 KRDRepLine.SetRange("Document No.", KRDRepHead."No.");
@@ -74,7 +74,7 @@ report 13062661 "Suggest KRD Lines-Adl"
 
     var
         KRDRepHead: Record "KRD Report Header-Adl";
-        RepSISetup: Record "Reporting SI Setup-Adl";
+        KRDSetup: Record "KRD Setup-Adl";
         GenLedgSetup: Record "General Ledger Setup";
         DeleteExisting: Boolean;
         KRDRepDocNo: Code[20];
@@ -95,9 +95,9 @@ report 13062661 "Suggest KRD Lines-Adl"
         DecrAmt: Decimal;
     begin
         if CLE."Currency Code" = '' then
-            CLE."Currency Code" := RepSISetup."KRD Blank LCY Code";
+            CLE."Currency Code" := KRDSetup."KRD Blank LCY Code";
         if VLE."Currency Code" = '' then
-            VLE."Currency Code" := RepSISetup."KRD Blank LCY Code";
+            VLE."Currency Code" := KRDSetup."KRD Blank LCY Code";
 
         case EntryType of
             EntryType::Customer:
@@ -141,11 +141,11 @@ report 13062661 "Suggest KRD Lines-Adl"
                         KRDRepLine."Non-Residnet Sector Code" := cle."KRD Non-Residnet Sector Code-Adl";
                         KRDRepLine.validate("Country/Region Code", cle."KRD Country/Region Code-Adl");
 
-                        if cle."Currency Code" <> RepSISetup."KRD Blank LCY Code" then
+                        if cle."Currency Code" <> KRDSetup."KRD Blank LCY Code" then
                             KRDRepLine.validate("Currency Code", cle."Currency Code")
                         else begin
-                            KRDRepLine."Currency Code" := RepSISetup."KRD Blank LCY Code";
-                            KRDRepLine."Currency No." := RepSISetup."KRD Blank LCY Num.";
+                            KRDRepLine."Currency Code" := KRDSetup."KRD Blank LCY Code";
+                            KRDRepLine."Currency No." := KRDSetup."KRD Blank LCY Num.";
                         end;
 
                         KRDRepLine."Opening Balance" := GetOpeningBalance(cle."KRD Affiliation Type-Adl", cle."KRD Instrument Type-Adl",
@@ -202,11 +202,11 @@ report 13062661 "Suggest KRD Lines-Adl"
                         KRDRepLine."Non-Residnet Sector Code" := VLE."KRD Non-Residnet Sector Code-Adl";
                         KRDRepLine.validate("Country/Region Code", VLE."KRD Country/Region Code-Adl");
 
-                        if VLE."Currency Code" <> RepSISetup."KRD Blank LCY Code" then
+                        if VLE."Currency Code" <> KRDSetup."KRD Blank LCY Code" then
                             KRDRepLine.validate("Currency Code", VLE."Currency Code")
                         else begin
-                            KRDRepLine."Currency Code" := RepSISetup."KRD Blank LCY Code";
-                            KRDRepLine."Currency No." := RepSISetup."KRD Blank LCY Num.";
+                            KRDRepLine."Currency Code" := KRDSetup."KRD Blank LCY Code";
+                            KRDRepLine."Currency No." := KRDSetup."KRD Blank LCY Num.";
                         end;
 
                         KRDRepLine."Opening Balance" := GetOpeningBalance(VLE."KRD Affiliation Type-Adl", VLE."KRD Instrument Type-Adl",

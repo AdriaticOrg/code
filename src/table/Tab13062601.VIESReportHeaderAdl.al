@@ -13,7 +13,7 @@ table 13062601 "VIES Report Header-Adl"
             trigger OnValidate()
             begin
                 IF "No." <> xRec."No." THEN BEGIN
-                    RepSISetup.GET();
+                    VIESSetup.GET();
                     TestNoSeriesManual();
                     "No. Series" := '';
                 END;
@@ -156,19 +156,19 @@ table 13062601 "VIES Report Header-Adl"
     var
         ADLCore: Codeunit "Adl Core-Adl";
     begin
-        RepSISetup.GET();
+        VIESSetup.GET();
         IF "No." = '' THEN BEGIN
             TestNoSeries();
             NoSeriesMgt.InitSeries(GetNoSeriesCode(), xRec."No. Series", 0D, "No.", "No. Series");
         END;
 
-        RepSISetup.TestField("VIES Prep. By User ID");
-        RepSISetup.TestField("VIES Resp. User ID");
+        VIESSetup.TestField("VIES Prep. By User ID");
+        VIESSetup.TestField("VIES Resp. User ID");
 
-        "Prep. By User ID" := RepSISetup."VIES Prep. By User ID";
-        "Resp. User ID" := RepSISetup."VIES Resp. User ID";
-        "VIES Country" := RepSISetup."Default VIES Country";
-        "VIES Type" := RepSISetup."Default VIES Type";
+        "Prep. By User ID" := VIESSetup."VIES Prep. By User ID";
+        "Resp. User ID" := VIESSetup."VIES Resp. User ID";
+        "VIES Country" := VIESSetup."Default VIES Country";
+        "VIES Type" := VIESSetup."Default VIES Type";
         "User ID" := ADLCore.TrimmedUserID50();
 
     end;
@@ -180,17 +180,17 @@ table 13062601 "VIES Report Header-Adl"
 
     local procedure TestNoSeries()
     begin
-        RepSISetup.TestField("VIES Report No. Series");
+        VIESSetup.TestField("VIES Report No. Series");
     end;
 
     local procedure TestNoSeriesManual()
     begin
-        NoSeriesMgt.TestManual(RepSISetup."VIES Report No. Series");
+        NoSeriesMgt.TestManual(VIESSetup."VIES Report No. Series");
     end;
 
     local procedure GetNoSeriesCode(): Code[20]
     begin
-        exit(RepSISetup."VIES Report No. Series")
+        exit(VIESSetup."VIES Report No. Series")
     end;
 
     local procedure CheckLinesExist(): Boolean
@@ -205,7 +205,7 @@ table 13062601 "VIES Report Header-Adl"
     begin
         with VIESRepHead do begin
             copy(Rec);
-            RepSISetup.Get();
+            VIESSetup.Get();
             TestNoSeries();
             IF NoSeriesMgt.SelectSeries(GetNoSeriesCode(), OldVIESRepHead."No. Series", "No. Series") THEN BEGIN
                 NoSeriesMgt.SetSeries("No.");
@@ -244,7 +244,7 @@ table 13062601 "VIES Report Header-Adl"
     end;
 
     var
-        RepSISetup: Record "Reporting SI Setup-Adl";
+        VIESSetup: Record "VIES Setup-Adl";
         VIESRepHead: Record "VIES Report Header-Adl";
         NoSeriesMgt: Codeunit NoSeriesManagement;
         LineExistErr: Label 'Document already has lines, please remove them first.';

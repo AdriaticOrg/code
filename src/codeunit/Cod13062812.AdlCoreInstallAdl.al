@@ -17,7 +17,7 @@ codeunit 13062812 "Adl Core Install-Adl"
 
     local procedure HandleFreshInstall();
     var
-        ADLInitialize: Codeunit "Wizard Initialize-adl";
+    //ADLInitialize: Codeunit "Wizard Initialize-adl";
     begin
         //ADLInitialize.Run();
         SetApplicationArea();
@@ -32,7 +32,7 @@ codeunit 13062812 "Adl Core Install-Adl"
     var
         ApplicationAreaSetup: Record "Application Area Setup";
         ExperienceTierSetup: Record "Experience Tier Setup";
-        ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
+        //ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
     begin
         if not ExperienceTierSetup.Get(CompanyName()) then begin
             ExperienceTierSetup.Init();

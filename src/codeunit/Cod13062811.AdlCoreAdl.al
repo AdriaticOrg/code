@@ -1,7 +1,6 @@
 codeunit 13062811 "Adl Core-Adl"
 {
-    Permissions = tabledata 13062811 = rm,
-                  tabledata 13062660 = rm;
+    Permissions = tabledata 13062811 = rm;
     procedure FeatureEnabled(Feature: Option Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,UnpaidReceivables,ForcedCreditDebit): Boolean
     var
         CoreSetup: Record "CoreSetup-Adl";

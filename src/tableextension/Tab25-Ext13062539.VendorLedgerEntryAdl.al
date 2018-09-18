@@ -63,14 +63,14 @@ tableextension 13062539 "Vendor Ledger Entry-Adl" extends "Vendor Ledger Entry" 
     // <adl.25>
     procedure CopyKRDFields(Vendor: Record Vendor)
     var
-        ReportSISetup: Record "Reporting SI Setup-Adl";
+        KRDSetup: Record "KRD Setup-Adl";
     begin
         "KRD Country/Region Code-Adl" := Vendor."Country/Region Code";
         "KRD Non-Residnet Sector Code-Adl" := Vendor."KRD Non-Residnet Sector Code-Adl";
         "KRD Affiliation Type-Adl" := Vendor."KRD Affiliation Type-Adl";
 
-        if ("KRD Affiliation Type-Adl" = '') and ReportSISetup.Get() then
-            "KRD Affiliation Type-Adl" := ReportSISetup."Default KRD Affiliation Type";
+        if ("KRD Affiliation Type-Adl" = '') and KRDSetup.Get() then
+            "KRD Affiliation Type-Adl" := KRDSetup."Default KRD Affiliation Type";
     end;
 
     procedure CopyKRDFields(VendPstgGrp: Record "Vendor Posting Group")

@@ -13,7 +13,7 @@ table 13062643 "FAS Report Header-Adl"
             trigger OnValidate()
             begin
                 IF "No." <> xRec."No." THEN BEGIN
-                    RepSISetup.GET();
+                    FASSetup.GET();
                     TestNoSeriesManual();
                     "No. Series" := '';
                 END;
@@ -141,17 +141,17 @@ table 13062643 "FAS Report Header-Adl"
     var
         ADLCore: Codeunit "Adl Core-Adl";
     begin
-        RepSISetup.GET();
+        FASSetup.GET();
         IF "No." = '' THEN BEGIN
             TestNoSeries();
             NoSeriesMgt.InitSeries(GetNoSeriesCode(), xRec."No. Series", 0D, "No.", "No. Series");
         END;
 
-        RepSISetup.TestField("FAS Prep. By User ID");
-        RepSISetup.TestField("FAS Resp. User ID");
+        FASSetup.TestField("FAS Prep. By User ID");
+        FASSetup.TestField("FAS Resp. User ID");
 
-        "Prep. By User ID" := RepSISetup."FAS Prep. By User ID";
-        "Resp. User ID" := RepSISetup."FAS Resp. User ID";
+        "Prep. By User ID" := FASSetup."FAS Prep. By User ID";
+        "Resp. User ID" := FASSetup."FAS Resp. User ID";
         "User ID" := ADLCore.TrimmedUserID50();
     end;
 
@@ -162,24 +162,24 @@ table 13062643 "FAS Report Header-Adl"
 
     local procedure TestNoSeries()
     begin
-        RepSISetup.TestField("FAS Report No. Series");
+        FASSetup.TestField("FAS Report No. Series");
     end;
 
     local procedure TestNoSeriesManual()
     begin
-        NoSeriesMgt.TestManual(RepSISetup."FAS Report No. Series");
+        NoSeriesMgt.TestManual(FASSetup."FAS Report No. Series");
     end;
 
     local procedure GetNoSeriesCode(): Code[20]
     begin
-        exit(RepSISetup."FAS Report No. Series")
+        exit(FASSetup."FAS Report No. Series")
     end;
 
     procedure AssistEdit(OldFASRepHead: record "FAS Report Header-Adl"): Boolean
     begin
         with FASRepHead do begin
             copy(Rec);
-            RepSISetup.Get();
+            FASSetup.Get();
             TestNoSeries();
             IF NoSeriesMgt.SelectSeries(GetNoSeriesCode(), OldFASRepHead."No. Series", "No. Series") THEN BEGIN
                 NoSeriesMgt.SetSeries("No.");
@@ -208,7 +208,7 @@ table 13062643 "FAS Report Header-Adl"
     end;
 
     var
-        RepSISetup: Record "Reporting SI Setup-Adl";
+        FASSetup: Record "FAS Setup-Adl";
         FASRepHead: Record "FAS Report Header-Adl";
         NoSeriesMgt: Codeunit NoSeriesManagement;
 }

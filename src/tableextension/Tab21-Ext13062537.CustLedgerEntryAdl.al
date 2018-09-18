@@ -63,14 +63,14 @@ tableextension 13062537 "Cust. Ledger Entry-Adl" extends "Cust. Ledger Entry" //
     // <adl.25>
     procedure CopyKRDFields(Customer: Record Customer)
     var
-        ReportSISetup: Record "Reporting SI Setup-Adl";
+        KRDSetup: Record "KRD Setup-Adl";
     begin
         "KRD Country/Region Code-Adl" := Customer."Country/Region Code";
         "KRD Non-Residnet Sector Code-Adl" := Customer."KRD Non-Residnet Sector Code-Adl";
         "KRD Affiliation Type-Adl" := Customer."KRD Affiliation Type-Adl";
 
-        if ("KRD Affiliation Type-Adl" = '') and ReportSISetup.Get() then
-            "KRD Affiliation Type-Adl" := ReportSISetup."Default KRD Affiliation Type";
+        if ("KRD Affiliation Type-Adl" = '') and KRDSetup.Get() then
+            "KRD Affiliation Type-Adl" := KRDSetup."Default KRD Affiliation Type";
     end;
 
     procedure CopyKRDFields(CustPstgGrp: Record "Customer Posting Group")
