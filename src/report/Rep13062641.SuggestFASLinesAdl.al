@@ -45,6 +45,9 @@ report 13062641 "Suggest FAS Lines-Adl"
                     FASRepLine.SetRange("Instrument Code", "FAS Instrument Code-Adl");
                     FASRepLine.SetRange("FAS Type", "FAS Type-Adl");
 
+                    if GLAcc."FAS Type-Adl" = GLAcc."FAS Type-Adl"::Liabilities then
+                        Amount := -Amount;
+
                     if FASRepLine.FindSet() then begin
                         FASRepLine."Transactions Amt. in Period" += Amount;
                         FASRepLine."Changes Amt. in Period" += Amount;

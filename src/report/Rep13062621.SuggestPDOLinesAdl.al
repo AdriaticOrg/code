@@ -137,7 +137,7 @@ report 13062621 "Suggest PDO Lines-Adl"
                 PDORepLine."Document No." := PDORepDocNo;
                 PDORepLine."Line No" := NewLineNo;
                 PDORepLine.Type := RepType;
-                PDORepLine."VAT Identifier" := "VAT Identifier-Adl";
+                //PDORepLine."VAT Identifier" := "VAT Identifier-Adl";
                 PDORepLine."Country/Region Code" := "Country/Region Code";
                 PDORepLine."VAT Registration No." := Cust2."VAT Registration No.";
 

@@ -61,7 +61,6 @@ page 13062621 "PDO Report Subform-Adl"
                     PDORepHead.get("Document No.");
 
                     VATEntry.SetCurrentKey("VAT Identifier-Adl", "Posting Date");
-                    VATEntry.SetRange("VAT Identifier-Adl", "VAT Identifier");
                     VATEntry.SetRange("VAT Registration No.", "VAT Registration No.");
                     VATEntry.SetRange("Posting Date", PDORepHead."Period Start Date", PDORepHead."Period End Date");
                     page.RunModal(0, VATEntry);
