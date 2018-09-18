@@ -1783,11 +1783,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CoreSetup-Adl - Field PDO Enabled - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 909224780 - Field 813452428 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>EU Customs</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CoreSetup-Adl - Field EU Customs - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 909224780 - Field 822403876 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forced Credit/Debit Enabled</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2748,11 +2743,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Core Setup-Adl - Control Posting - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2020614236 - Control 2057091634 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Core Setup-Adl - Control Reporting - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2020614236 - Control 2487071696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting SI</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2847,11 +2837,6 @@
           <source>VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control VAT - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2914345777 - Control 2057091634 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Reporting - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 2487071696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting SI</source>
@@ -5307,11 +5292,6 @@
           <source>Unpaid Receivables Enabled</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Unpaid Receivables Enabled-Adl - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 225785401 - Field 758010688 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>EU Customs</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field EU Customs-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2964936661 - Field 164629734 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Numeric Code</source>

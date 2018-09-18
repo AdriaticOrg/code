@@ -172,14 +172,6 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     }
 
                 }
-                group(Reporting)
-                {
-                    Caption = 'Reporting';
-                    field("EU Customs"; "EU Customs-Adl")
-                    {
-                        ApplicationArea = All;
-                    }
-                }
                 group(ReportingSI)
                 {
                     Caption = 'Reporting SI';
@@ -814,7 +806,6 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
     begin
         "ADL Enabled-Adl" := CoreSetup."ADL Enabled";
         "BST Enabled-Adl" := CoreSetup."BST Enabled";
-        "EU Customs-Adl" := CoreSetup."EU Customs";
         "FAS Enabled-Adl" := CoreSetup."FAS Enabled";
         "KRD Enabled-Adl" := CoreSetup."KRD Enabled";
         "Unpaid Receivables Enabled-Adl" := CoreSetup."Unpaid Receivables Enabled";

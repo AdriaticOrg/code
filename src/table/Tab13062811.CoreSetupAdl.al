@@ -80,12 +80,6 @@ table 13062811 "CoreSetup-Adl"
             Caption = 'PDO Enabled';
             DataClassification = SystemMetadata;
         }
-        field(100; "EU Customs"; Boolean)
-        {
-            Caption = 'EU Customs';
-            DataClassification = SystemMetadata;
-        }
-
         field(200; "Forced Credit/Debit Enabled"; Boolean)
         {
             Caption = 'Forced Credit/Debit Enabled';
@@ -156,5 +150,7 @@ table 13062811 "CoreSetup-Adl"
             Feature::ForcedCreditDebit:
                 "Forced Credit/Debit Enabled" := EnableFeature;
         end;
+
+        Modify();
     end;
 }

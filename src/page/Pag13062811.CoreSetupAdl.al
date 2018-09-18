@@ -46,16 +46,6 @@ page 13062811 "Core Setup-Adl"
                 }
             }
 
-            group(Reporting)
-            {
-                Caption = 'Reporting';
-                // <adl.0>
-                field("EU Customs"; "EU Customs")
-                {
-                    ApplicationArea = All;
-                }
-                // </adl.0>
-            }
             group(ReportingSI)
             {
                 Caption = 'Reporting SI';
