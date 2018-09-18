@@ -4583,25 +4583,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup-Adl - Field Global Posting Approver-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1018799998 - Control 4006375243 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 1018799998 - Control 3096815839 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Name - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Name-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1018799998 - Control 254854014 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 1018799998 - Control 367723890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting E-mail</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Email - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Email-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1018799998 - Control 1417409374 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 1018799998 - Control 263227922 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting Phone</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Phone - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Phone-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1018799998 - Control 2314590201 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 1018799998 - Control 2033404373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting Position</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Position - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Position-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1018799998 - Field 3096815839 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reporting Name</source>
@@ -4733,20 +4733,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Action UnpaidReceivables-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 4248078117 - Control 1402601032 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 4248078117 - Control 2005823108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original Document Amount (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control OriginalDocumentAmountLCY - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control OriginalDocumentAmountLCY-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 4248078117 - Control 3775182588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 4248078117 - Control 72356528 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original VAT Amount (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control OriginalVATAmountLCY - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control OriginalVATAmountLCY-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 4248078117 - Control 3925844188 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 4248078117 - Control 1098385360 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Open Amount (LCY) Without Unrealized Exchange Rate Adjustment</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control OpenAmounLCYtWithoutUnrealizedERF - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control OpenAmounLCYtWithoutUnrealizedERF-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3842424518 - Control 2457381690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extended Data Start Balance Date</source>
