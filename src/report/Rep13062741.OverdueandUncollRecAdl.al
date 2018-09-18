@@ -2,7 +2,7 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
 {
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/reportlayout/Rep13062741.OverdueandUncollRecadl.rdlc';
+    RDLCLayout = './src/reportlayout/Rep13062741.OverdueandUncollRecAdl.rdlc';
 
     Caption = 'Overdue and Uncollected Receivables';
     UsageCategory = ReportsAndAnalysis;
