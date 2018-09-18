@@ -147,7 +147,7 @@ report 13062642 "Export FAS-Adl"
 
 
     var
-        RepSISetup: Record "Reporting SI Setup-Adl";
+        FASSetup: Record "FAS Setup-Adl";
         CompanyInfo: Record "Company Information";
         PrepairedByUser: Record "User Setup";
         ResponsibleUser: Record "User Setup";
@@ -197,11 +197,11 @@ report 13062642 "Export FAS-Adl"
         ResponsibleUser.TestField("Reporting Email-Adl");
         ResponsibleUser.TestField("Reporting Phone-Adl");
 
-        RepSISetup.Get();
-        RepSISetup.TestField("Budget User Code");
-        RepSISetup.TestField("Company Sector Code");
+        FASSetup.Get();
+        FASSetup.TestField("Budget User Code");
+        FASSetup.TestField("Company Sector Code");
 
-        MngUserSetup.get(RepSISetup."FAS Director User ID");
+        MngUserSetup.get(FASSetup."FAS Director User ID");
         MngUserSetup.TestField("Reporting Name-Adl");
 
         CompanyInfo.Get();
@@ -310,7 +310,7 @@ report 13062642 "Export FAS-Adl"
 
         XmlElem[3] := XmlElement.Create('SifUpor');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(RepSISetup."Budget User Code"));
+        XmlElem[3].add(XmlText.Create(FASSetup."Budget User Code"));
 
         XmlElem[3] := XmlElement.Create('MaticnaStevilka10');
         XmlElem[2].Add(XmlElem[3]);
@@ -322,7 +322,7 @@ report 13062642 "Export FAS-Adl"
 
         XmlElem[3] := XmlElement.Create('Sektor');
         XmlElem[2].Add(XmlElem[3]);
-        XmlElem[3].add(XmlText.Create(RepSIMgt.GetNumsFromStr(RepSISetup."Company Sector Code")));
+        XmlElem[3].add(XmlText.Create(RepSIMgt.GetNumsFromStr(FASSetup."Company Sector Code")));
 
         XmlElem[3] := XmlElement.Create('Ime');
         XmlElem[2].Add(XmlElem[3]);

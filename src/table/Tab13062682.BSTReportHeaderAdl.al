@@ -13,7 +13,7 @@ table 13062682 "BST Report Header-Adl"
             trigger OnValidate()
             begin
                 IF "No." <> xRec."No." THEN BEGIN
-                    RepSISetup.GET();
+                    BSTSetup.GET();
                     TestNoSeriesManual();
                     "No. Series" := '';
                 END;
@@ -123,17 +123,17 @@ table 13062682 "BST Report Header-Adl"
     var
         ADLCore: Codeunit "Adl Core-Adl";
     begin
-        RepSISetup.GET();
+        BSTSetup.GET();
         IF "No." = '' THEN BEGIN
             TestNoSeries();
             NoSeriesMgt.InitSeries(GetNoSeriesCode(), xRec."No. Series", 0D, "No.", "No. Series");
         END;
 
-        RepSISetup.TestField("BST Prep. By User ID");
-        RepSISetup.TestField("BST Resp. User ID");
+        BSTSetup.TestField("BST Prep. By User ID");
+        BSTSetup.TestField("BST Resp. User ID");
 
-        "Prep. By User ID" := RepSISetup."BST Prep. By User ID";
-        "Resp. User ID" := RepSISetup."BST Resp. User ID";
+        "Prep. By User ID" := BSTSetup."BST Prep. By User ID";
+        "Resp. User ID" := BSTSetup."BST Resp. User ID";
         "User ID" := ADLCore.TrimmedUserID50();
     end;
 
@@ -144,24 +144,24 @@ table 13062682 "BST Report Header-Adl"
 
     local procedure TestNoSeries()
     begin
-        RepSISetup.TestField("BST Report No. Series");
+        BSTSetup.TestField("BST Report No. Series");
     end;
 
     local procedure TestNoSeriesManual()
     begin
-        NoSeriesMgt.TestManual(RepSISetup."BST Report No. Series");
+        NoSeriesMgt.TestManual(BSTSetup."BST Report No. Series");
     end;
 
     local procedure GetNoSeriesCode(): Code[20]
     begin
-        exit(RepSISetup."BST Report No. Series")
+        exit(BSTSetup."BST Report No. Series")
     end;
 
     procedure AssistEdit(OldBSTRepHead: record "BST Report Header-Adl"): Boolean
     begin
         with BSTRepHead do begin
             copy(Rec);
-            RepSISetup.Get();
+            BSTSetup.Get();
             TestNoSeries();
             IF NoSeriesMgt.SelectSeries(GetNoSeriesCode(), OldBSTRepHead."No. Series", "No. Series") THEN BEGIN
                 NoSeriesMgt.SetSeries("No.");
@@ -190,7 +190,7 @@ table 13062682 "BST Report Header-Adl"
     end;
 
     var
-        RepSISetup: Record "Reporting SI Setup-Adl";
+        BSTSetup: Record "BST Setup-Adl";
         BSTRepHead: Record "BST Report Header-Adl";
         NoSeriesMgt: Codeunit NoSeriesManagement;
 }

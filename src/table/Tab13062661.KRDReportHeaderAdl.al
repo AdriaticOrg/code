@@ -13,7 +13,7 @@ table 13062661 "KRD Report Header-Adl"
             trigger OnValidate()
             begin
                 IF "No." <> xRec."No." THEN BEGIN
-                    RepSISetup.GET();
+                    KRDSetup.GET();
                     TestNoSeriesManual();
                     "No. Series" := '';
                 END;
@@ -111,17 +111,17 @@ table 13062661 "KRD Report Header-Adl"
     var
         ADLCore: Codeunit "Adl Core-Adl";
     begin
-        RepSISetup.GET();
+        KRDSetup.GET();
         IF "No." = '' THEN BEGIN
             TestNoSeries();
             NoSeriesMgt.InitSeries(GetNoSeriesCode(), xRec."No. Series", 0D, "No.", "No. Series");
         END;
 
-        RepSISetup.TestField("KRD Prep. By User ID");
-        RepSISetup.TestField("KRD Resp. User ID");
+        KRDSetup.TestField("KRD Prep. By User ID");
+        KRDSetup.TestField("KRD Resp. User ID");
 
-        "Prep. By User ID" := RepSISetup."KRD Prep. By User ID";
-        "Resp. User ID" := RepSISetup."KRD Resp. User ID";
+        "Prep. By User ID" := KRDSetup."KRD Prep. By User ID";
+        "Resp. User ID" := KRDSetup."KRD Resp. User ID";
         "User ID" := ADLCore.TrimmedUserID50();
     end;
 
@@ -132,24 +132,24 @@ table 13062661 "KRD Report Header-Adl"
 
     local procedure TestNoSeries()
     begin
-        RepSISetup.TestField("KRD Report No. Series");
+        KRDSetup.TestField("KRD Report No. Series");
     end;
 
     local procedure TestNoSeriesManual()
     begin
-        NoSeriesMgt.TestManual(RepSISetup."KRD Report No. Series");
+        NoSeriesMgt.TestManual(KRDSetup."KRD Report No. Series");
     end;
 
     local procedure GetNoSeriesCode(): Code[20]
     begin
-        exit(RepSISetup."KRD Report No. Series")
+        exit(KRDSetup."KRD Report No. Series")
     end;
 
     procedure AssistEdit(OldKRDRepHead: record "KRD Report Header-Adl"): Boolean
     begin
         with KRDRepHead do begin
             copy(Rec);
-            RepSISetup.Get();
+            KRDSetup.Get();
             TestNoSeries();
             IF NoSeriesMgt.SelectSeries(GetNoSeriesCode(), OldKRDRepHead."No. Series", "No. Series") THEN BEGIN
                 NoSeriesMgt.SetSeries("No.");
@@ -178,7 +178,7 @@ table 13062661 "KRD Report Header-Adl"
     end;
 
     var
-        RepSISetup: Record "Reporting SI Setup-Adl";
+        KRDSetup: Record "KRD Setup-Adl";
         KRDRepHead: Record "KRD Report Header-Adl";
         NoSeriesMgt: Codeunit NoSeriesManagement;
 }

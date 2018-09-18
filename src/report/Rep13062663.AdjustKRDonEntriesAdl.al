@@ -35,8 +35,8 @@ report 13062663 "Adjust KRD on Entries-Adl"
                     "KRD Non-Residnet Sector Code-Adl" := Cust."KRD Non-Residnet Sector Code-Adl";
                     "KRD Affiliation Type-Adl" := Cust."KRD Affiliation Type-Adl";
 
-                    if ("KRD Affiliation Type-Adl" = '') and ReportSISetup.Get() then
-                        "KRD Affiliation Type-Adl" := ReportSISetup."Default KRD Affiliation Type";
+                    if ("KRD Affiliation Type-Adl" = '') and KRDSetup.Get() then
+                        "KRD Affiliation Type-Adl" := KRDSetup."Default KRD Affiliation Type";
 
                     Modify();
                 end;
@@ -66,8 +66,8 @@ report 13062663 "Adjust KRD on Entries-Adl"
                     "KRD Non-Residnet Sector Code-Adl" := Vend."KRD Non-Residnet Sector Code-Adl";
                     "KRD Affiliation Type-Adl" := Vend."KRD Affiliation Type-Adl";
 
-                    if ("KRD Affiliation Type-Adl" = '') and ReportSISetup.Get() then
-                        "KRD Affiliation Type-Adl" := ReportSISetup."Default KRD Affiliation Type";
+                    if ("KRD Affiliation Type-Adl" = '') and KRDSetup.Get() then
+                        "KRD Affiliation Type-Adl" := KRDSetup."Default KRD Affiliation Type";
 
                     Modify();
                 end;
@@ -78,12 +78,11 @@ report 13062663 "Adjust KRD on Entries-Adl"
                 Message(FinishMsg);
             end;
         }
-
     }
 
     var
         GLAcc: Record "G/L Account";
-        ReportSISetup: Record "Reporting SI Setup-Adl";
+        KRDSetup: Record "KRD Setup-Adl";
         ConfrimMsg: Label 'Are you sure you want to update entries based on values in master tables?';
         FinishMsg: Label 'Processing finished.';
         AbortByUserMsg: Label 'Aborted by user';

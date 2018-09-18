@@ -386,7 +386,7 @@ report 13062602 "Export VIES-Adl"
         ViesRepBuff: Record "VIES Report Buffer-Adl" temporary;
         RespUser: Record "User Setup";
         MakerUser: Record "User Setup";
-        RepSISetup: Record "Reporting SI Setup-Adl";
+        VIESSetup: Record "VIES Setup-Adl";
         TmpBlob: Record TempBlob temporary;
         RepSIMgt: Codeunit "Reporting SI Mgt.-Adl";
         XmlDoc: XmlDocument;
@@ -428,8 +428,8 @@ report 13062602 "Export VIES-Adl"
         GLSetup.get();
         GLSetup.TestField("LCY Code");
 
-        RepSISetup.Get();
-        RepSISetup.TestField("VIES Company Branch Code");
+        VIESSetup.Get();
+        VIESSetup.TestField("VIES Company Branch Code");
 
         VIESRepHead.TestField("Period Start Date");
 
@@ -589,7 +589,7 @@ report 13062602 "Export VIES-Adl"
         XmlElem[3].Add(xmlElem[4]);
 
         XmlElem[3] := XmlElement.Create('Ispostava', xmlns);
-        XmlElem[3].Add((XmlText.Create(RepSISetup."VIES Company Branch Code")));
+        XmlElem[3].Add((XmlText.Create(VIESSetup."VIES Company Branch Code")));
         XmlElem[2].Add(xmlElem[3]);
 
         XmlElem[2] := XmlElement.Create('Tijelo', xmlns);
