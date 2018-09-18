@@ -153,6 +153,7 @@ report 13062662 "Export KRD-Adl"
         StatYear: Integer;
         LineCntr: Integer;
         ClaimLiabStr: Text[10];
+        ZeroAmt: Decimal;
         PrecisionFormatTxt: Label '<Precision,2:2><Standard Format,9>';
     begin
         CompanyInfo.get();
@@ -331,6 +332,9 @@ report 13062662 "Export KRD-Adl"
         KRDReportLine.SetRange("Document No.", KRDRepHead."No.");
         if KRDReportLine.FindSet() then
             repeat
+                KRDReportLine.TestField("Country/Region No.");
+                KRDReportLine.TestField("Currency Code");
+
                 LineCntr += 1;
 
                 XmlElem[5] := XmlElement.Create('Specification', xbsrns);
@@ -403,38 +407,38 @@ report 13062662 "Export KRD-Adl"
 
                 XmlElem[7] := XmlElement.Create('Arrears', xbsrns);
                 XmlElem[6].Add(xmlElem[7]);
-                XmlElem[7].Add(XmlText.Create(Format(0, 0, PrecisionFormatTxt)));  //to do
+                XmlElem[7].Add(XmlText.Create(Format(ZeroAmt, 0, PrecisionFormatTxt)));  //to do
 
                 XmlElem[6] := XmlElement.Create('InterestAndIncome', xbsrns);
                 XmlElem[5].Add(xmlElem[6]);
 
                 XmlElem[7] := XmlElement.Create('OpeningBalance', xbsrns);
                 XmlElem[6].Add(xmlElem[7]);
-                XmlElem[7].Add(XmlText.Create(Format(0, 0, PrecisionFormatTxt)));  //to do         
+                XmlElem[7].Add(XmlText.Create(Format(ZeroAmt, 0, PrecisionFormatTxt)));  //to do         
 
                 XmlElem[7] := XmlElement.Create('AccruedInterest', xbsrns);
                 XmlElem[6].Add(xmlElem[7]);
-                XmlElem[7].Add(XmlText.Create(Format(0, 0, PrecisionFormatTxt)));  //to do        
+                XmlElem[7].Add(XmlText.Create(Format(ZeroAmt, 0, PrecisionFormatTxt)));  //to do        
 
                 XmlElem[7] := XmlElement.Create('PaidInterest', xbsrns);
                 XmlElem[6].Add(xmlElem[7]);
-                XmlElem[7].Add(XmlText.Create(Format(0, 0, PrecisionFormatTxt)));  //to do
+                XmlElem[7].Add(XmlText.Create(Format(ZeroAmt, 0, PrecisionFormatTxt)));  //to do
 
                 XmlElem[7] := XmlElement.Create('OtherChanges', xbsrns);
                 XmlElem[6].Add(xmlElem[7]);
-                XmlElem[7].Add(XmlText.Create(Format(0, 0, PrecisionFormatTxt)));  //to do 
+                XmlElem[7].Add(XmlText.Create(Format(ZeroAmt, 0, PrecisionFormatTxt)));  //to do 
 
                 XmlElem[7] := XmlElement.Create('ClosingBalance', xbsrns);
                 XmlElem[6].Add(xmlElem[7]);
-                XmlElem[7].Add(XmlText.Create(Format(0, 0, PrecisionFormatTxt)));  //to do
+                XmlElem[7].Add(XmlText.Create(Format(ZeroAmt, 0, PrecisionFormatTxt)));  //to do
 
                 XmlElem[7] := XmlElement.Create('ShortTermResidualMaturity', xbsrns);
                 XmlElem[6].Add(xmlElem[7]);
-                XmlElem[7].Add(XmlText.Create(Format(0, 0, PrecisionFormatTxt)));  //to do 
+                XmlElem[7].Add(XmlText.Create(Format(ZeroAmt, 0, PrecisionFormatTxt)));  //to do 
 
                 XmlElem[7] := XmlElement.Create('Arrears', xbsrns);
                 XmlElem[6].Add(xmlElem[7]);
-                XmlElem[7].Add(XmlText.Create(Format(0, 0, PrecisionFormatTxt)));  //to do                                                                                                                                                                                                                                                                                                                                               
+                XmlElem[7].Add(XmlText.Create(Format(ZeroAmt, 0, PrecisionFormatTxt)));  //to do                                                                                                                                                                                                                                                                                                                                               
 
             until KRDReportLine.Next() = 0;
 

@@ -100,9 +100,11 @@ page 13062661 "KRD Report-Adl"
 
                     CLE.Reset();
                     CLE.SetRange("Posting Date", "Period Start Date", "Period End Date");
+                    cle.SetFilter("KRD Non-Residnet Sector Code-Adl", '<>%1', '');
 
                     VLE.Reset();
                     VLE.SetRange("Posting Date", "Period Start Date", "Period End Date");
+                    VLE.SetFilter("KRD Non-Residnet Sector Code-Adl", '<>%1', '');
 
                     RepSuggestLines.SetTableView(CLE);
                     RepSuggestLines.SetTableView(VLE);

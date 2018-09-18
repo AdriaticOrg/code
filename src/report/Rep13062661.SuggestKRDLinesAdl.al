@@ -8,7 +8,7 @@ report 13062661 "Suggest KRD Lines-Adl"
     {
         dataitem("Cust. Ledger Entry"; "Cust. Ledger Entry")
         {
-            RequestFilterFields = "Posting Date", "Document No.", "Customer No.";
+            RequestFilterFields = "Posting Date", "Document No.", "Customer No.", "KRD Non-Residnet Sector Code-Adl";
 
             trigger OnPreDataItem()
             var
@@ -45,7 +45,7 @@ report 13062661 "Suggest KRD Lines-Adl"
         }
         dataitem("Vendor Ledger Entry"; "Vendor Ledger Entry")
         {
-            RequestFilterFields = "Posting Date", "Document No.", "Vendor No.";
+            RequestFilterFields = "Posting Date", "Document No.", "Vendor No.", "KRD Non-Residnet Sector Code-Adl";
 
             trigger OnAfterGetRecord()
             begin
