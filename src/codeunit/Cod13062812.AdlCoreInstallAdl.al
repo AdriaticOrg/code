@@ -25,14 +25,14 @@ codeunit 13062812 "Adl Core Install-Adl"
 
     local procedure HandleReinstall();
     begin
-
+        SetApplicationArea();
     end;
 
     procedure SetApplicationArea()
     var
         ApplicationAreaSetup: Record "Application Area Setup";
         ExperienceTierSetup: Record "Experience Tier Setup";
-        //ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
+        ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
     begin
         if not ExperienceTierSetup.Get(CompanyName()) then begin
             ExperienceTierSetup.Init();
@@ -48,13 +48,19 @@ codeunit 13062812 "Adl Core Install-Adl"
             ApplicationAreaSetup."Company Name" := CopyStr(CompanyName(), 1, 30);
             ApplicationAreaSetup.Insert();
         end;
-        //ApplicationAreaSetup.Init();
-        //ApplicationAreaSetup."Company Name" := CopyStr(CompanyName(), 1, 30);
-        //enable app area her or
-        //ApplicationAreaSetup.Modify();
-        //ApplicationAreaMgmtFacade.SetupApplicationArea();
+        ApplicationAreaSetup."Company Name" := CopyStr(CompanyName(), 1, 30);
+        ApplicationAreaSetup."Adl Core" := true;
+        ApplicationAreaSetup."Adl BST" := true;
+        ApplicationAreaSetup."Adl FAS" := true;
+        ApplicationAreaSetup."Adl KRD" := true;
+        ApplicationAreaSetup."Adl Unpaid Receivables" := true;
+        ApplicationAreaSetup."Adl Forced CreditDebit" := true;
+        ApplicationAreaSetup."Adl VAT" := true;
+        ApplicationAreaSetup."Adl VIES" := true;
+        ApplicationAreaSetup."Adl PDO" := true;
+        ApplicationAreaSetup.Modify();
+        ApplicationAreaMgmtFacade.SetupApplicationArea();
     end;
-
 
     procedure ApplyEvaluationClassificationsForPrivacy()
     var

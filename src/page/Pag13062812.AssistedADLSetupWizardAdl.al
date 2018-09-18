@@ -165,9 +165,13 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                         var
                             ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
                         begin
-                            if (ApplicatonAreaMgmtAdl.IsKRDApplicationAreaEnabled()) then
-                                exit;
-                            ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea();
+                            if ("Unpaid Receivables Enabled-Adl") and (ApplicatonAreaMgmtAdl.IsUnpaidReceivablesApplicationAreaEnabled()) then
+                                exit
+                            else
+                                ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(true);
+
+                            if not ("Unpaid Receivables Enabled-Adl") then
+                                ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(false);
                         end;
                     }
 
