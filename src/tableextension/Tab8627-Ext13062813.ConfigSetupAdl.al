@@ -37,6 +37,16 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
             Caption = 'Unpaid Receivables Enabled';
             DataClassification = SystemMetadata;
         }
+        field(13062821; "PDO Enabled-Adl"; Boolean)
+        {
+            Caption = 'Unpaid Receivables Enabled';
+            DataClassification = SystemMetadata;
+        }
+        field(13062822; "Forced Credit/Debit Enabled-Adl"; Boolean)
+        {
+            Caption = 'Unpaid Receivables Enabled';
+            DataClassification = SystemMetadata;
+        }
     }
 
     procedure CopyCoreSetupInfo()
@@ -53,9 +63,10 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
         CoreSetup."FAS Enabled" := "FAS Enabled-Adl";
         CoreSetup."KRD Enabled" := "KRD Enabled-Adl";
         CoreSetup."Unpaid Receivables Enabled" := "Unpaid Receivables Enabled-Adl";
+        CoreSetup."Forced Credit/Debit Enabled" := "Forced Credit/Debit Enabled-Adl";
         CoreSetup."VAT Enabled" := "VAT Enabled-Adl";
         CoreSetup."VIES Enabled" := "VIES Enabled-Adl";
-
+        CoreSetup."PDO Enabled" := "PDO Enabled-Adl";
         CoreSetup.modify();
         Commit();
     end;

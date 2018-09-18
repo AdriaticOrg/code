@@ -36,7 +36,7 @@ codeunit 13062818 "Application Area Mgmt-Adl"
             exit(ApplicationAreaSetup."Adl KRD");
     end;
 
-    procedure EnableAdlCoreApplicationArea(CoreSetup: Record "CoreSetup-Adl")
+    procedure EnableAdlCoreApplicationArea(ConfigSetup: Record "Config. Setup")
     var
         ApplicationAreaSetup: Record "Application Area Setup";
         ExperienceTierSetup: Record "Experience Tier Setup";
@@ -46,22 +46,30 @@ codeunit 13062818 "Application Area Mgmt-Adl"
         if not ExperienceTierSetup.Custom then             //Set this to Custom in Isnall CU
             exit;
         if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then begin
-            if CoreSetup."Unpaid Receivables Enabled" then
+            If not ConfigSetup."ADL Enabled-Adl" then exit;
+            if ConfigSetup."Unpaid Receivables Enabled-Adl" then
                 ApplicationAreaSetup."Adl Unpaid Receivables" := true;
-            if CoreSetup."KRD Enabled" then
+            if ConfigSetup."KRD Enabled-Adl" then
                 ApplicationAreaSetup."Adl KRD" := true;
-            if CoreSetup."BST Enabled" then
+            if ConfigSetup."BST Enabled-Adl" then
                 ApplicationAreaSetup."Adl BST" := true;
-            if CoreSetup."FAS Enabled" then
+            if ConfigSetup."FAS Enabled-Adl" then
                 ApplicationAreaSetup."Adl FAS" := true;
+            if ConfigSetup."PDO Enabled-Adl" then
+                ApplicationAreaSetup."Adl PDO" := true;
+            if ConfigSetup."Forced Credit/Debit Enabled-Adl" then
+                ApplicationAreaSetup."Adl Forced CreditDebit" := true;
+            if ConfigSetup."VAT Enabled-Adl" then
+                ApplicationAreaSetup."Adl VAT" := true;
+            if ConfigSetup."VIES Enabled-Adl" then
+                ApplicationAreaSetup."Adl VIES" := true;
 
-            //TODO:: ...and some more...
             ApplicationAreaSetup.Modify();
             ApplicationAreaMgmtFacade.SetupApplicationArea();
         end;
     end;
 
-    procedure EnableUnpaidReceivableApplicationArea()
+    procedure EnableKRDApplicationArea()
     var
         ApplicationAreaSetup: Record "Application Area Setup";
         ExperienceTierSetup: Record "Experience Tier Setup";
@@ -71,7 +79,122 @@ codeunit 13062818 "Application Area Mgmt-Adl"
         if not ExperienceTierSetup.Custom then             //Set this to Custom in Isnall CU
             exit;
         if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then begin
-            ApplicationAreaSetup."Adl Unpaid Receivables" := true;
+            ApplicationAreaSetup."Adl KRD" := true;
+            ApplicationAreaSetup.Modify();
+            ApplicationAreaMgmtFacade.SetupApplicationArea();
+        end;
+    end;
+
+    procedure EnableBSTApplicationArea()
+    var
+        ApplicationAreaSetup: Record "Application Area Setup";
+        ExperienceTierSetup: Record "Experience Tier Setup";
+        ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
+    begin
+        if ExperienceTierSetup.Get(CompanyName()) then;
+        if not ExperienceTierSetup.Custom then             //Set this to Custom in Isnall CU
+            exit;
+        if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then begin
+            ApplicationAreaSetup."Adl BST" := true;
+            ApplicationAreaSetup.Modify();
+            ApplicationAreaMgmtFacade.SetupApplicationArea();
+        end;
+    end;
+
+    procedure EnableFASApplicationArea()
+    var
+        ApplicationAreaSetup: Record "Application Area Setup";
+        ExperienceTierSetup: Record "Experience Tier Setup";
+        ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
+    begin
+        if ExperienceTierSetup.Get(CompanyName()) then;
+        if not ExperienceTierSetup.Custom then             //Set this to Custom in Isnall CU
+            exit;
+        if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then begin
+            ApplicationAreaSetup."Adl FAS" := true;
+            ApplicationAreaSetup.Modify();
+            ApplicationAreaMgmtFacade.SetupApplicationArea();
+        end;
+    end;
+
+    procedure EnablePDOApplicationArea()
+    var
+        ApplicationAreaSetup: Record "Application Area Setup";
+        ExperienceTierSetup: Record "Experience Tier Setup";
+        ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
+    begin
+        if ExperienceTierSetup.Get(CompanyName()) then;
+        if not ExperienceTierSetup.Custom then             //Set this to Custom in Isnall CU
+            exit;
+        if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then begin
+            ApplicationAreaSetup."Adl PDO" := true;
+            ApplicationAreaSetup.Modify();
+            ApplicationAreaMgmtFacade.SetupApplicationArea();
+        end;
+    end;
+
+    procedure EnableUnpaidReceivableApplicationArea(Enable: Boolean)
+    var
+        ApplicationAreaSetup: Record "Application Area Setup";
+        ExperienceTierSetup: Record "Experience Tier Setup";
+        ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
+    begin
+        if ExperienceTierSetup.Get(CompanyName()) then;
+        if not ExperienceTierSetup.Custom then             //Set this to Custom in Isnall CU
+            exit;
+        if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then begin
+            If Enable then
+                ApplicationAreaSetup."Adl Unpaid Receivables" := true
+            else
+                ApplicationAreaSetup."Adl Unpaid Receivables" := false;
+            ApplicationAreaSetup.Modify();
+            ApplicationAreaMgmtFacade.SetupApplicationArea();
+        end;
+    end;
+
+    procedure EnableForceDedCredApplicationArea()
+    var
+        ApplicationAreaSetup: Record "Application Area Setup";
+        ExperienceTierSetup: Record "Experience Tier Setup";
+        ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
+    begin
+        if ExperienceTierSetup.Get(CompanyName()) then;
+        if not ExperienceTierSetup.Custom then             //Set this to Custom in Isnall CU
+            exit;
+        if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then begin
+            ApplicationAreaSetup."Adl Forced CreditDebit" := true;
+            ApplicationAreaSetup.Modify();
+            ApplicationAreaMgmtFacade.SetupApplicationArea();
+        end;
+    end;
+
+    procedure EnableForceVATApplicationArea()
+    var
+        ApplicationAreaSetup: Record "Application Area Setup";
+        ExperienceTierSetup: Record "Experience Tier Setup";
+        ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
+    begin
+        if ExperienceTierSetup.Get(CompanyName()) then;
+        if not ExperienceTierSetup.Custom then             //Set this to Custom in Isnall CU
+            exit;
+        if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then begin
+            ApplicationAreaSetup."Adl VAT" := true;
+            ApplicationAreaSetup.Modify();
+            ApplicationAreaMgmtFacade.SetupApplicationArea();
+        end;
+    end;
+
+    procedure EnableForceVIESApplicationArea()
+    var
+        ApplicationAreaSetup: Record "Application Area Setup";
+        ExperienceTierSetup: Record "Experience Tier Setup";
+        ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
+    begin
+        if ExperienceTierSetup.Get(CompanyName()) then;
+        if not ExperienceTierSetup.Custom then             //Set this to Custom in Isnall CU
+            exit;
+        if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then begin
+            ApplicationAreaSetup."Adl VIES" := true;
             ApplicationAreaSetup.Modify();
             ApplicationAreaMgmtFacade.SetupApplicationArea();
         end;
@@ -84,6 +207,9 @@ codeunit 13062818 "Application Area Mgmt-Adl"
         TempApplicationAreaSetup."Adl BST" := true;
         TempApplicationAreaSetup."Adl KRD" := true;
         TempApplicationAreaSetup."Adl FAS" := true;
-        //...
+        TempApplicationAreaSetup."Adl PDO" := true;
+        TempApplicationAreaSetup."Adl Forced CreditDebit" := true;
+        TempApplicationAreaSetup."Adl Unpaid Receivables" := true;
+        TempApplicationAreaSetup."Adl VAT" := true;
     end;
 }
