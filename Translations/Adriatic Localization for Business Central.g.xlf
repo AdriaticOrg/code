@@ -5278,60 +5278,60 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Country/Region-Adl - Field Numeric Code-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 3792761671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ADL Enabled</source>
+        <trans-unit id="TableExtension 2100386450 - Field 1018225350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ADL Core</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field ADL Enabled Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Adl Core - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 996978425 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Enabled</source>
+        <trans-unit id="TableExtension 2100386450 - Field 1157190606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field VAT Enabled Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Adl VAT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 1478307891 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Rep HR Enabled</source>
+        <trans-unit id="TableExtension 2100386450 - Field 2818172903 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report HR</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Rep HR Enabled Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Adl ReportHR - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 2510591846 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Rep RS Enabled</source>
+        <trans-unit id="TableExtension 2100386450 - Field 1192216154 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report RS</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Rep RS Enabled Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Adl ReportRS - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 1316553003 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Rep SI Enabled</source>
+        <trans-unit id="TableExtension 2100386450 - Field 793112335 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report SI</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Rep SI Enabled Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Adl ReportSI - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 2789144132 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>FAS Enabled</source>
+        <trans-unit id="TableExtension 2100386450 - Field 3040423487 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FAS</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field FAS Enabled Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Adl FAS - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 1963763339 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>KRD Enabled</source>
+        <trans-unit id="TableExtension 2100386450 - Field 489901240 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field KRD Enabled Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Adl KRD - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 147343163 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>BST Enabled</source>
+        <trans-unit id="TableExtension 2100386450 - Field 3694456840 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BST</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field BST Enabled Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Adl BST - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 605234391 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VIES Enabled</source>
+        <trans-unit id="TableExtension 2100386450 - Field 3952680804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field VIES Enabled Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Adl VIES - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 3080267560 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Unpaid Receivables Enabled</source>
+        <trans-unit id="TableExtension 2100386450 - Field 3923184339 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unpaid Receivables</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Unpaid Receivables Enabled Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Adl Unpaid Receivables - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 2003258043 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2100386450 - Field 18879843 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EU Customs</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field EU Customs Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Adl EU Customs - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4059529745 - Field 1226769296 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Instrument Type</source>

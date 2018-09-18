@@ -114,6 +114,7 @@ report 13062622 "Export PDO-Adl"
         RepSIMgt: Codeunit "Reporting SI Mgt.-Adl";
         XmlDoc: XmlDocument;
         XmlDec: XmlDeclaration;
+        XmlNSM: XmlNamespaceManager;
         XmlElem: array[10] of XmlElement;
         OutStr: OutStream;
         InStr: InStream;
@@ -156,6 +157,8 @@ report 13062622 "Export PDO-Adl"
         PDORepLineSum.SetRange(Type, PDORepLineSum.Type::Correction);
         PDORepLineSum.CalcSums("Amount (LCY)");
         TotPrevSales := PDORepLineSum."Amount (LCY)";
+
+        //XmlNSM.AddNamespace('edp', 'http://edavki.durs.si/Documents/Schemas/EDP-Common-1.xsd');
 
         XmlDoc := xmlDocument.Create();
         XmlDec := xmlDeclaration.Create('1.0', 'UTF-8', '');
