@@ -37,11 +37,6 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
             Caption = 'Unpaid Receivables Enabled';
             DataClassification = SystemMetadata;
         }
-        field(13062821; "EU Customs-Adl"; Boolean)
-        {
-            Caption = 'EU Customs';
-            DataClassification = SystemMetadata;
-        }
     }
 
     procedure CopyCoreSetupInfo()
@@ -55,7 +50,6 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
 
         CoreSetup."ADL Enabled" := "ADL Enabled-Adl";
         CoreSetup."BST Enabled" := "BST Enabled-Adl";
-        CoreSetup."EU Customs" := "EU Customs-Adl";
         CoreSetup."FAS Enabled" := "FAS Enabled-Adl";
         CoreSetup."KRD Enabled" := "KRD Enabled-Adl";
         CoreSetup."Unpaid Receivables Enabled" := "Unpaid Receivables Enabled-Adl";
