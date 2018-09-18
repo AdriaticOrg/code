@@ -3519,7 +3519,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Export PDO-Adl - NamedType ExportDoneMsg</note>
         </trans-unit>
         <trans-unit id="Report 2080463845 - Method 3786950161 - NamedType 4082645074" size-unit="char" translate="yes" xml:space="preserve">
-          <source>&lt;Precision,2:2&gt;&lt;Standard Format,9&gt;</source>
+          <source>&lt;Precision,0:0&gt;&lt;Standard Format,9&gt;</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export PDO-Adl - Method ExportPDO - NamedType PrecisionTok</note>
         </trans-unit>

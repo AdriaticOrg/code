@@ -125,7 +125,7 @@ report 13062622 "Export PDO-Adl"
         StatYear: Integer;
         TotSales: Decimal;
         TotPrevSales: Decimal;
-        PrecisionTok: Label '<Precision,2:2><Standard Format,9>';
+        PrecisionTok: Label '<Precision,0:0><Standard Format,9>';
     begin
         CompanyInfo.get();
         CompanyInfo.TestField("Registration No.");
