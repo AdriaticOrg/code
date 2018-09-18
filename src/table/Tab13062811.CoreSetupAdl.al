@@ -10,7 +10,7 @@ table 13062811 "CoreSetup-Adl"
         field(999999; "ADL Features"; Option)
         {
             Caption = 'ADL Features';
-            OptionMembers = Core,VAT,RepHR,RepRS,RepSI,FAS,KRD,BST,VIES,UnpaidReceivables,ForcedCreditDebit;
+            OptionMembers = Core,VAT,FAS,KRD,BST,VIES,PDO,UnpaidReceivables,ForcedCreditDebit;
             DataClassification = SystemMetadata;
             Description = 'We really need to transition to an emum!';
         }
@@ -33,16 +33,22 @@ table 13062811 "CoreSetup-Adl"
         {
             Caption = 'Rep HR Enabled';
             DataClassification = SystemMetadata;
+            ObsoleteState = Removed;
+            ObsoleteReason = 'redesign';
         }
         field(5; "Rep RS Enabled"; Boolean)
         {
             Caption = 'Rep RS Enabled';
             DataClassification = SystemMetadata;
+            ObsoleteState = Removed;
+            ObsoleteReason = 'redesign';
         }
         field(6; "Rep SI Enabled"; Boolean)
         {
             Caption = 'Rep SI Enabled';
             DataClassification = SystemMetadata;
+            ObsoleteState = Removed;
+            ObsoleteReason = 'redesign';
         }
         field(13; "FAS Enabled"; Boolean)
         {
@@ -69,6 +75,11 @@ table 13062811 "CoreSetup-Adl"
             Caption = 'Unpaid Receivables Enabled';
             DataClassification = SystemMetadata;
         }
+        field(63; "PDO Enabled"; Boolean)
+        {
+            Caption = 'PDO Enabled';
+            DataClassification = SystemMetadata;
+        }
         field(100; "EU Customs"; Boolean)
         {
             Caption = 'EU Customs';
@@ -86,4 +97,64 @@ table 13062811 "CoreSetup-Adl"
     {
         key(PK; "Code") { }
     }
+
+    procedure FeatureEnabled(Feature: Option Core,VAT,FAS,KRD,BST,VIES,PDO,UnpaidReceivables,ForcedCreditDebit): Boolean
+    begin
+        if not Get() or not "ADL Enabled" then exit(false);
+
+        case Feature of
+            Feature::Core:
+                exit("ADL Enabled");
+            Feature::VAT:
+                exit("VAT Enabled");
+            Feature::FAS:
+                exit("FAS Enabled");
+            Feature::KRD:
+                exit("KRD Enabled");
+            Feature::BST:
+                exit("BST Enabled");
+            Feature::VIES:
+                exit("VIES Enabled");
+            Feature::UnpaidReceivables:
+                exit("Unpaid Receivables Enabled");
+            Feature::ForcedCreditDebit:
+                exit("Forced Credit/Debit Enabled");
+        end;
+
+        exit(false);
+    end;
+
+    procedure EnableFeature(Feature: Option Core,VAT,FAS,KRD,BST,VIES,PDO,UnpaidReceivables,ForcedCreditDebit)
+    begin
+        LocalEnableOrDisableFeature(Feature, true);
+    end;
+
+    procedure DisableFeature(Feature: Option Core,VAT,FAS,KRD,BST,VIES,PDO,UnpaidReceivables,ForcedCreditDebit)
+    begin
+        LocalEnableOrDisableFeature(Feature, false);
+    end;
+
+    local procedure LocalEnableOrDisableFeature(Feature: Option Core,VAT,FAS,KRD,BST,VIES,PDO,UnpaidReceivables,ForcedCreditDebit; EnableFeature: Boolean)
+    begin
+        if not Get() then Insert();
+
+        case Feature of
+            Feature::Core:
+                "ADL Enabled" := EnableFeature;
+            Feature::VAT:
+                "VAT Enabled" := EnableFeature;
+            Feature::FAS:
+                "FAS Enabled" := EnableFeature;
+            Feature::KRD:
+                "KRD Enabled" := EnableFeature;
+            Feature::BST:
+                "BST Enabled" := EnableFeature;
+            Feature::VIES:
+                "VIES Enabled" := EnableFeature;
+            Feature::UnpaidReceivables:
+                "Unpaid Receivables Enabled" := EnableFeature;
+            Feature::ForcedCreditDebit:
+                "Forced Credit/Debit Enabled" := EnableFeature;
+        end;
+    end;
 }

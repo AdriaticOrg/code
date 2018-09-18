@@ -13,7 +13,7 @@ pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
                 PromotedCategory = Report;
                 Image = Report;
                 ApplicationArea = All;
-                Visible = RepSIFeatureEnabled;
+                Visible = VATFeatureEnabled;
 
                 trigger OnAction()
                 var
@@ -46,13 +46,13 @@ pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
-        RepSIFeatureEnabled: Boolean;
+        VATFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
-        RepSIFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::RepSI);
+        VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
         // </adl.0>
     end;
 }

@@ -553,7 +553,7 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
 
                     field(CompanyOfficialNo; CompanyOfficialNo)
                     {
-                        Caption = 'Compmany official';
+                        Caption = 'Company official';
                         TableRelation = "User Setup"."User ID";
                         ApplicationArea = All;
                     }
