@@ -79,26 +79,42 @@ tableextension 13062542 "Gen. Journal Line-Adl" extends "Gen. Journal Line" // 8
         // </adl.22>     	 
     }
     // <adl.24>
-    procedure CopyFASFields(Customer: Record Customer)
+    procedure CopyFASFields(Customer: Record Customer; AccType: Option Account,"Bal. Account")
     begin
-        "FAS Sector Code-Adl" := Customer."FAS Sector Code-Adl";
+        if AccType = AccType::Account then
+            "FAS Sector Code-Adl" := Customer."FAS Sector Code-Adl"
+        ELSE
+            "Bal. FAS Sector Code-Adl" := Customer."FAS Sector Code-Adl";
     end;
 
-    procedure CopyFASFields(Vendor: Record Vendor)
+    procedure CopyFASFields(Vendor: Record Vendor; AccType: Option Account,"Bal. Account")
     begin
-        "FAS Sector Code-Adl" := Vendor."FAS Sector Code-Adl";
+        IF AccType = AccType::Account then
+            "FAS Sector Code-Adl" := Vendor."FAS Sector Code-Adl"
+        else
+            "Bal. FAS Sector Code-Adl" := Vendor."FAS Sector Code-Adl";
     end;
 
-    procedure CopyFASFields(GLAccount: Record "G/L Account")
+    procedure CopyFASFields(GLAccount: Record "G/L Account"; AccType: Option Account,"Bal. Account")
     begin
-        "FAS Sector Code-Adl" := GLAccount."FAS Sector Code-Adl";
-        "FAS Instrument Code-Adl" := GLAccount."FAS Instrument Code-Adl";
+        if AccType = AccType::"Bal. Account" then begin
+            "FAS Sector Code-Adl" := GLAccount."FAS Sector Code-Adl";
+            "FAS Instrument Code-Adl" := GLAccount."FAS Instrument Code-Adl";
+        end else begin
+            "Bal. FAS Sector Code-Adl" := GLAccount."FAS Sector Code-Adl";
+            "Bal. FAS Instrument Code-Adl" := GLAccount."FAS Instrument Code-Adl";
+        end;
     end;
 
-    procedure CopyFASFields(BankAccount: Record "Bank Account")
+    procedure CopyFASFields(BankAccount: Record "Bank Account"; AccType: Option Account,"Bal. Account")
     begin
-        "FAS Sector Code-Adl" := BankAccount."FAS Sector Code-Adl";
-        "FAS Instrument Code-Adl" := BankAccount."FAS Instrument Code-Adl";
+        if AccType then begin
+            "FAS Sector Code-Adl" := BankAccount."FAS Sector Code-Adl";
+            "FAS Instrument Code-Adl" := BankAccount."FAS Instrument Code-Adl";
+        end else begin
+            "Bal. FAS Sector Code-Adl" := BankAccount."FAS Sector Code-Adl";
+            "Bal. FAS Instrument Code-Adl" := BankAccount."FAS Instrument Code-Adl";
+        end;
     end;
     // </adl.24>
     // <adl.22>
