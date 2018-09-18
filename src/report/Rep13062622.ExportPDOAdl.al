@@ -114,13 +114,13 @@ report 13062622 "Export PDO-Adl"
         RepSIMgt: Codeunit "Reporting SI Mgt.-Adl";
         XmlDoc: XmlDocument;
         XmlDec: XmlDeclaration;
-        //XmlNSM: XmlNamespaceManager;
         XmlElem: array[10] of XmlElement;
         OutStr: OutStream;
         InStr: InStream;
         FileName: Text;
         ExpOk: Boolean;
         xmlns: Text;
+        nsEDP: Text;
         StatMonth: Integer;
         StatYear: Integer;
         TotSales: Decimal;
@@ -146,8 +146,6 @@ report 13062622 "Export PDO-Adl"
         StatMonth := DATE2DMY(PDORepHead."Period Start Date", 2);
         StatYear := DATE2DMY(PDORepHead."Period Start Date", 3);
 
-        xmlns := 'http://edavki.durs.si/Documents/Schemas/PD_O_2.xsd';
-
         PDORepLineSum.Reset();
         PDORepLineSum.SetRange("Document No.", PDORepHead."No.");
         PDORepLineSum.SetRange(Type, PDORepLineSum.type::New);
@@ -158,48 +156,53 @@ report 13062622 "Export PDO-Adl"
         PDORepLineSum.CalcSums("Amount (LCY)");
         TotPrevSales := PDORepLineSum."Amount (LCY)";
 
-        //XmlNSM.AddNamespace('edp', 'http://edavki.durs.si/Documents/Schemas/EDP-Common-1.xsd');
 
         XmlDoc := xmlDocument.Create();
         XmlDec := xmlDeclaration.Create('1.0', 'UTF-8', '');
         XmlDoc.SetDeclaration(XmlDec);
 
+        xmlns := 'http://edavki.durs.si/Documents/Schemas/PD_O_2.xsd';
+        nsEDP := 'http://edavki.durs.si/Documents/Schemas/EDP-Common-1.xsd';
+
         XmlElem[1] := xmlElement.Create('Envelope', xmlns);
         XmlDoc.Add(xmlElem[1]);
 
-        XmlElem[2] := XmlElement.Create('Header', xmlns);
+        XmlElem[2] := XmlElement.Create('Header', nsEDP);
+        XmlElem[2].Add(XmlAttribute.CreateNamespaceDeclaration('edp', nsEDP));
         XmlElem[1].Add(xmlElem[2]);
 
-        XmlElem[3] := XmlElement.Create('taxpayer', xmlns);
+        XmlElem[3] := XmlElement.Create('taxpayer', nsEDP);
         XmlElem[2].Add(xmlElem[3]);
 
-        XmlElem[4] := XmlElement.Create('taxNumber', xmlns);
+        XmlElem[4] := XmlElement.Create('taxNumber', nsEDP);
         XmlElem[4].Add(XmlText.Create(RepSIMgt.GetNumsFromStr(CompanyInfo."VAT Registration No.")));
         XmlElem[3].Add(XmlElem[4]);
 
-        XmlElem[4] := XmlElement.Create('taxpayerType', xmlns);
+        XmlElem[4] := XmlElement.Create('taxpayerType', nsEDP);
         XmlElem[4].Add(XmlText.Create('PO'));
         XmlElem[3].Add(XmlElem[4]);
 
-        XmlElem[4] := XmlElement.Create('name', xmlns);
+        XmlElem[4] := XmlElement.Create('name', nsEDP);
         XmlElem[4].Add(XmlText.Create(CompanyInfo.Name));
         XmlElem[3].Add(XmlElem[4]);
 
-        XmlElem[4] := XmlElement.Create('address1', xmlns);
+        XmlElem[4] := XmlElement.Create('address1', nsEDP);
         XmlElem[4].Add(XmlText.Create(CompanyInfo.Address));
         XmlElem[3].Add(XmlElem[4]);
 
-        XmlElem[4] := XmlElement.Create('City', xmlns);
+        XmlElem[4] := XmlElement.Create('City', nsEDP);
         XmlElem[4].Add(XmlText.Create(CompanyInfo.City));
         XmlElem[3].Add(XmlElem[4]);
 
-        XmlElem[2] := XmlElement.Create('Signatures', xmlns);
+        XmlElem[2] := XmlElement.Create('Signatures', nsEDP);
+        XmlElem[2].Add(XmlAttribute.CreateNamespaceDeclaration('edp', nsEDP));
         XmlElem[1].Add(xmlElem[2]);
 
         XmlElem[2] := XmlElement.Create('body', xmlns);
         XmlElem[1].Add(xmlElem[2]);
 
-        XmlElem[3] := XmlElement.Create('bodyContent', xmlns);
+        XmlElem[3] := XmlElement.Create('bodyContent', nsEDP);
+        XmlElem[3].Add(XmlAttribute.CreateNamespaceDeclaration('edp', nsEDP));
         XmlElem[2].Add(xmlElem[3]);
 
         XmlElem[3] := XmlElement.Create('PD_O', xmlns);

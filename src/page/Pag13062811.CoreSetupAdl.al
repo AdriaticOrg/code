@@ -36,7 +36,6 @@ page 13062811 "Core Setup-Adl"
                 // </adl.28>
 
             }
-
             group(Posting)
             {
                 Caption = 'Posting';
@@ -45,7 +44,6 @@ page 13062811 "Core Setup-Adl"
                     ApplicationArea = All;
                 }
             }
-
             group(ReportingSI)
             {
                 Caption = 'Reporting SI';
@@ -73,10 +71,7 @@ page 13062811 "Core Setup-Adl"
                     ApplicationArea = All;
                 }
                 // </adl.22>       
-
             }
-
         }
     }
-
 }
