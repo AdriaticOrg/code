@@ -114,7 +114,7 @@ report 13062622 "Export PDO-Adl"
         RepSIMgt: Codeunit "Reporting SI Mgt.-Adl";
         XmlDoc: XmlDocument;
         XmlDec: XmlDeclaration;
-        XmlNSM: XmlNamespaceManager;
+        //XmlNSM: XmlNamespaceManager;
         XmlElem: array[10] of XmlElement;
         OutStr: OutStream;
         InStr: InStream;
