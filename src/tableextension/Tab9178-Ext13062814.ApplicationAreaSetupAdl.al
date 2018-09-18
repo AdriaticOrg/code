@@ -6,6 +6,8 @@ tableextension 13062814 "Application Area Setup-Adl" extends "Application Area S
         {
             Caption = 'ADL Core';
             DataClassification = SystemMetadata;
+            ObsoleteState = Removed;
+            ObsoleteReason = 'redesign';
         }
         field(13062812; "Adl VAT"; Boolean)
         {
