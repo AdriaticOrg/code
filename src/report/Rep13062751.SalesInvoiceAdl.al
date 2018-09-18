@@ -1,4 +1,4 @@
-Report 13062751 "Sales - Invoice Adl"
+Report 13062751 "Sales - Invoice-Adl"
 {
     // version NAVW113.00
 
@@ -198,7 +198,7 @@ Report 13062751 "Sales - Invoice Adl"
                     column(PricesInclVATYesNo_SalesInvHdr; FORMAT("Sales Invoice Header"."Prices Including VAT"))
                     {
                     }
-                    column(PageCaption; PageCaptionCap)
+                    column(PageCaption; PageNumberFormatTok)
                     {
                     }
                     column(PaymentTermsDesc; PaymentTerms.Description)
@@ -267,7 +267,7 @@ Report 13062751 "Sales - Invoice Adl"
                                 if DimText = '' then
                                     DimText := CopyStr(StrSubstNo('%1 %2', DimSetEntry1."Dimension Code", DimSetEntry1."Dimension Value Code"), 1, 120)
                                 else
-                                    DimText := 
+                                    DimText :=
                                         CopyStr(
                                             StrSubstNo(
                                                 '%1, %2 %3', DimText,
@@ -710,7 +710,7 @@ Report 13062751 "Sales - Invoice Adl"
                             AutoFormatExpression = "Sales Invoice Header"."Currency Code";
                             AutoFormatType = 1;
                         }
-                        column(VATClausesCaption; VATClausesCap)
+                        column(VATClausesCaption; VATClauseColumnCaptionLbl)
                         {
                         }
                         column(VATClauseVATIdentifierCaption; VATIdentifierCaptionLbl)
@@ -776,13 +776,13 @@ Report 13062751 "Sales - Invoice Adl"
                             SETRANGE(Number, 1, VATAmountLine.COUNT());
 
                             if GLSetup."LCY Code" = '' then
-                                VALSpecLCYHeader := Text007 + Text008
+                                VALSpecLCYHeader := VATAmountCurrencySpecLbl + LocalCurrencyLbl
                             else
-                                VALSpecLCYHeader := Text007 + FORMAT(GLSetup."LCY Code");
+                                VALSpecLCYHeader := VATAmountCurrencySpecLbl + FORMAT(GLSetup."LCY Code");
 
                             CurrExchRate.FindCurrency("Sales Invoice Header"."Posting Date", "Sales Invoice Header"."Currency Code", 1);
                             CalculatedExchRate := ROUND(1 / "Sales Invoice Header"."Currency Factor" * CurrExchRate."Exchange Rate Amount", 0.000001);
-                            VALExchRate := CopyStr(STRSUBSTNO(Text009, CalculatedExchRate, CurrExchRate."Exchange Rate Amount"), 1, MaxStrLen(VALExchRate));
+                            VALExchRate := CopyStr(STRSUBSTNO(ExchangeRateFormatLbl, CalculatedExchRate, CurrExchRate."Exchange Rate Amount"), 1, MaxStrLen(VALExchRate));
                         end;
                     }
                     dataitem(PaymentReportingArgument; "Payment Reporting Argument")
@@ -1054,8 +1054,8 @@ Report 13062751 "Sales - Invoice Adl"
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
         SegManagement: Codeunit SegManagement;
-        Text004: Label 'Sales - Invoice %1';
-        PageCaptionCap: Label 'Page %1 of %2';
+        SalesInvoiceCaptionFormatTok: Label 'Sales - Invoice %1';
+        PageNumberFormatTok: Label 'Page %1 of %2';
         CustAddr: array[8] of Text[50];
         ShipToAddr: array[8] of Text[50];
         CompanyAddr: array[8] of Text[50];
@@ -1081,12 +1081,12 @@ Report 13062751 "Sales - Invoice Adl"
         VALVATBaseLCY: Decimal;
         VALVATAmountLCY: Decimal;
         VALSpecLCYHeader: Text[80];
-        Text007: Label '"VAT Amount Specification in "';
-        Text008: Label 'Local Currency';
+        VATAmountCurrencySpecLbl: Label '"VAT Amount Specification in "';
+        LocalCurrencyLbl: Label 'Local Currency';
         VALExchRate: Text[50];
-        Text009: Label 'Exchange rate: %1/%2';
+        ExchangeRateFormatLbl: Label 'Exchange rate: %1/%2';
         CalculatedExchRate: Decimal;
-        Text010: Label 'Sales - Prepayment Invoice %1';
+        SalesPrepaymentInvoiceFormatLbl: Label 'Sales - Prepayment Invoice %1';
         OutputNo: Integer;
         TotalSubTotal: Decimal;
         TotalAmount: Decimal;
@@ -1109,7 +1109,7 @@ Report 13062751 "Sales - Invoice Adl"
         UnitPriceCaptionLbl: Label 'Unit Price';
         SalesInvLineDiscCaptionLbl: Label 'Discount %';
         AmountCaptionLbl: Label 'Amount';
-        VATClausesCap: Label 'VAT Clause';
+        VATClauseColumnCaptionLbl: Label 'VAT Clause';
         PostedShipmentDateCaptionLbl: Label 'Posted Shipment Date';
         SubtotalCaptionLbl: Label 'Subtotal';
         LineAmtAfterInvDiscCptnLbl: Label 'Payment Discount on VAT';
@@ -1327,8 +1327,8 @@ Report 13062751 "Sales - Invoice Adl"
         if DocCaption <> '' then
             exit(CopyStr(DocCaption, 1, 250));
         if "Sales Invoice Header"."Prepayment Invoice" then
-            exit(CopyStr(Text010, 1, 250));
-        exit(CopyStr(Text004, 1, 250));
+            exit(CopyStr(SalesPrepaymentInvoiceFormatLbl, 1, 250));
+        exit(CopyStr(SalesInvoiceCaptionFormatTok, 1, 250));
     end;
 
     procedure InitializeRequest(NewNoOfCopies: Integer; NewShowInternalInfo: Boolean; NewLogInteraction: Boolean; DisplayAsmInfo: Boolean);

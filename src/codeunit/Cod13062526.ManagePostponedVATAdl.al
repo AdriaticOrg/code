@@ -23,7 +23,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         PurchaseSetup.Get();
         CASE PostPonedVAT OF
             TRUE:
-                if (GenJnlLine."VAT Calculation Type" = GenJnlLine."VAT Calculation Type"::"Reverse Charge VAT") and PurchaseSetup."Use VAT Output Date-adl" then begin
+                if (GenJnlLine."VAT Calculation Type" = GenJnlLine."VAT Calculation Type"::"Reverse Charge VAT") and PurchaseSetup."Use VAT Output Date-Adl" then begin
                     VATPostingSetup."VAT Calculation Type" := VATPostingSetup."VAT Calculation Type"::"Normal VAT";
                     VATPostingSetup.MODIFY();
                     GenJnlLine."VAT Calculation Type" := GenJnlLine."VAT Calculation Type"::"Normal VAT";
@@ -91,7 +91,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
                         GenJnlPostLine.RunWithCheck(GenJnlLine);
                     end;
-                    if (InvoicePostBuffer."VAT Calculation Type" = InvoicePostBuffer."VAT Calculation Type"::"Reverse Charge VAT") and PurchaseSetup."Use VAT Output Date-adl" then begin
+                    if (InvoicePostBuffer."VAT Calculation Type" = InvoicePostBuffer."VAT Calculation Type"::"Reverse Charge VAT") and PurchaseSetup."Use VAT Output Date-Adl" then begin
                         VATPostingSetup."VAT Calculation Type" := VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT";
                         VATPostingSetup.Modify();
                     end;
@@ -101,5 +101,5 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     //</adl.10>
     var
         CoreSetup: Record "CoreSetup-Adl";
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
 }

@@ -30,12 +30,13 @@ page 13062594 "VAT Book Groups-Adl"
                     Style = Strong;
                     StyleExpr = "Group Type" <> "Group Type"::"VAT Entries";
                     ApplicationArea = All;
-                    ToolTip = 'Specifies a description of the VAT book group';
+                    ToolTip = 'Specifies a description of the VAT Book Group';
 
                 }
                 field("Group Type"; "Group Type")
                 {
                     Style = Strong;
+                    ToolTip = 'Specifies if type of VAT Book Group';
                     StyleExpr = "Group Type" <> "Group Type"::"VAT Entries";
                     ApplicationArea = All;
 
@@ -48,12 +49,14 @@ page 13062594 "VAT Book Groups-Adl"
                 {
                     Editable = "Group Type" <> "Group Type"::"VAT Entries";
                     Style = Strong;
+                    ToolTip = 'Specifies totaling formula for VAT Book Group.';
                     StyleExpr = "Group Type" <> "Group Type"::"VAT Entries";
                     ApplicationArea = All;
                 }
                 field("Tag Name"; "Tag Name")
                 {
                     Style = Strong;
+                    ToolTip = 'Specifies tag name for XML export.';
                     StyleExpr = "Group Type" <> "Group Type"::"VAT Entries";
                     ApplicationArea = All;
                 }
@@ -75,6 +78,7 @@ page 13062594 "VAT Book Groups-Adl"
                 action("VAT Identifiers")
                 {
                     Caption = 'VAT Identifiers';
+                    ToolTip = 'View or edit the VAT Identifiers for VAT Book Group.';
                     Image = VATExemptionEntries;
                     Promoted = true;
                     PromotedCategory = Process;

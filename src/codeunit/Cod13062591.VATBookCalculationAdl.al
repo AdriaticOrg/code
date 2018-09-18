@@ -2,7 +2,7 @@ codeunit 13062591 "VAT Book Calculation-Adl"
 {
     var
         CoreSetup: Record "CoreSetup-Adl";
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CallLevel: Integer;
         CircularRefErr: Label 'Because of circular references, the program cannot calculate a formula.';
 

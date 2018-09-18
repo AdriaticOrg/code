@@ -39,7 +39,7 @@ pageextension 13062560 "Purchase Return Order-Adl" extends "Purchase Return Orde
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
         // </adl.0>

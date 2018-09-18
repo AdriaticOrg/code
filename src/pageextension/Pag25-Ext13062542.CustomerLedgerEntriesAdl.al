@@ -54,11 +54,11 @@ pageextension 13062542 "Customer Ledger Entries-Adl" extends "Customer Ledger En
         // <adl.28>
         addafter(IncomingDocument)
         {
-            action(UnpaidReceivables)
+            action("UnpaidReceivables-Adl")
             {
                 Caption = 'Edit Extended Data';
                 ApplicationArea = All;
-                RunObject = Page "Cust. Ledger Entries Ext.-adl";
+                RunObject = Page "Cust. Ledger Entries Ext.-Adl";
                 Promoted = true;
                 PromotedCategory = Process;
                 Image = Edit;
@@ -69,7 +69,7 @@ pageextension 13062542 "Customer Ledger Entries-Adl" extends "Customer Ledger En
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;

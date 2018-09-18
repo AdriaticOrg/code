@@ -8,13 +8,13 @@ codeunit 13062741 "Overdue And Uncoll.Rec-Adl"
 
     var
         CoreSetup: Record "CoreSetup-Adl";
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterPostCust', '', false, false)]
     local procedure OverdueandUncollRec(var GenJournalLine: Record "Gen. Journal Line"; Balancing: Boolean)
     var
-        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-adl";
-        CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-adl";
+        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-Adl";
+        CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-Adl";
         CustLedgEntry: Record "Cust. Ledger Entry";
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables) then exit;
@@ -41,7 +41,7 @@ codeunit 13062741 "Overdue And Uncoll.Rec-Adl"
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterDeleteEvent', '', false, false)]
     local procedure OnDeleteCustLdgEntryExtData(var Rec: Record "Gen. Journal Line"; RunTrigger: Boolean)
     var
-        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-adl";
+        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-Adl";
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables) then exit;
 

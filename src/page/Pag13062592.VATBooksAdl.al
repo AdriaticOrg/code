@@ -127,7 +127,7 @@ page 13062592 "VAT Books-Adl"
         }
         area(reporting)
         {
-            action(VATBook)
+            action("VATBook")
             {
                 Caption = 'VAT Book';
                 ToolTip = 'View or print the VAT book.';
@@ -146,7 +146,7 @@ page 13062592 "VAT Books-Adl"
                     Report.RunModal(Report::"VAT Book-Adl", true, false, VATBookColumnName);
                 end;
             }
-            action(ExportToXML)
+            action("ExportToXML")
             {
                 Caption = 'Export to XML';
                 ToolTip = 'Export to XML VAT books for certain period.';
@@ -164,7 +164,7 @@ page 13062592 "VAT Books-Adl"
             }
 
             // <adl.21>
-            action(ExportToTxt)
+            action("ExportToTxt")
             {
                 Caption = 'Export to TXT';
                 ToolTip = 'Export to TXT VAT books for certain period.';
@@ -177,7 +177,7 @@ page 13062592 "VAT Books-Adl"
 
                 trigger OnAction();
                 begin
-                    Report.RunModal(Report::"Export VAT Book-adl", true, false);
+                    Report.RunModal(Report::"Export VAT Book-Adl", true, false);
                 end;
             }
             // </adl.21>

@@ -15,7 +15,7 @@ table 13062592 "VAT Book-Adl"
             NotBlank = true;
             DataClassification = CustomerContent;
         }
-        field(2; Description; Text[250])
+        field(2; "Description"; Text[250])
         {
             Caption = 'Description';
             DataClassification = CustomerContent;

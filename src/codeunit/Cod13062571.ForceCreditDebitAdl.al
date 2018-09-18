@@ -2,7 +2,7 @@ codeunit 13062571 "ForceCreditDebit-Adl"
 {
     var
         CoreSetup: Record "CoreSetup-Adl";
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertGLEntryBuffer', '', false, false)]
     local procedure CheckDebitCredit(var TempGLEntryBuf: Record "G/L Entry"; var GenJournalLine: Record "Gen. Journal Line");

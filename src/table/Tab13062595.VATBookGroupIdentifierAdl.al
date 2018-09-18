@@ -26,7 +26,7 @@ table 13062595 "VAT Book Group Identifier-Adl"
             TableRelation = "VAT Identifier-Adl";
             DataClassification = CustomerContent;
         }
-        field(4; Description; Text[250])
+        field(4; "Description"; Text[250])
         {
             CalcFormula = Lookup ("VAT Identifier-Adl".Description where (Code = field ("VAT Identifier")));
             Caption = 'Description';

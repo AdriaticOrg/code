@@ -14,7 +14,7 @@ table 13062591 "VAT Identifier-Adl"
             NotBlank = true;
             DataClassification = CustomerContent;
         }
-        field(2; Description; Text[250])
+        field(2; "Description"; Text[250])
         {
             Caption = 'Description';
             DataClassification = CustomerContent;

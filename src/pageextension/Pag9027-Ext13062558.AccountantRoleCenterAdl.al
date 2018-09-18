@@ -4,7 +4,7 @@ pageextension 13062558 "Accountant Role Center-Adl" extends "Accountant Role Cen
     {
         addafter("VAT Statements")
         {
-            action("VAT Books")
+            action("VAT Books-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
@@ -15,7 +15,7 @@ pageextension 13062558 "Accountant Role Center-Adl" extends "Accountant Role Cen
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
         // </adl.0>

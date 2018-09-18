@@ -46,7 +46,7 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
 
                 trigger OnValidate();
                 var
-                    CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-adl";
+                    CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-Adl";
                     CustLedgerEntryExtDataLineNo: Integer;
                 begin
                     CustLedgerEntryExtData.Reset();
@@ -84,7 +84,7 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
 
                 trigger OnValidate();
                 var
-                    CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-adl";
+                    CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-Adl";
                     CustLedgerEntryExtDataLineNo: Integer;
                 begin
                     CustLedgerEntryExtData.Reset();
@@ -122,7 +122,7 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
 
                 trigger OnValidate();
                 var
-                    CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-adl";
+                    CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-Adl";
                     CustLedgerEntryExtDataLineNo: Integer;
                 begin
                     CustLedgerEntryExtData.Reset();
@@ -158,7 +158,7 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;
@@ -169,7 +169,7 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
         // </adl.0>
 
         // <adl.28>
-        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-adl";
+        CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-Adl";
         OriginalDocumentAmountLCY: Decimal;
         OriginalVATAmountLCY: Decimal;
         OpenAmounLCYtWithoutUnrealizedERF: Decimal;

@@ -21,7 +21,7 @@ pageextension 13062553 "General Ledger Setup-Adl" extends "General Ledger Setup"
 
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         // </adl.0>

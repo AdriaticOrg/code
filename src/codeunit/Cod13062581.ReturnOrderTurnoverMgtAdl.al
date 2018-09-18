@@ -2,7 +2,7 @@ codeunit 13062581 "Return Order Turnover Mgt.-Adl"
 {
     var
         CoreSetup: Record "CoreSetup-Adl";
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterSetFieldsBilltoCustomer', '', true, false)]
     local procedure OnAfterSetFieldsBilltoCustomer(var SalesHeader: Record "Sales Header"; Customer: Record Customer)

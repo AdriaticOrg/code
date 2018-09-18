@@ -33,28 +33,28 @@ table 13062596 "VAT Book View Formula-Adl"
             MinValue = 1;
             DataClassification = CustomerContent;
         }
-        field(5; Operator1; Option)
+        field(5; "Operator1"; Option)
         {
             Caption = 'Operator 1';
             OptionCaption = ' ,+,-';
             OptionMembers = " ","+","-";
             DataClassification = CustomerContent;
         }
-        field(6; Value1; Option)
+        field(6; "Value1"; Option)
         {
             Caption = 'Value 1';
             OptionCaption = ' ,Base Amount,VAT Amount,Amount Inc. VAT,Base Amount(retro.),Unrealizied Base,Unrealized Amount,Unrealized Amount Inc. VAT,VAT Retro,Amount Inc. VAT(retro)';
             OptionMembers = " ","Base Amount","VAT Amount","Amount Inc. VAT","Base Amount(retro.)","Unrealizied Base","Unrealized Amount","Unrealized Amount Inc. VAT","VAT Retro","Amount Inc. VAT(retro)";
             DataClassification = CustomerContent;
         }
-        field(7; Operator2; Option)
+        field(7; "Operator2"; Option)
         {
             Caption = 'Operator 2';
             OptionCaption = ' ,+,-';
             OptionMembers = " ","+","-";
             DataClassification = CustomerContent;
         }
-        field(8; Value2; Option)
+        field(8; "Value2"; Option)
         {
             Caption = 'Value 2';
             OptionCaption = ' ,Base Amount,VAT Amount,Amount Inc. VAT,Base Amount(retro.),Unrealizied Base,Unrealized Amount,Unrealized Amount Inc. VAT,VAT Retro,Amount Inc. VAT(retro)';
@@ -62,13 +62,13 @@ table 13062596 "VAT Book View Formula-Adl"
             DataClassification = CustomerContent;
         }
 
-        field(9; Condition; Text[250])
+        field(9; "Condition"; Text[250])
         {
             Caption = 'Condition';
             DataClassification = CustomerContent;
         }
 
-        field(10; ConditionBlob; Blob)
+        field(10; "ConditionBlob"; Blob)
         {
             Caption = 'ConditonBlob';
             DataClassification = SystemMetadata;

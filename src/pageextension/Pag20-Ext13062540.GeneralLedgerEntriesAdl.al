@@ -22,6 +22,11 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
             }
             // </adl.24>
             // <adl.26>
+            field("Country/Region Code"; "Country/Region Code-Adl")
+            {
+                ApplicationArea = All;
+                Visible = BSTFeatureEnabled;
+            }
             field("BST Code"; "BST Code-Adl")
             {
                 ApplicationArea = All;
@@ -42,7 +47,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
                 Caption = 'Change Data';
                 Image = ChangeStatus;
                 Visible = FASFeatureEnabled;
-                action(ChangeFinInstr)
+                action("ChangeFinInstr-Adl")
                 {
                     Caption = 'Finance Instrument';
                     Image = ListPage;
@@ -50,7 +55,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
 
                     trigger OnAction()
                     var
-                        FASInstrument: Record "FAS Instrument";
+                        FASInstrument: Record "FAS Instrument-Adl";
                     begin
                         FASInstrument.Reset();
                         FASInstrument.SetRange(Type, FASInstrument.Type::Posting);
@@ -62,7 +67,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
                         end;
                     end;
                 }
-                action(ChangeFinSect)
+                action("ChangeFinSect-Adl")
                 {
                     Caption = 'Finance Sector';
                     Image = ListPage;
@@ -70,7 +75,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
 
                     trigger OnAction()
                     var
-                        FASSector: Record "FAS Sector";
+                        FASSector: Record "FAS Sector-Adl";
                     begin
                         FASSector.Reset();
                         FASSector.SetRange(Type, FASSector.Type::Posting);
@@ -83,7 +88,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
                     end;
                 }
                 // <adl.26>
-                action(ChangeBST)
+                action("ChangeBST-Adl")
                 {
                     Caption = 'BST Code';
                     Image = ListPage;
@@ -91,7 +96,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
 
                     trigger OnAction()
                     var
-                        BSTCode: Record "BST Code";
+                        BSTCode: Record "BST Code-Adl";
                     begin
                         BSTCode.Reset();
                         BSTCode.SetRange(Type, BSTCode.Type::Posting);
@@ -110,7 +115,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
     // </adl.24>
     var
         // <adl.0>
-        ADLCore: Codeunit "Adl Core";
+        ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;

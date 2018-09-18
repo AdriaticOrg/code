@@ -30,25 +30,25 @@ tableextension 13062542 "Gen. Journal Line-Adl" extends "Gen. Journal Line" // 8
         {
             Caption = 'FAS Instrument Code';
             DataClassification = SystemMetadata;
-            TableRelation = "FAS Instrument";
+            TableRelation = "FAS Instrument-Adl";
         }
         field(13062642; "FAS Sector Code-Adl"; Code[10])
         {
             Caption = 'FAS Sector Code';
             DataClassification = SystemMetadata;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector-Adl";
         }
         field(13062643; "Bal. FAS Instrument Code-Adl"; Code[10])
         {
             Caption = 'Bal. FAS Instrument Code';
             DataClassification = SystemMetadata;
-            TableRelation = "FAS Instrument";
+            TableRelation = "FAS Instrument-Adl";
         }
         field(13062644; "Bal. FAS Sector Code-Adl"; Code[10])
         {
             Caption = 'Bal. FAS Sector Code';
             DataClassification = SystemMetadata;
-            TableRelation = "FAS Sector";
+            TableRelation = "FAS Sector-Adl";
         }
         field(13062645; "FAS Type-Adl"; Option)
         {
@@ -108,4 +108,20 @@ tableextension 13062542 "Gen. Journal Line-Adl" extends "Gen. Journal Line" // 8
         "EU Customs Procedure-Adl" := SalesHeader."EU Customs Procedure-Adl";
     end;
     // </adl.22>
+    // <adl.26>
+    procedure CopyBSTFields(Customer: Record Customer)
+    begin
+        "Country/Region Code" := Customer."Country/Region Code";
+    end;
+
+    procedure CopyBSTFields(Vendor: Record Vendor)
+    begin
+        "Country/Region Code" := Vendor."Country/Region Code";
+    end;
+
+    procedure CopyBSTFields(BankAccount: Record "Bank Account")
+    begin
+        "Country/Region Code" := BankAccount."Country/Region Code";
+    end;
+    // </adl.26>    
 }
