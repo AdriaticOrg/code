@@ -156,7 +156,6 @@ report 13062622 "Export PDO-Adl"
         PDORepLineSum.CalcSums("Amount (LCY)");
         TotPrevSales := PDORepLineSum."Amount (LCY)";
 
-
         XmlDoc := xmlDocument.Create();
         XmlDec := xmlDeclaration.Create('1.0', 'UTF-8', '');
         XmlDoc.SetDeclaration(XmlDec);
@@ -239,7 +238,7 @@ report 13062622 "Export PDO-Adl"
 
         XmlElem[3] := XmlElement.Create('A4', xmlns);
         XmlElem[2].Add(xmlElem[3]);
-        XmlElem[3].Add(XmlText.Create(format(TotPrevSales, 0, PrecisionTok)));
+        XmlElem[3].Add(XmlText.Create(format(TotSales, 0, PrecisionTok)));
 
         PDORepLine.SetRange(Type, PDORepLine.type::Correction);
         if PDORepLine.FindSet() then
