@@ -6,7 +6,7 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
 
     Caption = 'Overdue and Uncollected Receivables';
     UsageCategory = ReportsAndAnalysis;
-    ApplicationArea = All;
+    ApplicationArea = AdlUnpaidReceivables;
 
     dataset
     {
