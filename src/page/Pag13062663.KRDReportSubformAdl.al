@@ -85,7 +85,11 @@ page 13062663 "KRD Report Subform-Adl"
                 var
                     VLE: Record "Vendor Ledger Entry";
                     KRDRepHead: Record "KRD Report Header-Adl";
+                    KRDSetup: Record "KRD Setup-Adl";
                 begin
+                    KRDSetup.Get();
+                    KRDSetup.TestField("KRD Blank LCY Code");
+
                     KRDRepHead.get("Document No.");
                     KRDRepHead.TestField("Period Start Date");
                     KRDRepHead.TestField("Period End Date");
@@ -98,7 +102,12 @@ page 13062663 "KRD Report Subform-Adl"
                     VLE.SetRange("KRD Maturity-Adl", Maturity);
                     VLE.SetRange("KRD Non-Residnet Sector Code-Adl", "Non-Residnet Sector Code");
                     VLE.SetRange("KRD Country/Region Code-Adl", "Country/Region Code");
-                    VLE.SetRange("Currency Code", "Currency Code");
+
+                    if "Currency Code" = KRDSetup."KRD Blank LCY Code" then
+                        VLE.SetFilter("Currency Code", '%1|%2', "Currency Code", '')
+                    else
+                        VLE.SetRange("Currency Code", "Currency Code");
+
                     PAGE.RunModal(0, VLE);
                 end;
             }
@@ -112,7 +121,11 @@ page 13062663 "KRD Report Subform-Adl"
                 var
                     CLE: Record "Cust. Ledger Entry";
                     KRDRepHead: Record "KRD Report Header-Adl";
+                    KRDSetup: Record "KRD Setup-Adl";
                 begin
+                    KRDSetup.Get();
+                    KRDSetup.TestField("KRD Blank LCY Code");
+
                     KRDRepHead.get("Document No.");
                     KRDRepHead.TestField("Period Start Date");
                     KRDRepHead.TestField("Period End Date");
@@ -125,7 +138,12 @@ page 13062663 "KRD Report Subform-Adl"
                     CLE.SetRange("KRD Maturity-Adl", Maturity);
                     CLE.SetRange("KRD Non-Residnet Sector Code-Adl", "Non-Residnet Sector Code");
                     CLE.SetRange("KRD Country/Region Code-Adl", "Country/Region Code");
-                    CLE.SetRange("Currency Code", "Currency Code");
+
+                    if "Currency Code" = KRDSetup."KRD Blank LCY Code" then
+                        CLE.SetFilter("Currency Code", '%1|%2', "Currency Code", '')
+                    else
+                        CLE.SetRange("Currency Code", "Currency Code");
+
                     PAGE.RunModal(0, CLE);
                 end;
             }

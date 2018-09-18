@@ -1,5 +1,28 @@
 pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
 {
+    layout
+    {
+        // <adl.24>
+        addlast(Control1)
+        {
+            field("FAS Account-Adl"; "FAS Account-Adl")
+            {
+                ApplicationArea = All;
+                Visible = FASFeatureEnabled;
+            }
+            field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
+            {
+                ApplicationArea = All;
+                Visible = FASFeatureEnabled;
+            }
+            field("FAS Sector Code-Adl"; "FAS Sector Code-Adl")
+            {
+                ApplicationArea = All;
+                Visible = FASFeatureEnabled;
+            }
+        }
+        // </adl.24>
+    }
     actions
     {
 
@@ -47,12 +70,14 @@ pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
         ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         RepSIFeatureEnabled: Boolean;
+        FASFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
         RepSIFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::RepSI);
+        FASFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS);
         // </adl.0>
     end;
 }
