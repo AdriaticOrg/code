@@ -5,29 +5,29 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
         addlast(Control1)
         {
             // <adl.24>
-            field("FAS Type"; "FAS Type-Adl")
+            field("FAS Type-Adl"; "FAS Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Instrument Code"; "FAS Instrument Code-Adl")
+            field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Sector Code"; "FAS Sector Code-Adl")
+            field("FAS Sector Code-Adl"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
             // </adl.24>
             // <adl.26>
-            field("Country/Region Code"; "Country/Region Code-Adl")
+            field("Country/Region Code-Adl"; "Country/Region Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = BSTFeatureEnabled;
             }
-            field("BST Code"; "BST Code-Adl")
+            field("BST Code-Adl"; "BST Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = BSTFeatureEnabled;

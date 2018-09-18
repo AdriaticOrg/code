@@ -156,14 +156,14 @@ page 13062741 "Cust. Ledger Entries Ext.-Adl"
 
     trigger OnOpenPage();
     var
-        SalesReceivablesSetup: Record "Sales & Receivables Setup";
+        UnpaidReceivablesSetup: Record "Unpaid Receivables Setup-Adl";
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables) then exit;
 
-        SalesReceivablesSetup.GET();
-        SalesReceivablesSetup.testfield("Exteded Data Start Bal. Date-Adl");
-        if SalesReceivablesSetup."Exteded Data Start Bal. Date-Adl" <> 0D then
-            SetRange("Posting Date", 0D, SalesReceivablesSetup."Exteded Data Start Bal. Date-Adl")
+        UnpaidReceivablesSetup.GET();
+        UnpaidReceivablesSetup.testfield("Ext. Data Start Bal. Date-Adl");
+        if UnpaidReceivablesSetup."Ext. Data Start Bal. Date-Adl" <> 0D then
+            SetRange("Posting Date", 0D, UnpaidReceivablesSetup."Ext. Data Start Bal. Date-Adl")
         else
             exit;
     end;

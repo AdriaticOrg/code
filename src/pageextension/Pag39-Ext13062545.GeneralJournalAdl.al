@@ -5,32 +5,32 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
         addlast(Control1)
         {
             // <adl.24>
-            field("FAS Type"; "FAS Type-Adl")
+            field("FAS Type-Adl"; "FAS Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Instrument Code"; "FAS Instrument Code-Adl")
+            field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Sector Code"; "FAS Sector Code-Adl")
+            field("FAS Sector Code-Adl"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("Bal. FAS Type"; "Bal. FAS Type-Adl")
+            field("Bal. FAS Type-Adl"; "Bal. FAS Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("Bal. FAS Instrument Code"; "Bal. FAS Instrument Code-Adl")
+            field("Bal. FAS Instrument Code-Adl"; "Bal. FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("Bal. FAS Sector Code"; "Bal. FAS Sector Code-Adl")
+            field("Bal. FAS Sector Code-Adl"; "Bal. FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
@@ -38,7 +38,7 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
             // </adl.24>
 
             // <adl.28>
-            field(OriginalDocumentAmountLCY; OriginalDocumentAmountLCY)
+            field("OriginalDocumentAmountLCY-Adl"; OriginalDocumentAmountLCY)
             {
                 Caption = 'Original Document Amount (LCY)';
                 ApplicationArea = All;
@@ -76,7 +76,7 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
                     end;
                 end;
             }
-            field(OriginalVATAmountLCY; OriginalVATAmountLCY)
+            field("OriginalVATAmountLCY-Adl"; OriginalVATAmountLCY)
             {
                 Caption = 'Original VAT Amount (LCY)';
                 ApplicationArea = All;
@@ -114,7 +114,7 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
                     end;
                 end;
             }
-            field(OpenAmounLCYtWithoutUnrealizedERF; OpenAmounLCYtWithoutUnrealizedERF)
+            field("OpenAmounLCYtWithoutUnrealizedERF-Adl"; OpenAmounLCYtWithoutUnrealizedERF)
             {
                 Caption = 'Open Amount (LCY) Without Unrealized Exchange Rate Adjustment';
                 ApplicationArea = All;

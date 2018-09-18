@@ -5,6 +5,7 @@ page 13062681 "BST Codes-Adl"
     UsageCategory = Administration;
     Editable = true;
     SourceTable = "BST Code-Adl";
+    Caption = 'BST Codes';
 
     layout
     {

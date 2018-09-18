@@ -5,25 +5,25 @@ pageextension 13062548 "User Setup-Adl" extends "User Setup" //119
         addlast(Control1)
         {
             // <adl.24>
-            field("Reporting Name"; "Reporting Name-Adl")
+            field("Reporting Name-Adl"; "Reporting Name-Adl")
             {
                 Caption = 'Reporting Name';
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;
             }
-            field("Reporting Email"; "Reporting Email-Adl")
+            field("Reporting Email-Adl"; "Reporting Email-Adl")
             {
                 Caption = 'Reporting E-mail';
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;
             }
-            field("Reporting Phone"; "Reporting Phone-Adl")
+            field("Reporting Phone-Adl"; "Reporting Phone-Adl")
             {
                 Caption = 'Reporting Phone';
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;
             }
-            field("Reporting Position"; "Reporting Position-Adl")
+            field("Reporting Position-Adl"; "Reporting Position-Adl")
             {
                 Caption = 'Reporting Position';
                 ApplicationArea = All;
@@ -31,12 +31,12 @@ pageextension 13062548 "User Setup-Adl" extends "User Setup" //119
             }
             // </adl.24>
             // <adl.27>
-            field("Posting Approver"; "Posting Approver-Adl")
+            field("Posting Approver-Adl"; "Posting Approver-Adl")
             {
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;
             }
-            field("Posting Responsible Person"; "Posting Responsible Person-Adl")
+            field("Posting Responsible Person-Adl"; "Posting Responsible Person-Adl")
             {
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;

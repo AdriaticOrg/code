@@ -1693,6 +1693,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Overdue and Uncol. Buffer-Adl - Field Unpaid Amount - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 550938845 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Unpaid Receivables Setup-Adl - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 550938845 - Field 2457381690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extended Data Start Balance Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Unpaid Receivables Setup-Adl - Field Ext. Data Start Bal. Date-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 550938845 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unpaid Receivables Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Unpaid Receivables Setup-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 550938845 - Control 259348792 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extended Data Start Balance Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Unpaid Receivables Setup-Adl - Control Exteded Data Start Bal. Date - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 909224780 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ADL CoreSetup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2642,6 +2662,11 @@
           <source>KRD Finance Sectors</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Sectors-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1782409209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BST Codes</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Codes-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1695213696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Reports</source>
@@ -4723,15 +4748,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control OpenAmounLCYtWithoutUnrealizedERF - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 3842424518 - Control 259348792 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 3842424518 - Control 2457381690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extended Data Start Balance Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales &amp; Receivables Setup-Adl - Control Exteded Data Start Bal. Date - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales &amp; Receivables Setup-Adl - Control Ext. Data Start Bal. Date-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3842424518 - Field 1461496564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3842424518 - Field 2457381690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extended Data Start Balance Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales &amp; Receivables Setup-Adl - Field Exteded Data Start Bal. Date-Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales &amp; Receivables Setup-Adl - Field Ext. Data Start Bal. Date-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1803156684 - Field 1265827638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purch VAT Postponed Account</source>

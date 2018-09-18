@@ -5,12 +5,12 @@ pageextension 13062549 "Bank Account Card-Adl" extends "Bank Account Card" //370
         addlast(General)
         {
             // <adl.24>
-            field("FAS Sector Code"; "FAS Sector Code-Adl")
+            field("FAS Sector Code-Adl"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Instrument Code"; "FAS Instrument Code-Adl")
+            field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;

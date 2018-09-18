@@ -37,12 +37,12 @@ pageextension 13062536 "VAT Posting Setup-Adl" extends "VAT Posting Setup"  //47
         // <adl.22>
         addlast(Control1)
         {
-            field("VIES Goods"; "VIES Goods-Adl")
+            field("VIES Goods-Adl"; "VIES Goods-Adl")
             {
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;
             }
-            field("VIES Service"; "VIES Service-Adl")
+            field("VIES Service-Adl"; "VIES Service-Adl")
             {
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;
