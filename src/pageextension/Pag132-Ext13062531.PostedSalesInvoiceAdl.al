@@ -24,7 +24,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
         // <adl.22>
         addafter("EU 3-Party Trade")
         {
-            field("EU Customs Procedure"; "EU Customs Procedure-Adl")
+            field("EU Customs Procedure-Adl"; "EU Customs Procedure-Adl")
             {
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;
@@ -54,7 +54,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
                     PostApplication.SetValues("No.", WorkDate());
                     PostApplication.RunModal();
                     PostApplication.GetValues("No.", VATDate);
-                    ManagePostponedVAT.HandlePostponedVAT(Database::"Sales Invoice Header", "No.", VATDate, true, CustVend::Customer, "Postponed VAT-Adl",false,false);
+                    ManagePostponedVAT.HandlePostponedVAT(Database::"Sales Invoice Header", "No.", VATDate, true, CustVend::Customer, "Postponed VAT-Adl", false, false);
                 end;
             }
             action("CorrectPostponed-Adl")
@@ -73,7 +73,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
                     PostApplication.SetValues("No.", WorkDate());
                     PostApplication.RunModal();
                     PostApplication.GetValues("No.", VATDate);
-                    ManagePostponedVAT.HandlePostponedVAT(Database::"Sales Invoice Header", "No.", VATDate, false, CustVend::Customer, "Postponed VAT-Adl",false,false);
+                    ManagePostponedVAT.HandlePostponedVAT(Database::"Sales Invoice Header", "No.", VATDate, false, CustVend::Customer, "Postponed VAT-Adl", false, false);
                 end;
             }
             // </adl.10>

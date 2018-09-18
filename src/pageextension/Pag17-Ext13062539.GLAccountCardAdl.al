@@ -5,43 +5,43 @@ pageextension 13062539 "G/L Account Card-Adl" extends "G/L Account Card" //17
         // <adl.24>
         addlast(Reporting)
         {
-            field("FAS Account"; "FAS Account-Adl")
+            field("FAS Account-Adl"; "FAS Account-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Type"; "FAS Type-Adl")
+            field("FAS Type-Adl"; "FAS Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Sector Posting"; "FAS Sector Posting-Adl")
+            field("FAS Sector Posting-Adl"; "FAS Sector Posting-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Instrument Posting"; "FAS Instrument Posting-Adl")
+            field("FAS Instrument Posting-Adl"; "FAS Instrument Posting-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Sector Code"; "FAS Sector Code-Adl")
+            field("FAS Sector Code-Adl"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
-            field("FAS Instrument Code"; "FAS Instrument Code-Adl")
+            field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
             }
             // <adl.26>
-            field("BST Value Posting"; "BST Value Posting-Adl")
+            field("BST Value Posting-Adl"; "BST Value Posting-Adl")
             {
                 ApplicationArea = All;
                 Visible = BSTFeatureEnabled;
             }
-            field("BST Code"; "BST Code-Adl")
+            field("BST Code-Adl"; "BST Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = BSTFeatureEnabled;

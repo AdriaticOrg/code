@@ -5,7 +5,7 @@ pageextension 13062538 "Company Information-Adl" extends "Company Information" /
         // <adl.24>
         addafter("VAT Registration No.")
         {
-            field("Registration No."; "Registration No.")
+            field("Registration No.-Adl"; "Registration No.")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;

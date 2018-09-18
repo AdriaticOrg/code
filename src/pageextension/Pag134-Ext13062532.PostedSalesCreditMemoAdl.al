@@ -21,7 +21,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
             // </adl.10>
             // <adl.10>
             // <adl.22>
-            field("VAT Correction Date"; "VAT Correction Date-Adl")
+            field("VAT Correction Date-Adl"; "VAT Correction Date-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
@@ -40,7 +40,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
                 Editable = false;
             }
             // <adl.22>
-            field("EU Customs Procedure"; "EU Customs Procedure-Adl")
+            field("EU Customs Procedure-Adl"; "EU Customs Procedure-Adl")
             {
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;
@@ -71,7 +71,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
                     PostApplication.SetValues("No.", WorkDate());
                     PostApplication.RunModal();
                     PostApplication.GetValues("No.", VATDate);
-                    ManagePostponedVAT.HandlePostponedVAT(Database::"Sales Cr.Memo Header", "No.", VATDate, true, CustVend::Customer, "Postponed VAT-Adl",false,false);
+                    ManagePostponedVAT.HandlePostponedVAT(Database::"Sales Cr.Memo Header", "No.", VATDate, true, CustVend::Customer, "Postponed VAT-Adl", false, false);
                 end;
             }
             action("CorrectPostponed-Adl")
@@ -90,7 +90,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
                     PostApplication.SetValues("No.", WorkDate());
                     PostApplication.RunModal();
                     PostApplication.GetValues("No.", VATDate);
-                    ManagePostponedVAT.HandlePostponedVAT(Database::"Sales Cr.Memo Header", "No.", VATDate, false, CustVend::Customer, "Postponed VAT-Adl",false,false);
+                    ManagePostponedVAT.HandlePostponedVAT(Database::"Sales Cr.Memo Header", "No.", VATDate, false, CustVend::Customer, "Postponed VAT-Adl", false, false);
                 end;
             }
             // </adl.10>

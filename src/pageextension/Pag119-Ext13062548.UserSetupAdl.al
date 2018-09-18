@@ -5,41 +5,41 @@ pageextension 13062548 "User Setup-Adl" extends "User Setup" //119
         addlast(Control1)
         {
             // <adl.24>
-            field("Reporting Name"; "Reporting Name-Adl")
+            field("Reporting Name-Adl"; "Reporting Name-Adl")
             {
                 Caption = 'Reporting Name';
                 ApplicationArea = All;
-                Visible = (RepSIFeatureEnabled or UnpaidReceivablesEnabled);
+                Visible = ReportingFeaturesEnabled;
             }
-            field("Reporting Email"; "Reporting Email-Adl")
+            field("Reporting Email-Adl"; "Reporting Email-Adl")
             {
                 Caption = 'Reporting E-mail';
                 ApplicationArea = All;
-                Visible = RepSIFeatureEnabled;
+                Visible = ReportingFeaturesEnabled;
             }
-            field("Reporting Phone"; "Reporting Phone-Adl")
+            field("Reporting Phone-Adl"; "Reporting Phone-Adl")
             {
                 Caption = 'Reporting Phone';
                 ApplicationArea = All;
-                Visible = RepSIFeatureEnabled;
+                Visible = ReportingFeaturesEnabled;
             }
-            field("Reporting Position"; "Reporting Position-Adl")
+            field("Reporting Position-Adl"; "Reporting Position-Adl")
             {
                 Caption = 'Reporting Position';
                 ApplicationArea = All;
-                Visible = RepSIFeatureEnabled;
+                Visible = ReportingFeaturesEnabled;
             }
             // </adl.24>
             // <adl.27>
-            field("Posting Approver"; "Posting Approver-Adl")
+            field("Posting Approver-Adl"; "Posting Approver-Adl")
             {
                 ApplicationArea = All;
-                Visible = RepHRFeatureEnabled;
+                Visible = ReportingFeaturesEnabled;
             }
-            field("Posting Responsible Person"; "Posting Responsible Person-Adl")
+            field("Posting Responsible Person-Adl"; "Posting Responsible Person-Adl")
             {
                 ApplicationArea = All;
-                Visible = RepHRFeatureEnabled;
+                Visible = ReportingFeaturesEnabled;
             }
             // </adl.27>
         }
@@ -49,19 +49,19 @@ pageextension 13062548 "User Setup-Adl" extends "User Setup" //119
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         CoreSetup: Record "CoreSetup-Adl";
-        RepHRFeatureEnabled: Boolean;
-        RepSIFeatureEnabled: Boolean;
+        ReportingFeaturesEnabled: Boolean;
         // </adl.0>
-        // <adl.28>
-        UnpaidReceivablesEnabled: Boolean;
-
 
     trigger OnOpenPage();
     begin
         // <adl.0>
-        RepHRFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::RepHR);
-        RepSIFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::RepSI);
-        UnpaidReceivablesEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables);
+        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
+        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS);
+        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled(CoreSetup."ADL Features"::KRD);
+        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled(CoreSetup."ADL Features"::BST);
+        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VIES);
+        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled(CoreSetup."ADL Features"::PDO);
+        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables);
         // </adl.0>
     end;
 }

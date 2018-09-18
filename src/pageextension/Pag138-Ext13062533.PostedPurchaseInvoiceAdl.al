@@ -5,7 +5,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
         addlast(General)
         {
             // <adl.6>
-            field("VAT Date -Adl"; "VAT Date-Adl")
+            field("VAT Date-Adl"; "VAT Date-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
@@ -19,7 +19,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
             }
             // </adl.6>
             // <adl.10>
-            field("Postponed VAT -Adl"; "Postponed VAT-Adl")
+            field("Postponed VAT-Adl"; "Postponed VAT-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
@@ -49,7 +49,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
                     PostApplication.SetValues("No.", WorkDate());
                     PostApplication.RunModal();
                     PostApplication.GetValues("No.", VATDate);
-                    ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, true, CustVend::Vendor, "Postponed VAT-Adl",false,false);
+                    ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, true, CustVend::Vendor, "Postponed VAT-Adl", false, false);
                 end;
             }
             action("CorrectPostponed-Adl")
@@ -68,7 +68,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
                     PostApplication.SetValues("No.", WorkDate());
                     PostApplication.RunModal();
                     PostApplication.GetValues("No.", VATDate);
-                    ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, false, CustVend::Vendor, "Postponed VAT-Adl",false,false);
+                    ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, false, CustVend::Vendor, "Postponed VAT-Adl", false, false);
                 end;
             }
             action("PostVATOutput-Adl")
@@ -87,7 +87,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
                     PostApplication.SetValues("No.", WorkDate());
                     PostApplication.RunModal();
                     PostApplication.GetValues("No.", VATDate);
-                    ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, true, CustVend::Vendor, "Postponed VAT-Adl",false,true);
+                    ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, true, CustVend::Vendor, "Postponed VAT-Adl", false, true);
                 end;
             }
             action("CorrectVATOutput-Adl")
@@ -106,7 +106,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
                     PostApplication.SetValues("No.", WorkDate());
                     PostApplication.RunModal();
                     PostApplication.GetValues("No.", VATDate);
-                    ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, false, CustVend::Vendor, "Postponed VAT-Adl",false,true);
+                    ManagePostponedVAT.HandlePostponedVAT(Database::"Purch. Inv. Header", "No.", VATDate, false, CustVend::Vendor, "Postponed VAT-Adl", false, true);
                 end;
             }
             // </adl.10>

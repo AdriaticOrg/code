@@ -12,7 +12,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
                 Editable = false;
             }
             // <adl.22> 
-            field("VAT Correction Date"; "VAT Correction Date-Adl")
+            field("VAT Correction Date-Adl"; "VAT Correction Date-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
@@ -24,7 +24,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
         // <adl.14>
         addafter(Amount)
         {
-            field("VAT Identifier"; "VAT Identifier-Adl")
+            field("VAT Identifier-Adl"; "VAT Identifier-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
@@ -36,7 +36,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
         // <adl.22> 
         addbefore("EU 3-Party Trade")
         {
-            field("EU Customs Procedure"; "EU Customs Procedure-Adl")
+            field("EU Customs Procedure-Adl"; "EU Customs Procedure-Adl")
             {
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;

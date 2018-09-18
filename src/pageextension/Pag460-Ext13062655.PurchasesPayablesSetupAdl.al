@@ -1,4 +1,4 @@
-pageextension 13062555 "Purchases&PayablesSetup-Adl" extends "Purchases & Payables Setup"  //460
+pageextension 13062655 "Purchases&PayablesSetup-Adl" extends "Purchases & Payables Setup"  //460
 {
     layout
     {

@@ -12,21 +12,6 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
             Caption = 'VAT Enabled';
             DataClassification = SystemMetadata;
         }
-        field(13062813; "Rep HR Enabled-Adl"; Boolean)
-        {
-            Caption = 'Rep HR Enabled';
-            DataClassification = SystemMetadata;
-        }
-        field(13062814; "Rep RS Enabled-Adl"; Boolean)
-        {
-            Caption = 'Rep RS Enabled';
-            DataClassification = SystemMetadata;
-        }
-        field(13062815; "Rep SI Enabled-Adl"; Boolean)
-        {
-            Caption = 'Rep SI Enabled';
-            DataClassification = SystemMetadata;
-        }
         field(13062816; "FAS Enabled-Adl"; Boolean)
         {
             Caption = 'FAS Enabled';
@@ -73,9 +58,6 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
         CoreSetup."EU Customs" := "EU Customs-Adl";
         CoreSetup."FAS Enabled" := "FAS Enabled-Adl";
         CoreSetup."KRD Enabled" := "KRD Enabled-Adl";
-        CoreSetup."Rep HR Enabled" := "Rep HR Enabled-Adl";
-        CoreSetup."Rep SI Enabled" := "Rep SI Enabled-Adl";
-        CoreSetup."Rep RS Enabled" := "Rep RS Enabled-Adl";
         CoreSetup."Unpaid Receivables Enabled" := "Unpaid Receivables Enabled-Adl";
         CoreSetup."VAT Enabled" := "VAT Enabled-Adl";
         CoreSetup."VIES Enabled" := "VIES Enabled-Adl";

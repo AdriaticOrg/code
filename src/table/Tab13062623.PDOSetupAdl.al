@@ -44,4 +44,17 @@ table 13062623 "PDO Setup-Adl"
         }
     }
 
+    trigger OnInsert()
+    var
+        CoreSetup: Record "CoreSetup-Adl";
+    begin
+        CoreSetup.EnableFeature(CoreSetup."ADL Features"::PDO);
+    end;
+
+    trigger OnDelete()
+    var
+        CoreSetup: Record "CoreSetup-Adl";
+    begin
+        CoreSetup.DisableFeature(CoreSetup."ADL Features"::PDO);
+    end;
 }

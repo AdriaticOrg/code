@@ -175,21 +175,6 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                 group(Reporting)
                 {
                     Caption = 'Reporting';
-                    field("Rep HR Enabled"; "Rep HR Enabled-Adl")
-                    {
-                        Caption = 'Reporting HR Enabled';
-                        ApplicationArea = All;
-                    }
-                    field("Rep RS Enabled"; "Rep RS Enabled-Adl")
-                    {
-                        Caption = 'Reporting RS Enabled';
-                        ApplicationArea = All;
-                    }
-                    field("Rep SI Enabled"; "Rep SI Enabled-Adl")
-                    {
-                        Caption = 'Reporting SI Enabled';
-                        ApplicationArea = All;
-                    }
                     field("EU Customs"; "EU Customs-Adl")
                     {
                         ApplicationArea = All;
@@ -832,9 +817,6 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         "EU Customs-Adl" := CoreSetup."EU Customs";
         "FAS Enabled-Adl" := CoreSetup."FAS Enabled";
         "KRD Enabled-Adl" := CoreSetup."KRD Enabled";
-        "Rep HR Enabled-Adl" := CoreSetup."Rep HR Enabled";
-        "Rep SI Enabled-Adl" := CoreSetup."Rep SI Enabled";
-        "Rep RS Enabled-Adl" := CoreSetup."Rep RS Enabled";
         "Unpaid Receivables Enabled-Adl" := CoreSetup."Unpaid Receivables Enabled";
         "VAT Enabled-Adl" := CoreSetup."VAT Enabled";
         "VIES Enabled-Adl" := CoreSetup."VIES Enabled";

@@ -54,4 +54,17 @@ table 13062645 "FAS Setup-Adl"
         }
     }
 
+    trigger OnInsert()
+    var
+        CoreSetup: Record "CoreSetup-Adl";
+    begin
+        CoreSetup.EnableFeature(CoreSetup."ADL Features"::FAS);
+    end;
+
+    trigger OnDelete()
+    var
+        CoreSetup: Record "CoreSetup-Adl";
+    begin
+        CoreSetup.DisableFeature(CoreSetup."ADL Features"::FAS);
+    end;
 }

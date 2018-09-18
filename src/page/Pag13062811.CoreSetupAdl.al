@@ -4,7 +4,7 @@ page 13062811 "Core Setup-Adl"
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "CoreSetup-Adl";
-    Caption = 'Core Setup';
+    Caption = 'DEVELPMENT ONLY: Core Setup';
 
     layout
     {
@@ -50,18 +50,6 @@ page 13062811 "Core Setup-Adl"
             {
                 Caption = 'Reporting';
                 // <adl.0>
-                field("Rep HR Enabled"; "Rep HR Enabled")
-                {
-                    ApplicationArea = All;
-                }
-                field("Rep RS Enabled"; "Rep RS Enabled")
-                {
-                    ApplicationArea = All;
-                }
-                field("Rep SI Enabled"; "Rep SI Enabled")
-                {
-                    ApplicationArea = All;
-                }
                 field("EU Customs"; "EU Customs")
                 {
                     ApplicationArea = All;
