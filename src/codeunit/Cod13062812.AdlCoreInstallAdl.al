@@ -49,7 +49,6 @@ codeunit 13062812 "Adl Core Install-Adl"
             ApplicationAreaSetup.Insert();
         end;
         ApplicationAreaSetup."Company Name" := CopyStr(CompanyName(), 1, 30);
-        ApplicationAreaSetup."Adl Core" := true;
         ApplicationAreaSetup."Adl BST" := true;
         ApplicationAreaSetup."Adl FAS" := true;
         ApplicationAreaSetup."Adl KRD" := true;
