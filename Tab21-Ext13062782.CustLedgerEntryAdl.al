@@ -2,7 +2,7 @@ tableextension 13062782 "Cust. Ledger Entry-Adl" extends "Cust. Ledger Entry" //
 {
     fields
     {
-        field(13062525;"Full Fisc. Doc. No.";Code[20])
+        field(13062781;"Full Fisc. Doc. No.";Code[20])
         {
             
         }
