@@ -225,7 +225,7 @@ report 13062682 "Export BST-Adl"
         XmlElem[3].Add(XmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('TaxCode', xbsrns);
-        XmlElem[4].Add(XmlText.Create(CompanyInfo."VAT Registration No."));
+        XmlElem[4].Add(XmlText.Create(RepSIMgt.GetNumsFromStr(CompanyInfo."VAT Registration No.")));
         XmlElem[3].Add(XmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('CompanyName', xbsrns);
