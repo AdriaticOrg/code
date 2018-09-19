@@ -1,6 +1,5 @@
 table 13062591 "VAT Identifier-Adl"
 {
-
     Caption = 'VAT Identifier';
     DrillDownPageID = "VAT Identifiers-Adl";
     LookupPageID = "VAT Identifiers-Adl";

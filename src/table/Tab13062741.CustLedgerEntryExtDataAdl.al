@@ -1,6 +1,5 @@
 table 13062741 "Cust.Ledger Entry ExtData-Adl"
 {
-
     Caption = 'Cust. Ledger Entry Extended Data';
 
     fields

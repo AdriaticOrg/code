@@ -1,11 +1,12 @@
 page 13062784 "Fisc. Location Card-Adl"
 {
     // <adl.20>
+    Caption = 'Fiscalization Location Card';
     PageType = Card;
     UsageCategory = Documents;
     ApplicationArea = All;
-    SourceTable = "Fiscalization Location-ADL";
-    
+    SourceTable = "Fiscalization Location-Adl";
+
     layout
     {
         area(content)
@@ -74,7 +75,7 @@ page 13062784 "Fisc. Location Card-Adl"
                 }
                 field("User ID"; "User ID")
                 {
-                    
+
                 }
                 field("Ending Date"; "Ending Date")
                 {
@@ -83,7 +84,7 @@ page 13062784 "Fisc. Location Card-Adl"
             }
         }
     }
-    
+
     actions
     {
         area(processing)
@@ -94,10 +95,10 @@ page 13062784 "Fisc. Location Card-Adl"
                 ApplicationArea = all;
                 trigger OnAction()
                 var
-                  FiscalizationLocationMappingPage : Page "Fisc. Location Mapping-ADL";
-                  FiscalizationLocationMapping : Record "Fiscalization Loc. Mapping-ADL";
+                    FiscalizationLocationMapping: Record "Fiscalization Loc. Mapping-Adl";
+                    FiscalizationLocationMappingPage: Page "Fisc. Location Mapping-Adl";
                 begin
-                    FiscalizationLocationMapping.SETRANGE("Fisc. Location Code","Fisc. Location Code");
+                    FiscalizationLocationMapping.SETRANGE("Fisc. Location Code", "Fisc. Location Code");
                     FiscalizationLocationMappingPage.SETTABLEVIEW(FiscalizationLocationMapping);
                     FiscalizationLocationMappingPage.RUNMODAL();
                 end;
@@ -105,29 +106,31 @@ page 13062784 "Fisc. Location Card-Adl"
 
         }
     }
-    
+
     var
-        FiscalizationSetup : Record "Fiscalization Setup-ADL";
-        FiscManagementSI : Codeunit "Fisc. Management-ADL";
-        FiscLocation : Record "Fiscalization Location-ADL";
-        VisibleSI : Boolean;
-        visibleHR : Boolean;
+        FiscalizationSetup: Record "Fiscalization Setup-Adl";
+        FiscLocation: Record "Fiscalization Location-Adl";
+        FiscManagementSI: Codeunit "Fisc. Management-Adl";
+        VisibleSI: Boolean;
+        visibleHR: Boolean;
+
     trigger OnInit()
     begin
-       FiscalizationSetup.GET();
+        FiscalizationSetup.GET();
         CASE TRUE OF
-        // SI
-        FiscalizationSetup.CountryCodeSI:
+            // SI
+            FiscalizationSetup.CountryCodeSI:
                 VisibleSI := TRUE;
-        // HR
-        FiscalizationSetup.CountryCodeHR:
+            // HR
+            FiscalizationSetup.CountryCodeHR:
                 VisibleHR := TRUE;
-        END; 
+        END;
     end;
+
     trigger OnOpenPage()
     begin
         IF NOT GET() THEN
-          INIT();
+            INIT();
     end;
     // </adl.20>
 }

@@ -1,10 +1,11 @@
 page 13062781 "Fiscalization Setup-Adl"
 {
     // <adl.20>
+    Caption = 'Fiscalization Setup';
     UsageCategory = Documents;
     ApplicationArea = All;
     PageType = Card;
-    SourceTable = "Fiscalization Setup-ADL";
+    SourceTable = "Fiscalization Setup-Adl";
     InsertAllowed = false;
     DeleteAllowed = false;
     layout
@@ -33,11 +34,11 @@ page 13062781 "Fiscalization Setup-Adl"
                 {
                     ApplicationArea = All;
                 }
-                
+
             }
         }
     }
-    
+
     actions
     {
         area(processing)
@@ -45,53 +46,54 @@ page 13062781 "Fiscalization Setup-Adl"
             action(FiscalizationTerminalList)
             {
                 ApplicationArea = all;
-                RunObject = Page "Fisc. Terminal List-ADL";
+                RunObject = Page "Fisc. Terminal List-Adl";
                 image = SetupList;
                 Promoted = True;
                 PromotedCategory = Process;
                 trigger OnAction()
                 begin
-                    
+
                 end;
             }
             action(FiscalizationLocationList)
             {
                 ApplicationArea = all;
-                RunObject = Page "Fisc. Location List-ADL";
+                RunObject = Page "Fisc. Location List-Adl";
                 image = SetupList;
                 Promoted = True;
                 PromotedCategory = Process;
                 trigger OnAction()
                 begin
-                    
+
                 end;
             }
             action(FiscalizationLocationMapping)
             {
                 ApplicationArea = all;
-                RunObject = Page "Fisc. Location Mapping-ADL";
+                RunObject = Page "Fisc. Location Mapping-Adl";
                 image = SetupList;
                 Promoted = True;
                 PromotedCategory = Process;
                 trigger OnAction()
                 begin
-                    
+
                 end;
             }
         }
     }
     var
-      VisibleHR : Boolean;
-      VisibleSI : Boolean;
+        VisibleHR: Boolean;
+        VisibleSI: Boolean;
+
     trigger OnOpenPage()
     begin
         IF NOT GET() THEN
-          INSERT();
+            INSERT();
         IF GetCountryCode() = 'SI' THEN
-          VisibleSI := TRUE
-        ELSE 
-          IF GetCountryCode() = 'HR' THEN
-            VisibleHR := TRUE;
+            VisibleSI := TRUE
+        ELSE
+            IF GetCountryCode() = 'HR' THEN
+                VisibleHR := TRUE;
     end;
     // </adl.20>
 }

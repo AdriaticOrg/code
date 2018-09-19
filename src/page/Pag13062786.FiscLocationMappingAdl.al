@@ -1,11 +1,12 @@
 page 13062786 "Fisc. Location Mapping-Adl"
 {
     // <adl.20>
+    Caption = 'Fiscalization Location Mapping';
     PageType = List;
     UsageCategory = Documents;
     ApplicationArea = All;
-    SourceTable = "Fiscalization Loc. Mapping-ADL";
-    
+    SourceTable = "Fiscalization Loc. Mapping-Adl";
+
     layout
     {
         area(content)
@@ -19,28 +20,11 @@ page 13062786 "Fisc. Location Mapping-Adl"
                 }
                 field("Fisc. Location Code"; "Fisc. Location Code")
                 {
-                    TableRelation = "Fiscalization Location-ADL";
+                    TableRelation = "Fiscalization Location-Adl";
                     ApplicationArea = All;
                 }
             }
         }
     }
-    
-    actions
-    {
-        area(processing)
-        {
-            action(ActionName)
-            {
-                trigger OnAction()
-                begin
-                    
-                end;
-            }
-        }
-    }
-    
-    var
-        myInt: Integer;
     // </adl.20>
 }
