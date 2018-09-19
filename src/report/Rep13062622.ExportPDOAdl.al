@@ -41,10 +41,6 @@ report 13062622 "Export PDO-Adl"
                 {
                     IncludeCaption = true;
                 }
-
-                trigger OnAfterGetRecord()
-                begin
-                end;
             }
 
             trigger OnAfterGetRecord()
@@ -150,12 +146,20 @@ report 13062622 "Export PDO-Adl"
         PDORepLineSum.Reset();
         PDORepLineSum.SetRange("Document No.", PDORepHead."No.");
         PDORepLineSum.SetRange(Type, PDORepLineSum.type::New);
-        PDORepLineSum.CalcSums("Amount (LCY)");
-        TotSales := PDORepLineSum."Amount (LCY)";
+        //PDORepLineSum.CalcSums("Amount (LCY)");
+        //TotSales := PDORepLineSum."Amount (LCY)";
+        if PDORepLineSum.findset() then
+            repeat
+                TotSales += round(PDORepLineSum."Amount (LCY)", 1, '=');
+            until PDORepLineSum.Next() = 0;
 
         PDORepLineSum.SetRange(Type, PDORepLineSum.Type::Correction);
-        PDORepLineSum.CalcSums("Amount (LCY)");
-        TotPrevSales := PDORepLineSum."Amount (LCY)";
+        //PDORepLineSum.CalcSums("Amount (LCY)");
+        //TotPrevSales := PDORepLineSum."Amount (LCY)";
+        if PDORepLineSum.findset() then
+            repeat
+                TotPrevSales += round(PDORepLineSum."Amount (LCY)", 1, '=');
+            until PDORepLineSum.Next() = 0;
 
         XmlDoc := xmlDocument.Create();
         XmlDec := xmlDeclaration.Create('1.0', 'UTF-8', '');
@@ -230,7 +234,7 @@ report 13062622 "Export PDO-Adl"
 
                 XmlElem[5] := XmlElement.Create('A3', xmlns);
                 XmlElem[4].Add(xmlElem[5]);
-                XmlElem[5].Add(XmlText.Create(format(PDORepLine."Amount (LCY)", 0, PrecisionTok)));
+                XmlElem[5].Add(XmlText.Create(format(round(PDORepLine."Amount (LCY)", 1, '='), 0, PrecisionTok)));
 
             until PDORepLine.Next() = 0;
 
@@ -261,7 +265,7 @@ report 13062622 "Export PDO-Adl"
 
                 XmlElem[4] := XmlElement.Create('B3', xmlns);
                 XmlElem[3].Add(xmlElem[4]);
-                XmlElem[4].Add(XmlText.Create(format(PDORepLine."Amount (LCY)", 0, PrecisionTok)));
+                XmlElem[4].Add(XmlText.Create(format(round(PDORepLine."Amount (LCY)", 1, '='), 0, PrecisionTok)));
 
             until PDORepLine.Next() = 0;
 

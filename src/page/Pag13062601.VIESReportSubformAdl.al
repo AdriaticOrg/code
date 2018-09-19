@@ -89,7 +89,13 @@ page 13062601 "VIES Report Subform-Adl"
                     VIESRepHead.get("Document No.");
 
                     VATEntry.SetCurrentKey("VAT Identifier-Adl", "Posting Date");
-                    VATEntry.SetRange("VAT Identifier-Adl", "VAT Identifier");
+                    //VATEntry.SetRange("VAT Identifier-Adl", "VAT Identifier");
+                    VATEntry.SetRange(Type, VATEntry.Type::Sale);
+                    if (VIESRepHead."VIES Country" = VIESRepHead."VIES Country"::Croatia) and
+                        (VIESRepHead."VIES Type" = VIESRepHead."VIES Type"::"PDV-S")
+                    then
+                        VATEntry.SetRange(Type, VATEntry.Type::Purchase);
+
                     VATEntry.SetRange("VAT Registration No.", "VAT Registration No.");
                     VATEntry.SetRange("Posting Date", VIESRepHead."Period Start Date", VIESRepHead."Period End Date");
                     page.RunModal(0, VATEntry);

@@ -708,7 +708,12 @@ report 13062602 "Export VIES-Adl"
     var
         ViesRepLine2: Record "VIES Report Line-Adl";
         Cntr: Integer;
+        RoundPrec: Integer;
     begin
+        RoundPrec := 1;
+        if ViesRepHead."VIES Country" = ViesRepHead."VIES Country"::Croatia then
+            RoundPrec := 0.01;
+
         ViesRepLine2.reset();
         ViesRepLine2.SetRange("Document No.", ViesRepHead."No.");
         if ViesRepLine2.FindSet() then
@@ -733,13 +738,13 @@ report 13062602 "Export VIES-Adl"
 
                     case true of
                         ViesRepLine2."EU 3-Party Trade":
-                            "EU 3-Party Amt." += ViesRepLine2.Amount;
+                            "EU 3-Party Amt." += round(ViesRepLine2.Amount, RoundPrec, '=');
                         ViesRepLine2."EU Customs Procedure":
-                            "EU Customs Proc. Amt" += ViesRepLine2.Amount;
+                            "EU Customs Proc. Amt" += round(ViesRepLine2.Amount, RoundPrec, '=');
                         ViesRepLine2."EU Sales Type" = ViesRepLine2."EU Sales Type"::Goods:
-                            "EU Sales Goods Amt." += ViesRepLine2.Amount;
+                            "EU Sales Goods Amt." += round(ViesRepLine2.Amount, RoundPrec, '=');
                         ViesRepLine2."EU Sales Type" = ViesRepLine2."EU Sales Type"::Services:
-                            "EU Sales Srvc. Amt." += ViesRepLine2.Amount;
+                            "EU Sales Srvc. Amt." += round(ViesRepLine2.Amount, RoundPrec, '=');
                     end;
                     Modify();
                 end;
