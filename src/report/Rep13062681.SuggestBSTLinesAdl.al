@@ -55,6 +55,7 @@ report 13062681 "Suggest BST Lines-Adl"
                     {
                         ApplicationArea = All;
                         Caption = 'Delete existing lines';
+                        ToolTip = 'TODO: Tooltip - Reporting';
                     }
                 }
             }

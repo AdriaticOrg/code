@@ -75,6 +75,7 @@ report 13062643 "Adjust FAS on Entries-Adl"
                     {
                         Caption = 'Update all from G/L Account';
                         ApplicationArea = All;
+                        ToolTip = 'TODO: Tooltip - Reporting';
                     }
                 }
             }

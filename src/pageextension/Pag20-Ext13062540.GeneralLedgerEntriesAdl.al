@@ -9,16 +9,19 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("FAS Sector Code-Adl"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.24>
             // <adl.26>
@@ -26,11 +29,13 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
             {
                 ApplicationArea = All;
                 Visible = BSTFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("BST Code-Adl"; "BST Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = BSTFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.26>
         }
@@ -52,6 +57,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
                     Caption = 'Finance Instrument';
                     Image = ListPage;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
 
                     trigger OnAction()
                     var
@@ -72,6 +78,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
                     Caption = 'Finance Sector';
                     Image = ListPage;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
 
                     trigger OnAction()
                     var
@@ -93,6 +100,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
                     Caption = 'BST Code';
                     Image = ListPage;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
 
                     trigger OnAction()
                     var

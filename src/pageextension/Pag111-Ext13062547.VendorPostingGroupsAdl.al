@@ -9,16 +9,19 @@ pageextension 13062547 "Vendor Posting Groups-Adl" extends "Vendor Posting Group
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("KRD Instrument Type-Adl"; "KRD Instrument Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("KRD Maturity-Adl"; "KRD Maturity-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
         }
         // </adl.25>

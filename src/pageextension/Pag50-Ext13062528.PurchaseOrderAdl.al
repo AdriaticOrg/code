@@ -9,11 +9,13 @@ pageextension 13062528 "Purchase Order-Adl" extends "Purchase Order" //50
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - VAT Date';
             }
             field("VAT Output Date-Adl"; "VAT Output Date-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - VAT Date';
             }
             // </adl.6>
             // <adl.10>
@@ -22,6 +24,7 @@ pageextension 13062528 "Purchase Order-Adl" extends "Purchase Order" //50
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
             }
             // </adl.10>
         }

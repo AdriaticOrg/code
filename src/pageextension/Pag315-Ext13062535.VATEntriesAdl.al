@@ -10,6 +10,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
             }
             // <adl.22> 
             field("VAT Correction Date-Adl"; "VAT Correction Date-Adl")
@@ -17,6 +18,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.22> 
         }
@@ -27,8 +29,9 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
             field("VAT Identifier-Adl"; "VAT Identifier-Adl")
             {
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - VAT Identifier';
                 Visible = VATFeatureEnabled;
-                //Editable = false;
+                // Editable = false;
                 TableRelation = "VAT Identifier-Adl";
             }
         }
@@ -40,6 +43,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
             {
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.14>
             // <adl.10>
@@ -48,6 +52,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - Full VAT Posting';
             }
             // </adl.10>
             // <adl.10>
@@ -55,7 +60,8 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
-                //Editable = false;
+                // Editable = false;
+                ToolTip = 'TODO: Tooltip - Full VAT Posting';
             }
             // </adl.10>
         }

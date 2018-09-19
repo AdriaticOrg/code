@@ -1,4 +1,4 @@
-pageextension 13062666  "VendorPostingGroupCard-Adl" extends "Vendor Posting Group Card" //149
+pageextension 13062666 "VendorPostingGroupCard-Adl" extends "Vendor Posting Group Card" //149
 {
     layout
     {
@@ -9,16 +9,19 @@ pageextension 13062666  "VendorPostingGroupCard-Adl" extends "Vendor Posting Gro
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("KRD Instrument Type-Adl"; "KRD Instrument Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("KRD Maturity-Adl"; "KRD Maturity-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.25>
         }

@@ -9,6 +9,7 @@ pageextension 13062525 "Sales Order-Adl" extends "Sales Order" //42
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - VAT Date';
             }
             // </adl.6>
             // <adl.10>
@@ -17,6 +18,7 @@ pageextension 13062525 "Sales Order-Adl" extends "Sales Order" //42
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
             }
             // </adl.10>
         }

@@ -10,24 +10,28 @@ pageextension 13062548 "User Setup-Adl" extends "User Setup" //119
                 Caption = 'Reporting Name';
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("Reporting Email-Adl"; "Reporting Email-Adl")
             {
                 Caption = 'Reporting E-mail';
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("Reporting Phone-Adl"; "Reporting Phone-Adl")
             {
                 Caption = 'Reporting Phone';
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("Reporting Position-Adl"; "Reporting Position-Adl")
             {
                 Caption = 'Reporting Position';
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.24>
             // <adl.27>
@@ -35,11 +39,13 @@ pageextension 13062548 "User Setup-Adl" extends "User Setup" //119
             {
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;
+                ToolTip = 'TODO: Tooltip - Detail Trial Balance Extended';
             }
             field("Posting Responsible Person-Adl"; "Posting Responsible Person-Adl")
             {
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;
+                ToolTip = 'TODO: Tooltip - Detail Trial Balance Extended';
             }
             // </adl.27>
         }

@@ -9,11 +9,13 @@ pageextension 13062530 "Purchase Credit Memo-Adl" extends "Purchase Credit Memo"
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - VAT Date';
             }
             field("VAT Output Date-Adl"; "VAT Output Date-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - VAT Date';
             }
             // <adl.10>
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
@@ -21,6 +23,7 @@ pageextension 13062530 "Purchase Credit Memo-Adl" extends "Purchase Credit Memo"
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
             }
             // </adl.10>
         }
@@ -32,6 +35,7 @@ pageextension 13062530 "Purchase Credit Memo-Adl" extends "Purchase Credit Memo"
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'Select Goods Return Type if it is goods return transaction.';
             }
         }
         // </adl.18>
