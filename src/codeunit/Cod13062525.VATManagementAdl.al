@@ -40,6 +40,10 @@ codeunit 13062525 "VAT Management-Adl"
     local procedure OnBeforePostInvtPostBuf(var GenJournalLine: Record "Gen. Journal Line"; var InvtPostingBuffer: Record "Invt. Posting Buffer"; ValueEntry: Record "Value Entry"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        //<adl.7>
+        IF InvtPostingBuffer."Account Type" IN [InvtPostingBuffer."Account Type"::Inventory, InvtPostingBuffer."Account Type"::"Inventory (Interim)"] THEN
+            GenJournalLine.Correction := ManagePostponedVAT.UpdateCorrection(ValueEntry, GenJournalLine.Amount);
+        //</adl.7>
         //TODO: we must get values here!
         //GenJournalLine."VAT Bus. Posting Group" := InvtPostingBuffer.
     end;
