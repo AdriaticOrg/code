@@ -280,7 +280,7 @@ report 13062682 "Export BST-Adl"
         XmlElem[3].Add(XmlElem[4]);
 
         XmlElem[4] := XmlElement.Create('Telephone', xbsrns);
-        XmlElem[4].Add(XmlText.Create(PrepairedByUser."Reporting Phone-Adl"));
+        XmlElem[4].Add(XmlText.Create(DelChr(RepSIMgt.GetNumsFromStr(PrepairedByUser."Reporting Phone-Adl"), '=', ' ')));
         XmlElem[3].Add(XmlElem[4]);
 
         XmlElem[2] := XmlElement.Create('SMO', xbsrns);
@@ -319,7 +319,7 @@ report 13062682 "Export BST-Adl"
 
         XmlElem[7] := XmlElement.Create('Telephon', xbsrns);
         XmlElem[6].Add(xmlElem[7]);
-        XmlElem[7].Add(XmlText.Create(RespUser."Reporting Phone-Adl"));
+        XmlElem[7].Add(XmlText.Create(DelChr(RepSIMgt.GetNumsFromStr(RespUser."Reporting Phone-Adl"), '=', ' ')));
 
         XmlElem[7] := XmlElement.Create('Position', xbsrns);
         XmlElem[6].Add(xmlElem[7]);
@@ -338,7 +338,7 @@ report 13062682 "Export BST-Adl"
 
         XmlElem[6] := XmlElement.Create('Telephon', xbsrns);
         XmlElem[5].Add(xmlElem[6]);
-        XmlElem[6].Add(XmlText.Create(RespUser."Reporting Phone-Adl"));
+        XmlElem[6].Add(XmlText.Create(DelChr(RepSIMgt.GetNumsFromStr(RespUser."Reporting Phone-Adl"), '=', ' ')));
 
         XmlElem[6] := XmlElement.Create('Currency', xbsrns);
         XmlElem[5].Add(xmlElem[6]);
