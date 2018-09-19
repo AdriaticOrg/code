@@ -5112,7 +5112,15 @@ Cstr(Fields!DocumentDateCaption.Value) + Chr(177) +
 Cstr(Fields!PaymentTermsDescCaption.Value) + Chr(177) + 
 Cstr(Fields!ShptMethodDescCaption.Value) + Chr(177) + 
 Cstr(Fields!EMailCaption.Value) + Chr(177) + 
-Cstr(Fields!HomePageCaption.Value)
+Cstr(Fields!HomePageCaption.Value) + Chr(177) + 
+Cstr(Fields!VAT_Date_AdlCaption.Value) + Chr(177) + 
+Cstr(Fields!VAT_Date_Adl.Value) + Chr(177) + 
+Cstr(Fields!Place_Of_Issue_AdlCaption.Value) + Chr(177) + 
+Cstr(Fields!Place_Of_Issue_Adl.Value) + Chr(177) + 
+Cstr(Fields!Date_Of_Issue_AdlCaption.Value) + Chr(177) + 
+Cstr(Fields!Date_Of_Issue_Adl.Value) + Chr(177) + 
+Cstr(Fields!Shipment_Date_AdlCaption.Value) + Chr(177) + 
+Cstr(Fields!Shipment_Date.Value)
 , 1)</Hidden>
                                             </Visibility>
                                             <Style>
@@ -7677,7 +7685,7 @@ Cstr(Fields!HomePageCaption.Value)
       <Width>18.15848cm</Width>
       <Page>
         <PageHeader>
-          <Height>10.7254cm</Height>
+          <Height>12.28345cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -7699,7 +7707,7 @@ Cstr(Fields!HomePageCaption.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>9.74873cm</Top>
+              <Top>11.49498cm</Top>
               <Height>11pt</Height>
               <Width>1.25036in</Width>
               <Style>
@@ -7724,7 +7732,7 @@ Cstr(Fields!HomePageCaption.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>7.08879cm</Top>
+              <Top>6.99354cm</Top>
               <Height>11pt</Height>
               <Width>1.25036in</Width>
               <ZIndex>1</ZIndex>
@@ -7750,7 +7758,7 @@ Cstr(Fields!HomePageCaption.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>7.91606cm</Top>
+              <Top>7.82081cm</Top>
               <Height>11pt</Height>
               <Width>1.25036in</Width>
               <ZIndex>2</ZIndex>
@@ -7774,7 +7782,7 @@ Cstr(Fields!HomePageCaption.Value)
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>5.94172cm</Top>
+              <Top>5.84647cm</Top>
               <Height>11pt</Height>
               <Width>3.17591cm</Width>
               <ZIndex>3</ZIndex>
@@ -7962,7 +7970,7 @@ Cstr(Fields!HomePageCaption.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>9.76285cm</Top>
+              <Top>11.5091cm</Top>
               <Left>3.21488cm</Left>
               <Height>11pt</Height>
               <Width>8.78033cm</Width>
@@ -8041,7 +8049,7 @@ Cstr(Fields!HomePageCaption.Value)
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>6.69283cm</Top>
+              <Top>6.59758cm</Top>
               <Left>3.22141cm</Left>
               <Height>11pt</Height>
               <Width>8.7738cm</Width>
@@ -8066,7 +8074,7 @@ Cstr(Fields!HomePageCaption.Value)
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>6.68763cm</Top>
+              <Top>6.59238cm</Top>
               <Height>11pt</Height>
               <Width>3.17591cm</Width>
               <ZIndex>14</ZIndex>
@@ -8092,7 +8100,7 @@ Cstr(Fields!HomePageCaption.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>7.07021cm</Top>
+              <Top>6.97496cm</Top>
               <Left>3.21488cm</Left>
               <Height>11pt</Height>
               <Width>8.78033cm</Width>
@@ -8173,7 +8181,7 @@ Cstr(Fields!HomePageCaption.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>7.89218cm</Top>
+              <Top>7.79693cm</Top>
               <Left>3.21488cm</Left>
               <Height>11pt</Height>
               <Width>8.78033cm</Width>
@@ -8198,7 +8206,7 @@ Cstr(Fields!HomePageCaption.Value)
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>6.34005cm</Top>
+              <Top>6.2448cm</Top>
               <Left>3.22141cm</Left>
               <Height>11pt</Height>
               <Width>8.77381cm</Width>
@@ -8223,7 +8231,7 @@ Cstr(Fields!HomePageCaption.Value)
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>6.33476cm</Top>
+              <Top>6.23951cm</Top>
               <Height>11pt</Height>
               <Width>3.17591cm</Width>
               <ZIndex>20</ZIndex>
@@ -8249,7 +8257,7 @@ Cstr(Fields!HomePageCaption.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>5.95199cm</Top>
+              <Top>5.85674cm</Top>
               <Left>3.22141cm</Left>
               <Height>11pt</Height>
               <Width>8.7738cm</Width>
@@ -8548,7 +8556,7 @@ Cstr(Fields!HomePageCaption.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>8.59161cm</Top>
+              <Top>8.49636cm</Top>
               <Left>3.22141cm</Left>
               <Height>11pt</Height>
               <Width>8.7738cm</Width>
@@ -8576,7 +8584,7 @@ Cstr(Fields!HomePageCaption.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>7.51472cm</Top>
+              <Top>7.41947cm</Top>
               <Height>11pt</Height>
               <Width>1.25036in</Width>
               <ZIndex>33</ZIndex>
@@ -8602,7 +8610,7 @@ Cstr(Fields!HomePageCaption.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>7.49354cm</Top>
+              <Top>7.39829cm</Top>
               <Left>3.22141cm</Left>
               <Height>11pt</Height>
               <Width>8.7738cm</Width>
@@ -8629,7 +8637,7 @@ Cstr(Fields!HomePageCaption.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.25753in</Top>
+              <Top>3.22003in</Top>
               <Height>11pt</Height>
               <Width>1.25036in</Width>
               <ZIndex>35</ZIndex>
@@ -8655,7 +8663,7 @@ Cstr(Fields!HomePageCaption.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.24188in</Top>
+              <Top>3.20438in</Top>
               <Left>3.21488cm</Left>
               <Height>11pt</Height>
               <Width>8.78033cm</Width>
@@ -8683,7 +8691,7 @@ Cstr(Fields!HomePageCaption.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>8.62282cm</Top>
+              <Top>8.52757cm</Top>
               <Height>11pt</Height>
               <Width>1.25036in</Width>
               <ZIndex>37</ZIndex>
@@ -8706,7 +8714,7 @@ Cstr(Fields!HomePageCaption.Value)
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>3.53808in</Top>
+              <Top>4.22558in</Top>
               <Height>11pt</Height>
               <Width>3.17591cm</Width>
               <ZIndex>38</ZIndex>
@@ -8734,7 +8742,7 @@ Cstr(Fields!HomePageCaption.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>3.55058in</Top>
+              <Top>4.23808in</Top>
               <Left>3.22141cm</Left>
               <Height>11pt</Height>
               <Width>8.7738cm</Width>
@@ -8761,7 +8769,7 @@ Cstr(Fields!HomePageCaption.Value)
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>9.39596cm</Top>
+              <Top>11.14221cm</Top>
               <Height>11pt</Height>
               <Width>1.25036in</Width>
               <ZIndex>40</ZIndex>
@@ -8787,7 +8795,7 @@ Cstr(Fields!HomePageCaption.Value)
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>9.37478cm</Top>
+              <Top>11.12103cm</Top>
               <Left>3.21488cm</Left>
               <Height>11pt</Height>
               <Width>3.45682in</Width>
@@ -9190,6 +9198,238 @@ Cstr(Fields!HomePageCaption.Value)
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </Textbox>
+            <Textbox Name="SalesInvShipmentDateValue">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(62,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <Format>g</Format>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>8.96782cm</Top>
+              <Left>3.2262cm</Left>
+              <Height>11pt</Height>
+              <Width>8.769cm</Width>
+              <ZIndex>50</ZIndex>
+              <Style>
+                <Border />
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="ShipmentDateCaption">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(61,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>8.96782cm</Top>
+              <Height>11pt</Height>
+              <Width>1.25036in</Width>
+              <ZIndex>51</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Textbox Name="VATDateValue">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(56,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <Format>g</Format>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>9.42643cm</Top>
+              <Left>3.2262cm</Left>
+              <Height>11pt</Height>
+              <Width>8.769cm</Width>
+              <ZIndex>52</ZIndex>
+              <Style>
+                <Border />
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="VATDateCaption">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(55,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>9.42643cm</Top>
+              <Height>11pt</Height>
+              <Width>1.25036in</Width>
+              <ZIndex>53</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Textbox Name="DateOfIssueValue">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(60,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <Format>g</Format>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>9.84976cm</Top>
+              <Left>3.2262cm</Left>
+              <Height>11pt</Height>
+              <Width>8.769cm</Width>
+              <ZIndex>54</ZIndex>
+              <Style>
+                <Border />
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="DateOfIssueCaption">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(59,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>9.84976cm</Top>
+              <Height>11pt</Height>
+              <Width>1.25036in</Width>
+              <ZIndex>55</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Textbox Name="PlaceOfIssueValue">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(58,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <Format>g</Format>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>10.30837cm</Top>
+              <Left>3.2262cm</Left>
+              <Height>11pt</Height>
+              <Width>8.769cm</Width>
+              <ZIndex>56</ZIndex>
+              <Style>
+                <Border />
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="PlaceOfIssueCaption">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(57,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>10.30837cm</Top>
+              <Height>11pt</Height>
+              <Width>1.25036in</Width>
+              <ZIndex>57</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style />
         </PageHeader>
@@ -9351,6 +9591,24 @@ End Function</Code>
         </Field>
         <Field Name="VATAmtInfAdlCaption">
           <DataField>VATAmtInfAdlCaption</DataField>
+        </Field>
+        <Field Name="Place_Of_Issue_Adl">
+          <DataField>Place_Of_Issue_Adl</DataField>
+        </Field>
+        <Field Name="Place_Of_Issue_AdlCaption">
+          <DataField>Place_Of_Issue_AdlCaption</DataField>
+        </Field>
+        <Field Name="Date_Of_Issue_Adl">
+          <DataField>Date_Of_Issue_Adl</DataField>
+        </Field>
+        <Field Name="Date_Of_Issue_AdlCaption">
+          <DataField>Date_Of_Issue_AdlCaption</DataField>
+        </Field>
+        <Field Name="Shipment_Date">
+          <DataField>Shipment_Date</DataField>
+        </Field>
+        <Field Name="Shipment_Date_AdlCaption">
+          <DataField>Shipment_Date_AdlCaption</DataField>
         </Field>
         <Field Name="HomePage">
           <DataField>HomePage</DataField>

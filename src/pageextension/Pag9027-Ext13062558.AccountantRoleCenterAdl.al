@@ -9,7 +9,7 @@ pageextension 13062558 "Accountant Role Center-Adl" extends "Accountant Role Cen
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 RunObject = page "VAT Books-Adl";
-                ToolTip = 'TODO: Tooltip - VATBooks';
+                ToolTip = 'View, edit or create VAT Books.';
             }
         }
     }

@@ -19,7 +19,7 @@ page 13062595 "VAT Book Group Identifiers-Adl"
                 field(Description; Description)
                 {
                     ApplicationArea = All;
-                    ToolTip = 'TODO: Tooltip - VATBooks';
+                    ToolTip = 'Specifies a descripiton of VAT Identifier.';
                 }
             }
         }

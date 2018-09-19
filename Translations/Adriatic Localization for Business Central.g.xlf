@@ -319,27 +319,27 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2340829247 - Control 3830853043 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies a first operator in VAT Book View Formula.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Control Operator1 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2340829247 - Control 151815974 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies a first field value from VAT Entry, which is used in VAT Book View Formula.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Control Value1 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2340829247 - Control 1448975598 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies a second operator in VAT Book View Formula.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Control Operator2 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2340829247 - Control 2533693419 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies a second field value from VAT Entry, which is used in VAT Book View Formula.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Control Value2 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2340829247 - Control 696389717 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies aditional filters for VAT Entry, which is used in VAT Book View Formula.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Control Condition - Property ToolTip</note>
         </trans-unit>
@@ -2484,7 +2484,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3898502574 - Control 2015957264 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies Book Link Code which is used as setup for VAT reporting and XML.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Book Link Code - Property ToolTip</note>
         </trans-unit>
@@ -2509,7 +2509,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Tag Name - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3898502574 - Control 3092482011 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies if VAT Book include columns, which is used as setup for VAT reporting and XML.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Include Columns - Property ToolTip</note>
         </trans-unit>
@@ -2539,7 +2539,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Group Identifiers-Adl - Control VAT Identifier - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2587470435 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies a descripiton of VAT Identifier.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Group Identifiers-Adl - Control Description - Property ToolTip</note>
         </trans-unit>
@@ -2764,162 +2764,162 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control DateFilter - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies a code of VAT Book Group.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies a description of VAT Book Group.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 3616567109 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field1 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 2978870492 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field2 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 2341173875 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field3 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 1703477258 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field4 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 1065780641 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field5 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 428084024 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field6 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 4085354703 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field7 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 765902070 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field8 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 128205453 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field9 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 2722624357 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field10 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 3360320974 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field11 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 1447231123 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field12 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 2084927740 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field13 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 171837889 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field14 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 809534506 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field15 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 3191411951 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field16 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 3829108568 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field17 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 3529229997 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field18 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 4166926614 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field19 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 2446092084 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field20 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 1808395467 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field21 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 3721485318 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field22 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 3083788701 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field23 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 4190272912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field24 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 3552576295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field25 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 1170698850 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field26 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 533002233 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field27 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 1639486444 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field28 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 1001789827 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field29 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 3238104547 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Preview value, as result of calculated formula on VAT Book Matrix Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field30 - Property ToolTip</note>
         </trans-unit>
@@ -4454,7 +4454,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Calc. Details-Adl - Control SetedDateFilter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2007895818 - Control 1452022969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies Date filter for report data.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Calc. Details-Adl - Control SetedDateFilter - Property ToolTip</note>
         </trans-unit>
@@ -4464,7 +4464,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Calc. Details-Adl - Control SetedBookFilter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2007895818 - Control 1965887750 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies VAT Book filter for report data.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Calc. Details-Adl - Control SetedBookFilter - Property ToolTip</note>
         </trans-unit>
@@ -4519,7 +4519,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Books To XML-Adl - Control Date Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 959239765 - Control 995090288 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies Date Filter for XML export file.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Books To XML-Adl - Control Date Filter - Property ToolTip</note>
         </trans-unit>
@@ -4529,7 +4529,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Books To XML-Adl - Control PPPDV Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 959239765 - Control 694692658 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies PPPD Date for data in XML export file.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Books To XML-Adl - Control PPPDV Date - Property ToolTip</note>
         </trans-unit>
@@ -4539,7 +4539,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Books To XML-Adl - Control Responsible Person - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 959239765 - Control 316362275 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies Responsible Person for data in XML export file.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Books To XML-Adl - Control Responsible Person - Property ToolTip</note>
         </trans-unit>
@@ -4679,7 +4679,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Book-Adl - Control VATBookCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3292545214 - Control 2984761929 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>Specifies filter for VAT Book Code.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Book-Adl - Control VATBookCode - Property ToolTip</note>
         </trans-unit>
@@ -6949,7 +6949,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Return Order-Adl - Control Goods Return Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2537586187 - Action 1522232855 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VATBooks</source>
+          <source>View, edit or create VAT Books.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Accountant Role Center-Adl - Action VAT Books-Adl - Property ToolTip</note>
         </trans-unit>

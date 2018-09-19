@@ -24,7 +24,7 @@ page 13062594 "VAT Book Groups-Adl"
                     Style = Strong;
                     StyleExpr = "Group Type" <> "Group Type"::"VAT Entries";
                     ApplicationArea = All;
-                    ToolTip = 'TODO: Tooltip - VATBooks';
+                    ToolTip = 'Specifies Book Link Code which is used as setup for VAT reporting and XML.';
                 }
                 field(Description; Description)
                 {
@@ -64,7 +64,7 @@ page 13062594 "VAT Book Groups-Adl"
                 field("Include Columns"; "Include Columns")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'TODO: Tooltip - VATBooks';
+                    ToolTip = 'Specifies if VAT Book include columns, which is used as setup for VAT reporting and XML.';
                 }
             }
         }
