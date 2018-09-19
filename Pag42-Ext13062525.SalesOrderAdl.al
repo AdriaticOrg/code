@@ -1,4 +1,4 @@
-pageextension 13062783 "Sales Quote-Adl" extends "Sales Quote" //41
+pageextension 13062525 "Sales Order-Adl" extends "Sales Order" //42
 {
     layout
     {

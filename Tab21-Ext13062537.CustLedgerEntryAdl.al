@@ -1,4 +1,4 @@
-tableextension 13062784 "Gen. Journal Line-Adl" extends "Gen. Journal Line" //81
+tableextension 13062537 "Cust. Ledger Entry-Adl" extends "Cust. Ledger Entry" //21
 {
     fields
     {

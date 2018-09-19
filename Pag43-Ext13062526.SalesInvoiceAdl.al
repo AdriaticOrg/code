@@ -1,31 +1,31 @@
-pageextension 13062786 "Sales Credit Memo-Adl" extends "Sales Credit Memo" //43
+pageextension 13062526 "Sales Invoice-Adl" extends "Sales Invoice" //43
 {
     layout
     {
-        addafter(Billing)
+        addafter("Shipping and Billing")
         {
             group(Fiscalization)
             {
                 field("Fisc. Subject";"Fisc. Subject")
                 {
-
+                ApplicationArea = All;
                 }
                 field("Fisc. No. Series";"Fisc. No. Series")
                 {
-
+                ApplicationArea = All;
                 }
                 field("Fisc. Terminal";"Fisc. Terminal")
                 {
-
+                ApplicationArea = All;
                 }
                 field("Fisc. Location Code";"Fisc. Location Code")
                 {
-
+                ApplicationArea = All;
                 }
 
                 field("Full Fisc. Doc. No.";"Full Fisc. Doc. No.")
                 {
-
+                ApplicationArea = All;
                 }
             }
         }

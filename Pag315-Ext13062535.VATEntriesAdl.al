@@ -1,11 +1,11 @@
-pageextension 13062789 "Posted Sales Invoices-Adl" extends "Posted Sales Invoices" //143
+pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries" //315
 {
     layout
     {
         addlast(Control1)
         {
                 field("Full Fisc. Doc. No.";"Full Fisc. Doc. No.")
-                {   
+                {
                     ApplicationArea = All;
                 }
         }

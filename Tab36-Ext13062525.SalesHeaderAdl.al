@@ -1,4 +1,4 @@
-tableextension 13062783 "Sales Header-Adl" extends "Sales Header" //36
+tableextension 13062525 "Sales Header-Adl" extends "Sales Header" //36
 {
     fields
     {

@@ -1,4 +1,4 @@
-tableextension 13062786 "Sales Invoice Header-Adl" extends "Sales Invoice Header" //112
+tableextension 13062528 "Sales Invoice Header-Adl" extends "Sales Invoice Header" //112
 {
     fields
     {

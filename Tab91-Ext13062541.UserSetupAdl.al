@@ -1,4 +1,4 @@
-tableextension 13062785 "User Setup-Adl" extends "User Setup" //91
+tableextension 13062541 "User Setup-Adl" extends "User Setup" //91
 {
     fields
     {

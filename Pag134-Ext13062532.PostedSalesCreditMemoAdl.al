@@ -1,4 +1,4 @@
-pageextension 13062784 "Sales Order-Adl" extends "Sales Order" //42
+pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Credit Memo" //134
 {
     layout
     {
@@ -24,6 +24,10 @@ pageextension 13062784 "Sales Order-Adl" extends "Sales Order" //42
                 }
 
                 field("Full Fisc. Doc. No.";"Full Fisc. Doc. No.")
+                {
+                ApplicationArea = All;
+                }
+                field("Posting TimeStamp";"Posting TimeStamp")
                 {
                 ApplicationArea = All;
                 }
