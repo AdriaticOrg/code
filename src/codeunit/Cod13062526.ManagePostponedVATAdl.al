@@ -99,6 +99,43 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         END;
     end;
     //</adl.10>
+    //<adl.7>
+    procedure UpdateCorrection(var ValueEntry: Record "Value Entry"; CostToPost: Decimal) Correction: Boolean
+    var
+        InvtSetup: Record "Inventory Setup";
+    begin
+        InvtSetup.Get();
+        WITH ValueEntry DO
+            CASE "Item Ledger Entry Type" OF
+                "Item Ledger Entry Type"::Purchase:
+                    Correction := CostToPost < 0;
+                "Item Ledger Entry Type"::Sale:
+                    Correction := CostToPost > 0;
+                "Item Ledger Entry Type"::"Positive Adjmt.":
+                    Correction := CostToPost < 0;
+                "Item Ledger Entry Type"::"Negative Adjmt.":
+                    Correction := CostToPost > 0;
+                "Item Ledger Entry Type"::Transfer:
+                    IF "Valued Quantity" > 0 THEN
+                        Correction := CostToPost < 0
+                    ELSE
+                        IF InvtSetup."Post Neg. Transfers as Corr.-Adl" THEN
+                            Correction := CostToPost < 0
+                        ELSE
+                            Correction := CostToPost > 0;
+                "Item Ledger Entry Type"::Consumption:
+                    Correction := CostToPost > 0;
+                "Item Ledger Entry Type"::Output:
+                    Correction := CostToPost < 0;
+                "Item Ledger Entry Type"::"Assembly Consumption":
+                    Correction := CostToPost > 0;
+                "Item Ledger Entry Type"::"Assembly Output":
+                    Correction := CostToPost < 0;
+                "Item Ledger Entry Type"::" ":
+                    Correction := CostToPost < 0;
+            END;
+    end;
+    //</adl.7>
     var
         CoreSetup: Record "CoreSetup-Adl";
         ADLCore: Codeunit "Adl Core-Adl";
