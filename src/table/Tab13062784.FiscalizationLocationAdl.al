@@ -13,7 +13,6 @@ table 13062784 "Fiscalization Location-Adl"
             DataClassification = SystemMetadata;
 
         }
-
         field(2; "Fisc. Street"; text[100])
         {
             DataClassification = SystemMetadata;
@@ -127,9 +126,6 @@ table 13062784 "Fiscalization Location-Adl"
             Clustered = true;
         }
     }
-
-    var
-        myInt: Integer;
 
     trigger OnInsert()
     begin

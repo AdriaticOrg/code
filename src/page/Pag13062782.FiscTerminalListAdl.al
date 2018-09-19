@@ -47,7 +47,6 @@ page 13062782 "Fisc. Terminal List-Adl"
     var
         VisibleHR: Boolean;
         VisibleSI: Boolean;
-        myInt: Integer;
 
     trigger OnInit()
     var

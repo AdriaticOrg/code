@@ -38,9 +38,6 @@ table 13062783 "Fisc. Payment Method-Adl"
         }
     }
 
-    var
-        myInt: Integer;
-
     trigger OnInsert()
     begin
 

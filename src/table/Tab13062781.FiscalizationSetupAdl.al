@@ -46,9 +46,6 @@ table 13062781 "Fiscalization Setup-Adl"
         }
     }
 
-    var
-        myInt: Integer;
-
     trigger OnInsert()
     begin
 

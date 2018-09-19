@@ -30,9 +30,6 @@ table 13062785 "Fiscalization Loc. Mapping-Adl"
         }
     }
 
-    var
-        myInt: Integer;
-
     trigger OnInsert()
     begin
 

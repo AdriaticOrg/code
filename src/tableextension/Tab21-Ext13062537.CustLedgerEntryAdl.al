@@ -54,7 +54,7 @@ tableextension 13062537 "Cust. Ledger Entry-Adl" extends "Cust. Ledger Entry" //
         }
         // </adl.24>
         // <adl.20>    
-        field(13062781;"Full Fisc. Doc. No.-Adl";Code[20])
+        field(13062781; "Full Fisc. Doc. No.-Adl"; Code[20])
         {
             DataClassification = SystemMetadata;
         }

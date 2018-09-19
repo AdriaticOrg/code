@@ -69,10 +69,10 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
         // <adl.20>
         addlast(Control1)
         {
-                field("Full Fisc. Doc. No.-Adl";"Full Fisc. Doc. No.-Adl")
-                {
-                    ApplicationArea = All;
-                }
+            field("Full Fisc. Doc. No.-Adl"; "Full Fisc. Doc. No.-Adl")
+            {
+                ApplicationArea = All;
+            }
         }
         // </adl.20>
     }
