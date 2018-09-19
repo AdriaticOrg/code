@@ -229,6 +229,7 @@ codeunit 13062818 "Application Area Mgmt-Adl"
         CoreSetup: Record "CoreSetup-Adl";
         //AppAreaMgmt: Codeunit "Application Area Mgmt.";
     begin
+        //TODO: remove debug code
         if CoreSetup.Get() then Error('dobu')
         else
             error('ni dobu');

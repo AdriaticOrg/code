@@ -1,12 +1,13 @@
 page 13062782 "Fisc. Terminal List-Adl"
 {
     // <adl.20>
+    Caption = 'Fiscalization Terminal List';
     PageType = List;
     UsageCategory = Documents;
     ApplicationArea = All;
-    SourceTable = "Fiscalization Terminal-ADL";
-    SourceTableView = SORTING("Fisc. Terminal Code","Fisc. Location Code","User ID");
-    
+    SourceTable = "Fiscalization Terminal-Adl";
+    SourceTableView = SORTING ("Fisc. Terminal Code", "Fisc. Location Code", "User ID");
+
     layout
     {
         area(content)
@@ -17,7 +18,7 @@ page 13062782 "Fisc. Terminal List-Adl"
                 {
                     ApplicationArea = All;
                 }
-                 field(Name; Name)
+                field(Name; Name)
                 {
                     ApplicationArea = All;
                 }
@@ -27,8 +28,8 @@ page 13062782 "Fisc. Terminal List-Adl"
                 }
                 field("User ID"; "User ID")
                 {
-                  Visible = VisibleHR;   
-                  ApplicationArea = All;
+                    Visible = VisibleHR;
+                    ApplicationArea = All;
                 }
                 field("Creation Date"; "Creation Date")
                 {
@@ -38,41 +39,28 @@ page 13062782 "Fisc. Terminal List-Adl"
                 {
                     ApplicationArea = All;
                 }
-               
+
             }
         }
     }
-    
-    actions
-    {
-        area(processing)
-        {
-            action(ActionName)
-            {
-                trigger OnAction()
-                begin
-                    
-                end;
-            }
-        }
-    }
-    
+
     var
-      VisibleHR : Boolean;
-      VisibleSI : Boolean;
+        VisibleHR: Boolean;
+        VisibleSI: Boolean;
         myInt: Integer;
+
     trigger OnInit()
     var
-      FiscalizationSetup : Record "Fiscalization Setup-ADL";
+        FiscalizationSetup: Record "Fiscalization Setup-Adl";
     begin
         FiscalizationSetup.GET();
         CASE TRUE OF
-        // SI
-        FiscalizationSetup.CountryCodeSI:
-            VisibleSI := TRUE;
-        // HR
-        FiscalizationSetup.CountryCodeHR:
-            VisibleHR := TRUE;
+            // SI
+            FiscalizationSetup.CountryCodeSI:
+                VisibleSI := TRUE;
+                // HR
+            FiscalizationSetup.CountryCodeHR:
+                VisibleHR := TRUE;
         END;
     end;
     // </adl.20>

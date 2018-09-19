@@ -40,30 +40,30 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
         {
             group(Fiscalization)
             {
-                field("Fisc. Subject-Adl";"Fisc. Subject-Adl")
+                field("Fisc. Subject-Adl"; "Fisc. Subject-Adl")
                 {
-                ApplicationArea = All;
+                    ApplicationArea = All;
                 }
-                field("Fisc. No. Series-Adl";"Fisc. No. Series-Adl")
+                field("Fisc. No. Series-Adl"; "Fisc. No. Series-Adl")
                 {
-                ApplicationArea = All;
+                    ApplicationArea = All;
                 }
-                field("Fisc. Terminal-Adl";"Fisc. Terminal-Adl")
+                field("Fisc. Terminal-Adl"; "Fisc. Terminal-Adl")
                 {
-                ApplicationArea = All;
+                    ApplicationArea = All;
                 }
-                field("Fisc. Location Code-Adl";"Fisc. Location Code-Adl")
+                field("Fisc. Location Code-Adl"; "Fisc. Location Code-Adl")
                 {
-                ApplicationArea = All;
+                    ApplicationArea = All;
                 }
 
-                field("Full Fisc. Doc. No.-Adl";"Full Fisc. Doc. No.-Adl")
+                field("Full Fisc. Doc. No.-Adl"; "Full Fisc. Doc. No.-Adl")
                 {
-                ApplicationArea = All;
+                    ApplicationArea = All;
                 }
-                field("Posting TimeStamp-Adl";"Posting TimeStamp-Adl")
+                field("Posting TimeStamp-Adl"; "Posting TimeStamp-Adl")
                 {
-                ApplicationArea = All;
+                    ApplicationArea = All;
                 }
             }
         }

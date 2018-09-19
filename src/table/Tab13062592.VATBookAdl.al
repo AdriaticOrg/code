@@ -1,6 +1,5 @@
 table 13062592 "VAT Book-Adl"
 {
-
     Caption = 'VAT Book';
     DataCaptionFields = "Code", Description;
     DrillDownPageID = "VAT Books-Adl";
