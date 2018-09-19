@@ -1,7 +1,7 @@
 page 13062742 "Unpaid Receivables Setup-Adl"
 {
     PageType = Card;
-    ApplicationArea = All;
+    ApplicationArea = AdlUnpaidReceivables;
     UsageCategory = Administration;
     SourceTable = "Unpaid Receivables Setup-Adl";
     Caption = 'Unpaid Receivables Setup';
@@ -15,7 +15,8 @@ page 13062742 "Unpaid Receivables Setup-Adl"
                 field("Exteded Data Start Bal. Date"; "Ext. Data Start Bal. Date-Adl")
                 {
                     Caption = 'Extended Data Start Balance Date';
-                    ApplicationArea = All;
+                    ToolTip = 'Enter extended data start balance date';
+                    ApplicationArea = AdlUnpaidReceivables;
                 }
             }
         }
