@@ -66,20 +66,20 @@ report 13062682 "Export BST-Adl"
 
             }
 
-            trigger OnPostDataItem()
-            begin
-                if ExpFile then begin
-                    ExportBST("BST Report Header");
-                    "BST Report Header".ReleaseReopen(0);
-                end;
-            end;
-
             trigger OnAfterGetRecord()
             begin
                 PrepairedByUser.get("Prep. By User ID");
                 PrepairedByUser.testfield("Reporting Name-Adl");
                 ResponsibleUser.get("Resp. User ID");
                 ResponsibleUser.TestField("Reporting Name-Adl");
+
+                if ExpFile then begin
+                    ExportBST("BST Report Header");
+                    "Last Export on Date" := Today();
+                    "Last Export at Time" := Time();
+                    Modify();
+                    ReleaseReopen(0);
+                end;
             end;
         }
     }

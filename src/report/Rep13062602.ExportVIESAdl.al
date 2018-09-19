@@ -67,10 +67,6 @@ report 13062602 "Export VIES-Adl"
                 end;
             }
 
-            trigger OnPostDataItem()
-            begin
-            end;
-
             trigger OnAfterGetRecord()
             begin
                 PrepairedByUser.get("Prep. By User ID");
@@ -86,7 +82,10 @@ report 13062602 "Export VIES-Adl"
                             ExportVIESHR("VIES Report Header");
                     end;
 
-                    "VIES Report Header".ReleaseReopen(0);
+                    "Last Export on Date" := Today();
+                    "Last Export at Time" := Time();
+                    Modify();
+                    ReleaseReopen(0);
                 end;
             end;
         }

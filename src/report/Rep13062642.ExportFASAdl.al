@@ -93,10 +93,6 @@ report 13062642 "Export FAS-Adl"
 
             trigger OnPostDataItem()
             begin
-                if ExpFile then begin
-                    ExportFAS("FAS Report Header");
-                    "FAS Report Header".ReleaseReopen(0);
-                end;
             end;
 
             trigger OnAfterGetRecord()
@@ -105,6 +101,14 @@ report 13062642 "Export FAS-Adl"
                 PrepairedByUser.testfield("Reporting Name-Adl");
                 ResponsibleUser.get("Resp. User ID");
                 ResponsibleUser.TestField("Reporting Name-Adl");
+
+                if ExpFile then begin
+                    ExportFAS("FAS Report Header");
+                    "Last Export on Date" := Today();
+                    "Last Export at Time" := Time();
+                    Modify();
+                    ReleaseReopen(0);
+                end;
             end;
         }
     }

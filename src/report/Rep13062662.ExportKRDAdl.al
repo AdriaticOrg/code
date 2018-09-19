@@ -84,11 +84,14 @@ report 13062662 "Export KRD-Adl"
                 }
             }
 
-            trigger OnPostDataItem()
+            trigger OnAfterGetRecord()
             begin
                 if ExpFile then begin
                     ExportKRD(KRDReportHeader);
-                    KRDReportHeader.ReleaseReopen(0);
+                    "Last Export on Date" := Today();
+                    "Last Export at Time" := Time();
+                    Modify();
+                    ReleaseReopen(0);
                 end;
             end;
         }

@@ -2373,6 +2373,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Group Identifiers-Adl - Control VAT Identifier - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 2587470435 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Group Identifiers-Adl - Control Description - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1920773206 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Book Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
