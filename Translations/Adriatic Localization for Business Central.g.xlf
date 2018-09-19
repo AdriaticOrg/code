@@ -343,6 +343,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Control Condition - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Table 4247890588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VAT Setup-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4247890588 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VAT Setup-Adl - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4247890588 - Field 2404853609 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use VAT Output Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VAT Setup-Adl - Field Use VAT Output Date-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4247890588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4247890588 - Control 3718789915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup-Adl - Control VIES - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4247890588 - Control 2404853609 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VAT Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup-Adl - Control Use VAT Output Date-Adl - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Table 788774104 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VIES Report Header</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -603,6 +633,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Buffer-Adl - Field EU Sales Srvc. Amt. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3988067294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VIES Setup-Adl - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3988067294 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -832,6 +867,11 @@
           <source>Amount (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table PDO Report Line-Adl - Field Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2311762460 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PDO Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table PDO Setup-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2311762460 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
@@ -1117,6 +1157,11 @@
           <source>Changes Amt. in Period</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table FAS Report Line-Adl - Field Changes Amt. in Period - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 512905313 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FAS Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table FAS Setup-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 512905313 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
@@ -1428,6 +1473,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table KRD Sector-Adl - Field Index Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1955019914 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table KRD Setup-Adl - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1955019914 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1667,6 +1717,11 @@
           <source>Expense Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BST Report Line-Adl - Field Expense Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2912343738 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BST Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BST Setup-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2912343738 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
@@ -6788,11 +6843,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales &amp; Receivables Setup-Adl - Field Ext. Data Start Bal. Date-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 3392205856 - Control 2404853609 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchases&amp;PayablesSetup-Adl - Control Use VAT Output Date-Adl - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="PageExtension 1803156684 - Control 870920144 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>TODO: Tooltip - VAT Identifier</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7307,11 +7357,6 @@
           <source>VAT % (informative)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Amount Line-Adl - Field VAT % (informative)-Adl - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 2779657739 - Field 2404853609 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Use VAT Output Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchasePayablesSetup-Adl - Field Use VAT Output Date-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2348541669 - Field 2099680485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Date</source>

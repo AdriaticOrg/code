@@ -1,5 +1,6 @@
 table 13062604 "VIES Setup-Adl"
 {
+    Caption = 'VIES Setup';
     DataClassification = SystemMetadata;
 
     fields

@@ -1,5 +1,6 @@
 table 13062623 "PDO Setup-Adl"
 {
+    Caption = 'PDO Setup';
     DataClassification = SystemMetadata;
 
     fields

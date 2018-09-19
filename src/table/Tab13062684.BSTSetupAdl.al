@@ -1,5 +1,6 @@
 table 13062684 "BST Setup-Adl"
 {
+    Caption = 'BST Setup';
     DataClassification = SystemMetadata;
 
     fields
