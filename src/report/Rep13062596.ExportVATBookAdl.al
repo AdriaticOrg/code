@@ -116,7 +116,7 @@ report 13062596 "Export VAT Book-Adl"
                         Caption = 'VAT Book Code';
                         TableRelation = "VAT Book-Adl".Code;
                         ApplicationArea = All;
-                        ToolTip = 'TODO: Tooltip - VATBooks';
+                        ToolTip = 'Specifies filter for VAT Book Code.';
                     }
                 }
             }

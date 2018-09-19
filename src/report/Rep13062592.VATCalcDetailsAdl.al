@@ -66,7 +66,7 @@ report 13062592 "VAT Calc. Details-Adl"
                     {
                         Caption = 'Date Filter';
                         ApplicationArea = All;
-                        ToolTip = 'TODO: Tooltip - VATBooks';
+                        ToolTip = 'Specifies Date filter for report data.';
 
                         trigger OnValidate();
                         var
@@ -79,7 +79,7 @@ report 13062592 "VAT Calc. Details-Adl"
                     {
                         Caption = 'VAT Book Filter';
                         ApplicationArea = All;
-                        ToolTip = 'TODO: Tooltip - VATBooks';
+                        ToolTip = 'Specifies VAT Book filter for report data.';
 
                         trigger OnLookup(Text: Text): Boolean;
                         var

@@ -14,7 +14,7 @@ report 13062593 "Export VAT Books To XML-Adl"
                 {
                     Caption = 'Date Filter';
                     ApplicationArea = All;
-                    ToolTip = 'TODO: Tooltip - VATBooks';
+                    ToolTip = 'Specifies Date Filter for XML export file.';
 
                     trigger OnValidate();
                     var
@@ -27,7 +27,7 @@ report 13062593 "Export VAT Books To XML-Adl"
                 {
                     Caption = 'PPPDV Date';
                     ApplicationArea = All;
-                    ToolTip = 'TODO: Tooltip - VATBooks';
+                    ToolTip = 'Specifies PPPD Date for data in XML export file.';
                 }
 
                 field("Responsible Person"; ResponsiblePerson)
@@ -35,7 +35,7 @@ report 13062593 "Export VAT Books To XML-Adl"
                     Caption = 'Responsible Person';
                     TableRelation = "User Setup";
                     ApplicationArea = All;
-                    ToolTip = 'TODO: Tooltip - VATBooks';
+                    ToolTip = 'Specifies Responsible Person for data in XML export file.';
                 }
 
             }
