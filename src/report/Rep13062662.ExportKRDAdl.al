@@ -138,12 +138,15 @@ report 13062662 "Export KRD-Adl"
         RepSIMgt: Codeunit "Reporting SI Mgt.-Adl";
         XmlDoc: XmlDocument;
         XmlDec: XmlDeclaration;
+        XmlAttr: XmlAttribute;
         XmlElem: array[10] of XmlElement;
         OutStr: OutStream;
         InStr: InStream;
         FileName: Text;
         ExpOk: Boolean;
         xbsrns: Text;
+        xsins: Text;
+        schemaloc: Text;
         CurrDT: DateTime;
         MsgId: Text;
         SysVersion: Text[20];
@@ -178,13 +181,19 @@ report 13062662 "Export KRD-Adl"
         MsgId := CompanyInfo."VAT Registration No." + FORMAT(CurrDT, 0, '<Year4><Month,2><Day,2><Hours24,2><Filler Character,0><Minutes,2><Seconds,2><Second dec>');
 
         xbsrns := 'http://www.bsi.si/2014/07/BSReport';
+        xsins := 'http://www.w3.org/2001/XMLSchema-instance';
+        schemaloc := 'http://www.bsi.si/2014/07/BSReport BSReport_SMO.XSD_adj_KRD.xsd';
         SysVersion := '2.0.18.0';
 
         XmlDoc := xmlDocument.Create();
         XmlDec := xmlDeclaration.Create('1.0', 'UTF-8', '');
         XmlDoc.SetDeclaration(XmlDec);
 
-        XmlElem[1] := xmlElement.Create('BS_Report', xbsrns);
+        XmlAttr := XmlAttribute.CreateNamespaceDeclaration('xbsr', xbsrns);
+        XmlElem[1] := xmlElement.Create('BS_Report', XmlAttr);
+        XmlElem[1].Add((XmlAttribute.Create('schemaLocation', schemaloc)));
+        XmlElem[1].Add(XmlAttribute.CreateNamespaceDeclaration('xsi', xsins));
+
         XmlDoc.Add(xmlElem[1]);
 
         XmlElem[2] := XmlElement.Create('Header', xbsrns);

@@ -435,9 +435,10 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
                             TempOverdueandUncollectedBuffer.Next();
 
                         LineNo := LineNo + 1;
-                        /* 
+
                         if ExportToXML then begin
                             ExportFile.WRITE(NodeStart('Racun'));
+
                             ExportFile.WRITE(Add('R1', FORMAT(LineNo)));
                             ExportFile.WRITE(Add('R2', TempOverdueandUncollectedBuffer."Invoice No."));
                             ExportFile.WRITE(Add('R3', FORMAT(TempOverdueandUncollectedBuffer."Document Date", 0, '<Year4,4>-<Month,2>-<Day,2>')));
@@ -449,19 +450,21 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
                             ExportFile.WRITE(Add('R9', FORMAT(TempOverdueandUncollectedBuffer."Paid Amount", 0, '<Precision,2:2><Standard Format,9>')));
                             ExportFile.WRITE(Add('R10', FORMAT(TempOverdueandUncollectedBuffer."Unpaid Amount", 0, '<Precision,2:2><Standard Format,9>')));
                             ExportFile.WRITE(NodeEnd('Racun'));
-                        end; */
+                        end;
                     end;
 
                     trigger OnPostDataItem();
                     begin
-                        /*  if ExportToXML then begin
-                             ExportFile.WRITE(NodeEnd('Racuni'));
-                             ExportFile.WRITE(NodeEnd('Kupac'));
-                         end; */
+                        if ExportToXML then begin
+                            ExportFile.WRITE(NodeEnd('Racuni'));
+                            ExportFile.WRITE(NodeEnd('Kupac'));
+                        end;
                     end;
 
                     trigger OnPreDataItem();
                     begin
+
+
                         TempOverdueandUncollectedBuffer.Reset();
                         TempOverdueandUncollectedBuffer.SetCurrentKey("VAT Registration Type", "VAT Registration No.", "Line Type");
                         TempOverdueandUncollectedBuffer.SetRange("VAT Registration Type", TempOverdueandUncollectedBufferHeader."VAT Registration Type");
@@ -488,7 +491,7 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
 
                     CustomerLineNo := CustomerLineNo + 1;
 
-                    /*if ExportToXML then begin
+                    if ExportToXML then begin
                         ExportFile.WRITE(NodeStart('Kupac'));
                         ExportFile.WRITE(Add('K1', FORMAT(CustomerLineNo)));
                         ExportFile.WRITE(Add('K2', FORMAT(TempOverdueandUncollectedBufferHeader."VAT Registration Type")));
@@ -500,7 +503,7 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
                         ExportFile.WRITE(Add('K8', FORMAT(TempOverdueandUncollectedBufferHeader."Paid Amount", 0, '<Precision,2:2><Standard Format,9>')));
                         ExportFile.WRITE(Add('K9', FORMAT(TempOverdueandUncollectedBufferHeader."Unpaid Amount", 0, '<Precision,2:2><Standard Format,9>')));
                         ExportFile.WRITE(NodeStart('Racuni'));
-                    end; */
+                    end;
                 end;
 
                 trigger OnPreDataItem();
@@ -543,17 +546,26 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
                     field(EndDueDate; EndDueDate)
                     {
                         Caption = 'Until Due Date';
+                        ToolTip = 'Enter Due Date';
                         ApplicationArea = All;
                     }
 
-                    /*  field(ExportToXML; ExportToXML)
-                     {
-                         Caption = 'Export to XML File';
-                     } */
+                    field(ExportToXML; ExportToXML)
+                    {
+                        Caption = 'Export to XML File';
+                        ToolTip = 'Selet to export file to XML';
+                        ApplicationArea = All;
+
+                        trigger OnValidate()
+                        begin
+                            CreateStream();
+                        end;
+                    }
 
                     field(CompanyOfficialNo; CompanyOfficialNo)
                     {
                         Caption = 'Company official';
+                        ToolTip = 'Select Company official';
                         TableRelation = "User Setup"."User ID";
                         ApplicationArea = All;
                     }
@@ -588,11 +600,12 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
 
         TempOverdueandUncollectedBuffer.DeleteAll();
         TempOverdueandUncollectedBufferHeader.DeleteAll();
+
     end;
 
     trigger OnPostReport();
     begin
-        /*if ExportToXML then begin
+        if ExportToXML then begin
             ExportFile.WRITE(NodeEnd('Kupci'));
             ExportFile.WRITE(Add('UkupanIznosRacunaObrasca', FORMAT(Total5, 0, '<Precision,2:2><Standard Format,9>')));
             ExportFile.WRITE(Add('UkupanIznosPdvObrasca', FORMAT(Total6, 0, '<Precision,2:2><Standard Format,9>')));
@@ -603,23 +616,15 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
             ExportFile.WRITE(Add('OPZUkupanIznosPdv', '0.00'));
             ExportFile.WRITE(NodeEnd('Tijelo'));
             ExportFile.WRITE(NodeEnd('ObrazacOPZ'));
-            ExportFile.CLOSE;
-            if Total9 = 0 then begin
-                if EXISTS(ServerFile) then
-                    ERASE(ServerFile);
-                MESSAGE(Text006);
-            end else begin
-                if FileMgt.IsWindowsClient then begin
-                    FileMgt.DownloadToFile(ServerFile, FileName);
-                    MESSAGE(STRSUBSTNO(Text010, Text009, CONVERTSTR(FileName, '\', '/')));
-                end else begin
-                    FileName := STRSUBSTNO(Text012, FORMAT(EndDueDate)) + '.xml';
-                    DOWNLOAD(ServerFile, Text007, '', '', FileName);
-                    MESSAGE(STRSUBSTNO(Text013, CONVERTSTR(FileName, '\', '/')));
-                end;
+
+            if Total9 = 0 then
+                MESSAGE(Text006Lbl)
+            else begin
+                FileName := STRSUBSTNO(Text012Lbl, FORMAT(EndDueDate)) + '.xml';
+                Download(Text007Lbl, Text008Lbl, FileName);
+                MESSAGE(STRSUBSTNO(Text013Lbl, CONVERTSTR(FileName, '\', '/')));
             end;
         end;
-        */
     end;
 
     var
@@ -634,7 +639,10 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
         TempOverdueandUncollectedBufferHeader: Record "Overdue and Uncol. Buffer-Adl" temporary;
         TempOverdueandUncollectedBuffer: Record "Overdue and Uncol. Buffer-Adl" temporary;
         CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-Adl";
+        TmpBlobTemp: Record "TempBlob" temporary;
         FileMgt: Codeunit "File Management";
+        TextWriter: Codeunit "TextWriter-Adl";
+        ExportFile: OutStream;
         CustomerVATType: Text;
         CustomerVATTypeInteger: Integer;
         Text001Lbl: Label 'VAT Registration No.';
@@ -679,19 +687,17 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
         TextHeaderVLbl: Label '"V. Created by (first name and last name): "';
         TextHeaderVILbl: Label 'VI. Signature:';
         ExportToXML: Boolean;
-        ExportFileLbl: File;
         ServerFile: Text;
         TextError001Lbl: Label 'Error creating file on server.';
         LocalGUID: Text;
         InvoiceExportFile: File;
-        InvoiceServerFilename: Text;
         CustomerTotal5: Decimal;
         CustomerTotal6: Decimal;
         CustomerTotal7: Decimal;
         CustomerTotal8: Decimal;
         CustomerTotal9: Decimal;
         FileLength: Integer;
-        FileLineString: Text[1024];
+        FileLineString: Text;
         Total5: Decimal;
         Total6: Decimal;
         Total7: Decimal;
@@ -712,24 +718,24 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
         Text012Lbl: Label 'Uncollected_Ovedrue_Entries_%1';
         Text013Lbl: Label 'File %1 was created.';
 
-    local procedure Add(Name: Text[1024]; Value: Text[1024]): Text[1024];
+    local procedure Add(Name: Text; Value: Text): Text;
     begin
         Value := CopyStr(CheckAllowedChars(Value), 1, MaxStrLen(Value)); //new line
         Value := CopyStr(DelChr(Value, '=', '&'), 1, MaxStrLen(Value));
         exit(CopyStr('<' + Name + '>' + Value + '</' + Name + '>', 1, MaxStrLen(Value)));
     end;
 
-    local procedure NodeStart(NodeValue: Text[1024]): Text[1024];
+    local procedure NodeStart(NodeValue: Text): Text;
     begin
         exit(CopyStr('<' + NodeValue + '>', 1, MaxStrLen(NodeValue)));
     end;
 
-    local procedure NodeEnd(NodeValue: Text[1024]): Text[1024];
+    local procedure NodeEnd(NodeValue: Text): Text;
     begin
         exit(CopyStr('</' + NodeValue + '>', 1, MaxStrLen(NodeValue)));
     end;
 
-    procedure RevStrPos(String: Text[1024]; Substring: Text[1024]): Integer;
+    procedure RevStrPos(String: Text; Substring: Text): Integer;
     var
         i: Integer;
         SubstringLen: Integer;
@@ -775,5 +781,18 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
         ExitText := DELCHR(ExitText, '<', ' ');
         ExitText := DELCHR(ExitText, '<', '-');
         exit(ExitText);
+    end;
+
+    local procedure CreateStream()
+    begin
+        TmpBlobTemp.Blob.CreateOutStream(ExportFile, TextEncoding::UTF8);
+    end;
+
+    procedure Download(DialogTitle: Text; ToFilter: Text; FileName: Text);
+    var
+        InStr: InStream;
+    begin
+        TmpBlobTemp.Blob.CreateInStream(InStr, TextEncoding::UTF8);
+        File.DownloadFromStream(InStr, DialogTitle, '', ToFilter, FileName);
     end;
 }

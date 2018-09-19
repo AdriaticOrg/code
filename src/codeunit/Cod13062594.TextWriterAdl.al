@@ -6,7 +6,7 @@ codeunit 13062594 "TextWriter-Adl"
 
     procedure Create(var OutStr: OutStream);
     begin
-        TmpBlobTemp.Blob.CreateOutStream(outStr, TextEncoding::Windows);
+        TmpBlobTemp.Blob.CreateOutStream(outStr, TextEncoding::UTF8);
     end;
 
     procedure Field(var OutStr: OutStream; Value: variant; FieldDelimiter: Text[1]);
@@ -62,11 +62,8 @@ codeunit 13062594 "TextWriter-Adl"
     var
         InStr: InStream;
     begin
-        TmpBlobTemp.Blob.CreateInStream(InStr, TextEncoding::Windows);
+        TmpBlobTemp.Blob.CreateInStream(InStr, TextEncoding::UTF8);
         File.DownloadFromStream(InStr, DialogTitle, '', ToFilter, FileName);
-        IsDownloadedsucceed := File.DownloadFromStream(InStr, DialogTitle, '', ToFilter, FileName);
-        //IF IsDownloadedsucceed then
-        //   Message(Msg001, FileName);
     end;
 
     procedure GetTempBlob(var TmpBlobTemp2: Record TempBlob)

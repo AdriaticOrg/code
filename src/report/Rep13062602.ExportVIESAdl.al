@@ -481,7 +481,6 @@ report 13062602 "Export VIES-Adl"
         XmlDoc.Add(xmlElem[1]);
 
         XmlElem[2] := XmlElement.Create('Metapodaci', xmlnsmeta);
-        //XmlElem[2].Add(XmlAttribute.CreateNamespaceDeclaration('xmlns', xmlnsmeta));
         XmlElem[1].Add(xmlElem[2]);
 
         XmlElem[3] := XmlElement.Create('Naslov', xmlnsmeta);

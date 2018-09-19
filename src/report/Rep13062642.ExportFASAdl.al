@@ -174,6 +174,7 @@ report 13062642 "Export FAS-Adl"
         XmlAttr: XmlAttribute;
         OutStr: OutStream;
         InStr: InStream;
+        xmlns: Text;
         FileName: Text;
         ExpOk: Boolean;
         i: Integer;
@@ -276,19 +277,16 @@ report 13062642 "Export FAS-Adl"
         if WarningStr <> '' then
             Message(WarningStr);
 
+        xmlns := 'http://www.w3.org/2001/XMLSchema-instance';
+
         XmlDoc := xmlDocument.Create();
         //XmlDec := xmlDeclaration.Create('1.0', 'UTF-8', '');
         XmlDec := XmlDeclaration.Create('1.0', 'WINDOWS-1250', '');
         XmlDoc.SetDeclaration(XmlDec);
 
-        XmlElem[1] := xmlElement.Create('AjpesDokument');
+        XmlAttr := XmlAttribute.CreateNamespaceDeclaration('xsi', xmlns);
+        XmlElem[1] := xmlElement.Create('AjpesDokument', XmlAttr);
         XmlDoc.Add(xmlElem[1]);
-
-        // find a way to add namespaced nodes, bellow code doesn't work!
-
-        //XmlAttr := XmlAttribute.Create('xmlns','http://www.w3.org/2001/XMLSchema-instance');
-        //XmlElem[1].Add(XmlAttr);
-        //XmlElem[1].SetAttribute('xmlns','http://www.w3.org/2001/XMLSchema-instance');
 
         XmlElem[2] := XmlElement.Create('Ident');
         XmlElem[1].Add(xmlElem[2]);
@@ -305,7 +303,7 @@ report 13062642 "Export FAS-Adl"
         XmlElem[2].Add(XmlElem[3]);
         XmlElem[3].add(XmlText.Create(FORMAT(TIME(), 0, '<Hours24,2><Filler Character,0>:<Minutes,2>:<Seconds,2>')));
 
-        XmlElem[2] := XmlElement.Create('OsnoviPodatki');
+        XmlElem[2] := XmlElement.Create('OsnovniPodatki');
         XmlElem[1].Add(xmlElem[2]);
 
         XmlElem[3] := XmlElement.Create('SifUpor');
