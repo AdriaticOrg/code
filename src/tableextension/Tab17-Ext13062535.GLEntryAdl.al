@@ -37,8 +37,13 @@ tableextension 13062535 "G/L Entry-Adl" extends "G/L Entry" //17
             TableRelation = "Country/Region";
         }
         // </adl.26>
+        // <adl.20>
+        field(13062781;"Full Fisc. Doc. No.-Adl";Code[20])
+        {
+            DataClassification = SystemMetadata;
+        }
+        // </adl.20>
     }
-
     keys
     {
         // <adl.24>
