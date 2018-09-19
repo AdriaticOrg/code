@@ -1,68 +1,52 @@
-tableextension 13062528 "Sales Invoice Header-Adl" extends "Sales Invoice Header" //112
+tableextension 13062793 "Service Cr.Memo Header-Adl" extends "Service Cr.Memo Header" //5994
 {
     fields
+    // <adl.20>
     {
-        // <adl.6>
-        field(13062525; "VAT Date-Adl"; Date)
-        {
-            Caption = 'VAT Date';
-            DataClassification = SystemMetadata;
-        }
-        // </adl.6>
-        // <adl.10>
-        field(13062526; "Postponed VAT-Adl"; Option)
-        {
-            Caption = 'Postponed VAT';
-            OptionMembers = "Realized VAT","Postponed VAT";
-            DataClassification = SystemMetadata;
-        }
-        // </adl.10>
-        // <adl.22>
-        field(13062602; "EU Customs Procedure-Adl"; Boolean)
-        {
-            Caption = 'EU Customs Procedure';
-            DataClassification = SystemMetadata;
-        }
-        // </adl.22>      
-        // <adl.20>
         field(13062781;"Fisc. Subject-Adl";Boolean)
         {
+            Editable = false;
             DataClassification = SystemMetadata;
         }
         field(13062782;"Fisc. No. Series-Adl";Code[20])
         {
+            Editable = false;
             TableRelation = "No. Series";
             DataClassification = SystemMetadata;
         }
         field(13062783;"Fisc. Terminal-Adl";Text[30])
         {
+            Editable = false;
             TableRelation = "Fiscalization Terminal-ADL";
             DataClassification = SystemMetadata;
         }
         field(13062784;"Fisc. Location Code-Adl";Code[10])
         {
+            Editable = false;
             TableRelation = "Fiscalization Location-ADL";
             DataClassification = SystemMetadata;
         }
+
         field(13062785;"Full Fisc. Doc. No.-Adl";Code[20])
         {
-            DataClassification = SystemMetadata;            
+            Editable = false;
+            DataClassification = SystemMetadata;
         }
         field(13062786;"Fisc. Date-Adl";Date)
         {
             Editable = false;
-            DataClassification = SystemMetadata;            
+            DataClassification = SystemMetadata;
         }
         field(13062787;"Fisc Time-Adl";Time)
         {
             Editable = false;
-            DataClassification = SystemMetadata;            
+            DataClassification = SystemMetadata;
         }
         field(13062788;"Posting TimeStamp-Adl";DateTime)
         {
             Editable = false;
-            DataClassification = SystemMetadata;            
+            DataClassification = SystemMetadata;
         }
-        // </adl.20>    
+    // </adl.20>
     }
 }

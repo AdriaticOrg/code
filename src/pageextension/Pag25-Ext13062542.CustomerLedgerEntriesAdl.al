@@ -54,6 +54,12 @@ pageextension 13062542 "Customer Ledger Entries-Adl" extends "Customer Ledger En
                 ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.24>
+            // <adl.20>
+            field("Full Fisc. Doc. No.-Adl"; "Full Fisc. Doc. No.-Adl")
+            {
+                ApplicationArea = All;
+            }
+            // </adl.20>
         }
     }
 

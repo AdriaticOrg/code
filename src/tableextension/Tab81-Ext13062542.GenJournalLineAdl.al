@@ -76,7 +76,14 @@ tableextension 13062542 "Gen. Journal Line-Adl" extends "Gen. Journal Line" // 8
             Caption = 'EU Customs Procedure';
             DataClassification = SystemMetadata;
         }
-        // </adl.22>     	 
+        // </adl.22>  
+
+        // <adl.20>    
+        field(13062781;"Full Fisc. Doc. No.-Adl";Code[20])
+        {
+            DataClassification = SystemMetadata;
+        }
+        // </adl.20>       	 
     }
     // <adl.22>
     procedure CopyVIESFields(SalesHeader: Record "Sales Header")
