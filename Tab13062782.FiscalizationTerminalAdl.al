@@ -1,24 +1,25 @@
 table 13062782 "Fiscalization Terminal-Adl"
 {
-    DataClassification = CustomerContent;
+    // <adl.20>
+    DataClassification = SystemMetadata;
     fields
     {
         field(1;"Fisc. Terminal Code"; Text[30])
         {
             NotBlank = True;
             Description = 'Terminal Code';
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
         }
 
        field(2;Name; Text[30])
         {
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
         }
         
        field(3;"Fisc. No. Series"; code[20])
         {   
             TableRelation = "No. Series";
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
             trigger Onvalidate()
             var 
                 FiscTerminal : Record "Fiscalization Terminal-ADL";
@@ -33,23 +34,23 @@ table 13062782 "Fiscalization Terminal-Adl"
        field(4;"Fisc. Location Code"; code[10])
         {
             TableRelation = "Fiscalization Location-ADL";
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
         }
        field(5;"User ID"; code[50])
         {
             TableRelation = "User Setup";
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
         }
 
        field(7;"Creation Date"; Date)
         {
             Editable = False;
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
         }
         field(8;"Creation Time"; Time)
         {
             Editable = False;
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
         }
     }
     
@@ -92,4 +93,5 @@ table 13062782 "Fiscalization Terminal-Adl"
     begin
         
     end;
+    // </adl.20>
 }

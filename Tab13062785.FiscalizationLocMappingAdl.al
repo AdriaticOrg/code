@@ -1,6 +1,7 @@
 table 13062785 "Fiscalization Loc. Mapping-Adl"
 {
-    DataClassification = CustomerContent;
+    // <adl.20>
+    DataClassification = SystemMetadata;
     
     fields
     {
@@ -8,13 +9,13 @@ table 13062785 "Fiscalization Loc. Mapping-Adl"
         {
             TableRelation = Location;
             NotBlank = true;
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
             
         }
         field(2;"Fisc. Location Code"; Code[10])
         {
             TableRelation = "Fiscalization Location-ADL";
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
             
         }
 
@@ -50,5 +51,5 @@ table 13062785 "Fiscalization Loc. Mapping-Adl"
     begin
         
     end;
-    
+    // </adl.20>
 }

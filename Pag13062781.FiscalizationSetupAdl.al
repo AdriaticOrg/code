@@ -1,5 +1,6 @@
 page 13062781 "Fiscalization Setup-Adl"
 {
+    // <adl.20>
     UsageCategory = Documents;
     ApplicationArea = All;
     PageType = Card;
@@ -92,4 +93,5 @@ page 13062781 "Fiscalization Setup-Adl"
           IF GetCountryCode() = 'HR' THEN
             VisibleHR := TRUE;
     end;
+    // </adl.20>
 }

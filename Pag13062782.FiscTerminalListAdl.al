@@ -1,5 +1,6 @@
 page 13062782 "Fisc. Terminal List-Adl"
 {
+    // <adl.20>
     PageType = List;
     UsageCategory = Documents;
     ApplicationArea = All;
@@ -74,4 +75,5 @@ page 13062782 "Fisc. Terminal List-Adl"
             VisibleHR := TRUE;
         END;
     end;
+    // </adl.20>
 }

@@ -1,5 +1,5 @@
 page 13062785 "Fisc. Location List-Adl"
-{   
+{   // <adl.20>
     UsageCategory = Documents;
     ApplicationArea = All;
     PageType = List;
@@ -120,4 +120,5 @@ page 13062785 "Fisc. Location List-Adl"
                     VisibleHR := TRUE;
                 END;
             end;
+    // </adl.20>
 }

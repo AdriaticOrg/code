@@ -1,5 +1,6 @@
 page 13062786 "Fisc. Location Mapping-Adl"
 {
+    // <adl.20>
     PageType = List;
     UsageCategory = Documents;
     ApplicationArea = All;
@@ -41,4 +42,5 @@ page 13062786 "Fisc. Location Mapping-Adl"
     
     var
         myInt: Integer;
+    // </adl.20>
 }

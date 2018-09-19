@@ -1,5 +1,6 @@
 page 13062783 "Fisc. Payment Methods-Adl"
 {
+    // <adl.20>
     PageType = List;
     UsageCategory = Documents;
     ApplicationArea = All;
@@ -34,4 +35,5 @@ page 13062783 "Fisc. Payment Methods-Adl"
             }
         }
     }
+    // </adl.20>
 }

@@ -1,5 +1,6 @@
 page 13062784 "Fisc. Location Card-Adl"
 {
+    // <adl.20>
     PageType = Card;
     UsageCategory = Documents;
     ApplicationArea = All;
@@ -128,4 +129,5 @@ page 13062784 "Fisc. Location Card-Adl"
         IF NOT GET() THEN
           INIT();
     end;
+    // </adl.20>
 }

@@ -1,6 +1,7 @@
 table 13062784 "Fiscalization Location-Adl"
 {
-    DataClassification = ToBeClassified;
+    // <adl.20>
+    DataClassification = SystemMetadata;
     LookupPageId = "Fisc. Location List-ADL";
     DrillDownPageId = "Fisc. Location List-ADL";
     fields
@@ -8,13 +9,13 @@ table 13062784 "Fiscalization Location-Adl"
         field(1;"Fisc. Location Code"; Code[10])
         {
             NotBlank = True;
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
             
         }
         
         field(2;"Fisc. Street"; text[100])
         {
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
                 ValidateFiscData();
@@ -22,7 +23,7 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(3;"Fisc. House Number"; text[4])
         {
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
                 ValidateFiscData();
@@ -30,7 +31,7 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(4;"Fisc. House Number Appendix"; text[4])
         {
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
                 ValidateFiscData();
@@ -38,7 +39,7 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(5;"Fisc. Settlement"; Text[35])
         {
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
                 ValidateFiscData();
@@ -46,7 +47,7 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(6;"Fisc. City/Municipality"; Text[35])
         {
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
                 ValidateFiscData();
@@ -54,7 +55,7 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(7;"Fisc. Post Code"; Code[20])
         {
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
             TableRelation = "Post Code";  
             trigger OnValidate()
             var PostCode : Record "Post Code";
@@ -67,7 +68,7 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(8;"Fisc. Location Description"; Text[100])
         {
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
                 ValidateFiscData();
@@ -75,7 +76,7 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(9;"Working Hours"; Text[100])
         {
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
                 ValidateFiscData();
@@ -83,37 +84,37 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(10;"Date Of Application"; Date)
         {
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
         }
         field(11;"Fisc. No. Series"; Code[20])
         {
             TableRelation = "No. Series";
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
         }
         field(12;"Fisc. Active"; Boolean)
         {
             Description = 'Active';
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
         }
         field(13;"Creation Date"; Date)
         {
             Editable = False;
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
         }
         field(14;"Creation Time"; Time)
         {
             Editable = False;
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
         }
         field(15;"User ID"; Code[50])
         {
             Editable = false;
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
         }
         field(16;"Ending Date"; Date)
         {
             Editable = false;
-            DataClassification = CustomerContent;
+            DataClassification = SystemMetadata;
         }
     }
     
@@ -172,4 +173,5 @@ table 13062784 "Fiscalization Location-Adl"
             "Fisc. Active" := FALSE;
         END;
     end;
+    // </adl.20>
 }
