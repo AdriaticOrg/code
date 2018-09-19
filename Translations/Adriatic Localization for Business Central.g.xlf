@@ -2838,10 +2838,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control VAT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2914345777 - Control 2487071696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting SI</source>
+        <trans-unit id="Page 2914345777 - Control 1633862788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>X</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control ReportingSI - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control x - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 2565465511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specify your company's address information and logo.</source>

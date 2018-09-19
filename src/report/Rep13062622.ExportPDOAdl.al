@@ -233,12 +233,12 @@ report 13062622 "Export PDO-Adl"
 
             until PDORepLine.Next() = 0;
 
+        XmlElem[4] := XmlElement.Create('A4', xmlns);
+        XmlElem[3].Add(xmlElem[4]);
+        XmlElem[4].Add(XmlText.Create(format(TotSales, 0, PrecisionTok)));
+
         XmlElem[3] := XmlElement.Create('B_PastCorrections', xmlns);
         XmlElem[2].Add(xmlElem[3]);
-
-        XmlElem[3] := XmlElement.Create('A4', xmlns);
-        XmlElem[2].Add(xmlElem[3]);
-        XmlElem[3].Add(XmlText.Create(format(TotSales, 0, PrecisionTok)));
 
         PDORepLine.SetRange(Type, PDORepLine.type::Correction);
         if PDORepLine.FindSet() then
