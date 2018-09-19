@@ -12,6 +12,7 @@ pageextension 13062537 "VAT Posting Setup Card-Adl" extends "VAT Posting Setup C
             field("VAT Identifier-Adl"; "VAT Identifier")
             {
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - VAT Identifier';
                 Visible = VATFeatureEnabled;
                 TableRelation = "VAT Identifier-Adl";
             }
@@ -24,6 +25,7 @@ pageextension 13062537 "VAT Posting Setup Card-Adl" extends "VAT Posting Setup C
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'Input informative VAT % which will be calculated and shown only on Sales Invoice Document as informative VAT.';
             }
         }
         // </adl.13>        
@@ -34,6 +36,7 @@ pageextension 13062537 "VAT Posting Setup Card-Adl" extends "VAT Posting Setup C
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Full VAT Posting';
             }
             // </adl.11>
         }

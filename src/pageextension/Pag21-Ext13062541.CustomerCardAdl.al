@@ -9,6 +9,7 @@ pageextension 13062541 "Customer Card-Adl" extends "Customer Card" //21
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.24>
             // <adl.25>
@@ -16,11 +17,13 @@ pageextension 13062541 "Customer Card-Adl" extends "Customer Card" //21
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("KRD Affiliation Type-Adl"; "KRD Affiliation Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // <adl.25>
         }
@@ -34,6 +37,7 @@ pageextension 13062541 "Customer Card-Adl" extends "Customer Card" //21
             {
                 RunObject = page "Vendor List";
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
                 Image = Vendor;
             }
         }

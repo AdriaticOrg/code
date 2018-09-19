@@ -9,16 +9,19 @@ pageextension 13062546 "Customer Posting Groups-Adl" extends "Customer Posting G
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("KRD Instrument Type-Adl"; "KRD Instrument Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("KRD Maturity-Adl"; "KRD Maturity-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.25>
         }

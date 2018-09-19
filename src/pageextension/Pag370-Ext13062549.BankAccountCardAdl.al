@@ -9,11 +9,13 @@ pageextension 13062549 "Bank Account Card-Adl" extends "Bank Account Card" //370
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.24>
         }

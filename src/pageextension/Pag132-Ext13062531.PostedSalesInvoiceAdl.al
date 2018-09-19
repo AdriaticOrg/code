@@ -10,6 +10,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - VAT Date';
             }
             // </adl.6>
             // <adl.10>
@@ -18,6 +19,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
             }
             // </adl.10>            
         }
@@ -29,6 +31,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
         }
         // </adl.22>        
@@ -42,6 +45,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
             {
                 Caption = 'Post postponed VAT';
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
                 Visible = VATFeatureEnabled;
                 Image = "ReverseRegister";
                 trigger OnAction()
@@ -61,6 +65,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
             {
                 Caption = 'Correct postponed VAT';
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
                 Visible = VATFeatureEnabled;
                 Image = "ReverseRegister";
                 trigger OnAction()

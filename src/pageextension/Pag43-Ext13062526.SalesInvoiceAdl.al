@@ -9,6 +9,7 @@ pageextension 13062526 "Sales Invoice-Adl" extends "Sales Invoice" //43
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - VAT Date';
             }
             // </adl.6>
             // <adl.10>
@@ -17,6 +18,7 @@ pageextension 13062526 "Sales Invoice-Adl" extends "Sales Invoice" //43
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
             }
             // </adl.10>
             // <adl.22>
@@ -24,6 +26,7 @@ pageextension 13062526 "Sales Invoice-Adl" extends "Sales Invoice" //43
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.22>
         }
@@ -34,6 +37,7 @@ pageextension 13062526 "Sales Invoice-Adl" extends "Sales Invoice" //43
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
         }
         // </adl.22>

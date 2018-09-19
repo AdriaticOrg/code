@@ -8,6 +8,7 @@ pageextension 13062655 "Purchases&PayablesSetup-Adl" extends "Purchases & Payabl
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - VAT Date';
             }
         }
     }

@@ -9,16 +9,19 @@ pageextension 13062641 "G/L Account List-Adl" extends "G/L Account List" //18
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("FAS Sector Code-Adl"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
         }
         // </adl.24>

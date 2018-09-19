@@ -8,6 +8,7 @@ pageextension 13062551 "Countries/Regions-Adl" extends "Countries/Regions" //10
             field("Numeric Code-Adl"; "Numeric Code-Adl")
             {
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
                 Visible = FASFeatureEnabled;
             }
         }

@@ -8,6 +8,7 @@ pageextension 13062538 "Company Information-Adl" extends "Company Information" /
             field("Registration No.-Adl"; "Registration No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
                 Visible = VATFeatureEnabled;
             }
         }

@@ -12,6 +12,7 @@ pageextension 13062536 "VAT Posting Setup-Adl" extends "VAT Posting Setup"  //47
             field("VAT Identifier-Adl"; "VAT Identifier")
             {
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - VAT Identifier';
                 Visible = VATFeatureEnabled;
                 TableRelation = "VAT Identifier-Adl";
             }
@@ -20,6 +21,7 @@ pageextension 13062536 "VAT Posting Setup-Adl" extends "VAT Posting Setup"  //47
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Full VAT Posting';
             }
             // </adl.11>
         }
@@ -31,6 +33,7 @@ pageextension 13062536 "VAT Posting Setup-Adl" extends "VAT Posting Setup"  //47
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'Input informative VAT % which will be calculated and shown only on Sales Invoice Document as informative VAT.';
             }
         }
         // </adl.13>
@@ -41,11 +44,13 @@ pageextension 13062536 "VAT Posting Setup-Adl" extends "VAT Posting Setup"  //47
             {
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("VIES Service-Adl"; "VIES Service-Adl")
             {
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
         }
         // </adl.22>

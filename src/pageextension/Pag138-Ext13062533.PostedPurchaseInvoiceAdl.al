@@ -10,12 +10,14 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - VAT Date';
             }
             field("VAT Output Date-Adl"; "VAT Output Date-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - VAT Date';
             }
             // </adl.6>
             // <adl.10>
@@ -24,6 +26,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
             }
             // </adl.10>
         }
@@ -37,6 +40,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
             {
                 Caption = 'Post postponed VAT';
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
                 Visible = VATFeatureEnabled;
                 Image = "ReverseRegister";
                 trigger OnAction()
@@ -56,6 +60,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
             {
                 Caption = 'Correct postponed VAT';
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
                 Visible = VATFeatureEnabled;
                 Image = "ReverseRegister";
                 trigger OnAction()
@@ -75,6 +80,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
             {
                 Caption = 'Post VAT Vat Output Date';
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
                 Visible = VATFeatureEnabled;
                 Image = "ReverseRegister";
                 trigger OnAction()
@@ -94,6 +100,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
             {
                 Caption = 'Correct VAT Output Date';
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
                 Visible = VATFeatureEnabled;
                 Image = "ReverseRegister";
                 trigger OnAction()

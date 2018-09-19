@@ -9,6 +9,7 @@ pageextension 13062527 "Sales Credit Memo-Adl" extends "Sales Credit Memo" //44
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - VAT Date';
             }
             // </adl.6>
             // <adl.10>
@@ -17,6 +18,7 @@ pageextension 13062527 "Sales Credit Memo-Adl" extends "Sales Credit Memo" //44
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
             }
             // </adl.10>
             // <adl.22>
@@ -24,6 +26,7 @@ pageextension 13062527 "Sales Credit Memo-Adl" extends "Sales Credit Memo" //44
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.22>
         }
@@ -36,6 +39,7 @@ pageextension 13062527 "Sales Credit Memo-Adl" extends "Sales Credit Memo" //44
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
         }
         // </adl.22>
@@ -46,6 +50,7 @@ pageextension 13062527 "Sales Credit Memo-Adl" extends "Sales Credit Memo" //44
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
+                ToolTip = 'Select Goods Return Type if it is goods return transaction';
             }
         }
         // </adl.18>

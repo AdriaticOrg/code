@@ -9,31 +9,37 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("FAS Sector Code-Adl"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("Bal. FAS Type-Adl"; "Bal. FAS Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("Bal. FAS Instrument Code-Adl"; "Bal. FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("Bal. FAS Sector Code-Adl"; "Bal. FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.24>
 
@@ -43,6 +49,7 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
                 Caption = 'Original Document Amount (LCY)';
                 ApplicationArea = All;
                 Visible = UnpaidRecEnabled;
+                ToolTip = 'TODO: Tooltip - Unpaid Receivables';
 
                 trigger OnValidate();
                 var
@@ -81,6 +88,7 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
                 Caption = 'Original VAT Amount (LCY)';
                 ApplicationArea = All;
                 Visible = UnpaidRecEnabled;
+                ToolTip = 'TODO: Tooltip - Unpaid Receivables';
 
                 trigger OnValidate();
                 var
@@ -119,6 +127,7 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
                 Caption = 'Open Amount (LCY) Without Unrealized Exchange Rate Adjustment';
                 ApplicationArea = All;
                 Visible = UnpaidRecEnabled;
+                ToolTip = 'TODO: Tooltip - Unpaid Receivables';
 
                 trigger OnValidate();
                 var

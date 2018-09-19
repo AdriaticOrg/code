@@ -10,6 +10,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - VAT Date';
             }
             // <adl.10>
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
@@ -17,6 +18,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
             }
             // </adl.10>
             // <adl.10>
@@ -26,6 +28,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.22>
         }
@@ -38,6 +41,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;
                 Editable = false;
+                ToolTip = 'Goods Return Type when it was goods return transaction.';
             }
             // <adl.22>
             field("EU Customs Procedure-Adl"; "EU Customs Procedure-Adl")
@@ -45,6 +49,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;
                 Editable = false;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.22>
         }
@@ -59,6 +64,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
             {
                 Caption = 'Post postponed VAT';
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
                 Visible = VATFeatureEnabled;
                 Image = "ReverseRegister";
                 trigger OnAction()
@@ -78,6 +84,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
             {
                 Caption = 'Correct postponed VAT';
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Postponed VAT';
                 Visible = VATFeatureEnabled;
                 Image = "ReverseRegister";
                 trigger OnAction()

@@ -9,41 +9,49 @@ pageextension 13062542 "Customer Ledger Entries-Adl" extends "Customer Ledger En
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("KRD Non-Residnet Sector Code-Adl"; "KRD Non-Residnet Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("KRD Affiliation Type-Adl"; "KRD Affiliation Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("KRD Claim/Liability-Adl"; "KRD Claim/Liability-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("KRD Instrument Type-Adl"; "KRD Instrument Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("KRD Maturity-Adl"; "KRD Maturity-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("KRD Country/Region Code-Adl"; "KRD Country/Region Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             field("KRD Other Changes-Adl"; "KRD Other Changes-Adl")
             {
                 ApplicationArea = all;
                 Visible = KRDFeatureEnabled;
+                ToolTip = 'TODO: Tooltip - Reporting';
             }
             // </adl.24>
         }
@@ -58,6 +66,7 @@ pageextension 13062542 "Customer Ledger Entries-Adl" extends "Customer Ledger En
             {
                 Caption = 'Edit Extended Data';
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                 RunObject = Page "Cust. Ledger Entries Ext.-Adl";
                 Promoted = true;
                 PromotedCategory = Process;

@@ -8,16 +8,19 @@ pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
             field("FAS Account-Adl"; "FAS Account-Adl")
             {
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
                 Visible = FASFeatureEnabled;
             }
             field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
                 Visible = FASFeatureEnabled;
             }
             field("FAS Sector Code-Adl"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
                 Visible = FASFeatureEnabled;
             }
         }
@@ -36,6 +39,7 @@ pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
                 PromotedCategory = Report;
                 Image = Report;
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Export GL and VAT';
                 Visible = VATFeatureEnabled;
 
                 trigger OnAction()
@@ -59,6 +63,7 @@ pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
                 PromotedCategory = Report;
                 Image = Report;
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Detail Trial Balance Extended';
                 RunObject = report "Detail Trial Balance-Adl";
             }
             // </adl.27>
