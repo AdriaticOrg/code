@@ -1,4 +1,4 @@
-pageextension 13062541 "Customer Ledger Entries-Adl" extends "Customer Ledger Entries" //21
+pageextension 13062541 "Customer Ledger Entries-Adl" extends "Customer Ledger Entries" //25
 {
     layout
     {
