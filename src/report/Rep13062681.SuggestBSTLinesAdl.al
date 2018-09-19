@@ -12,6 +12,7 @@ report 13062681 "Suggest BST Lines-Adl"
 
             trigger OnPreDataItem()
             begin
+                BSTRepLine.SetRange("Document No.", BSTRepHead."No.");
                 if DeleteExisting then begin
                     BSTRepLine.Reset();
                     BSTRepLine.SetRange("Document No.", BSTRepHead."No.");
