@@ -16,14 +16,17 @@ page 13062685 "BST Setup-Adl"
                 field("BST Report No. Series"; "BST Report No. Series")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies BST Report No. Series';
                 }
                 field("BST Prep. By User ID"; "BST Prep. By User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies BST Prep. By User ID';
                 }
                 field("BST Resp. User ID"; "BST Resp. User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies BST Resp. User ID';
                 }
             }
         }

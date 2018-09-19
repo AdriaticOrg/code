@@ -17,70 +17,83 @@ page 13062741 "Cust. Ledger Entries Ext.-Adl"
                 {
                     Editable = false;
                     ApplicationArea = all;
-
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                 }
                 field("Customer No."; "Customer No.")
                 {
                     Editable = false;
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                 }
                 field("Posting Date"; "Posting Date")
                 {
                     Editable = false;
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                 }
                 field("Document Type"; "Document Type")
                 {
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                 }
                 field("Document No."; "Document No.")
                 {
                     Editable = false;
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                 }
                 field(Description; Description)
                 {
                     Editable = false;
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                 }
                 field("Currency Code"; "Currency Code")
                 {
                     Editable = false;
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                 }
                 field(Amount; Amount)
                 {
                     Editable = false;
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                 }
                 field("Original Amount"; "Original Amount")
                 {
                     Editable = false;
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                 }
                 field("Original Amt. (LCY)"; "Original Amt. (LCY)")
                 {
                     Editable = false;
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                 }
                 field("Remaining Amount"; "Remaining Amount")
                 {
                     Editable = false;
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                 }
                 field("Remaining Amt. (LCY)"; "Remaining Amt. (LCY)")
                 {
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                 }
                 field("Amount (LCY)"; "Amount (LCY)")
                 {
                     Editable = false;
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                 }
                 field(OriginalDocumentAmount; OriginalDocumentAmount)
                 {
                     Caption = 'Original Document Amount (LCY)';
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
 
                     trigger OnValidate();
                     begin
@@ -100,6 +113,7 @@ page 13062741 "Cust. Ledger Entries Ext.-Adl"
                 {
                     Caption = 'Original VAT Amount (LCY)';
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
 
                     trigger OnValidate();
                     begin
@@ -119,6 +133,7 @@ page 13062741 "Cust. Ledger Entries Ext.-Adl"
                 {
                     Caption = 'Open Amount (LCY) Without Unrealized Exchange Rate Adjustment';
                     ApplicationArea = all;
+                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
 
                     trigger OnValidate();
                     begin

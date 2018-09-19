@@ -15,58 +15,72 @@ page 13062663 "KRD Report Subform-Adl"
                 field("Claim/Liability"; "Claim/Liability")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Claim/Liability';
                 }
                 field("Affiliation Type"; "Affiliation Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Affiliation Type';
                 }
                 field("Instrument Type"; "Instrument Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Instrument Type';
                 }
                 field(Maturity; Maturity)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Maturity';
                 }
                 field("Non-Residnet Sector Code"; "Non-Residnet Sector Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Non-Residnet Sector Code';
                 }
                 field("Country/Region Code"; "Country/Region Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Country/Region Code';
                 }
                 field("Country/Region No."; "Country/Region No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Country/Region No.';
                 }
                 field("Currency Code"; "Currency Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Currency Code';
                 }
                 field("Other Changes"; "Other Changes")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Other Changes';
                 }
                 field("Currency No."; "Currency No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Currency No.';
                 }
                 field("Opening Balance"; "Opening Balance")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Opening Balance';
                 }
                 field("Increase Amount"; "Increase Amount")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Increase Amount';
                 }
                 field("Decrease Amount"; "Decrease Amount")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Decrease Amount';
                 }
                 field("Closing Balance"; "Closing Balance")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Closing Balance';
                 }
             }
         }

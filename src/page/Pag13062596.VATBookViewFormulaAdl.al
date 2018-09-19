@@ -16,22 +16,27 @@ page 13062596 "VAT Book View Formula-Adl"
                 field(Operator1; Operator1)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
                 }
                 field(Value1; Value1)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
                 }
                 field(Operator2; Operator2)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
                 }
                 field(Value2; Value2)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
                 }
                 field(Condition; Condition)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
                     AssistEdit = true;
                     Editable = false;
 

@@ -16,27 +16,33 @@ page 13062604 "VIES Setup-Adl"
                 field("Default VIES Country"; "Default VIES Country")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Default VIES Country';
                 }
                 field("Default VIES Type"; "Default VIES Type")
                 {
                     ApplicationArea = All;
                     Editable = "Default VIES Country" = "Default VIES Country"::Croatia;
+                    ToolTip = 'Specifies Default VIES Type';
                 }
                 field("VIES Company Branch Code"; "VIES Company Branch Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies VIES Company Branch Code';
                 }
                 field("VIES Report No. Series"; "VIES Report No. Series")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies VIES Report No. Series';
                 }
                 field("VIES Prep. By User ID"; "VIES Prep. By User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies VIES Prep. By User ID';
                 }
                 field("VIES Resp. User ID"; "VIES Resp. User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies VIES Resp. User ID';
                 }
             }
         }

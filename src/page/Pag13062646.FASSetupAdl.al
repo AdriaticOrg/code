@@ -16,26 +16,32 @@ page 13062646 "FAS Setup-Adl"
                 field("FAS Report No. Series"; "FAS Report No. Series")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies FAS Report No. Series';
                 }
                 field("FAS Resp. User ID"; "FAS Resp. User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies FAS Resp. User ID';
                 }
                 field("FAS Prep. By User ID"; "FAS Prep. By User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies FAS Prep. By User ID';
                 }
                 field("FAS Director User ID"; "FAS Director User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies FAS Director User ID';
                 }
                 field("Budget User Code"; "Budget User Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Budget User Code';
                 }
                 field("Company Sector Code"; "Company Sector Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Company Sector Code';
                 }
             }
         }

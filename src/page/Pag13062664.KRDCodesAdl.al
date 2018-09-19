@@ -15,14 +15,17 @@ page 13062664 "KRD Codes-Adl"
                 field(Type; Type)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Type';
                 }
                 field(Code; Code)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Code';
                 }
                 field(Description; Description)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Description';
                 }
             }
         }

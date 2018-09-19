@@ -16,46 +16,57 @@ page 13062601 "VIES Report Subform-Adl"
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies Source Type';
                 }
                 field(Type; Type)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Type';
                 }
                 field("Applies-to Report No."; "Applies-to Report No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Applies-to Report No.';
                 }
                 field("Period Year"; "Period Year")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Period Year';
                 }
                 field("Period Round"; "Period Round")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Period Round';
                 }
                 field("Country/Region Code"; "Country/Region Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Country/Region Code';
                 }
                 field("VAT Registration No."; "VAT Registration No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies VAT Registration No.';
                 }
                 field("EU Sales Type"; "EU Sales Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies EU Sales Type';
                 }
                 field("EU 3-Party Trade"; "EU 3-Party Trade")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies EU 3-Party Trade';
                 }
                 field("EU Customs Procedure"; "EU Customs Procedure")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies EU Customs Procedure';
                 }
                 field(Amount; Amount)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Amount';
                 }
             }
         }

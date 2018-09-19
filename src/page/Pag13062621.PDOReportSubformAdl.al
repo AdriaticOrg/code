@@ -15,30 +15,37 @@ page 13062621 "PDO Report Subform-Adl"
                 field(Type; Type)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Type';
                 }
                 field("Applies-to Report No."; "Applies-to Report No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Applies-to Report No.';
                 }
                 field("Period Year"; "Period Year")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Period Year';
                 }
                 field("Period Round"; "Period Round")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Period Round';
                 }
                 field("Country/Region Code"; "Country/Region Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Country/Region Code';
                 }
                 field("VAT Registration No."; "VAT Registration No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies VAT Registration No.';
                 }
                 field("Amount (LCY)"; "Amount (LCY)")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Amount (LCY';
                 }
             }
         }
