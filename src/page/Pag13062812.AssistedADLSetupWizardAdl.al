@@ -156,6 +156,13 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     field("VAT Enabled"; "VAT Enabled-Adl")
                     {
                         ApplicationArea = All;
+
+                        trigger OnValidate()
+                        var
+                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
+                        begin
+                            ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
+                        end;
                     }
                     field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled-Adl")
                     {
@@ -165,27 +172,88 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                         var
                             ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
                         begin
-                            if (ApplicatonAreaMgmtAdl.IsKRDApplicationAreaEnabled()) then
-                                exit;
-                            ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea();
+                            if ("Unpaid Receivables Enabled-Adl") and (ApplicatonAreaMgmtAdl.IsUnpaidReceivablesApplicationAreaEnabled()) then
+                                exit
+                            else
+                                ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(true);
+
+                            if not ("Unpaid Receivables Enabled-Adl") then
+                                ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(false);
                         end;
                     }
 
                 }
-                group(ReportingSI)
+                group(x)
                 {
-                    Caption = 'Reporting SI';
+                    Caption = 'X';
                     field("FAS Enabled"; "FAS Enabled-Adl")
                     {
                         ApplicationArea = All;
+
+                        trigger OnValidate()
+                        var
+                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
+                        begin
+                            ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
+                        end;
                     }
                     field("KRD Enabled"; "KRD Enabled-Adl")
                     {
                         ApplicationArea = All;
+
+                        trigger OnValidate()
+                        var
+                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
+                        begin
+                            ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
+                        end;
                     }
                     field("BST Enabled"; "BST Enabled-Adl")
                     {
                         ApplicationArea = All;
+
+                        trigger OnValidate()
+                        var
+                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
+                        begin
+                            ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
+                        end;
+                    }
+
+                    field("PDO Enabled"; "PDO Enabled-Adl")
+                    {
+                        ApplicationArea = All;
+
+                        trigger OnValidate()
+                        var
+                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
+                        begin
+                            ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
+                        end;
+                    }
+
+                    field("VIES Enabled"; "VIES Enabled-Adl")
+                    {
+                        ApplicationArea = All;
+
+                        trigger OnValidate()
+                        var
+                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
+                        begin
+                            ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
+                        end;
+                    }
+
+                    field("Forced Credit/Debit Enabled"; "Forced Credit/Debit Enabled-Adl")
+                    {
+                        ApplicationArea = All;
+
+                        trigger OnValidate()
+                        var
+                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
+                        begin
+                            ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
+                        end;
                     }
                 }
 

@@ -125,7 +125,6 @@ report 13062602 "Export VIES-Adl"
         LblEUCustomsProcedure = 'EU Customs Procedure';
         LblTotal = 'Total';
         LblPeriod = 'Period';
-
     }
     var
         PrepairedByUser: Record "User Setup";
@@ -158,6 +157,7 @@ report 13062602 "Export VIES-Adl"
         FileName: Text;
         ExpOk: Boolean;
         xmlns: Text;
+        nsEDP: Text;
         StatMonth: Integer;
         StatYear: Integer;
         TotSalesGoods: Decimal;
@@ -186,6 +186,7 @@ report 13062602 "Export VIES-Adl"
         StatYear := DATE2DMY(VIESRepHead."Period Start Date", 3);
 
         xmlns := 'http://edavki.durs.si/Documents/Schemas/VIES_KP_5.xsd';
+        nsEDP := 'http://edavki.durs.si/Documents/Schemas/EDP-Common-1.xsd';
 
         FillRepBuffer(VIESRepHead, ViesRepBuff);
         ViesRepBuff.reset();
@@ -202,35 +203,37 @@ report 13062602 "Export VIES-Adl"
         XmlDoc.SetDeclaration(XmlDec);
 
         XmlElem[1] := xmlElement.Create('Envelope', xmlns);
+        XmlElem[1].Add(XmlAttribute.CreateNamespaceDeclaration('edp', nsEDP));
         XmlDoc.Add(xmlElem[1]);
 
-        XmlElem[2] := XmlElement.Create('Header', xmlns);
+        XmlElem[2] := XmlElement.Create('Header', nsEDP);
+        XmlElem[2].Add(XmlAttribute.CreateNamespaceDeclaration('edp', nsEDP));
         XmlElem[1].Add(xmlElem[2]);
 
-        XmlElem[3] := XmlElement.Create('taxpayer', xmlns);
+        XmlElem[3] := XmlElement.Create('taxpayer', nsEDP);
         XmlElem[2].Add(xmlElem[3]);
 
-        XmlElem[4] := XmlElement.Create('vatNumber', xmlns);
+        XmlElem[4] := XmlElement.Create('vatNumber', nsEDP);
         XmlElem[4].Add(XmlText.Create(CompanyInfo."VAT Registration No."));
         XmlElem[3].Add(XmlElem[4]);
 
-        XmlElem[4] := XmlElement.Create('taxpayerType', xmlns);
+        XmlElem[4] := XmlElement.Create('taxpayerType', nsEDP);
         XmlElem[4].Add(XmlText.Create('PO'));
         XmlElem[3].Add(XmlElem[4]);
 
-        XmlElem[4] := XmlElement.Create('name', xmlns);
+        XmlElem[4] := XmlElement.Create('name', nsEDP);
         XmlElem[4].Add(XmlText.Create(CompanyInfo.Name));
         XmlElem[3].Add(XmlElem[4]);
 
-        XmlElem[4] := XmlElement.Create('address1', xmlns);
+        XmlElem[4] := XmlElement.Create('address1', nsEDP);
         XmlElem[4].Add(XmlText.Create(CompanyInfo.Address));
         XmlElem[3].Add(XmlElem[4]);
 
-        XmlElem[4] := XmlElement.Create('City', xmlns);
+        XmlElem[4] := XmlElement.Create('City', nsEDP);
         XmlElem[4].Add(XmlText.Create(CompanyInfo.City));
         XmlElem[3].Add(XmlElem[4]);
 
-        XmlElem[2] := XmlElement.Create('Signatures', xmlns);
+        XmlElem[2] := XmlElement.Create('Signatures', nsEDP);
         XmlElem[1].Add(xmlElem[2]);
 
         XmlElem[2] := XmlElement.Create('body', xmlns);
@@ -302,7 +305,7 @@ report 13062602 "Export VIES-Adl"
 
                     XmlElem[6] := XmlElement.Create('A2_N', xmlns);
                     XmlElem[5].Add(xmlElem[6]);
-                    XmlElem[6].Add(XmlText.Create("VAT Registration No."));
+                    XmlElem[6].Add(XmlText.Create(RepSIMgt.GetNumsFromStr("VAT Registration No.")));
 
                     XmlElem[6] := XmlElement.Create('A3_T', xmlns);
                     XmlElem[5].Add(xmlElem[6]);
@@ -345,7 +348,7 @@ report 13062602 "Export VIES-Adl"
 
                     XmlElem[6] := XmlElement.Create('B2_N', xmlns);
                     XmlElem[5].Add(xmlElem[6]);
-                    XmlElem[6].Add(XmlText.Create("VAT Registration No."));
+                    XmlElem[6].Add(XmlText.Create(RepSIMgt.GetNumsFromStr("VAT Registration No.")));
 
                     XmlElem[6] := XmlElement.Create('B3_T', xmlns);
                     XmlElem[5].Add(xmlElem[6]);
@@ -398,6 +401,7 @@ report 13062602 "Export VIES-Adl"
         FileName: Text;
         ExpOk: Boolean;
         xmlns: Text;
+        xmlnsmeta: Text;
         LineCntr: Integer;
         HeadTagName: Text;
         StatMonth: Integer;
@@ -442,6 +446,7 @@ report 13062602 "Export VIES-Adl"
         StatMonth := DATE2DMY(VIESRepHead."Period Start Date", 2);
         StatYear := DATE2DMY(VIESRepHead."Period Start Date", 3);
 
+        xmlnsmeta := 'http://e-porezna.porezna-uprava.hr/sheme/Metapodaci/v2-0';
         case VIESRepHead."VIES Type" of
             VIESRepHead."VIES Type"::ZP:
                 begin
@@ -471,61 +476,64 @@ report 13062602 "Export VIES-Adl"
         XmlDoc.SetDeclaration(XmlDec);
 
         XmlElem[1] := xmlElement.Create(HeadTagName, xmlns);
+        XmlAttr := XmlAttribute.Create('verzijaSheme', '1.0');
+        XmlElem[1].Add(XmlAttr);
         XmlDoc.Add(xmlElem[1]);
 
-        XmlElem[2] := XmlElement.Create('Metapodaci', xmlns);
+        XmlElem[2] := XmlElement.Create('Metapodaci', xmlnsmeta);
+        //XmlElem[2].Add(XmlAttribute.CreateNamespaceDeclaration('xmlns', xmlnsmeta));
         XmlElem[1].Add(xmlElem[2]);
 
-        XmlElem[3] := XmlElement.Create('Naslov', xmlns);
+        XmlElem[3] := XmlElement.Create('Naslov', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(HeadTxt));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'title');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Autor', xmlns);
+        XmlElem[3] := XmlElement.Create('Autor', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(MakerUser."Reporting Name-Adl"));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'creator');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Datum', xmlns);
+        XmlElem[3] := XmlElement.Create('Datum', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(FORMAT(WORKDATE(), 0, '<Year4>-<Month,2>-<Day,2>') + 'T' +
          FORMAT(TIME(), 0, '<Hours24,2><Filler Character,0>:<Minutes,2>:<Seconds,2>')));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'date');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Format', xmlns);
+        XmlElem[3] := XmlElement.Create('Format', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create('text/xml'));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'format');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Jezik', xmlns);
+        XmlElem[3] := XmlElement.Create('Jezik', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create('hr-HR'));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'language');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Identifikator', xmlns);
+        XmlElem[3] := XmlElement.Create('Identifikator', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(LOWERCASE((DELCHR(CREATEGUID(), '<>', '{}')))));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'identifier');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Uskladjenost', xmlns);
+        XmlElem[3] := XmlElement.Create('Uskladjenost', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(ConformsTo));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'conformsTo');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Tip', xmlns);
+        XmlElem[3] := XmlElement.Create('Tip', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(FormLbl));
         XmlAttr := XmlAttribute.Create('dc', HeadAttrPrefixTok + 'type');
         XmlElem[3].Add(XmlAttr);
 
-        XmlElem[3] := XmlElement.Create('Adresant', xmlns);
+        XmlElem[3] := XmlElement.Create('Adresant', xmlnsmeta);
         XmlElem[2].Add(xmlElem[3]);
         XmlElem[3].Add(XmlText.Create(AddressantLbl));
 

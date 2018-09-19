@@ -104,26 +104,27 @@ tableextension 13062542 "Gen. Journal Line-Adl" extends "Gen. Journal Line" // 8
     // <adl.24>
     procedure CopyFASFields(Customer: Record Customer)
     begin
-        if CurrFieldNo = FieldNo("Account No.") then
-            "FAS Sector Code-Adl" := Customer."FAS Sector Code-Adl"
-        ELSE
+        if ("Account Type" = "Account Type"::Customer) and ("Account No." = Customer."No.") then
+            "FAS Sector Code-Adl" := Customer."FAS Sector Code-Adl";
+        if ("Bal. Account Type" = "Bal. Account Type"::Customer) and ("Bal. Account No." = Customer."No.") then
             "Bal. FAS Sector Code-Adl" := Customer."FAS Sector Code-Adl";
     end;
 
     procedure CopyFASFields(Vendor: Record Vendor)
     begin
-        if CurrFieldNo = FieldNo("Account No.") then
-            "FAS Sector Code-Adl" := Vendor."FAS Sector Code-Adl"
-        else
+        if ("Account Type" = "Account Type"::Vendor) and ("Account No." = Vendor."No.") then
+            "FAS Sector Code-Adl" := Vendor."FAS Sector Code-Adl";
+        if ("Bal. Account Type" = "Bal. Account Type"::Vendor) and ("Bal. Account No." = Vendor."No.") then
             "Bal. FAS Sector Code-Adl" := Vendor."FAS Sector Code-Adl";
     end;
 
     procedure CopyFASFields(GLAccount: Record "G/L Account")
     begin
-        if CurrFieldNo = FieldNo("Account No.") then begin
+        if ("Account Type" = "Account Type"::"G/L Account") and ("Account No." = GLAccount."No.") then begin
             "FAS Sector Code-Adl" := GLAccount."FAS Sector Code-Adl";
             "FAS Instrument Code-Adl" := GLAccount."FAS Instrument Code-Adl";
-        end else begin
+        end;
+        if ("Bal. Account Type" = "Bal. Account Type"::"G/L Account") and ("Bal. Account No." = GLAccount."No.") then begin
             "Bal. FAS Sector Code-Adl" := GLAccount."FAS Sector Code-Adl";
             "Bal. FAS Instrument Code-Adl" := GLAccount."FAS Instrument Code-Adl";
         end;
@@ -131,16 +132,14 @@ tableextension 13062542 "Gen. Journal Line-Adl" extends "Gen. Journal Line" // 8
 
     procedure CopyFASFields(BankAccount: Record "Bank Account")
     begin
-        if CurrFieldNo = FieldNo("Account No.") then begin
+        if ("Account Type" = "Account Type"::"Bank Account") and ("Account No." = BankAccount."No.") then begin
             "FAS Sector Code-Adl" := BankAccount."FAS Sector Code-Adl";
             "FAS Instrument Code-Adl" := BankAccount."FAS Instrument Code-Adl";
-        end else begin
+        end;
+        if ("Bal. Account Type" = "Bal. Account Type"::"Bank Account") and ("Bal. Account No." = BankAccount."No.") then begin
             "Bal. FAS Sector Code-Adl" := BankAccount."FAS Sector Code-Adl";
             "Bal. FAS Instrument Code-Adl" := BankAccount."FAS Instrument Code-Adl";
         end;
     end;
-    // </adl.24>    
-
-
     // </adl.24>
 }
