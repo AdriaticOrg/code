@@ -97,12 +97,14 @@ report 13062682 "Export BST-Adl"
                         Caption = 'Hide zeros';
                         ApplicationArea = All;
                         Visible = true;
+                        ToolTip = 'TODO: Tooltip - Reporting';
                     }
                     field(ExpFile; ExpFile)
                     {
                         Caption = 'Export File';
                         ApplicationArea = All;
                         Visible = true;
+                        ToolTip = 'TODO: Tooltip - Reporting';
                     }
                 }
             }

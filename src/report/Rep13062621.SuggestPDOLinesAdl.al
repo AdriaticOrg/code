@@ -83,6 +83,7 @@ report 13062621 "Suggest PDO Lines-Adl"
                     {
                         Caption = 'Delete existing lines';
                         ApplicationArea = All;
+                        ToolTip = 'TODO: Tooltip - Reporting';
                     }
                 }
             }

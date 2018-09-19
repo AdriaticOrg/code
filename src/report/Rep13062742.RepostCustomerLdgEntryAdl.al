@@ -219,25 +219,30 @@ report 13062742 "Repost Customer Ldg. Entry-Adl"
                     field(PostingDate; PostingDate)
                     {
                         Caption = 'Posting Date';
+                        ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                     }
                     field(NewCustNo; NewCustNo)
                     {
                         Caption = 'New Customer No.';
                         TableRelation = Customer;
+                        ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                     }
                     field(NewPostingGroup; NewPostingGroup)
                     {
                         Caption = 'New Posting Group';
                         TableRelation = "Customer Posting Group";
+                        ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                     }
                     field(Correction; Correction)
                     {
                         Caption = 'Post As Correction';
+                        ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                     }
                     field(RepostType; RepostType)
                     {
                         Caption = 'Reposting Type';
                         OptionCaption = 'Auto Post,Fill G/L Journal';
+                        ToolTip = 'TODO: Tooltip - Unpaid Receivables';
 
                         trigger OnValidate();
                         begin
@@ -247,6 +252,7 @@ report 13062742 "Repost Customer Ldg. Entry-Adl"
                     field(ApplyAmount; ApplyAmount)
                     {
                         Caption = 'Apply Amount';
+                        ToolTip = 'TODO: Tooltip - Unpaid Receivables';
                     }
                     group(Control1000000007)
                     {

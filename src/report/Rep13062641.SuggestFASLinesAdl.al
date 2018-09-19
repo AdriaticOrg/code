@@ -83,6 +83,7 @@ report 13062641 "Suggest FAS Lines-Adl"
                     {
                         Caption = 'Delete existing lines';
                         ApplicationArea = All;
+                        ToolTip = 'TODO: Tooltip - Reporting';
                     }
                 }
             }
