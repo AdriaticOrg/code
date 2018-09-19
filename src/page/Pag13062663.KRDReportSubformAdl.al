@@ -15,58 +15,72 @@ page 13062663 "KRD Report Subform-Adl"
                 field("Claim/Liability"; "Claim/Liability")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Affiliation Type"; "Affiliation Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Instrument Type"; "Instrument Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field(Maturity; Maturity)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Non-Residnet Sector Code"; "Non-Residnet Sector Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Country/Region Code"; "Country/Region Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Country/Region No."; "Country/Region No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Currency Code"; "Currency Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Other Changes"; "Other Changes")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Currency No."; "Currency No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Opening Balance"; "Opening Balance")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Increase Amount"; "Increase Amount")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Decrease Amount"; "Decrease Amount")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Closing Balance"; "Closing Balance")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
             }
         }
@@ -80,6 +94,7 @@ page 13062663 "KRD Report Subform-Adl"
                 Caption = 'Show Vendor Ledger Entries';
                 Image = ListPage;
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
 
                 trigger OnAction()
                 var
@@ -116,6 +131,7 @@ page 13062663 "KRD Report Subform-Adl"
                 Caption = 'Show Customer Ledger Entries';
                 Image = ListPage;
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
 
                 trigger OnAction()
                 var

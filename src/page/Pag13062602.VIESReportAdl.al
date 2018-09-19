@@ -15,6 +15,7 @@ page 13062602 "VIES Report-Adl"
                 field("No."; "No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
 
                     trigger OnAssistEdit()
                     begin
@@ -25,61 +26,75 @@ page 13062602 "VIES Report-Adl"
                 field("VIES Country"; "VIES Country")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("VIES Type"; "VIES Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                     Editable = "VIES Country" = "VIES Country"::Croatia;
                 }
                 field("Period Start Date"; "Period Start Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Period End Date"; "Period End Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Period Year"; "Period Year")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Period Round"; "Period Round")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("User ID"; "User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
 
                 field("Last Suggest on Date"; "Last Suggest on Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Last Suggest at Time"; "Last Suggest at Time")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Last Export on Date"; "Last Export on Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Last Export at Time"; "Last Export at Time")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
 
                 field("Resp. User ID"; "Resp. User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Prep. By User ID"; "Prep. By User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field(Status; Status)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
             }
             part(Subpage; 13062601)
@@ -99,6 +114,7 @@ page 13062602 "VIES Report-Adl"
                 Caption = 'Suggest Lines';
                 Promoted = true;
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
                 Image = CalculateLines;
 
                 trigger OnAction()
@@ -127,6 +143,7 @@ page 13062602 "VIES Report-Adl"
                 Promoted = true;
                 Image = Export;
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
 
                 trigger OnAction()
                 var
@@ -143,6 +160,7 @@ page 13062602 "VIES Report-Adl"
                 Caption = 'Release';
                 Image = ReleaseDoc;
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
 
                 trigger OnAction()
                 begin
@@ -155,6 +173,7 @@ page 13062602 "VIES Report-Adl"
                 Caption = 'Reopen';
                 Image = ReOpen;
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
 
                 trigger OnAction()
                 begin

@@ -16,18 +16,22 @@ page 13062624 "PDO Setup-Adl"
                 field("PDO Report No. Series"; "PDO Report No. Series")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("PDO Prep. By User ID"; "PDO Prep. By User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("PDO Resp. User ID"; "PDO Resp. User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("PDO VAT Ident. Filter Code "; "PDO VAT Ident. Filter Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
             }
         }

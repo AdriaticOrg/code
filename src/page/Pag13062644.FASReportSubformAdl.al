@@ -15,34 +15,42 @@ page 13062644 "FAS Report Subform-Adl"
                 field("FAS Type"; "FAS Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field(Description; Description)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("AOP Code"; "AOP Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Sector Code"; "Sector Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Instrument Code"; "Instrument Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Transactions Amt. in Period"; "Transactions Amt. in Period")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Changes Amt. in Period"; "Changes Amt. in Period")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Period Closing Balance"; "Period Closing Balance")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
             }
         }
@@ -55,6 +63,7 @@ page 13062644 "FAS Report Subform-Adl"
             {
                 Caption = 'Show related entries';
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
                 Image = InsuranceLedger;
 
                 trigger OnAction()

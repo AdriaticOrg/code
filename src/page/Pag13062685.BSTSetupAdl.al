@@ -16,14 +16,17 @@ page 13062685 "BST Setup-Adl"
                 field("BST Report No. Series"; "BST Report No. Series")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("BST Prep. By User ID"; "BST Prep. By User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("BST Resp. User ID"; "BST Resp. User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
             }
         }
@@ -37,6 +40,7 @@ page 13062685 "BST Setup-Adl"
             {
                 Caption = 'Adjust BST on Entries';
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
                 Image = Suggest;
 
                 trigger OnAction()

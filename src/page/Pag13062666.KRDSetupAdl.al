@@ -16,26 +16,32 @@ page 13062666 "KRD Setup-Adl"
                 field("KRD Report No. Series"; "KRD Report No. Series")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("KRD Resp. User ID"; "KRD Resp. User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("KRD Prep. By User ID"; "KRD Prep. By User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Default KRD Affiliation Type"; "Default KRD Affiliation Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("KRD Blank LCY Code"; "KRD Blank LCY Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("KRD Blank LCY Num."; "KRD Blank LCY Num.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
             }
         }
@@ -49,6 +55,7 @@ page 13062666 "KRD Setup-Adl"
             {
                 Caption = 'Adjust KRD on Entries';
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
                 Image = Suggest;
 
                 trigger OnAction()

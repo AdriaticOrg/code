@@ -15,30 +15,37 @@ page 13062621 "PDO Report Subform-Adl"
                 field(Type; Type)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Applies-to Report No."; "Applies-to Report No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Period Year"; "Period Year")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Period Round"; "Period Round")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Country/Region Code"; "Country/Region Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("VAT Registration No."; "VAT Registration No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Amount (LCY)"; "Amount (LCY)")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
             }
         }
@@ -51,6 +58,7 @@ page 13062621 "PDO Report Subform-Adl"
             {
                 Caption = 'Show related entries';
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
                 Image = InsuranceLedger;
 
                 trigger OnAction()

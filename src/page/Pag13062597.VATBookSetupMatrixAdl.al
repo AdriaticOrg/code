@@ -19,6 +19,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                 {
                     Editable = false;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
                 }
             }
             repeater(Lines)
@@ -31,6 +32,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     Style = Strong;
                     StyleExpr = True;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
                 }
                 field("VAT Identifier"; "VAT Identifier")
                 {
@@ -38,12 +40,14 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     Style = Strong;
                     StyleExpr = True;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
                 }
                 field(Field1; MATRIX_CellData[1])
                 {
                     CaptionClass = '3,' + MatrixColumnCaptions[1];
                     Visible = Field1Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -55,6 +59,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[2];
                     Visible = Field2Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -66,6 +71,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[3];
                     Visible = Field3Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -77,6 +83,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[4];
                     Visible = Field4Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -88,6 +95,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[5];
                     Visible = Field5Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -99,6 +107,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[6];
                     Visible = Field6Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -110,6 +119,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[7];
                     Visible = Field7Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -121,6 +131,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[8];
                     Visible = Field8Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -132,6 +143,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[9];
                     Visible = Field9Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -143,6 +155,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[10];
                     Visible = Field10Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -154,6 +167,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[11];
                     Visible = Field11Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -165,6 +179,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[12];
                     Visible = Field12Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -176,6 +191,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[13];
                     Visible = Field13Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -187,6 +203,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[14];
                     Visible = Field14Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -198,6 +215,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[15];
                     Visible = Field15Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -209,6 +227,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[16];
                     Visible = Field16Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -220,6 +239,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[17];
                     Visible = Field17Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -231,6 +251,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[18];
                     Visible = Field18Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -242,6 +263,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[19];
                     Visible = Field19Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -253,6 +275,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[20];
                     Visible = Field20Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -265,6 +288,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[21];
                     Visible = Field21Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -276,6 +300,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[22];
                     Visible = Field22Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -287,6 +312,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[23];
                     Visible = Field23Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -298,6 +324,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[24];
                     Visible = Field24Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -309,6 +336,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[25];
                     Visible = Field25Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -320,6 +348,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[26];
                     Visible = Field26Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -331,6 +360,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[27];
                     Visible = Field27Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -342,6 +372,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[28];
                     Visible = Field28Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -353,6 +384,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[29];
                     Visible = Field29Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin
@@ -364,6 +396,7 @@ page 13062597 "VAT Book Setup Matrix-Adl"
                     CaptionClass = '3,' + MatrixColumnCaptions[30];
                     Visible = Field30Visible;
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - VATBooks';
 
                     trigger OnDrillDown();
                     begin

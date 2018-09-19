@@ -16,26 +16,32 @@ page 13062646 "FAS Setup-Adl"
                 field("FAS Report No. Series"; "FAS Report No. Series")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("FAS Resp. User ID"; "FAS Resp. User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("FAS Prep. By User ID"; "FAS Prep. By User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("FAS Director User ID"; "FAS Director User ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Budget User Code"; "Budget User Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
                 field("Company Sector Code"; "Company Sector Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
             }
         }
@@ -49,6 +55,7 @@ page 13062646 "FAS Setup-Adl"
             {
                 Caption = 'Adjust FAS on Entries';
                 ApplicationArea = All;
+                ToolTip = 'TODO: Tooltip - Reporting';
                 Image = Suggest;
 
                 trigger OnAction()

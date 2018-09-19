@@ -318,6 +318,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2340829247 - Control 3830853043 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Control Operator1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2340829247 - Control 151815974 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Control Value1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2340829247 - Control 1448975598 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Control Operator2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2340829247 - Control 2533693419 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Control Value2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2340829247 - Control 696389717 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Control Condition - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Table 788774104 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VIES Report Header</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -633,6 +658,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VIES Setup-Adl - Control VIES - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3988067294 - Control 231112470 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Setup-Adl - Control Default VIES Country - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3988067294 - Control 935713846 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Setup-Adl - Control Default VIES Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3988067294 - Control 4143331729 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Setup-Adl - Control VIES Company Branch Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3988067294 - Control 1138781029 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Setup-Adl - Control VIES Report No. Series - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3988067294 - Control 928529433 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Setup-Adl - Control VIES Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3988067294 - Control 2353793617 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Setup-Adl - Control VIES Resp. User ID - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Table 1554606010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>PDO Report Header</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -812,6 +867,26 @@
           <source>PDO</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PDO Setup-Adl - Control PDO - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2311762460 - Control 497126115 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Setup-Adl - Control PDO Report No. Series - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2311762460 - Control 2233261575 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Setup-Adl - Control PDO Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2311762460 - Control 4228006415 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Setup-Adl - Control PDO Resp. User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2311762460 - Control 3549802619 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Setup-Adl - Control PDO VAT Ident. Filter Code  - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Table 147267535 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Instrument</source>
@@ -1088,10 +1163,45 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Setup-Adl - Control FAS - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 512905313 - Control 3700763146 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Setup-Adl - Control FAS Report No. Series - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 512905313 - Control 3701443150 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Setup-Adl - Control FAS Resp. User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 512905313 - Control 1639278446 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Setup-Adl - Control FAS Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 512905313 - Control 189543812 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Setup-Adl - Control FAS Director User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 512905313 - Control 1307387835 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Setup-Adl - Control Budget User Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 512905313 - Control 3697232018 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Setup-Adl - Control Company Sector Code - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 512905313 - Action 2590055782 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Adjust FAS on Entries</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Setup-Adl - Action Adjust FAS on Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 512905313 - Action 2590055782 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Setup-Adl - Action Adjust FAS on Entries - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Table 2464815596 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Report Header</source>
@@ -1368,10 +1478,45 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Setup-Adl - Control KRD - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1955019914 - Control 3993940145 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Setup-Adl - Control KRD Report No. Series - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1955019914 - Control 625572741 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Setup-Adl - Control KRD Resp. User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1955019914 - Control 509467981 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Setup-Adl - Control KRD Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1955019914 - Control 1086121858 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Setup-Adl - Control Default KRD Affiliation Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1955019914 - Control 833181936 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Setup-Adl - Control KRD Blank LCY Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1955019914 - Control 812757451 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Setup-Adl - Control KRD Blank LCY Num. - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1955019914 - Action 2174835573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Adjust KRD on Entries</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Setup-Adl - Action Adjust KRD on Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1955019914 - Action 2174835573 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Setup-Adl - Action Adjust KRD on Entries - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Table 360767640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Code</source>
@@ -1563,10 +1708,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Setup-Adl - Control BST - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2912343738 - Control 3698931265 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Setup-Adl - Control BST Report No. Series - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2912343738 - Control 1060236637 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Setup-Adl - Control BST Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2912343738 - Control 1730545525 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Setup-Adl - Control BST Resp. User ID - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2912343738 - Action 1523575733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Adjust BST on Entries</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Setup-Adl - Action Adjust BST on Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2912343738 - Action 1523575733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Setup-Adl - Action Adjust BST on Entries - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Table 1360675013 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cust. Ledger Entry Extended Data</source>
@@ -2328,6 +2493,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Code - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 3898502574 - Control 2015957264 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Book Link Code - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3898502574 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies a description of the VAT Book Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2347,6 +2517,11 @@
           <source>Specifies tag name for XML export.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Tag Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3898502574 - Control 3092482011 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Groups-Adl - Control Include Columns - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3898502574 - Action 3237504299 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>&amp;Setup</source>
@@ -2373,6 +2548,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Group Identifiers-Adl - Control VAT Identifier - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 2587470435 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Group Identifiers-Adl - Control Description - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1920773206 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Book Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2382,6 +2562,171 @@
           <source>General</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 3651471105 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control VAT Book Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 3790207796 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control VAT Book Group Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 2534656220 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control VAT Identifier - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 3616567109 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 2978870492 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 2341173875 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field3 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 1703477258 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field4 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 1065780641 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field5 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 428084024 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field6 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 4085354703 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field7 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 765902070 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field8 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 128205453 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field9 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 2722624357 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field10 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 3360320974 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field11 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 1447231123 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field12 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 2084927740 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field13 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 171837889 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field14 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 809534506 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field15 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 3191411951 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field16 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 3829108568 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field17 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 3529229997 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field18 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 4166926614 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field19 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 2446092084 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field20 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 1808395467 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field21 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 3721485318 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field22 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 3083788701 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field23 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 4190272912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field24 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 3552576295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field25 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 1170698850 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field26 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 533002233 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field27 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 1639486444 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field28 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 1001789827 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field29 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1920773206 - Control 3238104547 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book Setup Matrix-Adl - Control Field30 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1920773206 - Method 2448578599 - NamedType 4139432870" size-unit="char" translate="yes" xml:space="preserve">
           <source>FILTERS:</source>
@@ -2397,6 +2742,11 @@
           <source>VAT Book Review</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 3651471105 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control VAT Book Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Control 43593927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>View by</source>
@@ -2417,6 +2767,171 @@
           <source>Date Filter</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control DateFilter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 539546824 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control DateFilter - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 3616567109 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 2978870492 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 2341173875 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field3 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 1703477258 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field4 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 1065780641 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field5 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 428084024 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field6 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 4085354703 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field7 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 765902070 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field8 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 128205453 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field9 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 2722624357 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field10 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 3360320974 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field11 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 1447231123 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field12 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 2084927740 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field13 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 171837889 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field14 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 809534506 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field15 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 3191411951 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field16 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 3829108568 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field17 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 3529229997 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field18 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 4166926614 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field19 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 2446092084 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field20 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 1808395467 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field21 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 3721485318 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field22 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 3083788701 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field23 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 4190272912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field24 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 3552576295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field25 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 1170698850 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field26 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 533002233 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field27 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 1639486444 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field28 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 1001789827 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field29 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436641618 - Control 3238104547 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VATBooks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Review Matrix-Adl - Control Field30 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436641618 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>F&amp;unctions</source>
@@ -2458,10 +2973,70 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1166695459 - Control 1753214751 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Control Source Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1166695459 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Control Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1166695459 - Control 3420690863 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Control Applies-to Report No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1166695459 - Control 1887885398 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Control Period Year - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1166695459 - Control 1157942089 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Control Period Round - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1166695459 - Control 284764054 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Control Country/Region Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1166695459 - Control 617267791 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Control VAT Registration No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1166695459 - Control 3755493604 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Control EU Sales Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1166695459 - Control 3348534314 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Control EU 3-Party Trade - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1166695459 - Control 2400184591 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Control EU Customs Procedure - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1166695459 - Control 636392376 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Control Amount - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1166695459 - Action 3768474506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show related entries</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Action Show related entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1166695459 - Action 3768474506 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report Subform-Adl - Action Show related entries - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3774304813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VIES Report</source>
@@ -2473,40 +3048,195 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control General - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 2141419595 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control VIES Country - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 2366478547 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control VIES Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 2082466019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control Period Start Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 2615791210 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control Period End Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 1887885398 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control Period Year - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 1157942089 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control Period Round - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 2861760549 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control Last Suggest on Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 3672218066 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control Last Suggest at Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 277039421 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control Last Export on Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 860782218 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control Last Export at Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 2923034786 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control Resp. User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 3131042386 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Control 513339096 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Control Status - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3774304813 - Action 1384210787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Action Suggest Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Action 1384210787 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Action Suggest Lines - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3774304813 - Action 1664292158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export Report</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Action Export Report - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3774304813 - Action 1664292158 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Action Export Report - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3774304813 - Action 4032263875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Release</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Action Release - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3774304813 - Action 4032263875 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Action Release - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3774304813 - Action 2071937805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reopen</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Action Reopen - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3774304813 - Action 2071937805 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Report-Adl - Action Reopen - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 378670308 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VIES Reports</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VIES Reports-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 378670308 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Reports-Adl - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 378670308 - Control 2082466019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Reports-Adl - Control Period Start Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 378670308 - Control 2615791210 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Reports-Adl - Control Period End Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 378670308 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VIES Reports-Adl - Control User ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2978206997 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>PDO Report Subform</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report Subform-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2978206997 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report Subform-Adl - Control Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2978206997 - Control 3420690863 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report Subform-Adl - Control Applies-to Report No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2978206997 - Control 1887885398 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report Subform-Adl - Control Period Year - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2978206997 - Control 1157942089 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report Subform-Adl - Control Period Round - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2978206997 - Control 284764054 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report Subform-Adl - Control Country/Region Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2978206997 - Control 617267791 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report Subform-Adl - Control VAT Registration No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2978206997 - Control 592951229 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report Subform-Adl - Control Amount (LCY) - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2978206997 - Action 3768474506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show related entries</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report Subform-Adl - Action Show related entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2978206997 - Action 3768474506 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report Subform-Adl - Action Show related entries - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2490513083 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>PDO Report</source>
@@ -2518,40 +3248,210 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Control General - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2490513083 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2490513083 - Control 2082466019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Control Period Start Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2490513083 - Control 2615791210 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Control Period End Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2490513083 - Control 1887885398 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Control Period Year - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2490513083 - Control 1157942089 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Control Period Round - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2490513083 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Control User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2490513083 - Control 2861760549 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Control Last Suggest on Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2490513083 - Control 3672218066 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Control Last Suggest at Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2490513083 - Control 277039421 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Control Last Export on Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2490513083 - Control 860782218 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Control Last Export at Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2490513083 - Control 2923034786 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Control Resp. User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2490513083 - Control 3131042386 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Control Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2490513083 - Control 513339096 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Control Status - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2490513083 - Action 1384210787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Action Suggest Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2490513083 - Action 1384210787 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Action Suggest Lines - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2490513083 - Action 1664292158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export Report</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Action Export Report - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2490513083 - Action 1664292158 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Action Export Report - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2490513083 - Action 4032263875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Release</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Action Release - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2490513083 - Action 4032263875 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Action Release - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2490513083 - Action 2071937805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reopen</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Action Reopen - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2490513083 - Action 2071937805 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Report-Adl - Action Reopen - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 76877222 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>PDO Reports</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PDO Reports-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 76877222 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Reports-Adl - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 76877222 - Control 2082466019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Reports-Adl - Control Period Start Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 76877222 - Control 2615791210 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Reports-Adl - Control Period End Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 76877222 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PDO Reports-Adl - Control User ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1119439770 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Finance Instruments</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Instruments-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1119439770 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Instruments-Adl - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1119439770 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Instruments-Adl - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1119439770 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Instruments-Adl - Control Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1119439770 - Control 478049462 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Instruments-Adl - Control Totaling - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1119439770 - Control 2200046723 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Instruments-Adl - Control Indentation - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1119439770 - Control 1720050989 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Instruments-Adl - Control AOP Code - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1237048865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Finance Sectors</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Sectors-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1237048865 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Sectors-Adl - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1237048865 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Sectors-Adl - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1237048865 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Sectors-Adl - Control Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1237048865 - Control 478049462 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Sectors-Adl - Control Totaling - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1237048865 - Control 2200046723 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Sectors-Adl - Control Indentation - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1237048865 - Control 3459602849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Sectors-Adl - Control Show Credit/Debit - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1237048865 - Control 4096422333 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Sectors-Adl - Control Index Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2296513530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Report</source>
@@ -2563,40 +3463,195 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control General - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2296513530 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Control 2082466019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control Period Start Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Control 2615791210 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control Period End Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Control 1887885398 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control Period Year - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Control 1157942089 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control Period Round - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Control 2861760549 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control Last Suggest on Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Control 3672218066 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control Last Suggest at Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Control 277039421 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control Last Export on Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Control 860782218 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control Last Export at Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Control 2923034786 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control Resp. User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Control 3131042386 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Control 723961636 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control Previous Report No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Control 513339096 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Control Status - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2296513530 - Action 1384210787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Action Suggest Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Action 1384210787 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Action Suggest Lines - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2296513530 - Action 1664292158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export Report</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Action Export Report - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2296513530 - Action 1664292158 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Action Export Report - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2296513530 - Action 4032263875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Release</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Action Release - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2296513530 - Action 4032263875 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Action Release - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2296513530 - Action 2071937805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reopen</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Action Reopen - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2296513530 - Action 2071937805 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report-Adl - Action Reopen - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3980191936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Report Subform</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3980191936 - Control 855337200 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform-Adl - Control FAS Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3980191936 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform-Adl - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3980191936 - Control 1720050989 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform-Adl - Control AOP Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3980191936 - Control 3608700979 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform-Adl - Control Sector Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3980191936 - Control 3638202540 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform-Adl - Control Instrument Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3980191936 - Control 3275526637 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform-Adl - Control Transactions Amt. in Period - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3980191936 - Control 3140095387 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform-Adl - Control Changes Amt. in Period - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3980191936 - Control 3188394060 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform-Adl - Control Period Closing Balance - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3980191936 - Action 3768474506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show related entries</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform-Adl - Action Show related entries - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3980191936 - Action 3768474506 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Report Subform-Adl - Action Show related entries - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3557097095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAS Reports</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Reports-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3557097095 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Reports-Adl - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3557097095 - Control 2082466019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Reports-Adl - Control Period Start Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3557097095 - Control 2615791210 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Reports-Adl - Control Period End Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3557097095 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page FAS Reports-Adl - Control User ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3755217273 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Report</source>
@@ -2608,70 +3663,385 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Control General - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3755217273 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3755217273 - Control 2082466019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Control Period Start Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3755217273 - Control 2615791210 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Control Period End Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3755217273 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Control User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3755217273 - Control 2861760549 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Control Last Suggest on Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3755217273 - Control 3672218066 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Control Last Suggest at Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3755217273 - Control 277039421 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Control Last Export on Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3755217273 - Control 860782218 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Control Last Export at Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3755217273 - Control 2923034786 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Control Resp. User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3755217273 - Control 3131042386 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Control Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3755217273 - Control 723961636 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Control Previous Report No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3755217273 - Control 513339096 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Control Status - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3755217273 - Action 1384210787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Action Suggest Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3755217273 - Action 1384210787 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Action Suggest Lines - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3755217273 - Action 1664292158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export Report</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Action Export Report - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3755217273 - Action 1664292158 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Action Export Report - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3755217273 - Action 4032263875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Release</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Action Release - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3755217273 - Action 4032263875 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Action Release - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3755217273 - Action 2071937805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reopen</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Action Reopen - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3755217273 - Action 2071937805 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report-Adl - Action Reopen - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3393131248 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Reports</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Reports-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3393131248 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Reports-Adl - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3393131248 - Control 2082466019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Reports-Adl - Control Period Start Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3393131248 - Control 2615791210 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Reports-Adl - Control Period End Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3393131248 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Reports-Adl - Control User ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3602925903 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Report Subform</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3602925903 - Control 3102678710 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Claim/Liability - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3602925903 - Control 3820818388 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Affiliation Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3602925903 - Control 1378896471 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Instrument Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3602925903 - Control 1181583069 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Maturity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3602925903 - Control 1762469735 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Non-Residnet Sector Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3602925903 - Control 284764054 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Country/Region Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3602925903 - Control 518015828 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Country/Region No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3602925903 - Control 4198939294 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Currency Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3602925903 - Control 1738029059 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Other Changes - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3602925903 - Control 2262907356 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Currency No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3602925903 - Control 1562843158 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Opening Balance - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3602925903 - Control 1753327380 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Increase Amount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3602925903 - Control 1200115082 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Decrease Amount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3602925903 - Control 3120492303 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Closing Balance - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3602925903 - Action 3954504776 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show Vendor Ledger Entries</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Action ShowVLE - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3602925903 - Action 3954504776 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Action ShowVLE - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3602925903 - Action 49671731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show Customer Ledger Entries</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Action ShowCLE - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3602925903 - Action 49671731 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Action ShowCLE - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 529373737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Codes</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Codes-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 529373737 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Codes-Adl - Control Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 529373737 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Codes-Adl - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 529373737 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Codes-Adl - Control Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2127075594 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Finance Sectors</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Sectors-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2127075594 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Sectors-Adl - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2127075594 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Sectors-Adl - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2127075594 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Sectors-Adl - Control Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2127075594 - Control 478049462 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Sectors-Adl - Control Totaling - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2127075594 - Control 2200046723 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Sectors-Adl - Control Indentation - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2127075594 - Control 3459602849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Sectors-Adl - Control Show Credit/Debit - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2127075594 - Control 4096422333 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Sectors-Adl - Control Index Code - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1782409209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Codes</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Codes-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1782409209 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Codes-Adl - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1782409209 - Control 4046708700 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Codes-Adl - Control Serial Num. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1782409209 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Codes-Adl - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1782409209 - Control 478049462 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Codes-Adl - Control Totaling - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1782409209 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Codes-Adl - Control Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1782409209 - Control 3793761455 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Codes-Adl - Control Indentaion - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1695213696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Reports</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Reports-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1695213696 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Reports-Adl - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1695213696 - Control 2082466019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Reports-Adl - Control Period Start Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1695213696 - Control 2615791210 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Reports-Adl - Control Period End Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1695213696 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Reports-Adl - Control User ID - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1589159327 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Report Subform</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Report Subform-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1589159327 - Control 392063396 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report Subform-Adl - Control BST Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1589159327 - Control 1385633078 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report Subform-Adl - Control BST Serial No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1589159327 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report Subform-Adl - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1589159327 - Control 284764054 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report Subform-Adl - Control Country/Region Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1589159327 - Control 518015828 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report Subform-Adl - Control Country/Region No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1589159327 - Control 862773401 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report Subform-Adl - Control Income Amount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1589159327 - Control 909421352 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report Subform-Adl - Control Expense Amount - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2083985129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BST Report</source>
@@ -2683,45 +4053,195 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Control General - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2083985129 - Control 2082466019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Control Period Start Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2083985129 - Control 2615791210 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Control Period End Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2083985129 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Control User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2083985129 - Control 2861760549 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Control Last Suggest on Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2083985129 - Control 3672218066 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Control Last Suggest at Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2083985129 - Control 277039421 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Control Last Export on Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2083985129 - Control 860782218 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Control Last Export at Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2083985129 - Control 2923034786 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Control Resp. User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2083985129 - Control 3131042386 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Control Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2083985129 - Control 513339096 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Control Status - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2083985129 - Action 1384210787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Action Suggest Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2083985129 - Action 1384210787 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Action Suggest Lines - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2083985129 - Action 1664292158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export Report</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Action Export Report - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2083985129 - Action 1664292158 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Action Export Report - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2083985129 - Action 4032263875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Release</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Action Release - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2083985129 - Action 4032263875 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Action Release - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2083985129 - Action 2071937805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reopen</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Action Reopen - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2083985129 - Action 2071937805 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BST Report-Adl - Action Reopen - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2163057877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cust. Ledger Entries Extended</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 883711285 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Entry No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 4190130733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Customer No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Posting Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 2363328873 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Document Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 486908828 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Document No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 4198939294 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Currency Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 636392376 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Amount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 1077555671 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Original Amount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 2617626588 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Original Amt. (LCY) - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 2975378708 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Remaining Amount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 1850328511 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Remaining Amt. (LCY) - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 592951229 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Amount (LCY) - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 85276878 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original Document Amount (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control OriginalDocumentAmount - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 85276878 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control OriginalDocumentAmount - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2163057877 - Control 192409082 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original VAT Amount (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control OriginalVATAmount - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 192409082 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control OriginalVATAmount - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2163057877 - Control 3459327861 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Open Amount (LCY) Without Unrealized Exchange Rate Adjustment</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control OpenAmountLCYWithoutUnreal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2163057877 - Control 3459327861 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control OpenAmountLCYWithoutUnreal - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2020614236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>DEVELPMENT ONLY: Core Setup</source>
@@ -2838,10 +4358,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control VAT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2914345777 - Control 2487071696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reporting SI</source>
+        <trans-unit id="Page 2914345777 - Control 1633862788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>X</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control ReportingSI - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control x - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 2565465511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specify your company's address information and logo.</source>

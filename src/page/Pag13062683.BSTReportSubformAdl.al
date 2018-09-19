@@ -5,35 +5,49 @@ page 13062683 "BST Report Subform-Adl"
     SourceTable = "BST Report Line-Adl";
     AutoSplitKey = true;
     Caption = 'BST Report Subform';
-    
+
     layout
     {
         area(Content)
         {
             repeater(Group)
             {
-                field("BST Code";"BST Code") {
+                field("BST Code"; "BST Code")
+                {
                     ApplicationArea = All;
-                }     
-                field("BST Serial No.";"BST Serial No.") {
-                    ApplicationArea = All;
-                }    
-                field(Description;Description) {
-                    ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
-                field("Country/Region Code";"Country/Region Code") {
+                field("BST Serial No."; "BST Serial No.")
+                {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
-                field("Country/Region No.";"Country/Region No.") {
+                field(Description; Description)
+                {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
-                field("Income Amount";"Income Amount") {
+                field("Country/Region Code"; "Country/Region Code")
+                {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
-                field("Expense Amount";"Expense Amount") {
+                field("Country/Region No."; "Country/Region No.")
+                {
                     ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
+                }
+                field("Income Amount"; "Income Amount")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
+                }
+                field("Expense Amount"; "Expense Amount")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'TODO: Tooltip - Reporting';
                 }
             }
         }
-    }    
+    }
 }
