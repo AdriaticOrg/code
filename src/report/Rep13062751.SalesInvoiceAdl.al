@@ -8,7 +8,7 @@ Report 13062751 "Sales - Invoice-Adl"
     EnableHyperlinks = true;
     Permissions = TableData "Sales Shipment Buffer" = rimd;
     PreviewMode = PrintLayout;
-
+    
     dataset
     {
 
@@ -67,6 +67,24 @@ Report 13062751 "Sales - Invoice-Adl"
             {
             }
             column(VATAmtInfAdlCaption; VATAmtInfAdlCaptionLbl)
+            {
+            }
+            column(Place_Of_Issue_Adl; CompanyInfo.City)
+            {
+            }
+            column(Place_Of_Issue_AdlCaption; Place_Of_Issue_AdlCaptionLbl)
+            {
+            }
+            column(Date_Of_Issue_Adl; FORMAT("Document Date", 0,4))
+            {
+            }
+            column(Date_Of_Issue_AdlCaption; Date_Of_Issue_AdlCaptionLbl)
+            {
+            }
+            column(Shipment_Date; FORMAT("Shipment Date", 0,4))
+            {
+            }
+            column(Shipment_Date_AdlCaption; Shipment_Date_AdlCaptionLbl)
             {
             }
             dataitem(CopyLoop; "Integer")
@@ -1131,6 +1149,10 @@ Report 13062751 "Sales - Invoice-Adl"
         HomePageCaptionLbl: Label 'Home Page';
         EMailCaptionLbl: Label 'Email';
         VAT_Date_AdlCaptionLbl: Label 'VAT Date';
+        Place_Of_Issue_AdlCaptionLbl: Label 'Place of issue';
+        Date_Of_Issue_AdlCaptionLbl: Label 'Date of issue';
+        Shipment_Date_AdlCaptionLbl: Label 'Shipment Date';
+        VAT_Registration_No_AdlCaptionLbl: Label 'Vat Registration No.';
         DisplayAdditionalFeeNote: Boolean;
         LineNoWithTotal: Integer;
         VATBaseRemainderAfterRoundingLCY: Decimal;
