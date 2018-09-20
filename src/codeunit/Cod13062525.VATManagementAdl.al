@@ -44,8 +44,6 @@ codeunit 13062525 "VAT Management-Adl"
         IF InvtPostingBuffer."Account Type" IN [InvtPostingBuffer."Account Type"::Inventory, InvtPostingBuffer."Account Type"::"Inventory (Interim)"] THEN
             GenJournalLine.Correction := ManagePostponedVAT.UpdateCorrection(ValueEntry, GenJournalLine.Amount);
         //</adl.7>
-        //TODO: we must get values here!
-        //GenJournalLine."VAT Bus. Posting Group" := InvtPostingBuffer.
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"VAT Entry", 'OnAfterCopyFromGenJnlLine', '', true, true)]
@@ -430,6 +428,7 @@ codeunit 13062525 "VAT Management-Adl"
     var
         VATPostingSetup: Record "VAT Posting Setup";
     begin
+        //TODO: Modifying VATPostingSetup during posting affects other users! must be fixed
         VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group", VATEntry."VAT Prod. Posting Group");
         if IsReverseVat then begin
             VATPostingSetup."VAT Calculation Type" := VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT";
