@@ -22,7 +22,7 @@ codeunit 13062591 "VAT Book Calculation-Adl"
                         TempValue := VatEntry.Base + VatEntry.Amount;
                     Value1::"Base Amount(retro.)":
                         TempValue := VatEntry."VAT Base (retro.)-Adl";
-                    Value1::"Unrealizied Base":
+                    Value1::"Unrealized Base":
                         TempValue := VatEntry."Unrealized Base";
                     Value1::"Unrealized Amount":
                         TempValue := VatEntry."Unrealized Amount";
@@ -47,7 +47,7 @@ codeunit 13062591 "VAT Book Calculation-Adl"
                         TempValue := VatEntry.Base + VatEntry.Amount;
                     Value2::"Base Amount(retro.)":
                         TempValue := VatEntry."VAT Base (retro.)-Adl";
-                    Value2::"Unrealizied Base":
+                    Value2::"Unrealized Base":
                         TempValue := VatEntry."Unrealized Base";
                     Value2::"Unrealized Amount":
                         TempValue := VatEntry."Unrealized Amount";

@@ -42,8 +42,8 @@ table 13062596 "VAT Book View Formula-Adl"
         field(6; "Value1"; Option)
         {
             Caption = 'Value 1';
-            OptionCaption = ' ,Base Amount,VAT Amount,Amount Inc. VAT,Base Amount(retro.),Unrealizied Base,Unrealized Amount,Unrealized Amount Inc. VAT,VAT Retro,Amount Inc. VAT(retro)';
-            OptionMembers = " ","Base Amount","VAT Amount","Amount Inc. VAT","Base Amount(retro.)","Unrealizied Base","Unrealized Amount","Unrealized Amount Inc. VAT","VAT Retro","Amount Inc. VAT(retro)";
+            OptionCaption = ' ,Base Amount,VAT Amount,Amount Inc. VAT,Base Amount(retro.),Unrealized Base,Unrealized Amount,Unrealized Amount Inc. VAT,VAT Retro,Amount Inc. VAT(retro)';
+            OptionMembers = " ","Base Amount","VAT Amount","Amount Inc. VAT","Base Amount(retro.)","Unrealized Base","Unrealized Amount","Unrealized Amount Inc. VAT","VAT Retro","Amount Inc. VAT(retro)";
             DataClassification = CustomerContent;
         }
         field(7; "Operator2"; Option)
@@ -56,8 +56,8 @@ table 13062596 "VAT Book View Formula-Adl"
         field(8; "Value2"; Option)
         {
             Caption = 'Value 2';
-            OptionCaption = ' ,Base Amount,VAT Amount,Amount Inc. VAT,Base Amount(retro.),Unrealizied Base,Unrealized Amount,Unrealized Amount Inc. VAT,VAT Retro,Amount Inc. VAT(retro)';
-            OptionMembers = " ","Base Amount","VAT Amount","Amount Inc. VAT","Base Amount(retro.)","Unrealizied Base","Unrealized Amount","Unrealized Amount Inc. VAT","VAT Retro","Amount Inc. VAT(retro)";
+            OptionCaption = ' ,Base Amount,VAT Amount,Amount Inc. VAT,Base Amount(retro.),Unrealized Base,Unrealized Amount,Unrealized Amount Inc. VAT,VAT Retro,Amount Inc. VAT(retro)';
+            OptionMembers = " ","Base Amount","VAT Amount","Amount Inc. VAT","Base Amount(retro.)","Unrealized Base","Unrealized Amount","Unrealized Amount Inc. VAT","VAT Retro","Amount Inc. VAT(retro)";
             DataClassification = CustomerContent;
         }
 
