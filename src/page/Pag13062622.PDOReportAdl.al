@@ -116,6 +116,7 @@ page 13062622 "PDO Report-Adl"
                     TestField("Period End Date");
 
                     VATEntry.Reset();
+                    VATEntry.SetRange("Type", VATEntry.Type::Sale);
                     VATEntry.SetRange("Posting Date", "Period Start Date", "Period End Date");
 
                     if PDOSetup.Get() and (PDOSetup."PDO VAT Ident. Filter Code" <> '') then

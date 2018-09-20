@@ -38,11 +38,6 @@ tableextension 13062533 "VAT Posting Setup-Adl" extends "VAT Posting Setup"  //3
             Caption = 'VIES Goods';
             DataClassification = SystemMetadata;
         }
-        field(13062602; "VIES Service-Adl"; Boolean)
-        {
-            Caption = 'VIES Service';
-            DataClassification = SystemMetadata;
-        }
         // </adl.22>          
     }
 }

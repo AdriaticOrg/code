@@ -359,10 +359,5 @@ report 13062594 "Input VAT Book-Adl 2-Adl"
         PostingDateLbl: Label 'Post.Date';
         DocumentDateLbl: Label 'Doc.Date';
         DocumentNoLbl: Label 'Document No.';
-        TypeLbl: Label 'Type';
-        DescriptionLbl: Label 'Description';
-        DebitAmountLbl: Label 'Debit Amount';
-        CreditAmountLbl: Label 'Credit Amount';
-        NoteLbl: Label 'Note';
 }
 
