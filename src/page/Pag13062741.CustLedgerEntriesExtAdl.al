@@ -17,83 +17,83 @@ page 13062741 "Cust. Ledger Entries Ext.-Adl"
                 {
                     Editable = false;
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Entry no.';
                 }
                 field("Customer No."; "Customer No.")
                 {
                     Editable = false;
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Customer no.';
                 }
                 field("Posting Date"; "Posting Date")
                 {
                     Editable = false;
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Posting date';
                 }
                 field("Document Type"; "Document Type")
                 {
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Type of posted document';
                 }
                 field("Document No."; "Document No.")
                 {
                     Editable = false;
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'No. of posted document';
                 }
                 field(Description; Description)
                 {
                     Editable = false;
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Description';
                 }
                 field("Currency Code"; "Currency Code")
                 {
                     Editable = false;
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Currency code';
                 }
                 field(Amount; Amount)
                 {
                     Editable = false;
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Amount';
                 }
                 field("Original Amount"; "Original Amount")
                 {
                     Editable = false;
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Original amount';
                 }
                 field("Original Amt. (LCY)"; "Original Amt. (LCY)")
                 {
                     Editable = false;
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Original amount LCY';
                 }
                 field("Remaining Amount"; "Remaining Amount")
                 {
                     Editable = false;
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Remaining amount';
                 }
                 field("Remaining Amt. (LCY)"; "Remaining Amt. (LCY)")
                 {
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Remaining amount LCY';
                 }
                 field("Amount (LCY)"; "Amount (LCY)")
                 {
                     Editable = false;
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Amount LCY';
                 }
                 field(OriginalDocumentAmount; OriginalDocumentAmount)
                 {
                     Caption = 'Original Document Amount (LCY)';
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Original document amount LCY';
 
                     trigger OnValidate();
                     begin
@@ -113,7 +113,7 @@ page 13062741 "Cust. Ledger Entries Ext.-Adl"
                 {
                     Caption = 'Original VAT Amount (LCY)';
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Original VAT amount LCY';
 
                     trigger OnValidate();
                     begin
@@ -133,7 +133,7 @@ page 13062741 "Cust. Ledger Entries Ext.-Adl"
                 {
                     Caption = 'Open Amount (LCY) Without Unrealized Exchange Rate Adjustment';
                     ApplicationArea = all;
-                    ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                    ToolTip = 'Open amount LCY without unrealized exchange rate adjustment';
 
                     trigger OnValidate();
                     begin

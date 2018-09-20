@@ -225,10 +225,7 @@ codeunit 13062818 "Application Area Mgmt-Adl"
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Application Area Mgmt. Facade", 'OnSetExperienceTier', '', false, false)]
     local procedure EnableADLCoreAppAreaOnSetExperienceTier(ExperienceTierSetup: record 9176; var TempApplicationAreaSetup: record 9178 temporary; var ApplicationAreasSet: boolean)
-    var
-        CoreSetup: Record "CoreSetup-Adl";
     begin
-        TempApplicationAreaSetup."Adl Unpaid Receivables" := true;
         TempApplicationAreaSetup."Adl BST" := true;
         TempApplicationAreaSetup."Adl KRD" := true;
         TempApplicationAreaSetup."Adl FAS" := true;
@@ -236,5 +233,6 @@ codeunit 13062818 "Application Area Mgmt-Adl"
         TempApplicationAreaSetup."Adl Forced CreditDebit" := true;
         TempApplicationAreaSetup."Adl Unpaid Receivables" := true;
         TempApplicationAreaSetup."Adl VAT" := true;
+        TempApplicationAreaSetup."Adl VIES" := true;
     end;
 }
