@@ -915,11 +915,11 @@ report 13062752 "Sales - Credit Memo-Adl"
         LogInteraction := SegManagement.FindInteractTmplCode(6) <> '';
     end;
 
-    local procedure DocumentCaption(): Text[250]
+    local procedure DocumentCaption() RetVal: Text[250]
     begin
         if "Sales Cr.Memo Header"."Prepayment Credit Memo" then
-            exit(SalesPrepCrMemoLbl);
-        exit(DocNoLbl);
+            exit(CopyStr(SalesPrepCrMemoLbl, 1, MaxStrLen(RetVal)));
+        exit(CopyStr(DocNoLbl, 1, MaxStrLen(RetVal)));
     end;
 
     procedure InitializeRequest(NewNoOfCopies: Integer; NewShowInternalInfo: Boolean; NewLogInteraction: Boolean)
@@ -954,7 +954,7 @@ report 13062752 "Sales - Credit Memo-Adl"
             VATNoText := FormatDocument.SetText("VAT Registration No." <> '', CopyStr(FieldCaption("VAT Registration No."), 1, 80));
             AppliedToText :=
               FormatDocument.SetText(
-                "Applies-to Doc. No." <> '', Format(StrSubstNo(AplyToLbl, Format("Applies-to Doc. Type"), "Applies-to Doc. No.")));
+                "Applies-to Doc. No." <> '', CopyStr(Format(StrSubstNo(AplyToLbl, Format("Applies-to Doc. Type"), "Applies-to Doc. No.")), 1, 80));
         end;
     end;
 

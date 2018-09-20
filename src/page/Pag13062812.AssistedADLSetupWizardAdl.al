@@ -1163,7 +1163,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         end;
 
         if CoreSetup."PDO Enabled" then begin
-            if PDOSetup.get then;
+            if PDOSetup.Get() then;
             "PDO Prep. By User ID-Adl" := PDOSetup."PDO Prep. By User ID";
             "PDO Report No. Series-Adl" := PDOSetup."PDO Report No. Series";
             "PDO Resp. User ID-Adl" := PDOSetup."PDO Resp. User ID";
