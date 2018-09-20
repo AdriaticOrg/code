@@ -227,14 +227,7 @@ codeunit 13062818 "Application Area Mgmt-Adl"
     local procedure EnableADLCoreAppAreaOnSetExperienceTier(ExperienceTierSetup: record 9176; var TempApplicationAreaSetup: record 9178 temporary; var ApplicationAreasSet: boolean)
     var
         CoreSetup: Record "CoreSetup-Adl";
-        //AppAreaMgmt: Codeunit "Application Area Mgmt.";
     begin
-        //TODO: remove debug code
-        if CoreSetup.Get() then Error('dobu')
-        else
-            error('ni dobu');
-
-        //AppAreaMgmt.GetEssentialExperienceAppAreas(TempApplicationAreaSetup);
         TempApplicationAreaSetup."Adl Unpaid Receivables" := true;
         TempApplicationAreaSetup."Adl BST" := true;
         TempApplicationAreaSetup."Adl KRD" := true;
