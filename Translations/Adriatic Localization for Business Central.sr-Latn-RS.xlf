@@ -8,67 +8,67 @@
       <group id="body">
         <trans-unit id="Table 1439163258 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Goods Return Type</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Povratnu vrstu robe</target>
+          <target state="translated">Vrsta povratne robe</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table Goods Return Type-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1439163258 - Field 3004954119 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Code</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Šifra</target>
+          <target state="translated" state-qualifier="mt-suggestion">Šifra</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table Goods Return Type-Adl - Field Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1439163258 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table Goods Return Type-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1439163258 - Field 1844012642 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>VAT Business Posting Group</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Poslovne grupe knjiženja za PDV</target>
+          <target state="translated">Posl. grupa knjiž. po PDV-u</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table Goods Return Type-Adl - Field VAT Bus. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1439163258 - Field 236064653 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>VAT Product Posting Group</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Grupe knjiženja proizvoda za PDV</target>
+          <target state="translated">Grupa knjiž. proizv. za PDV</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table Goods Return Type-Adl - Field VAT Prod. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1439163258 - Field 1004898937 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>New VAT Product Posting Group</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nove grupe knjiženja proizvoda za PDV</target>
+          <target state="translated">Nova grupa knjiž. proizv. za PDV</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table Goods Return Type-Adl - Field New VAT Prod. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 870920144 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>VAT Identifier</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Identifikator za PDV</target>
+          <target state="translated" state-qualifier="mt-suggestion">Identifikator za PDV</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Identifier-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 870920144 - Field 3004954119 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Code</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Šifra</target>
+          <target state="translated" state-qualifier="mt-suggestion">Šifra</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Identifier-Adl - Field Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 870920144 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Identifier-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2286936490 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>VAT Book</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Knjiga PDV-a</target>
+          <target state="translated" state-qualifier="mt-suggestion">Knjiga PDV-a</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2286936490 - Field 3004954119 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Code</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Šifra</target>
+          <target state="translated" state-qualifier="mt-suggestion">Šifra</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book-Adl - Field Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2286936490 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2286936490 - Field 3601724630 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Include in XML</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Uključi u XML-u</target>
+          <target state="translated">Uključi u XML</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book-Adl - Field Include in XML - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2286936490 - Field 1880378808 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -83,27 +83,27 @@
         </trans-unit>
         <trans-unit id="Report 2286936490 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>VAT Book</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Knjiga PDV-a</target>
+          <target state="translated" state-qualifier="mt-suggestion">Knjiga PDV-a</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Book-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2286936490 - ReportLabel 1877187315" translate="yes" xml:space="preserve">
           <source>Page</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Stranica</target>
+          <target state="translated" state-qualifier="mt-suggestion">Stranica</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Book-Adl - ReportLabel PageLbl</note>
         </trans-unit>
         <trans-unit id="Report 2286936490 - ReportLabel 1582893390" translate="yes" xml:space="preserve">
           <source>VAT Book - VAT</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Knjiga PDV - PDV-a</target>
+          <target state="translated">Knjiga PDV-a</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Book-Adl - ReportLabel TitleLbl</note>
         </trans-unit>
         <trans-unit id="Report 2286936490 - ReportLabel 1144513571" translate="yes" xml:space="preserve">
           <source>No.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">ne.</target>
+          <target state="translated">Br.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Book-Adl - ReportLabel RowNoLbl</note>
         </trans-unit>
         <trans-unit id="Report 2286936490 - ReportLabel 4193289038" translate="yes" xml:space="preserve">
           <source>Name, City</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ime, grad</target>
+          <target state="translated">Ime, Grad</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Book-Adl - ReportLabel NameCityLbl</note>
         </trans-unit>
         <trans-unit id="Report 2286936490 - ReportLabel 3737299204" translate="yes" xml:space="preserve">
@@ -113,17 +113,17 @@
         </trans-unit>
         <trans-unit id="Report 2286936490 - ReportLabel 2410138484" translate="yes" xml:space="preserve">
           <source>Total</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ukupno</target>
+          <target state="translated" state-qualifier="mt-suggestion">Ukupno</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Book-Adl - ReportLabel TotalLbl</note>
         </trans-unit>
         <trans-unit id="Report 2286936490 - ReportLabel 2212940294" translate="yes" xml:space="preserve">
           <source>Customer/Vendor</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kupca/dobavljača</target>
+          <target state="translated">Kupca/Dobavljač</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Book-Adl - ReportLabel CustVendLbl</note>
         </trans-unit>
         <trans-unit id="Report 2286936490 - ReportLabel 4058751071" translate="yes" xml:space="preserve">
           <source>Document</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Dokument</target>
+          <target state="translated" state-qualifier="mt-suggestion">Dokument</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Book-Adl - ReportLabel DocumentLbl</note>
         </trans-unit>
         <trans-unit id="Report 2286936490 - ReportLabel 2958724837" translate="yes" xml:space="preserve">
@@ -133,7 +133,7 @@
         </trans-unit>
         <trans-unit id="Report 2286936490 - ReportLabel 3032665767" translate="yes" xml:space="preserve">
           <source>VAT Date</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Datum PDV-a</target>
+          <target state="translated" state-qualifier="mt-suggestion">Datum PDV-a</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Book-Adl - ReportLabel VatDateLbl</note>
         </trans-unit>
         <trans-unit id="Table 2146627481 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -148,12 +148,12 @@
         </trans-unit>
         <trans-unit id="Table 2146627481 - Field 1389794395 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Column No.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Br. kolone</target>
+          <target state="translated" state-qualifier="mt-suggestion">Br. kolone</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book Column Name-Adl - Field Column No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2146627481 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book Column Name-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2146627481 - Field 3589601625 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -173,17 +173,17 @@
         </trans-unit>
         <trans-unit id="Table 1329085219 - Field 3004954119 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Code</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Šifra</target>
+          <target state="translated" state-qualifier="mt-suggestion">Šifra</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book Group-Adl - Field Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1329085219 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book Group-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1329085219 - Field 720431001 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Group Type</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tip grupe</target>
+          <target state="translated" state-qualifier="mt-suggestion">Tip grupe</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book Group-Adl - Field Group Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1329085219 - Field 720431001 - Property 62802879" translate="yes" xml:space="preserve">
@@ -233,7 +233,7 @@
         </trans-unit>
         <trans-unit id="Table 3465818742 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book Group Identifier-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2340829247 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -368,7 +368,7 @@
         </trans-unit>
         <trans-unit id="Page 4247890588 - Control 3718789915 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>VAT</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">PDV-A</target>
+          <target state="translated">PDV</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup-Adl - Control VIES - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4247890588 - Control 2404853609 - Property 1295455071" translate="yes" xml:space="preserve">
@@ -383,7 +383,7 @@
         </trans-unit>
         <trans-unit id="Table 788774104 - Field 4200184881 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>No.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">ne.</target>
+          <target state="translated">Br.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Header-Adl - Field No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 788774104 - Field 1351594800 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -433,7 +433,7 @@
         </trans-unit>
         <trans-unit id="Table 788774104 - Field 2708250016 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>User ID</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">ID korisnika</target>
+          <target state="translated" state-qualifier="mt-suggestion">ID korisnika</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Header-Adl - Field User ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 788774104 - Field 2861760549 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -493,7 +493,7 @@
         </trans-unit>
         <trans-unit id="Table 119955295 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table VIES Report Line-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 119955295 - Field 1753214751 - Property 62802879" translate="yes" xml:space="preserve">
@@ -818,7 +818,7 @@
         </trans-unit>
         <trans-unit id="Table 3514768801 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table PDO Report Line-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3514768801 - Field 1878130204 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -943,7 +943,7 @@
         </trans-unit>
         <trans-unit id="Table 147267535 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table FAS Instrument-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 147267535 - Field 1878130204 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -983,7 +983,7 @@
         </trans-unit>
         <trans-unit id="Table 1957626976 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table FAS Sector-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1957626976 - Field 1878130204 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -1113,7 +1113,7 @@
         </trans-unit>
         <trans-unit id="Table 4106160348 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table FAS Report Line-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4106160348 - Field 855337200 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -1333,7 +1333,7 @@
         </trans-unit>
         <trans-unit id="Table 3569323539 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table KRD Report Line-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3569323539 - Field 3820818388 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -1428,7 +1428,7 @@
         </trans-unit>
         <trans-unit id="Table 2476602728 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table KRD Code-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 47841055 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -1443,7 +1443,7 @@
         </trans-unit>
         <trans-unit id="Table 47841055 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table KRD Sector-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 47841055 - Field 1878130204 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -1578,7 +1578,7 @@
         </trans-unit>
         <trans-unit id="Table 360767640 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table BST Code-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 360767640 - Field 478049462 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -1693,7 +1693,7 @@
         </trans-unit>
         <trans-unit id="Table 4000059523 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table BST Report Line-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4000059523 - Field 1385633078 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -2028,7 +2028,7 @@
         </trans-unit>
         <trans-unit id="Table 1665363924 - Field 3461834954 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table Fisc. Payment Method-Adl - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1665363924 - Field 2375426568 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -2333,7 +2333,7 @@
         </trans-unit>
         <trans-unit id="Codeunit 1890036800 - Method 1622923883 - NamedType 268750583" translate="yes" xml:space="preserve">
           <source>The Postponed VAT was successfully posted.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Odloženi PDV je uspešno proknjiženo.</target>
+          <target state="translated">Odloženi PDV je uspešno proknjižen.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Management-Adl - Method HandlePostponedVAT - NamedType SuccessfulPostingMsg</note>
         </trans-unit>
         <trans-unit id="Codeunit 1890036800 - Method 1622923883 - NamedType 257425165" translate="yes" xml:space="preserve">
@@ -2563,7 +2563,7 @@
         </trans-unit>
         <trans-unit id="Codeunit 1055666693 - Method 1348281459 - NamedType 4212456975" translate="yes" xml:space="preserve">
           <source>Yes</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Da</target>
+          <target state="translated" state-qualifier="mt-suggestion">Da</target>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Adl Core Notification-Adl - Method ShowSetupNotification - NamedType YesLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 1055666693 - Method 1348281459 - NamedType 3513985302" translate="yes" xml:space="preserve">
@@ -2718,7 +2718,7 @@
         </trans-unit>
         <trans-unit id="Page 1522232855 - Action 2034514482 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Export to XML</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Izvoz u XML</target>
+          <target state="translated" state-qualifier="mt-suggestion">Izvoz u XML</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Books-Adl - Action ExportToXML - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1522232855 - Action 2034514482 - Property 1295455071" translate="yes" xml:space="preserve">
@@ -2728,7 +2728,7 @@
         </trans-unit>
         <trans-unit id="Page 1522232855 - Action 1253346001 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Export to TXT</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Izvoz u TXT</target>
+          <target state="translated" state-qualifier="mt-suggestion">Izvoz u TXT</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Books-Adl - Action ExportToTxt - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1522232855 - Action 1253346001 - Property 1295455071" translate="yes" xml:space="preserve">
@@ -4328,7 +4328,7 @@
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 3461834954 - Property 1295455071" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 4198939294 - Property 1295455071" translate="yes" xml:space="preserve">
@@ -4433,12 +4433,12 @@
         </trans-unit>
         <trans-unit id="Page 2020614236 - Control 334623485 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>VAT</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">PDV-A</target>
+          <target state="translated">PDV</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Core Setup-Adl - Control VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2020614236 - Control 2808404044 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Posting</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Knjiženja</target>
+          <target state="needs-review-translation">Knjiženje</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Core Setup-Adl - Control Posting - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2020614236 - Control 2487071696 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -4448,7 +4448,7 @@
         </trans-unit>
         <trans-unit id="Page 2914345777 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Company Setup</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Podešavanje preduzeća</target>
+          <target state="translated" state-qualifier="mt-suggestion">Podešavanje preduzeća</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Property 2019332006" translate="yes" xml:space="preserve">
@@ -4468,12 +4468,12 @@
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 66970393 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Warning</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Upozorenje</target>
+          <target state="translated" state-qualifier="mt-suggestion">Upozorenje</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Para1.2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 2447377260 - Property 1968111052" translate="yes" xml:space="preserve">
           <source>Help</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pomoć</target>
+          <target state="translated" state-qualifier="mt-suggestion">Pomoć</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Para1.2.1 - Property InstructionalText</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 3085073877 - Property 1968111052" translate="yes" xml:space="preserve">
@@ -4503,7 +4503,7 @@
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 3749788842 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Important</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Važno</target>
+          <target state="translated" state-qualifier="mt-suggestion">Važno</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Important - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 3749788842 - Property 1968111052" translate="yes" xml:space="preserve">
@@ -4523,7 +4523,7 @@
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 2445482498 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>General</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Generale</target>
+          <target state="translated">Opšte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control General - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 1696271000 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -4533,12 +4533,12 @@
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 334623485 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>VAT</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">PDV-A</target>
+          <target state="translated">PDV</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 1633862788 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>X</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">X</target>
+          <target state="translated" state-qualifier="mt-suggestion">X</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control x - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 2565465511 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -4753,12 +4753,12 @@
         </trans-unit>
         <trans-unit id="Report 2007895818 - Control 2346885236 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Options</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opcije</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opcije</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Calc. Details-Adl - Control Options - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2007895818 - Control 1452022969 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Date Filter</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Filter datuma</target>
+          <target state="translated" state-qualifier="mt-suggestion">Filter datuma</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Calc. Details-Adl - Control SetedDateFilter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2007895818 - Control 1452022969 - Property 1295455071" translate="yes" xml:space="preserve">
@@ -4783,17 +4783,17 @@
         </trans-unit>
         <trans-unit id="Report 2007895818 - ReportLabel 1877187315" translate="yes" xml:space="preserve">
           <source>Page</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Stranica</target>
+          <target state="translated" state-qualifier="mt-suggestion">Stranica</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Calc. Details-Adl - ReportLabel PageLbl</note>
         </trans-unit>
         <trans-unit id="Report 2007895818 - ReportLabel 1144513571" translate="yes" xml:space="preserve">
           <source>No.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">ne.</target>
+          <target state="translated">Br.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Calc. Details-Adl - ReportLabel RowNoLbl</note>
         </trans-unit>
         <trans-unit id="Report 2007895818 - ReportLabel 4193289038" translate="yes" xml:space="preserve">
           <source>Name, City</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ime, grad</target>
+          <target state="translated">Ime, Grad</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Calc. Details-Adl - ReportLabel NameCityLbl</note>
         </trans-unit>
         <trans-unit id="Report 2007895818 - ReportLabel 3737299204" translate="yes" xml:space="preserve">
@@ -4803,7 +4803,7 @@
         </trans-unit>
         <trans-unit id="Report 2007895818 - ReportLabel 2410138484" translate="yes" xml:space="preserve">
           <source>Total</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ukupno</target>
+          <target state="translated" state-qualifier="mt-suggestion">Ukupno</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report VAT Calc. Details-Adl - ReportLabel TotalLbl</note>
         </trans-unit>
         <trans-unit id="Report 2007895818 - ReportLabel 2212940294" translate="yes" xml:space="preserve">
@@ -4823,7 +4823,7 @@
         </trans-unit>
         <trans-unit id="Report 959239765 - Control 995090288 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Date Filter</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Filter datuma</target>
+          <target state="translated" state-qualifier="mt-suggestion">Filter datuma</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Books To XML-Adl - Control Date Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 959239765 - Control 995090288 - Property 1295455071" translate="yes" xml:space="preserve">
@@ -4833,7 +4833,7 @@
         </trans-unit>
         <trans-unit id="Report 959239765 - Control 694692658 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>PPPDV Date</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Datum PPPDV</target>
+          <target state="translated" state-qualifier="mt-suggestion">Datum PPPDV</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Books To XML-Adl - Control PPPDV Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 959239765 - Control 694692658 - Property 1295455071" translate="yes" xml:space="preserve">
@@ -4843,7 +4843,7 @@
         </trans-unit>
         <trans-unit id="Report 959239765 - Control 316362275 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Responsible Person</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Odgovorno lice</target>
+          <target state="translated">Odgovorna osoba</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VAT Books To XML-Adl - Control Responsible Person - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 959239765 - Control 316362275 - Property 1295455071" translate="yes" xml:space="preserve">
@@ -4883,32 +4883,32 @@
         </trans-unit>
         <trans-unit id="Report 2998918746 - NamedType 1721277456" translate="yes" xml:space="preserve">
           <source>Document No.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Br. dokumenta.</target>
+          <target state="translated">Br. dokumenta</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-Adl 2-Adl - NamedType DocumentNoLbl</note>
         </trans-unit>
         <trans-unit id="Report 2998918746 - NamedType 961827798" translate="yes" xml:space="preserve">
           <source>Type</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tip</target>
+          <target state="translated">Vrsta</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-Adl 2-Adl - NamedType TypeLbl</note>
         </trans-unit>
         <trans-unit id="Report 2998918746 - NamedType 3569966352" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-Adl 2-Adl - NamedType DescriptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2998918746 - NamedType 775175188" translate="yes" xml:space="preserve">
           <source>Debit Amount</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Iznos dugovanja</target>
+          <target state="translated" state-qualifier="mt-suggestion">Iznos dugovanja</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-Adl 2-Adl - NamedType DebitAmountLbl</note>
         </trans-unit>
         <trans-unit id="Report 2998918746 - NamedType 499154677" translate="yes" xml:space="preserve">
           <source>Credit Amount</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Iznos potraživanja</target>
+          <target state="translated" state-qualifier="mt-suggestion">Iznos potraživanja</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-Adl 2-Adl - NamedType CreditAmountLbl</note>
         </trans-unit>
         <trans-unit id="Report 2998918746 - NamedType 4046088670" translate="yes" xml:space="preserve">
           <source>Note</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Napomena</target>
+          <target state="translated" state-qualifier="mt-suggestion">Napomena</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-Adl 2-Adl - NamedType NoteLbl</note>
         </trans-unit>
         <trans-unit id="Report 2465319563 - NamedType 739658416" translate="yes" xml:space="preserve">
@@ -4938,42 +4938,42 @@
         </trans-unit>
         <trans-unit id="Report 2465319563 - NamedType 1027969698" translate="yes" xml:space="preserve">
           <source>Post.Date</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Post.Date</target>
+          <target state="translated">Datum knjiženja</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-Adl - NamedType PostingDateLbl</note>
         </trans-unit>
         <trans-unit id="Report 2465319563 - NamedType 1155328579" translate="yes" xml:space="preserve">
           <source>Doc.Date</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Doc.Date</target>
+          <target state="translated">Datum dokumenta</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-Adl - NamedType DocumentDateLbl</note>
         </trans-unit>
         <trans-unit id="Report 2465319563 - NamedType 1721277456" translate="yes" xml:space="preserve">
           <source>Document No.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Br. dokumenta.</target>
+          <target state="translated">Br. dokumenta</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-Adl - NamedType DocumentNoLbl</note>
         </trans-unit>
         <trans-unit id="Report 2465319563 - NamedType 961827798" translate="yes" xml:space="preserve">
           <source>Type</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tip</target>
+          <target state="translated">Vrsta</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-Adl - NamedType TypeLbl</note>
         </trans-unit>
         <trans-unit id="Report 2465319563 - NamedType 3569966352" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Opis</target>
+          <target state="translated" state-qualifier="mt-suggestion">Opis</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-Adl - NamedType DescriptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2465319563 - NamedType 775175188" translate="yes" xml:space="preserve">
           <source>Debit Amount</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Iznos dugovanja</target>
+          <target state="translated" state-qualifier="mt-suggestion">Iznos dugovanja</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-Adl - NamedType DebitAmountLbl</note>
         </trans-unit>
         <trans-unit id="Report 2465319563 - NamedType 499154677" translate="yes" xml:space="preserve">
           <source>Credit Amount</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Iznos potraživanja</target>
+          <target state="translated" state-qualifier="mt-suggestion">Iznos potraživanja</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-Adl - NamedType CreditAmountLbl</note>
         </trans-unit>
         <trans-unit id="Report 2465319563 - NamedType 4046088670" translate="yes" xml:space="preserve">
           <source>Note</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Napomena</target>
+          <target state="translated" state-qualifier="mt-suggestion">Napomena</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report GL ExportSI-Adl - NamedType NoteLbl</note>
         </trans-unit>
         <trans-unit id="Report 3292545214 - Property 2879900210" translate="yes" xml:space="preserve">
@@ -5088,7 +5088,7 @@
         </trans-unit>
         <trans-unit id="Report 4199163139 - ReportLabel 643245275" translate="yes" xml:space="preserve">
           <source>Page</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Stranica</target>
+          <target state="translated" state-qualifier="mt-suggestion">Stranica</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES-Adl - ReportLabel LblPage</note>
         </trans-unit>
         <trans-unit id="Report 4199163139 - ReportLabel 3364491589" translate="yes" xml:space="preserve">
@@ -5103,7 +5103,7 @@
         </trans-unit>
         <trans-unit id="Report 4199163139 - ReportLabel 216180066" translate="yes" xml:space="preserve">
           <source>New</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Novi</target>
+          <target state="translated" state-qualifier="mt-suggestion">Novi</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES-Adl - ReportLabel LblNew</note>
         </trans-unit>
         <trans-unit id="Report 4199163139 - ReportLabel 34940000" translate="yes" xml:space="preserve">
@@ -5138,12 +5138,12 @@
         </trans-unit>
         <trans-unit id="Report 4199163139 - ReportLabel 3936199380" translate="yes" xml:space="preserve">
           <source>Total</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ukupno</target>
+          <target state="translated" state-qualifier="mt-suggestion">Ukupno</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES-Adl - ReportLabel LblTotal</note>
         </trans-unit>
         <trans-unit id="Report 4199163139 - ReportLabel 1052369945" translate="yes" xml:space="preserve">
           <source>Period</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Period</target>
+          <target state="translated" state-qualifier="mt-suggestion">Period</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export VIES-Adl - ReportLabel LblPeriod</note>
         </trans-unit>
         <trans-unit id="Report 4199163139 - NamedType 876016967" translate="yes" xml:space="preserve">
@@ -5223,7 +5223,7 @@
         </trans-unit>
         <trans-unit id="Report 2080463845 - ReportLabel 643245275" translate="yes" xml:space="preserve">
           <source>Page</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Stranica</target>
+          <target state="translated" state-qualifier="mt-suggestion">Stranica</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export PDO-Adl - ReportLabel LblPage</note>
         </trans-unit>
         <trans-unit id="Report 2080463845 - ReportLabel 3364491589" translate="yes" xml:space="preserve">
@@ -5238,7 +5238,7 @@
         </trans-unit>
         <trans-unit id="Report 2080463845 - ReportLabel 216180066" translate="yes" xml:space="preserve">
           <source>New</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Novi</target>
+          <target state="translated" state-qualifier="mt-suggestion">Novi</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export PDO-Adl - ReportLabel LblNew</note>
         </trans-unit>
         <trans-unit id="Report 2080463845 - ReportLabel 34940000" translate="yes" xml:space="preserve">
@@ -5253,12 +5253,12 @@
         </trans-unit>
         <trans-unit id="Report 2080463845 - ReportLabel 3936199380" translate="yes" xml:space="preserve">
           <source>Total</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ukupno</target>
+          <target state="translated" state-qualifier="mt-suggestion">Ukupno</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export PDO-Adl - ReportLabel LblTotal</note>
         </trans-unit>
         <trans-unit id="Report 2080463845 - ReportLabel 1052369945" translate="yes" xml:space="preserve">
           <source>Period</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Period</target>
+          <target state="translated" state-qualifier="mt-suggestion">Period</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export PDO-Adl - ReportLabel LblPeriod</note>
         </trans-unit>
         <trans-unit id="Report 2080463845 - NamedType 876016967" translate="yes" xml:space="preserve">
@@ -5338,12 +5338,12 @@
         </trans-unit>
         <trans-unit id="Report 3536138568 - ReportLabel 3736119519" translate="yes" xml:space="preserve">
           <source>Transactions</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Transakcije</target>
+          <target state="translated" state-qualifier="mt-suggestion">Transakcije</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export FAS-Adl - ReportLabel LblTransactions</note>
         </trans-unit>
         <trans-unit id="Report 3536138568 - ReportLabel 1143108209" translate="yes" xml:space="preserve">
           <source>Changes</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Promene</target>
+          <target state="translated" state-qualifier="mt-suggestion">Promene</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report Export FAS-Adl - ReportLabel LblChanges</note>
         </trans-unit>
         <trans-unit id="Report 3536138568 - ReportLabel 974114744" translate="yes" xml:space="preserve">
