@@ -72,7 +72,7 @@ pageextension 13062542 "Customer Ledger Entries-Adl" extends "Customer Ledger En
             {
                 Caption = 'Edit Extended Data';
                 ApplicationArea = All;
-                ToolTip = 'TODO: Tooltip - Unpaid Receivables';
+                ToolTip = 'Edit extended data';
                 RunObject = Page "Cust. Ledger Entries Ext.-Adl";
                 Promoted = true;
                 PromotedCategory = Process;
