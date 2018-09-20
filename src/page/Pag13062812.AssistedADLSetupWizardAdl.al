@@ -1096,6 +1096,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
     var
         CompanyInformation: Record "Company Information";
         CoreSetup: Record "CoreSetup-Adl";
+
         TrimmedCompanyName: Text[50];
     begin
         Init();
@@ -1109,7 +1110,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
             Name := TrimmedCompanyName;
 
         If CoreSetup.Get() then
-            TransferfieldsFromCoreSetup(CoreSetup);
+            TransferfieldsFromDataSetup(CoreSetup);
         Insert();
     end;
 
@@ -1124,15 +1125,78 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
             CompanyData := CompanyData::"Evaluation Data";
     end;
 
-    local procedure TransferfieldsFromCoreSetup(var CoreSetup: Record "CoreSetup-Adl")
+    local procedure TransferfieldsFromDataSetup(var CoreSetup: Record "CoreSetup-Adl")
+    var
+        BSTSetup: Record "BST Setup-Adl";
+        KRDSetup: Record "KRD Setup-Adl";
+        FASSetup: Record "FAS Setup-Adl";
+        PDOSetup: Record "PDO Setup-Adl";
+        VIESSetup: Record "VIES Setup-Adl";
+        VATSetup: Record "VAT Setup-Adl";
+        UnpaidRecSetup: Record "Unpaid Receivables Setup-Adl";
+        FiscalSetup: Record "Fiscalization Setup-Adl";
     begin
-        /* "ADL Enabled-Adl" := CoreSetup."ADL Enabled";
-        "BST Enabled-Adl" := CoreSetup."BST Enabled";
-        "FAS Enabled-Adl" := CoreSetup."FAS Enabled";
-        "KRD Enabled-Adl" := CoreSetup."KRD Enabled";
-        "Unpaid Receivables Enabled-Adl" := CoreSetup."Unpaid Receivables Enabled";
-        "VAT Enabled-Adl" := CoreSetup."VAT Enabled";
-        "VIES Enabled-Adl" := CoreSetup."VIES Enabled"; */
+        if CoreSetup."BST Enabled" then begin
+            if BSTSetup.Get() then;
+            "BST Prep. By User ID-Adl" := BSTSetup."BST Prep. By User ID";
+            "BST Report No. Series-Adl" := BSTSetup."BST Report No. Series";
+            "BST Resp. User ID-Adl" := BSTSetup."BST Resp. User ID";
+        end;
+        if CoreSetup."KRD Enabled" then begin
+            if KRDSetup.Get() then;
+            "KRD Prep. By User ID-Adl" := KRDSetup."KRD Prep. By User ID";
+            "KRD Report No. Series-Adl" := KRDSetup."KRD Report No. Series";
+            "KRD Resp. User ID-Adl" := KRDSetup."KRD Resp. User ID";
+            "Default KRD Affiliation Type-Adl" := KRDSetup."Default KRD Affiliation Type";
+            "KRD Blank LCY Code-Adl" := KRDSetup."KRD Blank LCY Code";
+            "KRD Blank LCY Num.-Adl" := KRDSetup."KRD Blank LCY Num.";
+        end;
+
+        if CoreSetup."FAS Enabled" then begin
+            if FASSetup.Get() then;
+            "FAS Prep. By User ID-Adl" := FASSetup."FAS Prep. By User ID";
+            "FAS Report No. Series-Adl" := FASSetup."FAS Report No. Series";
+            "FAS Resp. User ID-Adl" := FASSetup."FAS Resp. User ID";
+            "FAS Budget User Code-Adl" := FASSetup."Budget User Code";
+            "FAS Company Sector Code-Adl" := FASSetup."Company Sector Code";
+            "FAS Director User ID-Adl" := FASSetup."FAS Director User ID";
+        end;
+
+        if CoreSetup."PDO Enabled" then begin
+            if PDOSetup.get then;
+            "PDO Prep. By User ID-Adl" := PDOSetup."PDO Prep. By User ID";
+            "PDO Report No. Series-Adl" := PDOSetup."PDO Report No. Series";
+            "PDO Resp. User ID-Adl" := PDOSetup."PDO Resp. User ID";
+            "PDO VAT Ident. Filter Code-Adl" := PDOSetup."PDO VAT Ident. Filter Code";
+        end;
+
+        if CoreSetup."VIes Enabled" then begin
+            if VIESSetup.Get() then;
+            "Default VIES Country-Adl" := VIESSetup."Default VIES Country";
+            "Default VIES Type-Adl" := VIESSetup."Default VIES Type";
+            "VIES Company Branch Code-Adl" := VIESSetup."VIES Company Branch Code";
+            "VIES Prep. By User ID-Adl" := VIESSetup."VIES Prep. By User ID";
+            "VIES Report No. Series-Adl" := VIESSetup."VIES Report No. Series";
+            "VIES Resp. User ID-Adl" := VIESSetup."VIES Resp. User ID";
+        end;
+
+        if CoreSetup."VAt Enabled" then begin
+            if VATSetup.Get() then;
+            "Use VAT Output Date-Adl" := VATSetup."Use VAT Output Date-Adl";
+        end;
+
+        if CoreSetup."Unpaid Receivables Enabled" then
+            "UP Ext. Data Start Bal. Date-Adl" := UnpaidRecSetup."Ext. Data Start Bal. Date-Adl";
+        if CoreSetup."Forced Credit/Debit Enabled" then
+            "Forced Credit/Debit Enabled-Adl" := CoreSetup."Forced Credit/Debit Enabled";
+
+        //TODO:: add also to core
+        if FiscalSetup.get() then;
+        "Fiscal. Active-Adl" := FiscalSetup.Active;
+        "Fiscal. Default Fiscalization Location-Adl" := FiscalSetup."Default Fiscalization Location";
+        "Fiscal. Default Fiscalization Terminal-Adl" := FiscalSetup."Default Fiscalization Terminal";
+        "Fiscal. Start Date-Adl" := FiscalSetup."Start Date";
+        "Fiscal. End Date-Adl" := FiscalSetup."End Date";
     end;
 
     local procedure StartConfigPackageImport(PackageType: Option "Basic","Master")
