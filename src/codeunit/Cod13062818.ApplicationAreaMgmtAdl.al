@@ -226,8 +226,8 @@ codeunit 13062818 "Application Area Mgmt-Adl"
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Application Area Mgmt. Facade", 'OnSetExperienceTier', '', false, false)]
     local procedure EnableADLCoreAppAreaOnSetExperienceTier(ExperienceTierSetup: record 9176; var TempApplicationAreaSetup: record 9178 temporary; var ApplicationAreasSet: boolean)
     var
-        AppAreaMgmt: Codeunit "Application Area Mgmt.";
         CoreSetup: Record "CoreSetup-Adl";
+        //AppAreaMgmt: Codeunit "Application Area Mgmt.";
     begin
         if CoreSetup.Get() then Error('dobu')
         else
