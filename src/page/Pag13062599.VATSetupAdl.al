@@ -16,7 +16,7 @@ page 13062599 "VAT Setup-Adl"
                 field("Use VAT Output Date-Adl"; "Use VAT Output Date-Adl")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'TODO: Tooltip - VAT Date';
+                    ToolTip = 'Specifies if VAT Output Date is used when posting document.';
                 }
             }
         }

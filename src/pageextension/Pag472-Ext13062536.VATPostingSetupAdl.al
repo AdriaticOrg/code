@@ -12,7 +12,7 @@ pageextension 13062536 "VAT Posting Setup-Adl" extends "VAT Posting Setup"  //47
             field("VAT Identifier-Adl"; "VAT Identifier")
             {
                 ApplicationArea = All;
-                ToolTip = 'TODO: Tooltip - VAT Identifier';
+                ToolTip = 'Specifies VAT Identifier for combination of VAT posting.';
                 Visible = VATFeatureEnabled;
                 TableRelation = "VAT Identifier-Adl";
             }
@@ -21,7 +21,7 @@ pageextension 13062536 "VAT Posting Setup-Adl" extends "VAT Posting Setup"  //47
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Full VAT Posting';
+                ToolTip = 'Specifies percent for VAT Retrograde posting.';
             }
             // </adl.11>
         }

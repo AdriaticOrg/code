@@ -9,7 +9,7 @@ pageextension 13062559 "Sales Return Order-Adl" extends "Sales Return Order" //6
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - VAT Date';
+                ToolTip = 'Specifies which date is used for posting VAT.';
             }
             // </adl.6>
             // <adl.10>
@@ -18,7 +18,7 @@ pageextension 13062559 "Sales Return Order-Adl" extends "Sales Return Order" //6
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
-                ToolTip = 'TODO: Tooltip - Postponed VAT';
+                ToolTip = 'Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.';
             }
             // </adl.10>
             // <adl.22>
