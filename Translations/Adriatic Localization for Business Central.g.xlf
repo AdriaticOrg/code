@@ -274,7 +274,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book View Formula-Adl - Field Value1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2340829247 - Field 151815974 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Base Amount,VAT Amount,Amount Inc. VAT,Base Amount(retro.),Unrealizied Base,Unrealized Amount,Unrealized Amount Inc. VAT,VAT Retro,Amount Inc. VAT(retro)</source>
+          <source> ,Base Amount,VAT Amount,Amount Inc. VAT,Base Amount(retro.),Unrealized Base,Unrealized Amount,Unrealized Amount Inc. VAT,VAT Retro,Amount Inc. VAT(retro)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book View Formula-Adl - Field Value1 - Property OptionCaption</note>
         </trans-unit>
@@ -294,7 +294,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book View Formula-Adl - Field Value2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2340829247 - Field 2533693419 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Base Amount,VAT Amount,Amount Inc. VAT,Base Amount(retro.),Unrealizied Base,Unrealized Amount,Unrealized Amount Inc. VAT,VAT Retro,Amount Inc. VAT(retro)</source>
+          <source> ,Base Amount,VAT Amount,Amount Inc. VAT,Base Amount(retro.),Unrealized Base,Unrealized Amount,Unrealized Amount Inc. VAT,VAT Retro,Amount Inc. VAT(retro)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table VAT Book View Formula-Adl - Field Value2 - Property OptionCaption</note>
         </trans-unit>
@@ -4299,67 +4299,67 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 883711285 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Entry no.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Entry No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 4190130733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Customer no.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Customer No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Posting date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Posting Date - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 2363328873 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Type of posted document</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Document Type - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 486908828 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>No. of posted document</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Document No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 4198939294 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Currency code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Currency Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 636392376 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Amount - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 1077555671 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Original amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Original Amount - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 2617626588 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Original amount LCY</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Original Amt. (LCY) - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 2975378708 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Remaining amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Remaining Amount - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 1850328511 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Remaining amount LCY</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Remaining Amt. (LCY) - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 592951229 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Amount LCY</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control Amount (LCY) - Property ToolTip</note>
         </trans-unit>
@@ -4369,7 +4369,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control OriginalDocumentAmount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 85276878 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Original document amount LCY</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control OriginalDocumentAmount - Property ToolTip</note>
         </trans-unit>
@@ -4379,7 +4379,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control OriginalVATAmount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 192409082 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Original VAT amount LCY</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control OriginalVATAmount - Property ToolTip</note>
         </trans-unit>
@@ -4389,7 +4389,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control OpenAmountLCYWithoutUnreal - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2163057877 - Control 3459327861 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Open amount LCY without unrealized exchange rate adjustment</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cust. Ledger Entries Ext.-Adl - Control OpenAmountLCYWithoutUnreal - Property ToolTip</note>
         </trans-unit>
@@ -4419,7 +4419,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Mapping-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2020614236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>DEVELPMENT ONLY: Core Setup</source>
+          <source>DEVELOPMENT ONLY: Core Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Core Setup-Adl - Property Caption</note>
         </trans-unit>
@@ -6869,7 +6869,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Action UnpaidReceivables-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 138386033 - Action 2376210528 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Unpaid Receivables</source>
+          <source>Edit extended data</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Action UnpaidReceivables-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7097,6 +7097,16 @@
           <source>Extended Data Start Balance Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales &amp; Receivables Setup-Adl - Field Ext. Data Start Bal. Date-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 865513963 - Control 4224917562 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VAT Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Inventory Setup-Adl - Control Post Neg. Transfers as Corr.-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 865513963 - Field 4224917562 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Neg. Transfers as Corr.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup-Adl - Field Post Neg. Transfers as Corr.-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1803156684 - Control 870920144 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>TODO: Tooltip - VAT Identifier</source>
