@@ -36,8 +36,9 @@ codeunit 13062818 "Application Area Mgmt-Adl"
             exit(ApplicationAreaSetup."Adl KRD");
     end;
 
-    procedure EnableAdlCoreApplicationArea(var ConfigSetup: Record "Config. Setup"; Enabled: Boolean)
+    procedure EnableAdlCoreApplicationArea()
     var
+        CoreSetup: Record "CoreSetup-Adl";
         ApplicationAreaSetup: Record "Application Area Setup";
         ExperienceTierSetup: Record "Experience Tier Setup";
         ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
@@ -46,43 +47,44 @@ codeunit 13062818 "Application Area Mgmt-Adl"
         if not ExperienceTierSetup.Custom then             //Set this to Custom in Isnall CU
             exit;
         if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then begin
-            If not ConfigSetup."ADL Enabled-Adl" then exit;
-            if ConfigSetup."Unpaid Receivables Enabled-Adl" then
+            If not CoreSetup."ADL Enabled" then exit;
+
+            if CoreSetup."Unpaid Receivables Enabled" then
                 ApplicationAreaSetup."Adl Unpaid Receivables" := true
             else
                 ApplicationAreaSetup."Adl Unpaid Receivables" := false;
 
-            if ConfigSetup."KRD Enabled-Adl" then
+            if CoreSetup."KRD Enabled" then
                 ApplicationAreaSetup."Adl KRD" := true
             else
                 ApplicationAreaSetup."Adl KRD" := false;
 
-            if ConfigSetup."BST Enabled-Adl" then
+            if CoreSetup."BST Enabled" then
                 ApplicationAreaSetup."Adl BST" := true
             else
                 ApplicationAreaSetup."Adl BST" := false;
 
-            if ConfigSetup."FAS Enabled-Adl" then
+            if CoreSetup."FAS Enabled" then
                 ApplicationAreaSetup."Adl FAS" := true
             else
                 ApplicationAreaSetup."Adl FAS" := false;
 
-            if ConfigSetup."PDO Enabled-Adl" then
+            if CoreSetup."PDO Enabled" then
                 ApplicationAreaSetup."Adl PDO" := true
             else
                 ApplicationAreaSetup."Adl PDO" := false;
 
-            if ConfigSetup."Forced Credit/Debit Enabled-Adl" then
+            if CoreSetup."Forced Credit/Debit Enabled" then
                 ApplicationAreaSetup."Adl Forced CreditDebit" := true
             else
                 ApplicationAreaSetup."Adl Forced CreditDebit" := false;
 
-            if ConfigSetup."VAT Enabled-Adl" then
+            if CoreSetup."VAT Enabled" then
                 ApplicationAreaSetup."Adl VAT" := true
             else
                 ApplicationAreaSetup."Adl VAT" := false;
 
-            if ConfigSetup."VIES Enabled-Adl" then
+            if CoreSetup."VIES Enabled" then
                 ApplicationAreaSetup."Adl VIES" := true
             else
                 ApplicationAreaSetup."Adl VIES" := false;

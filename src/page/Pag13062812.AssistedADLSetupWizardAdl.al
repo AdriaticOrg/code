@@ -22,6 +22,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                 field(MediaResourcesStandard; MediaResourcesStandard."Media Reference")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Media';
                     Editable = false;
                     ShowCaption = false;
                 }
@@ -34,6 +35,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                 field(MediaResourcesDone; MediaResourcesDone."Media Reference")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Media';
                     Editable = false;
                     ShowCaption = false;
                 }
@@ -59,6 +61,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                         {
                             ApplicationArea = All;
                             ShowCaption = false;
+                            ToolTip = 'Link to help';
 
                             trigger OnDrillDown()
                             begin
@@ -74,6 +77,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                             {
                                 ApplicationArea = all;
                                 ShowCaption = false;
+                                ToolTip = 'Link to privacy statement';
 
                                 trigger OnDrillDown()
                                 begin
@@ -85,6 +89,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                                 ApplicationArea = All;
                                 Caption = 'I accept warning & privacy notice.';
                                 ShowCaption = true;
+                                ToolTip = 'Select to accept warning & privacy notice';
 
                                 trigger OnValidate()
                                 begin
@@ -110,6 +115,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     {
                         ApplicationArea = All;
                         Caption = 'Set up as Adriatic Localization';
+                        ToolTip = 'Select to set up company with Adriactic Localization';
 
                         trigger OnValidate()
                         begin
@@ -128,13 +134,13 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                 }
             }
 
-            group(step2)
+            group(CoreStep)
             {
                 Caption = 'Adriatic Localization core features';
                 InstructionalText = 'With this setup you can choose which features you want to enable for Adriatic Localization';
                 Visible = CoreSetupDetailsVisible;
 
-                group(General)
+                group(Core)
                 {
                     Caption = 'General';
                     field("ADL Enabled"; "ADL Enabled-Adl")
@@ -153,111 +159,269 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                 group(VAT)
                 {
                     Caption = 'VAT';
-                    field("VAT Enabled"; "VAT Enabled-Adl")
+                    field("Use VAT Output Date-Adl"; "Use VAT Output Date-Adl")
                     {
+                        Visible = "ADL Enabled-Adl";
                         ApplicationArea = All;
-
-                        trigger OnValidate()
-                        var
-                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
-                        begin
-                            ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
-                        end;
+                        ToolTip = 'Specifies use of VAT output date';
                     }
-                    field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled-Adl")
-                    {
-                        ApplicationArea = All;
-
-                        trigger OnValidate()
-                        var
-                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
-                        begin
-                            if ("Unpaid Receivables Enabled-Adl") and (ApplicatonAreaMgmtAdl.IsUnpaidReceivablesApplicationAreaEnabled()) then
-                                exit
-                            else
-                                ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(true);
-
-                            if not ("Unpaid Receivables Enabled-Adl") then
-                                ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(false);
-                        end;
-                    }
-
                 }
-                group(x)
+
+                group(ForceDebitCredit)
                 {
-                    Caption = 'X';
-                    field("FAS Enabled"; "FAS Enabled-Adl")
+                    Caption = 'Force Debit/Credit';
+                    field("Forced Credit/Debit Enabled-Adl"; "Forced Credit/Debit Enabled-Adl")
                     {
+                        Visible = "ADL Enabled-Adl";
                         ApplicationArea = All;
-
-                        trigger OnValidate()
-                        var
-                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
-                        begin
-                            ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
-                        end;
-                    }
-                    field("KRD Enabled"; "KRD Enabled-Adl")
-                    {
-                        ApplicationArea = All;
-
-                        trigger OnValidate()
-                        var
-                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
-                        begin
-                            ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
-                        end;
-                    }
-                    field("BST Enabled"; "BST Enabled-Adl")
-                    {
-                        ApplicationArea = All;
-
-                        trigger OnValidate()
-                        var
-                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
-                        begin
-                            ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
-                        end;
-                    }
-
-                    field("PDO Enabled"; "PDO Enabled-Adl")
-                    {
-                        ApplicationArea = All;
-
-                        trigger OnValidate()
-                        var
-                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
-                        begin
-                            ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
-                        end;
-                    }
-
-                    field("VIES Enabled"; "VIES Enabled-Adl")
-                    {
-                        ApplicationArea = All;
-
-                        trigger OnValidate()
-                        var
-                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
-                        begin
-                            ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
-                        end;
-                    }
-
-                    field("Forced Credit/Debit Enabled"; "Forced Credit/Debit Enabled-Adl")
-                    {
-                        ApplicationArea = All;
-
-                        trigger OnValidate()
-                        var
-                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
-                        begin
-                            ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
-                        end;
+                        ToolTip = 'Specifies use of force debit/credit';
                     }
                 }
-
             }
+            /* group(General)
+            {
+                ShowCaption = false;
+                Visible = GeneralDetailsVisible;
+         
+            } */
+            group(stepVIES)
+            {
+                ShowCaption = false;
+                Visible = VIESDetailsVisible;
+                group(VIES)
+                {
+                    Caption = 'VIES';
+                    field("Default VIES Country"; "Default VIES Country-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies Default VIES Country';
+                    }
+                    field("Default VIES Type"; "Default VIES Type-Adl")
+                    {
+                        ApplicationArea = All;
+                        Editable = "Default VIES Country-Adl" = "Default VIES Country-Adl"::Croatia;
+                        ToolTip = 'Specifies Default VIES Type';
+                    }
+                    field("VIES Company Branch Code"; "VIES Company Branch Code-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies VIES Company Branch Code';
+                    }
+                    field("VIES Report No. Series"; "VIES Report No. Series-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies VIES Report No. Series';
+                    }
+                    field("VIES Prep. By User ID"; "VIES Prep. By User ID-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies VIES Prep. By User ID';
+                    }
+                    field("VIES Resp. User ID"; "VIES Resp. User ID-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies VIES Resp. User ID';
+                    }
+                }
+            }
+
+            group(stepPDO)
+            {
+                ShowCaption = false;
+                Visible = PDODetailsVisible;
+                group(PDO)
+                {
+                    Caption = 'PDO';
+                    field("PDO Report No. Series"; "PDO Report No. Series-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies PDO Report No. Series';
+                    }
+                    field("PDO Prep. By User ID"; "PDO Prep. By User ID-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies PDO Prep. By User ID';
+                    }
+                    field("PDO Resp. User ID"; "PDO Resp. User ID-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies PDO Resp. User ID';
+                    }
+                    field("PDO VAT Ident. Filter Code "; "PDO VAT Ident. Filter Code-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies PDO VAT Ident. Filter Code';
+                    }
+                }
+            }
+
+            group(stepFAS)
+            {
+                ShowCaption = false;
+                Visible = FASDetailsVisible;
+                group(FAS)
+                {
+                    Caption = 'FAS';
+                    field("FAS Report No. Series"; "FAS Report No. Series-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies FAS Report No. Series';
+                    }
+                    field("FAS Resp. User ID"; "FAS Resp. User ID-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies FAS Resp. User ID';
+                    }
+                    field("FAS Prep. By User ID"; "FAS Prep. By User ID-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies FAS Prep. By User ID';
+                    }
+                    field("FAS Director User ID"; "FAS Director User ID-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies FAS Director User ID';
+                    }
+                    field("Budget User Code"; "Fas Budget User Code-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies Budget User Code';
+                    }
+                    field("Company Sector Code"; "Fas Company Sector Code-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies Company Sector Code';
+                    }
+                }
+            }
+
+            group(stepKRD)
+            {
+                ShowCaption = false;
+                Visible = KRDDetailsVisible;
+                group(KRD)
+                {
+                    Caption = 'KRD';
+                    field("KRD Report No. Series"; "KRD Report No. Series-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies KRD Report No. Series';
+                    }
+                    field("KRD Resp. User ID"; "KRD Resp. User ID-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies KRD Resp. User ID';
+                    }
+                    field("KRD Prep. By User ID"; "KRD Prep. By User ID-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies KRD Prep. By User ID';
+                    }
+                    field("Default KRD Affiliation Type"; "Default KRD Affiliation Type-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies Default KRD Affiliation Type';
+                    }
+                    field("KRD Blank LCY Code"; "KRD Blank LCY Code-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies KRD Blank LCY Code';
+                    }
+                    field("KRD Blank LCY Num."; "KRD Blank LCY Num.-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies KRD Blank LCY Num.';
+                    }
+                }
+            }
+
+            group(stepBST)
+            {
+                ShowCaption = false;
+                Visible = BSTDetailsVisible;
+                group(BST)
+                {
+                    Caption = 'BST';
+                    field("BST Report No. Series-Adl"; "BST Report No. Series-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies BST Report No. Series';
+                    }
+                    field("BST Prep. By User ID"; "BST Prep. By User ID-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies BST Prep. By User ID';
+                    }
+                    field("BST Resp. User ID"; "BST Resp. User ID-Adl")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies BST Resp. User ID';
+                    }
+                }
+            }
+
+            group(stepFiscal)
+            {
+                ShowCaption = false;
+                Visible = FiscalDetailsVisible;
+                group(Fiscal)
+                {
+                    Caption = 'Fiscalization';
+                    field("Fiscal. Active-Adl"; "Fiscal. Active-Adl")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("Fiscal. Start Date-Adl"; "Fiscal. Start Date-Adl")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("Fiscal. End Date-Adl"; "Fiscal. End Date-Adl")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("Fiscal. Default Fiscalization Location-Adl"; "Fiscal. Default Fiscalization Location-Adl")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("Fiscal. Default Fiscalization Terminal-Adl"; "Fiscal. Default Fiscalization Terminal-Adl")
+                    {
+                        ApplicationArea = All;
+                    }
+                }
+            }
+            /*       group(VAT)
+                  {
+                      Caption = 'VAT';
+                      field("VAT Enabled"; "VAT Enabled-Adl")
+                      {
+                          ApplicationArea = All;
+
+                          trigger OnValidate()
+                          var
+                              ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
+                          begin
+                              ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
+                          end;
+                      }
+                      field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled-Adl")
+                      {
+                          ApplicationArea = All;
+
+                          trigger OnValidate()
+                          var
+                              ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
+                          begin
+                              if ("Unpaid Receivables Enabled-Adl") and (ApplicatonAreaMgmtAdl.IsUnpaidReceivablesApplicationAreaEnabled()) then
+                                  exit
+                              else
+                                  ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(true);
+
+                              if not ("Unpaid Receivables Enabled-Adl") then
+                                  ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(false);
+                          end;
+                      }
+
+                  } */
 
             group(Step3)
             {
@@ -273,28 +437,39 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                         Caption = 'Company Name';
                         NotBlank = true;
                         ShowMandatory = true;
+                        ToolTip = 'Enter company name';
                     }
                     field(Address; Address)
                     {
                         ApplicationArea = All;
+                        ToolTip = 'Enter address';
+
                     }
                     field("Address 2"; "Address 2")
                     {
                         ApplicationArea = Advanced;
                         Visible = false;
+                        ToolTip = 'Enter address 2';
+
                     }
                     field("Post Code"; "Post Code")
                     {
                         ApplicationArea = All;
+                        ToolTip = 'Enter post code';
+
                     }
                     field(City; City)
                     {
                         ApplicationArea = All;
+                        ToolTip = 'Enter city';
+
                     }
                     field("Country/Region Code"; "Country/Region Code")
                     {
                         ApplicationArea = All;
                         TableRelation = "Country/Region".Code;
+                        ToolTip = 'Enter country';
+
                     }
                     field("VAT Registration No."; "VAT Registration No.")
                     {
@@ -601,7 +776,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     AssistedCompanySetup: Codeunit "Assisted Company Setup";
                 begin
                     BankAccount.TransferFields(TempBankAccount, true);
-                    CopyCoreSetupInfo();
+                    CopySetupData();
                     AssistedCompanySetup.ApplyUserInput(Rec, BankAccount, 0D, TypeEvaluation);
 
                     AssistedSetupAdl.SetStatus(PAGE::"Assisted ADL Setup Wizard-adl", AssistedSetupAdl.Status::Completed);
@@ -654,11 +829,12 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         ClientTypeManagement: Codeunit ClientTypeManagement;
         WizardMgmt: Codeunit "Wizard Management-adl";
         XMLDOMManagement: Codeunit "XML DOM Management";
+        ApplicatonAreaMgmt: Codeunit "Application Area Mgmt.";
         CompanyData: Option "Evaluation Data","Standard Data","None","Extended Data","Full No Data";
         TypeStandard: Boolean;
         TypeExtended: Boolean;
         TypeEvaluation: Boolean;
-        Step: Option Intro,Sync,"Select Type","Core Setup","Company Details","Communication Details",SelectBankAccont,"Payment Details","Package Import",Done;
+        Step: Option Intro,Sync,"Select Type",CoreSetup,VIES,PDO,FAS,KRD,BST,Fiscal,"Company Details","Communication Details",SelectBankAccont,"Payment Details","Package Import",Done;
         BackEnabled: Boolean;
         NextEnabled: Boolean;
         FinishEnabled: Boolean;
@@ -669,6 +845,13 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         CommunicationDetailsVisible: Boolean;
         PaymentDetailsVisible: Boolean;
         CoreSetupDetailsVisible: Boolean;
+        //GeneralDetailsVisible: Boolean;
+        FiscalDetailsVisible: Boolean;
+        BSTDetailsVisible: Boolean;
+        KRDDetailsVisible: Boolean;
+        FASDetailsVisible: Boolean;
+        PDODetailsVisible: Boolean;
+        VIESDetailsVisible: Boolean;
         PackageImportDetailesVIsible: Boolean;
         DoneVisible: Boolean;
         TypeSelectionEnabled: Boolean;
@@ -715,7 +898,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     NextStep(Backwards)
                 else
                     ShowSelectTypeStep();
-            step::"Core Setup":
+            step::CoreSetup:
                 if TypeEvaluation then begin
                     Step := Step::Done;
                     ShowDoneStep;
@@ -723,6 +906,42 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     ShowCoreSetupDetailsStep();
                     NextEnabled := "ADL Enabled-Adl";
                 end;
+            step::VIES:
+                if TypeEvaluation then begin
+                    Step := Step::Done;
+                    ShowDoneStep;
+                end else
+                    ShowVIESSetupDetailsStep();
+            step::PDO:
+                if TypeEvaluation then begin
+                    Step := Step::Done;
+                    ShowDoneStep;
+                end else
+                    ShowPDOSetupDetailsStep();
+            step::FAS:
+                if TypeEvaluation then begin
+                    Step := Step::Done;
+                    ShowDoneStep;
+                end else
+                    ShowFASSetupDetailsStep();
+            step::KRD:
+                if TypeEvaluation then begin
+                    Step := Step::Done;
+                    ShowDoneStep;
+                end else
+                    ShowKRDSetupDetailsStep();
+            step::BST:
+                if TypeEvaluation then begin
+                    Step := Step::Done;
+                    ShowDoneStep;
+                end else
+                    ShowBSTSetupDetailsStep();
+            step::Fiscal:
+                if TypeEvaluation then begin
+                    Step := Step::Done;
+                    ShowDoneStep;
+                end else
+                    ShowFiscalSetupDetailsStep();
             Step::"Company Details":
                 if TypeEvaluation then begin
                     Step := Step::Done;
@@ -773,9 +992,21 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         SelectTypeVisible := true;
     end;
 
-    local procedure ShowCoreSetupType()
+    local procedure ShowCoreSetupDetailsStep()
     begin
         CoreSetupDetailsVisible := true;
+        if TypeSelectionEnabled then
+            BackEnabled := false;
+    end;
+
+    /*  local procedure ShowGeneralSetupDetailsStep()
+     begin
+         GeneralDetailsVisible := true;
+     end; */
+
+    local procedure ShowVIESSetupDetailsStep()
+    begin
+        VIESDetailsVisible := true;
     end;
 
     local procedure ShowCompanyDetailsStep()
@@ -783,21 +1014,39 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         CompanyDetailsVisible := true;
     end;
 
+    local procedure ShowPDOSetupDetailsStep()
+    begin
+        PDODetailsVisible := true;
+    end;
+
+    local procedure ShowFASSetupDetailsStep()
+    begin
+        FASDetailsVisible := true;
+    end;
+
+    local procedure ShowKRDSetupDetailsStep()
+    begin
+        KRDDetailsVisible := true;
+    end;
+
+    local procedure ShowBSTSetupDetailsStep()
+    begin
+        BSTDetailsVisible := true;
+    end;
+
     local procedure ShowCommunicationDetailsStep()
     begin
         CommunicationDetailsVisible := true;
     end;
 
+    local procedure ShowFiscalSetupDetailsStep()
+    begin
+        FiscalDetailsVisible := true;
+    end;
+
     local procedure ShowPaymentDetailsStep()
     begin
         PaymentDetailsVisible := true;
-    end;
-
-    local procedure ShowCoreSetupDetailsStep()
-    begin
-        CoreSetupDetailsVisible := true;
-        if TypeSelectionEnabled then
-            BackEnabled := false;
     end;
 
     local procedure ShowPackageImportStep()
@@ -826,6 +1075,13 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
 
         IntroVisible := false;
         SelectTypeVisible := false;
+        //GeneralDetailsVisible := false;
+        FiscalDetailsVisible := false;
+        BSTDetailsVisible := false;
+        KRDDetailsVisible := false;
+        FASDetailsVisible := false;
+        PDODetailsVisible := false;
+        VIESDetailsVisible := false;
         CompanyDetailsVisible := false;
         CommunicationDetailsVisible := false;
         BankStatementConfirmationVisible := false;
@@ -843,8 +1099,6 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         TrimmedCompanyName: Text[50];
     begin
         Init();
-
-        //TODO: find a way to avoid hardcoding string lengths
         TrimmedCompanyName := CopyStr(CompanyName(), 1, MaxStrLen(TrimmedCompanyName));
 
         if CompanyInformation.Get() then begin
@@ -872,13 +1126,13 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
 
     local procedure TransferfieldsFromCoreSetup(var CoreSetup: Record "CoreSetup-Adl")
     begin
-        "ADL Enabled-Adl" := CoreSetup."ADL Enabled";
+        /* "ADL Enabled-Adl" := CoreSetup."ADL Enabled";
         "BST Enabled-Adl" := CoreSetup."BST Enabled";
         "FAS Enabled-Adl" := CoreSetup."FAS Enabled";
         "KRD Enabled-Adl" := CoreSetup."KRD Enabled";
         "Unpaid Receivables Enabled-Adl" := CoreSetup."Unpaid Receivables Enabled";
         "VAT Enabled-Adl" := CoreSetup."VAT Enabled";
-        "VIES Enabled-Adl" := CoreSetup."VIES Enabled";
+        "VIES Enabled-Adl" := CoreSetup."VIES Enabled"; */
     end;
 
     local procedure StartConfigPackageImport(PackageType: Option "Basic","Master")
