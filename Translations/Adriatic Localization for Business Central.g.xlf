@@ -4419,7 +4419,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Mapping-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2020614236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>DEVELPMENT ONLY: Core Setup</source>
+          <source>DEVELOPMENT ONLY: Core Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Core Setup-Adl - Property Caption</note>
         </trans-unit>
@@ -7098,6 +7098,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales &amp; Receivables Setup-Adl - Field Ext. Data Start Bal. Date-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 865513963 - Control 4224917562 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TODO: Tooltip - VAT Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Inventory Setup-Adl - Control Post Neg. Transfers as Corr.-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 865513963 - Field 4224917562 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Neg. Transfers as Corr.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup-Adl - Field Post Neg. Transfers as Corr.-Adl - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1803156684 - Control 870920144 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>TODO: Tooltip - VAT Identifier</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7117,11 +7127,6 @@
           <source>TODO: Tooltip - Reporting</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Posting Setup-Adl - Control VIES Goods-Adl - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1803156684 - Control 2439675332 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Reporting</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Posting Setup-Adl - Control VIES Service-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="TableExtension 1803156684 - Field 1265827638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purch VAT Postponed Account</source>
@@ -7147,11 +7152,6 @@
           <source>VIES Goods</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Posting Setup-Adl - Field VIES Goods-Adl - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 1803156684 - Field 2439675332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VIES Service</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Posting Setup-Adl - Field VIES Service-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2281148088 - Control 870920144 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>TODO: Tooltip - VAT Identifier</source>
