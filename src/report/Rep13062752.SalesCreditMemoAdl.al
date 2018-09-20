@@ -72,7 +72,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                     column(CompanyInfo3Picture; CompanyInfo3.Picture)
                     {
                     }
-                    column(DocCptnCopyTxt; StrSubstNo(DocumentCaption, CopyText))
+                    column(DocCptnCopyTxt; StrSubstNo(DocumentCaption(), CopyText))
                     {
                     }
                     column(CustAddr1; CustAddr[1])
@@ -180,7 +180,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                     column(ReturnOrdNo_SalesCrMemoHeader; "Sales Cr.Memo Header"."Return Order No.")
                     {
                     }
-                    column(PageCaption; PageCaptionCap)
+                    column(PageCaption; PageCaptionLbl)
                     {
                     }
                     column(OutputNo; OutputNo)
@@ -245,11 +245,11 @@ report 13062752 "Sales - Credit Memo-Adl"
                         trigger OnAfterGetRecord()
                         begin
                             if Number = 1 then begin
-                                if not DimSetEntry1.FindSet then
-                                    CurrReport.Break;
+                                if not DimSetEntry1.FindSet() then
+                                    CurrReport.Break();
                             end else
                                 if not Continue then
-                                    CurrReport.Break;
+                                    CurrReport.Break();
 
                             Clear(DimText);
                             Continue := false;
@@ -267,13 +267,13 @@ report 13062752 "Sales - Credit Memo-Adl"
                                     Continue := true;
                                     exit;
                                 end;
-                            until DimSetEntry1.Next = 0;
+                            until DimSetEntry1.Next() = 0;
                         end;
 
                         trigger OnPreDataItem()
                         begin
                             if not ShowInternalInfo then
-                                CurrReport.Break;
+                                CurrReport.Break();
                         end;
                     }
                     dataitem("Sales Cr.Memo Line"; "Sales Cr.Memo Line")
@@ -283,7 +283,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                         DataItemTableView = SORTING ("Document No.", "Line No.");
                         column(LineAmt_SalesCrMemoLine; "Line Amount")
                         {
-                            AutoFormatExpression = GetCurrencyCode;
+                            AutoFormatExpression = GetCurrencyCode();
                             AutoFormatType = 1;
                         }
                         column(Desc_SalesCrMemoLine; Description)
@@ -300,7 +300,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                         }
                         column(UnitPrice_SalesCrMemoLine; "Unit Price")
                         {
-                            AutoFormatExpression = GetCurrencyCode;
+                            AutoFormatExpression = GetCurrencyCode();
                             AutoFormatType = 2;
                         }
                         column(Disc_SalesCrMemoLine; "Line Discount %")
@@ -317,27 +317,27 @@ report 13062752 "Sales - Credit Memo-Adl"
                         }
                         column(NNCTotalLineAmt; NNC_TotalLineAmount)
                         {
-                            AutoFormatExpression = GetCurrencyCode;
+                            AutoFormatExpression = GetCurrencyCode();
                             AutoFormatType = 1;
                         }
                         column(NNCTotalAmtInclVat; NNC_TotalAmountInclVat)
                         {
-                            AutoFormatExpression = GetCurrencyCode;
+                            AutoFormatExpression = GetCurrencyCode();
                             AutoFormatType = 1;
                         }
                         column(NNCTotalInvDiscAmt_SalesCrMemoLine; NNC_TotalInvDiscAmount)
                         {
-                            AutoFormatExpression = GetCurrencyCode;
+                            AutoFormatExpression = GetCurrencyCode();
                             AutoFormatType = 1;
                         }
                         column(NNCTotalAmt; NNC_TotalAmount)
                         {
-                            AutoFormatExpression = GetCurrencyCode;
+                            AutoFormatExpression = GetCurrencyCode();
                             AutoFormatType = 1;
                         }
                         column(InvDiscAmt_SalesCrMemoLine; -"Inv. Discount Amount")
                         {
-                            AutoFormatExpression = GetCurrencyCode;
+                            AutoFormatExpression = GetCurrencyCode();
                             AutoFormatType = 1;
                         }
                         column(TotalText; TotalText)
@@ -345,7 +345,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                         }
                         column(Amt_SalesCrMemoLine; Amount)
                         {
-                            AutoFormatExpression = GetCurrencyCode;
+                            AutoFormatExpression = GetCurrencyCode();
                             AutoFormatType = 1;
                         }
                         column(TotalExclVATText; TotalExclVATText)
@@ -354,7 +354,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                         column(TotalInclVATText; TotalInclVATText)
                         {
                         }
-                        column(VATAmtLineVATAmtTxt; VATAmountLine.VATAmountText)
+                        column(VATAmtLineVATAmtTxt; VATAmountLine.VATAmountText())
                         {
                         }
                         column(LineAmtInvDiscAmt_SalesCrMemoLine; -("Line Amount" - "Inv. Discount Amount" - "Amount Including VAT"))
@@ -412,10 +412,10 @@ report 13062752 "Sales - Credit Memo-Adl"
                             begin
                                 if Number = 1 then begin
                                     if not DimSetEntry2.Find('-') then
-                                        CurrReport.Break;
+                                        CurrReport.Break();
                                 end else
                                     if not Continue then
-                                        CurrReport.Break;
+                                        CurrReport.Break();
 
                                 Clear(DimText);
                                 Continue := false;
@@ -433,13 +433,13 @@ report 13062752 "Sales - Credit Memo-Adl"
                                         Continue := true;
                                         exit;
                                     end;
-                                until DimSetEntry2.Next = 0;
+                                until DimSetEntry2.Next() = 0;
                             end;
 
                             trigger OnPreDataItem()
                             begin
                                 if not ShowInternalInfo then
-                                    CurrReport.Break;
+                                    CurrReport.Break();
 
                                 DimSetEntry2.SetRange("Dimension Set ID", "Sales Cr.Memo Line"."Dimension Set ID");
                             end;
@@ -455,7 +455,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                             if (Type = Type::"G/L Account") and (not ShowInternalInfo) then
                                 "No." := '';
 
-                            VATAmountLine.Init;
+                            VATAmountLine.Init();
                             VATAmountLine."VAT Identifier" := "VAT Identifier";
                             VATAmountLine."VAT Calculation Type" := "VAT Calculation Type";
                             VATAmountLine."Tax Group Code" := "Tax Group Code";
@@ -467,17 +467,17 @@ report 13062752 "Sales - Credit Memo-Adl"
                                 VATAmountLine."Inv. Disc. Base Amount" := "Line Amount";
                             VATAmountLine."Invoice Discount Amount" := "Inv. Discount Amount";
                             VATAmountLine."VAT Clause Code" := "VAT Clause Code";
-                            VATAmountLine.InsertLine;
+                            VATAmountLine.InsertLine();
                         end;
 
                         trigger OnPreDataItem()
                         begin
-                            VATAmountLine.DeleteAll;
+                            VATAmountLine.DeleteAll();
                             MoreLines := Find('+');
                             while MoreLines and (Description = '') and ("No." = '') and (Quantity = 0) and (Amount = 0) do
                                 MoreLines := Next(-1) <> 0;
                             if not MoreLines then
-                                CurrReport.Break;
+                                CurrReport.Break();
                             SetRange("Line No.", 0, "Line No.");
                         end;
                     }
@@ -536,7 +536,7 @@ report 13062752 "Sales - Credit Memo-Adl"
 
                         trigger OnPreDataItem()
                         begin
-                            SetRange(Number, 1, VATAmountLine.Count);
+                            SetRange(Number, 1, VATAmountLine.Count());
                         end;
                     }
                     dataitem(VATClauseEntryCounter; "Integer")
@@ -559,7 +559,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                             AutoFormatExpression = "Sales Cr.Memo Header"."Currency Code";
                             AutoFormatType = 1;
                         }
-                        column(VATClausesCaption; VATClausesCap)
+                        column(VATClausesLbltion; VATClausesLbl)
                         {
                         }
                         column(VATClauseVATIdentifierCaption; VATAmtLineVATIdentifierCptnLbl)
@@ -573,14 +573,14 @@ report 13062752 "Sales - Credit Memo-Adl"
                         begin
                             VATAmountLine.GetLine(Number);
                             if not VATClause.Get(VATAmountLine."VAT Clause Code") then
-                                CurrReport.Skip;
+                                CurrReport.Skip();
                             VATClause.TranslateDescription("Sales Cr.Memo Header"."Language Code");
                         end;
 
                         trigger OnPreDataItem()
                         begin
                             Clear(VATClause);
-                            SetRange(Number, 1, VATAmountLine.Count);
+                            SetRange(Number, 1, VATAmountLine.Count());
                         end;
                     }
                     dataitem(VATCounterLCY; "Integer")
@@ -626,18 +626,18 @@ report 13062752 "Sales - Credit Memo-Adl"
                             if (not GLSetup."Print VAT specification in LCY") or
                                ("Sales Cr.Memo Header"."Currency Code" = '')
                             then
-                                CurrReport.Break;
+                                CurrReport.Break();
 
-                            SetRange(Number, 1, VATAmountLine.Count);
+                            SetRange(Number, 1, VATAmountLine.Count());
 
                             if GLSetup."LCY Code" = '' then
-                                VALSpecLCYHeader := Text008 + Text009
+                                VALSpecLCYHeader := VatAmtSpecLbl + LocalCurrLbl
                             else
-                                VALSpecLCYHeader := Text008 + Format(GLSetup."LCY Code");
+                                VALSpecLCYHeader := VatAmtSpecLbl + Format(GLSetup."LCY Code");
 
                             CurrExchRate.FindCurrency("Sales Cr.Memo Header"."Posting Date", "Sales Cr.Memo Header"."Currency Code", 1);
                             CalculatedExchRate := Round(1 / "Sales Cr.Memo Header"."Currency Factor" * CurrExchRate."Exchange Rate Amount", 0.000001);
-                            VALExchRate := StrSubstNo(Text010, CalculatedExchRate, CurrExchRate."Exchange Rate Amount");
+                            VALExchRate := StrSubstNo(ExchRateLbl, CalculatedExchRate, CurrExchRate."Exchange Rate Amount");
                         end;
                     }
                     dataitem(Total; "Integer")
@@ -684,7 +684,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                         trigger OnPreDataItem()
                         begin
                             if not ShowShippingAddr then
-                                CurrReport.Break;
+                                CurrReport.Break();
                         end;
                     }
                 }
@@ -692,7 +692,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                 trigger OnAfterGetRecord()
                 begin
                     if Number > 1 then begin
-                        CopyText := FormatDocument.GetCOPYText;
+                        CopyText := FormatDocument.GetCOPYText();
                         OutputNo += 1;
                     end;
 
@@ -704,7 +704,7 @@ report 13062752 "Sales - Credit Memo-Adl"
 
                 trigger OnPostDataItem()
                 begin
-                    if not IsReportInPreviewMode then
+                    if not IsReportInPreviewMode() then
                         CODEUNIT.Run(CODEUNIT::"Sales Cr. Memo-Printed", "Sales Cr.Memo Header");
                 end;
 
@@ -787,16 +787,16 @@ report 13062752 "Sales - Credit Memo-Adl"
 
     trigger OnInitReport()
     begin
-        GLSetup.Get;
-        CompanyInfo.Get;
-        SalesSetup.Get;
+        GLSetup.Get();
+        CompanyInfo.Get();
+        SalesSetup.Get();
         FormatDocument.SetLogoPosition(SalesSetup."Logo Position on Documents", CompanyInfo1, CompanyInfo2, CompanyInfo3);
     end;
 
     trigger OnPostReport()
     begin
-        if LogInteraction and not IsReportInPreviewMode then
-            if "Sales Cr.Memo Header".FindSet then
+        if LogInteraction and not IsReportInPreviewMode() then
+            if "Sales Cr.Memo Header".FindSet() then
                 repeat
                     if "Sales Cr.Memo Header"."Bill-to Contact No." <> '' then
                         SegManagement.LogDocument(
@@ -808,19 +808,16 @@ report 13062752 "Sales - Credit Memo-Adl"
                           6, "Sales Cr.Memo Header"."No.", 0, 0, DATABASE::Customer, "Sales Cr.Memo Header"."Sell-to Customer No.",
                           "Sales Cr.Memo Header"."Salesperson Code", "Sales Cr.Memo Header"."Campaign No.",
                           "Sales Cr.Memo Header"."Posting Description", '');
-                until "Sales Cr.Memo Header".Next = 0;
+                until "Sales Cr.Memo Header".Next() = 0;
     end;
 
     trigger OnPreReport()
     begin
-        if not CurrReport.UseRequestPage then
-            InitLogInteraction;
+        if not CurrReport.UseRequestPage() then
+            InitLogInteraction();
     end;
 
     var
-        Text003: Label '(Applies to %1 %2)';
-        Text005: Label 'Sales - Credit Memo %1', Comment = '%1 = Document No.';
-        PageCaptionCap: Label 'Page %1 of %2';
         GLSetup: Record "General Ledger Setup";
         RespCenter: Record "Responsibility Center";
         SalesSetup: Record "Sales & Receivables Setup";
@@ -842,9 +839,9 @@ report 13062752 "Sales - Credit Memo-Adl"
         ShipToAddr: array[8] of Text[50];
         CompanyAddr: array[8] of Text[50];
         ReturnOrderNoText: Text[80];
-        SalesPersonText: Text[30];
-        VATNoText: Text[80];
-        ReferenceText: Text[80];
+        SalesPersonText: Text[50];
+        VATNoText: Text;
+        ReferenceText: Text;
         AppliedToText: Text;
         TotalText: Text[50];
         TotalExclVATText: Text[50];
@@ -854,20 +851,23 @@ report 13062752 "Sales - Credit Memo-Adl"
         NoOfLoops: Integer;
         CopyText: Text[30];
         ShowShippingAddr: Boolean;
-        DimText: Text[120];
-        OldDimText: Text[75];
+        DimText: Text;
+        OldDimText: Text;
         ShowInternalInfo: Boolean;
         Continue: Boolean;
         LogInteraction: Boolean;
         VALVATBaseLCY: Decimal;
         VALVATAmountLCY: Decimal;
-        Text008: Label 'VAT Amount Specification in ';
-        Text009: Label 'Local Currency';
-        Text010: Label 'Exchange rate: %1/%2';
+        AplyToLbl: Label '(Applies to %1 %2)';
+        DocNoLbl: Label 'Sales - Credit Memo %1', Comment = '%1 = Document No.';
+        PageCaptionLbl: Label 'Page %1 of %2';
+        VatAmtSpecLbl: Label 'VAT Amount Specification in ';
+        LocalCurrLbl: Label 'Local Currency';
+        ExchRateLbl: Label 'Exchange rate: %1/%2';
         VALSpecLCYHeader: Text[80];
-        VALExchRate: Text[50];
+        VALExchRate: Text;
         CalculatedExchRate: Decimal;
-        Text011: Label 'Sales - Prepmt. Credit Memo %1';
+        SalesPrepCrMemoLbl: Label 'Sales - Prepmt. Credit Memo %1';
         OutputNo: Integer;
         NNC_TotalLineAmount: Decimal;
         NNC_TotalAmountInclVat: Decimal;
@@ -892,7 +892,7 @@ report 13062752 "Sales - Credit Memo-Adl"
         InvDiscAmt_SalesCrMemoLineCptnLbl: Label 'Invoice Discount Amount';
         SubtotalCptnLbl: Label 'Subtotal';
         LineAmtInvDiscAmt_SalesCrMemoLineCptnLbl: Label 'Payment Discount on VAT';
-        VATClausesCap: Label 'VAT Clause';
+        VATClausesLbl: Label 'VAT Clause';
         LineDimCptnLbl: Label 'Line Dimensions';
         VATAmtSpecificationCptnLbl: Label 'VAT Amount Specification';
         VATAmtLineInvDiscBaseAmtCptnLbl: Label 'Invoice Discount Base Amount';
@@ -918,8 +918,8 @@ report 13062752 "Sales - Credit Memo-Adl"
     local procedure DocumentCaption(): Text[250]
     begin
         if "Sales Cr.Memo Header"."Prepayment Credit Memo" then
-            exit(Text011);
-        exit(Text005);
+            exit(SalesPrepCrMemoLbl);
+        exit(DocNoLbl);
     end;
 
     procedure InitializeRequest(NewNoOfCopies: Integer; NewShowInternalInfo: Boolean; NewLogInteraction: Boolean)
@@ -933,7 +933,7 @@ report 13062752 "Sales - Credit Memo-Adl"
     var
         MailManagement: Codeunit "Mail Management";
     begin
-        exit(CurrReport.Preview or MailManagement.IsHandlingGetEmailBody);
+        exit(CurrReport.Preview() or MailManagement.IsHandlingGetEmailBody());
     end;
 
     local procedure FormatAddressFields(var SalesCrMemoHeader: Record "Sales Cr.Memo Header")
@@ -949,12 +949,12 @@ report 13062752 "Sales - Credit Memo-Adl"
             FormatDocument.SetTotalLabels("Currency Code", TotalText, TotalInclVATText, TotalExclVATText);
             FormatDocument.SetSalesPerson(SalesPurchPerson, "Salesperson Code", SalesPersonText);
 
-            ReturnOrderNoText := FormatDocument.SetText("Return Order No." <> '', FieldCaption("Return Order No."));
-            ReferenceText := FormatDocument.SetText("Your Reference" <> '', FieldCaption("Your Reference"));
-            VATNoText := FormatDocument.SetText("VAT Registration No." <> '', FieldCaption("VAT Registration No."));
+            ReturnOrderNoText := FormatDocument.SetText("Return Order No." <> '', CopyStr(FieldCaption("Return Order No."), 1, 80));
+            ReferenceText := FormatDocument.SetText("Your Reference" <> '', CopyStr(FieldCaption("Your Reference"), 1, 80));
+            VATNoText := FormatDocument.SetText("VAT Registration No." <> '', CopyStr(FieldCaption("VAT Registration No."), 1, 80));
             AppliedToText :=
               FormatDocument.SetText(
-                "Applies-to Doc. No." <> '', Format(StrSubstNo(Text003, Format("Applies-to Doc. Type"), "Applies-to Doc. No.")));
+                "Applies-to Doc. No." <> '', Format(StrSubstNo(AplyToLbl, Format("Applies-to Doc. Type"), "Applies-to Doc. No.")));
         end;
     end;
 
