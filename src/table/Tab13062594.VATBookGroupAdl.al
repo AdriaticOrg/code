@@ -1,6 +1,5 @@
 table 13062594 "VAT Book Group-Adl"
 {
-
     Caption = 'VAT Book Group';
     DrillDownPageID = "VAT Book Groups-Adl";
     LookupPageID = "VAT Book Groups-Adl";

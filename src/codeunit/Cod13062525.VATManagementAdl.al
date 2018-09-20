@@ -40,6 +40,10 @@ codeunit 13062525 "VAT Management-Adl"
     local procedure OnBeforePostInvtPostBuf(var GenJournalLine: Record "Gen. Journal Line"; var InvtPostingBuffer: Record "Invt. Posting Buffer"; ValueEntry: Record "Value Entry"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        //<adl.7>
+        IF InvtPostingBuffer."Account Type" IN [InvtPostingBuffer."Account Type"::Inventory, InvtPostingBuffer."Account Type"::"Inventory (Interim)"] THEN
+            GenJournalLine.Correction := ManagePostponedVAT.UpdateCorrection(ValueEntry, GenJournalLine.Amount);
+        //</adl.7>
         //TODO: we must get values here!
         //GenJournalLine."VAT Bus. Posting Group" := InvtPostingBuffer.
     end;
@@ -364,8 +368,8 @@ codeunit 13062525 "VAT Management-Adl"
         GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line";
     begin
         VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group", VATEntry."VAT Prod. Posting Group");
-        PurchaseSetup.Get();
-        if (not PurchaseSetup."Use VAT Output Date-Adl") and (VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT") then exit;
+        VATSetup.Get();
+        if (not VATSetup."Use VAT Output Date-Adl") and (VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT") then exit;
         with GenJnlLine do begin
             Init();
             "Document No." := VATEntry."Document No.";
@@ -448,7 +452,7 @@ codeunit 13062525 "VAT Management-Adl"
 
     var
         CoreSetup: Record "CoreSetup-Adl";
-        PurchaseSetup: Record "Purchases & Payables Setup";
+        VATSetup: Record "VAT Setup-Adl";
         ADLCore: Codeunit "Adl Core-Adl";
         ManagePostponedVAT: Codeunit "Manage Postponed VAT-Adl";
         UpdVatDateQst: Label 'Do you want to change VAT Date';

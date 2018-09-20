@@ -53,6 +53,12 @@ tableextension 13062537 "Cust. Ledger Entry-Adl" extends "Cust. Ledger Entry" //
             TableRelation = "FAS Sector-Adl" where ("Type" = const (Posting));
         }
         // </adl.24>
+        // <adl.20>    
+        field(13062781; "Full Fisc. Doc. No.-Adl"; Code[20])
+        {
+            DataClassification = SystemMetadata;
+        }
+        // </adl.20> 
     }
     // <adl.24>
     procedure CopyFASFields(Customer: Record Customer)

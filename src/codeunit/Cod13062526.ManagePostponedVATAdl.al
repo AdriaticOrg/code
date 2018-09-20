@@ -13,17 +13,17 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     var
         VATPostingSetup: Record "VAT Posting Setup";
         GenJnlLine2: Record "Gen. Journal Line";
-        PurchaseSetup: Record "Purchases & Payables Setup";
+        VATSetup: Record "VAT Setup-Adl";
     begin
         if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
         if (not (GenJnlLine."Gen. Posting Type" in [GenJnlLine."Gen. Posting Type"::Purchase, GenJnlLine."Gen. Posting Type"::Sale])) or
             ((PostDate = VATDate) and (PostDate = VATOutputDate)) then
             exit;
         VATPostingSetup.GET(GenJnlLine."VAT Bus. Posting Group", GenJnlLine."VAT Prod. Posting Group");
-        PurchaseSetup.Get();
+        VATSetup.Get();
         CASE PostPonedVAT OF
             TRUE:
-                if (GenJnlLine."VAT Calculation Type" = GenJnlLine."VAT Calculation Type"::"Reverse Charge VAT") and PurchaseSetup."Use VAT Output Date-Adl" then begin
+                if (GenJnlLine."VAT Calculation Type" = GenJnlLine."VAT Calculation Type"::"Reverse Charge VAT") and VATSetup."Use VAT Output Date-Adl" then begin
                     VATPostingSetup."VAT Calculation Type" := VATPostingSetup."VAT Calculation Type"::"Normal VAT";
                     VATPostingSetup.MODIFY();
                     GenJnlLine."VAT Calculation Type" := GenJnlLine."VAT Calculation Type"::"Normal VAT";
@@ -91,7 +91,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
 
                         GenJnlPostLine.RunWithCheck(GenJnlLine);
                     end;
-                    if (InvoicePostBuffer."VAT Calculation Type" = InvoicePostBuffer."VAT Calculation Type"::"Reverse Charge VAT") and PurchaseSetup."Use VAT Output Date-Adl" then begin
+                    if (InvoicePostBuffer."VAT Calculation Type" = InvoicePostBuffer."VAT Calculation Type"::"Reverse Charge VAT") and VATSetup."Use VAT Output Date-Adl" then begin
                         VATPostingSetup."VAT Calculation Type" := VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT";
                         VATPostingSetup.Modify();
                     end;
@@ -99,6 +99,43 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         END;
     end;
     //</adl.10>
+    //<adl.7>
+    procedure UpdateCorrection(var ValueEntry: Record "Value Entry"; CostToPost: Decimal) Correction: Boolean
+    var
+        InvtSetup: Record "Inventory Setup";
+    begin
+        InvtSetup.Get();
+        WITH ValueEntry DO
+            CASE "Item Ledger Entry Type" OF
+                "Item Ledger Entry Type"::Purchase:
+                    Correction := CostToPost < 0;
+                "Item Ledger Entry Type"::Sale:
+                    Correction := CostToPost > 0;
+                "Item Ledger Entry Type"::"Positive Adjmt.":
+                    Correction := CostToPost < 0;
+                "Item Ledger Entry Type"::"Negative Adjmt.":
+                    Correction := CostToPost > 0;
+                "Item Ledger Entry Type"::Transfer:
+                    IF "Valued Quantity" > 0 THEN
+                        Correction := CostToPost < 0
+                    ELSE
+                        IF InvtSetup."Post Neg. Transfers as Corr.-Adl" THEN
+                            Correction := CostToPost < 0
+                        ELSE
+                            Correction := CostToPost > 0;
+                "Item Ledger Entry Type"::Consumption:
+                    Correction := CostToPost > 0;
+                "Item Ledger Entry Type"::Output:
+                    Correction := CostToPost < 0;
+                "Item Ledger Entry Type"::"Assembly Consumption":
+                    Correction := CostToPost > 0;
+                "Item Ledger Entry Type"::"Assembly Output":
+                    Correction := CostToPost < 0;
+                "Item Ledger Entry Type"::" ":
+                    Correction := CostToPost < 0;
+            END;
+    end;
+    //</adl.7>
     var
         CoreSetup: Record "CoreSetup-Adl";
         ADLCore: Codeunit "Adl Core-Adl";

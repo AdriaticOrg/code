@@ -1,5 +1,6 @@
 table 13062743 "Unpaid Receivables Setup-Adl"
 {
+    Caption = 'Unpaid Receivables Setup';
     DataClassification = SystemMetadata;
 
     fields

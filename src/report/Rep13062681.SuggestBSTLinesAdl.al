@@ -12,6 +12,7 @@ report 13062681 "Suggest BST Lines-Adl"
 
             trigger OnPreDataItem()
             begin
+                BSTRepLine.SetRange("Document No.", BSTRepHead."No.");
                 if DeleteExisting then begin
                     BSTRepLine.Reset();
                     BSTRepLine.SetRange("Document No.", BSTRepHead."No.");
@@ -24,6 +25,7 @@ report 13062681 "Suggest BST Lines-Adl"
 
             trigger OnAfterGetRecord()
             begin
+                BSTRepLine.SetRange("Document No.", BSTRepHead."No.");
                 BSTRepLine.SetRange("BST Code", "BST Code-Adl");
                 BSTRepLine.SetRange("Country/Region Code", "Country/Region Code-Adl");
                 if BSTRepLine.FindSet(true, false) then begin
@@ -82,14 +84,14 @@ report 13062681 "Suggest BST Lines-Adl"
         GLAcc.get(GLAccNo);
         case GLAcc."BST Value Posting-Adl" of
             GLAcc."BST Value Posting-Adl"::Credit:
-                BSTRepLine."Income Amount" += abs(Amt);
+                BSTRepLine."Income Amount" += (-Amt);
             GLAcc."BST Value Posting-Adl"::Debit:
-                BSTRepLine."Expense Amount" += abs(Amt);
+                BSTRepLine."Expense Amount" += Amt;
             GLAcc."BST Value Posting-Adl"::Both:
                 if Amt > 0 then
-                    BSTRepLine."Income Amount" += Amt
+                    BSTRepLine."Expense Amount" += Amt
                 else
-                    BSTRepLine."Expense Amount" += abs(Amt);
+                    BSTRepLine."Income Amount" += (-Amt);
         end;
     end;
 }

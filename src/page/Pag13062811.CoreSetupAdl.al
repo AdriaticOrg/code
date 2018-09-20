@@ -4,7 +4,7 @@ page 13062811 "Core Setup-Adl"
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "CoreSetup-Adl";
-    Caption = 'DEVELPMENT ONLY: Core Setup';
+    Caption = 'DEVELOPMENT ONLY: Core Setup';
 
     layout
     {

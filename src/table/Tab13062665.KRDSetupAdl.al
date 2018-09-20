@@ -1,5 +1,6 @@
 table 13062665 "KRD Setup-Adl"
 {
+    Caption = 'KRD Setup';
     DataClassification = SystemMetadata;
 
     fields

@@ -1,6 +1,5 @@
 table 13062582 "Goods Return Type-Adl"
 {
-
     Caption = 'Goods Return Type';
     DrillDownPageID = "Goods Return Types-Adl";
     LookupPageID = "Goods Return Types-Adl";

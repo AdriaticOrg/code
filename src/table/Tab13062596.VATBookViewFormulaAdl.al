@@ -1,6 +1,5 @@
 table 13062596 "VAT Book View Formula-Adl"
 {
-
     Caption = 'VAT Book View Line';
     DrillDownPageID = "VAT Book View Formula-Adl";
     LookupPageID = "VAT Book View Formula-Adl";

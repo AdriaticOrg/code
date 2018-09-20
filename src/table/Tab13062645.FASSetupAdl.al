@@ -1,5 +1,6 @@
 table 13062645 "FAS Setup-Adl"
 {
+    Caption = 'FAS Setup';
     DataClassification = SystemMetadata;
 
     fields
