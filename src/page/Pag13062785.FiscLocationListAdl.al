@@ -103,8 +103,6 @@ page 13062785 "Fisc. Location List-Adl"
     }
 
     var
-        FiscLocation: Record "Fiscalization Location-Adl";
-        FiscManagementSI: Codeunit "Fisc. Management-Adl";
         VisibleSI: boolean;
         VisibleHR: boolean;
 

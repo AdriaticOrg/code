@@ -348,16 +348,7 @@ report 13062594 "Input VAT Book-Adl 2-Adl"
         DialogTitle: Text;
         PadCharacter: Text[1];
         FieldDelimiter: Text[1];
-        Type: Text[3];
-        BalanceAtDate: Decimal;
         DummyText: Text;
-        BalanceYear: Integer;
-        ClosingYear: Integer;
         DateFilter: Text;
-        AccountNoLbl: Label 'Account';
-        NameLbl: Label 'Account Name';
-        PostingDateLbl: Label 'Post.Date';
-        DocumentDateLbl: Label 'Doc.Date';
-        DocumentNoLbl: Label 'Document No.';
 }
 

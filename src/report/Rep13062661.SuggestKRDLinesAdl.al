@@ -76,7 +76,6 @@ report 13062661 "Suggest KRD Lines-Adl"
     var
         KRDRepHead: Record "KRD Report Header-Adl";
         KRDSetup: Record "KRD Setup-Adl";
-        GenLedgSetup: Record "General Ledger Setup";
         DeleteExisting: Boolean;
         KRDRepDocNo: Code[20];
         InitialRep: Boolean;
