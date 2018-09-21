@@ -101,24 +101,5 @@ page 13062785 "Fisc. Location List-Adl"
             }
         }
     }
-
-    var
-        VisibleSI: boolean;
-        VisibleHR: boolean;
-
-    trigger OnInit()
-    var
-        FiscalizationSetup: Record "Fiscalization Setup-Adl";
-    begin
-        FiscalizationSetup.GET();
-        CASE TRUE OF
-            // SI
-            FiscalizationSetup.CountryCodeSI:
-                VisibleSI := TRUE;
-            // HR
-            FiscalizationSetup.CountryCodeHR:
-                VisibleHR := TRUE;
-        END;
-    end;
     // </adl.20>
 }
