@@ -194,6 +194,8 @@ report 13062642 "Export FAS-Adl"
         WarningStr: Text;
         FASTypeNum: Integer;
         Amt: Decimal;
+        HaveValue: Boolean;
+        TmpValue: Decimal;
 
     begin
         FASRepHead.TestField("Period Year");
@@ -271,6 +273,10 @@ report 13062642 "Export FAS-Adl"
                             end;
 
                             Values[currAOP] [i] += Amt;
+
+                            HaveValue := false;
+                            if Amt <> 0 then
+                                HaveValue := true;
 
                             IF (curraop >= 100) AND (curraop < 299) AND (FASRepLine.Amount < 0) THEN
                                 WarningStr += StrSubstNo(AmountMiustBePositiveMsg, currAOP, i, FASRepLine.Amount, FASRepLine.GETFILTERS());
@@ -394,6 +400,11 @@ report 13062642 "Export FAS-Adl"
                 XmlElem[4].Add(XmlAttr);
 
                 for k := 1 to 22 do begin
+                    HaveValue := false;
+                    TmpValue := Values[aop] [k];
+                    if TmpValue <> 0 then
+                        HaveValue := true;
+
                     XmlElem[5] := XmlElement.Create('P');
                     XmlElem[5].Add((XmlText.Create(FORMAT(Values[aop] [k], 0, '<Precision,2:2><Standard Format,9>'))));
                     XmlElem[4].Add(XmlElem[5]);
