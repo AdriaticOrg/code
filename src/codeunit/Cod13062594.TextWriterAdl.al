@@ -71,13 +71,7 @@ codeunit 13062594 "TextWriter-Adl"
         TmpBlobTemp := TmpBlobTemp2;
     end;
 
-
     var
         TmpBlobTemp: Record TempBlob temporary;
-        FileMgt: Codeunit "File Management";
         StringConversionManagement: Codeunit StringConversionManagement;
-        IsDownloadedsucceed: Boolean;
-        Msg: Label 'File %1 was succesfully prepared.';
-        FieldDelimiter: Text[1];
-
 }

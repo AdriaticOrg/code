@@ -31,14 +31,14 @@ table 13062743 "Unpaid Receivables Setup-Adl"
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
-        CoreSetup.EnableFeature(CoreSetup."ADL Features"::VIES);
+        CoreSetup.EnableFeature(CoreSetup."ADL Features"::UnpaidReceivables);
     end;
 
     trigger OnDelete()
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
-        CoreSetup.DisableFeature(CoreSetup."ADL Features"::VIES);
+        CoreSetup.DisableFeature(CoreSetup."ADL Features"::UnpaidReceivables);
     end;
 
     trigger OnModify()

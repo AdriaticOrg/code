@@ -136,8 +136,6 @@ report 13062591 "VAT Book-Adl"
         VATEntry: Record "VAT Entry";
         VATBook: Record "VAT Book-Adl";
         CompInfo: Record "Company Information";
-        Customer: Record Customer;
-        Vendor: Record Vendor;
         VATBookCalc: Codeunit "VAT Book Calculation-Adl";
         ColumnAmt: Decimal;
         VATRegNo: Text[20];
@@ -151,6 +149,9 @@ report 13062591 "VAT Book-Adl"
     end;
 
     local procedure GetCustVendInfo();
+    var
+        Customer: Record Customer;
+        Vendor: Record Vendor;
     begin
         VendCustName := '';
         VATRegNo := '';

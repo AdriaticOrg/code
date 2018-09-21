@@ -640,8 +640,6 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
         TempOverdueandUncollectedBuffer: Record "Overdue and Uncol. Buffer-Adl" temporary;
         CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-Adl";
         TmpBlobTemp: Record "TempBlob" temporary;
-        FileMgt: Codeunit "File Management";
-        TextWriter: Codeunit "TextWriter-Adl";
         ExportFile: OutStream;
         CustomerVATType: Text;
         CustomerVATTypeInteger: Integer;
@@ -687,17 +685,12 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
         TextHeaderVLbl: Label '"V. Created by (first name and last name): "';
         TextHeaderVILbl: Label 'VI. Signature:';
         ExportToXML: Boolean;
-        ServerFile: Text;
-        TextError001Lbl: Label 'Error creating file on server.';
         LocalGUID: Text;
-        InvoiceExportFile: File;
         CustomerTotal5: Decimal;
         CustomerTotal6: Decimal;
         CustomerTotal7: Decimal;
         CustomerTotal8: Decimal;
         CustomerTotal9: Decimal;
-        FileLength: Integer;
-        FileLineString: Text;
         Total5: Decimal;
         Total6: Decimal;
         Total7: Decimal;
@@ -709,8 +702,6 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
         Text007Lbl: Label 'Export to XML File';
         Text008Lbl: Label 'XML Files (*.xml)|*.xml|All Files (*.*)|*.*';
         FileName: Text;
-        Text009Lbl: Label 'File is saved on:';
-        Text010Lbl: Label '%1 %2';
         Text011Lbl: Label 'Original Invoice Amount (LCY) for Customer Ledger Entry No. %1 cannot be 0 or less.';
         DocumentDate: Date;
         TempBufferLineNo: Integer;

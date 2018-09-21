@@ -10,7 +10,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
-                ToolTip = 'TODO: Tooltip - VAT Date';
+                ToolTip = 'Specifies which date is used for posting VAT';
             }
             // </adl.6>
             // <adl.10>
@@ -19,7 +19,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
-                ToolTip = 'TODO: Tooltip - Postponed VAT';
+                ToolTip = 'Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.';
             }
             // </adl.10>            
         }
@@ -78,7 +78,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
             {
                 Caption = 'Post postponed VAT';
                 ApplicationArea = All;
-                ToolTip = 'TODO: Tooltip - Postponed VAT';
+                ToolTip = 'Posts Postponed VAT on specified date.';
                 Visible = VATFeatureEnabled;
                 Image = "ReverseRegister";
                 trigger OnAction()
@@ -98,7 +98,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
             {
                 Caption = 'Correct postponed VAT';
                 ApplicationArea = All;
-                ToolTip = 'TODO: Tooltip - Postponed VAT';
+                ToolTip = 'Corrects Postponed VAT on specified date.';
                 Visible = VATFeatureEnabled;
                 Image = "ReverseRegister";
                 trigger OnAction()

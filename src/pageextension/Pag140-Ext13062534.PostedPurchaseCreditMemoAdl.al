@@ -10,14 +10,14 @@ pageextension 13062534 "PostedPurchaseCreditMemo-Adl" extends "Posted Purchase C
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
-                ToolTip = 'TODO: Tooltip - VAT Date';
+                ToolTip = 'Specifies which date is used for posting VAT.';
             }
             field("VAT Output Date-Adl"; "VAT Output Date-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
-                ToolTip = 'TODO: Tooltip - VAT Date';
+                ToolTip = 'Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.';
             }
             // <adl.10>
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
@@ -25,7 +25,7 @@ pageextension 13062534 "PostedPurchaseCreditMemo-Adl" extends "Posted Purchase C
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
-                ToolTip = 'TODO: Tooltip - Postponed VAT';
+                ToolTip = 'Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.';
             }
             // <adl.10>
         }
@@ -51,7 +51,7 @@ pageextension 13062534 "PostedPurchaseCreditMemo-Adl" extends "Posted Purchase C
             {
                 Caption = 'Post postponed VAT';
                 ApplicationArea = All;
-                ToolTip = 'TODO: Tooltip - Postponed VAT';
+                ToolTip = 'Posts Postponed VAT on specified date.';
                 Visible = VATFeatureEnabled;
                 Image = "ReverseRegister";
                 trigger OnAction()
@@ -71,7 +71,7 @@ pageextension 13062534 "PostedPurchaseCreditMemo-Adl" extends "Posted Purchase C
             {
                 Caption = 'Correct postponed VAT';
                 ApplicationArea = All;
-                ToolTip = 'TODO: Tooltip - Postponed VAT';
+                ToolTip = 'Corrects Postponed VAT on specified date.';
                 Visible = VATFeatureEnabled;
                 Image = "ReverseRegister";
                 trigger OnAction()
@@ -91,7 +91,7 @@ pageextension 13062534 "PostedPurchaseCreditMemo-Adl" extends "Posted Purchase C
             {
                 Caption = 'Post VAT Output Date';
                 ApplicationArea = All;
-                ToolTip = 'TODO: Tooltip - Postponed VAT';
+                ToolTip = 'Posts VAT Output on specified date.';
                 Visible = VATFeatureEnabled;
                 Image = "ReverseRegister";
                 trigger OnAction()
@@ -111,7 +111,7 @@ pageextension 13062534 "PostedPurchaseCreditMemo-Adl" extends "Posted Purchase C
             {
                 Caption = 'Correct VAT Output Date';
                 ApplicationArea = All;
-                ToolTip = 'TODO: Tooltip - Postponed VAT';
+                ToolTip = 'Corrects VAT Output on specified date.';
                 Visible = VATFeatureEnabled;
                 Image = "ReverseRegister";
                 trigger OnAction()

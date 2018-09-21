@@ -13627,8 +13627,8 @@ End Function
         <Field Name="VATClauseAmountFormat">
           <DataField>VATClauseAmountFormat</DataField>
         </Field>
-        <Field Name="VATClausesCaption">
-          <DataField>VATClausesCaption</DataField>
+        <Field Name="VATClausesLbltion">
+          <DataField>VATClausesLbltion</DataField>
         </Field>
         <Field Name="VATClauseVATIdentifierCaption">
           <DataField>VATClauseVATIdentifierCaption</DataField>

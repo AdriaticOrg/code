@@ -36,7 +36,7 @@ pageextension 13062537 "VAT Posting Setup Card-Adl" extends "VAT Posting Setup C
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Full VAT Posting';
+                ToolTip = 'Specifies percent for VAT Retrograde posting.';
             }
             // </adl.11>
         }

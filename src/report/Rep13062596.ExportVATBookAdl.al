@@ -133,22 +133,16 @@ report 13062596 "Export VAT Book-Adl"
     }
     var
         VATEntry: Record "VAT Entry";
-        Customer: Record Customer;
-        Vendor: Record Vendor;
         VATBookGrp: Record "VAT Book Group-Adl";
         VATBookCalc: Codeunit "VAT Book Calculation-Adl";
         TextWriterAdl: Codeunit "TextWriter-Adl";
         VATBookCode: Code[20];
         Result: Decimal;
-        ResultTxt: Text;
         VATRegNo: Text[20];
         VendCustName: Text;
-        ColumnNo: Integer;
-        NotFoundDetails: Boolean;
         VATBookColumnNo: array[100] of Integer;
         VATBookColumnLengt: array[100] of integer;
         OutStr: OutStream;
-        OutStrColumn: OutStream;
         PadCharacter: Text[1];
         FieldDelimiter: Text[1];
         DummyText: Text;
@@ -164,7 +158,6 @@ report 13062596 "Export VAT Book-Adl"
         VendCustomLbl: Label 'Firm / Name and place of supplier';
         VATRegistrationNoLbl: Label 'VAT Registration No.';
         ListResut: List of [Decimal];
-        ResultArr: array[100] of Decimal;
 
     trigger OnPreReport();
     begin

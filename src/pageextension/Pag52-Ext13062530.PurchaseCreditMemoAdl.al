@@ -9,13 +9,13 @@ pageextension 13062530 "Purchase Credit Memo-Adl" extends "Purchase Credit Memo"
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - VAT Date';
+                ToolTip = 'Specifies which date is used for posting VAT.';
             }
             field("VAT Output Date-Adl"; "VAT Output Date-Adl")
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - VAT Date';
+                ToolTip = 'Specifies which date is used for posting VAT, when is used Reverse VAT Postiong Setup.';
             }
             // <adl.10>
             field("Postponed VAT-Adl"; "Postponed VAT-Adl")
@@ -23,7 +23,7 @@ pageextension 13062530 "Purchase Credit Memo-Adl" extends "Purchase Credit Memo"
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
-                ToolTip = 'TODO: Tooltip - Postponed VAT';
+                ToolTip = 'Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.';
             }
             // </adl.10>
         }

@@ -8,7 +8,7 @@ pageextension 13062561 "Inventory Setup-Adl" extends "Inventory Setup" //461
             {
                 ApplicationArea = All;
                 Visible = RedReversalEnable;
-                ToolTip = 'TODO: Tooltip - VAT Date';
+                ToolTip = 'Specifies if negative transfers are posted as correction.';
             }
         }
     }

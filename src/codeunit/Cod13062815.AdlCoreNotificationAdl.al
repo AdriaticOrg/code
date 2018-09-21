@@ -1,7 +1,6 @@
 codeunit 13062815 "Adl Core Notification-Adl"
 {
     var
-        MyNotifications: Record "My Notifications";
         MyNotification: Notification;
 
     procedure ShowSetupNotification();

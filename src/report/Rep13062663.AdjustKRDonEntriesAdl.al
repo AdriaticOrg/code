@@ -81,7 +81,6 @@ report 13062663 "Adjust KRD on Entries-Adl"
     }
 
     var
-        GLAcc: Record "G/L Account";
         KRDSetup: Record "KRD Setup-Adl";
         ConfrimMsg: Label 'Are you sure you want to update entries based on values in master tables?';
         FinishMsg: Label 'Processing finished.';

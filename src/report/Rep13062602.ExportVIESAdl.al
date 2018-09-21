@@ -130,9 +130,6 @@ report 13062602 "Export VIES-Adl"
         PrepairedByUser: Record "User Setup";
         ResponsibleUser: Record "User Setup";
         ExpFile: Boolean;
-        IsTotaling: Boolean;
-        IsBold: Boolean;
-        HideZeros: Boolean;
         SalesGoods: Decimal;
         SalesSvcs: Decimal;
         Sales3Pty: Decimal;

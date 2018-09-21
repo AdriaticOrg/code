@@ -10,7 +10,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
-                ToolTip = 'TODO: Tooltip - Postponed VAT';
+                ToolTip = 'Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.';
             }
             // <adl.22> 
             field("VAT Correction Date-Adl"; "VAT Correction Date-Adl")
@@ -52,7 +52,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
-                ToolTip = 'TODO: Tooltip - Full VAT Posting';
+                ToolTip = 'Specifies percent for VAT Retrograde posting.';
             }
             // </adl.10>
             // <adl.10>
@@ -61,7 +61,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 // Editable = false;
-                ToolTip = 'TODO: Tooltip - Full VAT Posting';
+                ToolTip = 'Specifies base for VAT Retrograde posting.';
             }
             // </adl.10>
         }
