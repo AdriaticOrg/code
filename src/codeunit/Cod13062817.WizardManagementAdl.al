@@ -1,24 +1,32 @@
 codeunit 13062817 "Wizard Management-Adl"
 {
-    trigger OnRun()
-    begin
-        Message(ReadFromHttp(''));
-    end;
-
     procedure ReadFromHttp(url: Text): Text
     var
-        httpCli: HttpClient;
+        TempBlob: Record TempBlob temporary;
         httpResponse: HttpResponseMessage;
-        ResponseString: text;
+        httpCli: HttpClient;
+        InputStr: InStream;
+        OutputStream: OutStream;
+        index: Integer;
     begin
+        If url = '' then
+            ShowError();
+
         if (not httpCli.Get(url, httpResponse)) then
-            Error('Failed to contact the address endpoint.');
+            Error(Text001Err);
 
         if (not httpResponse.IsSuccessStatusCode()) then
-            Error('Failed to read response.');
+            Error(Text001Err);
 
-        httpResponse.Content().ReadAs(ResponseString);
-        exit(ResponseString);
+        httpResponse.Content().ReadAs(InputStr);
+        TempBlob.Blob.CreateOutStream(OutputStream);
+
+        index := url.LASTINDEXOF('/');
+        if index = 0 then
+            ShowError();
+
+        FileName := CopyStr(url, index + 1, StrLen(Url));
+        DownloadFromStream(InputStr, 'Save rapid start file', '', 'Rapidstart Files(*.rapidstart)|*rapidstart', FileName);
     end;
 
     procedure ReadFromHttp(ConfigSetup: record "Config. Setup"; PackageType: Option "Basic","Master")
@@ -62,8 +70,15 @@ codeunit 13062817 "Wizard Management-Adl"
 
         httpResponse.Content().ReadAs(InputStr);
         TempBlob.Blob.CreateOutStream(OutputStream);
-        FileName := PackageName + '.rapidstart';
+
+        //FileName :=  '.rapidstart';
         DownloadFromStream(InputStr, 'Save rapid start file', '', 'Rapidstart Files(*.rapidstart)|*rapidstart', FileName);
+    end;
+
+    local procedure ShowError()
+    begin
+        Message(MissingUrlErr);
+        Error('');
     end;
 
     procedure LoadConfigurationPackages(var TempBlob: Record TempBlob)
@@ -146,4 +161,7 @@ codeunit 13062817 "Wizard Management-Adl"
         HttpReadResponseErr: Label 'Failed to read response.';
         PackageIsBeingDownloadedTxt: Label 'Downloading rapidstart from web...';
         PackageMissingErr: Label 'There is no package available for download for selected country.';
+        Text001Err: Label 'Failed to contact the address endpoint.';
+        MissingUrlErr: Label 'Please enter valid url address';
+
 }

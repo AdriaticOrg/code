@@ -296,7 +296,7 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
         CoreEnabled: Boolean;
     begin
         if not VATSetup.get() then
-            VATSetup.Insert(true);
+            CoreEnabled := VATSetup.Insert(true);
         VATSetup."Use VAT Output Date-Adl" := "Use VAT Output Date-Adl";
         VATSetup.Modify();
 
@@ -345,23 +345,31 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
         BSTSetup."BST Resp. User ID" := "BST Resp. User ID-Adl";
         BSTSetup.Modify();
 
-        if not UnpaidRecSetup.get() then
-            CoreEnabled := UnpaidRecSetup.Insert(true);
-        UnpaidRecSetup."Ext. Data Start Bal. Date-Adl" := "UP Ext. Data Start Bal. Date-Adl";
-        UnpaidRecSetup.Modify();
+        If "UP Ext. Data Start Bal. Date-Adl" <> 0D then begin
+            if not UnpaidRecSetup.get() then
+                CoreEnabled := UnpaidRecSetup.Insert(true);
+            UnpaidRecSetup."Ext. Data Start Bal. Date-Adl" := "UP Ext. Data Start Bal. Date-Adl";
+            UnpaidRecSetup.Modify();
+        end;
 
-        if not FiscalSetup.get() then
-            CoreEnabled := FiscalSetup.Insert(true);
-        FiscalSetup.Active := "Fiscal. Active-Adl";
-        FiscalSetup."Default Fiscalization Location" := "Fiscal. Default Fiscalization Location-Adl";
-        FiscalSetup."Default Fiscalization Terminal" := "Fiscal. Default Fiscalization Terminal-Adl";
-        FiscalSetup."Start Date" := "Fiscal. Start Date-Adl";
-        FiscalSetup."End Date" := "Fiscal. End Date-Adl";
-        FiscalSetup.Modify();
+        if "Fiscal. Active-Adl" then begin
+            if not FiscalSetup.get() then
+                CoreEnabled := FiscalSetup.Insert(true);
+            FiscalSetup.Active := "Fiscal. Active-Adl";
+            FiscalSetup."Default Fiscalization Location" := "Fiscal. Default Fiscalization Location-Adl";
+            FiscalSetup."Default Fiscalization Terminal" := "Fiscal. Default Fiscalization Terminal-Adl";
+            FiscalSetup."Start Date" := "Fiscal. Start Date-Adl";
+            FiscalSetup."End Date" := "Fiscal. End Date-Adl";
+            FiscalSetup.Modify();
+        end;
 
-        if not CoreEnabled then
-            If "ADL Enabled-Adl" then
-                CoreSetup."ADL Enabled" := "ADL Enabled-Adl";
+        If "ADL Enabled-Adl" and not CoreEnabled then begin
+            If not CoreSetup.Get() then
+                CoreSetup.Insert();
+            CoreSetup."ADL Enabled" := "ADL Enabled-Adl";
+            CoreSetup.Modify();
+        end;
+
         Commit();
     end;
 }

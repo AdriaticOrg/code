@@ -125,7 +125,6 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                         end;
                     }
                 }
-
                 group(Important)
                 {
                     Caption = 'Important';
@@ -159,31 +158,52 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                 group(VAT)
                 {
                     Caption = 'VAT';
+                    Visible = NextEnabled;
+
                     field("Use VAT Output Date-Adl"; "Use VAT Output Date-Adl")
                     {
-                        Visible = "ADL Enabled-Adl";
+                        Visible = NextEnabled;
                         ApplicationArea = All;
                         ToolTip = 'Specifies use of VAT output date';
                     }
                 }
 
-                group(ForceDebitCredit)
+                group(GLSetup)
                 {
-                    Caption = 'Force Debit/Credit';
+                    Caption = 'G/L Setup - Force Debit/Credit';
+                    Visible = NextEnabled;
+
                     field("Forced Credit/Debit Enabled-Adl"; "Forced Credit/Debit Enabled-Adl")
                     {
-                        Visible = "ADL Enabled-Adl";
+                        Visible = NextEnabled;
                         ApplicationArea = All;
                         ToolTip = 'Specifies use of force debit/credit';
                     }
                 }
+
+                group(SalesAndRec)
+                {
+                    Caption = 'Sales & receivables Setup - Unpaid Receivables';
+                    visible = NextEnabled;
+                    field("UP Ext. Data Start Bal. Date-Adl"; "UP Ext. Data Start Bal. Date-Adl")
+                    {
+                        Visible = NextEnabled;
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies use of ext. data start bal. date';
+
+                        trigger OnValidate()
+                        var
+                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
+                        begin
+                            if ("UP Ext. Data Start Bal. Date-Adl" <> 0D) and (ApplicatonAreaMgmtAdl.IsUnpaidReceivablesApplicationAreaEnabled()) then
+                                exit
+                            else
+                                ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(true);
+                        end;
+                    }
+                }
             }
-            /* group(General)
-            {
-                ShowCaption = false;
-                Visible = GeneralDetailsVisible;
-         
-            } */
+
             group(stepVIES)
             {
                 ShowCaption = false;
@@ -389,39 +409,6 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     }
                 }
             }
-            /*       group(VAT)
-                  {
-                      Caption = 'VAT';
-                      field("VAT Enabled"; "VAT Enabled-Adl")
-                      {
-                          ApplicationArea = All;
-
-                          trigger OnValidate()
-                          var
-                              ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
-                          begin
-                              ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
-                          end;
-                      }
-                      field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled-Adl")
-                      {
-                          ApplicationArea = All;
-
-                          trigger OnValidate()
-                          var
-                              ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
-                          begin
-                              if ("Unpaid Receivables Enabled-Adl") and (ApplicatonAreaMgmtAdl.IsUnpaidReceivablesApplicationAreaEnabled()) then
-                                  exit
-                              else
-                                  ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(true);
-
-                              if not ("Unpaid Receivables Enabled-Adl") then
-                                  ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(false);
-                          end;
-                      }
-
-                  } */
 
             group(Step3)
             {
@@ -443,33 +430,28 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     {
                         ApplicationArea = All;
                         ToolTip = 'Enter address';
-
                     }
                     field("Address 2"; "Address 2")
                     {
                         ApplicationArea = Advanced;
                         Visible = false;
                         ToolTip = 'Enter address 2';
-
                     }
                     field("Post Code"; "Post Code")
                     {
                         ApplicationArea = All;
                         ToolTip = 'Enter post code';
-
                     }
                     field(City; City)
                     {
                         ApplicationArea = All;
                         ToolTip = 'Enter city';
-
                     }
                     field("Country/Region Code"; "Country/Region Code")
                     {
                         ApplicationArea = All;
                         TableRelation = "Country/Region".Code;
                         ToolTip = 'Enter country';
-
                     }
                     field("VAT Registration No."; "VAT Registration No.")
                     {
@@ -616,24 +598,33 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     Caption = 'Rapidstart data import';
                     InstructionalText = 'Here you can choose package data to import';
 
-                    field(PackageDownloadBasicLbl; PackageDownloadBasicLbl)
+                    field(PackageUrl; PackageUrl)
                     {
+                        Caption = 'Package url address';
+                        ToolTip = 'Enter valid package url address';
                         ApplicationArea = All;
-                        ShowCaption = false;
-
-                        trigger OnDrillDown()
-                        begin
-                            StartConfigPackageImport(0); //Basic setup
-                        end;
                     }
-                    field(PackageDownloadMasterLbl; PackageDownloadMasterLbl)
+
+                    /*  field(PackageDownloadBasicLbl; PackageDownloadBasicLbl)
+                     {
+                         ApplicationArea = All;
+                         ShowCaption = false;
+
+                         trigger OnDrillDown()
+                         begin
+                             StartConfigPackageImport(PackageUrl); //Basic setup
+                         end;
+                     } */
+
+                    field(PackageDownloadLbl; PackageDownloadLbl)
                     {
                         ApplicationArea = All;
                         ShowCaption = false;
+                        ToolTip = 'Click here to download rapidstart package';
 
                         trigger OnDrillDown()
                         begin
-                            StartConfigPackageImport(1); //Master data
+                            StartConfigPackageImport(PackageUrl); //Master data
                         end;
                     }
 
@@ -798,10 +789,13 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
     end;
 
     trigger OnOpenPage()
+    var
+        ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
     begin
         ResetWizardControls();
         ShowIntroStep();
         TypeSelectionEnabled := PackageImported();
+        ApplicatonAreaMgmtAdl.EnableDisableAdlCoreApplicationArea();
     end;
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean
@@ -845,7 +839,6 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         CommunicationDetailsVisible: Boolean;
         PaymentDetailsVisible: Boolean;
         CoreSetupDetailsVisible: Boolean;
-        //GeneralDetailsVisible: Boolean;
         FiscalDetailsVisible: Boolean;
         BSTDetailsVisible: Boolean;
         KRDDetailsVisible: Boolean;
@@ -859,7 +852,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         NotSetUpQst: Label 'The application has not been set up. Setup could be run again from role center notification.\\Are you sure that you want to exit?';
         NoSetupTypeSelectedQst: Label 'You have not selected any setup type. If you proceed, the application will not be fully functional, until you set it up manually.\\Do you want to continue?';
         HelpLbl: Label 'Learn more about setting up your company';
-        HelpLinkTxt: Label 'http://go.microsoft.com/fwlink/?LinkId=746160', Locked = true;
+        HelpLinkTxt: Label 'https://adriaticorg.github.io/help', Locked = true;
         BankStatementConfirmationVisible: Boolean;
         BankAccountInformationUpdated: Boolean;
         SelectBankAccountVisible: Boolean;
@@ -867,7 +860,6 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         ShowBankAccountCreationWarning: Boolean;
         InvalidPhoneNumberErr: Label 'The phone number is invalid.';
         CostMethodeLbl: Label 'Learn more';
-        CostMethodUrlTxt: Label 'https://go.microsoft.com/fwlink/?linkid=858295', Locked = true;
         PrivacyNoticeTxt: Label 'Privacy Notice';
         AgreePrivacy: Boolean;
         PrivacyNoticeUrlTxt: Label 'https://privacy.microsoft.com/en-us/privacystatement#mainnoticetoendusersmodule', Locked = true;
@@ -876,8 +868,10 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         PackageIsAlreadyAppliedErr: Label 'A package has already been selected and applied.';
         SelectPackageAndApplyTxt: Label 'Select a package to run the Apply Package function.';
         PackageFileName: Text;
+        PackageUrl: Text;
         PackageDownloadBasicLbl: Label 'Click here to download BASIC DATA package';
         PackageDownloadMasterLbl: Label 'Click here to download MASTER DATA package';
+        PackageDownloadLbl: Label 'Download package';
 
     local procedure NextStep(Backwards: Boolean)
     begin
@@ -999,11 +993,6 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
             BackEnabled := false;
     end;
 
-    /*  local procedure ShowGeneralSetupDetailsStep()
-     begin
-         GeneralDetailsVisible := true;
-     end; */
-
     local procedure ShowVIESSetupDetailsStep()
     begin
         VIESDetailsVisible := true;
@@ -1075,7 +1064,6 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
 
         IntroVisible := false;
         SelectTypeVisible := false;
-        //GeneralDetailsVisible := false;
         FiscalDetailsVisible := false;
         BSTDetailsVisible := false;
         KRDDetailsVisible := false;
@@ -1190,7 +1178,6 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         if CoreSetup."Forced Credit/Debit Enabled" then
             "Forced Credit/Debit Enabled-Adl" := CoreSetup."Forced Credit/Debit Enabled";
 
-        //TODO:: add also to core
         if FiscalSetup.get() then;
         "Fiscal. Active-Adl" := FiscalSetup.Active;
         "Fiscal. Default Fiscalization Location-Adl" := FiscalSetup."Default Fiscalization Location";
@@ -1199,7 +1186,16 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         "Fiscal. End Date-Adl" := FiscalSetup."End Date";
     end;
 
-    local procedure StartConfigPackageImport(PackageType: Option "Basic","Master")
+    local procedure StartConfigPackageImport(Url: Text)
+    begin
+        if not TypeSelectionEnabled then
+            exit;
+        CalcCompanyData();
+        if CompanyData in [CompanyData::"Extended Data"] then
+            WizardMgmt.ReadFromHttp(Url);
+    end;
+
+    local procedure StartConfigPackage(PackageType: Option "Basic","Master")
     begin
         if not TypeSelectionEnabled then
             exit;
@@ -1210,7 +1206,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
 
     local procedure PackageImported(): Boolean
     begin
-        //TODO:: Additional checks
+
         exit(true);
     end;
 

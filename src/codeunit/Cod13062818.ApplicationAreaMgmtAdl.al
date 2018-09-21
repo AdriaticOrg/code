@@ -36,7 +36,7 @@ codeunit 13062818 "Application Area Mgmt-Adl"
             exit(ApplicationAreaSetup."Adl KRD");
     end;
 
-    procedure EnableAdlCoreApplicationArea()
+    procedure EnableDisableAdlCoreApplicationArea()
     var
         CoreSetup: Record "CoreSetup-Adl";
         ApplicationAreaSetup: Record "Application Area Setup";
@@ -47,8 +47,6 @@ codeunit 13062818 "Application Area Mgmt-Adl"
         if not ExperienceTierSetup.Custom then             //Set this to Custom in Isnall CU
             exit;
         if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then begin
-            If not CoreSetup."ADL Enabled" then exit;
-
             if CoreSetup."Unpaid Receivables Enabled" then
                 ApplicationAreaSetup."Adl Unpaid Receivables" := true
             else
@@ -91,6 +89,7 @@ codeunit 13062818 "Application Area Mgmt-Adl"
 
             ApplicationAreaSetup.Modify();
             ApplicationAreaMgmtFacade.SetupApplicationArea();
+            ApplicationAreaMgmtFacade.SaveExperienceTierCurrentCompany(ExperienceTierSetup.FieldCaption(Custom));
         end;
     end;
 
@@ -227,14 +226,40 @@ codeunit 13062818 "Application Area Mgmt-Adl"
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Application Area Mgmt. Facade", 'OnSetExperienceTier', '', false, false)]
     local procedure EnableADLCoreAppAreaOnSetExperienceTier(ExperienceTierSetup: record 9176; var TempApplicationAreaSetup: record 9178 temporary; var ApplicationAreasSet: boolean)
+    var
+        CoreSetup: Record "CoreSetup-Adl";
     begin
-        TempApplicationAreaSetup."Adl BST" := true;
-        TempApplicationAreaSetup."Adl KRD" := true;
-        TempApplicationAreaSetup."Adl FAS" := true;
-        TempApplicationAreaSetup."Adl PDO" := true;
-        TempApplicationAreaSetup."Adl Forced CreditDebit" := true;
-        TempApplicationAreaSetup."Adl Unpaid Receivables" := true;
-        TempApplicationAreaSetup."Adl VAT" := true;
-        TempApplicationAreaSetup."Adl VIES" := true;
+        if CoreSetup."BST Enabled" then
+            TempApplicationAreaSetup."Adl BST" := true
+        else
+            TempApplicationAreaSetup."Adl BST" := false;
+        if CoreSetup."KRD Enabled" then
+            TempApplicationAreaSetup."Adl KRD" := true
+        else
+            TempApplicationAreaSetup."Adl KRD" := false;
+        if CoreSetup."FAS Enabled" then
+            TempApplicationAreaSetup."Adl FAS" := true
+        else
+            TempApplicationAreaSetup."Adl fas" := false;
+        if CoreSetup."PDO Enabled" then
+            TempApplicationAreaSetup."Adl PDO" := true
+        else
+            TempApplicationAreaSetup."Adl pdo" := false;
+        if CoreSetup."Forced Credit/Debit Enabled" then
+            TempApplicationAreaSetup."Adl Forced CreditDebit" := true
+        else
+            TempApplicationAreaSetup."Adl Forced CreditDebit" := false;
+        if CoreSetup."Unpaid Receivables Enabled" then
+            TempApplicationAreaSetup."Adl Unpaid Receivables" := true
+        else
+            TempApplicationAreaSetup."Adl Unpaid Receivables" := false;
+        if CoreSetup."VAT Enabled" then
+            TempApplicationAreaSetup."Adl VAT" := true
+        else
+            TempApplicationAreaSetup."Adl VAT" := false;
+        if CoreSetup."VIES Enabled" then
+            TempApplicationAreaSetup."Adl VIES" := true
+        else
+            TempApplicationAreaSetup."Adl VIES" := false;
     end;
 }
