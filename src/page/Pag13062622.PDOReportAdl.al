@@ -120,7 +120,7 @@ page 13062622 "PDO Report-Adl"
                     VATEntry.SetRange("Posting Date", "Period Start Date", "Period End Date");
 
                     if PDOSetup.Get() and (PDOSetup."PDO VAT Ident. Filter Code" <> '') then
-                        VATEntry.Setfilter("VAT Identifier-Adl", PDOSetup."PDO VAT Ident. Filter Code");
+                        VATEntry.SetFilter("VAT Identifier-Adl", PDOSetup."PDO VAT Ident. Filter Code");
 
                     RepSuggestLines.SetTableView(VATEntry);
                     RepSuggestLines.SetPDORepDocNo("No.");
