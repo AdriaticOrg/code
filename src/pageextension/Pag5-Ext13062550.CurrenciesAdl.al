@@ -8,7 +8,7 @@ pageextension 13062550 "Currencies-Adl" extends Currencies //5
             field("Numeric Code-Adl"; "Numeric Code-Adl")
             {
                 ApplicationArea = All;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies Numeric Code-Adl';
                 Visible = ADLCoreEnabled;
             }
         }

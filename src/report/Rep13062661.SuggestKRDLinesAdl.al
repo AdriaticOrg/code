@@ -66,7 +66,7 @@ report 13062661 "Suggest KRD Lines-Adl"
                     {
                         Caption = 'Delete existing lines';
                         ApplicationArea = All;
-                        ToolTip = 'TODO: Tooltip - Reporting';
+                        ToolTip = 'Deletes existing lines in current document';
                     }
                 }
             }

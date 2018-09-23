@@ -80,6 +80,7 @@ page 13062601 "VIES Report Subform-Adl"
                 Caption = 'Show related entries';
                 ApplicationArea = All;
                 Image = InsuranceLedger;
+                ToolTip = 'Shows related source entries';
 
                 trigger OnAction()
                 var

@@ -158,52 +158,31 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                 group(VAT)
                 {
                     Caption = 'VAT';
-                    Visible = NextEnabled;
-
                     field("Use VAT Output Date-Adl"; "Use VAT Output Date-Adl")
                     {
-                        Visible = NextEnabled;
+                        Visible = "ADL Enabled-Adl";
                         ApplicationArea = All;
                         ToolTip = 'Specifies use of VAT output date';
                     }
                 }
 
-                group(GLSetup)
+                group(ForceDebitCredit)
                 {
-                    Caption = 'G/L Setup - Force Debit/Credit';
-                    Visible = NextEnabled;
-
+                    Caption = 'Force Debit/Credit';
                     field("Forced Credit/Debit Enabled-Adl"; "Forced Credit/Debit Enabled-Adl")
                     {
-                        Visible = NextEnabled;
+                        Visible = "ADL Enabled-Adl";
                         ApplicationArea = All;
                         ToolTip = 'Specifies use of force debit/credit';
                     }
                 }
-
-                group(SalesAndRec)
-                {
-                    Caption = 'Sales & receivables Setup - Unpaid Receivables';
-                    visible = NextEnabled;
-                    field("UP Ext. Data Start Bal. Date-Adl"; "UP Ext. Data Start Bal. Date-Adl")
-                    {
-                        Visible = NextEnabled;
-                        ApplicationArea = All;
-                        ToolTip = 'Specifies use of ext. data start bal. date';
-
-                        trigger OnValidate()
-                        var
-                            ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
-                        begin
-                            if ("UP Ext. Data Start Bal. Date-Adl" <> 0D) and (ApplicatonAreaMgmtAdl.IsUnpaidReceivablesApplicationAreaEnabled()) then
-                                exit
-                            else
-                                ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(true);
-                        end;
-                    }
-                }
             }
-
+            /* group(General)
+            {
+                ShowCaption = false;
+                Visible = GeneralDetailsVisible;
+         
+            } */
             group(stepVIES)
             {
                 ShowCaption = false;
@@ -409,6 +388,39 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     }
                 }
             }
+            /*       group(VAT)
+                  {
+                      Caption = 'VAT';
+                      field("VAT Enabled"; "VAT Enabled-Adl")
+                      {
+                          ApplicationArea = All;
+
+                          trigger OnValidate()
+                          var
+                              ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
+                          begin
+                              ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
+                          end;
+                      }
+                      field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled-Adl")
+                      {
+                          ApplicationArea = All;
+
+                          trigger OnValidate()
+                          var
+                              ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
+                          begin
+                              if ("Unpaid Receivables Enabled-Adl") and (ApplicatonAreaMgmtAdl.IsUnpaidReceivablesApplicationAreaEnabled()) then
+                                  exit
+                              else
+                                  ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(true);
+
+                              if not ("Unpaid Receivables Enabled-Adl") then
+                                  ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(false);
+                          end;
+                      }
+
+                  } */
 
             group(Step3)
             {
@@ -430,28 +442,33 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     {
                         ApplicationArea = All;
                         ToolTip = 'Enter address';
+
                     }
                     field("Address 2"; "Address 2")
                     {
                         ApplicationArea = Advanced;
                         Visible = false;
                         ToolTip = 'Enter address 2';
+
                     }
                     field("Post Code"; "Post Code")
                     {
                         ApplicationArea = All;
                         ToolTip = 'Enter post code';
+
                     }
                     field(City; City)
                     {
                         ApplicationArea = All;
                         ToolTip = 'Enter city';
+
                     }
                     field("Country/Region Code"; "Country/Region Code")
                     {
                         ApplicationArea = All;
                         TableRelation = "Country/Region".Code;
                         ToolTip = 'Enter country';
+
                     }
                     field("VAT Registration No."; "VAT Registration No.")
                     {
@@ -818,12 +835,12 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         MediaRepositoryDone: Record "Media Repository";
         MediaResourcesStandard: Record "Media Resources";
         MediaResourcesDone: Record "Media Resources";
-        InventorySetup: Record "Inventory Setup";
-        TempBlobUncompressed: Record TempBlob;
+        //UNUSED//InventorySetup: Record "Inventory Setup";
+        //UNUSED//TempBlobUncompressed: Record TempBlob;
         ClientTypeManagement: Codeunit ClientTypeManagement;
         WizardMgmt: Codeunit "Wizard Management-adl";
-        XMLDOMManagement: Codeunit "XML DOM Management";
-        ApplicatonAreaMgmt: Codeunit "Application Area Mgmt.";
+        //UNUSED//XMLDOMManagement: Codeunit "XML DOM Management";
+        //UNUSED//ApplicatonAreaMgmt: Codeunit "Application Area Mgmt.";
         CompanyData: Option "Evaluation Data","Standard Data","None","Extended Data","Full No Data";
         TypeStandard: Boolean;
         TypeExtended: Boolean;
@@ -848,7 +865,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         PackageImportDetailesVIsible: Boolean;
         DoneVisible: Boolean;
         TypeSelectionEnabled: Boolean;
-        ExtendedVisible: Boolean;
+        //UNUSED//ExtendedVisible: Boolean;
         NotSetUpQst: Label 'The application has not been set up. Setup could be run again from role center notification.\\Are you sure that you want to exit?';
         NoSetupTypeSelectedQst: Label 'You have not selected any setup type. If you proceed, the application will not be fully functional, until you set it up manually.\\Do you want to continue?';
         HelpLbl: Label 'Learn more about setting up your company';
@@ -859,7 +876,8 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         LogoPositionOnDocumentsShown: Boolean;
         ShowBankAccountCreationWarning: Boolean;
         InvalidPhoneNumberErr: Label 'The phone number is invalid.';
-        CostMethodeLbl: Label 'Learn more';
+        //UNUSED//CostMethodeLbl: Label 'Learn more';
+        //UNUSED//CostMethodUrlTxt: Label 'https://go.microsoft.com/fwlink/?linkid=858295', Locked = true;
         PrivacyNoticeTxt: Label 'Privacy Notice';
         AgreePrivacy: Boolean;
         PrivacyNoticeUrlTxt: Label 'https://privacy.microsoft.com/en-us/privacystatement#mainnoticetoendusersmodule', Locked = true;

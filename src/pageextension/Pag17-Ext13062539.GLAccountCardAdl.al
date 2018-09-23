@@ -9,50 +9,50 @@ pageextension 13062539 "G/L Account Card-Adl" extends "G/L Account Card" //17
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies FAS Account-Adl';
             }
             field("FAS Type-Adl"; "FAS Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies FAS Type-Adl';
             }
             field("FAS Sector Posting-Adl"; "FAS Sector Posting-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies FAS Sector Posting-Adl';
             }
             field("FAS Instrument Posting-Adl"; "FAS Instrument Posting-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies FAS Instrument Posting-Adl';
             }
             field("FAS Sector Code-Adl"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies FAS Sector Code-Adl';
             }
             field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies FAS Instrument Code-Adl';
             }
             // <adl.26>
             field("BST Value Posting-Adl"; "BST Value Posting-Adl")
             {
                 ApplicationArea = All;
                 Visible = BSTFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies BST Value Posting-Adl';
             }
             field("BST Code-Adl"; "BST Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = BSTFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies BST Code-Adl';
             }
             // </adl.26>
         }

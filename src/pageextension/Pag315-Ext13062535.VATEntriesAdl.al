@@ -18,7 +18,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies VAT Correction Date-Adl';
             }
             // </adl.22> 
         }
@@ -43,7 +43,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
             {
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies EU Customs Procedure-Adl';
             }
             // </adl.14>
             // <adl.10>

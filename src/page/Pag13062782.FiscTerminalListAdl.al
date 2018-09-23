@@ -46,7 +46,7 @@ page 13062782 "Fisc. Terminal List-Adl"
 
     var
         VisibleHR: Boolean;
-        VisibleSI: Boolean;
+        //UNUSED//VisibleSI: Boolean;
 
     trigger OnInit()
     var
@@ -55,8 +55,8 @@ page 13062782 "Fisc. Terminal List-Adl"
         FiscalizationSetup.GET();
         CASE TRUE OF
             // SI
-            FiscalizationSetup.CountryCodeSI:
-                VisibleSI := TRUE;
+            //UNUSED//FiscalizationSetup.CountryCodeSI:
+                //UNUSED//VisibleSI := TRUE;
                 // HR
             FiscalizationSetup.CountryCodeHR:
                 VisibleHR := TRUE;

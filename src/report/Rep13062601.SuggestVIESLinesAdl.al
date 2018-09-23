@@ -82,7 +82,7 @@ report 13062601 "Suggest VIES Lines-Adl"
                     {
                         Caption = 'Delete existing lines';
                         ApplicationArea = All;
-                        ToolTip = 'TODO: Tooltip - Reporting';
+                        ToolTip = 'Deletes existing lines in current document';
                     }
                 }
             }

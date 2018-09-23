@@ -126,14 +126,14 @@ report 13062642 "Export FAS-Adl"
                         Caption = 'Shadow Background On Posting';
                         ApplicationArea = All;
                         Visible = true;
-                        ToolTip = 'TODO: Tooltip - Reporting';
+                        ToolTip = 'Shows background shadow on posting value cells';
                     }
                     field(ExpFile; ExpFile)
                     {
                         Caption = 'Export File';
                         ApplicationArea = All;
                         Visible = true;
-                        ToolTip = 'TODO: Tooltip - Reporting';
+                        ToolTip = 'Exports data to xml file';
                     }
                 }
             }

@@ -159,7 +159,7 @@ codeunit 13062817 "Wizard Management-Adl"
         FileName: Text;
         HttpGetRequestErr: Label 'Failed to contact the address endpoint.';
         HttpReadResponseErr: Label 'Failed to read response.';
-        PackageIsBeingDownloadedTxt: Label 'Downloading rapidstart from web...';
+        //UNUSED//PackageIsBeingDownloadedTxt: Label 'Downloading rapidstart from web...';
         PackageMissingErr: Label 'There is no package available for download for selected country.';
         Text001Err: Label 'Failed to contact the address endpoint.';
         MissingUrlErr: Label 'Please enter valid url address';
