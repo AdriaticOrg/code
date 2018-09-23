@@ -1,15 +1,15 @@
 {
   "id": "06044fb1-e4fe-4612-bbab-8deb02c9c1ac",
   "name": "Adriatic Localization for Business Central",
-  "publisher": "Adriatic.org",
+  "publisher": "Adacta",
   "brief": "",
   "description": "",
   "version": "1.0.0.0",
   "privacyStatement": "",
-  "EULA": "",
-  "help": "",
+  "EULA": "https://adriaticorg.github.io/app/ServiceAgreement.html",
+  "help": "https://adriaticorg.github.io/help/",
   "url": "",
-  "logo": "",
+  "logo": "./logo/AdriaticOrg.216x216.png",
   "capabilities": [],
   "dependencies": [],
   "screenshots": [],
@@ -26,5 +26,6 @@
   "idRange": {
     "from": 13062525,
     "to": 13063400
-  }
+  },
+  "runtime": "2.0"
 }

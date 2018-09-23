@@ -824,12 +824,12 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         MediaRepositoryDone: Record "Media Repository";
         MediaResourcesStandard: Record "Media Resources";
         MediaResourcesDone: Record "Media Resources";
-        InventorySetup: Record "Inventory Setup";
-        TempBlobUncompressed: Record TempBlob;
+        //UNUSED//InventorySetup: Record "Inventory Setup";
+        //UNUSED//TempBlobUncompressed: Record TempBlob;
         ClientTypeManagement: Codeunit ClientTypeManagement;
         WizardMgmt: Codeunit "Wizard Management-adl";
-        XMLDOMManagement: Codeunit "XML DOM Management";
-        ApplicatonAreaMgmt: Codeunit "Application Area Mgmt.";
+        //UNUSED//XMLDOMManagement: Codeunit "XML DOM Management";
+        //UNUSED//ApplicatonAreaMgmt: Codeunit "Application Area Mgmt.";
         CompanyData: Option "Evaluation Data","Standard Data","None","Extended Data","Full No Data";
         TypeStandard: Boolean;
         TypeExtended: Boolean;
@@ -855,7 +855,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         PackageImportDetailesVIsible: Boolean;
         DoneVisible: Boolean;
         TypeSelectionEnabled: Boolean;
-        ExtendedVisible: Boolean;
+        //UNUSED//ExtendedVisible: Boolean;
         NotSetUpQst: Label 'The application has not been set up. Setup could be run again from role center notification.\\Are you sure that you want to exit?';
         NoSetupTypeSelectedQst: Label 'You have not selected any setup type. If you proceed, the application will not be fully functional, until you set it up manually.\\Do you want to continue?';
         HelpLbl: Label 'Learn more about setting up your company';
@@ -866,8 +866,8 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         LogoPositionOnDocumentsShown: Boolean;
         ShowBankAccountCreationWarning: Boolean;
         InvalidPhoneNumberErr: Label 'The phone number is invalid.';
-        CostMethodeLbl: Label 'Learn more';
-        CostMethodUrlTxt: Label 'https://go.microsoft.com/fwlink/?linkid=858295', Locked = true;
+        //UNUSED//CostMethodeLbl: Label 'Learn more';
+        //UNUSED//CostMethodUrlTxt: Label 'https://go.microsoft.com/fwlink/?linkid=858295', Locked = true;
         PrivacyNoticeTxt: Label 'Privacy Notice';
         AgreePrivacy: Boolean;
         PrivacyNoticeUrlTxt: Label 'https://privacy.microsoft.com/en-us/privacystatement#mainnoticetoendusersmodule', Locked = true;

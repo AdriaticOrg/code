@@ -697,7 +697,7 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
         Total8: Decimal;
         Total9: Decimal;
         Text006Lbl: Label 'No entries were found to create file.';
-        LastSpacePos: Integer;
+        //UNUSED//LastSpacePos: Integer;
         CompanyOfficialNo: Code[20];
         Text007Lbl: Label 'Export to XML File';
         Text008Lbl: Label 'XML Files (*.xml)|*.xml|All Files (*.*)|*.*';

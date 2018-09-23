@@ -80,6 +80,7 @@ table 13062782 "Fiscalization Terminal-Adl"
     begin
         "Creation Date" := TODAY();
         "Creation Time" := TIME();
+        FiscalizationSetup.Get();
         CASE TRUE OF
             // HR
             FiscalizationSetup.CountryCodeHR:
