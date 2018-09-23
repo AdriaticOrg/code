@@ -369,7 +369,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup-Adl - Control VIES - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4247890588 - Control 2404853609 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies if VAT Output Date is used when posting document.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup-Adl - Control Use VAT Output Date-Adl - Property ToolTip</note>
         </trans-unit>
@@ -2508,11 +2508,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit VAT Books Export to XML-Adl - Method XMLWrite - NamedType WrongXMLIndentErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3306435858 - NamedType 3004040435" size-unit="char" translate="yes" xml:space="preserve">
-          <source>File %1 was succesfully prepared.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit TextWriter-Adl - NamedType Msg</note>
-        </trans-unit>
         <trans-unit id="Codeunit 2749050248 - Method 3885559574 - NamedType 1419097282" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ask to setup Adriatic Localization.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4423,6 +4418,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Property PromotedActionCategories</note>
         </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 2390380970 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Media</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control MediaResourcesStandard - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 197703991 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Media</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control MediaResourcesDone - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2914345777 - Control 1138556399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Welcome to Adriatic Localization Company Company Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4443,15 +4448,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Para1.2.1 - Property InstructionalText</note>
         </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3596626655 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Link to help</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control HelpLblPrivacy - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2914345777 - Control 3085073877 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
           <source>Privacy Notice for more information.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Para1.2.2 - Property InstructionalText</note>
         </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1210637904 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Link to privacy statement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control PrivacyNotice - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2914345777 - Control 1253594254 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>I accept warning &amp; privacy notice.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control AgreePrivacy - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1253594254 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select to accept warning &amp; privacy notice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control AgreePrivacy - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 2979398708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Adriatic Localization Setup</source>
@@ -4468,6 +4488,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Extended - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 727939721 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select to set up company with Adriactic Localization</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Extended - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2914345777 - Control 3749788842 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Important</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4478,20 +4503,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Important - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 2914345777 - Control 4156972860 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 3110611771 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Adriatic Localization core features</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control step2 - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control CoreStep - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2914345777 - Control 4156972860 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 3110611771 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
           <source>With this setup you can choose which features you want to enable for Adriatic Localization</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control step2 - Property InstructionalText</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control CoreStep - Property InstructionalText</note>
         </trans-unit>
-        <trans-unit id="Page 2914345777 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2914345777 - Control 1147013053 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control General - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Core - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 1696271000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Adriatic Localization Enabled</source>
@@ -4503,10 +4528,175 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control VAT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2914345777 - Control 1633862788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>X</source>
+        <trans-unit id="Page 2914345777 - Control 2404853609 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies use of VAT output date</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control x - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Use VAT Output Date-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 4175176602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Force Debit/Credit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control ForceDebitCredit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3029142040 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies use of force debit/credit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Forced Credit/Debit Enabled-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3718789915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control VIES - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 231112470 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Default VIES Country</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Default VIES Country - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 935713846 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Default VIES Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Default VIES Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 4143331729 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies VIES Company Branch Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control VIES Company Branch Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1138781029 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies VIES Report No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control VIES Report No. Series - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 928529433 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies VIES Prep. By User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control VIES Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 2353793617 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies VIES Resp. User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control VIES Resp. User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3900088957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PDO</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control PDO - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 497126115 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies PDO Report No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control PDO Report No. Series - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 2233261575 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies PDO Prep. By User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control PDO Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 4228006415 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies PDO Resp. User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control PDO Resp. User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3549802619 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies PDO VAT Ident. Filter Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control PDO VAT Ident. Filter Code  - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1727325440 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FAS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control FAS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3700763146 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies FAS Report No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control FAS Report No. Series - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3701443150 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies FAS Resp. User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control FAS Resp. User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1639278446 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies FAS Prep. By User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control FAS Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 189543812 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies FAS Director User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control FAS Director User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1307387835 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Budget User Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Budget User Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3697232018 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Company Sector Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Company Sector Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 407507527 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control KRD - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3993940145 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies KRD Report No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control KRD Report No. Series - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 625572741 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies KRD Resp. User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control KRD Resp. User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 509467981 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies KRD Prep. By User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control KRD Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1086121858 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Default KRD Affiliation Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Default KRD Affiliation Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 833181936 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies KRD Blank LCY Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control KRD Blank LCY Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 812757451 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies KRD Blank LCY Num.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control KRD Blank LCY Num. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 734800247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BST</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control BST - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3226348413 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies BST Report No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control BST Report No. Series-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1060236637 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies BST Prep. By User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control BST Prep. By User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1730545525 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies BST Resp. User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control BST Resp. User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3234807686 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fiscalization</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Fiscal - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 2565465511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specify your company's address information and logo.</source>
@@ -4522,6 +4712,36 @@
           <source>Company Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enter company name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3168444338 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enter address</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Address - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 2306852000 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enter address 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Address 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3660300303 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enter post code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Post Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 714791889 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enter city</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control City - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 284764054 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enter country</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Country/Region Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 1594621544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Company Logo</source>
@@ -4827,31 +5047,6 @@
           <source>Input VAT Book</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-Adl 2-Adl - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2998918746 - NamedType 1947827686" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-Adl 2-Adl - NamedType AccountNoLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2998918746 - NamedType 1981706351" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account Name</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-Adl 2-Adl - NamedType NameLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2998918746 - NamedType 1027969698" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Post.Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-Adl 2-Adl - NamedType PostingDateLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2998918746 - NamedType 1155328579" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Doc.Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-Adl 2-Adl - NamedType DocumentDateLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2998918746 - NamedType 1721277456" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Document No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Input VAT Book-Adl 2-Adl - NamedType DocumentNoLbl</note>
         </trans-unit>
         <trans-unit id="Report 2465319563 - NamedType 739658416" size-unit="char" translate="yes" xml:space="preserve">
           <source>Opening item for the year %1</source>
@@ -5878,11 +6073,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-Adl - NamedType TextHeaderVILbl</note>
         </trans-unit>
-        <trans-unit id="Report 781910716 - NamedType 3141268898" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Error creating file on server.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-Adl - NamedType TextError001Lbl</note>
-        </trans-unit>
         <trans-unit id="Report 781910716 - NamedType 2165353731" size-unit="char" translate="yes" xml:space="preserve">
           <source>No entries were found to create file.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5897,16 +6087,6 @@
           <source>XML Files (*.xml)|*.xml|All Files (*.*)|*.*</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-Adl - NamedType Text008Lbl</note>
-        </trans-unit>
-        <trans-unit id="Report 781910716 - NamedType 3078467498" size-unit="char" translate="yes" xml:space="preserve">
-          <source>File is saved on:</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-Adl - NamedType Text009Lbl</note>
-        </trans-unit>
-        <trans-unit id="Report 781910716 - NamedType 3797269194" size-unit="char" translate="yes" xml:space="preserve">
-          <source>%1 %2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Overdue and Uncoll.Rec-Adl - NamedType Text010Lbl</note>
         </trans-unit>
         <trans-unit id="Report 781910716 - NamedType 17661673" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original Invoice Amount (LCY) for Customer Ledger Entry No. %1 cannot be 0 or less.</source>
@@ -6258,42 +6438,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Credit Memo-Adl - Control LogInteraction - Property ToolTip</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Report 3373662098 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
-          <source>(Applies to %1 %2)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Credit Memo-Adl - NamedType Text003</note>
-        </trans-unit>
-        <trans-unit id="Report 3373662098 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales - Credit Memo %1</source>
-          <note from="Developer" annotates="general" priority="2">%1 = Document No.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Credit Memo-Adl - NamedType Text005</note>
-        </trans-unit>
-        <trans-unit id="Report 3373662098 - NamedType 4022464961" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Page %1 of %2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Credit Memo-Adl - NamedType PageCaptionCap</note>
-        </trans-unit>
-        <trans-unit id="Report 3373662098 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Amount Specification in </source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Credit Memo-Adl - NamedType Text008</note>
-        </trans-unit>
-        <trans-unit id="Report 3373662098 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Local Currency</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Credit Memo-Adl - NamedType Text009</note>
-        </trans-unit>
-        <trans-unit id="Report 3373662098 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Exchange rate: %1/%2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Credit Memo-Adl - NamedType Text010</note>
-        </trans-unit>
-        <trans-unit id="Report 3373662098 - NamedType 1026443335" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales - Prepmt. Credit Memo %1</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Credit Memo-Adl - NamedType Text011</note>
-=======
         <trans-unit id="Report 3373662098 - NamedType 1562342567" size-unit="char" translate="yes" xml:space="preserve">
           <source>(Applies to %1 %2)</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6328,7 +6472,6 @@
           <source>Sales - Prepmt. Credit Memo %1</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Credit Memo-Adl - NamedType SalesPrepCrMemoLbl</note>
->>>>>>> 8f9e569070b3e831a49c947621ada16ba387b09b
         </trans-unit>
         <trans-unit id="Report 3373662098 - NamedType 4264908145" size-unit="char" translate="yes" xml:space="preserve">
           <source>Phone No.</source>
@@ -6415,17 +6558,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Credit Memo-Adl - NamedType LineAmtInvDiscAmt_SalesCrMemoLineCptnLbl</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Report 3373662098 - NamedType 3365690297" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Clause</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Credit Memo-Adl - NamedType VATClausesCap</note>
-=======
         <trans-unit id="Report 3373662098 - NamedType 2760006609" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Clause</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Credit Memo-Adl - NamedType VATClausesLbl</note>
->>>>>>> 8f9e569070b3e831a49c947621ada16ba387b09b
         </trans-unit>
         <trans-unit id="Report 3373662098 - NamedType 1559168207" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line Dimensions</source>
@@ -6582,27 +6718,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Shipment-Adl - Control DisplayAsmInfo - Property ToolTip</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Report 2852178899 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales - Shipment %1</source>
-          <note from="Developer" annotates="general" priority="2">%1 = Document No.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Shipment-Adl - NamedType Text002</note>
-        </trans-unit>
-=======
->>>>>>> 8f9e569070b3e831a49c947621ada16ba387b09b
         <trans-unit id="Report 2852178899 - NamedType 3469170451" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item Tracking - Appendix</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Shipment-Adl - NamedType ItemTrackingAppendixCaptionLbl</note>
         </trans-unit>
-<<<<<<< HEAD
-=======
         <trans-unit id="Report 2852178899 - NamedType 647040645" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales - Shipment %1</source>
           <note from="Developer" annotates="general" priority="2">%1 = Document No.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Shipment-Adl - NamedType DocNoLbl</note>
         </trans-unit>
->>>>>>> 8f9e569070b3e831a49c947621ada16ba387b09b
         <trans-unit id="Report 2852178899 - NamedType 1928308579" size-unit="char" translate="yes" xml:space="preserve">
           <source>Phone No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6693,17 +6818,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Shipment-Adl - NamedType NoCaptionLbl</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Report 2852178899 - NamedType 4022464961" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Page %1 of %2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Shipment-Adl - NamedType PageCaptionCap</note>
-=======
         <trans-unit id="Report 2852178899 - NamedType 650077689" size-unit="char" translate="yes" xml:space="preserve">
           <source>Page %1 of %2</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales - Shipment-Adl - NamedType PageCaptionLbl</note>
->>>>>>> 8f9e569070b3e831a49c947621ada16ba387b09b
         </trans-unit>
         <trans-unit id="Report 2852178899 - NamedType 2977676579" size-unit="char" translate="yes" xml:space="preserve">
           <source>Place of issue</source>
@@ -6866,12 +6984,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup-Adl - Field Operator Tax Number-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3048399272 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Control VAT Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3048399272 - Control 163338849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
@@ -6886,7 +7004,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Action PostPostponed-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3048399272 - Action 948410512 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Posts Postponed VAT on specified date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Action PostPostponed-Adl - Property ToolTip</note>
         </trans-unit>
@@ -6896,17 +7014,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Action CorrectPostponed-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3048399272 - Action 2123405046 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Corrects Postponed VAT on specified date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Action CorrectPostponed-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 560858782 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Control VAT Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 560858782 - Control 163338849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
@@ -6931,7 +7049,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Action PostPostponed-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 560858782 - Action 948410512 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Posts Postponed VAT on specified date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Action PostPostponed-Adl - Property ToolTip</note>
         </trans-unit>
@@ -6941,22 +7059,22 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Action CorrectPostponed-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 560858782 - Action 2123405046 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Corrects Postponed VAT on specified date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Action CorrectPostponed-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2491554569 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Purchase Invoice-Adl - Control VAT Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2491554569 - Control 3077258184 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Purchase Invoice-Adl - Control VAT Output Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2491554569 - Control 163338849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Purchase Invoice-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
@@ -6966,7 +7084,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Purchase Invoice-Adl - Action PostPostponed-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2491554569 - Action 948410512 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Posts Postponed VAT on specified date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Purchase Invoice-Adl - Action PostPostponed-Adl - Property ToolTip</note>
         </trans-unit>
@@ -6976,7 +7094,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Purchase Invoice-Adl - Action CorrectPostponed-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2491554569 - Action 2123405046 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Corrects Postponed VAT on specified date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Purchase Invoice-Adl - Action CorrectPostponed-Adl - Property ToolTip</note>
         </trans-unit>
@@ -6986,7 +7104,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Purchase Invoice-Adl - Action PostVATOutput-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2491554569 - Action 3812768356 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Posts VAT Output on specified date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Purchase Invoice-Adl - Action PostVATOutput-Adl - Property ToolTip</note>
         </trans-unit>
@@ -6996,22 +7114,22 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Purchase Invoice-Adl - Action CorrectVATOutput-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2491554569 - Action 2275199074 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Corrects VAT Output on specified date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Purchase Invoice-Adl - Action CorrectVATOutput-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3534420051 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PostedPurchaseCreditMemo-Adl - Control VAT Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3534420051 - Control 3077258184 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PostedPurchaseCreditMemo-Adl - Control VAT Output Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3534420051 - Control 163338849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PostedPurchaseCreditMemo-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7026,7 +7144,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PostedPurchaseCreditMemo-Adl - Action PostPostponed-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3534420051 - Action 948410512 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Posts Postponed VAT on specified date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PostedPurchaseCreditMemo-Adl - Action PostPostponed-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7036,7 +7154,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PostedPurchaseCreditMemo-Adl - Action CorrectPostponed-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3534420051 - Action 2123405046 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Corrects Postponed VAT on specified date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PostedPurchaseCreditMemo-Adl - Action CorrectPostponed-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7046,7 +7164,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PostedPurchaseCreditMemo-Adl - Action PostVATOutput-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3534420051 - Action 3812768356 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Posts VAT Output on specified date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PostedPurchaseCreditMemo-Adl - Action PostVATOutput-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7056,7 +7174,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PostedPurchaseCreditMemo-Adl - Action CorrectVATOutput-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3534420051 - Action 2275199074 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Corrects VAT Output on specified date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PostedPurchaseCreditMemo-Adl - Action CorrectVATOutput-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7376,7 +7494,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries-Adl - Control KRD Other Changes-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1700227655 - Control 163338849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7396,12 +7514,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries-Adl - Control EU Customs Procedure-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1700227655 - Control 2469923260 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Full VAT Posting</source>
+          <source>Specifies percent for VAT Retrograde posting.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries-Adl - Control VAT % (retrograde)-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1700227655 - Control 3508196189 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Full VAT Posting</source>
+          <source>Specifies base for VAT Retrograde posting.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries-Adl - Control VAT Base (retro.)-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7476,22 +7594,22 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control OpenAmounLCYtWithoutUnrealizedERF-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3537877342 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order-Adl - Control VAT Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3537877342 - Control 163338849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1588135823 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Invoice-Adl - Control VAT Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1588135823 - Control 163338849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Invoice-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7506,12 +7624,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Invoice-Adl - Control EU Customs Procedure-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1678707589 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Credit Memo-Adl - Control VAT Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1678707589 - Control 163338849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Credit Memo-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7546,7 +7664,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales &amp; Receivables Setup-Adl - Field Ext. Data Start Bal. Date-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 865513963 - Control 4224917562 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies if negative transfers are posted as correction.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Inventory Setup-Adl - Control Post Neg. Transfers as Corr.-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7556,12 +7674,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup-Adl - Field Post Neg. Transfers as Corr.-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1803156684 - Control 870920144 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Identifier</source>
+          <source>Specifies VAT Identifier for combination of VAT posting.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Posting Setup-Adl - Control VAT Identifier-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1803156684 - Control 2469923260 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Full VAT Posting</source>
+          <source>Specifies percent for VAT Retrograde posting.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Posting Setup-Adl - Control VAT % (retrograde)-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7611,7 +7729,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Posting Setup Card-Adl - Control VAT % (Informative)-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2281148088 - Control 2469923260 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Full VAT Posting</source>
+          <source>Specifies percent for VAT Retrograde posting.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Posting Setup Card-Adl - Control VAT % (retrograde)-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7626,47 +7744,47 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Currencies-Adl - Control Numeric Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4036975811 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Order-Adl - Control VAT Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4036975811 - Control 3077258184 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT, when is used Reverse VAT Postiong Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Order-Adl - Control VAT Output Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4036975811 - Control 163338849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Order-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1800986090 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Invoice-Adl - Control VAT Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1800986090 - Control 3077258184 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT, when is used Reverse VAT Postiong Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Invoice-Adl - Control VAT Output Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1800986090 - Control 163338849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Invoice-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2853528092 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Credit Memo-Adl - Control VAT Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2853528092 - Control 3077258184 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT, when is used Reverse VAT Postiong Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Credit Memo-Adl - Control VAT Output Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2853528092 - Control 163338849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Credit Memo-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7676,12 +7794,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Credit Memo-Adl - Control Goods Return Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3322089980 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Return Order-Adl - Control VAT Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3322089980 - Control 163338849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Return Order-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7701,17 +7819,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Return Order-Adl - Control Goods Return Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3425558781 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Return Order-Adl - Control VAT Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3425558781 - Control 3077258184 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - VAT Date</source>
+          <source>Specifies which date is used for posting VAT for Reverse VAT Posting Setup.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Return Order-Adl - Control VAT Output Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3425558781 - Control 163338849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TODO: Tooltip - Postponed VAT</source>
+          <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Return Order-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
@@ -8486,9 +8604,179 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field PDO Enabled-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 225785401 - Field 3029142040 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Unpaid Receivables Enabled</source>
+          <source>Force Credit/Debit</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Forced Credit/Debit Enabled-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 2404853609 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use VAT Output Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Use VAT Output Date-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 1876427865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES Report No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field VIES Report No. Series-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 3304093901 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES Resp. User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field VIES Resp. User ID-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 3877181706 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default VIES Country</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Default VIES Country-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 3877181706 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Slovenia,Croatia</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Default VIES Country-Adl - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 780748650 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,ZP,PDV-S</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Default VIES Type-Adl - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 780748650 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default VIES Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Default VIES Type-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 2629038901 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES Prep. By User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field VIES Prep. By User ID-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 3221885069 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES Company Branch Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field VIES Company Branch Code-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 3942475095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PDO Report No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field PDO Report No. Series-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 1709651147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PDO Resp. User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field PDO Resp. User ID-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 4111921551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PDO VAT Ident. Filter Code </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field PDO VAT Ident. Filter Code-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 1982117027 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PDO Prep. By User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field PDO Prep. By User ID-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 1857934534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FAS Report No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field FAS Report No. Series-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 1563822978 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FAS Resp. User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field FAS Resp. User ID-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 1070217058 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FAS Prep. By User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field FAS Prep. By User ID-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 410802603 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget User Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field FAS Budget User Code-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 1219753042 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company Sector Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field FAS Company Sector Code-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 865527480 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FAS Director User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field FAS Director User ID-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 2723977453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD Report No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field KRD Report No. Series-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 3319024830 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default KRD Affiliation Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Default KRD Affiliation Type-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 1162078009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD Resp. User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field KRD Resp. User ID-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 1252601324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD Blank LCY Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field KRD Blank LCY Code-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 890288991 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD Blank LCY Num.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field KRD Blank LCY Num.-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 3661050657 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD Prep. By User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field KRD Prep. By User ID-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 3226348413 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BST Report No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field BST Report No. Series-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 3061717417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BST Resp. User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field BST Resp. User ID-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 754227953 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BST Prep. By User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field BST Prep. By User ID-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 2689246261 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extended Data Start Balance Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field UP Ext. Data Start Bal. Date-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 1603705008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Fiscal. Active-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 2965526528 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Fiscal. Start Date-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 1869612829 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>End Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Fiscal. End Date-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 3656619870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Location</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Fiscal. Default Fiscalization Location-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 225785401 - Field 2232419133 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Terminal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Config. Setup-Adl - Field Fiscal. Default Fiscalization Terminal-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2964936661 - Field 164629734 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Numeric Code</source>
