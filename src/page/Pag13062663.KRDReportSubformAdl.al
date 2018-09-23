@@ -94,6 +94,7 @@ page 13062663 "KRD Report Subform-Adl"
                 Caption = 'Show Vendor Ledger Entries';
                 Image = ListPage;
                 ApplicationArea = All;
+                ToolTip = 'Shows related source entries';
 
                 trigger OnAction()
                 var

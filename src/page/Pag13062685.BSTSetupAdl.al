@@ -41,6 +41,7 @@ page 13062685 "BST Setup-Adl"
                 Caption = 'Adjust BST on Entries';
                 ApplicationArea = All;
                 Image = Suggest;
+                ToolTip = 'Runs a periodic activity to adjust values on already posted entries';
 
                 trigger OnAction()
                 begin

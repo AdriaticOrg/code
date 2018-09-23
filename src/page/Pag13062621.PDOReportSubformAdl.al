@@ -59,6 +59,7 @@ page 13062621 "PDO Report Subform-Adl"
                 Caption = 'Show related entries';
                 ApplicationArea = All;
                 Image = InsuranceLedger;
+                ToolTip = 'Shows related source entries';
 
                 trigger OnAction()
                 var

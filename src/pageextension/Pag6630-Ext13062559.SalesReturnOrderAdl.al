@@ -26,7 +26,7 @@ pageextension 13062559 "Sales Return Order-Adl" extends "Sales Return Order" //6
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies VAT Correction Date-Adl';
             }
             // </adl.22>
         }
@@ -38,7 +38,7 @@ pageextension 13062559 "Sales Return Order-Adl" extends "Sales Return Order" //6
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies EU Customs Procedure-Adl';
             }
         }
         // </adl.22>

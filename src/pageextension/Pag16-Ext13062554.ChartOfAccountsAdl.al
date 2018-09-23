@@ -8,19 +8,19 @@ pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
             field("FAS Account-Adl"; "FAS Account-Adl")
             {
                 ApplicationArea = All;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies FAS Account-Adl';
                 Visible = FASFeatureEnabled;
             }
             field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies FAS Instrument Code-Adl';
                 Visible = FASFeatureEnabled;
             }
             field("FAS Sector Code-Adl"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies FAS Sector Code-Adl';
                 Visible = FASFeatureEnabled;
             }
         }

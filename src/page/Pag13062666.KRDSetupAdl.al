@@ -56,6 +56,7 @@ page 13062666 "KRD Setup-Adl"
                 Caption = 'Adjust KRD on Entries';
                 ApplicationArea = All;
                 Image = Suggest;
+                ToolTip = 'Runs a periodic activity to adjust values on already posted entries';
 
                 trigger OnAction()
                 begin

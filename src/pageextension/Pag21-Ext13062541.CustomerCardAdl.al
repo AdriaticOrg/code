@@ -9,7 +9,7 @@ pageextension 13062541 "Customer Card-Adl" extends "Customer Card" //21
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies FAS Sector Code-Adl';
             }
             // </adl.24>
             // <adl.25>
@@ -17,32 +17,17 @@ pageextension 13062541 "Customer Card-Adl" extends "Customer Card" //21
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies KRD Non-Resident Sector Code-Adl';
             }
             field("KRD Affiliation Type-Adl"; "KRD Affiliation Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
-                ToolTip = 'TODO: Tooltip - Reporting';
+                ToolTip = 'Specifies KRD Affiliation Type-Adl';
             }
             // <adl.25>
         }
     }
-    // <adl.25>   
-    actions
-    {
-        addlast("&Customer")
-        {
-            action("Vendors-Adl")
-            {
-                RunObject = page "Vendor List";
-                ApplicationArea = All;
-                ToolTip = 'TODO: Tooltip - Reporting';
-                Image = Vendor;
-            }
-        }
-    }
-    // </adl.25>
 
     var
         // <adl.0>

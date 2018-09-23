@@ -110,6 +110,7 @@ page 13062643 "FAS Report-Adl"
                 Promoted = true;
                 ApplicationArea = All;
                 Image = CalculateLines;
+                ToolTip = 'Runs a periodic activity to populate document lines';
 
                 trigger OnAction()
                 var
@@ -135,7 +136,7 @@ page 13062643 "FAS Report-Adl"
                 Promoted = true;
                 Image = Export;
                 ApplicationArea = All;
-                //RunObject = report "Export FAS";
+                ToolTip = 'Runs a report with xml file create option';
 
                 trigger OnAction()
                 var
@@ -151,6 +152,7 @@ page 13062643 "FAS Report-Adl"
                 Caption = 'Release';
                 Image = ReleaseDoc;
                 ApplicationArea = All;
+                ToolTip = 'Sets document to realesed state';
 
                 trigger OnAction()
                 begin
@@ -163,6 +165,7 @@ page 13062643 "FAS Report-Adl"
                 Caption = 'Reopen';
                 Image = ReOpen;
                 ApplicationArea = All;
+                ToolTip = 'Sets document to open state';
 
                 trigger OnAction()
                 begin

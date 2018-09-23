@@ -64,6 +64,7 @@ page 13062644 "FAS Report Subform-Adl"
                 Caption = 'Show related entries';
                 ApplicationArea = All;
                 Image = InsuranceLedger;
+                ToolTip = 'Shows related source entries';
 
                 trigger OnAction()
                 var
