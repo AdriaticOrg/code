@@ -13,7 +13,7 @@ pageextension 13062541 "Customer Card-Adl" extends "Customer Card" //21
             }
             // </adl.24>
             // <adl.25>
-            field("KRD Non-Residnet Sector Code-Adl"; "KRD Non-Residnet Sector Code-Adl")
+            field("KRD Non-Resident Sector Code-Adl"; "KRD Non-Resident Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;

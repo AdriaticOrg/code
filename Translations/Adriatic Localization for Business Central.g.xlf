@@ -1358,10 +1358,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table KRD Report Line-Adl - Field Claim/Liability - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3569323539 - Field 1762469735 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3569323539 - Field 3500712815 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Non-Resident Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table KRD Report Line-Adl - Field Non-Residnet Sector Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table KRD Report Line-Adl - Field Non-Resident Sector Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3569323539 - Field 284764054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Country/Region Code</source>
@@ -4058,10 +4058,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Maturity - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 3602925903 - Control 1762469735 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Non-Residnet Sector Code</source>
+        <trans-unit id="Page 3602925903 - Control 3500712815 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Non-Resident Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Non-Residnet Sector Code - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page KRD Report Subform-Adl - Control Non-Resident Sector Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3602925903 - Control 284764054 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies Country/Region Code</source>
@@ -7493,10 +7493,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Card-Adl - Control FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 4270053224 - Control 1726898040 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 4270053224 - Control 2539180448 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies KRD Non-Resident Sector Code-Adl</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Card-Adl - Control KRD Non-Residnet Sector Code-Adl - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Card-Adl - Control KRD Non-Resident Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4270053224 - Control 2242878003 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies KRD Affiliation Type-Adl</source>
@@ -7508,10 +7508,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Control FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 138386033 - Control 1726898040 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 138386033 - Control 2539180448 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies KRD Non-Resident Sector Code-Adl</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Control KRD Non-Residnet Sector Code-Adl - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Control KRD Non-Resident Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 138386033 - Control 2242878003 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies Affiliation Type-Adl</source>
@@ -7558,10 +7558,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Card-Adl - Control FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 3184046672 - Control 1726898040 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 3184046672 - Control 2539180448 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies KRD Non-Resident Code-Adl</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Card-Adl - Control KRD Non-Residnet Sector Code-Adl - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Card-Adl - Control KRD Non-Resident Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3184046672 - Control 2242878003 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies KRD Affiliation Type-Adl</source>
@@ -7573,10 +7573,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries-Adl - Control FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 2522027049 - Control 1726898040 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 2522027049 - Control 2539180448 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies KRD Non-Resident Code-Adl</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries-Adl - Control KRD Non-Residnet Sector Code-Adl - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries-Adl - Control KRD Non-Resident Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2522027049 - Control 2242878003 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies KRD Affiliation Type-Adl</source>
@@ -8223,10 +8223,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer-Adl - Field FAS Sector Code-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3081464540 - Field 1726898040 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3081464540 - Field 2539180448 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Non-Resident Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer-Adl - Field KRD Non-Residnet Sector Code-Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer-Adl - Field KRD Non-Resident Sector Code-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3081464540 - Field 2242878003 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Affiliation Type</source>
@@ -8253,10 +8253,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Cust. Ledger Entry-Adl - Field KRD Claim/Liability-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2265272262 - Field 1726898040 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2265272262 - Field 2539180448 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Non-Resident Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Cust. Ledger Entry-Adl - Field KRD Non-Residnet Sector Code-Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Cust. Ledger Entry-Adl - Field KRD Non-Resident Sector Code-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2265272262 - Field 1098150461 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Country/Region Code</source>
@@ -8283,10 +8283,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor-Adl - Field FAS Sector Code-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3313461764 - Field 1726898040 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3313461764 - Field 2539180448 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Non-Resident Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor-Adl - Field KRD Non-Residnet Sector Code-Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor-Adl - Field KRD Non-Resident Sector Code-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3313461764 - Field 2242878003 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Affiliation Type</source>
@@ -8313,10 +8313,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Ledger Entry-Adl - Field KRD Claim/Liability-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2356031347 - Field 1726898040 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2356031347 - Field 2539180448 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Non-Resident Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Ledger Entry-Adl - Field KRD Non-Residnet Sector Code-Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Ledger Entry-Adl - Field KRD Non-Resident Sector Code-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2356031347 - Field 1098150461 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KRD Country/Region Code</source>

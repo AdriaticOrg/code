@@ -11,7 +11,7 @@ pageextension 13062542 "Customer Ledger Entries-Adl" extends "Customer Ledger En
                 Visible = FASFeatureEnabled;
                 ToolTip = 'Specifies FAS Sector Code-Adl';
             }
-            field("KRD Non-Residnet Sector Code-Adl"; "KRD Non-Residnet Sector Code-Adl")
+            field("KRD Non-Resident Sector Code-Adl"; "KRD Non-Resident Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;

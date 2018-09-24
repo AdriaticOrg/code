@@ -45,7 +45,7 @@ table 13062662 "KRD Report Line-Adl"
             Caption = 'Claim/Liability';
             DataClassification = SystemMetadata;
         }
-        field(14; "Non-Residnet Sector Code"; Code[10])
+        field(14; "Non-Resident Sector Code"; Code[10])
         {
             Caption = 'Non-Resident Sector Code';
             DataClassification = SystemMetadata;

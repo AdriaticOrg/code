@@ -8,7 +8,7 @@ report 13062661 "Suggest KRD Lines-Adl"
     {
         dataitem("Cust. Ledger Entry"; "Cust. Ledger Entry")
         {
-            RequestFilterFields = "Posting Date", "Document No.", "Customer No.", "KRD Non-Residnet Sector Code-Adl";
+            RequestFilterFields = "Posting Date", "Document No.", "Customer No.", "KRD Non-Resident Sector Code-Adl";
 
             trigger OnPreDataItem()
             var
@@ -45,7 +45,7 @@ report 13062661 "Suggest KRD Lines-Adl"
         }
         dataitem("Vendor Ledger Entry"; "Vendor Ledger Entry")
         {
-            RequestFilterFields = "Posting Date", "Document No.", "Vendor No.", "KRD Non-Residnet Sector Code-Adl";
+            RequestFilterFields = "Posting Date", "Document No.", "Vendor No.", "KRD Non-Resident Sector Code-Adl";
 
             trigger OnAfterGetRecord()
             begin
@@ -113,7 +113,7 @@ report 13062661 "Suggest KRD Lines-Adl"
                     KRDRepLine.SetRange("Instrument Type", cle."KRD Instrument Type-Adl");
                     KRDRepLine.SetRange(Maturity, CLE."KRD Maturity-Adl");
                     KRDRepLine.SetRange("Claim/Liability", cle."KRD Claim/Liability-Adl");
-                    KRDRepLine.SetRange("Non-Residnet Sector Code", cle."KRD Non-Residnet Sector Code-Adl");
+                    KRDRepLine.SetRange("Non-Resident Sector Code", cle."KRD Non-Resident Sector Code-Adl");
                     KRDRepLine.SetRange("Country/Region Code", cle."KRD Country/Region Code-Adl");
                     KRDRepLine.SetRange("Currency Code", cle."Currency Code");
                     //KRDRepLine.SetRange("Other Changes",cle."FAS Other Changes");
@@ -138,7 +138,7 @@ report 13062661 "Suggest KRD Lines-Adl"
                         KRDRepLine."Instrument Type" := cle."KRD Instrument Type-Adl";
                         KRDRepLine.Maturity := cle."KRD Maturity-Adl";
                         KRDRepLine."Claim/Liability" := cle."KRD Claim/Liability-Adl";
-                        KRDRepLine."Non-Residnet Sector Code" := cle."KRD Non-Residnet Sector Code-Adl";
+                        KRDRepLine."Non-Resident Sector Code" := cle."KRD Non-Resident Sector Code-Adl";
                         KRDRepLine.validate("Country/Region Code", cle."KRD Country/Region Code-Adl");
 
                         if cle."Currency Code" <> KRDSetup."KRD Blank LCY Code" then
@@ -149,7 +149,7 @@ report 13062661 "Suggest KRD Lines-Adl"
                         end;
 
                         KRDRepLine."Opening Balance" := GetOpeningBalance(cle."KRD Affiliation Type-Adl", cle."KRD Instrument Type-Adl",
-                        cle."KRD Maturity-Adl", cle."KRD Claim/Liability-Adl", cle."KRD Non-Residnet Sector Code-Adl", cle."KRD Country/Region Code-Adl",
+                        cle."KRD Maturity-Adl", cle."KRD Claim/Liability-Adl", cle."KRD Non-Resident Sector Code-Adl", cle."KRD Country/Region Code-Adl",
                          cle."Currency Code", cle."KRD Other Changes-Adl");
 
                         if not cle."KRD Other Changes-Adl" then begin
@@ -174,7 +174,7 @@ report 13062661 "Suggest KRD Lines-Adl"
                     KRDRepLine.SetRange("Instrument Type", VLE."KRD Instrument Type-Adl");
                     KRDRepLine.SetRange(Maturity, VLE."KRD Maturity-Adl");
                     KRDRepLine.SetRange("Claim/Liability", VLE."KRD Claim/Liability-Adl");
-                    KRDRepLine.SetRange("Non-Residnet Sector Code", VLE."KRD Non-Residnet Sector Code-Adl");
+                    KRDRepLine.SetRange("Non-Resident Sector Code", VLE."KRD Non-Resident Sector Code-Adl");
                     KRDRepLine.SetRange("Country/Region Code", VLE."KRD Country/Region Code-Adl");
                     KRDRepLine.SetRange("Currency Code", VLE."Currency Code");
                     //KRDRepLine.SetRange("Other Changes",VLE."FAS Other Changes");
@@ -199,7 +199,7 @@ report 13062661 "Suggest KRD Lines-Adl"
                         KRDRepLine."Instrument Type" := VLE."KRD Instrument Type-Adl";
                         KRDRepLine.Maturity := VLE."KRD Maturity-Adl";
                         KRDRepLine."Claim/Liability" := VLE."KRD Claim/Liability-Adl";
-                        KRDRepLine."Non-Residnet Sector Code" := VLE."KRD Non-Residnet Sector Code-Adl";
+                        KRDRepLine."Non-Resident Sector Code" := VLE."KRD Non-Resident Sector Code-Adl";
                         KRDRepLine.validate("Country/Region Code", VLE."KRD Country/Region Code-Adl");
 
                         if VLE."Currency Code" <> KRDSetup."KRD Blank LCY Code" then
@@ -210,7 +210,7 @@ report 13062661 "Suggest KRD Lines-Adl"
                         end;
 
                         KRDRepLine."Opening Balance" := GetOpeningBalance(VLE."KRD Affiliation Type-Adl", VLE."KRD Instrument Type-Adl",
-                        VLE."KRD Maturity-Adl", VLE."KRD Claim/Liability-Adl", VLE."KRD Non-Residnet Sector Code-Adl", VLE."KRD Country/Region Code-Adl",
+                        VLE."KRD Maturity-Adl", VLE."KRD Claim/Liability-Adl", VLE."KRD Non-Resident Sector Code-Adl", VLE."KRD Country/Region Code-Adl",
                          VLE."Currency Code", VLE."KRD Other Changes-Adl");
 
                         if not vle."KRD Other Changes-Adl" then begin
@@ -242,7 +242,7 @@ report 13062661 "Suggest KRD Lines-Adl"
             OldCLE.SetRange("KRD Instrument Type-Adl", InstrumentTypeCode);
             OldCLE.SetRange("KRD Maturity-Adl", MaturityCode);
             OldCLE.SetRange("KRD Claim/Liability-Adl", ClaimLiabType);
-            OldCLE.SetRange("KRD Non-Residnet Sector Code-Adl", NonResSecCode);
+            OldCLE.SetRange("KRD Non-Resident Sector Code-Adl", NonResSecCode);
             OldCLE.SetRange("KRD Country/Region Code-Adl", CountryCode);
             OldCLE.SetRange("Currency Code", CurrencyCode);
             OldCLE.SetRange("KRD Other Changes-Adl", OtherChanges);
@@ -259,7 +259,7 @@ report 13062661 "Suggest KRD Lines-Adl"
             OldVLE.SetRange("KRD Instrument Type-Adl", InstrumentTypeCode);
             OldVLE.SetRange("KRD Maturity-Adl", MaturityCode);
             OldVLE.SetRange("KRD Claim/Liability-Adl", ClaimLiabType);
-            OldVLE.SetRange("KRD Non-Residnet Sector Code-Adl", NonResSecCode);
+            OldVLE.SetRange("KRD Non-Resident Sector Code-Adl", NonResSecCode);
             OldVLE.SetRange("KRD Country/Region Code-Adl", CountryCode);
             OldVLE.SetRange("Currency Code", CurrencyCode);
             OldVLE.SetRange("KRD Other Changes-Adl", OtherChanges);
@@ -278,7 +278,7 @@ report 13062661 "Suggest KRD Lines-Adl"
             OldKRDRepLine.SetRange("Instrument Type", InstrumentTypeCode);
             OldKRDRepLine.SetRange(Maturity, MaturityCode);
             OldKRDRepLine.SetRange("Claim/Liability", ClaimLiabType);
-            OldKRDRepLine.SetRange("Non-Residnet Sector Code", NonResSecCode);
+            OldKRDRepLine.SetRange("Non-Resident Sector Code", NonResSecCode);
             OldKRDRepLine.SetRange("Country/Region Code", CountryCode);
             OldKRDRepLine.SetRange("Currency Code", CurrencyCode);
             //OldKRDRepLine.SetRange("Other Changes",OtherChanges);

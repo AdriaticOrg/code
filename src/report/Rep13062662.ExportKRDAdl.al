@@ -38,7 +38,7 @@ report 13062662 "Export KRD-Adl"
                 {
                     IncludeCaption = true;
                 }
-                column(NonResidentSectorCode; KRDReportLine."Non-Residnet Sector Code")
+                column(NonResidentSectorCode; KRDReportLine."Non-Resident Sector Code")
                 {
                     IncludeCaption = true;
                 }
@@ -377,7 +377,7 @@ report 13062662 "Export KRD-Adl"
 
                 XmlElem[6] := XmlElement.Create('Sector', xbsrns);
                 XmlElem[5].Add(xmlElem[6]);
-                XmlElem[6].Add(XmlText.Create(KRDReportLine."Non-Residnet Sector Code"));
+                XmlElem[6].Add(XmlText.Create(KRDReportLine."Non-Resident Sector Code"));
 
                 XmlElem[6] := XmlElement.Create('Maturity', xbsrns);
                 XmlElem[5].Add(xmlElem[6]);

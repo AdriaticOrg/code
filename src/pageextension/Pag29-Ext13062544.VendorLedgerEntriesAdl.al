@@ -13,7 +13,7 @@ pageextension 13062544 "Vendor Ledger Entries-Adl" extends "Vendor Ledger Entrie
             }
             // </adl.24>
             // <adl.25>
-            field("KRD Non-Residnet Sector Code-Adl"; "KRD Non-Residnet Sector Code-Adl")
+            field("KRD Non-Resident Sector Code-Adl"; "KRD Non-Resident Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
