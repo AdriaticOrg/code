@@ -42,13 +42,13 @@ codeunit 13062782 "FiscalizationEvents-Adl"
         IF FiscSetup.IsActive() THEN BEGIN
             FiscSetup.GET();
             CASE TRUE OF
-                FiscSetup.CountryCodeSI:
+                FiscSetup.CountryCodeSI():
                     IF FiscalizationPaymentMethod.GET(PaymentMethod."Fisc. Payment Method-Adl") THEN
                         Rec."Fisc. Subject-Adl" := FiscalizationPaymentMethod."Subject to Fiscalization";
-                FiscSetup.CountryCodeHR, FiscSetup.CountryCodeRS:
+                FiscSetup.CountryCodeHR(), FiscSetup.CountryCodeRS():
                     BEGIN
                         Rec."Fisc. Subject-Adl" := FALSE;
-                        IF FiscSetup.IsActive THEN
+                        IF FiscSetup.IsActive() THEN
                             Rec."Fisc. Subject-Adl" := FiscalizationMgt.GetFiscSubject(PaymentMethod."Fisc. Payment Method-Adl");
                     END;
             END;
@@ -65,24 +65,24 @@ codeunit 13062782 "FiscalizationEvents-Adl"
         IF FiscalizationSetup.IsActive() THEN BEGIN
             FiscalizationSetup.GET();
             CASE TRUE OF
-                FiscalizationSetup.CountryCodeSI:
+                FiscalizationSetup.CountryCodeSI():
                     IF Rec."Fisc. Location Code-Adl" = '' THEN BEGIN
                         FiscalizationLocationMapping.SETRANGE("Location Code", Rec."Location Code");
-                        IF FiscalizationLocationMapping.FINDFIRST THEN
+                        IF FiscalizationLocationMapping.FINDFIRST() THEN
                             Rec.VALIDATE("Fisc. Location Code-Adl", FiscalizationLocationMapping."Fisc. Location Code")
                         ELSE
                             Rec.VALIDATE("Fisc. Location Code-Adl", '');
                     END;
-                FiscalizationSetup.CountryCodeHR:
-                    IF FiscalizationSetup.IsActive THEN BEGIN
+                FiscalizationSetup.CountryCodeHR():
+                    IF FiscalizationSetup.IsActive() THEN BEGIN
                         IF (Rec."Location Code" <> '') THEN
                             Rec.VALIDATE("Fisc. Location Code-Adl", FiscalizationManagement.GetFiscLocationCodeMapping(Rec."Location Code"));
 
                         IF (Rec."Location Code" <> '') THEN
                             Rec.VALIDATE("Fisc. Terminal-Adl", FiscalizationManagement.GetFiscWholesaleTerminalLoc(Rec."Fisc. Location Code-Adl"));
                     END;
-                FiscalizationSetup.CountryCodeRS:
-                    IF FiscalizationSetup.IsActive THEN BEGIN
+                FiscalizationSetup.CountryCodeRS():
+                    IF FiscalizationSetup.IsActive() THEN BEGIN
                         IF (Rec."Location Code" <> '') THEN
                             Rec.VALIDATE("Fisc. Location Code-Adl", FiscalizationManagement.GetFiscLocationCodeMapping(Rec."Location Code"));
 
@@ -107,7 +107,7 @@ codeunit 13062782 "FiscalizationEvents-Adl"
         SalesCrMemoHeader."Full Fisc. Doc. No.-Adl" := GetFullFiscDocNo(SalesCrMemoHeader."Fisc. No. Series-Adl", SalesCrMemoHeader."Fisc. Location Code-Adl", SalesCrMemoHeader."Fisc. Terminal-Adl");
     end;
 
-    local procedure GetFullFiscDocNo(FiscNoSeries: code[20]; FiscLocCode: code[10]; FiscTermCode: text[30]): code[20]
+    local procedure GetFullFiscDocNo(FiscNoSeries: code[20]; FiscLocCode: code[10]; FiscTermCode: text[30]) RetVal: code[20]
     var
         NoSeries: Record "No. Series";
         FiscalizationSetup: Record "Fiscalization Setup-Adl";
@@ -118,10 +118,10 @@ codeunit 13062782 "FiscalizationEvents-Adl"
             exit('');
         NoSeriesMgt.InitSeries(FiscNoSeries, '', 0D, FiscNo, FiscNoSeries);
         CASE TRUE OF
-            FiscalizationSetup.CountryCodeSI:
-                exit(StrSubstNo('%1-%2-%3', FiscLocCode, FiscTermCode, FiscNo));
-            FiscalizationSetup.CountryCodeHR:
-                exit(StrSubstNo('%1-%2-%3', FiscNo, FiscLocCode, FiscTermCode));
+            FiscalizationSetup.CountryCodeSI():
+                exit(CopyStr(StrSubstNo('%1-%2-%3', FiscLocCode, FiscTermCode, FiscNo), 1, MaxStrLen(RetVal)));
+            FiscalizationSetup.CountryCodeHR():
+                exit(CopyStr(StrSubstNo('%1-%2-%3', FiscNo, FiscLocCode, FiscTermCode), 1, MaxStrLen(RetVal)));
         end;
     end;
 }

@@ -902,7 +902,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
 
         case Step of
             Step::Intro:
-                ShowIntroStep;
+                ShowIntroStep();
             Step::Sync:
                 ShowSyncStep(Backwards);
             Step::"Select Type":
@@ -913,7 +913,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
             step::CoreSetup:
                 if TypeEvaluation then begin
                     Step := Step::Done;
-                    ShowDoneStep;
+                    ShowDoneStep();
                 end else begin
                     ShowCoreSetupDetailsStep();
                     NextEnabled := "ADL Enabled-Adl";
@@ -921,66 +921,66 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
             step::VIES:
                 if TypeEvaluation then begin
                     Step := Step::Done;
-                    ShowDoneStep;
+                    ShowDoneStep();
                 end else
                     ShowVIESSetupDetailsStep();
             step::PDO:
                 if TypeEvaluation then begin
                     Step := Step::Done;
-                    ShowDoneStep;
+                    ShowDoneStep();
                 end else
                     ShowPDOSetupDetailsStep();
             step::FAS:
                 if TypeEvaluation then begin
                     Step := Step::Done;
-                    ShowDoneStep;
+                    ShowDoneStep();
                 end else
                     ShowFASSetupDetailsStep();
             step::KRD:
                 if TypeEvaluation then begin
                     Step := Step::Done;
-                    ShowDoneStep;
+                    ShowDoneStep();
                 end else
                     ShowKRDSetupDetailsStep();
             step::BST:
                 if TypeEvaluation then begin
                     Step := Step::Done;
-                    ShowDoneStep;
+                    ShowDoneStep();
                 end else
                     ShowBSTSetupDetailsStep();
             step::Fiscal:
                 if TypeEvaluation then begin
                     Step := Step::Done;
-                    ShowDoneStep;
+                    ShowDoneStep();
                 end else
                     ShowFiscalSetupDetailsStep();
             Step::"Company Details":
                 if TypeEvaluation then begin
                     Step := Step::Done;
-                    ShowDoneStep;
+                    ShowDoneStep();
                 end else
-                    ShowCompanyDetailsStep;
+                    ShowCompanyDetailsStep();
             Step::"Communication Details":
-                ShowCommunicationDetailsStep;
+                ShowCommunicationDetailsStep();
             Step::SelectBankAccont:
                 if not ShowSelectBankAccountStep() then
                     NextStep(Backwards)
                 else
-                    ShowSelectBankAccount;
+                    ShowSelectBankAccount();
             Step::"Payment Details":
                 begin
                     if not Backwards then
-                        PopulateBankAccountInformation;
-                    ShowPaymentDetailsStep;
-                    ShowBankAccountCreationWarning := not ValidateBankAccountNotEmpty;
+                        PopulateBankAccountInformation();
+                    ShowPaymentDetailsStep();
+                    ShowBankAccountCreationWarning := not ValidateBankAccountNotEmpty();
                 end;
             Step::"Package Import":
                 if not TypeSelectionEnabled then
                     NextStep(Backwards)
                 else
-                    ShowPackageImportStep;
+                    ShowPackageImportStep();
             Step::Done:
-                ShowDoneStep;
+                ShowDoneStep();
         end;
         CurrPage.UPDATE(true);
     end;

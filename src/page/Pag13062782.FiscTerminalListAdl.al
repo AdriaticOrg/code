@@ -56,9 +56,9 @@ page 13062782 "Fisc. Terminal List-Adl"
         CASE TRUE OF
             // SI
             //UNUSED//FiscalizationSetup.CountryCodeSI:
-                //UNUSED//VisibleSI := TRUE;
-                // HR
-            FiscalizationSetup.CountryCodeHR:
+            //UNUSED//VisibleSI := TRUE;
+            // HR
+            FiscalizationSetup.CountryCodeHR():
                 VisibleHR := TRUE;
         END;
     end;

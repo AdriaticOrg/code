@@ -119,10 +119,10 @@ page 13062784 "Fisc. Location Card-Adl"
         FiscalizationSetup.GET();
         CASE TRUE OF
             // SI
-            FiscalizationSetup.CountryCodeSI:
+            FiscalizationSetup.CountryCodeSI():
                 VisibleSI := TRUE;
             // HR
-            FiscalizationSetup.CountryCodeHR:
+            FiscalizationSetup.CountryCodeHR():
                 VisibleHR := TRUE;
         END;
     end;

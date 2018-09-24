@@ -77,14 +77,16 @@ table 13062782 "Fiscalization Terminal-Adl"
     end;
 
     trigger OnModify()
+    var
+        AdlCore: Codeunit "Adl Core-Adl";
     begin
         "Creation Date" := TODAY();
         "Creation Time" := TIME();
         FiscalizationSetup.Get();
         CASE TRUE OF
             // HR
-            FiscalizationSetup.CountryCodeHR:
-                "User ID" := USERID;
+            FiscalizationSetup.CountryCodeHR():
+                "User ID" := AdlCore.TrimmedUserID50();
         END;
     end;
 
