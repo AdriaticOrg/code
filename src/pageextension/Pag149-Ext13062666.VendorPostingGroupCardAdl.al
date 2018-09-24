@@ -29,14 +29,13 @@ pageextension 13062666 "VendorPostingGroupCard-Adl" extends "Vendor Posting Grou
 
     var
         // <adl.0> 
-        CoreSetup: Record "CoreSetup-Adl";
         ADLCore: Codeunit "Adl Core-Adl";
         KRDFeatureEnabled: Boolean;
         // </adl.0> 
     trigger OnOpenPage()
     begin
         // <adl.0>
-        KRDFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::KRD);
+        KRDFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::KRD);
         // </adl.0>        
 
     end;

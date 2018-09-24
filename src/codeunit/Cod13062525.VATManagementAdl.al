@@ -14,14 +14,14 @@ codeunit 13062525 "VAT Management-Adl"
     [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnAfterInitRecord', '', false, false)]
     local procedure OnAfterInitRecord(var PurchHeader: Record "Purchase Header")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
         PurchHeader."VAT Date-Adl" := PurchHeader."Posting Date";
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnAfterValidateEvent', 'Posting Date', false, false)]
     local procedure OnAfterValidatePostingDate(var Rec: Record "Purchase Header"; var xRec: Record "Purchase Header"; CurrFieldNo: Integer)
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
 
         if Confirm(UpdVatDateQst, true) then
             Rec.Validate("VAT Date-Adl", Rec."Posting Date");
@@ -31,7 +31,7 @@ codeunit 13062525 "VAT Management-Adl"
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterCopyGenJnlLineFromPurchHeader', '', true, true)]
     local procedure OnAfterCopyGenJnlLineFromPurchHeader(PurchaseHeader: Record "Purchase Header"; var GenJournalLine: Record "Gen. Journal Line")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
         GenJournalLine."VAT Date-Adl" := PurchaseHeader."VAT Date-Adl";
         GenJournalLine."Postponed VAT-Adl" := PurchaseHeader."Postponed VAT-Adl";
     end;
@@ -39,7 +39,7 @@ codeunit 13062525 "VAT Management-Adl"
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Inventory Posting To G/L", 'OnBeforePostInvtPostBuf', '', true, false)]
     local procedure OnBeforePostInvtPostBuf(var GenJournalLine: Record "Gen. Journal Line"; var InvtPostingBuffer: Record "Invt. Posting Buffer"; ValueEntry: Record "Value Entry"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
         //<adl.7>
         IF InvtPostingBuffer."Account Type" IN [InvtPostingBuffer."Account Type"::Inventory, InvtPostingBuffer."Account Type"::"Inventory (Interim)"] THEN
             GenJournalLine.Correction := ManagePostponedVAT.UpdateCorrection(ValueEntry, GenJournalLine.Amount);
@@ -49,7 +49,7 @@ codeunit 13062525 "VAT Management-Adl"
     [EventSubscriber(ObjectType::Table, Database::"VAT Entry", 'OnAfterCopyFromGenJnlLine', '', true, true)]
     local procedure OnAfterCopyFromGenJnlLine(VAR VATEntry: Record "VAT Entry"; GenJournalLine: Record "Gen. Journal Line")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
         VATEntry."Postponed VAT-Adl" := GenJournalLine."Postponed VAT-Adl";
     end;
 
@@ -58,7 +58,7 @@ codeunit 13062525 "VAT Management-Adl"
     var
         VATPostingSetup: Record "VAT Posting Setup";
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
         VATPostingSetup.Get(GenJournalLine."VAT Bus. Posting Group", GenJournalLine."VAT Prod. Posting Group");
         VATEntry."VAT Identifier-Adl" := VATPostingSetup."VAT Identifier";
         CASE GenJournalLine."Postponed VAT-Adl" OF
@@ -85,14 +85,14 @@ codeunit 13062525 "VAT Management-Adl"
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterInitRecord', '', true, true)]
     local procedure SalesHeaderOnAfterInitRecord(var SalesHeader: Record "Sales Header")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
         SalesHeader."VAT Date-Adl" := SalesHeader."Posting Date";
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterCopyGenJnlLineFromSalesHeader', '', true, true)]
     local procedure GenJournalLineOnAfterValidateDocumentDate(SalesHeader: Record "Sales Header"; var GenJournalLine: Record "Gen. Journal Line")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
         GenJournalLine."VAT Date-Adl" := SalesHeader."VAT Date-Adl";
         GenJournalLine."Postponed VAT-Adl" := SalesHeader."Postponed VAT-Adl";
     end;
@@ -100,7 +100,7 @@ codeunit 13062525 "VAT Management-Adl"
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'Posting Date', false, false)]
     local procedure OnAfterValidateEventPostingDate(var Rec: Record "Sales Header"; var xRec: Record "Sales Header"; CurrFieldNo: Integer)
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
 
         if Confirm(UpdVatDateQst, false) then
             Rec.Validate("VAT Date-Adl", Rec."Posting Date");
@@ -110,28 +110,28 @@ codeunit 13062525 "VAT Management-Adl"
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforePostInvPostBuffer', '', false, false)]
     local procedure OnBeforePostInvPostBufferCu80(var GenJnlLine: Record "Gen. Journal Line"; var InvoicePostBuffer: Record "Invoice Post. Buffer"; SalesHeader: Record "Sales Header"; CommitIsSuppressed: Boolean; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; PreviewMode: Boolean)
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
         ManagePostponedVAT.SetPostponedVAT(GenJnlLine, SalesHeader."VAT Date-Adl", SalesHeader."Posting Date", true, GenJnlPostLine, 0D, InvoicePostBuffer);
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterPostInvPostBuffer', '', false, false)]
     local procedure OnAfterPostInvPostBufferCu80(VAR GenJnlLine: Record "Gen. Journal Line"; VAR InvoicePostBuffer: Record "Invoice Post. Buffer"; VAR SalesHeader: Record "Sales Header"; GLEntryNo: Integer; CommitIsSuppressed: Boolean; VAR GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
         ManagePostponedVAT.SetPostponedVAT(GenJnlLine, SalesHeader."VAT Date-Adl", SalesHeader."Posting Date", false, GenJnlPostLine, 0D, InvoicePostBuffer);
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnBeforePostInvPostBuffer', '', false, false)]
     local procedure OnBeforePostInvPostBufferCu90(VAR GenJnlLine: Record "Gen. Journal Line"; var InvoicePostBuffer: Record "Invoice Post. Buffer"; var PurchHeader: Record "Purchase Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; PreviewMode: Boolean; CommitIsSupressed: Boolean)
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
         ManagePostponedVAT.SetPostponedVAT(GenJnlLine, PurchHeader."VAT Date-Adl", PurchHeader."Posting Date", true, GenJnlPostLine, PurchHeader."VAT Output Date-Adl", InvoicePostBuffer);
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterPostInvPostBuffer', '', false, false)]
     local procedure OnAfterPostInvPostBufferCu90(VAR GenJnlLine: Record "Gen. Journal Line"; VAR InvoicePostBuffer: Record "Invoice Post. Buffer"; PurchHeader: Record "Purchase Header"; GLEntryNo: Integer; CommitIsSupressed: Boolean; VAR GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
         ManagePostponedVAT.SetPostponedVAT(GenJnlLine, PurchHeader."VAT Date-Adl", PurchHeader."Posting Date", false, GenJnlPostLine, PurchHeader."VAT Output Date-Adl", InvoicePostBuffer);
     end;
 
@@ -167,7 +167,7 @@ codeunit 13062525 "VAT Management-Adl"
         SuccessfulPostingVATOutputMsg: Label 'The VAT Output Date was successfully posted.';
         SuccessfulCorrectionVATOutputMsg: Label 'The VAT Output Date was successfully corrected.';
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
         if PostDate = 0D then exit;
         case TableNo of
             DATABASE::"Sales Cr.Memo Header":
@@ -445,12 +445,11 @@ codeunit 13062525 "VAT Management-Adl"
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Entry - Edit", 'OnBeforeVATEntryModify', '', true, true)]
     local procedure VATEntryEditOnBeforeVATEntryModify(var VATEntry: Record "VAT Entry"; FromVATEntry: Record "VAT Entry")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
         VATEntry."VAT Identifier-Adl" := FromVATEntry."VAT Identifier-Adl";
     end;
 
     var
-        CoreSetup: Record "CoreSetup-Adl";
         VATSetup: Record "VAT Setup-Adl";
         ADLCore: Codeunit "Adl Core-Adl";
         ManagePostponedVAT: Codeunit "Manage Postponed VAT-Adl";

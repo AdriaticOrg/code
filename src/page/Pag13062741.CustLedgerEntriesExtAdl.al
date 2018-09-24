@@ -173,7 +173,7 @@ page 13062741 "Cust. Ledger Entries Ext.-Adl"
     var
         UnpaidReceivablesSetup: Record "Unpaid Receivables Setup-Adl";
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::UnpaidReceivables) then exit;
 
         UnpaidReceivablesSetup.GET();
         UnpaidReceivablesSetup.testfield("Ext. Data Start Bal. Date-Adl");
@@ -184,7 +184,6 @@ page 13062741 "Cust. Ledger Entries Ext.-Adl"
     end;
 
     var
-        CoreSetup: Record "CoreSetup-Adl";
         CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-Adl";
         ADLCore: Codeunit "Adl Core-Adl";
         OriginalDocumentAmount: Decimal;

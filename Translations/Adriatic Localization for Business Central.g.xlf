@@ -2168,11 +2168,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CoreSetup-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 909224780 - Field 1414469994 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ADL Features</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CoreSetup-Adl - Field ADL Features - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 909224780 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -9012,6 +9007,51 @@
           <source>KRD Claim/Liability</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Posting Group-Adl - Field KRD Claim/Liability-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3569365990 - EnumValue 1147013053 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Core ADL functionality</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum ADLFeatures-Adl - EnumValue Core - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3569365990 - EnumValue 334623485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT extension</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum ADLFeatures-Adl - EnumValue VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3569365990 - EnumValue 1727325440 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FAS reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum ADLFeatures-Adl - EnumValue FAS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3569365990 - EnumValue 407507527 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KRD reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum ADLFeatures-Adl - EnumValue KRD - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3569365990 - EnumValue 734800247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BST reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum ADLFeatures-Adl - EnumValue BST - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3569365990 - EnumValue 3718789915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum ADLFeatures-Adl - EnumValue VIES - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3569365990 - EnumValue 3900088957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PDO reporting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum ADLFeatures-Adl - EnumValue PDO - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3569365990 - EnumValue 2856707180 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>UnpaidReceivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum ADLFeatures-Adl - EnumValue UnpaidReceivables - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3569365990 - EnumValue 2026942518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ForcedCreditDebit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum ADLFeatures-Adl - EnumValue ForcedCreditDebit - Property Caption</note>
         </trans-unit>
       </group>
     </body>

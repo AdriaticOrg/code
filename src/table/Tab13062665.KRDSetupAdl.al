@@ -59,13 +59,13 @@ table 13062665 "KRD Setup-Adl"
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
-        CoreSetup.EnableFeature(CoreSetup."ADL Features"::KRD);
+        CoreSetup.EnableFeature("ADLFeatures-Adl"::KRD);
     end;
 
     trigger OnDelete()
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
-        CoreSetup.DisableFeature(CoreSetup."ADL Features"::KRD);
+        CoreSetup.DisableFeature("ADLFeatures-Adl"::KRD);
     end;
 }

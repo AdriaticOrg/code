@@ -16,14 +16,13 @@ pageextension 13062561 "Inventory Setup-Adl" extends "Inventory Setup" //461
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
-        CoreSetup: Record "CoreSetup-Adl";
         RedReversalEnable: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
-        RedReversalEnable := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
+        RedReversalEnable := ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT);
         // </adl.0>
     end;
 }

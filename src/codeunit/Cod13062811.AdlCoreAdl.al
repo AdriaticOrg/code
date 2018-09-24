@@ -1,7 +1,7 @@
 codeunit 13062811 "Adl Core-Adl"
 {
     Permissions = tabledata 13062811 = rm;
-    procedure FeatureEnabled(Feature: Option Core,VAT,FAS,KRD,BST,VIES,PDO,UnpaidReceivables,ForcedCreditDebit): Boolean
+    procedure FeatureEnabled(Feature: Enum "ADLFeatures-Adl"): Boolean
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
@@ -13,14 +13,14 @@ codeunit 13062811 "Adl Core-Adl"
         EXIT(CopyStr(UserId(), 1, 50));
     end;
 
-    procedure EnableFeature(Feature: Option Core,VAT,FAS,KRD,BST,VIES,PDO,UnpaidReceivables,ForcedCreditDebit)
+    procedure EnableFeature(Feature: Enum "ADLFeatures-Adl")
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
         CoreSetup.EnableFeature(Feature);
     end;
 
-    procedure DisableFeature(Feature: Option Core,VAT,FAS,KRD,BST,VIES,PDO,UnpaidReceivables,ForcedCreditDebit)
+    procedure DisableFeature(Feature: Enum "ADLFeatures-Adl")
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin

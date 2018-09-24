@@ -72,13 +72,13 @@ table 13062604 "VIES Setup-Adl"
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
-        CoreSetup.EnableFeature(CoreSetup."ADL Features"::VIES);
+        CoreSetup.EnableFeature("ADLFeatures-Adl"::VIES);
     end;
 
     trigger OnDelete()
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
-        CoreSetup.DisableFeature(CoreSetup."ADL Features"::VIES);
+        CoreSetup.DisableFeature("ADLFeatures-Adl"::VIES);
     end;
 }

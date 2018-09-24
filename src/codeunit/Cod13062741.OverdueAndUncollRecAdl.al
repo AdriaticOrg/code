@@ -7,7 +7,6 @@ codeunit 13062741 "Overdue And Uncoll.Rec-Adl"
     Permissions = tabledata 21 = r;
 
     var
-        CoreSetup: Record "CoreSetup-Adl";
         ADLCore: Codeunit "Adl Core-Adl";
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterPostCust', '', false, false)]
@@ -17,7 +16,7 @@ codeunit 13062741 "Overdue And Uncoll.Rec-Adl"
         CustLedgerEntryExtData2: Record "Cust.Ledger Entry ExtData-Adl";
         CustLedgEntry: Record "Cust. Ledger Entry";
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::UnpaidReceivables) then exit;
         CustLedgEntry.FindLast();
 
         CustLedgerEntryExtData.Reset();
@@ -43,7 +42,7 @@ codeunit 13062741 "Overdue And Uncoll.Rec-Adl"
     var
         CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-Adl";
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::UnpaidReceivables) then exit;
 
         CustLedgerEntryExtData.Reset();
         CustLedgerEntryExtData.SetCurrentKey("Journal Template Name", "Journal Batch Name", "Line No.");

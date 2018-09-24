@@ -80,7 +80,6 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
-        CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
         VIESFeatureEnabled: Boolean;
         // </adl.0>
@@ -88,8 +87,8 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
     trigger OnOpenPage();
     begin
         // <adl.0>
-        VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
-        VIESFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VIES);
+        VATFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT);
+        VIESFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::VIES);
         // </adl.0>
     end;
 }

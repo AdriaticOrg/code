@@ -18,14 +18,13 @@ pageextension 13062550 "Currencies-Adl" extends Currencies //5
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
-        CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
-        ADLCoreEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::Core);
+        ADLCoreEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::Core);
         // </adl.0>
     end;
 }

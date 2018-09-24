@@ -15,7 +15,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         GenJnlLine2: Record "Gen. Journal Line";
         VATSetup: Record "VAT Setup-Adl";
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
         if (not (GenJnlLine."Gen. Posting Type" in [GenJnlLine."Gen. Posting Type"::Purchase, GenJnlLine."Gen. Posting Type"::Sale])) then
             exit;
         VATPostingSetup.GET(GenJnlLine."VAT Bus. Posting Group", GenJnlLine."VAT Prod. Posting Group");
@@ -136,6 +136,5 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     end;
     //</adl.7>
     var
-        CoreSetup: Record "CoreSetup-Adl";
         ADLCore: Codeunit "Adl Core-Adl";
 }

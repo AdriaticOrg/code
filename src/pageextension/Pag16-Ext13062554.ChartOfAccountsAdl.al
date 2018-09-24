@@ -73,7 +73,6 @@ pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
-        CoreSetup: Record "CoreSetup-Adl";
         FASFeatureEnabled: Boolean;
         VATFeatureEnabled: Boolean;
         // </adl.0>
@@ -81,8 +80,8 @@ pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
     trigger OnOpenPage();
     begin
         // <adl.0>
-        FASFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS);
-        VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
+        FASFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS);
+        VATFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT);
         // </adl.0>
     end;
 }

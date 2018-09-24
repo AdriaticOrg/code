@@ -123,14 +123,13 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
-        CoreSetup: Record "CoreSetup-Adl";
         VATFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
-        VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
+        VATFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT);
         // </adl.0>
     end;
 }

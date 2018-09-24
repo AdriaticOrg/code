@@ -1,7 +1,6 @@
 codeunit 13062571 "ForceCreditDebit-Adl"
 {
     var
-        CoreSetup: Record "CoreSetup-Adl";
         ADLCore: Codeunit "Adl Core-Adl";
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertGLEntryBuffer', '', false, false)]
@@ -9,7 +8,7 @@ codeunit 13062571 "ForceCreditDebit-Adl"
     var
         GLAccount: Record "G/L Account";
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::ForcedCreditDebit) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::ForcedCreditDebit) then exit;
         with GLAccount do begin
             Get(TempGLEntryBuf."G/L Account No.");
             if "Debit/Credit" = "Debit/Credit"::Both then

@@ -45,7 +45,6 @@ pageextension 13062537 "VAT Posting Setup Card-Adl" extends "VAT Posting Setup C
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
-        CoreSetup: Record "CoreSetup-Adl";
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;
         // </adl.0>
@@ -53,8 +52,8 @@ pageextension 13062537 "VAT Posting Setup Card-Adl" extends "VAT Posting Setup C
     trigger OnOpenPage();
     begin
         // <adl.0>
-        ADLCoreEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::Core);
-        VATFeatureEnabled := ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
+        ADLCoreEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::Core);
+        VATFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT);
         // </adl.0>
     end;
 }

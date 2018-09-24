@@ -6,14 +6,13 @@ codeunit 13062661 "Reporting SI Evnt.-Adl"
                   tabledata 254 = rm;
 
     var
-        CoreSetup: Record "CoreSetup-Adl";
         ADLCore: Codeunit "Adl Core-Adl";
 
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertVATEntry', '', true, false)]
     local procedure OnAfterInsertVATEntry(GenJnlLine: Record "Gen. Journal Line"; VATEntry: Record "VAT Entry"; GLEntryNo: Integer; var NextEntryNo: Integer)
     begin
         //TODO: what feature toggle should be checked here?
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT) then exit;
 
         VATEntry."VAT Correction Date-Adl" := GenJnlLine."VAT Correction Date-Adl";
         VATEntry."EU Customs Procedure-Adl" := GenJnlLine."EU Customs Procedure-Adl";
@@ -25,7 +24,7 @@ codeunit 13062661 "Reporting SI Evnt.-Adl"
     var
         Cust: Record Customer;
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS) then exit;
 
         if Cust.get(GenJnlLine."Account No.") then
             GenJnlLine.CopyFASFields(Cust);
@@ -36,7 +35,7 @@ codeunit 13062661 "Reporting SI Evnt.-Adl"
     var
         Vend: Record Vendor;
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS) then exit;
 
         with GenJnlLine do
             if Vend.get("Account No.") then
@@ -50,7 +49,7 @@ codeunit 13062661 "Reporting SI Evnt.-Adl"
         Vend: Record Vendor;
         BankAcc: Record "Bank Account";
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS) then exit;
 
         with GenJournalLine do begin
             case "Source Type" of
@@ -86,7 +85,7 @@ codeunit 13062661 "Reporting SI Evnt.-Adl"
     var
         GLAcc: Record "G/L Account";
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS) then exit;
 
         GLAcc.GET(GLEntry."G/L Account No.");
         if not GLAcc."FAS Account-Adl" then exit;
@@ -131,7 +130,7 @@ codeunit 13062661 "Reporting SI Evnt.-Adl"
     var
         GLAcc: Record "G/L Account";
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::BST) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::BST) then exit;
 
         if GLAcc.GET(GLEntry."G/L Account No.") then
             GLEntry."BST Code-Adl" := GLAcc."BST Code-Adl";
@@ -144,7 +143,7 @@ codeunit 13062661 "Reporting SI Evnt.-Adl"
     var
         Cust: Record Customer;
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS) then exit;
 
         Cust.get(CustLedgerEntry."Customer No.");
         CustLedgerEntry.CopyFASFields(Cust);
@@ -156,7 +155,7 @@ codeunit 13062661 "Reporting SI Evnt.-Adl"
         Cust: Record Customer;
         CustPstgGrp: Record "Customer Posting Group";
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::KRD) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::KRD) then exit;
 
         Cust.get(CustLedgerEntry."Customer No.");
         CustLedgerEntry.CopyKRDFields(Cust);
@@ -170,7 +169,7 @@ codeunit 13062661 "Reporting SI Evnt.-Adl"
     var
         Vend: Record Vendor;
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS) then exit;
 
         Vend.get(VendorLedgerEntry."Vendor No.");
         VendorLedgerEntry.CopyFASFields(Vend);
@@ -182,7 +181,7 @@ codeunit 13062661 "Reporting SI Evnt.-Adl"
         Vend: Record Vendor;
         VendPstgGrp: Record "Vendor Posting Group";
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::KRD) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::KRD) then exit;
 
         //TODO: default value should not be mandatory! ( check result instead ) ( suggest: removal )
         //ReportSISetup.TestField("Default KRD Affiliation Type");
@@ -196,63 +195,63 @@ codeunit 13062661 "Reporting SI Evnt.-Adl"
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterCopyGenJnlLineFromSalesHeader', '', false, false)]
     local procedure CopyLineFromSalesHeader(SalesHeader: Record "Sales Header"; VAR GenJournalLine: Record "Gen. Journal Line")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VIES) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::VIES) then exit;
         GenJournalLine.CopyVIESFields(SalesHeader);
     end;
 
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetCustomerAccount', '', false, false)]
     local procedure GETFASFromCust(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Customer: Record Customer)
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS) then exit;
         GenJournalLine.CopyFASFields(Customer);
     end;
 
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetVendorAccount', '', false, false)]
     local procedure GETFASFromVend(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Vendor: Record Vendor)
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS) then exit;
         GenJournalLine.CopyFASFields(Vendor);
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetBankAccount', '', false, false)]
     local procedure GETFASFromBank(VAR GenJournalLine: Record "Gen. Journal Line"; VAR BankAccount: Record "Bank Account")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS) then exit;
         GenJournalLine.CopyFASFields(BankAccount);
     end;
 
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetGLAccount', '', false, false)]
     local procedure GETFASFromGLAcc(VAR GenJournalLine: Record "Gen. Journal Line"; VAR GLAccount: Record "G/L Account")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS) then exit;
         GenJournalLine.CopyFASFields(GLAccount);
     end;
 
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetCustomerBalAccount', '', false, false)]
     local procedure BalGETFASFromVend(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Customer: Record Customer)
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS) then exit;
         GenJournalLine.CopyFASFields(Customer);
     end;
 
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetVendorBalAccount', '', false, false)]
     local procedure BalGETFASFromCust(VAR GenJournalLine: Record "Gen. Journal Line"; VAR Vendor: Record "Vendor")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS) then exit;
         GenJournalLine.CopyFASFields(Vendor);
     end;
 
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetBankBalAccount', '', false, false)]
     local procedure BalGETFASFromBank(VAR GenJournalLine: Record "Gen. Journal Line"; VAR BankAccount: Record "Bank Account")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS) then exit;
         GenJournalLine.CopyFASFields(BankAccount);
     end;
 
     [EventSubscriber(ObjectType::Table, database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetGLBalAccount', '', false, false)]
     local procedure BalGETFASFromGLAcc(VAR GenJournalLine: Record "Gen. Journal Line"; VAR GLAccount: Record "G/L Account")
     begin
-        if not ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS) then exit;
+        if not ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS) then exit;
         GenJournalLine.CopyFASFields(GLAccount);
     end;
 

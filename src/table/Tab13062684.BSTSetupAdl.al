@@ -42,13 +42,13 @@ table 13062684 "BST Setup-Adl"
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
-        CoreSetup.EnableFeature(CoreSetup."ADL Features"::BST);
+        CoreSetup.EnableFeature("ADLFeatures-Adl"::BST);
     end;
 
     trigger OnDelete()
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
-        CoreSetup.DisableFeature(CoreSetup."ADL Features"::BST);
+        CoreSetup.DisableFeature("ADLFeatures-Adl"::BST);
     end;
 }

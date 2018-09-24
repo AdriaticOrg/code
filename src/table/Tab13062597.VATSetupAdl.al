@@ -29,13 +29,13 @@ table 13062597 "VAT Setup-Adl"
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
-        CoreSetup.EnableFeature(CoreSetup."ADL Features"::VAT);
+        CoreSetup.EnableFeature("ADLFeatures-Adl"::VAT);
     end;
 
     trigger OnDelete()
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
-        CoreSetup.DisableFeature(CoreSetup."ADL Features"::VAT);
+        CoreSetup.DisableFeature("ADLFeatures-Adl"::VAT);
     end;
 }

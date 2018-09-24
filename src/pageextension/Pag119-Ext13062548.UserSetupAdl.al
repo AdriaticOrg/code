@@ -54,20 +54,19 @@ pageextension 13062548 "User Setup-Adl" extends "User Setup" //119
     var
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
-        CoreSetup: Record "CoreSetup-Adl";
         ReportingFeaturesEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
     begin
         // <adl.0>
-        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VAT);
-        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled(CoreSetup."ADL Features"::FAS);
-        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled(CoreSetup."ADL Features"::KRD);
-        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled(CoreSetup."ADL Features"::BST);
-        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled(CoreSetup."ADL Features"::VIES);
-        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled(CoreSetup."ADL Features"::PDO);
-        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled(CoreSetup."ADL Features"::UnpaidReceivables);
+        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT);
+        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS);
+        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled("ADLFeatures-Adl"::KRD);
+        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled("ADLFeatures-Adl"::BST);
+        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled("ADLFeatures-Adl"::VIES);
+        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled("ADLFeatures-Adl"::PDO);
+        ReportingFeaturesEnabled := ReportingFeaturesEnabled or ADLCore.FeatureEnabled("ADLFeatures-Adl"::UnpaidReceivables);
         // </adl.0>
     end;
 }
