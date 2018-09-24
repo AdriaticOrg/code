@@ -186,7 +186,7 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
                                 InvoiceAmount := CustLedgerEntryExtData."Original Document Amount (LCY)";
                                 VATAmount := CustLedgerEntryExtData."Original VAT Amount (LCY)";
                             end;
-                            if (InvoiceAmount = 0) and (UnpaidReceivablesSetup."Ext. Data Start Bal. Date-Adl" <> 0D) then
+                            if (InvoiceAmount = 0) and (ExtendedSetup."Ext. Data Start Bal. Date" <> 0D) then
                                 ERROR(STRSUBSTNO(Text011Lbl, "Entry No."));
                             InvoiceAmount := InvoiceAmount - VATAmount;
                         end;
@@ -584,7 +584,7 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
 
     trigger OnPreReport()
     begin
-        UnpaidReceivablesSetup.Get();
+        ExtendedSetup.Get();
         //StartDate:=CALCDATE('-<6Y>',EndDueDate);
         StartDate := CALCDATE('-<6Y+1D>', EndDueDate); //new
 
@@ -630,7 +630,7 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
     var
         CompanyInformation: Record "Company Information";
         CompanyOfficial: Record "User Setup";
-        UnpaidReceivablesSetup: Record "Unpaid Receivables Setup-Adl";
+        ExtendedSetup: Record "Extended Setup-Adl";
         CustLedgerEntry: Record "Cust. Ledger Entry";
         CLEForFilter: Record "Cust. Ledger Entry";
         DetailedCustLedgEntry: Record "Detailed Cust. Ledg. Entry";

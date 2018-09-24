@@ -158,7 +158,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                 group(VAT)
                 {
                     Caption = 'VAT';
-                    field("Use VAT Output Date-Adl"; "Use VAT Output Date-Adl")
+                    field("Use VAT Output Date"; "Use VAT Output Date")
                     {
                         Visible = "ADL Enabled-Adl";
                         ApplicationArea = All;
@@ -1139,7 +1139,6 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         PDOSetup: Record "PDO Setup-Adl";
         VIESSetup: Record "VIES Setup-Adl";
         ExtendedSetup: Record "Extended Setup-Adl";
-        UnpaidRecSetup: Record "Unpaid Receivables Setup-Adl";
         FiscalSetup: Record "Fiscalization Setup-Adl";
     begin
         if CoreSetup."BST Enabled" then begin
@@ -1176,7 +1175,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
             "PDO VAT Ident. Filter Code-Adl" := PDOSetup."PDO VAT Ident. Filter Code";
         end;
 
-        if CoreSetup."VIes Enabled" then begin
+        if CoreSetup."VIES Enabled" then begin
             if VIESSetup.Get() then;
             "Default VIES Country-Adl" := VIESSetup."Default VIES Country";
             "Default VIES Type-Adl" := VIESSetup."Default VIES Type";
@@ -1186,13 +1185,13 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
             "VIES Resp. User ID-Adl" := VIESSetup."VIES Resp. User ID";
         end;
 
-        if CoreSetup."VAt Enabled" then begin
+        if CoreSetup."VAT Enabled" then begin
             if ExtendedSetup.Get() then;
-            "Use VAT Output Date-Adl" := ExtendedSetup."Use VAT Output Date-Adl";
+            "Use VAT Output Date" := ExtendedSetup."Use VAT Output Date";
         end;
 
         if CoreSetup."Unpaid Receivables Enabled" then
-            "UP Ext. Data Start Bal. Date-Adl" := UnpaidRecSetup."Ext. Data Start Bal. Date-Adl";
+            "UP Ext. Data Start Bal. Date-Adl" := ExtendedSetup."Ext. Data Start Bal. Date";
         if CoreSetup."Forced Credit/Debit Enabled" then
             "Forced Credit/Debit Enabled-Adl" := CoreSetup."Forced Credit/Debit Enabled";
 

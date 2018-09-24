@@ -26,4 +26,11 @@ codeunit 13062811 "Adl Core-Adl"
     begin
         CoreSetup.DisableFeature(Feature);
     end;
+
+    procedure EnableOrDisableFeature(Feature: Enum "ADLFeatures-Adl"; EnableFeature: Boolean)
+    var
+        CoreSetup: Record "CoreSetup-Adl";
+    begin
+        CoreSetup.EnableOrDisableFeature(Feature, EnableFeature);
+    end;
 }

@@ -359,7 +359,7 @@
         <trans-unit id="Table 4247890588 - Field 2404853609 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>Use VAT Output Date</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Koristite datum izlaznog PDV-a</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table VAT Setup-Adl - Field Use VAT Output Date-Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VAT Setup-Adl - Field Use VAT Output Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4247890588 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>VAT Setup</source>
@@ -374,7 +374,7 @@
         <trans-unit id="Page 4247890588 - Control 2404853609 - Property 1295455071" translate="yes" xml:space="preserve">
           <source>TODO: Tooltip - VAT Date</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">TODO: Opis alatke - datum PDV-a</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup-Adl - Control Use VAT Output Date-Adl - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup-Adl - Control Use VAT Output Date - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Table 788774104 - Property 2879900210" translate="yes" xml:space="preserve">
           <source>VIES Report Header</source>

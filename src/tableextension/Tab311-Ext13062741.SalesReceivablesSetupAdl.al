@@ -14,9 +14,9 @@ tableextension 13062741 "Sales & Receivables Setup-Adl" extends "Sales & Receiva
     // <adl.28>
     trigger OnAfterModify()
     var
-        UnpaidReceivablesSetup: Record "Unpaid Receivables Setup-Adl";
+        ExtendedSetup: Record "Extended Setup-Adl";
     begin
-        UnpaidReceivablesSetup.ModifyExtDataStartBalDate("Ext. Data Start Bal. Date-Adl");
+        ExtendedSetup.ModifyExtDataStartBalDate("Ext. Data Start Bal. Date-Adl");
     end;
     // </adl.28>
 

@@ -65,7 +65,7 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
         }
 
         /* VAT */
-        field(13062823; "Use VAT Output Date-Adl"; Boolean)
+        field(13062823; "Use VAT Output Date"; Boolean)
         {
             Caption = 'Use VAT Output Date';
             DataClassification = SystemMetadata;
@@ -290,14 +290,13 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
         FASSetup: Record "FAS Setup-Adl";
         KRDSetup: Record "KRD Setup-Adl";
         BSTSetup: Record "BST Setup-Adl";
-        UnpaidRecSetup: Record "Unpaid Receivables Setup-Adl";
         FiscalSetup: Record "Fiscalization Setup-Adl";
         CoreSetup: Record "CoreSetup-Adl";
         CoreEnabled: Boolean;
     begin
         if not ExtendedSetup.get() then
             CoreEnabled := ExtendedSetup.Insert(true);
-        ExtendedSetup."Use VAT Output Date-Adl" := "Use VAT Output Date-Adl";
+        ExtendedSetup."Use VAT Output Date" := "Use VAT Output Date";
         ExtendedSetup.Modify();
 
         if not VIESSetup.get() then
@@ -346,10 +345,10 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
         BSTSetup.Modify();
 
         If "UP Ext. Data Start Bal. Date-Adl" <> 0D then begin
-            if not UnpaidRecSetup.get() then
-                CoreEnabled := UnpaidRecSetup.Insert(true);
-            UnpaidRecSetup."Ext. Data Start Bal. Date-Adl" := "UP Ext. Data Start Bal. Date-Adl";
-            UnpaidRecSetup.Modify();
+            if not ExtendedSetup.get() then
+                CoreEnabled := ExtendedSetup.Insert(true);
+            ExtendedSetup."Ext. Data Start Bal. Date" := "UP Ext. Data Start Bal. Date-Adl";
+            ExtendedSetup.Modify();
         end;
 
         if "Fiscal. Active-Adl" then begin

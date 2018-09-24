@@ -12,5 +12,5 @@ enum 13062811 "ADLFeatures-Adl"
     value(7; PDO) { Caption = 'PDO reporting'; }
     value(8; UnpaidReceivables) { Caption = 'UnpaidReceivables'; }
     value(9; ForcedCreditDebit) { Caption = 'ForcedCreditDebit'; }
-
+    value(10; FISC) { Caption = 'Fiscalization'; }
 }
