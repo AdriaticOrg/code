@@ -343,36 +343,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Control Condition - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Table 4247890588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Setup</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table VAT Setup-Adl - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 4247890588 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Primary Key</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table VAT Setup-Adl - Field Primary Key - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 4247890588 - Field 2404853609 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Use VAT Output Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table VAT Setup-Adl - Field Use VAT Output Date-Adl - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4247890588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Setup</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup-Adl - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4247890588 - Control 3718789915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup-Adl - Control VIES - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4247890588 - Control 2404853609 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies if VAT Output Date is used when posting document.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup-Adl - Control Use VAT Output Date-Adl - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="Table 788774104 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VIES Report Header</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2337,6 +2307,41 @@
           <source>Set up Adriatic Localization</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Assisted Setup-Adl - NamedType ADLIntroTxt</note>
+        </trans-unit>
+        <trans-unit id="Table 4012249896 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adriatic Extended Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extended Setup-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4012249896 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extended Setup-Adl - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4012249896 - Field 2898684982 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable Adriatic VAT Extension</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extended Setup-Adl - Field VATEnabled-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4012249896 - Field 2404853609 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use VAT Output Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extended Setup-Adl - Field Use VAT Output Date-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4012249896 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adriatic Extended Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Extended Setup-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4012249896 - Control 3718789915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Extended Setup-Adl - Control VIES - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4012249896 - Control 2404853609 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if VAT Output Date is used when posting document.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Extended Setup-Adl - Control Use VAT Output Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Codeunit 1890036800 - Method 1622923883 - NamedType 268750583" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Postponed VAT was successfully posted.</source>

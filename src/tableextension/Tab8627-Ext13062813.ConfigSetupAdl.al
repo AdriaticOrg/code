@@ -284,7 +284,7 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
 
     procedure CopySetupData()
     var
-        VATSetup: Record "VAT Setup-Adl";
+        ExtendedSetup: Record "Extended Setup-Adl";
         VIESSetup: Record "VIES Setup-Adl";
         PDOSetup: Record "PDO Setup-Adl";
         FASSetup: Record "FAS Setup-Adl";
@@ -295,10 +295,10 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
         CoreSetup: Record "CoreSetup-Adl";
         CoreEnabled: Boolean;
     begin
-        if not VATSetup.get() then
-            CoreEnabled := VATSetup.Insert(true);
-        VATSetup."Use VAT Output Date-Adl" := "Use VAT Output Date-Adl";
-        VATSetup.Modify();
+        if not ExtendedSetup.get() then
+            CoreEnabled := ExtendedSetup.Insert(true);
+        ExtendedSetup."Use VAT Output Date-Adl" := "Use VAT Output Date-Adl";
+        ExtendedSetup.Modify();
 
         if not VIESSetup.get() then
             CoreEnabled := VIESSetup.Insert(true);

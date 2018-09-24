@@ -1,6 +1,6 @@
-table 13062597 "VAT Setup-Adl"
+table 13062813 "Extended Setup-Adl"
 {
-    Caption = 'VAT Setup';
+    Caption = 'Adriatic Extended Setup';
     DataClassification = SystemMetadata;
 
     fields
@@ -10,7 +10,12 @@ table 13062597 "VAT Setup-Adl"
             Caption = 'Primary Key';
             DataClassification = SystemMetadata;
         }
-        field(13062525; "Use VAT Output Date-Adl"; Boolean)
+        field(13062525; "VATEnabled-Adl"; Boolean)
+        {
+            Caption = 'Enable Adriatic VAT Extension';
+            DataClassification = SystemMetadata;
+        }
+        field(13062526; "Use VAT Output Date-Adl"; Boolean)
         {
             Caption = 'Use VAT Output Date';
             DataClassification = SystemMetadata;
@@ -24,18 +29,4 @@ table 13062597 "VAT Setup-Adl"
             Clustered = true;
         }
     }
-
-    trigger OnInsert()
-    var
-        CoreSetup: Record "CoreSetup-Adl";
-    begin
-        CoreSetup.EnableFeature("ADLFeatures-Adl"::VAT);
-    end;
-
-    trigger OnDelete()
-    var
-        CoreSetup: Record "CoreSetup-Adl";
-    begin
-        CoreSetup.DisableFeature("ADLFeatures-Adl"::VAT);
-    end;
 }

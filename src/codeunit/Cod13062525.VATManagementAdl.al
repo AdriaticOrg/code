@@ -366,8 +366,8 @@ codeunit 13062525 "VAT Management-Adl"
         GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line";
     begin
         VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group", VATEntry."VAT Prod. Posting Group");
-        VATSetup.Get();
-        if (not VATSetup."Use VAT Output Date-Adl") and (VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT") then exit;
+        ExtendedSetup.Get();
+        if (not ExtendedSetup."Use VAT Output Date-Adl") and (VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT") then exit;
         with GenJnlLine do begin
             Init();
             "Document No." := VATEntry."Document No.";
@@ -450,7 +450,7 @@ codeunit 13062525 "VAT Management-Adl"
     end;
 
     var
-        VATSetup: Record "VAT Setup-Adl";
+        ExtendedSetup: Record "Extended Setup-Adl";
         ADLCore: Codeunit "Adl Core-Adl";
         ManagePostponedVAT: Codeunit "Manage Postponed VAT-Adl";
         UpdVatDateQst: Label 'Do you want to change VAT Date';

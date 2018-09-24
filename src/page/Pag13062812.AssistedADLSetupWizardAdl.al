@@ -1138,7 +1138,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         FASSetup: Record "FAS Setup-Adl";
         PDOSetup: Record "PDO Setup-Adl";
         VIESSetup: Record "VIES Setup-Adl";
-        VATSetup: Record "VAT Setup-Adl";
+        ExtendedSetup: Record "Extended Setup-Adl";
         UnpaidRecSetup: Record "Unpaid Receivables Setup-Adl";
         FiscalSetup: Record "Fiscalization Setup-Adl";
     begin
@@ -1187,8 +1187,8 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         end;
 
         if CoreSetup."VAt Enabled" then begin
-            if VATSetup.Get() then;
-            "Use VAT Output Date-Adl" := VATSetup."Use VAT Output Date-Adl";
+            if ExtendedSetup.Get() then;
+            "Use VAT Output Date-Adl" := ExtendedSetup."Use VAT Output Date-Adl";
         end;
 
         if CoreSetup."Unpaid Receivables Enabled" then

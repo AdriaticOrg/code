@@ -1,10 +1,10 @@
-page 13062599 "VAT Setup-Adl"
+page 13062813 "Extended Setup-Adl"
 {
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = "VAT Setup-Adl";
-    Caption = 'VAT Setup';
+    SourceTable = "Extended Setup-Adl";
+    Caption = 'Adriatic Extended Setup';
 
     layout
     {
