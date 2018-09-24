@@ -887,8 +887,8 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         SelectPackageAndApplyTxt: Label 'Select a package to run the Apply Package function.';
         PackageFileName: Text;
         PackageUrl: Text;
-        PackageDownloadBasicLbl: Label 'Click here to download BASIC DATA package';
-        PackageDownloadMasterLbl: Label 'Click here to download MASTER DATA package';
+        //UNUSED//PackageDownloadBasicLbl: Label 'Click here to download BASIC DATA package';
+        //UNUSED//PackageDownloadMasterLbl: Label 'Click here to download MASTER DATA package';
         PackageDownloadLbl: Label 'Download package';
 
     local procedure NextStep(Backwards: Boolean)

@@ -180,7 +180,7 @@ codeunit 13062525 "VAT Management-Adl"
                                 SalesCrMemo."Postponed VAT-Adl" := SalesCrMemo."Postponed VAT-Adl"::"Realized VAT"
                             else
                                 SalesCrMemo."Postponed VAT-Adl" := SalesCrMemo."Postponed VAT-Adl"::"Postponed VAT";
-                        SalesCrMemo.Modify;
+                        SalesCrMemo.Modify();
                     end;
                 end;
             DATABASE::"Sales Invoice Header":
@@ -193,7 +193,7 @@ codeunit 13062525 "VAT Management-Adl"
                                 SalesInvoice."Postponed VAT-Adl" := SalesInvoice."Postponed VAT-Adl"::"Realized VAT"
                             else
                                 SalesInvoice."Postponed VAT-Adl" := SalesInvoice."Postponed VAT-Adl"::"Postponed VAT";
-                        SalesInvoice.Modify;
+                        SalesInvoice.Modify();
                     end;
                 end;
             DATABASE::"Purch. Inv. Header":
@@ -211,7 +211,7 @@ codeunit 13062525 "VAT Management-Adl"
                                 PurchInvoice."VAT Output Date-Adl" := PostDate
                             else
                                 PurchInvoice."VAT Output Date-Adl" := 0D;
-                        PurchInvoice.Modify;
+                        PurchInvoice.Modify();
                     end;
                 end;
             DATABASE::"Purch. Cr. Memo Hdr.":
@@ -229,7 +229,7 @@ codeunit 13062525 "VAT Management-Adl"
                                 PurchCrMemo."VAT Output Date-Adl" := PostDate
                             else
                                 PurchCrMemo."VAT Output Date-Adl" := 0D;
-                        PurchCrMemo.Modify;
+                        PurchCrMemo.Modify();
                     end;
                 end;
         end;
