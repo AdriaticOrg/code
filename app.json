@@ -1,9 +1,9 @@
 {
   "id": "06044fb1-e4fe-4612-bbab-8deb02c9c1ac",
   "name": "Adriatic Localization for Business Central",
-  "publisher": "Adacta",
-  "brief": "",
-  "description": "",
+  "publisher": "Adacta d.o.o.",
+  "brief": "Adriatic localization is compliant with local laws and regulations for Slovenia, Croatia and Serbia.",
+  "description": "Adriatic localization includes: translation into local languages, basic and extended functionality and country-specific reports.",
   "version": "1.0.0.0",
   "privacyStatement": "",
   "EULA": "https://adriaticorg.github.io/app/ServiceAgreement.html",

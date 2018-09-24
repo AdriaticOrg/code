@@ -2568,6 +2568,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Wizard Management-Adl - NamedType PackageMissingErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3727984632 - NamedType 2316870939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Failed to contact the address endpoint.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Wizard Management-Adl - NamedType Text001Err</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3727984632 - NamedType 888598606" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Please enter valid url address</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Wizard Management-Adl - NamedType MissingUrlErr</note>
+        </trans-unit>
         <trans-unit id="Page 701540871 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Types</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4913,6 +4923,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Control2 - Property InstructionalText</note>
         </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1979342387 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package url address</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control PackageUrl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1979342387 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enter valid package url address</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control PackageUrl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 2978988224 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Click here to download rapidstart package</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control PackageDownloadLbl - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2914345777 - Control 745115794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Select the configuration package you want to load:</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5014,7 +5039,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType HelpLbl</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - NamedType 3736455171" size-unit="char" translate="no" xml:space="preserve">
-          <source>http://go.microsoft.com/fwlink/?LinkId=746160</source>
+          <source>https://adriaticorg.github.io/help</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType HelpLinkTxt</note>
         </trans-unit>
@@ -5043,15 +5068,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType SelectPackageAndApplyTxt</note>
         </trans-unit>
-        <trans-unit id="Page 2914345777 - NamedType 2559826610" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Click here to download BASIC DATA package</source>
+        <trans-unit id="Page 2914345777 - NamedType 2978988224" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download package</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType PackageDownloadBasicLbl</note>
-        </trans-unit>
-        <trans-unit id="Page 2914345777 - NamedType 1341651604" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Click here to download MASTER DATA package</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType PackageDownloadMasterLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType PackageDownloadLbl</note>
         </trans-unit>
         <trans-unit id="Report 2007895818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Calculation Details</source>
