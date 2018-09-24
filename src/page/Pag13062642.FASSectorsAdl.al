@@ -1,6 +1,6 @@
 page 13062642 "FAS Sectors-Adl"
 {
-    Caption = 'FAS Finance Sectors';
+    Caption = 'FAS Sectors';
     PageType = List;
     SourceTable = "FAS Sector-Adl";
     Editable = true;

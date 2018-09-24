@@ -1,6 +1,6 @@
 page 13062641 "FAS Instruments-Adl"
 {
-    Caption = 'Finance Instruments';
+    Caption = 'FAS Instruments';
     PageType = List;
     DelayedInsert = true;
     SourceTable = "FAS Instrument-Adl";
