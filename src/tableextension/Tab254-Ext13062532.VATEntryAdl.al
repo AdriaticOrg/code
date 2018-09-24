@@ -52,6 +52,7 @@ tableextension 13062532 "VAT Entry-Adl" extends "VAT Entry" //254
         // <adl.20>    
         field(13062781; "Full Fisc. Doc. No.-Adl"; Code[20])
         {
+            Caption = 'Full Fisc. Doc. No.';
             DataClassification = SystemMetadata;
         }
         // </adl.20>  

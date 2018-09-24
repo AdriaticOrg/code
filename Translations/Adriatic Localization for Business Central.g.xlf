@@ -1923,10 +1923,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Fiscalization Setup-Adl - Field Primary Key - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1791662457 - Field 1090351696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Active</source>
+        <trans-unit id="Table 1791662457 - Field 2858291120 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ActiveX</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Fiscalization Setup-Adl - Field Active - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Fiscalization Setup-Adl - Field ActiveX - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1791662457 - Field 474480784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Start Date</source>

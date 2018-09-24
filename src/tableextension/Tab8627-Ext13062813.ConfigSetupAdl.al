@@ -355,7 +355,7 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
         if "Fiscal. Active-Adl" then begin
             if not FiscalSetup.get() then
                 CoreEnabled := FiscalSetup.Insert(true);
-            FiscalSetup.Active := "Fiscal. Active-Adl";
+            FiscalSetup.ActiveX := "Fiscal. Active-Adl";
             FiscalSetup."Default Fiscalization Location" := "Fiscal. Default Fiscalization Location-Adl";
             FiscalSetup."Default Fiscalization Terminal" := "Fiscal. Default Fiscalization Terminal-Adl";
             FiscalSetup."Start Date" := "Fiscal. Start Date-Adl";

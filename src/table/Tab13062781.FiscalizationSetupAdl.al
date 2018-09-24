@@ -8,31 +8,34 @@ table 13062781 "Fiscalization Setup-Adl"
     {
         field(1; "Primary Key"; code[10])
         {
+            Caption = 'Primary Key';
             DataClassification = SystemMetadata;
-
         }
-        field(2; Active; Boolean)
+        field(2; ActiveX; Boolean)
         {
+            Caption = 'Active';
             DataClassification = SystemMetadata;
         }
 
         field(3; "Start Date"; Date)
         {
+            Caption = 'Start Date';
             DataClassification = SystemMetadata;
-
         }
         field(4; "End Date"; Date)
         {
+            Caption = 'End Date';
             DataClassification = SystemMetadata;
-
         }
         field(5; "Default Fiscalization Location"; code[10])
         {
+            Caption = 'Default Fiscalization Location';
             DataClassification = SystemMetadata;
             TableRelation = "Fiscalization Location-Adl";
         }
         field(6; "Default Fiscalization Terminal"; Text[30])
         {
+            Caption = 'Default Fiscalization Terminal';
             DataClassification = SystemMetadata;
             TableRelation = "Fiscalization Terminal-Adl";
         }

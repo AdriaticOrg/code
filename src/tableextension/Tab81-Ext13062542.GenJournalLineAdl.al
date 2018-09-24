@@ -81,6 +81,7 @@ tableextension 13062542 "Gen. Journal Line-Adl" extends "Gen. Journal Line" // 8
         // <adl.20>    
         field(13062781; "Full Fisc. Doc. No.-Adl"; Code[20])
         {
+            Caption = 'Full Fisc. Doc. No.';
             DataClassification = SystemMetadata;
         }
         // </adl.20>       	 

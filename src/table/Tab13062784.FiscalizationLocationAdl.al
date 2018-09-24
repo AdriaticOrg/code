@@ -9,12 +9,13 @@ table 13062784 "Fiscalization Location-Adl"
     {
         field(1; "Fisc. Location Code"; Code[10])
         {
+            Caption = 'Fisc. Location Code';
             NotBlank = True;
             DataClassification = SystemMetadata;
-
         }
         field(2; "Fisc. Street"; text[100])
         {
+            Caption = 'Fisc. Street';
             DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
@@ -23,6 +24,7 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(3; "Fisc. House Number"; text[4])
         {
+            Caption = 'Fisc. House Number';
             DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
@@ -31,6 +33,7 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(4; "Fisc. House Number Appendix"; text[4])
         {
+            Caption = 'Fisc. House Number Appendix';
             DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
@@ -39,6 +42,7 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(5; "Fisc. Settlement"; Text[35])
         {
+            Caption = 'Fisc. Settlement';
             DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
@@ -47,6 +51,7 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(6; "Fisc. City/Municipality"; Text[35])
         {
+            Caption = 'Fisc. City/Municipality';
             DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
@@ -55,6 +60,7 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(7; "Fisc. Post Code"; Code[20])
         {
+            Caption = 'Fisc. Post Code';
             DataClassification = SystemMetadata;
             TableRelation = "Post Code";
             trigger OnValidate()
@@ -69,6 +75,7 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(8; "Fisc. Location Description"; Text[100])
         {
+            Caption = 'Fisc. Location Description';
             DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
@@ -77,6 +84,7 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(9; "Working Hours"; Text[100])
         {
+            Caption = 'Working Hours';
             DataClassification = SystemMetadata;
             trigger OnValidate()
             begin
@@ -85,35 +93,42 @@ table 13062784 "Fiscalization Location-Adl"
         }
         field(10; "Date Of Application"; Date)
         {
+            Caption = 'Date Of Application';
             DataClassification = SystemMetadata;
         }
         field(11; "Fisc. No. Series"; Code[20])
         {
+            Caption = 'Fisc. No. Series';
             TableRelation = "No. Series";
             DataClassification = SystemMetadata;
         }
         field(12; "Fisc. Active"; Boolean)
         {
+            Caption = 'Fisc. Active';
             Description = 'Active';
             DataClassification = SystemMetadata;
         }
         field(13; "Creation Date"; Date)
         {
+            Caption = 'Creation Date';
             Editable = False;
             DataClassification = SystemMetadata;
         }
         field(14; "Creation Time"; Time)
         {
+            Caption = 'Creation Time';
             Editable = False;
             DataClassification = SystemMetadata;
         }
         field(15; "User ID"; Code[50])
         {
+            Caption = 'User ID';
             Editable = false;
             DataClassification = SystemMetadata;
         }
         field(16; "Ending Date"; Date)
         {
+            Caption = 'Ending Date';
             Editable = false;
             DataClassification = SystemMetadata;
         }

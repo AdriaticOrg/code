@@ -14,7 +14,7 @@ page 13062781 "Fiscalization Setup-Adl"
         {
             group(General)
             {
-                field(Active; Active)
+                field(Active; ActiveX)
                 {
                     ApplicationArea = All;
                 }

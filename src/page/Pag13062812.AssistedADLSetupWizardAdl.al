@@ -1197,7 +1197,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
             "Forced Credit/Debit Enabled-Adl" := CoreSetup."Forced Credit/Debit Enabled";
 
         if FiscalSetup.get() then;
-        "Fiscal. Active-Adl" := FiscalSetup.Active;
+        "Fiscal. Active-Adl" := FiscalSetup.ActiveX;
         "Fiscal. Default Fiscalization Location-Adl" := FiscalSetup."Default Fiscalization Location";
         "Fiscal. Default Fiscalization Terminal-Adl" := FiscalSetup."Default Fiscalization Terminal";
         "Fiscal. Start Date-Adl" := FiscalSetup."Start Date";
