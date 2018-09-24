@@ -3634,7 +3634,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page PDO Reports-Adl - Control User ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1119439770 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Finance Instruments</source>
+          <source>FAS Instruments</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Instruments-Adl - Property Caption</note>
         </trans-unit>
@@ -3669,7 +3669,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Instruments-Adl - Control AOP Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1237048865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>FAS Finance Sectors</source>
+          <source>FAS Sectors</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page FAS Sectors-Adl - Property Caption</note>
         </trans-unit>
@@ -4154,7 +4154,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Codes-Adl - Control Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2127075594 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>KRD Finance Sectors</source>
+          <source>KRD Sectors</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page KRD Sectors-Adl - Property Caption</note>
         </trans-unit>
@@ -5067,11 +5067,6 @@
           <source>Select a package to run the Apply Package function.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType SelectPackageAndApplyTxt</note>
-        </trans-unit>
-        <trans-unit id="Page 2914345777 - NamedType 2978988224" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Download package</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - NamedType PackageDownloadLbl</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - NamedType 2978988224" size-unit="char" translate="yes" xml:space="preserve">
           <source>Download package</source>

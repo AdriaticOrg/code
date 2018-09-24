@@ -1,6 +1,6 @@
 page 13062665 "KRD Sectors-Adl"
 {
-    Caption = 'KRD Finance Sectors';
+    Caption = 'KRD Sectors';
     PageType = List;
     SourceTable = "KRD Sector-Adl";
     Editable = true;
