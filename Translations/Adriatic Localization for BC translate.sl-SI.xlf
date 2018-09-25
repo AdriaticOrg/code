@@ -343,7 +343,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Book View Formula-Adl - Control Condition - Property ToolTip</note>
         </trans-unit>
-<<<<<<< HEAD:Translations/Adriatic Localization for Business Central-SI.xlf
         <trans-unit id="Table 4247890588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Setup</source>
           <target state="translated">Nastavitve DDV</target>
@@ -374,8 +373,6 @@
           <target state="new"></target>
           <note from="Xliff Generator" annotates="general" priority="3">Page VAT Setup-Adl - Control Use VAT Output Date - Property ToolTip</note>
         </trans-unit>
-=======
->>>>>>> updating translations: sl-SI:Translations/Adriatic Localization for BC translate.sl-SI.xlf
         <trans-unit id="Table 788774104 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VIES Report Header</source><target>Poročilo RP-O (VIES) glava </target>
           <note from="Developer" annotates="general" priority="2"></note>
