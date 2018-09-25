@@ -9,13 +9,13 @@ pageextension 13062549 "Bank Account Card-Adl" extends "Bank Account Card" //370
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'Specifies FAS Sector Code-Adl';
+                ToolTip = 'Specifies FAS Sector Code';
             }
             field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'Specifies FAS Instrument Code-Adl';
+                ToolTip = 'Specifies FAS Instrument Code';
             }
             // </adl.24>
         }

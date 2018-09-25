@@ -10,28 +10,28 @@ pageextension 13062548 "User Setup-Adl" extends "User Setup" //119
                 Caption = 'Reporting Name';
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;
-                ToolTip = 'Specifies Reporting Name-Adl';
+                ToolTip = 'Specifies Reporting Name';
             }
             field("Reporting Email-Adl"; "Reporting Email-Adl")
             {
                 Caption = 'Reporting E-mail';
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;
-                ToolTip = 'Specifies Reporting Email-Adl';
+                ToolTip = 'Specifies Reporting Email';
             }
             field("Reporting Phone-Adl"; "Reporting Phone-Adl")
             {
                 Caption = 'Reporting Phone';
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;
-                ToolTip = 'Specifies Reporting Phone-Adl';
+                ToolTip = 'Specifies Reporting Phone';
             }
             field("Reporting Position-Adl"; "Reporting Position-Adl")
             {
                 Caption = 'Reporting Position';
                 ApplicationArea = All;
                 Visible = ReportingFeaturesEnabled;
-                ToolTip = 'Specifies Reporting Position-Adl';
+                ToolTip = 'Specifies Reporting Position';
             }
             // </adl.24>
             // <adl.27>

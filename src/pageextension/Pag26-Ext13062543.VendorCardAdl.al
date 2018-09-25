@@ -9,7 +9,7 @@ pageextension 13062543 "Vendor Card-Adl" extends "Vendor Card" //26
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'Specifies FAS Sector Code-Adl';
+                ToolTip = 'Specifies FAS Sector Code';
             }
             // </adl.24>
             // <adl.25>
@@ -17,13 +17,13 @@ pageextension 13062543 "Vendor Card-Adl" extends "Vendor Card" //26
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
-                ToolTip = 'Specifies KRD Non-Resident Code-Adl';
+                ToolTip = 'Specifies KRD Non-Resident Code';
             }
             field("KRD Affiliation Type-Adl"; "KRD Affiliation Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
-                ToolTip = 'Specifies KRD Affiliation Type-Adl';
+                ToolTip = 'Specifies KRD Affiliation Type';
             }
             // </adl.25>
         }

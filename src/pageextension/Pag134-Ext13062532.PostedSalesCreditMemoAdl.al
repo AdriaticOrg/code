@@ -28,7 +28,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
                 Editable = false;
-                ToolTip = 'Specifies VAT Correction Date-Adl';
+                ToolTip = 'Specifies VAT Correction Date';
             }
             // </adl.22>
         }
@@ -49,7 +49,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;
                 Editable = false;
-                ToolTip = 'Specifies EU Customs Procedure-Adl';
+                ToolTip = 'Specifies EU Customs Procedure';
             }
             // </adl.22>
         }

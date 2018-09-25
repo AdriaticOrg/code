@@ -26,7 +26,7 @@ pageextension 13062526 "Sales Invoice-Adl" extends "Sales Invoice" //43
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
-                ToolTip = 'Specifies VAT Correction Date-Adl';
+                ToolTip = 'Specifies VAT Correction Date';
             }
             // </adl.22>
         }
@@ -37,7 +37,7 @@ pageextension 13062526 "Sales Invoice-Adl" extends "Sales Invoice" //43
             {
                 ApplicationArea = All;
                 Visible = VATFeatureEnabled;
-                ToolTip = 'Specifies EU Customs Procedure-Adl';
+                ToolTip = 'Specifies EU Customs Procedure';
             }
         }
         // </adl.22>

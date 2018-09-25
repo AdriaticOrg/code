@@ -9,37 +9,37 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'Specifies FAS Type-Adl';
+                ToolTip = 'Specifies FAS Type';
             }
             field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'Specifies FAS Instrument Code-Adl';
+                ToolTip = 'Specifies FAS Instrument Code';
             }
             field("FAS Sector Code-Adl"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'Specifies FAS Sector Code-Adl';
+                ToolTip = 'Specifies FAS Sector Code';
             }
             field("Bal. FAS Type-Adl"; "Bal. FAS Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'Specifies Bal. FAS Type-Adl';
+                ToolTip = 'Specifies Bal. FAS Type';
             }
             field("Bal. FAS Instrument Code-Adl"; "Bal. FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'Specifies Bal. FAS Instrument Code-Adl';
+                ToolTip = 'Specifies Bal. FAS Instrument Code';
             }
             field("Bal. FAS Sector Code-Adl"; "Bal. FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'Specifies Bal. FAS Sector Code-Adl';
+                ToolTip = 'Specifies Bal. FAS Sector Code';
             }
             // </adl.24>
 

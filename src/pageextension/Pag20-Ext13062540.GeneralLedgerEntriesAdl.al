@@ -9,19 +9,19 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'Specifies FAS Type-Adl';
+                ToolTip = 'Specifies FAS Type';
             }
             field("FAS Instrument Code-Adl"; "FAS Instrument Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'Specifies Instrument Code-Adl';
+                ToolTip = 'Specifies Instrument Code';
             }
             field("FAS Sector Code-Adl"; "FAS Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'Specifies FAS Sector Code-Adl';
+                ToolTip = 'Specifies FAS Sector Code';
             }
             // </adl.24>
             // <adl.26>
@@ -29,13 +29,13 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
             {
                 ApplicationArea = All;
                 Visible = BSTFeatureEnabled;
-                ToolTip = 'Specifies Country/Region Code-Adl';
+                ToolTip = 'Specifies Country/Region Code';
             }
             field("BST Code-Adl"; "BST Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = BSTFeatureEnabled;
-                ToolTip = 'Specifies BST Code-Adl';
+                ToolTip = 'Specifies BST Code';
             }
             // </adl.26>
             // <adl.20>

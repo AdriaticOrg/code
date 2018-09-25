@@ -9,49 +9,49 @@ pageextension 13062542 "Customer Ledger Entries-Adl" extends "Customer Ledger En
             {
                 ApplicationArea = All;
                 Visible = FASFeatureEnabled;
-                ToolTip = 'Specifies FAS Sector Code-Adl';
+                ToolTip = 'Specifies FAS Sector Code';
             }
             field("KRD Non-Resident Sector Code-Adl"; "KRD Non-Resident Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
-                ToolTip = 'Specifies KRD Non-Resident Sector Code-Adl';
+                ToolTip = 'Specifies KRD Non-Resident Sector Code';
             }
             field("KRD Affiliation Type-Adl"; "KRD Affiliation Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
-                ToolTip = 'Specifies Affiliation Type-Adl';
+                ToolTip = 'Specifies Affiliation Type';
             }
             field("KRD Claim/Liability-Adl"; "KRD Claim/Liability-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
-                ToolTip = 'Specifies KRD Claim/Liability-Adl';
+                ToolTip = 'Specifies KRD Claim/Liability';
             }
             field("KRD Instrument Type-Adl"; "KRD Instrument Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
-                ToolTip = 'Specifies Instrument Type-Adl';
+                ToolTip = 'Specifies Instrument Type';
             }
             field("KRD Maturity-Adl"; "KRD Maturity-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
-                ToolTip = 'Specifies KRD Maturity-Adl';
+                ToolTip = 'Specifies KRD Maturity';
             }
             field("KRD Country/Region Code-Adl"; "KRD Country/Region Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
-                ToolTip = 'Specifies KRD Country/Region Code-Adl';
+                ToolTip = 'Specifies KRD Country/Region Code';
             }
             field("KRD Other Changes-Adl"; "KRD Other Changes-Adl")
             {
                 ApplicationArea = all;
                 Visible = KRDFeatureEnabled;
-                ToolTip = 'Specifies KRD Other Changes-Adl';
+                ToolTip = 'Specifies KRD Other Changes';
             }
             // </adl.24>
             // <adl.20>
