@@ -6979,37 +6979,37 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Company Information-Adl - Control Registration No.-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4260865346 - Control 164629734 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Numeric Code-Adl</source>
+          <source>Specifies Numeric Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Countries/Regions-Adl - Control Numeric Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 640086216 - Control 3118419197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Claim/Liability-Adl</source>
+          <source>Specifies KRD Claim/Liability</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Posting Groups-Adl - Control KRD Claim/Liability-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 640086216 - Control 1226769296 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Instrument Type-Adl</source>
+          <source>Specifies KRD Instrument Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Posting Groups-Adl - Control KRD Instrument Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 640086216 - Control 789424334 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Maturity-Adl</source>
+          <source>Specifies KRD Maturity</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Posting Groups-Adl - Control KRD Maturity-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2245352656 - Control 3118419197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Claim/Liability-Adl</source>
+          <source>Specifies KRD Claim/Liability</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Posting Groups-Adl - Control KRD Claim/Liability-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2245352656 - Control 1226769296 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Instrument Type-Adl</source>
+          <source>Specifies KRD Instrument Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Posting Groups-Adl - Control KRD Instrument Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2245352656 - Control 789424334 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Maturity-Adl</source>
+          <source>Specifies KRD Maturity</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Posting Groups-Adl - Control KRD Maturity-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7039,7 +7039,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Name-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1018799998 - Control 3096815839 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Reporting Name-Adl</source>
+          <source>Specifies Reporting Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Name-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7049,7 +7049,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Email-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1018799998 - Control 367723890 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Reporting Email-Adl</source>
+          <source>Specifies Reporting Email</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Email-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7059,7 +7059,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Phone-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1018799998 - Control 263227922 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Reporting Phone-Adl</source>
+          <source>Specifies Reporting Phone</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Phone-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7069,7 +7069,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Position-Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1018799998 - Control 2033404373 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Reporting Position-Adl</source>
+          <source>Specifies Reporting Position</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension User Setup-Adl - Control Reporting Position-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7129,7 +7129,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3048399272 - Control 2997009355 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies EU Customs Procedure-Adl</source>
+          <source>Specifies EU Customs Procedure</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Control EU Customs Procedure-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7164,7 +7164,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 560858782 - Control 93701847 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies VAT Correction Date-Adl</source>
+          <source>Specifies VAT Correction Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Control VAT Correction Date-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7174,7 +7174,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Control Goods Return Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 560858782 - Control 2997009355 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies EU Customs Procedure-Adl</source>
+          <source>Specifies EU Customs Procedure</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Control EU Customs Procedure-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7314,47 +7314,47 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PostedPurchaseCreditMemo-Adl - Action CorrectVATOutput-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2820138509 - Control 3118419197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Claim/Liability-Adl</source>
+          <source>Specifies KRD Claim/Liability</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerPostingGroupCard-Adl - Control KRD Claim/Liability-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2820138509 - Control 1226769296 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Instrument Type-Adl</source>
+          <source>Specifies KRD Instrument Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerPostingGroupCard-Adl - Control KRD Instrument Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2820138509 - Control 789424334 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Maturity-Adl</source>
+          <source>Specifies KRD Maturity</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerPostingGroupCard-Adl - Control KRD Maturity-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 724291605 - Control 3118419197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Claim/Liability-Adl</source>
+          <source>Specifies KRD Claim/Liability</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VendorPostingGroupCard-Adl - Control KRD Claim/Liability-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 724291605 - Control 1226769296 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Instrument Type-Adl</source>
+          <source>Specifies KRD Instrument Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VendorPostingGroupCard-Adl - Control KRD Instrument Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 724291605 - Control 789424334 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Maturity-Adl</source>
+          <source>Specifies KRD Maturity</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VendorPostingGroupCard-Adl - Control KRD Maturity-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1909507397 - Control 3594661907 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Account-Adl</source>
+          <source>Specifies FAS Account</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Chart of Accounts-Adl - Control FAS Account-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1909507397 - Control 3790553404 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Instrument Code-Adl</source>
+          <source>Specifies FAS Instrument Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Chart of Accounts-Adl - Control FAS Instrument Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1909507397 - Control 369363763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Sector Code-Adl</source>
+          <source>Specifies FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Chart of Accounts-Adl - Control FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7379,42 +7379,42 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Chart of Accounts-Adl - Action DetailTrialBalance-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1170696247 - Control 3594661907 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Account-Adl</source>
+          <source>Specifies FAS Account</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension G/L Account Card-Adl - Control FAS Account-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1170696247 - Control 4197268972 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Type-Adl</source>
+          <source>Specifies FAS Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension G/L Account Card-Adl - Control FAS Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1170696247 - Control 3050888816 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Sector Posting-Adl</source>
+          <source>Specifies FAS Sector Posting</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension G/L Account Card-Adl - Control FAS Sector Posting-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1170696247 - Control 3901220607 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Instrument Posting-Adl</source>
+          <source>Specifies FAS Instrument Posting</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension G/L Account Card-Adl - Control FAS Instrument Posting-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1170696247 - Control 369363763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Sector Code-Adl</source>
+          <source>Specifies FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension G/L Account Card-Adl - Control FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1170696247 - Control 3790553404 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Instrument Code-Adl</source>
+          <source>Specifies FAS Instrument Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension G/L Account Card-Adl - Control FAS Instrument Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1170696247 - Control 2792266742 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies BST Value Posting-Adl</source>
+          <source>Specifies BST Value Posting</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension G/L Account Card-Adl - Control BST Value Posting-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1170696247 - Control 360767640 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies BST Code-Adl</source>
+          <source>Specifies BST Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension G/L Account Card-Adl - Control BST Code-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7429,42 +7429,42 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension G/L Account Card-Adl - Action GLExport-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2314012141 - Control 3594661907 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Account-Adl</source>
+          <source>Specifies FAS Account</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension G/L Account List-Adl - Control FAS Account-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2314012141 - Control 3790553404 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Instrument Code-Adl</source>
+          <source>Specifies FAS Instrument Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension G/L Account List-Adl - Control FAS Instrument Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2314012141 - Control 369363763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Sector Code-Adl</source>
+          <source>Specifies FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension G/L Account List-Adl - Control FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3128058175 - Control 4197268972 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Type-Adl</source>
+          <source>Specifies FAS Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Ledger Entries-Adl - Control FAS Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3128058175 - Control 3790553404 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Instrument Code-Adl</source>
+          <source>Specifies Instrument Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Ledger Entries-Adl - Control FAS Instrument Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3128058175 - Control 369363763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Sector Code-Adl</source>
+          <source>Specifies FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Ledger Entries-Adl - Control FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3128058175 - Control 1973965194 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Country/Region Code-Adl</source>
+          <source>Specifies Country/Region Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Ledger Entries-Adl - Control Country/Region Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3128058175 - Control 360767640 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies BST Code-Adl</source>
+          <source>Specifies BST Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Ledger Entries-Adl - Control BST Code-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7504,57 +7504,57 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Ledger Entries-Adl - Action ChangeBST-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4270053224 - Control 369363763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Sector Code-Adl</source>
+          <source>Specifies FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Card-Adl - Control FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4270053224 - Control 2539180448 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Non-Resident Sector Code-Adl</source>
+          <source>Specifies KRD Non-Resident Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Card-Adl - Control KRD Non-Resident Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4270053224 - Control 2242878003 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Affiliation Type-Adl</source>
+          <source>Specifies KRD Affiliation Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Card-Adl - Control KRD Affiliation Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 138386033 - Control 369363763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Sector Code-Adl</source>
+          <source>Specifies FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Control FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 138386033 - Control 2539180448 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Non-Resident Sector Code-Adl</source>
+          <source>Specifies KRD Non-Resident Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Control KRD Non-Resident Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 138386033 - Control 2242878003 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Affiliation Type-Adl</source>
+          <source>Specifies Affiliation Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Control KRD Affiliation Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 138386033 - Control 3118419197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Claim/Liability-Adl</source>
+          <source>Specifies KRD Claim/Liability</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Control KRD Claim/Liability-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 138386033 - Control 1226769296 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Instrument Type-Adl</source>
+          <source>Specifies Instrument Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Control KRD Instrument Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 138386033 - Control 789424334 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Maturity-Adl</source>
+          <source>Specifies KRD Maturity</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Control KRD Maturity-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 138386033 - Control 1098150461 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Country/Region Code-Adl</source>
+          <source>Specifies KRD Country/Region Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Control KRD Country/Region Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 138386033 - Control 981309484 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Other Changes-Adl</source>
+          <source>Specifies KRD Other Changes</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Control KRD Other Changes-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7569,57 +7569,57 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ledger Entries-Adl - Action UnpaidReceivables-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3184046672 - Control 369363763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Sector Code-Adl</source>
+          <source>Specifies FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Card-Adl - Control FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3184046672 - Control 2539180448 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Non-Resident Code-Adl</source>
+          <source>Specifies KRD Non-Resident Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Card-Adl - Control KRD Non-Resident Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3184046672 - Control 2242878003 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Affiliation Type-Adl</source>
+          <source>Specifies KRD Affiliation Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Card-Adl - Control KRD Affiliation Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2522027049 - Control 369363763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Sector Code-Adl</source>
+          <source>Specifies FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries-Adl - Control FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2522027049 - Control 2539180448 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Non-Resident Code-Adl</source>
+          <source>Specifies KRD Non-Resident Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries-Adl - Control KRD Non-Resident Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2522027049 - Control 2242878003 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Affiliation Type-Adl</source>
+          <source>Specifies KRD Affiliation Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries-Adl - Control KRD Affiliation Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2522027049 - Control 3118419197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Claim/Liability-Adl</source>
+          <source>Specifies KRD Claim/Liability</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries-Adl - Control KRD Claim/Liability-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2522027049 - Control 1226769296 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Instrument Type-Adl</source>
+          <source>Specifies KRD Instrument Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries-Adl - Control KRD Instrument Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2522027049 - Control 789424334 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Maturity-Adl</source>
+          <source>Specifies KRD Maturity</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries-Adl - Control KRD Maturity-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2522027049 - Control 1098150461 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Country/Region Code-Adl</source>
+          <source>Specifies KRD Country/Region Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries-Adl - Control KRD Country/Region Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2522027049 - Control 981309484 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KRD Other Changes-Adl</source>
+          <source>Specifies KRD Other Changes</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries-Adl - Control KRD Other Changes-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7629,7 +7629,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1700227655 - Control 93701847 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies VAT Correction Date-Adl</source>
+          <source>Specifies VAT Correction Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries-Adl - Control VAT Correction Date-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7639,7 +7639,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries-Adl - Control VAT Identifier-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1700227655 - Control 2997009355 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies EU Customs Procedure-Adl</source>
+          <source>Specifies EU Customs Procedure</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries-Adl - Control EU Customs Procedure-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7654,42 +7654,42 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Entries-Adl - Control VAT Base (retro.)-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3747063065 - Control 369363763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Sector Code-Adl</source>
+          <source>Specifies FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Account Card-Adl - Control FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3747063065 - Control 3790553404 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Instrument Code-Adl</source>
+          <source>Specifies FAS Instrument Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Account Card-Adl - Control FAS Instrument Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4248078117 - Control 4197268972 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Type-Adl</source>
+          <source>Specifies FAS Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control FAS Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4248078117 - Control 3790553404 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Instrument Code-Adl</source>
+          <source>Specifies FAS Instrument Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control FAS Instrument Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4248078117 - Control 369363763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies FAS Sector Code-Adl</source>
+          <source>Specifies FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4248078117 - Control 1946798739 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Bal. FAS Type-Adl</source>
+          <source>Specifies Bal. FAS Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control Bal. FAS Type-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4248078117 - Control 2648802139 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Bal. FAS Instrument Code-Adl</source>
+          <source>Specifies Bal. FAS Instrument Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control Bal. FAS Instrument Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4248078117 - Control 2371144340 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Bal. FAS Sector Code-Adl</source>
+          <source>Specifies Bal. FAS Sector Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control Bal. FAS Sector Code-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7744,12 +7744,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Invoice-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1588135823 - Control 93701847 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies VAT Correction Date-Adl</source>
+          <source>Specifies VAT Correction Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Invoice-Adl - Control VAT Correction Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1588135823 - Control 2997009355 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies EU Customs Procedure-Adl</source>
+          <source>Specifies EU Customs Procedure</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Invoice-Adl - Control EU Customs Procedure-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7764,12 +7764,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Credit Memo-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1678707589 - Control 93701847 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies VAT Correction Date-Adl</source>
+          <source>Specifies VAT Correction Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Credit Memo-Adl - Control VAT Correction Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1678707589 - Control 2997009355 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies EU Customs Procedure-Adl</source>
+          <source>Specifies EU Customs Procedure</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Credit Memo-Adl - Control EU Customs Procedure-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7819,7 +7819,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Posting Setup-Adl - Control VAT % (Informative)-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1803156684 - Control 2257676711 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies VIES Goods-Adl</source>
+          <source>Specifies VIES Goods</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Posting Setup-Adl - Control VIES Goods-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7864,12 +7864,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Posting Setup Card-Adl - Control VAT % (retrograde)-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3712761905 - Control 164629734 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Numeric Code-Adl</source>
+          <source>Specifies Numeric Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Currency Card-Adl - Control Numeric Code-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1927210975 - Control 164629734 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Numeric Code-Adl</source>
+          <source>Specifies Numeric Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Currencies-Adl - Control Numeric Code-Adl - Property ToolTip</note>
         </trans-unit>
@@ -7934,12 +7934,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Return Order-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3322089980 - Control 93701847 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies VAT Correction Date-Adl</source>
+          <source>Specifies VAT Correction Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Return Order-Adl - Control VAT Correction Date-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3322089980 - Control 2997009355 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies EU Customs Procedure-Adl</source>
+          <source>Specifies EU Customs Procedure</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Return Order-Adl - Control EU Customs Procedure-Adl - Property ToolTip</note>
         </trans-unit>
