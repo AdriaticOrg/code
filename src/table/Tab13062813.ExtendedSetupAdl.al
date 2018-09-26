@@ -57,11 +57,8 @@ table 13062813 "Extended Setup-Adl"
         end;
 
         with AdlCore do begin
-            if xRec."VAT Enabled" <> Rec."VAT Enabled" then
-                AdlCore.EnableOrDisableFeature("ADLFeatures-Adl"::VAT, Rec."VAT Enabled");
-
-            if xRec."Unpaid Receivables Enabled" <> Rec."Unpaid Receivables Enabled" then
-                AdlCore.EnableOrDisableFeature("ADLFeatures-Adl"::UnpaidReceivables, Rec."Unpaid Receivables Enabled");
+            EnableOrDisableFeature("ADLFeatures-Adl"::VAT, Rec."VAT Enabled");
+            EnableOrDisableFeature("ADLFeatures-Adl"::UnpaidReceivables, Rec."Unpaid Receivables Enabled");
         end;
     end;
 

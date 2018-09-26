@@ -395,13 +395,9 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
             FiscalSetup.Modify(true);
         end;
 
-        If "ADL Enabled-Adl" and not CoreEnabled then begin
-            If not CoreSetup.Get() then
-                CoreSetup.Insert(true);
-            CoreSetup."ADL Enabled" := "ADL Enabled-Adl";
-            CoreSetup.Modify(true);
-        end;
 
-        Commit();
+        CoreSetup.EnableOrDisableFeature("ADLFeatures-Adl"::Core, "ADL Enabled-Adl");
+
+        //Commit();
     end;
 }
