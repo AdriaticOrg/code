@@ -44,7 +44,7 @@ pageextension 13062536 "VAT Posting Setup-Adl" extends "VAT Posting Setup"  //47
             {
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;
-                ToolTip = 'Specifies VIES Goods-Adl';
+                ToolTip = 'Specifies VIES Goods';
             }
         }
         // </adl.22>

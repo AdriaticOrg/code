@@ -9,7 +9,7 @@ pageextension 13062552 "Currency Card-Adl" extends "Currency Card" //495
             {
                 ApplicationArea = All;
                 Visible = ADLCoreEnabled;
-                ToolTip = 'Specifies Numeric Code-Adl';
+                ToolTip = 'Specifies Numeric Code';
             }
         }
         // </adl.24>        

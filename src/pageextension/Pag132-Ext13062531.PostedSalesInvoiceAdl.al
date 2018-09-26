@@ -31,7 +31,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
                 ApplicationArea = All;
                 Visible = VIESFeatureEnabled;
                 Editable = false;
-                ToolTip = 'Specifies EU Customs Procedure-Adl';
+                ToolTip = 'Specifies EU Customs Procedure';
             }
         }
         // </adl.22>    

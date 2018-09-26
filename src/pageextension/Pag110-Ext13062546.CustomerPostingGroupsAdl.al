@@ -9,19 +9,19 @@ pageextension 13062546 "Customer Posting Groups-Adl" extends "Customer Posting G
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
-                ToolTip = 'Specifies KRD Claim/Liability-Adl';
+                ToolTip = 'Specifies KRD Claim/Liability';
             }
             field("KRD Instrument Type-Adl"; "KRD Instrument Type-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
-                ToolTip = 'Specifies KRD Instrument Type-Adl';
+                ToolTip = 'Specifies KRD Instrument Type';
             }
             field("KRD Maturity-Adl"; "KRD Maturity-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;
-                ToolTip = 'Specifies KRD Maturity-Adl';
+                ToolTip = 'Specifies KRD Maturity';
             }
             // </adl.25>
         }

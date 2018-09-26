@@ -158,6 +158,12 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                 group(VAT)
                 {
                     Caption = 'VAT';
+                    field("VAT Enabled"; "VAT Enabled-Adl")
+                    {
+                        Visible = "ADL Enabled-Adl";
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies use of VAT extension';
+                    }
                     field("Use VAT Output Date"; "Use VAT Output Date")
                     {
                         Visible = "ADL Enabled-Adl";
@@ -177,12 +183,7 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     }
                 }
             }
-            /* group(General)
-            {
-                ShowCaption = false;
-                Visible = GeneralDetailsVisible;
-         
-            } */
+
             group(stepVIES)
             {
                 ShowCaption = false;
@@ -368,59 +369,36 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                     Caption = 'Fiscalization';
                     field("Fiscal. Active-Adl"; "Fiscal. Active-Adl")
                     {
+                        Caption = 'Active';
+                        ToolTip = 'Specifies if fiscalization is active';
                         ApplicationArea = All;
                     }
                     field("Fiscal. Start Date-Adl"; "Fiscal. Start Date-Adl")
                     {
+                        Caption = 'Start Date';
+                        ToolTip = 'Specifies start date';
                         ApplicationArea = All;
                     }
                     field("Fiscal. End Date-Adl"; "Fiscal. End Date-Adl")
                     {
+                        Caption = 'End Date';
+                        ToolTip = 'Specifies end date';
                         ApplicationArea = All;
                     }
                     field("Fiscal. Default Fiscalization Location-Adl"; "Fiscal. Default Fiscalization Location-Adl")
                     {
+                        Caption = 'Default Location';
+                        ToolTip = 'Specifies default location';
                         ApplicationArea = All;
                     }
                     field("Fiscal. Default Fiscalization Terminal-Adl"; "Fiscal. Default Fiscalization Terminal-Adl")
                     {
+                        Caption = 'Default Terminal';
+                        ToolTip = 'Specifies default terminal';
                         ApplicationArea = All;
                     }
                 }
             }
-            /*       group(VAT)
-                  {
-                      Caption = 'VAT';
-                      field("VAT Enabled"; "VAT Enabled-Adl")
-                      {
-                          ApplicationArea = All;
-
-                          trigger OnValidate()
-                          var
-                              ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
-                          begin
-                              ApplicatonAreaMgmtAdl.EnableAdlCoreApplicationArea(Rec, false);
-                          end;
-                      }
-                      field("Unpaid Receivables Enabled"; "Unpaid Receivables Enabled-Adl")
-                      {
-                          ApplicationArea = All;
-
-                          trigger OnValidate()
-                          var
-                              ApplicatonAreaMgmtAdl: Codeunit "Application Area Mgmt-Adl";
-                          begin
-                              if ("Unpaid Receivables Enabled-Adl") and (ApplicatonAreaMgmtAdl.IsUnpaidReceivablesApplicationAreaEnabled()) then
-                                  exit
-                              else
-                                  ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(true);
-
-                              if not ("Unpaid Receivables Enabled-Adl") then
-                                  ApplicatonAreaMgmtAdl.EnableUnpaidReceivableApplicationArea(false);
-                          end;
-                      }
-
-                  } */
 
             group(Step3)
             {
@@ -621,17 +599,6 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
                         ToolTip = 'Enter valid package url address';
                         ApplicationArea = All;
                     }
-
-                    /*  field(PackageDownloadBasicLbl; PackageDownloadBasicLbl)
-                     {
-                         ApplicationArea = All;
-                         ShowCaption = false;
-
-                         trigger OnDrillDown()
-                         begin
-                             StartConfigPackageImport(PackageUrl); //Basic setup
-                         end;
-                     } */
 
                     field(PackageDownloadLbl; PackageDownloadLbl)
                     {
@@ -835,12 +802,8 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
         MediaRepositoryDone: Record "Media Repository";
         MediaResourcesStandard: Record "Media Resources";
         MediaResourcesDone: Record "Media Resources";
-        //UNUSED//InventorySetup: Record "Inventory Setup";
-        //UNUSED//TempBlobUncompressed: Record TempBlob;
         ClientTypeManagement: Codeunit ClientTypeManagement;
         WizardMgmt: Codeunit "Wizard Management-adl";
-        //UNUSED//XMLDOMManagement: Codeunit "XML DOM Management";
-        //UNUSED//ApplicatonAreaMgmt: Codeunit "Application Area Mgmt.";
         CompanyData: Option "Evaluation Data","Standard Data","None","Extended Data","Full No Data";
         TypeStandard: Boolean;
         TypeExtended: Boolean;
@@ -1192,8 +1155,8 @@ page 13062812 "Assisted ADL Setup Wizard-Adl"
 
         if CoreSetup."Unpaid Receivables Enabled" then
             "UP Ext. Data Start Bal. Date-Adl" := ExtendedSetup."Ext. Data Start Bal. Date";
-        if CoreSetup."Forced Credit/Debit Enabled" then
-            "Forced Credit/Debit Enabled-Adl" := CoreSetup."Forced Credit/Debit Enabled";
+        //if CoreSetup."Forced Credit/Debit Enabled" then
+        //    "Forced Credit/Debit Enabled-Adl" := CoreSetup."Forced Credit/Debit Enabled";
 
         if FiscalSetup.get() then;
         "Fiscal. Active-Adl" := FiscalSetup.ActiveX;
