@@ -339,6 +339,8 @@ codeunit 13062525 "VAT Management-Adl"
                 false:
                     begin
                         "Postponed VAT-Adl" := "Postponed VAT-Adl"::"Postponed VAT";
+                        VatType := VATPostingSetup."Unrealized VAT Type" + 1;
+                        VatTypeModified := true;
                         VATPostingSetup."Unrealized VAT Type" := VATPostingSetup."Unrealized VAT Type"::Percentage;
                         VATPostingSetup.Modify();
                         IsPercent := true;
@@ -398,12 +400,16 @@ codeunit 13062525 "VAT Management-Adl"
             "Source Type" := "Source Type"::Vendor;
             "Source No." := VendLedgEntry."Vendor No.";
             "Bill-to/Pay-to No." := VendLedgEntry."Vendor No.";
+            VatCalcType := VATPostingSetup."VAT Calculation Type" + 1;
+            VatCalcTypeModified := true;
             VATPostingSetup."VAT Calculation Type" := VATPostingSetup."VAT Calculation Type"::"Normal VAT";
             "VAT Calculation Type" := "VAT Calculation Type"::"Normal VAT";
             "Gen. Posting Type" := "Gen. Posting Type"::Sale;
             case Post of
                 true:
                     begin
+                        VatType := VATPostingSetup."Unrealized VAT Type" + 1;
+                        VatTypeModified := true;
                         VATPostingSetup."Unrealized VAT Type" := 0;
                         "Postponed VAT-Adl" := "Postponed VAT-Adl"::"Realized VAT";
                         "Account No." := VATPostingSetup.GetSalesAccount(TRUE);
@@ -411,6 +417,8 @@ codeunit 13062525 "VAT Management-Adl"
                 false:
                     begin
                         "Postponed VAT-Adl" := "Postponed VAT-Adl"::"Postponed VAT";
+                        VatType := VATPostingSetup."Unrealized VAT Type" + 1;
+                        VatTypeModified := true;
                         VATPostingSetup."Unrealized VAT Type" := VATPostingSetup."Unrealized VAT Type"::Percentage;
                         IsPercent := true;
                         "Account No." := VATPostingSetup.GetSalesAccount(false);  //
@@ -418,8 +426,14 @@ codeunit 13062525 "VAT Management-Adl"
             end;
             VATPostingSetup.Modify();
             GenJnlPostLine.RunWithCheck(GenJnlLine);
-            VATPostingSetup."VAT Calculation Type" := VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT";
-            VATPostingSetup."Unrealized VAT Type" := 0;
+            if VatTypeModified and (VatType > 0) then
+                VATPostingSetup."Unrealized VAT Type" := VatType - 1;
+            if VatCalcTypeModified and (VatCalcType > 0) then
+                VATPostingSetup."VAT Calculation Type" := VatCalcType - 1;
+            VatTypeModified := false;
+            VatCalcTypeModified := false;
+            VatType := 0;
+            VatCalcType := 0;
             VATPostingSetup.Modify();
         end;
     end;
@@ -428,16 +442,21 @@ codeunit 13062525 "VAT Management-Adl"
     var
         VATPostingSetup: Record "VAT Posting Setup";
     begin
-        //TODO: Modifying VATPostingSetup during posting affects other users! must be fixed
         VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group", VATEntry."VAT Prod. Posting Group");
         if IsReverseVat then begin
-            VATPostingSetup."VAT Calculation Type" := VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT";
+            if VatCalcTypeModified and (VatCalcType > 0) then
+                VATPostingSetup."VAT Calculation Type" := VatCalcType - 1;
             VATPostingSetup.Modify();
+            VatCalcTypeModified := false;
+            VatCalcType := 0;
             IsReverseVat := false;
         end;
         if IsPercent then begin
-            VATPostingSetup."Unrealized VAT Type" := 0;
+            if VatTypeModified and (VatType > 0) then
+                VATPostingSetup."Unrealized VAT Type" := VatType - 1;
             VATPostingSetup.Modify();
+            VatTypeModified := false;
+            VatType := 0;
             IsPercent := false;
         end;
     end;
@@ -456,4 +475,8 @@ codeunit 13062525 "VAT Management-Adl"
         UpdVatDateQst: Label 'Do you want to change VAT Date';
         IsReverseVat: Boolean;
         IsPercent: Boolean;
+        VatType: Integer;
+        VatCalcType: Integer;
+        VatTypeModified: Boolean;
+        VatCalcTypeModified: Boolean;
 }
