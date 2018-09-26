@@ -71,6 +71,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
         {
             field("Full Fisc. Doc. No.-Adl"; "Full Fisc. Doc. No.-Adl")
             {
+                Visible = FISCFeatureEnabled;
                 ApplicationArea = All;
             }
         }
@@ -82,6 +83,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
         ADLCore: Codeunit "Adl Core-Adl";
         VATFeatureEnabled: Boolean;
         VIESFeatureEnabled: Boolean;
+        FISCFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
@@ -89,6 +91,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
         // <adl.0>
         VATFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT);
         VIESFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::VIES);
+        FISCFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::FISC);
         // </adl.0>
     end;
 }

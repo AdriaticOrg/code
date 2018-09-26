@@ -42,27 +42,33 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
             {
                 field("Fisc. Subject-Adl"; "Fisc. Subject-Adl")
                 {
+                    ToolTip = 'Specifies Fisc. Subject';
                     ApplicationArea = All;
                 }
                 field("Fisc. No. Series-Adl"; "Fisc. No. Series-Adl")
                 {
+                    ToolTip = 'Specifies Fisc. Terminal';
                     ApplicationArea = All;
                 }
                 field("Fisc. Terminal-Adl"; "Fisc. Terminal-Adl")
                 {
+                    ToolTip = 'Specifies Fisc. Terminal';
                     ApplicationArea = All;
                 }
                 field("Fisc. Location Code-Adl"; "Fisc. Location Code-Adl")
                 {
+                    ToolTip = 'Specifies Location Code';
                     ApplicationArea = All;
                 }
 
                 field("Full Fisc. Doc. No.-Adl"; "Full Fisc. Doc. No.-Adl")
                 {
+                    ToolTip = 'Specifies Full Fisc. Doc. No.';
                     ApplicationArea = All;
                 }
                 field("Posting TimeStamp-Adl"; "Posting TimeStamp-Adl")
                 {
+                    ToolTip = 'Specifies Posting TimeStamp';
                     ApplicationArea = All;
                 }
             }
@@ -123,6 +129,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
         ADLCore: Codeunit "Adl Core-Adl";
         VATFeatureEnabled: Boolean;
         VIESFeatureEnabled: Boolean;
+        FISCFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
@@ -130,6 +137,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
         // <adl.0>
         VATFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT);
         VIESFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::VIES);
+        FISCFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::FISC);
         // </adl.0>
     end;
 }

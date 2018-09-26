@@ -48,27 +48,6 @@ table 13062781 "Fiscalization Setup-Adl"
             Clustered = true;
         }
     }
-
-    trigger OnInsert()
-    begin
-
-    end;
-
-    trigger OnModify()
-    begin
-
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
-    end;
-
     procedure IsActive() Active: Boolean;
     begin
         IF READPERMISSION() THEN

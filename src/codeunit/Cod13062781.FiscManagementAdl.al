@@ -1,16 +1,16 @@
 codeunit 13062781 "Fisc. Management-Adl"
 {
     Permissions = TableData "Sales Invoice Header" = rimd, TableData "Sales Cr.Memo Header" = rimd;
-    trigger OnRun()
-    begin
-    end;
+
+    /* 
+    //ZERO REF.
 
     procedure FiscSetupExists(): Boolean
     var
         FiscalizationSetup: Record "Fiscalization Setup-Adl";
     begin
         EXIT(FiscalizationSetup.GET());
-    end;
+    end; */
 
     procedure GetFiscSubject(FiscPaymentMethodCode: Code[20]): Boolean
     var
