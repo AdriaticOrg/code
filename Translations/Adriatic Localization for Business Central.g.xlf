@@ -1923,6 +1923,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Fiscalization Setup-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1791662457 - Control 1090351696 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fiscalization Setup-Adl - Control Active - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1791662457 - Control 474480784 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Start Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fiscalization Setup-Adl - Control Start Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1791662457 - Control 2649176925 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies End Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fiscalization Setup-Adl - Control End Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1791662457 - Control 1740003326 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Default Fiscalization Location</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fiscalization Setup-Adl - Control Default Fiscalization Location - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1791662457 - Control 3972255405 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Default Fiscalization Terminal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fiscalization Setup-Adl - Control Default Fiscalization Terminal - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Table 1004457736 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fiscalization Terminal</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4498,25 +4523,250 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Terminal List-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2900430693 - Control 530460956 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Terminal Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Terminal List-Adl - Control Fisc. Terminal Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2900430693 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Terminal List-Adl - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2900430693 - Control 4043556127 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Terminal List-Adl - Control Fisc. No. Series - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2900430693 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Terminal List-Adl - Control User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2900430693 - Control 1407200743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Creation Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Terminal List-Adl - Control Creation Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2900430693 - Control 788537400 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Creation Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Terminal List-Adl - Control Creation Time - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1619896597 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fiscalization Payment Methods</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Payment Methods-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1619896597 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Payment Methods-Adl - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1619896597 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Payment Methods-Adl - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1619896597 - Control 2375426568 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Official Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Payment Methods-Adl - Control Official Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1619896597 - Control 2728968045 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Subject to Fiscalization</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Payment Methods-Adl - Control Subject to Fiscalization - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1619896597 - Control 4107354298 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Multiple Payment Methods</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Payment Methods-Adl - Control Multiple Payment Methods - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3562124744 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fiscalization Location Card</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 1659379587 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Location Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Fisc. Location Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 3215271756 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Street</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Fisc. Street - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 2352874938 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. House Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Fisc. House Number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 489814611 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. House Number Appendix</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Fisc. House Number Appendix - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 287574320 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Settlement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Fisc. Settlement - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 2636039039 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. City/Municipality</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Fisc. City/Municipality - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 2999361416 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Post Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Fisc. Post Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 1015922806 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Location Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Fisc. Location Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 1782986358 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Working Hours</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Working Hours - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 1245797065 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Date Of Application</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Date Of Application - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 4043556127 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Fisc. No. Series - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 1311640639 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Fisc. Active - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 1407200743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Creation Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Creation Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 788537400 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Creation Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Creation Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3562124744 - Control 458406397 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Ending Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Card-Adl - Control Ending Date - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3693522094 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fiscalization Location List</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 1659379587 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Location Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Fisc. Location Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 3215271756 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Street</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Fisc. Street - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 2352874938 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. House Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Fisc. House Number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 489814611 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. House Number Appendix</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Fisc. House Number Appendix - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 287574320 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Settlement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Fisc. Settlement - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 2636039039 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. City/Municipality</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Fisc. City/Municipality - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 2999361416 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Post Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Fisc. Post Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 1015922806 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Location Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Fisc. Location Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 1782986358 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Working Hours</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Working Hours - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 1245797065 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Date Of Application</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Date Of Application - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 4043556127 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Fisc. No. Series - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 1311640639 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Fisc. Active - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 1407200743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Creation Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Creation Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 788537400 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Creation Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Creation Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3693522094 - Control 458406397 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Ending Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location List-Adl - Control Ending Date - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1501978056 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fiscalization Location Mapping</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Mapping-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1501978056 - Control 2161572060 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Mapping-Adl - Control Location Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1501978056 - Control 1659379587 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Mapping-Adl - Control Fisc. Location Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2020614236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>DEVELOPMENT ONLY: Core Setup</source>
@@ -4662,6 +4912,11 @@
           <source>VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3214855114 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies use of VAT extension</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control VAT Enabled - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 2105086901 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies use of VAT output date</source>
@@ -4832,6 +5087,56 @@
           <source>Fiscalization</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Fiscal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1603705008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Fiscal. Active-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1603705008 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if fiscalization is active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Fiscal. Active-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 2965526528 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Fiscal. Start Date-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 2965526528 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies start date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Fiscal. Start Date-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1869612829 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>End Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Fiscal. End Date-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 1869612829 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies end date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Fiscal. End Date-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3656619870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Location</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Fiscal. Default Fiscalization Location-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 3656619870 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies default location</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Fiscal. Default Fiscalization Location-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 2232419133 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Terminal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Fiscal. Default Fiscalization Terminal-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2914345777 - Control 2232419133 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies default terminal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Assisted ADL Setup Wizard-Adl - Control Fiscal. Default Fiscalization Terminal-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2914345777 - Control 2565465511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specify your company's address information and logo.</source>
@@ -7133,6 +7438,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Control EU Customs Procedure-Adl - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3048399272 - Control 3541315987 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Subject</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Control Fisc. Subject-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3048399272 - Control 2505742619 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Terminal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Control Fisc. No. Series-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3048399272 - Control 1019173947 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Terminal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Control Fisc. Terminal-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3048399272 - Control 1612794167 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Location Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Control Fisc. Location Code-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3048399272 - Control 62718257 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Full Fisc. Doc. No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Control Full Fisc. Doc. No.-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3048399272 - Control 3024893494 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Posting TimeStamp</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Invoice-Adl - Control Posting TimeStamp-Adl - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3048399272 - Action 948410512 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Post postponed VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7177,6 +7512,36 @@
           <source>Specifies EU Customs Procedure</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Control EU Customs Procedure-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 560858782 - Control 3541315987 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Subject</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Control Fisc. Subject-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 560858782 - Control 2505742619 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Control Fisc. No. Series-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 560858782 - Control 1019173947 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Terminal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Control Fisc. Terminal-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 560858782 - Control 1612794167 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Location Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Control Fisc. Location Code-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 560858782 - Control 62718257 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Full Fisc. Doc. No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Control Full Fisc. Doc. No.-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 560858782 - Control 3024893494 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Posting TimeStamp</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted Sales Credit Memo-Adl - Control Posting TimeStamp-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 560858782 - Action 948410512 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Post postponed VAT</source>
@@ -7723,6 +8088,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Journal-Adl - Control OpenAmounLCYtWithoutUnrealizedERF-Adl - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3767012330 - Control 3541315987 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Subject</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Quote-Adl - Control Fisc. Subject-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3767012330 - Control 2505742619 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Quote-Adl - Control Fisc. No. Series-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3767012330 - Control 1019173947 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Terminal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Quote-Adl - Control Fisc. Terminal-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3767012330 - Control 1612794167 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Location Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Quote-Adl - Control Fisc. Location Code-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3767012330 - Control 62718257 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Full Fisc. Doc. No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Quote-Adl - Control Full Fisc. Doc. No.-Adl - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3537877342 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies which date is used for posting VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7732,6 +8122,31 @@
           <source>Describes what type of VAT is posted. If VAT Date is not equal to Posting Date then is Postponed VAT.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order-Adl - Control Postponed VAT-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3537877342 - Control 3541315987 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Subject</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order-Adl - Control Fisc. Subject-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3537877342 - Control 2505742619 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order-Adl - Control Fisc. No. Series-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3537877342 - Control 1019173947 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Terminal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order-Adl - Control Fisc. Terminal-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3537877342 - Control 1612794167 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Location Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order-Adl - Control Fisc. Location Code-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3537877342 - Control 62718257 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Full Fisc. Doc. No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order-Adl - Control Full Fisc. Doc. No.-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1588135823 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies which date is used for posting VAT.</source>
@@ -7752,6 +8167,31 @@
           <source>Specifies EU Customs Procedure</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Invoice-Adl - Control EU Customs Procedure-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1588135823 - Control 3541315987 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Subject</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Invoice-Adl - Control Fisc. Subject-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1588135823 - Control 2505742619 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Invoice-Adl - Control Fisc. No. Series-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1588135823 - Control 1019173947 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Terminal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Invoice-Adl - Control Fisc. Terminal-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1588135823 - Control 1612794167 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Location Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Invoice-Adl - Control Fisc. Location Code-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1588135823 - Control 62718257 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Full Fisc. Doc. No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Invoice-Adl - Control Full Fisc. Doc. No.-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1678707589 - Control 2099680485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies which date is used for posting VAT.</source>
@@ -7777,6 +8217,31 @@
           <source>Select Goods Return Type if it is goods return transaction</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Credit Memo-Adl - Control Goods Return Type-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1678707589 - Control 3541315987 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Subject</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Credit Memo-Adl - Control Fisc. Subject-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1678707589 - Control 2505742619 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Credit Memo-Adl - Control Fisc. No. Series-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1678707589 - Control 1019173947 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Fisc. Terminal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Credit Memo-Adl - Control Fisc. Terminal-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1678707589 - Control 1612794167 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Location Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Credit Memo-Adl - Control Fisc. Location Code-Adl - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1678707589 - Control 62718257 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies Full Fisc. Doc. No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Credit Memo-Adl - Control Full Fisc. Doc. No.-Adl - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3842424518 - Control 2457381690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extended Data Start Balance Date</source>

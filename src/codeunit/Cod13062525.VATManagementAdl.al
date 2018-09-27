@@ -82,6 +82,15 @@ codeunit 13062525 "VAT Management-Adl"
         //</adl.11>
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertPostUnrealVATEntry', '', false, false)]
+    local procedure OnBeforeInsertPostUnrealVATEntry(var VATEntry: Record "VAT Entry"; GenJournalLine: Record "Gen. Journal Line")
+    begin
+        //<adl.11>
+        if VATEntry."VAT % (retrograde)-Adl" <> 0 then
+            VATEntry."VAT Base (retro.)-Adl" := (VATEntry.Base + VATEntry.Amount) * 100 / VATEntry."VAT % (retrograde)-Adl";
+        //</adl.11>
+    end;
+
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterInitRecord', '', true, true)]
     local procedure SalesHeaderOnAfterInitRecord(var SalesHeader: Record "Sales Header")
     begin
