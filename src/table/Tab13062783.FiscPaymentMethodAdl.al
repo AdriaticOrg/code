@@ -42,25 +42,5 @@ table 13062783 "Fisc. Payment Method-Adl"
             Clustered = true;
         }
     }
-
-    trigger OnInsert()
-    begin
-
-    end;
-
-    trigger OnModify()
-    begin
-
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
-    end;
     // </adl.20>
 }

@@ -16,22 +16,27 @@ page 13062781 "Fiscalization Setup-Adl"
             {
                 field(Active; ActiveX)
                 {
+                    ToolTip = 'Specifies Active';
                     ApplicationArea = All;
                 }
                 field("Start Date"; "Start Date")
                 {
+                    ToolTip = 'Specifies Start Date';
                     ApplicationArea = All;
                 }
                 field("End Date"; "End Date")
                 {
+                    ToolTip = 'Specifies End Date';
                     ApplicationArea = All;
                 }
                 field("Default Fiscalization Location"; "Default Fiscalization Location")
                 {
+                    ToolTip = 'Specifies Default Fiscalization Location';
                     ApplicationArea = All;
                 }
                 field("Default Fiscalization Terminal"; "Default Fiscalization Terminal")
                 {
+                    ToolTip = 'Specifies Default Fiscalization Terminal';
                     ApplicationArea = All;
                 }
 

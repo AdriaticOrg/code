@@ -41,6 +41,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
             // <adl.20>
             field("Full Fisc. Doc. No.-Adl"; "Full Fisc. Doc. No.-Adl")
             {
+                Visible = FISCFeatureEnabled;
                 ApplicationArea = All;
             }
             // </adl.20>
@@ -135,6 +136,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
         FASFeatureEnabled: Boolean;
         KRDFeatureEnabled: Boolean;
         BSTFeatureEnabled: Boolean;
+        FISCFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
@@ -145,6 +147,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
         FASFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS);
         KRDFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::KRD);
         BSTFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::BST);
+        FISCFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::FISC);
         // </adl.0>
     end;
 

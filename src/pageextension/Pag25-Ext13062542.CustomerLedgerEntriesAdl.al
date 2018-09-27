@@ -57,6 +57,7 @@ pageextension 13062542 "Customer Ledger Entries-Adl" extends "Customer Ledger En
             // <adl.20>
             field("Full Fisc. Doc. No.-Adl"; "Full Fisc. Doc. No.-Adl")
             {
+                Visible = FISCFeatureEnabled;
                 ApplicationArea = All;
             }
             // </adl.20>
@@ -90,6 +91,7 @@ pageextension 13062542 "Customer Ledger Entries-Adl" extends "Customer Ledger En
         FASFeatureEnabled: Boolean;
         KRDFeatureEnabled: Boolean;
         BSTFeatureEnabled: Boolean;
+        FISCFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
@@ -100,6 +102,7 @@ pageextension 13062542 "Customer Ledger Entries-Adl" extends "Customer Ledger En
         FASFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::FAS);
         KRDFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::KRD);
         BSTFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::BST);
+        FISCFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::FISC);
         // </adl.0>
     end;
 

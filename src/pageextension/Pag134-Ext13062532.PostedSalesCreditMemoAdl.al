@@ -61,27 +61,39 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
             {
                 field("Fisc. Subject-Adl"; "Fisc. Subject-Adl")
                 {
+                    Visible = FISCFeatureEnabled;
+                    ToolTip = 'Specifies Fisc. Subject';
                     ApplicationArea = All;
                 }
                 field("Fisc. No. Series-Adl"; "Fisc. No. Series-Adl")
                 {
+                    Visible = FISCFeatureEnabled;
+                    ToolTip = 'Specifies Fisc. No. Series';
                     ApplicationArea = All;
                 }
                 field("Fisc. Terminal-Adl"; "Fisc. Terminal-Adl")
                 {
+                    Visible = FISCFeatureEnabled;
+                    ToolTip = 'Specifies Fisc. Terminal';
                     ApplicationArea = All;
                 }
                 field("Fisc. Location Code-Adl"; "Fisc. Location Code-Adl")
                 {
+                    ToolTip = 'Specifies Location Code';
+                    Visible = FISCFeatureEnabled;
                     ApplicationArea = All;
                 }
 
                 field("Full Fisc. Doc. No.-Adl"; "Full Fisc. Doc. No.-Adl")
                 {
+                    Visible = FISCFeatureEnabled;
+                    ToolTip = 'Specifies Full Fisc. Doc. No.';
                     ApplicationArea = All;
                 }
                 field("Posting TimeStamp-Adl"; "Posting TimeStamp-Adl")
                 {
+                    Visible = FISCFeatureEnabled;
+                    ToolTip = 'Specifies Posting TimeStamp';
                     ApplicationArea = All;
                 }
             }
@@ -142,6 +154,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
         ADLCore: Codeunit "Adl Core-Adl";
         VATFeatureEnabled: Boolean;
         VIESFeatureEnabled: Boolean;
+        FISCFeatureEnabled: Boolean;
         // </adl.0>
 
     trigger OnOpenPage();
@@ -149,6 +162,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
         // <adl.0>
         VATFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT);
         VIESFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::VIES);
+        FISCFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::FISC);
         // </adl.0>
     end;
 }

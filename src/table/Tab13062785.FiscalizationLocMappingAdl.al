@@ -28,25 +28,5 @@ table 13062785 "Fiscalization Loc. Mapping-Adl"
             Clustered = true;
         }
     }
-
-    trigger OnInsert()
-    begin
-
-    end;
-
-    trigger OnModify()
-    begin
-
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
-    end;
     // </adl.20>
 }

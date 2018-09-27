@@ -149,16 +149,6 @@ table 13062784 "Fiscalization Location-Adl"
         "User ID" := copystr(UserId(), 1, 50);
     end;
 
-    trigger OnModify()
-    begin
-
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
     trigger OnRename()
     begin
         ERROR('');

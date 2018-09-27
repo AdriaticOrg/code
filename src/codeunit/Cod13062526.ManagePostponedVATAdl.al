@@ -23,6 +23,8 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
         CASE PostPonedVAT OF
             TRUE:
                 if (GenJnlLine."VAT Calculation Type" = GenJnlLine."VAT Calculation Type"::"Reverse Charge VAT") and ExtendedSetup."Use VAT Output Date" then begin
+                    VatCalcType := VATPostingSetup."VAT Calculation Type" + 1;
+                    VatCalcTypeModified := true;
                     VATPostingSetup."VAT Calculation Type" := VATPostingSetup."VAT Calculation Type"::"Normal VAT";
                     VATPostingSetup.MODIFY();
                     GenJnlLine."VAT Calculation Type" := GenJnlLine."VAT Calculation Type"::"Normal VAT";
@@ -35,12 +37,15 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                         GenJnlLine2."Postponed VAT-Adl" := GenJnlLine2."Postponed VAT-Adl"::"Postponed VAT";
                         VATPostingSetup.TESTFIELD("Unrealized VAT Type", 0);
                         VATPostingSetup."Unrealized VAT Type" := VATPostingSetup."Unrealized VAT Type"::Percentage;
+                        VatTypeModified := true;
                         VATPostingSetup.MODIFY();
                     END;
                     GenJnlPostLine.RunWithCheck(GenJnlLine2);
-
-                    VATPostingSetup."Unrealized VAT Type" := 0;
-                    VATPostingSetup.MODIFY();
+                    if VatTypeModified then begin
+                        VATPostingSetup."Unrealized VAT Type" := 0;
+                        VATPostingSetup.MODIFY();
+                        VatTypeModified := false;
+                    end;
                     IF (VATOutputDate <> PostDate) AND (VATOutputDate <> 0D) THEN BEGIN
                         GenJnlLine2."Postponed VAT-Adl" := GenJnlLine2."Postponed VAT-Adl"::"Realized VAT";
                         GenJnlLine2.Amount := GenJnlLine."VAT Amount";
@@ -53,6 +58,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                         GenJnlLine."Postponed VAT-Adl" := GenJnlLine."Postponed VAT-Adl"::"Postponed VAT";
                         VATPostingSetup.TESTFIELD("Unrealized VAT Type", 0);
                         VATPostingSetup."Unrealized VAT Type" := VATPostingSetup."Unrealized VAT Type"::Percentage;
+                        VatTypeModified := true;
                         VATPostingSetup.MODIFY();
                     END;
                 end
@@ -61,13 +67,17 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                         GenJnlLine."Postponed VAT-Adl" := GenJnlLine."Postponed VAT-Adl"::"Postponed VAT";
                         VATPostingSetup.TESTFIELD("Unrealized VAT Type", 0);
                         VATPostingSetup."Unrealized VAT Type" := VATPostingSetup."Unrealized VAT Type"::Percentage;
+                        VatTypeModified := true;
                         VATPostingSetup.MODIFY();
                     end;
             FALSE:
                 BEGIN
                     GenJnlLine."Postponed VAT-Adl" := 0;
-                    VATPostingSetup."Unrealized VAT Type" := 0;
-                    VATPostingSetup.MODIFY();
+                    if VATDate <> PostDate then begin
+                        VATPostingSetup."Unrealized VAT Type" := 0;
+                        VATPostingSetup.MODIFY();
+                        VatTypeModified := false;
+                    end;
                     if (VATDate <> 0D) and (VATDate <> PostDate) then begin
                         GenJnlLine."Postponed VAT-Adl" := GenJnlLine."Postponed VAT-Adl"::"Realized VAT";
                         GenJnlLine."Posting Date" := VATDate;
@@ -93,6 +103,8 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                     if (InvoicePostBuffer."VAT Calculation Type" = InvoicePostBuffer."VAT Calculation Type"::"Reverse Charge VAT") and ExtendedSetup."Use VAT Output Date" then begin
                         VATPostingSetup."VAT Calculation Type" := VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT";
                         VATPostingSetup.Modify();
+                        VatCalcTypeModified := false;
+                        VatCalcType := 0;
                     end;
                 END;
         END;
@@ -137,4 +149,8 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     //</adl.7>
     var
         ADLCore: Codeunit "Adl Core-Adl";
+        VatType: Integer;
+        VatCalcType: Integer;
+        VatTypeModified: Boolean;
+        VatCalcTypeModified: Boolean;
 }

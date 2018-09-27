@@ -96,15 +96,5 @@ table 13062782 "Fiscalization Terminal-Adl"
                 "User ID" := AdlCore.TrimmedUserID50();
         END;
     end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
-    end;
     // </adl.20>
 }

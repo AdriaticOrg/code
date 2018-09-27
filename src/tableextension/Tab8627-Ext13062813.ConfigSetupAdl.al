@@ -11,8 +11,6 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
         {
             Caption = 'VAT Enabled';
             DataClassification = SystemMetadata;
-            ObsoleteState = Removed;
-            ObsoleteReason = 'redesign';
         }
         field(13062816; "FAS Enabled-Adl"; Boolean)
         {
@@ -294,61 +292,96 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
         CoreSetup: Record "CoreSetup-Adl";
         CoreEnabled: Boolean;
     begin
-        if not ExtendedSetup.get() then
-            CoreEnabled := ExtendedSetup.Insert(true);
-        ExtendedSetup."Use VAT Output Date" := "Use VAT Output Date";
-        ExtendedSetup.Modify();
-
-        if not VIESSetup.get() then
-            CoreEnabled := VIESSetup.Insert(true);
-        VIESSetup."Default VIES Country" := "Default VIES Country-Adl";
-        VIESSetup."Default VIES Type" := "Default VIES Type-Adl";
-        VIESSetup."VIES Company Branch Code" := "VIES Company Branch Code-Adl";
-        VIESSetup."VIES Prep. By User ID" := "VIES Prep. By User ID-Adl";
-        VIESSetup."VIES Report No. Series" := "VIES Report No. Series-Adl";
-        VIESSetup."VIES Resp. User ID" := "VIES Resp. User ID-Adl";
-        VIESSetup.Modify();
-
-        if not PDOSetup.get() then
-            CoreEnabled := PDOSetup.Insert(true);
-        PDOSetup."PDO Prep. By User ID" := "PDO Prep. By User ID-Adl";
-        PDOSetup."PDO Report No. Series" := "PDO Report No. Series-Adl";
-        PDOSetup."PDO Resp. User ID" := "PDO Resp. User ID-Adl";
-        PDOSetup."PDO VAT Ident. Filter Code" := "PDO VAT Ident. Filter Code-Adl";
-        PDOSetup.Modify();
-
-        if not FASSetup.get() then
-            CoreEnabled := FASSetup.Insert(true);
-        FASSetup."FAS Prep. By User ID" := "FAS Prep. By User ID-Adl";
-        FASSetup."FAS Report No. Series" := "FAS Report No. Series-Adl";
-        FASSetup."FAS Resp. User ID" := "FAS Resp. User ID-Adl";
-        FASSetup."Budget User Code" := "FAS Budget User Code-Adl";
-        FASSetup."Company Sector Code" := "FAS Company Sector Code-Adl";
-        FASSetup."FAS Director User ID" := "FAS Director User ID-Adl";
-        FASSetup.Modify();
-
-        if not KRDSetup.get() then
-            CoreEnabled := KRDSetup.Insert(true);
-        KRDSetup."KRD Prep. By User ID" := "KRD Prep. By User ID-Adl";
-        KRDSetup."KRD Report No. Series" := "KRD Report No. Series-Adl";
-        KRDSetup."KRD Resp. User ID" := "KRD Resp. User ID-Adl";
-        KRDSetup."Default KRD Affiliation Type" := "Default KRD Affiliation Type-Adl";
-        KRDSetup."KRD Blank LCY Code" := "KRD Blank LCY Code-Adl";
-        KRDSetup."KRD Blank LCY Num." := "KRD Blank LCY Num.-Adl";
-        KRDSetup.Modify();
-
-        if not BSTSetup.get() then
-            CoreEnabled := BSTSetup.Insert(true);
-        BSTSetup."BST Prep. By User ID" := "BST Prep. By User ID-Adl";
-        BSTSetup."BST Report No. Series" := "BST Report No. Series-Adl";
-        BSTSetup."BST Resp. User ID" := "BST Resp. User ID-Adl";
-        BSTSetup.Modify();
-
-        If "UP Ext. Data Start Bal. Date-Adl" <> 0D then begin
+        If ("UP Ext. Data Start Bal. Date-Adl" <> 0D) or
+            "VAT Enabled-Adl" or
+            "Use VAT Output Date"
+        then begin
             if not ExtendedSetup.get() then
                 CoreEnabled := ExtendedSetup.Insert(true);
+            ExtendedSetup."VAT Enabled" := "VAT Enabled-Adl";
+            ExtendedSetup."Use VAT Output Date" := "Use VAT Output Date";
             ExtendedSetup."Ext. Data Start Bal. Date" := "UP Ext. Data Start Bal. Date-Adl";
-            ExtendedSetup.Modify();
+            ExtendedSetup.Modify(true);
+        end;
+
+        if ("Default VIES Country-Adl" <> "Default VIES Country-Adl"::" ") or
+           ("Default VIES Type-Adl" <> "Default VIES Type-Adl"::" ") or
+           ("VIES Company Branch Code-Adl" <> '') or
+           ("VIES Prep. By User ID-Adl" <> '') or
+           ("VIES Report No. Series-Adl" <> '') or
+           ("VIES Resp. User ID-Adl" <> '')
+        then begin
+            if not VIESSetup.get() then
+                CoreEnabled := VIESSetup.Insert(true);
+            VIESSetup."Default VIES Country" := "Default VIES Country-Adl";
+            VIESSetup."Default VIES Type" := "Default VIES Type-Adl";
+            VIESSetup."VIES Company Branch Code" := "VIES Company Branch Code-Adl";
+            VIESSetup."VIES Prep. By User ID" := "VIES Prep. By User ID-Adl";
+            VIESSetup."VIES Report No. Series" := "VIES Report No. Series-Adl";
+            VIESSetup."VIES Resp. User ID" := "VIES Resp. User ID-Adl";
+            VIESSetup.Modify(true);
+        end;
+
+        if ("PDO VAT Ident. Filter Code-Adl" <> '') or
+           ("PDO Prep. By User ID-Adl" <> '') or
+           ("PDO Report No. Series-Adl" <> '') or
+           ("PDO Resp. User ID-Adl" <> '')
+        then begin
+            if not PDOSetup.get() then
+                CoreEnabled := PDOSetup.Insert(true);
+            PDOSetup."PDO Prep. By User ID" := "PDO Prep. By User ID-Adl";
+            PDOSetup."PDO Report No. Series" := "PDO Report No. Series-Adl";
+            PDOSetup."PDO Resp. User ID" := "PDO Resp. User ID-Adl";
+            PDOSetup."PDO VAT Ident. Filter Code" := "PDO VAT Ident. Filter Code-Adl";
+            PDOSetup.Modify(true);
+        end;
+
+        if ("FAS Budget User Code-Adl" <> '') or
+           ("FAS Prep. By User ID-Adl" <> '') or
+           ("FAS Report No. Series-Adl" <> '') or
+           ("FAS Resp. User ID-Adl" <> '') or
+           ("FAS Company Sector Code-Adl" <> '') or
+           ("FAS Director User ID-Adl" <> '')
+        then begin
+            if not FASSetup.get() then
+                CoreEnabled := FASSetup.Insert(true);
+            FASSetup."FAS Prep. By User ID" := "FAS Prep. By User ID-Adl";
+            FASSetup."FAS Report No. Series" := "FAS Report No. Series-Adl";
+            FASSetup."FAS Resp. User ID" := "FAS Resp. User ID-Adl";
+            FASSetup."Budget User Code" := "FAS Budget User Code-Adl";
+            FASSetup."Company Sector Code" := "FAS Company Sector Code-Adl";
+            FASSetup."FAS Director User ID" := "FAS Director User ID-Adl";
+            FASSetup.Modify(true);
+        end;
+
+        if ("KRD Prep. By User ID-Adl" <> '') or
+           ("KRD Report No. Series-Adl" <> '') or
+           ("KRD Resp. User ID-Adl" <> '') or
+           ("Default KRD Affiliation Type-Adl" <> '') or
+           ("KRD Blank LCY Code-Adl" <> '') or
+           ("KRD Blank LCY Num.-Adl" <> '')
+        then begin
+            if not KRDSetup.get() then
+                CoreEnabled := KRDSetup.Insert(true);
+            KRDSetup."KRD Prep. By User ID" := "KRD Prep. By User ID-Adl";
+            KRDSetup."KRD Report No. Series" := "KRD Report No. Series-Adl";
+            KRDSetup."KRD Resp. User ID" := "KRD Resp. User ID-Adl";
+            KRDSetup."Default KRD Affiliation Type" := "Default KRD Affiliation Type-Adl";
+            KRDSetup."KRD Blank LCY Code" := "KRD Blank LCY Code-Adl";
+            KRDSetup."KRD Blank LCY Num." := "KRD Blank LCY Num.-Adl";
+            KRDSetup.Modify(true);
+        end;
+
+        if ("BST Prep. By User ID-Adl" <> '') or
+           ("BST Report No. Series-Adl" <> '') or
+           ("BST Resp. User ID-Adl" <> '')
+        then begin
+            if not BSTSetup.get() then
+                CoreEnabled := BSTSetup.Insert(true);
+            BSTSetup."BST Prep. By User ID" := "BST Prep. By User ID-Adl";
+            BSTSetup."BST Report No. Series" := "BST Report No. Series-Adl";
+            BSTSetup."BST Resp. User ID" := "BST Resp. User ID-Adl";
+            BSTSetup.Modify(true);
         end;
 
         if "Fiscal. Active-Adl" then begin
@@ -359,16 +392,12 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
             FiscalSetup."Default Fiscalization Terminal" := "Fiscal. Default Fiscalization Terminal-Adl";
             FiscalSetup."Start Date" := "Fiscal. Start Date-Adl";
             FiscalSetup."End Date" := "Fiscal. End Date-Adl";
-            FiscalSetup.Modify();
+            FiscalSetup.Modify(true);
         end;
 
-        If "ADL Enabled-Adl" and not CoreEnabled then begin
-            If not CoreSetup.Get() then
-                CoreSetup.Insert();
-            CoreSetup."ADL Enabled" := "ADL Enabled-Adl";
-            CoreSetup.Modify();
-        end;
 
-        Commit();
+        CoreSetup.EnableOrDisableFeature("ADLFeatures-Adl"::Core, "ADL Enabled-Adl");
+
+        //Commit();
     end;
 }
