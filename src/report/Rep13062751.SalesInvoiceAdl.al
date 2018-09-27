@@ -381,6 +381,9 @@ Report 13062751 "Sales - Invoice-Adl"
                             AutoFormatExpression = GetCurrencyCode();
                             AutoFormatType = 1;
                         }
+                        column(VATPercent; "VAT %")
+                        {
+                        }
                         column(VATAmtLineVATAmtText; VATAmountLine.VATAmountText())
                         {
                         }

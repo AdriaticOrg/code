@@ -348,6 +348,9 @@ report 13062752 "Sales - Credit Memo-Adl"
                             AutoFormatExpression = GetCurrencyCode();
                             AutoFormatType = 1;
                         }
+                        column(VATPercent; "VAT %")
+                        {
+                        }
                         column(TotalExclVATText; TotalExclVATText)
                         {
                         }
