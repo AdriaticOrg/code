@@ -149,7 +149,6 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
     //</adl.7>
     var
         ADLCore: Codeunit "Adl Core-Adl";
-
         VatCalcType: Integer;
         VatTypeModified: Boolean;
         VatCalcTypeModified: Boolean;

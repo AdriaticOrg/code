@@ -73,8 +73,6 @@ codeunit 13062525 "VAT Management-Adl"
                     VATEntry."Unrealized Base" := -VATEntry.Base;
                 end;
         END;
-        //TEST
-
         //<adl.11>
         VATEntry."VAT % (retrograde)-Adl" := VATPostingSetup."VAT % (retrograde)-Adl";
         if VATPostingSetup."VAT % (retrograde)-Adl" <> 0 then
