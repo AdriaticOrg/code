@@ -4387,7 +4387,7 @@ Cstr(Fields!Shipment_Date.Value)
                         <FontStyle>Normal</FontStyle>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>8pt</FontSize>
-                        <Format>g</Format>
+                        <Format>d</Format>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -4885,7 +4885,7 @@ Cstr(Fields!Shipment_Date.Value)
                         <FontStyle>Normal</FontStyle>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>8pt</FontSize>
-                        <Format>g</Format>
+                        <Format>d</Format>
                       </Style>
                     </TextRun>
                   </TextRuns>
