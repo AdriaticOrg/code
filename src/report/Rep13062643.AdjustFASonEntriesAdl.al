@@ -29,6 +29,7 @@ report 13062643 "Adjust FAS on Entries-Adl"
                 GLEntry.get("Entry No.");
                 GLEntry."FAS Type-Adl" := GLAcc."FAS Type-Adl";
                 GLEntry."FAS Instrument Code-Adl" := GLAcc."FAS Instrument Code-Adl";
+                GLEntry."FAS Sector Code-Adl" := GLAcc."FAS Sector Code-Adl";
 
                 case "Source Type" of
                     "Source Type"::Customer:
@@ -44,7 +45,7 @@ report 13062643 "Adjust FAS on Entries-Adl"
                             GLEntry."FAS Sector Code-Adl" := BankAcc."FAS Sector Code-Adl";
                             GLEntry."FAS Instrument Code-Adl" := BankAcc."FAS Instrument Code-Adl";
                         end;
-                end;
+                end;                
 
                 if UpdateAllFromGL then begin
                     GLEntry."FAS Sector Code-Adl" := GLAcc."FAS Sector Code-Adl";
