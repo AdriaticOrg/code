@@ -45,13 +45,13 @@ report 13062752 "Sales - Credit Memo-Adl"
             column(Place_Of_Issue_AdlCaption; Place_Of_Issue_AdlCaptionLbl)
             {
             }
-            column(Date_Of_Issue_Adl; FORMAT("Document Date", 0, 4))
+            column(Date_Of_Issue_Adl; "Document Date")
             {
             }
             column(Date_Of_Issue_AdlCaption; Date_Of_Issue_AdlCaptionLbl)
             {
             }
-            column(Shipment_Date; FORMAT("Shipment Date", 0, 4))
+            column(Shipment_Date; "Shipment Date")
             {
             }
             column(Shipment_Date_AdlCaption; Shipment_Date_AdlCaptionLbl)
@@ -132,7 +132,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                     column(BilltoCustNo_SalesCrMemoHeader; "Sales Cr.Memo Header"."Bill-to Customer No.")
                     {
                     }
-                    column(PostDate_SalesCrMemoHeader; Format("Sales Cr.Memo Header"."Posting Date", 0, 4))
+                    column(PostDate_SalesCrMemoHeader; "Sales Cr.Memo Header"."Posting Date")
                     {
                     }
                     column(VATNoText; VATNoText)
@@ -168,7 +168,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                     column(CompanyAddr6; CompanyAddr[6])
                     {
                     }
-                    column(DocDt_SalesCrMemoHeader; Format("Sales Cr.Memo Header"."Document Date", 0, 4))
+                    column(DocDt_SalesCrMemoHeader; "Sales Cr.Memo Header"."Document Date")
                     {
                     }
                     column(PriceInclVAT_SalesCrMemoHeader; "Sales Cr.Memo Header"."Prices Including VAT")
