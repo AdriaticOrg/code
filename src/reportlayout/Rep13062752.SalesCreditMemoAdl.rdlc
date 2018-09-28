@@ -13501,6 +13501,12 @@ End Function
         <Field Name="Amt_SalesCrMemoLineFormat">
           <DataField>Amt_SalesCrMemoLineFormat</DataField>
         </Field>
+        <Field Name="VATPercent">
+          <DataField>VATPercent</DataField>
+        </Field>
+        <Field Name="VATPercentFormat">
+          <DataField>VATPercentFormat</DataField>
+        </Field>
         <Field Name="TotalExclVATText">
           <DataField>TotalExclVATText</DataField>
         </Field>

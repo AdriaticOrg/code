@@ -9868,6 +9868,12 @@ End Function</Code>
         <Field Name="AmtInclVAT_SalesInvLineFormat">
           <DataField>AmtInclVAT_SalesInvLineFormat</DataField>
         </Field>
+        <Field Name="VATPercent">
+          <DataField>VATPercent</DataField>
+        </Field>
+        <Field Name="VATPercentFormat">
+          <DataField>VATPercentFormat</DataField>
+        </Field>
         <Field Name="VATAmtLineVATAmtText">
           <DataField>VATAmtLineVATAmtText</DataField>
         </Field>
