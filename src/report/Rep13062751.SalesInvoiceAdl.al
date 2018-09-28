@@ -3,7 +3,7 @@ Report 13062751 "Sales - Invoice-Adl"
     // version NAVW113.00
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/reportlayout/Rep13062751.SalesInvoiceAdl.rdl';
+    RDLCLayout = './src/reportlayout/Rep13062751.SalesInvoiceAdl.rdlc';
     Caption = 'Sales - Invoice';
     EnableHyperlinks = true;
     Permissions = TableData "Sales Shipment Buffer" = rimd;
@@ -75,13 +75,13 @@ Report 13062751 "Sales - Invoice-Adl"
             column(Place_Of_Issue_AdlCaption; Place_Of_Issue_AdlCaptionLbl)
             {
             }
-            column(Date_Of_Issue_Adl; FORMAT("Document Date", 0,4))
+            column(Date_Of_Issue_Adl; "Document Date")
             {
             }
             column(Date_Of_Issue_AdlCaption; Date_Of_Issue_AdlCaptionLbl)
             {
             }
-            column(Shipment_Date; FORMAT("Shipment Date", 0,4))
+            column(Shipment_Date; "Shipment Date")
             {
             }
             column(Shipment_Date_AdlCaption; Shipment_Date_AdlCaptionLbl)
@@ -162,7 +162,7 @@ Report 13062751 "Sales - Invoice-Adl"
                     column(BilltoCustNo_SalesInvHdr; "Sales Invoice Header"."Bill-to Customer No.")
                     {
                     }
-                    column(PostingDate_SalesInvHdr; FORMAT("Sales Invoice Header"."Posting Date", 0, 4))
+                    column(PostingDate_SalesInvHdr; "Sales Invoice Header"."Posting Date")
                     {
                     }
                     column(VATNoText; VATNoText)
@@ -171,7 +171,7 @@ Report 13062751 "Sales - Invoice-Adl"
                     column(VATRegNo_SalesInvHdr; "Sales Invoice Header"."VAT Registration No.")
                     {
                     }
-                    column(DueDate_SalesInvHdr; FORMAT("Sales Invoice Header"."Due Date", 0, 4))
+                    column(DueDate_SalesInvHdr; "Sales Invoice Header"."Due Date")
                     {
                     }
                     column(SalesPersonText; SalesPersonText)
@@ -204,7 +204,7 @@ Report 13062751 "Sales - Invoice-Adl"
                     column(CompanyAddr6; CompanyAddr[6])
                     {
                     }
-                    column(DocDate_SalesInvHdr; FORMAT("Sales Invoice Header"."Document Date", 0, 4))
+                    column(DocDate_SalesInvHdr; "Sales Invoice Header"."Document Date")
                     {
                     }
                     column(PricesInclVAT_SalesInvHdr; "Sales Invoice Header"."Prices Including VAT")
@@ -380,6 +380,9 @@ Report 13062751 "Sales - Invoice-Adl"
                         {
                             AutoFormatExpression = GetCurrencyCode();
                             AutoFormatType = 1;
+                        }
+                        column(VATPercent; "VAT %")
+                        {
                         }
                         column(VATAmtLineVATAmtText; VATAmountLine.VATAmountText())
                         {

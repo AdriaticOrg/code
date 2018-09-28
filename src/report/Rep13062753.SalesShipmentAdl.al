@@ -24,13 +24,13 @@ report 13062753 "Sales - Shipment-Adl"
             column(Place_Of_Issue_AdlCaption; Place_Of_Issue_AdlCaptionLbl)
             {
             }
-            column(Date_Of_Issue_Adl; FORMAT("Document Date", 0, 4))
+            column(Date_Of_Issue_Adl; "Document Date")
             {
             }
             column(Date_Of_Issue_AdlCaption; Date_Of_Issue_AdlCaptionLbl)
             {
             }
-            column(Shipment_Date; FORMAT("Shipment Date", 0, 4))
+            column(Shipment_Date; "Shipment Date")
             {
             }
             column(Shipment_Date_AdlCaption; Shipment_Date_AdlCaptionLbl)
@@ -111,7 +111,7 @@ report 13062753 "Sales - Shipment-Adl"
                     column(SelltoCustNo_SalesShptHeader; "Sales Shipment Header"."Sell-to Customer No.")
                     {
                     }
-                    column(DocDate_SalesShptHeader; Format("Sales Shipment Header"."Document Date", 0, 4))
+                    column(DocDate_SalesShptHeader; "Sales Shipment Header"."Document Date")
                     {
                     }
                     column(SalesPersonText; SalesPersonText)

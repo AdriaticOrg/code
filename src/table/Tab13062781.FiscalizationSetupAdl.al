@@ -89,5 +89,12 @@ table 13062781 "Fiscalization Setup-Adl"
     begin
         EXIT(GetCountryCode() = 'RS');
     end;
+
+    trigger OnModify()
+    var
+        AdlCore: Codeunit "Adl Core-Adl";
+    begin
+        AdlCore.EnableOrDisableFeature("ADLFeatures-Adl"::FISC, Rec.ActiveX);
+    end;
     // </adl.20>
 }
