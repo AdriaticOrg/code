@@ -45,28 +45,37 @@ report 13062595 "GL ExportSI-Adl"
 
                 trigger OnPreDataItem();
                 begin
-                    GLAccountBal.SETFILTER("Date Filter", '..%1', "G/L Account".GetrangeMIN("Date Filter"));
+
+                end;
+
+                trigger OnAfterGetRecord()
+                begin
+                    GLAccountBal.SetRange("No.", "G/L Account"."No.");
+                    if ("G/L Account".getfilter("Date Filter") <> '') then
+                        GLAccountBal.SetFilter("Date Filter", '..%1', "G/L Account".GetrangeMIN("Date Filter")); //"G/L Account".getfilter("Date Filter"));
                     GLAccountBal.setfilter("Balance at Date", '<>%1', 0);
-                    CalcFields("Balance at Date");
+                    GLAccountBal.CalcFields("Balance at Date");
                     BalanceAtDate := GLAccountBal."Balance at Date";
+
                     BalanceYear := Date2DMY("G/L Account".GetrangeMIN("Date Filter"), 3);
                     Type := 'OTV';
                     IF (BalanceAtDate = 0) then
                         CurrReport.Break();
 
-                    TextWriterAdl.FixedField(OutStr, "No.", 10, PadCharacter, 1, FieldDelimiter);
-                    TextWriterAdl.FixedField(OutStr, Name, 50, PadCharacter, 1, FieldDelimiter);
-                    TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
-                    TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
-                    TextWriterAdl.FixedField(OutStr, BalanceDocumentNoFormatTxt, 30, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, GLAccountBal."No.", 10, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, GLAccountBal.Name, 50, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, DMY2Date(1, 1, BalanceYear), 8, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, DMY2Date(1, 1, BalanceYear), 8, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, StrSubstNo(BalanceDocumentNoFormatTxt, BalanceYear), 30, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, Type, 3, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, StrSubstNo(BalanceDescFormatTxt, BalanceYear), 50, PadCharacter, 1, FieldDelimiter);
-                    TextWriterAdl.FixedField(OutStr, BalanceAtDate, 16, PadCharacter, 0, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 16, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, abs(BalanceAtDate), 16, PadCharacter, 0, FieldDelimiter);
                     TextWriterAdl.FixedField(OutStr, DummyText, 160, PadCharacter, 1, FieldDelimiter);
                     TextWriterAdl.NewLine(OutStr);
-                end;
 
+                    CurrReport.Break();
+                end;
 
                 trigger OnPostDataItem()
                 begin
@@ -110,7 +119,7 @@ report 13062595 "GL ExportSI-Adl"
                 trigger OnPreDataItem();
                 begin
                     if "G/L Account".Getfilter("Date Filter") <> '' then
-                        ;//GLEntryTrans.SETRANGE("Posting Date", "G/L Account"."Date Filter");
+                        GLEntryTrans.SetFilter("Posting Date", "G/L Account".Getfilter("Date Filter"));
                 end;
 
                 trigger OnAfterGetRecord()
@@ -199,6 +208,7 @@ report 13062595 "GL ExportSI-Adl"
 
             trigger OnPreDataItem()
             begin
+
                 FieldDelimiter := '';
                 TextWriterAdl.FixedField(OutStr, AccountNoLbl, 11, PadCharacter, 1, FieldDelimiter);
                 TextWriterAdl.FixedField(OutStr, NameLbl, 51, PadCharacter, 1, FieldDelimiter);
@@ -211,7 +221,10 @@ report 13062595 "GL ExportSI-Adl"
                 TextWriterAdl.FixedField(OutStr, CreditAmountLbl, 17, PadCharacter, 0, FieldDelimiter);
                 TextWriterAdl.FixedField(OutStr, NoteLbl, 161, PadCharacter, 1, FieldDelimiter);
                 FieldDelimiter := ';';
+
+                TextWriterAdl.NewLine(OutStr);
             end;
+
         }
     }
 
