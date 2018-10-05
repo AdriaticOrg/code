@@ -7,6 +7,7 @@ tableextension 13062532 "VAT Entry-Adl" extends "VAT Entry" //254
         {
             Caption = 'Postponed VAT';
             OptionMembers = "Realized VAT","Postponed VAT";
+            OptionCaption = 'Realized VAT,Postponed VAT';
             DataClassification = SystemMetadata;
         }
         // </adl.10>

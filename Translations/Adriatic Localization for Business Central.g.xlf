@@ -4769,7 +4769,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Mapping-Adl - Control Fisc. Location Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2020614236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>DEVELOPMENT ONLY: Core Setup</source>
+          <source>INTERNAL: Core Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Core Setup-Adl - Property Caption</note>
         </trans-unit>
@@ -8448,6 +8448,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Header-Adl - Field Postponed VAT-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 642464550 - Field 163338849 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Realized VAT,Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Header-Adl - Field Postponed VAT-Adl - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 642464550 - Field 2997009355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EU Customs Procedure</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8507,6 +8512,11 @@
           <source>Postponed VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr.Memo Header-Adl - Field Postponed VAT-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2684467970 - Field 163338849 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Realized VAT,Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr.Memo Header-Adl - Field Postponed VAT-Adl - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2684467970 - Field 1439163258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Type</source>
@@ -8583,6 +8593,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Inv. Header-Adl - Field Postponed VAT-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1470944762 - Field 163338849 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Realized VAT,Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Inv. Header-Adl - Field Postponed VAT-Adl - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3670207285 - Field 2099680485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8597,6 +8612,11 @@
           <source>Postponed VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Cr. Memo Hdr.-Adl - Field Postponed VAT-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3670207285 - Field 163338849 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Realized VAT,Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Cr. Memo Hdr.-Adl - Field Postponed VAT-Adl - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3670207285 - Field 1439163258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Type</source>
@@ -8818,6 +8838,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Entry-Adl - Field Postponed VAT-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1270140373 - Field 163338849 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Realized VAT,Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Entry-Adl - Field Postponed VAT-Adl - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1270140373 - Field 870920144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Identifier</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8883,6 +8908,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Header-Adl - Field Postponed VAT-Adl - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2348541669 - Field 163338849 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Realized VAT,Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Header-Adl - Field Postponed VAT-Adl - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2348541669 - Field 1439163258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8942,6 +8972,11 @@
           <source>Postponed VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header-Adl - Field Postponed VAT-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2195868692 - Field 163338849 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Realized VAT,Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header-Adl - Field Postponed VAT-Adl - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2195868692 - Field 1439163258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goods Return Type</source>
@@ -9097,6 +9132,11 @@
           <source>Postponed VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line-Adl - Field Postponed VAT-Adl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 37636019 - Field 163338849 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Realized VAT,Postponed VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line-Adl - Field Postponed VAT-Adl - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 37636019 - Field 2469923260 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT % (retrograde)</source>
