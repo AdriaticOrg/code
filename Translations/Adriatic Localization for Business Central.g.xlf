@@ -4769,7 +4769,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Fisc. Location Mapping-Adl - Control Fisc. Location Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2020614236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>DEVELOPMENT ONLY: Core Setup</source>
+          <source>INTERNAL: Core Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Core Setup-Adl - Property Caption</note>
         </trans-unit>
