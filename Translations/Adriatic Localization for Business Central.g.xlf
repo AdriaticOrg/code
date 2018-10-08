@@ -5948,16 +5948,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Adjust FAS on Entries-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 2602618586 - Control 1796811495 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Update all from G/L Account</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust FAS on Entries-Adl - Control UpdateAllFromGL - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2602618586 - Control 1796811495 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Updates G/L Entry records strictly with values from G/L Account</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Adjust FAS on Entries-Adl - Control UpdateAllFromGL - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="Report 2602618586 - NamedType 1000469645" size-unit="char" translate="yes" xml:space="preserve">
           <source>Are you sure you want to update entries based on values in master tables?</source>
           <note from="Developer" annotates="general" priority="2"></note>

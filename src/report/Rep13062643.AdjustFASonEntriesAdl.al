@@ -45,11 +45,6 @@ report 13062643 "Adjust FAS on Entries-Adl"
                             GLEntry."FAS Sector Code-Adl" := BankAcc."FAS Sector Code-Adl";
                             GLEntry."FAS Instrument Code-Adl" := BankAcc."FAS Instrument Code-Adl";
                         end;
-                end;                
-
-                if UpdateAllFromGL then begin
-                    GLEntry."FAS Sector Code-Adl" := GLAcc."FAS Sector Code-Adl";
-                    GLEntry."FAS Instrument Code-Adl" := GLAcc."FAS Instrument Code-Adl";
                 end;
 
                 GLEntry.Modify();
@@ -64,26 +59,7 @@ report 13062643 "Adjust FAS on Entries-Adl"
 
     }
 
-    requestpage
-    {
-        layout
-        {
-            area(Content)
-            {
-                group(General)
-                {
-                    field(UpdateAllFromGL; UpdateAllFromGL)
-                    {
-                        Caption = 'Update all from G/L Account';
-                        ApplicationArea = All;
-                        ToolTip = 'Updates G/L Entry records strictly with values from G/L Account';
-                    }
-                }
-            }
-        }
-    }
     var
-        UpdateAllFromGL: Boolean;
         ConfrimMsg: Label 'Are you sure you want to update entries based on values in master tables?';
         FinishMsg: Label 'Processing finished.';
         AbortByUserMsg: Label 'Aborted by user';
