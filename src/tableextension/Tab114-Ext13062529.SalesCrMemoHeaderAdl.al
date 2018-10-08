@@ -15,6 +15,7 @@ tableextension 13062529 "Sales Cr.Memo Header-Adl" extends "Sales Cr.Memo Header
             Caption = 'Postponed VAT';
             DataClassification = SystemMetadata;
             OptionMembers = "Realized VAT","Postponed VAT";
+            OptionCaption = 'Realized VAT,Postponed VAT';
         }
         // </adl.10>
         // <adl.18>

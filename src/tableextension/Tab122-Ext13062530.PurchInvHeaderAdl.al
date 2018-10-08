@@ -19,6 +19,7 @@ tableextension 13062530 "Purch. Inv. Header-Adl" extends "Purch. Inv. Header"  /
         {
             Caption = 'Postponed VAT';
             OptionMembers = "Realized VAT","Postponed VAT";
+            OptionCaption = 'Realized VAT,Postponed VAT';
             DataClassification = SystemMetadata;
         }
         // </adl.10>

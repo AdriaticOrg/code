@@ -14,6 +14,7 @@ tableextension 13062528 "Sales Invoice Header-Adl" extends "Sales Invoice Header
         {
             Caption = 'Postponed VAT';
             OptionMembers = "Realized VAT","Postponed VAT";
+            OptionCaption = 'Realized VAT,Postponed VAT';
             DataClassification = SystemMetadata;
         }
         // </adl.10>

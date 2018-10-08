@@ -1,10 +1,10 @@
 page 13062811 "Core Setup-Adl"
 {
     PageType = Card;
-    ApplicationArea = All;
+    ApplicationArea = AdlInternal;
     UsageCategory = Administration;
     SourceTable = "CoreSetup-Adl";
-    Caption = 'DEVELOPMENT ONLY: Core Setup';
+    Caption = 'INTERNAL: Core Setup';
 
     layout
     {

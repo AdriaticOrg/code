@@ -22,6 +22,7 @@ tableextension 13062525 "Sales Header-Adl" extends "Sales Header" //36
             DataClassification = SystemMetadata;
             Caption = 'Postponed VAT';
             OptionMembers = "Realized VAT","Postponed VAT";
+            OptionCaption = 'Realized VAT,Postponed VAT';
         }
         // </adl.10>
         // <adl.18>
