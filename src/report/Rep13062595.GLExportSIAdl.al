@@ -43,16 +43,13 @@ report 13062595 "GL ExportSI-Adl"
                 {
                 }
 
-                trigger OnPreDataItem();
-                begin
-
-                end;
-
                 trigger OnAfterGetRecord()
                 begin
                     GLAccountBal.SetRange("No.", "G/L Account"."No.");
-                    if ("G/L Account".getfilter("Date Filter") <> '') then
-                        GLAccountBal.SetFilter("Date Filter", '..%1', "G/L Account".GetrangeMIN("Date Filter"));
+                    if ("G/L Account".getfilter("Date Filter") = '') then CurrReport.Break();
+                    if ("G/L Account".GetrangeMIN("Date Filter") = 0D) then CurrReport.Break();
+
+                    GLAccountBal.SetFilter("Date Filter", '..%1', "G/L Account".GetrangeMIN("Date Filter"));
                     GLAccountBal.setfilter("Balance at Date", '<>%1', 0);
                     GLAccountBal.CalcFields("Balance at Date");
                     BalanceAtDate := GLAccountBal."Balance at Date";
@@ -63,7 +60,6 @@ report 13062595 "GL ExportSI-Adl"
                         CurrReport.Break();
 
                     CreateGLOpeningLine(GLAccountBal, BalanceYear);
-
                     CurrReport.Break();
                 end;
 
@@ -151,9 +147,26 @@ report 13062595 "GL ExportSI-Adl"
                 {
                 }
 
-
                 trigger OnAfterGetRecord()
                 begin
+                    GLAccountBal.SetFilter("Date Filter", '..%1', "G/L Account".GetrangeMIN("Date Filter"));
+                    GLAccountBal.setfilter("Balance at Date", '<>%1', 0);
+                    GLAccountBal.CalcFields("Balance at Date");
+                    BalanceAtDate := GLAccountBal."Balance at Date";
+
+                    BalanceYear := Date2DMY("G/L Account".GetrangeMIN("Date Filter"), 3);
+                    Type := 'ZAK';
+                    IF (BalanceAtDate = 0) then
+                        CurrReport.Break();
+
+                    CreateGLOpeningLine(GLAccountBal, BalanceYear);
+                    CurrReport.Break();
+
+
+                    GLAccountZAK.SetRange("No.", "G/L Account"."No.");
+                    if ("G/L Account".getfilter("Date Filter") = '') then CurrReport.Break();
+                    if (ClosingDate("G/L Account".GetrangeMAX("Date Filter")) = 0D) then CurrReport.Break();
+
                     GLAccountZAK.SETFILTER("Date Filter", '%1', CLOSINGDATE("G/L Account".GetRangeMax("Date Filter")));
                     GLAccountZAK.CalcFields("Debit Amount", "Credit Amount");
                     ClosingYear := Date2DMY(CLOSINGDATE("G/L Account".GetRangeMax("Date Filter")), 3);
@@ -162,7 +175,6 @@ report 13062595 "GL ExportSI-Adl"
                         CurrReport.Break();
 
                     CreateGLClosingLine(GLAccountZAK);
-
                     CurrReport.Break();
                 end;
 
