@@ -135,13 +135,13 @@ table 13062812 "Assisted Setup-Adl"
         ADLIntroTxtCopy := CopyStr(ADLIntroTxt, 1, MaxStrLen(ADLIntroTxtCopy));
         DocumentUrlADLTxtCopy := CopyStr(DocumentUrlADLTxt, 1, MaxStrLen(DocumentUrlADLTxtCopy));
 
-        AddSetupAssistant(Page::"Assisted ADL Setup Wizard-adl", ADLIntroTxtCopy, SortingOrder, true,
+        AddSetupAssistant(Page::"Basic Assist. Setup Wizard-Adl", ADLIntroTxtCopy, SortingOrder, true,
             GroupId, false, "Item Type"::"Setup and Help");
-        AddSetupAssistantResources(Page::"Assisted ADL Setup Wizard-adl", '', DocumentUrlADLTxtCopy, 0, Page::"Assisted ADL Setup Wizard-adl", '');
+        AddSetupAssistantResources(Page::"Basic Assist. Setup Wizard-Adl", '', DocumentUrlADLTxtCopy, 0, Page::"Basic Assist. Setup Wizard-Adl", '');
         LastId += 1;
         SortingOrder += 1;
 
-        UpdateSetUpPageVisibility(Page::"Assisted ADL Setup Wizard-adl");
+        UpdateSetUpPageVisibility(Page::"Basic Assist. Setup Wizard-Adl");
     end;
 
     local procedure AddSetupAssistant(EnteryNo: Integer; AssistantName: Text[250]; SortingOrder: Integer; AssistantVisible: Boolean; ParentId: Integer; IsFeatured: Boolean; EnteryType: Option)

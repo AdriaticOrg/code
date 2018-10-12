@@ -11,7 +11,7 @@ codeunit 13062814 "Adl Core Subscriber-Adl"
         AssistedSetupAdl.Initialize();
 
         AssistedSetupAdl.SetRange(Visible, true);
-        AssistedSetupAdl.SetFilter("Assisted Setup Page ID", '%1', Page::"Assisted ADL Setup Wizard-adl");
+        AssistedSetupAdl.SetFilter("Assisted Setup Page ID", '%1', Page::"Basic Assist. Setup Wizard-Adl");
 
         CLEAR(TempAggregatedAssistedSetup);
         TempAggregatedAssistedSetup.TransferFields(AssistedSetupAdl, TRUE);
@@ -20,12 +20,12 @@ codeunit 13062814 "Adl Core Subscriber-Adl"
         TempAggregatedAssistedSetup.Insert();
     end;
 
-    [EventSubscriber(ObjectType::Page, Page::"Assisted ADL Setup Wizard-adl", 'OnOpenPageEvent', '', false, false)]
+    [EventSubscriber(ObjectType::Page, Page::"Basic Assist. Setup Wizard-Adl", 'OnOpenPageEvent', '', false, false)]
     local procedure HandleOnPageEventADLWizard()
     var
         AssistedSetupAdl: Record "Assisted Setup-adl";
     begin
-        If not AssistedSetupAdl.GET(Page::"Assisted ADL Setup Wizard-adl") then
+        If not AssistedSetupAdl.GET(Page::"Basic Assist. Setup Wizard-Adl") then
             AssistedSetupAdl.Initialize();
     end;
 
