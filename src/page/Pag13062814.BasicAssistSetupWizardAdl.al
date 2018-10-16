@@ -1,6 +1,6 @@
 page 13062814 "Basic Assist. Setup Wizard-Adl"
 {
-    Caption = 'Adl Setup Wizard';
+    Caption = 'Adl Basic Setup Wizard';
     DeleteAllowed = false;
     InsertAllowed = false;
     LinksAllowed = false;
@@ -44,12 +44,11 @@ page 13062814 "Basic Assist. Setup Wizard-Adl"
                 Visible = Step1Visible;
                 group("Welcome to Adriatic Localization Company Setup.")
                 {
-                    Caption = 'Welcome to Adriatic Localization Company Setup.';
-                    InstructionalText = 'To prepare Dynamics 365 Business Central with Adriatic Localization for first use, you need to choose features you will use. We will also guide you through specifiying some basic information about your company.';
+                    Caption = 'Welcome to Adriatic Localization basic feature setup.';
+                    InstructionalText = 'To prepare Dynamics 365 Business Central with Adriatic Localization for first use, you need to choose features you will use.';
                     Visible = Step1Visible;
                     group("Para1.1")
                     {
-                        //Caption = '';
                         ShowCaption = false;
                         group("Para1.2.1")
                         {
@@ -107,7 +106,7 @@ page 13062814 "Basic Assist. Setup Wizard-Adl"
                     group(Group22)
                     {
                         Caption = '';
-                        InstructionalText = 'Choose Next so you can specify basic Adriatic Localization information.';
+                        InstructionalText = 'Choose Next so you can specify basic Adriatic Localization features.';
                     }
                 }
             }
@@ -127,6 +126,7 @@ page 13062814 "Basic Assist. Setup Wizard-Adl"
                     {
                         Caption = 'Adriatic Localization Enabled';
                         ApplicationArea = All;
+                        ToolTip = 'Specifies if ADL is enabled';
 
                         trigger OnValidate()
                         begin

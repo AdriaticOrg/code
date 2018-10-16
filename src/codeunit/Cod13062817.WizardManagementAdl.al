@@ -29,52 +29,6 @@ codeunit 13062817 "Wizard Management-Adl"
         DownloadFromStream(InputStr, 'Save rapid start file', '', 'Rapidstart Files(*.rapidstart)|*rapidstart', FileName);
     end;
 
-    procedure ReadFromHttp(ConfigSetup: record "Config. Setup"; PackageType: Option "Basic","Master")
-    var
-        TempBlob: Record TempBlob temporary;
-        httpResponse: HttpResponseMessage;
-        InputStr: InStream;
-        OutputStream: OutStream;
-        Url: Text;
-        PackageName: Text;
-    begin
-        case ConfigSetup."Country/Region Code" of
-            'SI':
-                if PackageType = PackageType::Basic then
-                    PackageName := 'BASIC%20SETUP_SI'
-                else
-                    PackageName := 'MASTER%20DATA_SI';
-            'HR':
-                if PackageType = PackageType::Basic then
-                    PackageName := 'BASIC%20SETUP_HR'
-                else
-                    PackageName := 'MASTER%20DATA_HR';
-            'RS':
-                if PackageType = PackageType::Basic then
-                    PackageName := 'BASIC%20SETUP_SR'
-                else
-                    PackageName := 'MASTER%20DATA_SR';
-
-            else begin
-                    Message(PackageMissingErr);
-                    Error('');
-                end;
-        end;
-        Url := 'https://github.com/AdriaticOrg/setup/blob/master/' + PackageName + '.rapidstart';
-
-        if (not Client.Get(Url, httpResponse)) then
-            Error(HttpGetRequestErr);
-
-        if (not httpResponse.IsSuccessStatusCode()) then
-            Error(HttpReadResponseErr);
-
-        httpResponse.Content().ReadAs(InputStr);
-        TempBlob.Blob.CreateOutStream(OutputStream);
-
-        //FileName :=  '.rapidstart';
-        DownloadFromStream(InputStr, 'Save rapid start file', '', 'Rapidstart Files(*.rapidstart)|*rapidstart', FileName);
-    end;
-
     local procedure ShowError()
     begin
         Message(MissingUrlErr);
