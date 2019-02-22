@@ -44,7 +44,7 @@ pageextension 13062526 "Sales Invoice-Adl" extends "Sales Invoice" //43
         // <adl.20>
         addafter("Shipping and Billing")
         {
-            group(Fiscalization)
+            group("Fiscalization-Adl")
             {
                 field("Fisc. Subject-Adl"; "Fisc. Subject-Adl")
                 {

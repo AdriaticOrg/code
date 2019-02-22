@@ -1,4 +1,4 @@
-page 13062815 "Adv. Assist. Setup Wizard-Adl"
+page 13062812 "Adv. Assist. Setup Wizard-Adl"
 {
     Caption = 'Adl Advanced Setup Wizard';
     DeleteAllowed = false;

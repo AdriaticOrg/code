@@ -10,6 +10,8 @@ codeunit 13062815 "Adl Core Notification-Adl"
         YesLbl: Label 'Yes';
         DontAskAgainLbl: Label 'No, and please don''t remind me again.';
     begin
+        IF NOT CoreSetup.WritePermission() THEN
+            exit;
         IF CoreSetup.Get() THEN
             exit;
         IF not IsCoreSetupNotificationEnabled() then

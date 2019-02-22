@@ -5,7 +5,7 @@ pageextension 13062781 "Sales Quote-Adl" extends "Sales Quote" //41
         // <adl.20>
         addafter("Shipping and Billing")
         {
-            group(Fiscalization)
+            group("Fiscalization-Adl")
             {
                 field("Fisc. Subject-Adl"; "Fisc. Subject-Adl")
                 {

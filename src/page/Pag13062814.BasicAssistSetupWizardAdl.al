@@ -316,11 +316,42 @@ page 13062814 "Basic Assist. Setup Wizard-Adl"
         end;
     end;
 
+    local procedure AddReadPermissionSetToAllUsers();
+    var
+        User: Record User;
+        CoreSetup: Record "CoreSetup-Adl";
+        AccessControl: Record "Access Control";
+        //PermissionManager: Codeunit "Permission Manager";
+    begin
+        if not User.ReadPermission() then exit;
+        if not CoreSetup.ReadPermission() then exit;
+        if not User.FindSet() then exit;
+
+        //AccessControl.SetRange("App ID", myAppInfo.Id());
+        //AccessControl.DeleteAll();
+
+        repeat
+            AccessControl.SetRange("User Security ID", User."User Security ID");
+            AccessControl.SetRange("Role ID", 'ADRIATIC LOC. READ');
+            AccessControl.SetRange("App ID", '06044fb1-e4fe-4612-bbab-8deb02c9c1ac');
+            AccessControl.Setrange(Scope, AccessControl.Scope::Tenant);
+
+            AccessControl."User Security ID" := User."User Security ID";
+            AccessControl."Role ID" := 'ADRIATIC LOC. READ';
+            AccessControl."App ID" := '06044fb1-e4fe-4612-bbab-8deb02c9c1ac';
+            AccessControl.Scope := AccessControl.Scope::Tenant;
+
+            if AccessControl.IsEmpty() then
+                AccessControl.Insert();
+        until User.Next() = 0;
+    end;
+
     local procedure FinishAction();
     var
         AssistedSetupAdl: Record "Assisted Setup-adl";
     begin
         StoreSetupData();
+        AddReadPermissionSetToAllUsers();
         AssistedSetupAdl.SetStatus(PAGE::"Basic Assist. Setup Wizard-Adl", AssistedSetupAdl.Status::Completed);
         CurrPage.Close();
     end;

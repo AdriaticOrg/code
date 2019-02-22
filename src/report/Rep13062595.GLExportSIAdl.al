@@ -43,25 +43,30 @@ report 13062595 "GL ExportSI-Adl"
                 {
                 }
 
-                trigger OnAfterGetRecord()
+                trigger OnPreDataItem();
                 begin
-                    GLAccountBal.SetRange("No.", "G/L Account"."No.");
-                    if ("G/L Account".getfilter("Date Filter") = '') then CurrReport.Break();
-                    if ("G/L Account".GetrangeMIN("Date Filter") = 0D) then CurrReport.Break();
-
-                    GLAccountBal.SetFilter("Date Filter", '..%1', "G/L Account".GetrangeMIN("Date Filter"));
+                    GLAccountBal.SETFILTER("Date Filter", '..%1', "G/L Account".GetrangeMIN("Date Filter"));
                     GLAccountBal.setfilter("Balance at Date", '<>%1', 0);
-                    GLAccountBal.CalcFields("Balance at Date");
+                    CalcFields("Balance at Date");
                     BalanceAtDate := GLAccountBal."Balance at Date";
-
                     BalanceYear := Date2DMY("G/L Account".GetrangeMIN("Date Filter"), 3);
                     Type := 'OTV';
                     IF (BalanceAtDate = 0) then
                         CurrReport.Break();
 
-                    CreateGLOpeningLine(GLAccountBal, BalanceYear);
-                    CurrReport.Break();
+                    TextWriterAdl.FixedField(OutStr, "No.", 10, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, Name, 50, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, BalanceDocumentNoFormatTxt, 30, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, Type, 3, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, StrSubstNo(BalanceDescFormatTxt, BalanceYear), 50, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, BalanceAtDate, 16, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, DummyText, 16, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, DummyText, 160, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.NewLine(OutStr);
                 end;
+
 
                 trigger OnPostDataItem()
                 begin
@@ -105,12 +110,26 @@ report 13062595 "GL ExportSI-Adl"
                 trigger OnPreDataItem();
                 begin
                     if "G/L Account".Getfilter("Date Filter") <> '' then
-                        GLEntryTrans.SetFilter("Posting Date", "G/L Account".Getfilter("Date Filter"));
+                        ;//GLEntryTrans.SETRANGE("Posting Date", "G/L Account"."Date Filter");
                 end;
 
                 trigger OnAfterGetRecord()
                 begin
-                    CreateGLEntryLine(GLEntryTrans);
+                    TextWriterAdl.FixedField(OutStr, "G/L Account No.", 10, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, "G/L Account Name", 50, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, "Posting Date", 8, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, "Document Date", 8, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, "Document No.", 30, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, Type, 3, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, Description, 50, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, "Debit Amount", 16, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, "Credit Amount", 16, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, "Entry No.", 160, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.NewLine(OutStr);
+                end;
+
+                trigger OnPostDataItem()
+                begin
                 end;
             }
             dataitem(GLAccountZAK; "G/L Account")
@@ -147,35 +166,29 @@ report 13062595 "GL ExportSI-Adl"
                 {
                 }
 
-                trigger OnAfterGetRecord()
+                trigger OnPreDataItem()
                 begin
-                    GLAccountBal.SetFilter("Date Filter", '..%1', "G/L Account".GetrangeMIN("Date Filter"));
-                    GLAccountBal.setfilter("Balance at Date", '<>%1', 0);
-                    GLAccountBal.CalcFields("Balance at Date");
-                    BalanceAtDate := GLAccountBal."Balance at Date";
-
-                    BalanceYear := Date2DMY("G/L Account".GetrangeMIN("Date Filter"), 3);
-                    Type := 'ZAK';
-                    IF (BalanceAtDate = 0) then
-                        CurrReport.Break();
-
-                    CreateGLOpeningLine(GLAccountBal, BalanceYear);
-                    CurrReport.Break();
-
-
-                    GLAccountZAK.SetRange("No.", "G/L Account"."No.");
-                    if ("G/L Account".getfilter("Date Filter") = '') then CurrReport.Break();
-                    if (ClosingDate("G/L Account".GetrangeMAX("Date Filter")) = 0D) then CurrReport.Break();
-
                     GLAccountZAK.SETFILTER("Date Filter", '%1', CLOSINGDATE("G/L Account".GetRangeMax("Date Filter")));
-                    GLAccountZAK.CalcFields("Debit Amount", "Credit Amount");
+                    CalcFields("Debit Amount", "Credit Amount");
                     ClosingYear := Date2DMY(CLOSINGDATE("G/L Account".GetRangeMax("Date Filter")), 3);
                     Type := 'ZAK';
-                    IF (GLAccountZAK."Debit Amount" = 0) AND (GLAccountZAK."Credit Amount" = 0) then
+                    IF ("Debit Amount" = 0) AND ("Credit Amount" = 0) then
                         CurrReport.Break();
+                end;
 
-                    CreateGLClosingLine(GLAccountZAK);
-                    CurrReport.Break();
+                trigger OnAfterGetRecord()
+                begin
+                    TextWriterAdl.FixedField(OutStr, "No.", 10, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, Name, 50, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, DummyText, 30, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, Type, 3, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, StrSubstNo(ClosingDescFormatTxt, ClosingYear), 50, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, "Debit Amount", 16, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, "Credit Amount", 16, PadCharacter, 0, FieldDelimiter);
+                    TextWriterAdl.FixedField(OutStr, DummyText, 160, PadCharacter, 1, FieldDelimiter);
+                    TextWriterAdl.NewLine(OutStr);
                 end;
 
                 trigger OnPostDataItem()
@@ -186,10 +199,36 @@ report 13062595 "GL ExportSI-Adl"
 
             trigger OnPreDataItem()
             begin
-                CreateGLEntryHeader();
+                FieldDelimiter := '';
+                TextWriterAdl.FixedField(OutStr, AccountNoLbl, 11, PadCharacter, 1, FieldDelimiter);
+                TextWriterAdl.FixedField(OutStr, NameLbl, 51, PadCharacter, 1, FieldDelimiter);
+                TextWriterAdl.FixedField(OutStr, PostingDateLbl, 9, PadCharacter, 0, FieldDelimiter);
+                TextWriterAdl.FixedField(OutStr, DocumentDateLbl, 9, PadCharacter, 0, FieldDelimiter);
+                TextWriterAdl.FixedField(OutStr, DocumentNoLbl, 31, PadCharacter, 1, FieldDelimiter);
+                TextWriterAdl.FixedField(OutStr, TypeLbl, 4, PadCharacter, 1, FieldDelimiter);
+                TextWriterAdl.FixedField(OutStr, DescriptionLbl, 51, PadCharacter, 1, FieldDelimiter);
+                TextWriterAdl.FixedField(OutStr, DebitAmountLbl, 17, PadCharacter, 0, FieldDelimiter);
+                TextWriterAdl.FixedField(OutStr, CreditAmountLbl, 17, PadCharacter, 0, FieldDelimiter);
+                TextWriterAdl.FixedField(OutStr, NoteLbl, 161, PadCharacter, 1, FieldDelimiter);
+                FieldDelimiter := ';';
             end;
-
         }
+    }
+
+    requestpage
+    {
+
+        layout
+        {
+        }
+
+        actions
+        {
+        }
+    }
+
+    labels
+    {
     }
 
     trigger OnInitReport();
@@ -234,73 +273,5 @@ report 13062595 "GL ExportSI-Adl"
         DebitAmountLbl: Label 'Debit Amount';
         CreditAmountLbl: Label 'Credit Amount';
         NoteLbl: Label 'Note';
-
-    local procedure CreateGLEntryLine(Rec: Record "G/L Entry")
-    begin
-        with Rec Do begin
-            TextWriterAdl.FixedField(OutStr, "G/L Account No.", 10, PadCharacter, 1, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, "G/L Account Name", 50, PadCharacter, 1, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, "Posting Date", 8, PadCharacter, 0, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, "Document Date", 8, PadCharacter, 0, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, "Document No.", 30, PadCharacter, 1, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, Type, 3, PadCharacter, 1, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, Description, 50, PadCharacter, 1, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, "Debit Amount", 16, PadCharacter, 0, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, "Credit Amount", 16, PadCharacter, 0, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, "Entry No.", 160, PadCharacter, 1, FieldDelimiter);
-            TextWriterAdl.NewLine(OutStr);
-        end;
-    end;
-
-    local procedure CreateGLEntryHeader()
-    begin
-        TextWriterAdl.FixedField(OutStr, AccountNoLbl, 10, PadCharacter, 1, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, NameLbl, 50, PadCharacter, 1, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, PostingDateLbl, 8, PadCharacter, 0, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, DocumentDateLbl, 8, PadCharacter, 0, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, DocumentNoLbl, 30, PadCharacter, 1, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, TypeLbl, 3, PadCharacter, 1, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, DescriptionLbl, 50, PadCharacter, 1, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, DebitAmountLbl, 16, PadCharacter, 0, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, CreditAmountLbl, 16, PadCharacter, 0, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, NoteLbl, 160, PadCharacter, 1, FieldDelimiter);
-        TextWriterAdl.NewLine(OutStr);
-    end;
-
-    local procedure CreateGLOpeningLine(GLAccountBal: Record "G/L Account"; BalanceYear: integer)
-    begin
-        TextWriterAdl.FixedField(OutStr, GLAccountBal."No.", 10, PadCharacter, 1, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, GLAccountBal.Name, 50, PadCharacter, 1, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, DMY2Date(1, 1, BalanceYear), 8, PadCharacter, 0, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, DMY2Date(1, 1, BalanceYear), 8, PadCharacter, 0, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, StrSubstNo(BalanceDocumentNoFormatTxt, BalanceYear), 30, PadCharacter, 1, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, Type, 3, PadCharacter, 1, FieldDelimiter);
-        TextWriterAdl.FixedField(OutStr, StrSubstNo(BalanceDescFormatTxt, BalanceYear), 50, PadCharacter, 1, FieldDelimiter);
-        if (BalanceAtDate > 0) then begin
-            TextWriterAdl.FixedField(OutStr, abs(BalanceAtDate), 16, PadCharacter, 0, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, DummyText, 16, PadCharacter, 0, FieldDelimiter);
-        end else begin
-            TextWriterAdl.FixedField(OutStr, DummyText, 16, PadCharacter, 0, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, abs(BalanceAtDate), 16, PadCharacter, 0, FieldDelimiter);
-        end;
-        TextWriterAdl.FixedField(OutStr, DummyText, 160, PadCharacter, 1, FieldDelimiter);
-        TextWriterAdl.NewLine(OutStr);
-    end;
-
-    local procedure CreateGLClosingLine(GLAccountZAK: Record "G/L Account")
-    begin
-        with GLAccountZAK do begin
-            TextWriterAdl.FixedField(OutStr, "No.", 10, PadCharacter, 1, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, Name, 50, PadCharacter, 1, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, DummyText, 8, PadCharacter, 0, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, DummyText, 30, PadCharacter, 1, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, Type, 3, PadCharacter, 1, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, StrSubstNo(ClosingDescFormatTxt, ClosingYear), 50, PadCharacter, 1, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, "Debit Amount", 16, PadCharacter, 0, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, "Credit Amount", 16, PadCharacter, 0, FieldDelimiter);
-            TextWriterAdl.FixedField(OutStr, DummyText, 160, PadCharacter, 1, FieldDelimiter);
-            TextWriterAdl.NewLine(OutStr);
-        end;
-    end;
 }
+

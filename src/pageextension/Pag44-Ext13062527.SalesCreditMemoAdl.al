@@ -57,7 +57,7 @@ pageextension 13062527 "Sales Credit Memo-Adl" extends "Sales Credit Memo" //44
         // <adl.20>
         addafter(Billing)
         {
-            group(Fiscalization)
+            group("Fiscalization-Adl")
             {
                 field("Fisc. Subject-Adl"; "Fisc. Subject-Adl")
                 {

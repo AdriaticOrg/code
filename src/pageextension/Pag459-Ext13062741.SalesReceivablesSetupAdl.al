@@ -5,7 +5,7 @@ pageextension 13062741 "Sales & Receivables Setup-Adl" extends "Sales & Receivab
         // <adl.28>
         addlast(General)
         {
-            group(UnpaidReceivables)
+            group("UnpaidReceivables-Adl")
             {
                 field("Ext. Data Start Bal. Date-Adl"; "Ext. Data Start Bal. Date-Adl")
                 {

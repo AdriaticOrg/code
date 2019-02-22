@@ -71,7 +71,9 @@ table 13062811 "CoreSetup-Adl"
 
     procedure FeatureEnabled(Feature: enum "ADLFeatures-Adl"): Boolean
     begin
-        if not Get() or not "ADL Enabled" then exit(false);
+        if not ReadPermission() then exit(false);
+        if not Get() then exit(false);
+        if not "ADL Enabled" then exit(false);
 
         case Feature of
             Feature::Core:

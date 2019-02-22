@@ -54,7 +54,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
         addlast("F&unctions")
         {
 
-            group(ChangeData)
+            group("ChangeData-Adl")
             {
                 Caption = 'Change Data';
                 Image = ChangeStatus;

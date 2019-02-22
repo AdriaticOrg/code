@@ -2,38 +2,10 @@ tableextension 13062814 "Application Area Setup-Adl" extends "Application Area S
 {
     fields
     {
-        field(13062811; "Adl Core"; Boolean)
-        {
-            Caption = 'ADL Core';
-            DataClassification = SystemMetadata;
-            ObsoleteState = Removed;
-            ObsoleteReason = 'redesign';
-        }
         field(13062812; "Adl VAT"; Boolean)
         {
             Caption = 'VAT';
             DataClassification = SystemMetadata;
-        }
-        field(13062813; "Adl ReportHR"; Boolean)
-        {
-            Caption = 'Report HR';
-            DataClassification = SystemMetadata;
-            ObsoleteState = Removed;
-            ObsoleteReason = 'redesign';
-        }
-        field(13062814; "Adl ReportRS"; Boolean)
-        {
-            Caption = 'Report RS';
-            DataClassification = SystemMetadata;
-            ObsoleteState = Removed;
-            ObsoleteReason = 'redesign';
-        }
-        field(13062815; "Adl ReportSI"; Boolean)
-        {
-            Caption = 'Report SI';
-            DataClassification = SystemMetadata;
-            ObsoleteState = Removed;
-            ObsoleteReason = 'redesign';
         }
         field(13062816; "Adl FAS"; Boolean)
         {
@@ -59,13 +31,6 @@ tableextension 13062814 "Application Area Setup-Adl" extends "Application Area S
         {
             Caption = 'Unpaid Receivables';
             DataClassification = SystemMetadata;
-        }
-        field(13062821; "Adl EU Customs"; Boolean)
-        {
-            Caption = 'EU Customs';
-            DataClassification = SystemMetadata;
-            ObsoleteState = Removed;
-            ObsoleteReason = 'redesign';
         }
         field(13062822; "Adl PDO"; Boolean)
         {

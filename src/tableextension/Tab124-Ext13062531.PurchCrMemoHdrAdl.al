@@ -19,7 +19,6 @@ tableextension 13062531 "Purch. Cr. Memo Hdr.-Adl" extends "Purch. Cr. Memo Hdr.
         {
             Caption = 'Postponed VAT';
             OptionMembers = "Realized VAT","Postponed VAT";
-            OptionCaption = 'Realized VAT,Postponed VAT';
             DataClassification = SystemMetadata;
         }
         // </adl.10>

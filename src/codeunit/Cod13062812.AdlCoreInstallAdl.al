@@ -16,10 +16,7 @@ codeunit 13062812 "Adl Core Install-Adl"
 
 
     local procedure HandleFreshInstall();
-    var
-    //ADLInitialize: Codeunit "Wizard Initialize-adl";
     begin
-        //ADLInitialize.Run();
         SetApplicationArea();
     end;
 

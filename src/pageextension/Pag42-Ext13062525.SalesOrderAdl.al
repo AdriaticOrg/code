@@ -25,7 +25,7 @@ pageextension 13062525 "Sales Order-Adl" extends "Sales Order" //42
         // <adl.20>
         addafter("Shipping and Billing")
         {
-            group(Fiscalization)
+            group("Fiscalization-Adl")
             {
                 field("Fisc. Subject-Adl"; "Fisc. Subject-Adl")
                 {
