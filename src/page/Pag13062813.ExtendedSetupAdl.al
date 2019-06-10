@@ -19,6 +19,17 @@ page 13062813 "Extended Setup-Adl"
                     ToolTip = 'Specifies if Extended VAT functionality is enabled.';
                 }
             }
+            // <adl.6>
+            group(ForceDebitCredit)
+            {
+                Caption = 'Forced Credit/Debit';
+                field("Forced Credit/Debit Enabled"; "Forced Credit/Debit Enabled")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies if Forced Credit/Debit functionality is enabled.';
+                }
+            }
+            // </adl.6>
             // <adl.22>
             group(VIES)
             {

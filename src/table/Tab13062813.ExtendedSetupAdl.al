@@ -23,6 +23,14 @@ table 13062813 "Extended Setup-Adl"
         }
         // </adl.6>
 
+        // <adl.16>
+        field(13062571; "Forced Credit/Debit Enabled"; Boolean)
+        {
+            Caption = 'Forced Credit/Debit Enabled';
+            DataClassification = SystemMetadata;
+        }
+        // </adl.16>
+
         // <adl.28>
         field(13062741; "Unpaid Receivables Enabled"; Boolean)
         {

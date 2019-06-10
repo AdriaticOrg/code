@@ -11,21 +11,23 @@ codeunit 13062814 "Adl Core Subscriber-Adl"
         AssistedSetupAdl.Initialize();
 
         AssistedSetupAdl.SetRange(Visible, true);
-        AssistedSetupAdl.SetFilter("Assisted Setup Page ID", '%1', Page::"Assisted ADL Setup Wizard-adl");
-
-        CLEAR(TempAggregatedAssistedSetup);
-        TempAggregatedAssistedSetup.TransferFields(AssistedSetupAdl, TRUE);
-        TempAggregatedAssistedSetup."External Assisted Setup" := FALSE;
-        TempAggregatedAssistedSetup."Record ID" := AssistedSetupAdl.RecordId();
-        TempAggregatedAssistedSetup.Insert();
+        AssistedSetupAdl.SetFilter("Assisted Setup Page ID", '%1|%2', Page::"Basic Assist. Setup Wizard-Adl", Page::"Adv. Assist. Setup Wizard-Adl");
+        if AssistedSetupAdl.FindSet() then
+            repeat
+                CLEAR(TempAggregatedAssistedSetup);
+                TempAggregatedAssistedSetup.TransferFields(AssistedSetupAdl, TRUE);
+                TempAggregatedAssistedSetup."External Assisted Setup" := FALSE;
+                TempAggregatedAssistedSetup."Record ID" := AssistedSetupAdl.RecordId();
+                TempAggregatedAssistedSetup.Insert();
+            until AssistedSetupAdl.Next() = 0;
     end;
 
-    [EventSubscriber(ObjectType::Page, Page::"Assisted ADL Setup Wizard-adl", 'OnOpenPageEvent', '', false, false)]
+    [EventSubscriber(ObjectType::Page, Page::"Basic Assist. Setup Wizard-Adl", 'OnOpenPageEvent', '', false, false)]
     local procedure HandleOnPageEventADLWizard()
     var
         AssistedSetupAdl: Record "Assisted Setup-adl";
     begin
-        If not AssistedSetupAdl.GET(Page::"Assisted ADL Setup Wizard-adl") then
+        If not AssistedSetupAdl.GET(Page::"Basic Assist. Setup Wizard-Adl") then
             AssistedSetupAdl.Initialize();
     end;
 

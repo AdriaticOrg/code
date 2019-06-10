@@ -118,7 +118,8 @@ table 13062812 "Assisted Setup-Adl"
 
     var
         DocumentUrlADLTxt: Label '', Locked = true;
-        ADLIntroTxt: Label 'Set up Adriatic Localization',;
+        ADLBasicIntroTxt: Label 'Set up basic Adriatic Localization',;
+        ADLAdvIntroTxt: Label 'Set up advanced Adriatic Localization',;
 
     procedure initialize()
     var
@@ -131,17 +132,23 @@ table 13062812 "Assisted Setup-Adl"
         SortingOrder := 1;
         LastId := 200000;
 
-        //TODO: find a way to avoid hardcoding string lengths
-        ADLIntroTxtCopy := CopyStr(ADLIntroTxt, 1, MaxStrLen(ADLIntroTxtCopy));
+        ADLIntroTxtCopy := CopyStr(ADLBasicIntroTxt, 1, MaxStrLen(ADLIntroTxtCopy));
         DocumentUrlADLTxtCopy := CopyStr(DocumentUrlADLTxt, 1, MaxStrLen(DocumentUrlADLTxtCopy));
-
-        AddSetupAssistant(Page::"Assisted ADL Setup Wizard-adl", ADLIntroTxtCopy, SortingOrder, true,
+        AddSetupAssistant(Page::"Basic Assist. Setup Wizard-Adl", ADLIntroTxtCopy, SortingOrder, true,
             GroupId, false, "Item Type"::"Setup and Help");
-        AddSetupAssistantResources(Page::"Assisted ADL Setup Wizard-adl", '', DocumentUrlADLTxtCopy, 0, Page::"Assisted ADL Setup Wizard-adl", '');
+        AddSetupAssistantResources(Page::"Basic Assist. Setup Wizard-Adl", '', DocumentUrlADLTxtCopy, 0, Page::"Basic Assist. Setup Wizard-Adl", '');
+        UpdateSetUpPageVisibility(Page::"Basic Assist. Setup Wizard-Adl");
         LastId += 1;
         SortingOrder += 1;
 
-        UpdateSetUpPageVisibility(Page::"Assisted ADL Setup Wizard-adl");
+        GroupId := Page::"Basic Assist. Setup Wizard-Adl";
+        ADLIntroTxtCopy := CopyStr(ADLAdvIntroTxt, 1, MaxStrLen(ADLIntroTxtCopy));
+        AddSetupAssistant(Page::"Adv. Assist. Setup Wizard-Adl", ADLIntroTxtCopy, SortingOrder, true,
+            GroupId, false, "Item Type"::"Setup and Help");
+        AddSetupAssistantResources(Page::"Adv. Assist. Setup Wizard-Adl", '', DocumentUrlADLTxtCopy, 0, Page::"Adv. Assist. Setup Wizard-Adl", '');
+        UpdateSetUpPageVisibility(Page::"Adv. Assist. Setup Wizard-Adl");
+        LastId += 1;
+        SortingOrder += 1;
     end;
 
     local procedure AddSetupAssistant(EnteryNo: Integer; AssistantName: Text[250]; SortingOrder: Integer; AssistantVisible: Boolean; ParentId: Integer; IsFeatured: Boolean; EnteryType: Option)
