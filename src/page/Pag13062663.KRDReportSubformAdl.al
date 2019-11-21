@@ -115,7 +115,7 @@ page 13062663 "KRD Report Subform-Adl"
                     VLE.SetRange("KRD Affiliation Type-Adl", "Affiliation Type");
                     VLE.SetRange("KRD Instrument Type-Adl", "Instrument Type");
                     VLE.SetRange("KRD Maturity-Adl", Maturity);
-                    VLE.SetRange("KRD Non-Resident Sector Code-Adl", "Non-Resident Sector Code");
+                    VLE.SetRange("KRD Non-Res. Sector Code-Adl", "Non-Resident Sector Code");
                     VLE.SetRange("KRD Country/Region Code-Adl", "Country/Region Code");
 
                     if "Currency Code" = KRDSetup."KRD Blank LCY Code" then
@@ -151,7 +151,7 @@ page 13062663 "KRD Report Subform-Adl"
                     CLE.SetRange("KRD Affiliation Type-Adl", "Affiliation Type");
                     CLE.SetRange("KRD Instrument Type-Adl", "Instrument Type");
                     CLE.SetRange("KRD Maturity-Adl", Maturity);
-                    CLE.SetRange("KRD Non-Resident Sector Code-Adl", "Non-Resident Sector Code");
+                    CLE.SetRange("KRD Non-Res. Sector Code-Adl", "Non-Resident Sector Code");
                     CLE.SetRange("KRD Country/Region Code-Adl", "Country/Region Code");
 
                     if "Currency Code" = KRDSetup."KRD Blank LCY Code" then

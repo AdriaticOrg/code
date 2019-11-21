@@ -3,10 +3,13 @@ codeunit 13062814 "Adl Core Subscriber-Adl"
     var
         ADLCoreNotification: Codeunit "Adl Core Notification-adl";
 
-    [EventSubscriber(ObjectType::Table, Database::"Aggregated Assisted Setup", 'OnRegisterAssistedSetup', '', false, false)]
-    local procedure HandleOnRegisterAggregatedSetup(var TempAggregatedAssistedSetup: Record "Aggregated Assisted Setup" temporary)
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assisted Setup", 'OnRegister', '', false, false)]
+    local procedure HandleOnRegisterAggregatedSetup()
     var
+        TempAggregatedAssistedSetup: Codeunit "Assisted Setup";
         AssistedSetupAdl: Record "Assisted Setup-adl";
+        G: Guid;
+        Grp: Enum "Assisted Setup Group";
     begin
         AssistedSetupAdl.Initialize();
 
@@ -15,10 +18,13 @@ codeunit 13062814 "Adl Core Subscriber-Adl"
         if AssistedSetupAdl.FindSet() then
             repeat
                 CLEAR(TempAggregatedAssistedSetup);
-                TempAggregatedAssistedSetup.TransferFields(AssistedSetupAdl, TRUE);
-                TempAggregatedAssistedSetup."External Assisted Setup" := FALSE;
-                TempAggregatedAssistedSetup."Record ID" := AssistedSetupAdl.RecordId();
-                TempAggregatedAssistedSetup.Insert();
+
+                TempAggregatedAssistedSetup.Add(CreateGuid(), AssistedSetupAdl."Assisted Setup Page ID", AssistedSetupAdl.Name, Grp::GettingStarted);
+
+            // TempAggregatedAssistedSetup.TransferFields(AssistedSetupAdl, TRUE);
+            // TempAggregatedAssistedSetup."External Assisted Setup" := FALSE;
+            // TempAggregatedAssistedSetup."Record ID" := AssistedSetupAdl.RecordId();
+            // TempAggregatedAssistedSetup.Insert();
             until AssistedSetupAdl.Next() = 0;
     end;
 
@@ -47,7 +53,7 @@ codeunit 13062814 "Adl Core Subscriber-Adl"
     end;
 
     [EventSubscriber(ObjectType::Page, Page::"Headline RC Business Manager", 'OnOpenPageEvent', '', false, false)]
-    local procedure OnRCBusinessManagerOpen(rec: Record "Headline RC Business Manager")
+    local procedure OnRCBusinessManagerOpen()
     begin
         ADLCoreNotification.ShowSetupNotification();
     end;

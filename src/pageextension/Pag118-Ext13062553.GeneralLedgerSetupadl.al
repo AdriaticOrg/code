@@ -11,7 +11,7 @@ pageextension 13062553 "General Ledger Setup-Adl" extends "General Ledger Setup"
                 Visible = ADLCoreEnabled;
                 ToolTip = 'TODO: Tooltip - Detail Trial Balance Extended';
             }
-            field("Global Posting Resp. Person-Adl"; "Global Posting Resp. Person-Adl")
+            field("Global Posting Resp. Person-Adl"; "Global Pos. Resp. Person-Adl")
             {
                 ApplicationArea = All;
                 Visible = ADLCoreEnabled;

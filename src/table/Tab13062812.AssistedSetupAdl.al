@@ -213,14 +213,14 @@ table 13062812 "Assisted Setup-Adl"
 
     local procedure ImportIcon(IconCode: Code[50])
     var
-        AssistedSetupIcons: Record "Assisted Setup Icons";
+        //AssistedSetupIcons: Record "Assisted Setup Icons";
         MediaResources: Record "Media Resources";
     begin
-        if not AssistedSetupIcons.GET(IconCode) then
-            exit;
+        // if not AssistedSetupIcons.GET(IconCode) then
+        //     exit;
 
-        if not MediaResources.GET(AssistedSetupIcons."Media Resources Ref") then
-            exit;
+        // if not MediaResources.GET(AssistedSetupIcons."Media Resources Ref") then
+        //     exit;
 
         if not MediaResources."Media Reference".HasValue() then
             exit;

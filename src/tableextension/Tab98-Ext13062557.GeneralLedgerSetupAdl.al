@@ -3,7 +3,7 @@ tableextension 13062557 "General Ledger Setup-Adl" extends "General Ledger Setup
     fields
     {
         // <adl.27>
-        field(13062731; "Global Posting Resp. Person-Adl"; Code[50])
+        field(13062731; "Global Pos. Resp. Person-Adl"; Code[50])
         {
             Caption = 'Global Posting Responsible Person';
             TableRelation = "User Setup"."User ID";

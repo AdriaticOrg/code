@@ -334,14 +334,14 @@ page 13062812 "Adv. Assist. Setup Wizard-Adl"
                         ApplicationArea = All;
                         ShowMandatory = true;
                     }
-                    field("Fiscal. Default Fiscalization Location-Adl"; "Fiscal. Default Fiscalization Location-Adl")
+                    field("Fiscal. Default Fiscalization Location-Adl"; "Fiscal. Def. Fis. Location-Adl")
                     {
                         Caption = 'Default Location';
                         ToolTip = 'Specifies default location';
                         ApplicationArea = All;
                         ShowMandatory = true;
                     }
-                    field("Fiscal. Default Fiscalization Terminal-Adl"; "Fiscal. Default Fiscalization Terminal-Adl")
+                    field("Fiscal. Default Fiscalization Terminal-Adl"; "Fiscal. Def. Fis. Terminal-Adl")
                     {
                         Caption = 'Default Terminal';
                         ToolTip = 'Specifies default terminal';
@@ -359,7 +359,7 @@ page 13062812 "Adv. Assist. Setup Wizard-Adl"
                 {
                     Caption = 'Unpaid Receivables';
                     InstructionalText = 'Specify your properties for Unpaid Receivables feature.';
-                    field("UP Ext. Data Start Bal. Date-Adl"; "UP Ext. Data Start Bal. Date-Adl")
+                    field("UP Ext. Data Start Bal. Date-Adl"; "UP Ext. Data St. Bal. Date-Adl")
                     {
                         Caption = 'Data Start Balance Date';
                         ToolTip = 'Specifies data start balance date';
@@ -420,7 +420,7 @@ page 13062812 "Adv. Assist. Setup Wizard-Adl"
                         ApplicationArea = All;
                         ToolTip = 'Specifies KRD Prep. By User ID';
                     }
-                    field("Default KRD Affiliation Type"; "Default KRD Affiliation Type-Adl")
+                    field("Default KRD Affiliation Type"; "Default KRD Aff. Type-Adl")
                     {
                         ApplicationArea = All;
                         ToolTip = 'Specifies Default KRD Affiliation Type';
@@ -863,7 +863,7 @@ page 13062812 "Adv. Assist. Setup Wizard-Adl"
                 ExtendedSetup.Insert();
             end;
             ExtendedSetup."Unpaid Receivables Enabled" := "Unpaid Receivables Enabled-Adl";
-            ExtendedSetup."Ext. Data Start Bal. Date" := "UP Ext. Data Start Bal. Date-Adl";
+            ExtendedSetup."Ext. Data Start Bal. Date" := "UP Ext. Data St. Bal. Date-Adl";
             ExtendedSetup.Modify(true);
         end;
 
@@ -907,7 +907,7 @@ page 13062812 "Adv. Assist. Setup Wizard-Adl"
             KRDSetup."KRD Prep. By User ID" := "KRD Prep. By User ID-Adl";
             KRDSetup."KRD Report No. Series" := "KRD Report No. Series-Adl";
             KRDSetup."KRD Resp. User ID" := "KRD Resp. User ID-Adl";
-            KRDSetup."Default KRD Affiliation Type" := "Default KRD Affiliation Type-Adl";
+            KRDSetup."Default KRD Affiliation Type" := "Default KRD Aff. Type-Adl";
             KRDSetup."KRD Blank LCY Code" := "KRD Blank LCY Code-Adl";
             KRDSetup."KRD Blank LCY Num." := "KRD Blank LCY Num.-Adl";
             KRDSetup.Modify(true);
@@ -926,8 +926,8 @@ page 13062812 "Adv. Assist. Setup Wizard-Adl"
             if not FiscalSetup.get() then
                 FiscalSetup.Insert(true);
             FiscalSetup.ActiveX := "Fiscal. Active-Adl";
-            FiscalSetup."Default Fiscalization Location" := "Fiscal. Default Fiscalization Location-Adl";
-            FiscalSetup."Default Fiscalization Terminal" := "Fiscal. Default Fiscalization Terminal-Adl";
+            FiscalSetup."Default Fiscalization Location" := "Fiscal. Def. Fis. Location-Adl";
+            FiscalSetup."Default Fiscalization Terminal" := "Fiscal. Def. Fis. Terminal-Adl";
             FiscalSetup."Start Date" := "Fiscal. Start Date-Adl";
             FiscalSetup."End Date" := "Fiscal. End Date-Adl";
             FiscalSetup.Modify(true);
@@ -1106,12 +1106,12 @@ page 13062812 "Adv. Assist. Setup Wizard-Adl"
 
         "VAT Enabled-Adl" := ExtSetup."VAT Enabled";
         "Use VAT Output Date" := ExtSetup."Use VAT Output Date";
-        "Forced Credit/Debit Enabled-Adl" := ExtSetup."Forced Credit/Debit Enabled";
-        "UP Ext. Data Start Bal. Date-Adl" := ExtSetup."Ext. Data Start Bal. Date";
+        "Forced Cred./Deb. Enabled-Adl" := ExtSetup."Forced Credit/Debit Enabled";
+        "UP Ext. Data St. Bal. Date-Adl" := ExtSetup."Ext. Data Start Bal. Date";
         "Unpaid Receivables Enabled-Adl" := ExtSetup."Unpaid Receivables Enabled";
 
         if "Unpaid Receivables Enabled-Adl" then
-            "UP Ext. Data Start Bal. Date-Adl" := ExtSetup."Ext. Data Start Bal. Date";
+            "UP Ext. Data St. Bal. Date-Adl" := ExtSetup."Ext. Data Start Bal. Date";
 
         if CoreSetup."BST Enabled" then begin
             "BST Enabled-Adl" := CoreSetup."BST Enabled";
@@ -1126,7 +1126,7 @@ page 13062812 "Adv. Assist. Setup Wizard-Adl"
             "KRD Prep. By User ID-Adl" := KRDSetup."KRD Prep. By User ID";
             "KRD Report No. Series-Adl" := KRDSetup."KRD Report No. Series";
             "KRD Resp. User ID-Adl" := KRDSetup."KRD Resp. User ID";
-            "Default KRD Affiliation Type-Adl" := KRDSetup."Default KRD Affiliation Type";
+            "Default KRD Aff. Type-Adl" := KRDSetup."Default KRD Affiliation Type";
             "KRD Blank LCY Code-Adl" := KRDSetup."KRD Blank LCY Code";
             "KRD Blank LCY Num.-Adl" := KRDSetup."KRD Blank LCY Num.";
         end;
@@ -1166,8 +1166,8 @@ page 13062812 "Adv. Assist. Setup Wizard-Adl"
             "Fiscal. Active-Adl" := CoreSetup."FISC Enabled";
             if FiscalSetup.get() then;
             "Fiscal. Active-Adl" := FiscalSetup.ActiveX;
-            "Fiscal. Default Fiscalization Location-Adl" := FiscalSetup."Default Fiscalization Location";
-            "Fiscal. Default Fiscalization Terminal-Adl" := FiscalSetup."Default Fiscalization Terminal";
+            "Fiscal. Def. Fis. Location-Adl" := FiscalSetup."Default Fiscalization Location";
+            "Fiscal. Def. Fis. Terminal-Adl" := FiscalSetup."Default Fiscalization Terminal";
             "Fiscal. Start Date-Adl" := FiscalSetup."Start Date";
             "Fiscal. End Date-Adl" := FiscalSetup."End Date";
         end;

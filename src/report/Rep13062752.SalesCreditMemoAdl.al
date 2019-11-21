@@ -9,7 +9,7 @@ report 13062752 "Sales - Credit Memo-Adl"
     {
         dataitem("Sales Cr.Memo Header"; "Sales Cr.Memo Header")
         {
-            DataItemTableView = SORTING ("No.");
+            DataItemTableView = SORTING("No.");
             RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
             RequestFilterHeading = 'Posted Sales Credit Memo';
             column(No_SalesCrMemoHeader; "No.")
@@ -59,10 +59,10 @@ report 13062752 "Sales - Credit Memo-Adl"
             }
             dataitem(CopyLoop; "Integer")
             {
-                DataItemTableView = SORTING (Number);
+                DataItemTableView = SORTING(Number);
                 dataitem(PageLoop; "Integer")
                 {
-                    DataItemTableView = SORTING (Number) WHERE (Number = CONST (1));
+                    DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
                     column(CompanyInfo1Picture; CompanyInfo1.Picture)
                     {
                     }
@@ -231,7 +231,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                     dataitem(DimensionLoop1; "Integer")
                     {
                         DataItemLinkReference = "Sales Cr.Memo Header";
-                        DataItemTableView = SORTING (Number) WHERE (Number = FILTER (1 ..));
+                        DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
                         column(DimText; DimText)
                         {
                         }
@@ -278,9 +278,9 @@ report 13062752 "Sales - Credit Memo-Adl"
                     }
                     dataitem("Sales Cr.Memo Line"; "Sales Cr.Memo Line")
                     {
-                        DataItemLink = "Document No." = FIELD ("No.");
+                        DataItemLink = "Document No." = FIELD("No.");
                         DataItemLinkReference = "Sales Cr.Memo Header";
-                        DataItemTableView = SORTING ("Document No.", "Line No.");
+                        DataItemTableView = SORTING("Document No.", "Line No.");
                         column(LineAmt_SalesCrMemoLine; "Line Amount")
                         {
                             AutoFormatExpression = GetCurrencyCode();
@@ -403,7 +403,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                         }
                         dataitem(DimensionLoop2; "Integer")
                         {
-                            DataItemTableView = SORTING (Number) WHERE (Number = FILTER (1 ..));
+                            DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
                             column(DimText_DimensionLoop2; DimText)
                             {
                             }
@@ -486,7 +486,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                     }
                     dataitem(VATCounter; "Integer")
                     {
-                        DataItemTableView = SORTING (Number);
+                        DataItemTableView = SORTING(Number);
                         column(VATAmtLineVATBase; VATAmountLine."VAT Base")
                         {
                             AutoFormatExpression = "Sales Cr.Memo Header"."Currency Code";
@@ -544,7 +544,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                     }
                     dataitem(VATClauseEntryCounter; "Integer")
                     {
-                        DataItemTableView = SORTING (Number);
+                        DataItemTableView = SORTING(Number);
                         column(VATClauseVATIdentifier; VATAmountLine."VAT Identifier")
                         {
                         }
@@ -577,7 +577,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                             VATAmountLine.GetLine(Number);
                             if not VATClause.Get(VATAmountLine."VAT Clause Code") then
                                 CurrReport.Skip();
-                            VATClause.TranslateDescription("Sales Cr.Memo Header"."Language Code");
+                            VATClause.GetDescription("Sales Cr.Memo Header"."Language Code");
                         end;
 
                         trigger OnPreDataItem()
@@ -588,7 +588,7 @@ report 13062752 "Sales - Credit Memo-Adl"
                     }
                     dataitem(VATCounterLCY; "Integer")
                     {
-                        DataItemTableView = SORTING (Number);
+                        DataItemTableView = SORTING(Number);
                         column(VALSpecLCYHeader; VALSpecLCYHeader)
                         {
                         }
@@ -645,11 +645,11 @@ report 13062752 "Sales - Credit Memo-Adl"
                     }
                     dataitem(Total; "Integer")
                     {
-                        DataItemTableView = SORTING (Number) WHERE (Number = CONST (1));
+                        DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
                     }
                     dataitem(Total2; "Integer")
                     {
-                        DataItemTableView = SORTING (Number) WHERE (Number = CONST (1));
+                        DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
                         column(SelltoCustNo_SalesCrMemoHeader; "Sales Cr.Memo Header"."Sell-to Customer No.")
                         {
                         }
@@ -721,8 +721,10 @@ report 13062752 "Sales - Credit Memo-Adl"
             }
 
             trigger OnAfterGetRecord()
+            var
+                LanugageCU: Codeunit Language;
             begin
-                CurrReport.Language := Language.GetLanguageID("Language Code");
+                CurrReport.Language := LanugageCU.GetLanguageId("Language Code");
 
                 FormatAddressFields("Sales Cr.Memo Header");
                 FormatDocumentFields("Sales Cr.Memo Header");

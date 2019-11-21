@@ -2,7 +2,7 @@ codeunit 13062817 "Wizard Management-Adl"
 {
     procedure ReadFromHttp(url: Text): Text
     var
-        TempBlob: Record TempBlob temporary;
+        TempBlob: Codeunit "Temp Blob";
         httpResponse: HttpResponseMessage;
         httpClient: HttpClient;
         InputStr: InStream;
@@ -19,7 +19,7 @@ codeunit 13062817 "Wizard Management-Adl"
             Error(Text001Err);
 
         httpResponse.Content().ReadAs(InputStr);
-        TempBlob.Blob.CreateOutStream(OutputStream);
+        TempBlob.CreateOutStream(OutputStream);
 
         index := url.LASTINDEXOF('/');
         if index = 0 then
@@ -35,7 +35,7 @@ codeunit 13062817 "Wizard Management-Adl"
         Error('');
     end;
 
-    procedure LoadConfigurationPackages(var TempBlob: Record TempBlob)
+    procedure LoadConfigurationPackages(var TempBlob: Codeunit "Temp Blob")
     var
         ConfigSetupTemp: Record "Config. Setup" temporary;
         ApplyingError: Integer;
@@ -44,10 +44,11 @@ codeunit 13062817 "Wizard Management-Adl"
         ApplyingError := ConfigSetupTemp.ApplyPackages();
     end;
 
-    procedure ImportRapidStartPackageStream(VAR TempBlob: Record TempBlob; VAR TempConfigSetup: Record "Config. Setup" temporary)
+    procedure ImportRapidStartPackageStream(VAR TempBlob: Codeunit "Temp Blob"; VAR TempConfigSetup: Record "Config. Setup" temporary)
     var
-        TempBlobUncompressed: Record TempBlob;
+        TempBlobUncompressed: Codeunit "Temp Blob";
         InStream: InStream;
+        OutStream: OutStream;
     begin
         IF TempConfigSetup.Get('ImportRS') THEN
             TempConfigSetup.Delete();
@@ -57,7 +58,10 @@ codeunit 13062817 "Wizard Management-Adl"
         TempConfigSetup."Package File Name" := 'ImportRapidStartPackageFromStream';
         TempConfigSetup.Insert();
         TempConfigSetup.DecompressPackageToBlob(TempBlob, TempBlobUncompressed);
-        TempConfigSetup."Package File" := TempBlobUncompressed.Blob;
+        TempBlobUncompressed.CreateInStream(InStream);
+        TempConfigSetup."Package File".CreateOutStream(OutStream);
+        CopyStream(OutStream, InStream);
+        Clear(InStream);
         TempConfigSetup."Package File".CREATEINSTREAM(InStream);
 
         TempConfigSetup.CalcFields("Package File");
@@ -68,13 +72,14 @@ codeunit 13062817 "Wizard Management-Adl"
 
     procedure OpenRapidStartPackageStream(var ConfigSetup: Record "Config. Setup"): Boolean
     var
-        TempBlob: Record TempBlob temporary;
-        TempBlobUncompressed: Record TempBlob temporary;
+        TempBlob: Codeunit "Temp Blob";
+        TempBlobUncompressed: Codeunit "Temp Blob";
         FileMgmt: Codeunit "File Management";
         ConfigXMLExchange: Codeunit "Config. XML Exchange";
         PackageFileName: Text;
         SelectPackageTxt: Label 'Select a package file.';
         InStream: InStream;
+        OutStream: OutStream;
     begin
         PackageFileName := FileMgmt.BLOBImportWithFilter(
                                 TempBlob, SelectPackageTxt, '', ConfigXMLExchange.GetFileDialogFilter(), 'rapidstart');
@@ -82,15 +87,17 @@ codeunit 13062817 "Wizard Management-Adl"
                                                 PackageFileName, 1, MaxStrLen(ConfigSetup."Package File Name"));
         if ConfigSetup."Package File Name" <> '' then begin
             ConfigSetup.DecompressPackageToBlob(TempBlob, TempBlobUncompressed);
-            ConfigSetup."Package File" := TempBlobUncompressed.Blob;
-            TempBlobUncompressed.Blob.CreateInStream(InStream);
+            TempBlobUncompressed.CreateInStream(InStream);
+            ConfigSetup."Package File".CreateOutStream(OutStream);
+            CopyStream(OutStream, InStream);
+            Clear(InStream);
             ConfigSetup.ReadPackageHeaderFromStream(InStream);
             exit(true);
         end else
             exit(false);
     end;
 
-    procedure CompleteWizard(var ConfigSetup: Record "Config. Setup"; var TempBlob: record TempBlob): Boolean
+    procedure CompleteWizard(var ConfigSetup: Record "Config. Setup"; var TempBlob: Codeunit "Temp Blob"): Boolean
     var
         InStream: InStream;
     begin

@@ -13,7 +13,7 @@ pageextension 13062543 "Vendor Card-Adl" extends "Vendor Card" //26
             }
             // </adl.24>
             // <adl.25>
-            field("KRD Non-Resident Sector Code-Adl"; "KRD Non-Resident Sector Code-Adl")
+            field("KRD Non-Resident Sector Code-Adl"; "KRD Non-Res. Sector Code-Adl")
             {
                 ApplicationArea = All;
                 Visible = KRDFeatureEnabled;

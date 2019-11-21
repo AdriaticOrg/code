@@ -11,7 +11,7 @@ tableextension 13062536 "Customer-Adl" extends Customer //18
         }
         // </adl.24>
         // <adl.25>
-        field(13062661; "KRD Non-Resident Sector Code-Adl"; Code[10])
+        field(13062661; "KRD Non-Res. Sector Code-Adl"; Code[10])
         {
             Caption = 'KRD Non-Resident Sector Code';
             DataClassification = SystemMetadata;

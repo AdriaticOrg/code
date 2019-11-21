@@ -113,11 +113,11 @@ page 13062661 "KRD Report-Adl"
 
                     CLE.Reset();
                     CLE.SetRange("Posting Date", "Period Start Date", "Period End Date");
-                    cle.SetFilter("KRD Non-Resident Sector Code-Adl", '<>%1', '');
+                    cle.SetFilter("KRD Non-Res. Sector Code-Adl", '<>%1', '');
 
                     VLE.Reset();
                     VLE.SetRange("Posting Date", "Period Start Date", "Period End Date");
-                    VLE.SetFilter("KRD Non-Resident Sector Code-Adl", '<>%1', '');
+                    VLE.SetFilter("KRD Non-Res. Sector Code-Adl", '<>%1', '');
 
                     RepSuggestLines.SetTableView(CLE);
                     RepSuggestLines.SetTableView(VLE);

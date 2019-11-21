@@ -18,7 +18,7 @@ report 13062593 "Export VAT Books To XML-Adl"
 
                     trigger OnValidate();
                     var
-                        TextManagement: Codeunit TextManagement;
+                        TextManagement: Codeunit "Filter Tokens";
                     begin
                         TextManagement.MakeDateFilter(DateFilter);
                     end;

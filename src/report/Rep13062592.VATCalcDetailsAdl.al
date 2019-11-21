@@ -10,7 +10,7 @@ report 13062592 "VAT Calc. Details-Adl"
     {
         dataitem("VAT Book Column Name"; "VAT Book Column Name-Adl")
         {
-            DataItemTableView = sorting ("VAT Book Code", "Column No.") orDER(Ascending);
+            DataItemTableView = sorting("VAT Book Code", "Column No.") orDER(Ascending);
             column(Company_VAT_Reg_No; CompInfo."VAT Registration No.") { }
             column(Company_City; CompInfo."Post Code" + ' ' + CompInfo.City) { }
             column(Company_Address; CompInfo.Address + ' ' + CompInfo."Address 2") { }
@@ -24,8 +24,8 @@ report 13062592 "VAT Calc. Details-Adl"
             column(VATBookSorting; VATBook."Sorting Appearance") { }
             dataitem("VAT Book Group"; "VAT Book Group-Adl")
             {
-                DataItemLink = "VAT Book Code" = field ("VAT Book Code");
-                DataItemTableView = sorting ("VAT Book Code", Code) order(Ascending);
+                DataItemLink = "VAT Book Code" = field("VAT Book Code");
+                DataItemTableView = sorting("VAT Book Code", Code) order(Ascending);
                 column(VATBookGroupCode; Code) { }
                 column(GroupDescription; Description) { }
                 column(Amount; VATBookCalc.EvaluateExpression("VAT Book Group", "VAT Book Column Name"."Column No.", SetedDateFilter)) { }
@@ -70,7 +70,7 @@ report 13062592 "VAT Calc. Details-Adl"
 
                         trigger OnValidate();
                         var
-                            TextManagement: Codeunit TextManagement;
+                            TextManagement: Codeunit "Filter Tokens";
                         begin
                             TextManagement.MakeDateFilter(SetedDateFilter);
                         end;
@@ -81,7 +81,7 @@ report 13062592 "VAT Calc. Details-Adl"
                         ApplicationArea = All;
                         ToolTip = 'Specifies VAT Book filter for report data.';
 
-                        trigger OnLookup(Text: Text): Boolean;
+                        trigger OnLookup(var Text: Text): Boolean;
                         var
                             VATBook: Record "VAT Book-Adl";
                             VATBooks: Page "VAT Books-Adl";

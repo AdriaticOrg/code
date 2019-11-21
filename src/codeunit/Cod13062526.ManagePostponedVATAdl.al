@@ -130,7 +130,7 @@ codeunit 13062526 "Manage Postponed VAT-Adl"
                     IF "Valued Quantity" > 0 THEN
                         Correction := CostToPost < 0
                     ELSE
-                        IF InvtSetup."Post Neg. Transfers as Corr.-Adl" THEN
+                        IF InvtSetup."Post Neg. Trans. as Corr.-Adl" THEN
                             Correction := CostToPost < 0
                         ELSE
                             Correction := CostToPost > 0;

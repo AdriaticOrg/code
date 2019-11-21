@@ -42,7 +42,7 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
             Caption = 'PDO Enabled';
             DataClassification = SystemMetadata;
         }
-        field(13062822; "Forced Credit/Debit Enabled-Adl"; Boolean)
+        field(13062822; "Forced Cred./Deb. Enabled-Adl"; Boolean)
         {
             Caption = 'Force Credit/Debit';
             DataClassification = SystemMetadata;
@@ -176,7 +176,7 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
             DataClassification = SystemMetadata;
             TableRelation = "No. Series";
         }
-        field(13062841; "Default KRD Affiliation Type-Adl"; Code[10])
+        field(13062841; "Default KRD Aff. Type-Adl"; Code[10])
         {
             Caption = 'Default KRD Affiliation Type';
             DataClassification = SystemMetadata;
@@ -227,7 +227,7 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
         }
 
         /* Unpaid Receivables*/
-        field(13062849; "UP Ext. Data Start Bal. Date-Adl"; Date)
+        field(13062849; "UP Ext. Data St. Bal. Date-Adl"; Date)
         {
             Caption = 'Extended Data Start Balance Date';
             DataClassification = SystemMetadata;
@@ -252,13 +252,13 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
             DataClassification = SystemMetadata;
 
         }
-        field(13062853; "Fiscal. Default Fiscalization Location-Adl"; code[10])
+        field(13062853; "Fiscal. Def. Fis. Location-Adl"; code[10])
         {
             Caption = 'Fiscalization Default Location';
             DataClassification = SystemMetadata;
             TableRelation = "Fiscalization Location-Adl";
         }
-        field(13062854; "Fiscal. Default Fiscalization Terminal-Adl"; Text[30])
+        field(13062854; "Fiscal. Def. Fis. Terminal-Adl"; Text[30])
         {
             Caption = 'Fiscalization Default Terminal';
             DataClassification = SystemMetadata;

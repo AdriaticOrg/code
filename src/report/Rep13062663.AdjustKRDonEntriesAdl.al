@@ -32,7 +32,7 @@ report 13062663 "Adjust KRD on Entries-Adl"
                     "KRD Maturity-Adl" := CustPstGrp."KRD Maturity-Adl";
 
                     "KRD Country/Region Code-Adl" := Cust."Country/Region Code";
-                    "KRD Non-Resident Sector Code-Adl" := Cust."KRD Non-Resident Sector Code-Adl";
+                    "KRD Non-Res. Sector Code-Adl" := Cust."KRD Non-Res. Sector Code-Adl";
                     "KRD Affiliation Type-Adl" := Cust."KRD Affiliation Type-Adl";
 
                     if ("KRD Affiliation Type-Adl" = '') and KRDSetup.Get() then
@@ -63,7 +63,7 @@ report 13062663 "Adjust KRD on Entries-Adl"
                     "KRD Maturity-Adl" := VendPstGrp."KRD Maturity-Adl";
 
                     "KRD Country/Region Code-Adl" := Vend."Country/Region Code";
-                    "KRD Non-Resident Sector Code-Adl" := Vend."KRD Non-Resident Sector Code-Adl";
+                    "KRD Non-Res. Sector Code-Adl" := Vend."KRD Non-Res. Sector Code-Adl";
                     "KRD Affiliation Type-Adl" := Vend."KRD Affiliation Type-Adl";
 
                     if ("KRD Affiliation Type-Adl" = '') and KRDSetup.Get() then

@@ -535,7 +535,7 @@ page 13062598 "VAT Review Matrix-Adl"
     var
         VATBookCalcDetails: Report "VAT Calc. Details-Adl";
         VATBookCalc: Codeunit "VAT Book Calculation-Adl";
-        TextManagement: Codeunit TextManagement;
+        TextManagement: Codeunit "Filter Tokens";
         MatrixColumnCaptions: array[30] of Text[100];
         DateFilter: Text;
         MATRIX_CellData: array[30] of Decimal;

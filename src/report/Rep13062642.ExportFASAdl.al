@@ -172,7 +172,7 @@ report 13062642 "Export FAS-Adl"
         FinSect: Record "FAS Sector-Adl";
         FinInst: Record "FAS Instrument-Adl";
         FASRepLine: Record "FAS Report Line-Adl";
-        TmpBlob: Record TempBlob temporary;
+        TmpBlob: Codeunit "Temp Blob";
         RepSIMgt: Codeunit "Reporting SI Mgt.-Adl";
         XmlDoc: XmlDocument;
         XmlDec: XmlDeclaration;
@@ -415,11 +415,11 @@ report 13062642 "Export FAS-Adl"
         end;
 
         // Create an out stream from the blob, notice the encoding.
-        TmpBlob.Blob.CreateOutStream(OutStr, TextEncoding::UTF8);
+        TmpBlob.CreateOutStream(OutStr, TextEncoding::UTF8);
         // Write the contents of the doc to the stream
         xmlDoc.WriteTo(outStr);
         // From the same blob, that now contains the xml document, create an instr
-        TmpBlob.Blob.CreateInStream(InStr, TextEncoding::UTF8);
+        TmpBlob.CreateInStream(InStr, TextEncoding::UTF8);
 
         // Save the data of the InStream as a file.
         //ExpOk :=File.DownloadFromStream(InStr, 'Export To File', '', '*.xml|*.XML', FileName);  

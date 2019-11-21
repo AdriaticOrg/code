@@ -27,7 +27,7 @@ tableextension 13062539 "Vendor Ledger Entry-Adl" extends "Vendor Ledger Entry" 
             Caption = 'KRD Claim/Liability';
             DataClassification = SystemMetadata;
         }
-        field(13062665; "KRD Non-Resident Sector Code-Adl"; Code[10])
+        field(13062665; "KRD Non-Res. Sector Code-Adl"; Code[10])
         {
             Caption = 'KRD Non-Resident Sector Code';
             DataClassification = SystemMetadata;
@@ -66,7 +66,7 @@ tableextension 13062539 "Vendor Ledger Entry-Adl" extends "Vendor Ledger Entry" 
         KRDSetup: Record "KRD Setup-Adl";
     begin
         "KRD Country/Region Code-Adl" := Vendor."Country/Region Code";
-        "KRD Non-Resident Sector Code-Adl" := Vendor."KRD Non-Resident Sector Code-Adl";
+        "KRD Non-Res. Sector Code-Adl" := Vendor."KRD Non-Res. Sector Code-Adl";
         "KRD Affiliation Type-Adl" := Vendor."KRD Affiliation Type-Adl";
 
         if ("KRD Affiliation Type-Adl" = '') and KRDSetup.Get() then

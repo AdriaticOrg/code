@@ -107,7 +107,7 @@ report 13062622 "Export PDO-Adl"
         GLSetup: Record "General Ledger Setup";
         RespUser: Record "User Setup";
         MakerUser: Record "User Setup";
-        TmpBlob: Record TempBlob temporary;
+        TmpBlob: Codeunit "Temp Blob";
         RepSIMgt: Codeunit "Reporting SI Mgt.-Adl";
         XmlDoc: XmlDocument;
         XmlDec: XmlDeclaration;
@@ -270,9 +270,9 @@ report 13062622 "Export PDO-Adl"
             until PDORepLine.Next() = 0;
 
         //export stream file part
-        TmpBlob.Blob.CreateOutStream(OutStr, TextEncoding::UTF8);
+        TmpBlob.CreateOutStream(OutStr, TextEncoding::UTF8);
         xmlDoc.WriteTo(OutStr);
-        TmpBlob.Blob.CreateInStream(inStr, TextEncoding::UTF8);
+        TmpBlob.CreateInStream(inStr, TextEncoding::UTF8);
 
         FileName := 'PDO_' + format(PDORepHead."No.") + '.xml';
         ExpOk := File.DownloadFromStream(InStr, 'Save To File', '', 'All Files (*.*)|*.*', FileName);

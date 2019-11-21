@@ -6,7 +6,7 @@ codeunit 13062594 "TextWriter-Adl"
 
     procedure Create(var OutStr: OutStream);
     begin
-        TmpBlobTemp.Blob.CreateOutStream(outStr, TextEncoding::UTF8);
+        TmpBlobTemp.CreateOutStream(outStr, TextEncoding::UTF8);
     end;
 
     procedure Field(var OutStr: OutStream; Value: variant; FieldDelimiter: Text[1]);
@@ -62,16 +62,16 @@ codeunit 13062594 "TextWriter-Adl"
     var
         InStr: InStream;
     begin
-        TmpBlobTemp.Blob.CreateInStream(InStr, TextEncoding::UTF8);
+        TmpBlobTemp.CreateInStream(InStr, TextEncoding::UTF8);
         File.DownloadFromStream(InStr, DialogTitle, '', ToFilter, FileName);
     end;
 
-    procedure GetTempBlob(var TmpBlobTemp2: Record TempBlob)
+    procedure GetTempBlob(var TmpBlobTemp2: Codeunit "Temp Blob")
     begin
         TmpBlobTemp := TmpBlobTemp2;
     end;
 
     var
-        TmpBlobTemp: Record TempBlob temporary;
+        TmpBlobTemp: Codeunit "Temp Blob";
         StringConversionManagement: Codeunit StringConversionManagement;
 }

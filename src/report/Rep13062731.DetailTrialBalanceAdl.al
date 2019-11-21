@@ -156,7 +156,7 @@ report 13062731 "Detail Trial Balance-Adl"
                         else
                             ClosingEntry := false;
                         // <adl.27>
-                        PostingResponsiblePersonUserID := GeneralLedgerSetup."Global Posting Resp. Person-Adl";
+                        PostingResponsiblePersonUserID := GeneralLedgerSetup."Global Pos. Resp. Person-Adl";
                         PostingApproverUserID := GeneralLedgerSetup."Global Posting Approver-Adl";
                         if UserSetup.GET("G/L Entry"."User ID") then
                             if UserSetup."Approver ID" <> '' then begin

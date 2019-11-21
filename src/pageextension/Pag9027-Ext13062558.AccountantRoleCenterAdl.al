@@ -20,10 +20,10 @@ pageextension 13062558 "Accountant Role Center-Adl" extends "Accountant Role Cen
         VATFeatureEnabled: Boolean;
         // </adl.0>
 
-    trigger OnOpenPage();
-    begin
-        // <adl.0>
-        VATFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT);
-        // </adl.0>
-    end;
+    // trigger OnOpenPage();
+    // begin
+    //     // <adl.0>
+    //     VATFeatureEnabled := ADLCore.FeatureEnabled("ADLFeatures-Adl"::VAT);
+    //     // </adl.0>
+    // end;
 }

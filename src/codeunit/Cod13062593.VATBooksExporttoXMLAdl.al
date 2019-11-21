@@ -3,7 +3,7 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
 
     var
 
-        TempBlob: Record TempBlob temporary;
+        TempBlob: Codeunit "Temp Blob";
         XMLOutStream: OutStream;
         TitleLbl: Label 'VAT Books';
         XMLVarsionLbl: Label '"<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?>"', Locked = true;
@@ -37,10 +37,8 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
 
     local procedure XMLFileOpen();
     begin
-        TempBlob.DeleteAll();
         Clear(TempBlob);
-        TempBlob.Init();
-        TempBlob.Blob.CreateOutStream(XMLOutStream);
+        TempBlob.CreateOutStream(XMLOutStream);
         XMLOutStream.WriteText(XMLVarsionLbl);
         XMLOutStream.WriteText();
     end;
@@ -51,9 +49,7 @@ codeunit 13062593 "VAT Books Export to XML-Adl"
         FileName: Text;
         DateTimeTxt: Text;
     begin
-        Tempblob.Insert();
-        Tempblob.CalcFields(Blob);
-        TempBlob.Blob.CreateInStream(InStream);
+        TempBlob.CreateInStream(InStream);
         DateTimeTxt := ConvertStr(Format(CurrentDateTime()), ':', '_');
         FileName := TitleLbl + '_' + ConvertStr(DateTimeTxt, ' ', '_');
         DownloadFromStream(InStream, 'Export', '', 'XML Files (*.xml)|*.xml', FileName);

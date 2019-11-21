@@ -138,7 +138,7 @@ report 13062662 "Export KRD-Adl"
         CompanyInfo: Record "Company Information";
         RespUser: Record "User Setup";
         MakerUser: Record "User Setup";
-        TmpBlob: Record TempBlob temporary;
+        TmpBlob: Codeunit "Temp Blob";
         RepSIMgt: Codeunit "Reporting SI Mgt.-Adl";
         XmlDoc: XmlDocument;
         XmlDec: XmlDeclaration;
@@ -456,9 +456,9 @@ report 13062662 "Export KRD-Adl"
             until KRDReportLine.Next() = 0;
 
         //export stream file part
-        TmpBlob.Blob.CreateOutStream(OutStr, TextEncoding::UTF8);
+        TmpBlob.CreateOutStream(OutStr, TextEncoding::UTF8);
         xmlDoc.WriteTo(OutStr);
-        TmpBlob.Blob.CreateInStream(InStr, TextEncoding::UTF8);
+        TmpBlob.CreateInStream(InStr, TextEncoding::UTF8);
 
         FileName := 'krd_' + format(KRDRepHead."No.") + '.xml';
         ExpOk := File.DownloadFromStream(InStr, 'Save To File', '', 'All Files (*.*)|*.*', FileName);

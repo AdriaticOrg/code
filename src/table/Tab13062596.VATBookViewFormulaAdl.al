@@ -17,13 +17,13 @@ table 13062596 "VAT Book View Formula-Adl"
         {
             Caption = 'VAT Book Group Code';
             NotBlank = true;
-            TableRelation = "VAT Book Group-Adl".Code where ("VAT Book Code" = field ("VAT Book Code"));
+            TableRelation = "VAT Book Group-Adl".Code where("VAT Book Code" = field("VAT Book Code"));
             DataClassification = CustomerContent;
         }
         field(3; "VAT Identifier"; Code[10])
         {
             Caption = 'VAT Identifier';
-            TableRelation = "VAT Book Group Identifier-Adl"."VAT Identifier" where ("VAT Book Code" = field ("VAT Book Code"), "VAT Book Group Code" = field ("VAT Book Group Code"));
+            TableRelation = "VAT Book Group Identifier-Adl"."VAT Identifier" where("VAT Book Code" = field("VAT Book Code"), "VAT Book Group Code" = field("VAT Book Group Code"));
             DataClassification = CustomerContent;
         }
         field(4; "Column No."; Integer)
@@ -81,12 +81,13 @@ table 13062596 "VAT Book View Formula-Adl"
 
     procedure SetFiltersForVATEntry()
     var
-        TempBlob: Record TempBlob temporary;
+        TempBlob: Codeunit "Temp Blob";
         RequestPageParametersHelper: Codeunit "Request Page Parameters Helper";
         FilterPageBuilder1: FilterPageBuilder;
         RecRef: RecordRef;
         Filters: Text;
         TOutStream: OutStream;
+        TInStream: InStream;
         TitleLbl: Label 'Please choose VAT Entry filter';
     begin
         RecRef.Open(Database::"VAT Entry");
@@ -100,28 +101,33 @@ table 13062596 "VAT Book View Formula-Adl"
 
         Filters := RequestPageParametersHelper.GetViewFromDynamicRequestPage(FilterPageBuilder1, '', Database::"VAT Entry");
 
-        TempBlob.Init();
-        TempBlob.Blob.CreateOutStream(TOutStream);
+        TempBlob.CreateOutStream(TOutStream);
         TOutStream.WriteText(Filters);
 
         RequestPageParametersHelper.ConvertParametersToFilters(RecRef, TempBlob);
         Condition := CopyStr(RecRef.GetFilters(), 1, MAXSTRLEN(Condition));
-        ConditionBlob := TempBlob.Blob;
+        Clear(TOutStream);
+        ConditionBlob.CreateOutStream(TOutStream);
+        TempBlob.CreateInStream(TInStream);
+        CopyStream(TOutStream, TInStream);
     end;
 
     procedure SetVATEntryFilters(var VATEntry: Record "VAT Entry");
     var
-        TempBlob: Record TempBlob temporary;
+        TempBlob: Codeunit "Temp Blob";
         RequestPageParametersHelper: Codeunit "Request Page Parameters Helper";
         RecRef: RecordRef;
+        OutStr: OutStream;
+        InStr: InStream;
     begin
         RecRef.Open(Database::"VAT Entry");
         CalcFields(ConditionBlob);
         if ConditionBlob.Length() = 0 then
             exit;
 
-        TempBlob.Init();
-        TempBlob.Blob := ConditionBlob;
+        TempBlob.CreateOutStream(OutStr);
+        ConditionBlob.CreateInStream(InStr);
+        CopyStream(OutStr, InStr);
 
         RequestPageParametersHelper.ConvertParametersToFilters(RecRef, TempBlob);
         VATEntry.FilterGroup(10);

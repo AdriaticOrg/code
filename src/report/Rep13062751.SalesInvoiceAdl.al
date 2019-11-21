@@ -8,13 +8,13 @@ Report 13062751 "Sales - Invoice-Adl"
     EnableHyperlinks = true;
     Permissions = TableData "Sales Shipment Buffer" = rimd;
     PreviewMode = PrintLayout;
-    
+
     dataset
     {
 
         dataitem("Sales Invoice Header"; "Sales Invoice Header")
         {
-            DataItemTableView = SORTING ("No.");
+            DataItemTableView = SORTING("No.");
             RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
             RequestFilterHeading = 'Posted Sales Invoice';
 
@@ -89,10 +89,10 @@ Report 13062751 "Sales - Invoice-Adl"
             }
             dataitem(CopyLoop; "Integer")
             {
-                DataItemTableView = SORTING (Number);
+                DataItemTableView = SORTING(Number);
                 dataitem(PageLoop; "Integer")
                 {
-                    DataItemTableView = SORTING (Number) WHERE (Number = CONST (1));
+                    DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
                     column(HomePage; CompanyInfo."Home Page")
                     {
                     }
@@ -258,7 +258,7 @@ Report 13062751 "Sales - Invoice-Adl"
                     dataitem(DimensionLoop1; "Integer")
                     {
                         DataItemLinkReference = "Sales Invoice Header";
-                        DataItemTableView = SORTING (Number) WHERE (Number = FILTER (1 ..));
+                        DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
                         column(DimText; DimText)
                         {
                         }
@@ -306,9 +306,9 @@ Report 13062751 "Sales - Invoice-Adl"
                     }
                     dataitem("Sales Invoice Line"; "Sales Invoice Line")
                     {
-                        DataItemLink = "Document No." = FIELD ("No.");
+                        DataItemLink = "Document No." = FIELD("No.");
                         DataItemLinkReference = "Sales Invoice Header";
-                        DataItemTableView = SORTING ("Document No.", "Line No.");
+                        DataItemTableView = SORTING("Document No.", "Line No.");
                         column(LineAmt_SalesInvLine; "Line Amount")
                         {
                             AutoFormatExpression = GetCurrencyCode();
@@ -466,7 +466,7 @@ Report 13062751 "Sales - Invoice-Adl"
                         }
                         dataitem("Sales Shipment Buffer"; "Integer")
                         {
-                            DataItemTableView = SORTING (Number);
+                            DataItemTableView = SORTING(Number);
                             column(SalesShptBufferPostDate; FORMAT(SalesShipmentBuffer."Posting Date"))
                             {
                             }
@@ -496,7 +496,7 @@ Report 13062751 "Sales - Invoice-Adl"
                         }
                         dataitem(DimensionLoop2; "Integer")
                         {
-                            DataItemTableView = SORTING (Number) WHERE (Number = FILTER (1 ..));
+                            DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
                             column(DimText_DimLoop; DimText)
                             {
                             }
@@ -543,7 +543,7 @@ Report 13062751 "Sales - Invoice-Adl"
                         }
                         dataitem(AsmLoop; "Integer")
                         {
-                            DataItemTableView = SORTING (Number);
+                            DataItemTableView = SORTING(Number);
                             column(TempPostedAsmLineNo; BlanksForIndent() + TempPostedAsmLine."No.")
                             {
                             }
@@ -645,7 +645,7 @@ Report 13062751 "Sales - Invoice-Adl"
                     }
                     dataitem(VATCounter; "Integer")
                     {
-                        DataItemTableView = SORTING (Number);
+                        DataItemTableView = SORTING(Number);
                         column(VATAmtLineVATBase; VATAmountLine."VAT Base")
                         {
                             AutoFormatExpression = "Sales Invoice Line".GetCurrencyCode();
@@ -713,7 +713,7 @@ Report 13062751 "Sales - Invoice-Adl"
                     }
                     dataitem(VATClauseEntryCounter; "Integer")
                     {
-                        DataItemTableView = SORTING (Number);
+                        DataItemTableView = SORTING(Number);
                         column(VATClauseVATIdentifier; VATAmountLine."VAT Identifier")
                         {
                         }
@@ -746,7 +746,7 @@ Report 13062751 "Sales - Invoice-Adl"
                             VATAmountLine.GetLine(Number);
                             if not VATClause.GET(VATAmountLine."VAT Clause Code") then
                                 CurrReport.SKIP();
-                            VATClause.TranslateDescription("Sales Invoice Header"."Language Code");
+                            VATClause.GetDescription("Sales Invoice Header"."Language Code");
                         end;
 
                         trigger OnPreDataItem();
@@ -757,7 +757,7 @@ Report 13062751 "Sales - Invoice-Adl"
                     }
                     dataitem(VatCounterLCY; "Integer")
                     {
-                        DataItemTableView = SORTING (Number);
+                        DataItemTableView = SORTING(Number);
                         column(VALSpecLCYHeader; VALSpecLCYHeader)
                         {
                         }
@@ -808,7 +808,7 @@ Report 13062751 "Sales - Invoice-Adl"
                     }
                     dataitem(PaymentReportingArgument; "Payment Reporting Argument")
                     {
-                        DataItemTableView = SORTING (Key);
+                        DataItemTableView = SORTING(Key);
                         UseTemporary = true;
                         column(PaymentServiceLogo; Logo)
                         {
@@ -831,7 +831,7 @@ Report 13062751 "Sales - Invoice-Adl"
                     }
                     dataitem(Total; "Integer")
                     {
-                        DataItemTableView = SORTING (Number) WHERE (Number = CONST (1));
+                        DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
                         column(SelltoCustNo_SalesInvHdr; "Sales Invoice Header"."Sell-to Customer No.")
                         {
                         }
@@ -874,7 +874,7 @@ Report 13062751 "Sales - Invoice-Adl"
                     }
                     dataitem(LineFee; "Integer")
                     {
-                        DataItemTableView = SORTING (Number) ORDER(Ascending) WHERE (Number = FILTER (1 ..));
+                        DataItemTableView = SORTING(Number) ORDER(Ascending) WHERE(Number = FILTER(1 ..));
                         column(LineFeeCaptionLbl; TempLineFeeNoteOnReportHist.ReportText)
                         {
                         }
@@ -930,8 +930,9 @@ Report 13062751 "Sales - Invoice-Adl"
             trigger OnAfterGetRecord();
             var
                 Handled: Boolean;
+                LanguageCU: Codeunit Language;
             begin
-                CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
+                CurrReport.LANGUAGE := LanguageCU.GetLanguageId("Language Code");
 
                 FormatAddressFields("Sales Invoice Header");
                 FormatDocumentFields("Sales Invoice Header");
@@ -1164,7 +1165,7 @@ Report 13062751 "Sales - Invoice-Adl"
         ShowVATInformative: Boolean;
         VATPercInfAdlCaptionLbl: Label 'VAT % (informative)';
         VATAmtInfAdlCaptionLbl: Label 'VAT Amount (informative)';
-        // </adl.13>
+    // </adl.13>
     procedure InitLogInteraction();
     begin
         LogInteraction := SegManagement.FindInteractTmplCode(4) <> '';
@@ -1459,6 +1460,7 @@ Report 13062751 "Sales - Invoice-Adl"
         LineFeeNoteOnReportHist: Record "Line Fee Note on Report Hist.";
         CustLedgerEntry: Record "Cust. Ledger Entry";
         Customer: Record Customer;
+        LanguageCU: Codeunit Language;
     begin
         TempLineFeeNoteOnReportHist.DELETEALL();
         CustLedgerEntry.SETRANGE("Document Type", CustLedgerEntry."Document Type"::Invoice);
@@ -1476,7 +1478,7 @@ Report 13062751 "Sales - Invoice-Adl"
                 InsertTempLineFeeNoteOnReportHist(LineFeeNoteOnReportHist, TempLineFeeNoteOnReportHist);
             until LineFeeNoteOnReportHist.NEXT() = 0
         else begin
-            LineFeeNoteOnReportHist.SETRANGE("Language Code", Language.GetUserLanguage());
+            LineFeeNoteOnReportHist.SETRANGE("Language Code", LanguageCU.GetUserLanguageCode());
             if LineFeeNoteOnReportHist.FINDSET() then
                 repeat
                     InsertTempLineFeeNoteOnReportHist(LineFeeNoteOnReportHist, TempLineFeeNoteOnReportHist);
@@ -1525,7 +1527,7 @@ Report 13062751 "Sales - Invoice-Adl"
         until TempLineFeeNoteOnReportHist.NEXT() = 0;
     end;
 
-    [IntegrationEvent(false, TRUE)]
+    //[IntegrationEvent(false, TRUE)]
     procedure OnAfterGetRecordSalesInvoiceHeader(SalesInvoiceHeader: Record "Sales Invoice Header");
     begin
     end;

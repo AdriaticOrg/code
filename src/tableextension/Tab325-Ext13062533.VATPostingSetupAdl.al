@@ -3,12 +3,12 @@ tableextension 13062533 "VAT Posting Setup-Adl" extends "VAT Posting Setup"  //3
     fields
     {
         // <adl.10>
-        field(13062525; "Purch VAT Postponed Account-Adl"; Code[20])
+        field(13062525; "Purch VAT Postponed Acc.-Adl"; Code[20])
         {
             Caption = 'Purch VAT Postponed Account';
             DataClassification = SystemMetadata;
         }
-        field(13062526; "Sales VAT Postponed Account-Adl"; Code[20])
+        field(13062526; "Sales VAT Postponed Acc.-Adl"; Code[20])
         {
             Caption = 'Sales VAT Postponed Account';
             DataClassification = SystemMetadata;

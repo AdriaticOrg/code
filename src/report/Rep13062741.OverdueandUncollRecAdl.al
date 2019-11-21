@@ -12,7 +12,7 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
     {
         dataitem("Integer"; "Integer")
         {
-            DataItemTableView = SORTING (Number) WHERE (Number = FILTER (1));
+            DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1));
             column(CompanyName; CompanyInformation.Name)
             {
             }
@@ -112,13 +112,13 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
             }
             dataitem(Customer; Customer)
             {
-                DataItemTableView = SORTING ("No.");
+                DataItemTableView = SORTING("No.");
                 PrintOnlyIfDetail = true;
                 RequestFilterFields = "No.";
                 dataitem("Cust. Ledger Entry"; "Cust. Ledger Entry")
                 {
-                    DataItemLink = "Customer No." = FIELD ("No.");
-                    DataItemTableView = SORTING ("Customer No.", Open, Positive, "Due Date", "Currency Code") WHERE ("Document Type" = FILTER (Invoice));
+                    DataItemLink = "Customer No." = FIELD("No.");
+                    DataItemTableView = SORTING("Customer No.", Open, Positive, "Due Date", "Currency Code") WHERE("Document Type" = FILTER(Invoice));
                     RequestFilterFields = "Customer No.", "Customer Posting Group";
 
                     trigger OnAfterGetRecord();
@@ -155,7 +155,6 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
                                         else
                                             RemainingAmountLCY := RemainingAmountLCY + DetailedCustLedgEntry."Amount (LCY)";
                                     end else
-
                                         RemainingAmountLCY := RemainingAmountLCY + DetailedCustLedgEntry."Amount (LCY)";
                                 end;
                             until DetailedCustLedgEntry.Next() = 0;
@@ -379,7 +378,7 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
             }
             dataitem(TempHeader; "Integer")
             {
-                DataItemTableView = SORTING (Number);
+                DataItemTableView = SORTING(Number);
                 PrintOnlyIfDetail = true;
                 column(CustomerLineNo; CustomerLineNo)
                 {
@@ -395,7 +394,7 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
                 }
                 dataitem(TempLine; "Integer")
                 {
-                    DataItemTableView = SORTING (Number);
+                    DataItemTableView = SORTING(Number);
                     column(LineNo; LineNo)
                     {
                     }
@@ -639,7 +638,7 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
         TempOverdueandUncollectedBufferHeader: Record "Overdue and Uncol. Buffer-Adl" temporary;
         TempOverdueandUncollectedBuffer: Record "Overdue and Uncol. Buffer-Adl" temporary;
         CustLedgerEntryExtData: Record "Cust.Ledger Entry ExtData-Adl";
-        TmpBlobTemp: Record "TempBlob" temporary;
+        TmpBlobTemp: Codeunit "Temp Blob";
         ExportFile: OutStream;
         CustomerVATType: Text;
         CustomerVATTypeInteger: Integer;
@@ -776,14 +775,14 @@ report 13062741 "Overdue and Uncoll.Rec-Adl"
 
     local procedure CreateStream()
     begin
-        TmpBlobTemp.Blob.CreateOutStream(ExportFile, TextEncoding::UTF8);
+        TmpBlobTemp.CreateOutStream(ExportFile, TextEncoding::UTF8);
     end;
 
     procedure Download(DialogTitle: Text; ToFilter: Text; FileName: Text);
     var
         InStr: InStream;
     begin
-        TmpBlobTemp.Blob.CreateInStream(InStr, TextEncoding::UTF8);
+        TmpBlobTemp.CreateInStream(InStr, TextEncoding::UTF8);
         File.DownloadFromStream(InStr, DialogTitle, '', ToFilter, FileName);
     end;
 }

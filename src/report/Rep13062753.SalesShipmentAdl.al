@@ -9,7 +9,7 @@ report 13062753 "Sales - Shipment-Adl"
     {
         dataitem("Sales Shipment Header"; "Sales Shipment Header")
         {
-            DataItemTableView = SORTING ("No.");
+            DataItemTableView = SORTING("No.");
             RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
             RequestFilterHeading = 'Posted Sales Shipment';
             column(No_SalesShptHeader; "No.")
@@ -38,10 +38,10 @@ report 13062753 "Sales - Shipment-Adl"
             }
             dataitem(CopyLoop; "Integer")
             {
-                DataItemTableView = SORTING (Number);
+                DataItemTableView = SORTING(Number);
                 dataitem(PageLoop; "Integer")
                 {
-                    DataItemTableView = SORTING (Number) WHERE (Number = CONST (1));
+                    DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
                     column(CompanyInfo2Picture; CompanyInfo2.Picture)
                     {
                     }
@@ -195,7 +195,7 @@ report 13062753 "Sales - Shipment-Adl"
                     dataitem(DimensionLoop1; "Integer")
                     {
                         DataItemLinkReference = "Sales Shipment Header";
-                        DataItemTableView = SORTING (Number) WHERE (Number = FILTER (1 ..));
+                        DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
                         column(DimText; DimText)
                         {
                         }
@@ -239,9 +239,9 @@ report 13062753 "Sales - Shipment-Adl"
                     }
                     dataitem("Sales Shipment Line"; "Sales Shipment Line")
                     {
-                        DataItemLink = "Document No." = FIELD ("No.");
+                        DataItemLink = "Document No." = FIELD("No.");
                         DataItemLinkReference = "Sales Shipment Header";
-                        DataItemTableView = SORTING ("Document No.", "Line No.");
+                        DataItemTableView = SORTING("Document No.", "Line No.");
                         column(Description_SalesShptLine; Description)
                         {
                         }
@@ -289,7 +289,7 @@ report 13062753 "Sales - Shipment-Adl"
                         }
                         dataitem(DimensionLoop2; "Integer")
                         {
-                            DataItemTableView = SORTING (Number) WHERE (Number = FILTER (1 ..));
+                            DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
                             column(DimText1; DimText)
                             {
                             }
@@ -333,7 +333,7 @@ report 13062753 "Sales - Shipment-Adl"
                         }
                         dataitem(DisplayAsmInfo; "Integer")
                         {
-                            DataItemTableView = SORTING (Number);
+                            DataItemTableView = SORTING(Number);
                             column(PostedAsmLineItemNo; BlanksForIndent() + PostedAsmLine."No.")
                             {
                             }
@@ -410,11 +410,11 @@ report 13062753 "Sales - Shipment-Adl"
                     }
                     dataitem(Total; "Integer")
                     {
-                        DataItemTableView = SORTING (Number) WHERE (Number = CONST (1));
+                        DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
                     }
                     dataitem(Total2; "Integer")
                     {
-                        DataItemTableView = SORTING (Number) WHERE (Number = CONST (1));
+                        DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
                         column(BilltoCustNo_SalesShptHeader; "Sales Shipment Header"."Bill-to Customer No.")
                         {
                         }
@@ -457,7 +457,7 @@ report 13062753 "Sales - Shipment-Adl"
                     }
                     dataitem(ItemTrackingLine; "Integer")
                     {
-                        DataItemTableView = SORTING (Number);
+                        DataItemTableView = SORTING(Number);
                         column(TrackingSpecBufferNo; TrackingSpecBuffer."Item No.")
                         {
                         }
@@ -496,7 +496,7 @@ report 13062753 "Sales - Shipment-Adl"
                         }
                         dataitem(TotalItemTracking; "Integer")
                         {
-                            DataItemTableView = SORTING (Number) WHERE (Number = CONST (1));
+                            DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
                             column(Quantity1; TotalQty)
                             {
                             }
@@ -576,8 +576,10 @@ report 13062753 "Sales - Shipment-Adl"
             }
 
             trigger OnAfterGetRecord()
+            var
+                LanguageCU: Codeunit Language;
             begin
-                CurrReport.Language := Language.GetLanguageID("Language Code");
+                CurrReport.Language := LanguageCU.GetLanguageId("Language Code");
 
                 FormatAddressFields("Sales Shipment Header");
                 FormatDocumentFields("Sales Shipment Header");
