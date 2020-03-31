@@ -31,7 +31,7 @@ codeunit 13062661 "Reporting SI Evnt.-Adl"
     end;
 
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Purch.-Post", 'OnBeforePostVendorEntry', '', false, false)]
-    local procedure PostVendEntry(VAR GenJnlLine: Record "Gen. Journal Line"; PurchHeader: Record "Sales Header"; VAR TotalPurchLine: Record "Purchase Line"; VAR TotalPurchLineLCY: Record "Purchase Line"; PreviewMode: Boolean; CommitIsSupressed: Boolean)
+    local procedure PostVendEntry(VAR GenJnlLine: Record "Gen. Journal Line"; PurchHeader: Record "Purchase Header"; VAR TotalPurchLine: Record "Purchase Line"; VAR TotalPurchLineLCY: Record "Purchase Line"; PreviewMode: Boolean; CommitIsSupressed: Boolean)
     var
         Vend: Record Vendor;
     begin

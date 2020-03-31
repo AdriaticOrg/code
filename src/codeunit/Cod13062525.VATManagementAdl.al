@@ -407,7 +407,7 @@ codeunit 13062525 "VAT Management-Adl"
             "Source Type" := "Source Type"::Vendor;
             "Source No." := VendLedgEntry."Vendor No.";
             "Bill-to/Pay-to No." := VendLedgEntry."Vendor No.";
-            VatCalcType := VATPostingSetup."VAT Calculation Type" + 1;
+            VatCalcType := VATPostingSetup."VAT Calculation Type".AsInteger() + 1;
             VatCalcTypeModified := true;
             VATPostingSetup."VAT Calculation Type" := VATPostingSetup."VAT Calculation Type"::"Normal VAT";
             "VAT Calculation Type" := "VAT Calculation Type"::"Normal VAT";
@@ -435,8 +435,8 @@ codeunit 13062525 "VAT Management-Adl"
             GenJnlPostLine.RunWithCheck(GenJnlLine);
             if VatTypeModified and (VatType > 0) then
                 VATPostingSetup."Unrealized VAT Type" := VatType - 1;
-            if VatCalcTypeModified and (VatCalcType > 0) then
-                VATPostingSetup."VAT Calculation Type" := VatCalcType - 1;
+            // if VatCalcTypeModified and (VatCalcType > 0) then
+            //     VATPostingSetup."VAT Calculation Type" :=  VatCalcType - 1;
             VatTypeModified := false;
             VatCalcTypeModified := false;
             VatType := 0;
@@ -451,8 +451,8 @@ codeunit 13062525 "VAT Management-Adl"
     begin
         VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group", VATEntry."VAT Prod. Posting Group");
         if IsReverseVat then begin
-            if VatCalcTypeModified and (VatCalcType > 0) then
-                VATPostingSetup."VAT Calculation Type" := VatCalcType - 1;
+            // if VatCalcTypeModified and (VatCalcType > 0) then
+            //     VATPostingSetup."VAT Calculation Type" := VatCalcType - 1;
             VATPostingSetup.Modify();
             VatCalcTypeModified := false;
             VatCalcType := 0;

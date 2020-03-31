@@ -23,12 +23,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Goods Return Type-Adl - Field VAT Bus. Posting Group - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1439163258 - Field 236064653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 1439163258 - Field 236064653 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
           <source>VAT Product Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Goods Return Type-Adl - Field VAT Prod. Posting Group - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1439163258 - Field 1004898937 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 1439163258 - Field 1004898937 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
           <source>New VAT Product Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Goods Return Type-Adl - Field New VAT Prod. Posting Group - Property Caption</note>
