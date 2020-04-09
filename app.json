@@ -1,13 +1,14 @@
 {
   "id": "06044fb1-e4fe-4612-bbab-8deb02c9c1ac",
   "name": "Localization for Serbia",
-  "publisher": "Localization Consortium for Serbia, Croatia and Slovenia",
+  "publisher": "Localization for Serbia, Croatia and Slovenia",
   "brief": "Adriatic localization is compliant with local laws and regulations for Slovenia, Croatia and Serbia.",
   "description": "Adriatic localization includes: translation into local languages, basic and extended functionality and country-specific reports.",
   "version": "1.1.6.0",
   "privacyStatement": "https://adriaticorg.github.io/app/ServiceAgreement.html",
   "EULA": "https://adriaticorg.github.io/app/ServiceAgreement.html",
   "help": "https://adriaticorg.github.io/help/",
+  "contextSensitiveHelpUrl": "https://adriaticorg.github.io/help/",
   "url": "https://adriaticorg.github.io/app/",
   "logo": "./logo/AdriaticOrg.216x216.png",
   "dependencies": [
@@ -24,7 +25,6 @@
       "version": "16.0.0.0"
     }
   ],
-  
   "screenshots": [],
   "platform": "16.0.0.0",
   "features": [
@@ -32,7 +32,16 @@
   ],
   "helpBaseUrl": "https://docs.microsoft.com/{0}/dynamics365/business-central/",
   "supportedLocales": [
-    "en-US","hr-HR","sr-Latn-RS","sl-SI"
+    "en-US",
+    "hr-HR",
+    "sr-Latn-RS",
+    "sl-SI"
+  ],
+  "idRanges": [
+    {
+      "from": 13062525,
+      "to": 13063500
+    }
   ],
   "showMyCode": true,
   "runtime": "5.0"

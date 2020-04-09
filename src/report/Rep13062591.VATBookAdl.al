@@ -9,7 +9,7 @@ report 13062591 "VAT Book-Adl"
     {
         dataitem("VAT Book Column Name"; "VAT Book Column Name-Adl")
         {
-            DataItemTableView = sorting ("VAT Book Code", "Column No.") orDER(Ascending);
+            DataItemTableView = sorting("VAT Book Code", "Column No.") orDER(Ascending);
             RequestFilterFields = "VAT Book Code";
             column(ColumnDescription; Description) { }
             column(ColumnNo; ColumnNo) { }
@@ -23,21 +23,21 @@ report 13062591 "VAT Book-Adl"
             column(VATBookSorting; VATBook."Sorting Appearance") { }
             dataitem("VAT Book Group"; "VAT Book Group-Adl")
             {
-                DataItemLink = "VAT Book Code" = field ("VAT Book Code");
-                DataItemTableView = sorting ("VAT Book Code", Code) orDER(Ascending);
+                DataItemLink = "VAT Book Code" = field("VAT Book Code");
+                DataItemTableView = sorting("VAT Book Code", Code) orDER(Ascending);
                 RequestFilterFields = "VAT Book Code", "Code";
                 column(VatPrewFilters; GetFilters()) { }
                 column(EntryFilter; "VAT Entry".GetFilters()) { }
                 column(VATBookGroupCode; Code) { }
                 dataitem("VAT Book View Line"; "VAT Book View Formula-Adl")
                 {
-                    DataItemLink = "VAT Book Code" = field ("VAT Book Code"), "VAT Book Group Code" = field (Code);
-                    DataItemTableView = sorting ("VAT Book Code", "VAT Book Group Code", "VAT Identifier", "Column No.") orDER(Ascending);
+                    DataItemLink = "VAT Book Code" = field("VAT Book Code"), "VAT Book Group Code" = field(Code);
+                    DataItemTableView = sorting("VAT Book Code", "VAT Book Group Code", "VAT Identifier", "Column No.") orDER(Ascending);
                     RequestFilterFields = "VAT Identifier";
                     dataitem("VAT Entry"; "VAT Entry")
                     {
-                        DataItemLink = "VAT Identifier-Adl" = field ("VAT Identifier");
-                        DataItemTableView = sorting ("Document No.", "Posting Date") orDER(Ascending) where (Type = FILTER (<> Settlement));
+                        DataItemLink = "VAT Identifier-Adl" = field("VAT Identifier");
+                        DataItemTableView = sorting("Document No.", "Posting Date") orDER(Ascending) where(Type = FILTER(<> Settlement));
                         RequestFilterFields = "Posting Date", "Document No.", "VAT Bus. Posting Group";
                         column(DocumentNo; "Document No.")
                         {
@@ -174,7 +174,7 @@ report 13062591 "VAT Book-Adl"
                         VATRegNo := Vendor."VAT Registration No.";
                     end;
             end;
-        end;
+    end;
 
 }
 

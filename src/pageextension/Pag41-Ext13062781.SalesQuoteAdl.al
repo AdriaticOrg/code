@@ -48,7 +48,7 @@ pageextension 13062781 "Sales Quote-Adl" extends "Sales Quote" //41
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         FISCFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

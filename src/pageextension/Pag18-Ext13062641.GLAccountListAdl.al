@@ -30,7 +30,7 @@ pageextension 13062641 "G/L Account List-Adl" extends "G/L Account List" //18
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         FASFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
     trigger OnOpenPage();
     begin
         // <adl.0>

@@ -94,7 +94,7 @@ page 13062643 "FAS Report-Adl"
             }
             part(Subpage; 13062644)
             {
-                SubPageLink = "Document No." = field ("No.");
+                SubPageLink = "Document No." = field("No.");
                 ApplicationArea = All;
             }
         }

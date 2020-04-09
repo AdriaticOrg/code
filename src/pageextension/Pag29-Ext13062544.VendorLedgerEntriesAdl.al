@@ -67,7 +67,7 @@ pageextension 13062544 "Vendor Ledger Entries-Adl" extends "Vendor Ledger Entrie
         FASFeatureEnabled: Boolean;
         KRDFeatureEnabled: Boolean;
         BSTFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

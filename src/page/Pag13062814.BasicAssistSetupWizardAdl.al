@@ -93,7 +93,8 @@ page 13062814 "Basic Assist. Setup Wizard-Adl"
                                     begin
                                         if AgreePrivacy then
                                             NextActionEnabled := true
-                                        else NextActionEnabled := false;
+                                        else
+                                            NextActionEnabled := false;
                                     end;
                                 }
                             }
@@ -132,7 +133,8 @@ page 13062814 "Basic Assist. Setup Wizard-Adl"
                         begin
                             if "ADL Enabled-Adl" then
                                 NextActionEnabled := true
-                            else NextActionEnabled := false;
+                            else
+                                NextActionEnabled := false;
                         end;
                     }
                 }
@@ -146,7 +148,7 @@ page 13062814 "Basic Assist. Setup Wizard-Adl"
                         ApplicationArea = All;
                         ToolTip = 'Specifies use of VAT extension';
                     }
-                    field("Use VAT Output Date"; "Use VAT Output Date")
+                    field("Use VAT Output Date"; "Use VAT Output Date-Adl")
                     {
                         //Visible = "ADL Enabled-Adl";
                         ApplicationArea = All;
@@ -310,7 +312,7 @@ page 13062814 "Basic Assist. Setup Wizard-Adl"
             "ADL Enabled-Adl" := CoreSetup."ADL Enabled";
             if ExtendedSetup.Get() then begin
                 "VAT Enabled-Adl" := ExtendedSetup."VAT Enabled";
-                "Use VAT Output Date" := ExtendedSetup."Use VAT Output Date";
+                "Use VAT Output Date-Adl" := ExtendedSetup."Use VAT Output Date";
                 "Forced Cred./Deb. Enabled-Adl" := ExtendedSetup."Forced Credit/Debit Enabled";
             end;
         end;
@@ -321,7 +323,7 @@ page 13062814 "Basic Assist. Setup Wizard-Adl"
         User: Record User;
         CoreSetup: Record "CoreSetup-Adl";
         AccessControl: Record "Access Control";
-        //PermissionManager: Codeunit "Permission Manager";
+    //PermissionManager: Codeunit "Permission Manager";
     begin
         if not User.ReadPermission() then exit;
         if not CoreSetup.ReadPermission() then exit;
@@ -417,13 +419,13 @@ page 13062814 "Basic Assist. Setup Wizard-Adl"
         CoreEnabled: Boolean;
     begin
         If ("VAT Enabled-Adl" or
-            "Use VAT Output Date" or
+            "Use VAT Output Date-Adl" or
             "Forced Cred./Deb. Enabled-Adl")
         then begin
             if not ExtendedSetup.get() then
                 CoreEnabled := ExtendedSetup.Insert(true);
             ExtendedSetup."VAT Enabled" := "VAT Enabled-Adl";
-            ExtendedSetup."Use VAT Output Date" := "Use VAT Output Date";
+            ExtendedSetup."Use VAT Output Date" := "Use VAT Output Date-Adl";
             ExtendedSetup."Forced Credit/Debit Enabled" := "Forced Cred./Deb. Enabled-Adl";
             ExtendedSetup.Modify(true);
         end;

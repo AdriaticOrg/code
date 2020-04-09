@@ -19,7 +19,7 @@ pageextension 13062551 "Countries/Regions-Adl" extends "Countries/Regions" //10
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         FASFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

@@ -78,7 +78,7 @@ page 13062684 "BST Report-Adl"
             }
             part(Subpage; 13062683)
             {
-                SubPageLink = "Document No." = field ("No.");
+                SubPageLink = "Document No." = field("No.");
                 ApplicationArea = All;
             }
         }

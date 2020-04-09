@@ -31,7 +31,7 @@ pageextension 13062665 "CustomerPostingGroupCard-Adl" extends "Customer Posting 
         // <adl.0> 
         ADLCore: Codeunit "Adl Core-Adl";
         KRDFeatureEnabled: Boolean;
-        // </adl.0> 
+    // </adl.0> 
     trigger OnOpenPage()
     begin
         // <adl.0>

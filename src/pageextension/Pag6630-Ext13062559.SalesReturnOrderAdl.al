@@ -59,7 +59,7 @@ pageextension 13062559 "Sales Return Order-Adl" extends "Sales Return Order" //6
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         VATFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

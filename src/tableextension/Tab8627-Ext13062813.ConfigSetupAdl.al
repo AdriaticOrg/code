@@ -49,7 +49,7 @@ tableextension 13062813 "Config. Setup-Adl" extends "Config. Setup" //8627
         }
 
         /* VAT */
-        field(13062823; "Use VAT Output Date"; Boolean)
+        field(13062823; "Use VAT Output Date-Adl"; Boolean)
         {
             Caption = 'Use VAT Output Date';
             DataClassification = SystemMetadata;

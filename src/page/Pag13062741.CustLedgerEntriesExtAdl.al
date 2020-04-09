@@ -5,8 +5,8 @@ page 13062741 "Cust. Ledger Entries Ext.-Adl"
     InsertAllowed = false;
     PageType = List;
     SourceTable = "Cust. Ledger Entry";
-    sourceTableView = sorting ("Document Type", "Customer No.", "Posting Date", "Currency Code")
-                      where ("Document Type" = filter (Invoice | "Finance Charge Memo"));
+    sourceTableView = sorting("Document Type", "Customer No.", "Posting Date", "Currency Code")
+                      where("Document Type" = filter(Invoice | "Finance Charge Memo"));
     layout
     {
         area(content)

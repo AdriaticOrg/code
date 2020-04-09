@@ -87,7 +87,7 @@ page 13062594 "VAT Book Groups-Adl"
                     PromotedIsBig = true;
                     PromotedOnly = true;
                     RunObject = Page "VAT Book Group Identifiers-Adl";
-                    RunPageLink = "VAT Book Code" = field ("VAT Book Code"), "VAT Book Group Code" = field ("Code");
+                    RunPageLink = "VAT Book Code" = field("VAT Book Code"), "VAT Book Group Code" = field("Code");
                     Enabled = ("Group Type" = "Group Type"::"VAT Entries");
                     ApplicationArea = All;
                 }

@@ -29,15 +29,15 @@ report 13062642 "Export FAS-Adl"
 
             dataitem(Integer; Integer)
             {
-                DataItemTableView = SORTING (Number);
+                DataItemTableView = SORTING(Number);
 
                 dataitem("FAS Instrument"; "FAS Instrument-Adl")
                 {
-                    DataItemTableView = SORTING (Code);
+                    DataItemTableView = SORTING(Code);
 
                     dataitem("FAS Sector"; "FAS Sector-Adl")
                     {
-                        DataItemTableView = SORTING (Code);
+                        DataItemTableView = SORTING(Code);
 
                         column(FasType; FasType) { }
                         column(InstrumentCode; "FAS Instrument".Code) { }

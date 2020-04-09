@@ -97,7 +97,7 @@ pageextension 13062539 "G/L Account Card-Adl" extends "G/L Account Card" //17
         FASFeatureEnabled: Boolean;
         KRDFeatureEnabled: Boolean;
         BSTFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

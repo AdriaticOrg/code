@@ -88,7 +88,7 @@ page 13062622 "PDO Report-Adl"
             }
             part(Subpage; 13062621)
             {
-                SubPageLink = "Document No." = field ("No.");
+                SubPageLink = "Document No." = field("No.");
                 ApplicationArea = All;
             }
         }

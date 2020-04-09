@@ -28,7 +28,7 @@ report 13062602 "Export VIES-Adl"
 
             dataitem("VIES Report Line"; "VIES Report Line-Adl")
             {
-                DataItemLink = "Document No." = field ("No.");
+                DataItemLink = "Document No." = field("No.");
 
                 column("Type"; FORMAT(Type, 0, '<Number>')) { }
                 column(PeriodID; "Period Round") { }

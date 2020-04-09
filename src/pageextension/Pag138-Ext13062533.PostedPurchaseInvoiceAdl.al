@@ -124,7 +124,7 @@ pageextension 13062533 "Posted Purchase Invoice-Adl" extends "Posted Purchase In
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         VATFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

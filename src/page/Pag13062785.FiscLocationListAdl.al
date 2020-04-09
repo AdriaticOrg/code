@@ -121,7 +121,7 @@ page 13062785 "Fisc. Location List-Adl"
             action("Fiscalization Location Mapping")
             {
                 Visible = FISCFeatureEnabled;
-
+                ApplicationArea = all;
                 trigger OnAction()
                 var
                     FiscalizationLocationMapping: Record "Fiscalization Loc. Mapping-Adl";
@@ -140,7 +140,7 @@ page 13062785 "Fisc. Location List-Adl"
         // <adl.0
         ADLCore: Record "CoreSetup-Adl";
         FISCFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

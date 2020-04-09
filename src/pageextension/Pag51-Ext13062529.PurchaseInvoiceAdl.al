@@ -34,7 +34,7 @@ pageextension 13062529 "Purchase Invoice-Adl" extends "Purchase Invoice"  //51
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         VATFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

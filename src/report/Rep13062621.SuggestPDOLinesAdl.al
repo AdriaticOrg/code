@@ -8,7 +8,7 @@ report 13062621 "Suggest PDO Lines-Adl"
     {
         dataitem("VAT Entry"; "VAT Entry")
         {
-            DataItemTableView = sorting ("Type");
+            DataItemTableView = sorting("Type");
             RequestFilterFields = "Type", "Posting Date", "Document No.", "VAT Identifier-Adl";
 
             trigger OnPreDataItem()

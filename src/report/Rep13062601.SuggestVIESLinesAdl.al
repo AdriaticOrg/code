@@ -8,7 +8,7 @@ report 13062601 "Suggest VIES Lines-Adl"
     {
         dataitem("VAT Entry"; "VAT Entry")
         {
-            DataItemTableView = sorting ("Type");
+            DataItemTableView = sorting("Type");
             RequestFilterFields = "Type", "Posting Date", "Document No.";
 
             trigger OnPreDataItem()

@@ -19,7 +19,7 @@ pageextension 13062538 "Company Information-Adl" extends "Company Information" /
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         VATFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

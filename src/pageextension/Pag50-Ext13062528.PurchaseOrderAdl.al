@@ -34,7 +34,7 @@ pageextension 13062528 "Purchase Order-Adl" extends "Purchase Order" //50
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         VATFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

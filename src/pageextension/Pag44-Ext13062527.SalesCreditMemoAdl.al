@@ -100,7 +100,7 @@ pageextension 13062527 "Sales Credit Memo-Adl" extends "Sales Credit Memo" //44
         ADLCore: Codeunit "Adl Core-Adl";
         VATFeatureEnabled: Boolean;
         FISCFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

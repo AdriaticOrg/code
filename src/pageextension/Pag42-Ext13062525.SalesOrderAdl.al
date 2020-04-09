@@ -68,7 +68,7 @@ pageextension 13062525 "Sales Order-Adl" extends "Sales Order" //42
         ADLCore: Codeunit "Adl Core-Adl";
         VATFeatureEnabled: Boolean;
         FISCFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

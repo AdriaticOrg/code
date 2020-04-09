@@ -25,7 +25,7 @@ pageextension 13062553 "General Ledger Setup-Adl" extends "General Ledger Setup"
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         ADLCoreEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

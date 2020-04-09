@@ -55,7 +55,7 @@ pageextension 13062548 "User Setup-Adl" extends "User Setup" //119
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         ReportingFeaturesEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

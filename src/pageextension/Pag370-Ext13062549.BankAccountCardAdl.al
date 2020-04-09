@@ -29,7 +29,7 @@ pageextension 13062549 "Bank Account Card-Adl" extends "Bank Account Card" //370
         FASFeatureEnabled: Boolean;
         KRDFeatureEnabled: Boolean;
         BSTFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

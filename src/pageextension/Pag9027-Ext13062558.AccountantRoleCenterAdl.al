@@ -18,7 +18,7 @@ pageextension 13062558 "Accountant Role Center-Adl" extends "Accountant Role Cen
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         VATFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     // trigger OnOpenPage();
     // begin

@@ -83,7 +83,7 @@ page 13062661 "KRD Report-Adl"
             }
             part(Subpage; 13062663)
             {
-                SubPageLink = "Document No." = field ("No.");
+                SubPageLink = "Document No." = field("No.");
                 ApplicationArea = All;
             }
         }

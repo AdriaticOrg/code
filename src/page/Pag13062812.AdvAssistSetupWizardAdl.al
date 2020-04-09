@@ -105,7 +105,8 @@ page 13062812 "Adv. Assist. Setup Wizard-Adl"
 
                             if (AdlCountryFeature <> 0) then
                                 NextActionEnabled := true
-                            else NextActionEnabled := false;
+                            else
+                                NextActionEnabled := false;
                         end;
 
                         trigger OnValidate()
@@ -114,7 +115,8 @@ page 13062812 "Adv. Assist. Setup Wizard-Adl"
                                 NextActionEnabled := true;
                                 GetCountryRegionCode(AdlCountryFeature);
                             end
-                            else NextActionEnabled := false;
+                            else
+                                NextActionEnabled := false;
                         end;
                     }
                 }
@@ -1105,7 +1107,7 @@ page 13062812 "Adv. Assist. Setup Wizard-Adl"
         "ADL Enabled-Adl" := CoreSetup."ADL Enabled";
 
         "VAT Enabled-Adl" := ExtSetup."VAT Enabled";
-        "Use VAT Output Date" := ExtSetup."Use VAT Output Date";
+        "Use VAT Output Date-Adl" := ExtSetup."Use VAT Output Date";
         "Forced Cred./Deb. Enabled-Adl" := ExtSetup."Forced Credit/Debit Enabled";
         "UP Ext. Data St. Bal. Date-Adl" := ExtSetup."Ext. Data Start Bal. Date";
         "Unpaid Receivables Enabled-Adl" := ExtSetup."Unpaid Receivables Enabled";

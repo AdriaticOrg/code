@@ -19,7 +19,7 @@ pageextension 13062550 "Currencies-Adl" extends Currencies //5
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         ADLCoreEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

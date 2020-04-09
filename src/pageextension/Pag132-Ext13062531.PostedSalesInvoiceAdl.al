@@ -130,7 +130,7 @@ pageextension 13062531 "Posted Sales Invoice-Adl" extends "Posted Sales Invoice"
         VATFeatureEnabled: Boolean;
         VIESFeatureEnabled: Boolean;
         FISCFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

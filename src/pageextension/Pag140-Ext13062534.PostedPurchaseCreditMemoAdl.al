@@ -135,7 +135,7 @@ pageextension 13062534 "PostedPurchaseCreditMemo-Adl" extends "Posted Purchase C
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         VATFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

@@ -26,7 +26,7 @@ report 13062662 "Export KRD-Adl"
 
             dataitem(KRDReportLine; "KRD Report Line-Adl")
             {
-                DataItemLink = "Document No." = field ("No.");
+                DataItemLink = "Document No." = field("No.");
 
                 column(LineNo; KRDReportLine."Line No") { }
                 column(ClaimLiability; format(KRDReportLine."Claim/Liability", 0, '<Number>')) { }

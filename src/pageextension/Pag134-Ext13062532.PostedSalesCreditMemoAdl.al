@@ -155,7 +155,7 @@ pageextension 13062532 "Posted Sales Credit Memo-Adl" extends "Posted Sales Cred
         VATFeatureEnabled: Boolean;
         VIESFeatureEnabled: Boolean;
         FISCFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

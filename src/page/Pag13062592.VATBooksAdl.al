@@ -5,7 +5,7 @@ page 13062592 "VAT Books-Adl"
     Editable = true;
     PageType = List;
     SourceTable = "VAT Book-Adl";
-    SourceTableView = sorting ("Sorting Appearance") order(Ascending);
+    SourceTableView = sorting("Sorting Appearance") order(Ascending);
     UsageCategory = Lists;
     ApplicationArea = All;
 
@@ -75,7 +75,7 @@ page 13062592 "VAT Books-Adl"
                     PromotedIsBig = true;
                     PromotedOnly = true;
                     RunObject = Page "VAT Book Column Names-Adl";
-                    RunPageLink = "VAT Book Code" = field (Code);
+                    RunPageLink = "VAT Book Code" = field(Code);
                     ApplicationArea = All;
                 }
                 action("VAT Book Groups")
@@ -88,7 +88,7 @@ page 13062592 "VAT Books-Adl"
                     PromotedIsBig = true;
                     PromotedOnly = true;
                     RunObject = Page "VAT Book Groups-Adl";
-                    RunPageLink = "VAT Book Code" = field (Code);
+                    RunPageLink = "VAT Book Code" = field(Code);
                     ApplicationArea = All;
                 }
                 action("VAT Book Setup")
@@ -101,7 +101,7 @@ page 13062592 "VAT Books-Adl"
                     PromotedIsBig = true;
                     PromotedOnly = true;
                     RunObject = Page "VAT Book Setup Matrix-Adl";
-                    RunPageLink = "VAT Book Code" = field (Code);
+                    RunPageLink = "VAT Book Code" = field(Code);
                     ApplicationArea = All;
                 }
                 action("VAT Review")

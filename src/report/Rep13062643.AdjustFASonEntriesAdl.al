@@ -45,7 +45,7 @@ report 13062643 "Adjust FAS on Entries-Adl"
                             GLEntry."FAS Sector Code-Adl" := BankAcc."FAS Sector Code-Adl";
                             GLEntry."FAS Instrument Code-Adl" := BankAcc."FAS Instrument Code-Adl";
                         end;
-                end;                
+                end;
 
                 if UpdateAllFromGL then begin
                     GLEntry."FAS Sector Code-Adl" := GLAcc."FAS Sector Code-Adl";

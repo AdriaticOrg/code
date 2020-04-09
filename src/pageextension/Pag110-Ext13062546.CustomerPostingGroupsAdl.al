@@ -36,7 +36,7 @@ pageextension 13062546 "Customer Posting Groups-Adl" extends "Customer Posting G
         FASFeatureEnabled: Boolean;
         KRDFeatureEnabled: Boolean;
         BSTFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

@@ -92,7 +92,7 @@ pageextension 13062542 "Customer Ledger Entries-Adl" extends "Customer Ledger En
         KRDFeatureEnabled: Boolean;
         BSTFeatureEnabled: Boolean;
         FISCFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

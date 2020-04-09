@@ -19,7 +19,7 @@ pageextension 13062552 "Currency Card-Adl" extends "Currency Card" //495
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         ADLCoreEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

@@ -6,7 +6,7 @@ page 13062782 "Fisc. Terminal List-Adl"
     UsageCategory = Documents;
     ApplicationArea = All;
     SourceTable = "Fiscalization Terminal-Adl";
-    SourceTableView = SORTING ("Fisc. Terminal Code", "Fisc. Location Code", "User ID");
+    SourceTableView = SORTING("Fisc. Terminal Code", "Fisc. Location Code", "User ID");
 
     layout
     {

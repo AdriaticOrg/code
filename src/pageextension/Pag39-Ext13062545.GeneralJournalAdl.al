@@ -181,7 +181,7 @@ pageextension 13062545 "General Journal-Adl" extends "General Journal" //39
         OriginalDocumentAmountLCY: Decimal;
         OriginalVATAmountLCY: Decimal;
         OpenAmounLCYtWithoutUnrealizedERF: Decimal;
-        // </adl.28>
+    // </adl.28>
 
     trigger OnOpenPage();
     begin

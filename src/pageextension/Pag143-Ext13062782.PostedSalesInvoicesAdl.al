@@ -19,7 +19,7 @@ pageextension 13062782 "Posted Sales Invoices-Adl" extends "Posted Sales Invoice
         // </adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         FISCFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

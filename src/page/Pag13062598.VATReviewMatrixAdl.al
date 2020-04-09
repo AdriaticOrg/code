@@ -59,7 +59,11 @@ page 13062598 "VAT Review Matrix-Adl"
                     ApplicationArea = All;
                     ToolTip = 'Specifies a code of VAT Book Group.';
                 }
-                field("Book Link Code"; "Book Link Code") { }
+                field("Book Link Code"; "Book Link Code")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies a Book Link Code of VAT Book Group.';
+                }
                 field(Description; Description)
                 {
                     Style = Strong;

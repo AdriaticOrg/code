@@ -31,7 +31,7 @@ pageextension 13062666 "VendorPostingGroupCard-Adl" extends "Vendor Posting Grou
         // <adl.0> 
         ADLCore: Codeunit "Adl Core-Adl";
         KRDFeatureEnabled: Boolean;
-        // </adl.0> 
+    // </adl.0> 
     trigger OnOpenPage()
     begin
         // <adl.0>

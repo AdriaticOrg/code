@@ -137,7 +137,7 @@ pageextension 13062540 "General Ledger Entries-Adl" extends "General Ledger Entr
         KRDFeatureEnabled: Boolean;
         BSTFeatureEnabled: Boolean;
         FISCFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

@@ -99,7 +99,7 @@ page 13062602 "VIES Report-Adl"
             }
             part(Subpage; 13062601)
             {
-                SubPageLink = "Document No." = field ("No.");
+                SubPageLink = "Document No." = field("No.");
                 ApplicationArea = All;
             }
         }

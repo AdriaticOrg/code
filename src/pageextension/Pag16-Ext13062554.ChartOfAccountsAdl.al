@@ -75,7 +75,7 @@ pageextension 13062554 "Chart of Accounts-Adl" extends "Chart of Accounts" //16
         ADLCore: Codeunit "Adl Core-Adl";
         FASFeatureEnabled: Boolean;
         VATFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

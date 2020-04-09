@@ -56,7 +56,7 @@ pageextension 13062536 "VAT Posting Setup-Adl" extends "VAT Posting Setup"  //47
         ADLCoreEnabled: Boolean;
         VATFeatureEnabled: Boolean;
         VIESFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

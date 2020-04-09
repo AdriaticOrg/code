@@ -45,7 +45,7 @@ pageextension 13062560 "Purchase Return Order-Adl" extends "Purchase Return Orde
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         VATFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

@@ -84,7 +84,7 @@ pageextension 13062535 "VAT Entries-Adl" extends "VAT Entries"  //315
         VATFeatureEnabled: Boolean;
         VIESFeatureEnabled: Boolean;
         FISCFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

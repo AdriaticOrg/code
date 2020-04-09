@@ -9,7 +9,7 @@ report 13062594 "Input VAT Book-Adl 2-Adl"
     {
         dataitem("Vat Entry"; "VAT Entry")
         {
-            DataItemTableView = SORTING ("Document No.");
+            DataItemTableView = SORTING("Document No.");
             RequestFilterFields = "Posting Date", "Document No.", "VAT Bus. Posting Group", "VAT Prod. Posting Group", "Gen. Bus. Posting Group", "Gen. Prod. Posting Group", "VAT Identifier-Adl", "VAT Calculation Type", "Country/Region Code", "Entry No.", "Bill-to/Pay-to No.", "External Document No.";
 
             trigger OnPreDataItem()

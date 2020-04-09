@@ -36,7 +36,7 @@ page 13062786 "Fisc. Location Mapping-Adl"
         // <adl.0>
         ADLCore: Record "CoreSetup-Adl";
         FISCFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

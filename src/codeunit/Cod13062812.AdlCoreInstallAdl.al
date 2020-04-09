@@ -46,14 +46,14 @@ codeunit 13062812 "Adl Core Install-Adl"
             ApplicationAreaSetup.Insert();
         end;
         ApplicationAreaSetup."Company Name" := CopyStr(CompanyName(), 1, 30);
-        ApplicationAreaSetup."Adl BST" := true;
-        ApplicationAreaSetup."Adl FAS" := true;
-        ApplicationAreaSetup."Adl KRD" := true;
-        ApplicationAreaSetup."Adl Unpaid Receivables" := true;
-        ApplicationAreaSetup."Adl Forced CreditDebit" := true;
-        ApplicationAreaSetup."Adl VAT" := true;
-        ApplicationAreaSetup."Adl VIES" := true;
-        ApplicationAreaSetup."Adl PDO" := true;
+        ApplicationAreaSetup."BST-Adl" := true;
+        ApplicationAreaSetup."FAS-Adl" := true;
+        ApplicationAreaSetup."KRD-Adl" := true;
+        ApplicationAreaSetup."Unpaid Receivables-Adl" := true;
+        ApplicationAreaSetup."Forced CreditDebit-Adl" := true;
+        ApplicationAreaSetup."VAT-Adl" := true;
+        ApplicationAreaSetup."VIES-Adl" := true;
+        ApplicationAreaSetup."PDO-Adl" := true;
         ApplicationAreaSetup.Modify();
         ApplicationAreaMgmtFacade.SetupApplicationArea();
     end;
@@ -61,7 +61,7 @@ codeunit 13062812 "Adl Core Install-Adl"
     procedure ApplyEvaluationClassificationsForPrivacy()
     var
         Company: Record Company;
-        //DataClassificationMgt: Codeunit "Data Classification Mgt.";
+    //DataClassificationMgt: Codeunit "Data Classification Mgt.";
     begin
         Company.Get(CompanyName());
         if not Company."Evaluation Company" then

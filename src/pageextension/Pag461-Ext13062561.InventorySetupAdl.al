@@ -17,7 +17,7 @@ pageextension 13062561 "Inventory Setup-Adl" extends "Inventory Setup" //461
         // <adl.0>
         ADLCore: Codeunit "Adl Core-Adl";
         RedReversalEnable: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

@@ -87,7 +87,7 @@ pageextension 13062526 "Sales Invoice-Adl" extends "Sales Invoice" //43
         ADLCore: Codeunit "Adl Core-Adl";
         VATFeatureEnabled: Boolean;
         FISCFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

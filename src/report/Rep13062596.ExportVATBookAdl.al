@@ -8,17 +8,17 @@ report 13062596 "Export VAT Book-Adl"
 
         dataitem("VAT Entry"; "VAT Entry")
         {
-            DataItemTableView = sorting ("Document No.", "Posting Date") order(Ascending) where (Type = FILTER (<> Settlement));
+            DataItemTableView = sorting("Document No.", "Posting Date") order(Ascending) where(Type = FILTER(<> Settlement));
             RequestFilterFields = "Posting Date", "Document No.";
 
             dataitem("VAT Book Column Name"; "VAT Book Column Name-Adl")
             {
-                DataItemTableView = sorting ("VAT Book Code", "Column No.") order(Ascending);
+                DataItemTableView = sorting("VAT Book Code", "Column No.") order(Ascending);
 
                 dataitem("VAT Book Group"; "VAT Book Group-Adl")
                 {
-                    DataItemLink = "VAT Book Code" = field ("VAT Book Code");
-                    DataItemTableView = sorting ("VAT Book Code", Code) order(Ascending);
+                    DataItemLink = "VAT Book Code" = field("VAT Book Code");
+                    DataItemTableView = sorting("VAT Book Code", Code) order(Ascending);
 
                     trigger OnPreDataItem()
                     begin

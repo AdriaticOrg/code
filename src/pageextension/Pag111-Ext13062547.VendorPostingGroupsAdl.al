@@ -35,7 +35,7 @@ pageextension 13062547 "Vendor Posting Groups-Adl" extends "Vendor Posting Group
         FASFeatureEnabled: Boolean;
         KRDFeatureEnabled: Boolean;
         BSTFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

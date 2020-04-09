@@ -37,7 +37,7 @@ pageextension 13062543 "Vendor Card-Adl" extends "Vendor Card" //26
         FASFeatureEnabled: Boolean;
         KRDFeatureEnabled: Boolean;
         BSTFeatureEnabled: Boolean;
-        // </adl.0>
+    // </adl.0>
 
     trigger OnOpenPage();
     begin

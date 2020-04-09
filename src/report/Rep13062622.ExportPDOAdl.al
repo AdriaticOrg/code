@@ -28,7 +28,7 @@ report 13062622 "Export PDO-Adl"
 
             dataitem("PDO Report Line"; "PDO Report Line-Adl")
             {
-                DataItemLink = "Document No." = field ("No.");
+                DataItemLink = "Document No." = field("No.");
 
                 column("Type"; FORMAT(Type, 0, '<Number>')) { }
                 column(PeriodID; "Period Round") { }

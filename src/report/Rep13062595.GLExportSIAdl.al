@@ -6,11 +6,11 @@ report 13062595 "GL ExportSI-Adl"
     {
         dataitem("G/L Account"; "G/L Account")
         {
-            DataItemTableView = SORTING ("No.") WHERE ("Account Type" = FILTER (Posting));
+            DataItemTableView = SORTING("No.") WHERE("Account Type" = FILTER(Posting));
             RequestFilterFields = "No.", "Date Filter";
             dataitem(GLAccountBal; "G/L Account")
             {
-                DataItemLink = "No." = FIELD ("No.");
+                DataItemLink = "No." = FIELD("No.");
                 column(GLAccountNoBal; "No.")
                 {
 
@@ -75,7 +75,7 @@ report 13062595 "GL ExportSI-Adl"
             }
             dataitem(GLEntryTrans; "G/L Entry")
             {
-                DataItemLink = "G/L Account No." = FIELD ("No.");
+                DataItemLink = "G/L Account No." = FIELD("No.");
                 column(GLAccountNoTrans; "G/L Account No.")
                 {
                 }
@@ -134,7 +134,7 @@ report 13062595 "GL ExportSI-Adl"
             }
             dataitem(GLAccountZAK; "G/L Account")
             {
-                DataItemLink = "No." = FIELD ("No.");
+                DataItemLink = "No." = FIELD("No.");
                 column(GLAccountNoZAK; "No.")
                 {
                 }
