@@ -87,30 +87,30 @@ tableextension 13062542 "Gen. Journal Line-Adl" extends "Gen. Journal Line" // 8
         // </adl.20>       	 
     }
     // <adl.22>
-    procedure CopyVIESFields(SalesHeader: Record "Sales Header")
+    procedure "CopyVIESFields-Adl"(SalesHeader: Record "Sales Header")
     begin
         "VAT Correction Date-Adl" := SalesHeader."VAT Correction Date-Adl";
         "EU Customs Procedure-Adl" := SalesHeader."EU Customs Procedure-Adl";
     end;
     // </adl.22>
     // <adl.26>
-    procedure CopyBSTFields(Customer: Record Customer)
+    procedure "CopyBSTFields-Adl"(Customer: Record Customer)
     begin
         "Country/Region Code" := Customer."Country/Region Code";
     end;
 
-    procedure CopyBSTFields(Vendor: Record Vendor)
+    procedure "CopyBSTFields-Adl"(Vendor: Record Vendor)
     begin
         "Country/Region Code" := Vendor."Country/Region Code";
     end;
 
-    procedure CopyBSTFields(BankAccount: Record "Bank Account")
+    procedure "CopyBSTFields-Adl"(BankAccount: Record "Bank Account")
     begin
         "Country/Region Code" := BankAccount."Country/Region Code";
     end;
     // </adl.26>       
     // <adl.24>
-    procedure CopyFASFields(Customer: Record Customer)
+    procedure "CopyFASFields-Adl"(Customer: Record Customer)
     begin
         if ("Account Type" = "Account Type"::Customer) and ("Account No." = Customer."No.") then
             "FAS Sector Code-Adl" := Customer."FAS Sector Code-Adl";
@@ -118,7 +118,7 @@ tableextension 13062542 "Gen. Journal Line-Adl" extends "Gen. Journal Line" // 8
             "Bal. FAS Sector Code-Adl" := Customer."FAS Sector Code-Adl";
     end;
 
-    procedure CopyFASFields(Vendor: Record Vendor)
+    procedure "CopyFASFields-Adl"(Vendor: Record Vendor)
     begin
         if ("Account Type" = "Account Type"::Vendor) and ("Account No." = Vendor."No.") then
             "FAS Sector Code-Adl" := Vendor."FAS Sector Code-Adl";
@@ -126,7 +126,7 @@ tableextension 13062542 "Gen. Journal Line-Adl" extends "Gen. Journal Line" // 8
             "Bal. FAS Sector Code-Adl" := Vendor."FAS Sector Code-Adl";
     end;
 
-    procedure CopyFASFields(GLAccount: Record "G/L Account")
+    procedure "CopyFASFields-Adl"(GLAccount: Record "G/L Account")
     begin
         if ("Account Type" = "Account Type"::"G/L Account") and ("Account No." = GLAccount."No.") then begin
             "FAS Sector Code-Adl" := GLAccount."FAS Sector Code-Adl";
@@ -138,7 +138,7 @@ tableextension 13062542 "Gen. Journal Line-Adl" extends "Gen. Journal Line" // 8
         end;
     end;
 
-    procedure CopyFASFields(BankAccount: Record "Bank Account")
+    procedure "CopyFASFields-Adl"(BankAccount: Record "Bank Account")
     begin
         if ("Account Type" = "Account Type"::"Bank Account") and ("Account No." = BankAccount."No.") then begin
             "FAS Sector Code-Adl" := BankAccount."FAS Sector Code-Adl";

@@ -55,13 +55,13 @@ tableextension 13062539 "Vendor Ledger Entry-Adl" extends "Vendor Ledger Entry" 
         // </adl.24>
     }
     // <adl.24>
-    procedure CopyFASFields(Vendor: Record Vendor)
+    procedure "CopyFASFields-Adl"(Vendor: Record Vendor)
     begin
         "FAS Sector Code-Adl" := Vendor."FAS Sector Code-Adl";
     end;
     // </adl.24>
     // <adl.25>
-    procedure CopyKRDFields(Vendor: Record Vendor)
+    procedure "CopyKRDFields-Adl"(Vendor: Record Vendor)
     var
         KRDSetup: Record "KRD Setup-Adl";
     begin
@@ -73,7 +73,7 @@ tableextension 13062539 "Vendor Ledger Entry-Adl" extends "Vendor Ledger Entry" 
             "KRD Affiliation Type-Adl" := KRDSetup."Default KRD Affiliation Type";
     end;
 
-    procedure CopyKRDFields(VendPstgGrp: Record "Vendor Posting Group")
+    procedure "CopyKRDFields-Adl"(VendPstgGrp: Record "Vendor Posting Group")
     begin
         "KRD Instrument Type-Adl" := VendPstgGrp."KRD Instrument Type-Adl";
         "KRD Claim/Liability-Adl" := VendPstgGrp."KRD Claim/Liability-Adl";

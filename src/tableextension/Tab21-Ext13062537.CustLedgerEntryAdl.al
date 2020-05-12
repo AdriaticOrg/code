@@ -62,13 +62,13 @@ tableextension 13062537 "Cust. Ledger Entry-Adl" extends "Cust. Ledger Entry" //
         // </adl.20> 
     }
     // <adl.24>
-    procedure CopyFASFields(Customer: Record Customer)
+    procedure "CopyFASFields-Adl"(Customer: Record Customer)
     begin
         "FAS Sector Code-Adl" := Customer."FAS Sector Code-Adl";
     end;
     // </adl.24>
     // <adl.25>
-    procedure CopyKRDFields(Customer: Record Customer)
+    procedure "CopyKRDFields-Adl"(Customer: Record Customer)
     var
         KRDSetup: Record "KRD Setup-Adl";
     begin
@@ -80,7 +80,7 @@ tableextension 13062537 "Cust. Ledger Entry-Adl" extends "Cust. Ledger Entry" //
             "KRD Affiliation Type-Adl" := KRDSetup."Default KRD Affiliation Type";
     end;
 
-    procedure CopyKRDFields(CustPstgGrp: Record "Customer Posting Group")
+    procedure "CopyKRDFields-Adl"(CustPstgGrp: Record "Customer Posting Group")
     begin
         "KRD Instrument Type-Adl" := CustPstgGrp."KRD Instrument Type-Adl";
         "KRD Claim/Liability-Adl" := CustPstgGrp."KRD Claim/Liability-Adl";
