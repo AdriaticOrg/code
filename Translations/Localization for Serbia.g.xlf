@@ -9548,45 +9548,45 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Country/Region-Adl - Field Numeric Code-Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 1334122065 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
+        <trans-unit id="TableExtension 2100386450 - Field 4030687150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
           <source>VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field VAT-Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field VAT Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 2175420476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
+        <trans-unit id="TableExtension 2100386450 - Field 3609028383 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
           <source>FAS</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field FAS-Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field FAS Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 771551587 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
+        <trans-unit id="TableExtension 2100386450 - Field 3118066680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
           <source>KRD</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field KRD-Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field KRD Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 929501011 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
+        <trans-unit id="TableExtension 2100386450 - Field 1695674600 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
           <source>BST</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field BST-Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field BST Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 490434351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
+        <trans-unit id="TableExtension 2100386450 - Field 1029121612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
           <source>VIES</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field VIES-Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field VIES Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 4228831024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
+        <trans-unit id="TableExtension 2100386450 - Field 3157385195 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
           <source>Unpaid Receivables</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Unpaid Receivables-Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Unpaid Receivables Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 4047517137 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
+        <trans-unit id="TableExtension 2100386450 - Field 2449114926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
           <source>PDO Enabled</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field PDO-Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field PDO Adl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2100386450 - Field 2896607658 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
+        <trans-unit id="TableExtension 2100386450 - Field 2157201365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
           <source>Forced Credit/Debit Enabled</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Forced CreditDebit-Adl - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Application Area Setup-Adl - Field Forced CreditDebit Adl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4059529745 - Field 1226769296 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 410940989">
           <source>KRD Instrument Type</source>
